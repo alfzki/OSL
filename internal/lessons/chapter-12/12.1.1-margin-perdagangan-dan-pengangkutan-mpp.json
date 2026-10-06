@@ -1,0 +1,84 @@
+{
+  "point_id": "12.1.1",
+  "title": "Margin Perdagangan dan Pengangkutan MPP",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Statistik Distribusi & Harga"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "4-9",
+        "content": "Definisi Margin Perdagangan dan Pengangkutan (MPP), konsep SNA 15.28, margin output distributor, formula rantai pedagang besar hingga pedagang eceran, dan formulasi MPP Total."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Margin Perdagangan dan Pengangkutan (MPP) mencerminkan kompensasi atau imbalan jasa yang diterima oleh para pelaku pedagang perantara (distributor, agen, pedagang besar/grosir, dan pedagang eceran) yang mengalirkan barang dari produsen hingga sampai ke tangan konsumen akhir. Semakin banyak perantara dalam saluran distribusi atau semakin tinggi biaya logistik dan laba pedagang, semakin besar disparitas antara harga yang diterima produsen dan harga yang dibayar konsumen.",
+    "bps_definition": "Selisih antara nilai penjualan dengan nilai pembelian yang mengikutsertakan biaya pengangkutan (SNA 15.28). MPP merupakan ukuran nilai output dari kegiatan distribusi perdagangan. Mulai tahun 2017, BPS menyajikan data MPP Total, yaitu akumulasi margin perdagangan dari pedagang besar pertama hingga pedagang eceran ke konsumen akhir.",
+    "boundary_conditions": "MPP tidak diberlakukan untuk penjualan langsung oleh produsen ke konsumen akhir (karena tidak ada jasa distribusi perantara). MPP tiap pelaku usaha i dihitung berdasarkan harga beli pelaku tersebut: MPP_i = (P_jual,i - P_beli,i) / P_beli,i * 100%. Akumulasi margin bersifat multiplikatif terhadap harga produsen: 1 + MPP_total = prod(1 + MPP_i).",
+    "formula_latex": "$$MPP_i = \\frac{P_{\\text{jual}, i} - P_{\\text{beli}, i}}{P_{\\text{beli}, i}} \\times 100\\%, \\quad 1 + MPP_{\\text{total}} = \\prod_{i=1}^n (1 + MPP_i), \\quad MPP_{\\text{total}} = \\frac{P_{\\text{konsumen akhir}} - P_{\\text{produsen}}}{P_{\\text{produsen}}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Berdasarkan Survei Pola Distribusi Perdagangan beras BPS, produsen menjual beras seharga Rp10.000,-/kg kepada distributor. Distributor menjual beras tersebut kepada Pedagang Eceran (PE) dengan harga Rp11.500,-/kg. Selanjutnya, pedagang eceran menjual beras kepada konsumen akhir dengan harga Rp13.800,-/kg. Hitunglah MPP Distributor ke PE, MPP PE ke Konsumen Akhir, dan MPP Total rantai distribusi beras tersebut.",
+    "data_table": "| Pelaku Perdagangan | Harga Pembelian (Rp/kg) | Harga Penjualan (Rp/kg) | Peran Distribusi |\n|---|---|---|---|\n| Produsen | - | 10.000 | Petani / Penggilingan Padi |\n| Distributor | 10.000 | 11.500 | Pedagang Besar / Grosir |\n| Pedagang Eceran (PE) | 11.500 | 13.800 | Toko / Warung / Swalayan |\n| Konsumen Akhir | 13.800 | - | Rumah Tangga Pembeli |",
+    "step_by_step_solution": "1. Menghitung MPP Distributor ke Pedagang Eceran:\n   MPP_Dist = ((11.500 - 10.000) / 10.000) * 100% = (1.500 / 10.000) * 100% = 15,00%.\n2. Menghitung MPP Pedagang Eceran ke Konsumen Akhir:\n   MPP_Ecer = ((13.800 - 11.500) / 11.500) * 100% = (2.300 / 11.500) * 100% = 20,00%.\n3. Menghitung MPP Total Rantai Distribusi:\n   Cara langsung (rasio kenaikan dari produsen ke konsumen akhir):\n   MPP_Total = ((13.800 - 10.000) / 10.000) * 100% = (3.800 / 10.000) * 100% = 38,00%.\n   Cara multiplikatif rantai:\n   1 + MPP_Total = (1 + 0,15) * (1 + 0,20) = 1,15 * 1,20 = 1,38 -> MPP_Total = 38,00%.",
+    "python_verification_code": "p_prod = 10000.0\np_dist = 11500.0\np_ecer = 13800.0\nmpp_dist = ((p_dist - p_prod) / p_prod) * 100.0\nmpp_ecer = ((p_ecer - p_dist) / p_dist) * 100.0\nmpp_total_direct = ((p_ecer - p_prod) / p_prod) * 100.0\nmpp_total_mult = ((1.0 + mpp_dist / 100.0) * (1.0 + mpp_ecer / 100.0) - 1.0) * 100.0\nprint(f'MPP_Dist={mpp_dist:.2f}%, MPP_Ecer={mpp_ecer:.2f}%, MPP_Total={mpp_total_direct:.2f}%')",
+    "expected_output": "MPP_Dist=15.00%, MPP_Ecer=20.00%, MPP_Total=38.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menjumlahkan persentase margin secara aditif sederhana",
+      "common_mistake": "Menghitung MPP Total dengan menjumlahkan margin pelaku usaha: 15% + 20% = 35%.",
+      "safe_strategy": "Gunakan formula multiplikatif BPS: (1 + 0,15) * (1 + 0,20) - 1 = 38%, atau hitung langsung selisih harga konsumen akhir terhadap harga produsen dibagi harga produsen."
+    },
+    {
+      "trap_description": "Memasukkan transaksi penjualan langsung produsen ke konsumen ke dalam MPP",
+      "common_mistake": "Menganggap penjualan beras langsung dari petani penggilingan ke rumah tangga memiliki margin perdagangan.",
+      "safe_strategy": "Ingat prinsip SNA 15.28: margin perdagangan hanya muncul jika ada jasa distribusi melalui pembelian dan penjualan kembali produk oleh pedagang perantara."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.1 Margin Perdagangan dan Distribusi",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.1.1",
+      "name": "Margin Perdagangan dan Pengangkutan MPP",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 4-9]",
+      "exam_focus": "Definisi operasional MPP menurut SNA 15.28, perhitungan margin per simpul perantara, formula akumulasi multiplikatif MPP Total, dan interpretasi efisiensi distribusi barang strategis.",
+      "textbook_excerpt": "Marjin perdagangan didefinisikan sebagai perbedaan antara harga penjualan atas barang untuk dijual kembali dan harga yang harus dibayar oleh distributor untuk mengganti barang pada saat terjual. Margin perdagangan adalah nilai output dari distributor. Marjin perdagangan tidak diberlakukan untuk penjualan langsung oleh produsen. Margin Perdagangan dan Pengangkutan (MPP) adalah kompensasi pedagang sebagai penyalur barang yang merupakan selisih antara nilai penjualan dengan nilai pembelian yang mengikutsertakan biaya pengangkutan [slide 4-5].",
+      "intuition": "Bayangkan sebutir gabah yang dipanen petani. Dari sawah hingga menjadi nasi di piring konsumen perkotaan, beras berpindah tangan melalui distributor gudang, armada truk logistik, hingga warung kelontong. Setiap pihak perantara menaikkan harga jual di atas harga belinya guna menutup ongkos bensin, sewa toko, risiko susut, serta keuntungan usaha. Selisih harga akumulatif inilah yang diukur BPS sebagai Margin Perdagangan dan Pengangkutan (MPP). Jika MPP terlalu lebar, berarti ada simpul distribusi yang tidak efisien atau pedagang perantara mengambil margin berlebih.",
+      "formal": "### 1. Landasan Konsep SNA dan Definisi BPS\n\nBerdasarkan *System of National Accounts* (SNA 2008 paragraf 15.28):\n- **Margin Perdagangan (*Trade Margin*)**: Nilai selisih antara harga penjualan aktual atas barang yang dibeli untuk dijual kembali dan harga yang harus dibayar distributor untuk memperoleh barang tersebut pada saat terjual.\n- **Margin Pengangkutan (*Transport Margin*)**: Biaya transportasi yang dibayar secara terpisah oleh pembeli untuk mengambil barang pesanan pada waktu dan tempat yang ditentukan. Apabila biaya transportasi tidak dibayar terpisah, biaya tersebut menjadi komponen harga dasar barang atau margin pedagang besar.\n- **Margin Perdagangan dan Pengangkutan (MPP)**: Selisih antara nilai penjualan dan nilai pembelian yang mengikutsertakan biaya pengangkutan.\n\n### 2. Formulasi Matematis Perhitungan MPP\n\nMisalkan saluran distribusi utama terdiri dari $n$ pelaku perdagangan perantara yang terurut dari simpul 1 hingga simpul $n$:\n\n1. **Margin Perdagangan dan Pengangkutan Pelaku ke-$i$ ($MPP_i$)**:\n$$MPP_i = \\frac{P_{\\text{jual}, i} - P_{\\text{beli}, i}}{P_{\\text{beli}, i}} \\times 100\\%$$\ndi mana $P_{\\text{beli}, 1} = P_{\\text{produsen}}$ dan $P_{\\text{beli}, i} = P_{\\text{jual}, i-1}$ untuk rantai tunggal tak terputus.\n\n2. **Margin Perdagangan dan Pengangkutan Total ($MPP_{\\text{total}}$)**:\n$$MPP_{\\text{total}} = \\frac{P_{\\text{konsumen akhir}} - P_{\\text{produsen}}}{P_{\\text{produsen}}} \\times 100\\%$$\nSecara aljabar, hubungan antara margin bertingkat dan margin total adalah multiplikatif:\n$$\\frac{P_{\\text{konsumen akhir}}}{P_{\\text{produsen}}} = \\frac{P_{\\text{jual}, 1}}{P_{\\text{beli}, 1}} \\times \\frac{P_{\\text{jual}, 2}}{P_{\\text{beli}, 2}} \\times \\dots \\times \\frac{P_{\\text{jual}, n}}{P_{\\text{beli}, n}}$$\n$$1 + \\frac{MPP_{\\text{total}}}{100} = \\prod_{i=1}^n \\left( 1 + \\frac{MPP_i}{100} \\right)$$\n\n### 3. Matriks Komponen Margin Saluran Distribusi\n\n| Simpul Distribusi | Komponen Harga Beli | Komponen Biaya Antara & Pengangkutan | Komponen Nilai Tambah | Harga Jual Keluar |\n|---|---|---|---|---|\n| **Produsen** | Biaya input benih/pupuk | Angkut dari lahan ke penggilingan | Keuntungan usaha tani | Harga Produsen ($P_0$) |\n| **Distributor** | Harga produsen ($P_0$) | Biaya gudang + armada truk antar-kota | Keuntungan pedagang besar | Harga Grosir ($P_1$) |\n| **Pedagang Eceran** | Harga grosir ($P_1$) | Biaya bongkar muat + sewa toko lokal | Keuntungan pengecer | Harga Eceran Konsumen ($P_2$) |\n\n### 4. Perubahan Kebijakan Diseminasi BPS Sejak 2017\nSebelum tahun 2017, BPS mendiseminasi angka MPP berupa rata-rata sederhana antara pedagang besar dan eceran. Sejak tahun 2017, atas kebutuhan pengguna data kementerian/lembaga untuk stabilisasi harga pangan, BPS menyajikan **MPP Total akumulatif** yang mengukur total kenaikan harga dari tingkat produsen pertama sampai ke konsumen akhir [slide 8].",
+      "pitfalls": "1. **Jebakan Penjumlahan Aditif**: Sering kali mahasiswa menghitung total margin dengan menjumlahkan margin bertingkat (misal 15% + 20% = 35%). Perhitungan ini salah karena mengabaikan pembaruan dasar harga beli pada simpul hilir. Perhitungan yang benar menghasilkan 38%.\n2. **Penjualan Langsung Produsen**: Jika petani menjual langsung berasnya ke tetangga rumah tangga tanpa perantara, MPP = 0% karena tidak ada jasa perdagangan pihak ketiga.",
+      "memory_hook": "MPP adalah Selisih Jual-Beli plus Angkut; Mengalir Berantai dengan Pengali Multiplikatif, Bukan Tambah-Tambahan.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 6]",
+          "problem": "Dalam pola distribusi beras, gabah digiling produsen dan dijual ke distributor dengan harga Rp10.000,-/kg. Distributor menyalurkan ke pedagang eceran dengan harga Rp11.500,-/kg (MPP Distributor = 15%). Pedagang eceran menetapkan margin 20% saat menjual ke konsumen akhir. Berapakah harga yang dibayar konsumen akhir per kilogram dan berapa MPP Total saluran tersebut?",
+          "options": [
+            "Rp13.500,- dan 35,00%",
+            "Rp13.800,- dan 38,00%",
+            "Rp13.800,- dan 35,00%",
+            "Rp14.000,- dan 40,00%"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Langkah Perhitungan**:\n1. Harga jual pedagang eceran ke konsumen akhir:\n   $$P_{\\text{ecer}} = P_{\\text{beli ecer}} \\times (1 + \\text{MPP}_{\\text{ecer}}) = 11.500 \\times (1 + 0,20) = 11.500 \\times 1,20 = 13.800$$\n2. MPP Total dihitung dari selisih harga konsumen akhir terhadap produsen:\n   $$\\text{MPP}_{\\text{total}} = \\frac{13.800 - 10.000}{10.000} \\times 100\\% = \\frac{3.800}{10.000} \\times 100\\% = 38,00\\%$$\n3. Verifikasi rumus multiplikatif:\n   $$1 + \\text{MPP}_{\\text{total}} = (1 + 0,15) \\times (1 + 0,20) = 1,38 \\implies \\text{MPP}_{\\text{total}} = 38\\%$$."
+        }
+      ],
+      "links": [
+        "12.1.2",
+        "12.2.1"
+      ]
+    }
+  ]
+}

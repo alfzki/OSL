@@ -1,0 +1,487 @@
+{
+  "title": "Kuis Teori & Rumus: 15 Soal IHK & 15 Soal Sakernas Persiapan UAS OSL",
+  "questions": [
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Teori Indeks Laspeyres vs Paasche)",
+      "score": 2,
+      "stem": "[OSL-RUM-01] Dalam teori angka indeks harga, Indeks Laspeyres ($I_L$) menggunakan kuantitas tahun dasar ($Q_0$) sebagai penimbang: $$I_L = \\frac{\\sum P_t Q_0}{\\sum P_0 Q_0} \\times 100$$ Sedangkan Indeks Paasche ($I_P$) menggunakan kuantitas tahun berjalan ($Q_t$): $$I_P = \\frac{\\sum P_t Q_t}{\\sum P_0 Q_t} \\times 100$$ Mengapa secara teoritis Indeks Laspeyres cenderung menghasilkan taksiran yang lebih tinggi (overstate / bias ke atas) terhadap kenaikan biaya hidup sesungguhnya?",
+      "reference": "A",
+      "explanation": "Kunci: A. Bias substitusi (substitution bias) pada formula Laspeyres terjadi karena kuantitas $Q_0$ dianggap tetap. Ketika harga komoditas tertentu melonjak, konsumen secara rasional akan mengurangi konsumsi barang tersebut dan beralih ke barang substitusi yang harganya naik lebih lambat. Formula Laspeyres tetap mengalikan harga baru dengan kuantitas lama yang tinggi, sehingga melebih-lebihkan (overstate) beban kenaikan biaya hidup riil. Sebaliknya, Indeks Paasche cenderung understate karena kuantitas tahun berjalan sudah menyesuaikan ke barang murah.",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Karena Indeks Laspeyres mengabaikan efek substitusi konsumen (konsumen cenderung beralih ke barang substitusi yang harganya naik lebih lambat)",
+        "B. Karena Indeks Laspeyres selalu menggunakan harga tertinggi di pasar",
+        "C. Karena kuantitas tahun dasar selalu lebih besar daripada kuantitas tahun berjalan",
+        "D. Karena Indeks Laspeyres tidak memperhitungkan pajak pertambahan nilai"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Modified Laspeyres BPS)",
+      "score": 3,
+      "stem": "[OSL-RUM-02] BPS menggunakan formula Modifikasi Laspeyres berantai (Modified Laspeyres) dalam menghitung IHK bulanan: $$I_t = \\sum_{i=1}^k \\left[ \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i} \\right]$$ Apakah makna matematis dari komponen $\\frac{P_{ti}}{P_{(t-1)i}}$ dalam formula tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. Dalam publikasi resmi BPS, rasio $\\frac{P_{ti}}{P_{(t-1)i}}$ disebut sebagai Relatif Harga (RH) komoditas $i$ pada bulan berjalan ($t$) terhadap bulan sebelumnya ($t-1$). RH menunjukkan faktor pengali perubahan harga dari bulan ke bulan. (Sumber: Publikasi IHK BPS 2025, hal. xxiv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Relatif Harga (RH) jenis barang/jasa $i$ pada bulan ke-$t$ terhadap bulan ke-$(t-1)$",
+        "B. Nilai Konsumsi (NK) komoditas pada tahun dasar",
+        "C. Rasio kuantitas konsumsi rumah tangga antar waktu",
+        "D. Laju inflasi tahunan komoditas $i$"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Nilai Konsumsi Pemutakhiran Berantai)",
+      "score": 3,
+      "stem": "[OSL-RUM-03] Dalam tahapan teknis penghitungan IHK BPS, Nilai Konsumsi komoditas $i$ pada bulan berjalan ($NK_{ti} = P_{ti} \\cdot Q_{0i}$) diperoleh secara berantai tanpa harus mengetahui kuantitas fisik riil ($Q_{0i}$) dengan rumus...",
+      "reference": "A",
+      "explanation": "Kunci: A. Karena $RH_{ti} = \\frac{P_{ti}}{P_{(t-1)i}}$ dan $NK_{(t-1)i} = P_{(t-1)i} \\cdot Q_{0i}$, maka ketika keduanya dikalikan: $$RH_{ti} \\times NK_{(t-1)i} = \\frac{P_{ti}}{P_{(t-1)i}} \\times (P_{(t-1)i} \\cdot Q_{0i}) = P_{ti} \\cdot Q_{0i} = NK_{ti}$$ Inilah esensi metode perantaian BPS: nilai konsumsi dimutakhirkan cukup dengan mengalikan Nilai Konsumsi bulan lalu dengan Relatif Harga bulan berjalan. (Sumber: Publikasi IHK BPS 2025, hal. xxiv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. $NK_{ti} = RH_{ti} \\times NK_{(t-1)i}$ (Relatif Harga bulan ini dikalikan Nilai Konsumsi bulan lalu)",
+        "B. $NK_{ti} = RH_{ti} + NK_{(t-1)i}$",
+        "C. $NK_{ti} = \\frac{NK_{(t-1)i}}{RH_{ti}}$",
+        "D. $NK_{ti} = P_{ti} \\times \\text{Inflasi}_{m-to-m}$"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus IHK dari Total Nilai Konsumsi)",
+      "score": 2,
+      "stem": "[OSL-RUM-04] Jika total Nilai Konsumsi seluruh komoditas terpilih pada bulan berjalan ($\\sum NK_t$) adalah Rp8.400.000 dan total Nilai Konsumsi pada tahun dasar SBH 2022 ($\\sum NK_0$) adalah Rp8.000.000, berapakah nilai IHK bulan berjalan tersebut? Gunakan rumus: $$IHK_t = \\frac{\\sum NK_t}{\\sum NK_0} \\times 100$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Formula pembentukan IHK agregat: $$IHK_t = \\frac{\\sum_{i=1}^k NK_{ti}}{\\sum_{i=1}^k NK_{0i}} \\times 100 = \\frac{8.400.000}{8.000.000} \\times 100 = 105,00$$ Nilai IHK selalu berindeks dasar 100 pada tahun dasar. (Sumber: Pertemuan 12 slide 16; Publikasi IHK BPS 2025, hal. xxv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 105,00",
+        "B. 104,00",
+        "C. 1,05",
+        "D. 95,24"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Inflasi Bulanan m-to-m)",
+      "score": 2,
+      "stem": "[OSL-RUM-05] Diketahui IHK Kota Medan pada bulan Mei 2025 sebesar 106,00 dan pada bulan Juni 2025 sebesar 106,795. Berapakah laju inflasi month-to-month (m-to-m) bulan Juni 2025? Rumus: $$\\text{Inflasi}_{m-to-m} = \\frac{IHK_t - IHK_{t-1}}{IHK_{t-1}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Perhitungan: $$\\text{Inflasi}_{m-to-m} = \\frac{106,795 - 106,00}{106,00} \\times 100\\% = \\frac{0,795}{106,00} \\times 100\\% = 0,75\\%$$ (Sumber: Pertemuan 12 slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 0,75%",
+        "B. 0,795%",
+        "C. 1,75%",
+        "D. 0,60%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Inflasi Tahunan y-on-y)",
+      "score": 2,
+      "stem": "[OSL-RUM-06] Data IHK Provinsi Jawa Barat tercatat sebesar 104,00 pada bulan Juli 2024 dan sebesar 107,12 pada bulan Juli 2025. Berapakah laju inflasi year-on-year (y-on-y) bulan Juli 2025? Rumus: $$\\text{Inflasi}_{y-on-y} = \\frac{IHK_{t, y} - IHK_{t, y-1}}{IHK_{t, y-1}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Perhitungan: $$\\text{Inflasi}_{y-on-y} = \\frac{107,12 - 104,00}{104,00} \\times 100\\% = \\frac{3,12}{104,00} \\times 100\\% = 3,00\\%$$ (Sumber: Pertemuan 12 slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 3,00%",
+        "B. 3,12%",
+        "C. 2,90%",
+        "D. 7,12%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Kesamaan Inflasi y-to-d dan y-on-y pada Bulan Desember)",
+      "score": 2,
+      "stem": "[OSL-RUM-07] Dalam laporan statistik tahunan BPS, mengapa angka laju inflasi Year to Date (y-to-d) pada bulan Desember selalu bernilai SAMA PERSIS dengan angka laju inflasi Year on Year (y-on-y) pada bulan tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. Berdasarkan definisi formula BPS: (1) Inflasi y-to-d bulan $t$ membandingkan IHK bulan $t$ terhadap IHK Desember tahun sebelumnya. (2) Inflasi y-on-y membandingkan IHK bulan $t$ terhadap IHK bulan yang sama tahun sebelumnya. Pada bulan Desember ($t=12$), pembanding y-on-y adalah Desember tahun sebelumnya, yang persis sama dengan pembanding y-to-d. (Sumber: Pertemuan 12 slide 21)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Karena penyebut kedua formula pada bulan Desember adalah sama, yaitu angka IHK bulan Desember tahun sebelumnya",
+        "B. Karena BPS menetapkan target inflasi hanya pada akhir tahun",
+        "C. Karena diagram timbang IHK direset setiap bulan Desember",
+        "D. Karena indeks harga Desember selalu bernilai 100"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Andil Inflasi Komoditas)",
+      "score": 3,
+      "stem": "[OSL-RUM-08] BPS menghitung 'Andil Inflasi' (kontribusi) suatu komoditas terhadap inflasi bulanan umum (headline) dengan rumus: $$A_i = \\frac{NK_{ti} - NK_{(t-1)i}}{\\sum_{j=1}^k NK_{(t-1)j}} \\times 100\\%$$ Pernyataan manakah yang BENAR mengenai sifat matematis dari akumulasi seluruh andil komoditas ($\\sum_{i=1}^k A_i$)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Karena $\\sum_{i=1}^k (NK_{ti} - NK_{(t-1)i}) = \\sum NK_{ti} - \\sum NK_{(t-1)i}$, maka: $$\\sum_{i=1}^k A_i = \\frac{\\sum NK_{ti} - \\sum NK_{(t-1)i}}{\\sum NK_{(t-1)i}} \\times 100\\% = \\text{Inflasi Umum (m-to-m)}$$ Jadi, total andil seluruh komoditas menghasilkan angka inflasi headline secara eksak tanpa residu. (Sumber: Pertemuan 12 slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Jumlah seluruh andil komoditas sama persis dengan laju inflasi umum (headline) bulan berjalan: $\\sum_{i=1}^k A_i = \\text{Inflasi Umum}$",
+        "B. Jumlah seluruh andil komoditas selalu sama dengan 100%",
+        "C. Jumlah seluruh andil komoditas sama dengan rata-rata kenaikan harga barang pokok",
+        "D. Jumlah seluruh andil komoditas selalu bernilai nol karena inflasi dan deflasi saling meniadakan"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Rumus Bobot Nilai Konsumsi Diagram Timbang)",
+      "score": 2,
+      "stem": "[OSL-RUM-09] Dalam penyusunan diagram timbang IHK tahun dasar dari hasil Survei Biaya Hidup (SBH), bobot nilai konsumsi komoditas $i$ ($w_{0i}$) dirumuskan sebagai...",
+      "reference": "A",
+      "explanation": "Kunci: A. Diagram timbang tahun dasar mencerminkan porsi/pangsa pengeluaran rumah tangga untuk komoditas $i$ terhadap seluruh pengeluaran paket komoditas yang disurvei dalam SBH: $$w_{0i} = \\frac{P_{0i} Q_{0i}}{\\sum_{j=1}^k P_{0j} Q_{0j}} \\times 100$$ sehingga berlaku $\\sum_{i=1}^k w_{0i} = 100$. (Sumber: Publikasi IHK BPS 2025, hal. xxiv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. $w_{0i} = \\frac{P_{0i} Q_{0i}}{\\sum_{j=1}^k P_{0j} Q_{0j}} \\times 100$ (proporsi pengeluaran komoditas $i$ terhadap total pengeluaran seluruh komoditas tahun dasar)",
+        "B. $w_{0i} = \\frac{P_{0i}}{\\sum P_{0j}} \\times 100$",
+        "C. $w_{0i} = \\frac{Q_{0i}}{\\sum Q_{0j}} \\times 100$",
+        "D. $w_{0i} = \\frac{P_{ti} - P_{0i}}{P_{0i}} \\times 100$"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Agregasi IHK Kota ke Tingkat Provinsi)",
+      "score": 2,
+      "stem": "[OSL-RUM-10] Dalam penghitungan IHK Provinsi yang terdiri dari beberapa kota/kabupaten IHK (misalnya Jawa Timur yang memiliki 8 kota/kabupaten IHK), indeks harga tingkat provinsi dihitung dengan cara...",
+      "reference": "A",
+      "explanation": "Kunci: A. IHK provinsi bukan rata-rata sederhana dari IHK kota-kotanya, melainkan agregasi tertimbang berbasis Nilai Konsumsi: $$IHK_{\\text{Prov}} = \\frac{\\sum_c NK_{t,c}}{\\sum_c NK_{0,c}} \\times 100$$ Dengan metode ini, kota dengan pengeluaran konsumsi lebih besar secara otomatis memperoleh bobot yang lebih besar terhadap IHK provinsi. (Sumber: Publikasi IHK BPS 2025, hal. xxv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Menjumlahkan total Nilai Konsumsi bulan berjalan dari seluruh kota/kabupaten sampel di provinsi tersebut, lalu membaginya dengan total Nilai Konsumsi tahun dasar seluruh kota/kabupaten tersebut dikalikan 100",
+        "B. Menghitung rata-rata aritmetika sederhana dari angka IHK masing-masing kota/kabupaten",
+        "C. Mengambil angka IHK dari ibukota provinsi sebagai representasi tunggal seluruh provinsi",
+        "D. Menghitung nilai median IHK antar kota/kabupaten"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Indeks Jevons untuk Rata-Rata Harga Pasar)",
+      "score": 2,
+      "stem": "[OSL-RUM-11] Sebelum digabungkan ke tingkat komoditas kota, pencatatan harga suatu barang dari beberapa pedagang/pasar sampel dalam Survei Harga Konsumen (SHK) dirata-ratakan oleh BPS menggunakan rumus rata-rata...",
+      "reference": "A",
+      "explanation": "Kunci: A. Standar manual IHK BPS dan internasional (ILO/IMF CPI Manual) menetapkan bahwa penggabungan harga dari berbagai responden/pasar sampel untuk kualitas barang yang sama di tingkat dasar (elementary aggregate) menggunakan rata-rata geometrik (formula Jevons): $$P = \\left( \\prod_{m=1}^M P_m \\right)^{1/M}$$ guna meminimalkan distorsi ekstremitas harga aritmetika.",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Rata-rata Geometrik (Indeks Jevons mikro tingkat pasar)",
+        "B. Rata-rata Aritmetika Berbobot Kuantitas",
+        "C. Modus harga terbanyak",
+        "D. Nilai harga terendah (minimum)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Konsep Dasar Indeks Kemahalan Konstruksi)",
+      "score": 2,
+      "stem": "[OSL-RUM-12] Dalam materi Pertemuan 12, Indeks Kemahalan Konstruksi (IKK) digunakan sebagai salah satu variabel penentu Celah Fiskal dalam Dana Alokasi Umum (DAU). Bagaimanakah konsep dasar perhitungannya?",
+      "reference": "A",
+      "explanation": "Kunci: A. IKK mengukur perbandingan tingkat harga bahan bangunan/konstruksi, sewa alat berat, dan upah tenaga kerja konstruksi antar wilayah terhadap kota acuan standar (indeks acuan = 100): $$IKK_d = \\frac{\\sum P_{id} \\cdot W_i}{\\sum P_{ir} \\cdot W_i} \\times 100$$ IKK menjadi proxy tingkat kesulitan geografis dalam alokasi DAU. (Sumber: Pertemuan 12 slide 23)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Membandingkan tingkat harga bahan bangunan dan sewa alat konstruksi di suatu kabupaten/kota terhadap suatu wilayah rujukan/acuan berstandar 100",
+        "B. Membagi total pengeluaran APBD dengan luas wilayah geografis",
+        "C. Menghitung persentase rumah tangga yang memiliki sertifikat hak milik",
+        "D. Menghitung rasio pekerja konstruksi terhadap total angkatan kerja"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Cakupan Sektor IHPB)",
+      "score": 3,
+      "stem": "[OSL-RUM-13] Selain IHK yang mengukur harga eceran konsumen, BPS juga menghitung Indeks Harga Perdagangan Besar (IHPB) pada tingkat grosir. Manakah sektor-sektor ekonomi yang dicakup dalam penghitungan IHPB BPS? (Pilih semua yang benar)",
+      "reference": "A, B, C",
+      "explanation": "Kunci: A, B, C. Paket komoditas IHPB BPS mencakup barang-barang yang diperdagangkan pada tingkat grosir dari 3 sektor produksi riil: Pertanian, Pertambangan & Penggalian, dan Industri Pengolahan (baik barang domestik maupun ekspor/impor). Jasa perbankan (opsi D) tidak dicakup dalam IHPB barang fisik. (Sumber: Pertemuan 12 slide 11)",
+      "type": "multi",
+      "qtype_label": "Pilihan Ganda Kompleks",
+      "options": [
+        "A. Sektor Pertanian",
+        "B. Sektor Pertambangan dan Penggalian",
+        "C. Sektor Industri Pengolahan",
+        "D. Sektor Jasa Perbankan dan Asuransi"
+      ],
+      "answer": [0, 1, 2],
+      "partial": true
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Definisi Matematis Deflasi)",
+      "score": 2,
+      "stem": "[OSL-RUM-14] Jika nilai IHK bulan berjalan ($IHK_t$) lebih kecil daripada nilai IHK bulan sebelumnya ($IHK_{t-1}$), maka persentase perubahan indeks bernilai negatif dan fenomena ekonomi tersebut disebut sebagai DEFLASI.",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Berdasarkan definisi resmi BPS: Disebut inflasi apabila persentase perubahan indeks bernilai positif ($IHK_t > IHK_{t-1}$), sedangkan deflasi terjadi ketika persentase perubahan indeks bernilai negatif ($IHK_t < IHK_{t-1}$), yang mencerminkan penurunan tingkat harga umum rata-rata di pasar. (Sumber: Publikasi IHK BPS 2025, hal. xxiv)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Sifat Aditif Andil Kelompok COICOP)",
+      "score": 2,
+      "stem": "[OSL-RUM-15] Penjumlahan angka andil inflasi dari seluruh 11 kelompok pengeluaran COICOP pada bulan tertentu akan menghasilkan angka yang sama persis dengan tingkat inflasi umum (headline inflation) pada bulan tersebut: $$\\sum_{g=1}^{11} \\text{Andil}_g = \\text{Inflasi Umum}$$",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Karena formula andil diturunkan secara aditif dari pembilang perubahan nilai konsumsi agregat: $$\\sum_{g=1}^{11} \\text{Andil}_g = \\frac{\\sum_{g=1}^{11} \\Delta NK_g}{\\sum NK_{\\text{total}, t-1}} \\times 100\\% = \\text{Inflasi Umum}$$ Sifat ini menjamin tidak ada residu atau selisih antara agregasi sektoral dan angka inflasi headline. (Sumber: Pertemuan 12 slide 18-20)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Tingkat Partisipasi Angkatan Kerja)",
+      "score": 2,
+      "stem": "[OSL-RUM-16] Dalam suatu wilayah, diketahui jumlah Penduduk Usia Kerja (15+ tahun) adalah 100.000 jiwa. Dari jumlah tersebut, 65.000 jiwa berstatus Bekerja dan 5.000 jiwa berstatus Pengangguran Terbuka. Berapakah Tingkat Partisipasi Angkatan Kerja (TPAK) wilayah tersebut? Rumus: $$TPAK = \\frac{\\text{Angkatan Kerja}}{\\text{Penduduk Usia Kerja (15+)}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. (1) Angkatan Kerja = Bekerja + Pengangguran = $65.000 + 5.000 = 70.000\\text{ jiwa}$. (2) $$TPAK = \\frac{70.000}{100.000} \\times 100\\% = 70,00\\%$$ (Sumber: Pertemuan 9 slide 13)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 70,00%",
+        "B. 65,00%",
+        "C. 7,14%",
+        "D. 60,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Tingkat Pengangguran Terbuka)",
+      "score": 2,
+      "stem": "[OSL-RUM-17] Melanjutkan data pada soal sebelumnya (Bekerja = 65.000, Pengangguran = 5.000, PUK = 100.000), berapakah Tingkat Pengangguran Terbuka (TPT) wilayah tersebut? Rumus: $$TPT = \\frac{\\text{Penganggur Terbuka}}{\\text{Angkatan Kerja}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Rumus TPT BPS: $$TPT = \\frac{\\text{Pengangguran Terbuka}}{\\text{Angkatan Kerja}} \\times 100\\% = \\frac{5.000}{70.000} \\times 100\\% = 7,14\\%$$ Ingat: penyebut TPT adalah Angkatan Kerja ($70.000$), bukan Penduduk Usia Kerja ($100.000$). Jika dibagi 100.000 hasilnya keliru (5,00%). (Sumber: Pertemuan 9 slide 15)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 7,14% (karena $5.000 / 70.000 \\times 100\\%$)",
+        "B. 5,00% (karena $5.000 / 100.000 \\times 100\\%$)",
+        "C. 7,69% (karena $5.000 / 65.000 \\times 100\\%$)",
+        "D. 30,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Tingkat Kesempatan Kerja)",
+      "score": 2,
+      "stem": "[OSL-RUM-18] Jika suatu daerah memiliki Tingkat Pengangguran Terbuka (TPT) sebesar 7,14%, berapakah Tingkat Kesempatan Kerja (TKK) daerah tersebut? Rumus: $$TKK = \\frac{\\text{Penduduk Bekerja}}{\\text{Angkatan Kerja}} \\times 100\\% = 100\\% - TPT$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Karena Angkatan Kerja terdiri dari Penduduk Bekerja dan Penganggur, maka: $$TKK = \\frac{\\text{Bekerja}}{\\text{Angkatan Kerja}} \\times 100\\% = 100\\% - TPT$$ Maka $TKK = 100\\% - 7,14\\% = 92,86\\%$. (Sumber: Pertemuan 9 slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 92,86% (karena $TKK = 100\\% - TPT$)",
+        "B. 65,00%",
+        "C. 70,00%",
+        "D. 95,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Tingkat Setengah Pengangguran)",
+      "score": 2,
+      "stem": "[OSL-RUM-19] Dari 65.000 penduduk yang berstatus Bekerja, terdapat 6.500 orang yang bekerja kurang dari 35 jam seminggu dan menyatakan masih mencari pekerjaan atau bersedia menerima pekerjaan tambahan. Berapakah Tingkat Setengah Pengangguran (TSP) wilayah tersebut? Rumus: $$TSP = \\frac{\\text{Pekerja Jam Kerja < 35 Jam yang mencari/mau kerja}}{\\text{Penduduk yang Bekerja (PB)}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Sesuai formula BPS Slide 17: $$TSP = \\frac{\\text{Jumlah Setengah Penganggur}}{\\text{Penduduk yang Bekerja (PB)}} \\times 100\\% = \\frac{6.500}{65.000} \\times 100\\% = 10,00\\%$$ Penyebut resmi TSP adalah Penduduk yang Bekerja ($PB$), bukan Angkatan Kerja! (Sumber: Pertemuan 9 slide 17)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 10,00%",
+        "B. 9,29% (dibagi Angkatan Kerja)",
+        "C. 6,50% (dibagi PUK)",
+        "D. 13,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Tingkat Pekerja Paruh Waktu)",
+      "score": 2,
+      "stem": "[OSL-RUM-20] Masih dari 65.000 orang yang bekerja, terdapat 19.500 orang yang bekerja kurang dari 35 jam seminggu tetapi TIDAK mencari pekerjaan dan TIDAK bersedia menerima pekerjaan tambahan (paruh waktu sukarela). Berapakah Tingkat Pekerja Paruh Waktu (TPPW)? Rumus: $$TPPW = \\frac{\\text{Pekerja Paruh Waktu}}{\\text{Penduduk yang Bekerja (PB)}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Formula BPS Slide 19: $$TPPW = \\frac{\\text{Jumlah Pekerja Paruh Waktu}}{\\text{Penduduk yang Bekerja (PB)}} \\times 100\\% = \\frac{19.500}{65.000} \\times 100\\% = 30,00\\%$$ Total pekerja yang bekerja di bawah jam normal (< 35 jam) adalah $10\\% + 30\\% = 40\\%$ dari total orang yang bekerja. (Sumber: Pertemuan 9 slide 19)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 30,00%",
+        "B. 27,86%",
+        "C. 19,50%",
+        "D. 40,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Rumus Employment-to-Population Ratio)",
+      "score": 2,
+      "stem": "[OSL-RUM-21] Rasio Penyerapan Tenaga Kerja (Employment-to-Population Ratio / EPR) mengukur persentase penduduk usia kerja yang benar-benar aktif bekerja dalam perekonomian. Jika Bekerja = 65.000 dan PUK = 100.000, berapakah nilai EPR dan bagaimana hubungan aljabar EPR dengan TPAK dan TPT?",
+      "reference": "A",
+      "explanation": "Kunci: A. (1) $$EPR = \\frac{\\text{Bekerja}}{\\text{PUK}} \\times 100\\% = \\frac{65.000}{100.000} \\times 100\\% = 65,00\\%$$ (2) Hubungan aljabar matematis: $$EPR = \\frac{\\text{AK}}{\\text{PUK}} \\times \\frac{\\text{Bekerja}}{\\text{AK}} = TPAK \\times \\frac{TKK}{100} = TPAK \\times \\left(1 - \\frac{TPT}{100}\\right)$$ (Sumber: Pedoman Indikator Ketenagakerjaan BPS)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. EPR = 65,00%; Hubungan: $EPR = TPAK \\times \\left(1 - \\frac{TPT}{100}\\right)$",
+        "B. EPR = 70,00%; Hubungan: $EPR = TPAK + TPT$",
+        "C. EPR = 92,86%; Hubungan: $EPR = 100\\% - TPAK$",
+        "D. EPR = 5,00%; Hubungan: $EPR = TPAK \\times TPT$"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Proporsi Tenaga Kerja Informal)",
+      "score": 2,
+      "stem": "[OSL-RUM-22] Dari 65.000 orang yang bekerja, terdapat: 20.000 buruh/karyawan, 5.000 berusaha dibantu buruh tetap, 25.000 berusaha sendiri, 10.000 berusaha dibantu buruh tidak tetap, dan 5.000 pekerja keluarga tidak dibayar. Berapakah proporsi tenaga kerja sektor informal menurut pendekatan status pekerjaan BPS? Rumus: $$\\text{Proporsi Informal} = \\frac{\\text{Pekerja Status 1, 2, 5, 6, 7}}{\\text{Total Bekerja}} \\times 100\\%$$",
+      "reference": "A",
+      "explanation": "Kunci: A. Sektor Formal terdiri dari: (1) Berusaha dibantu buruh tetap ($5.000$) dan (2) Buruh/karyawan ($20.000$), total formal = $25.000$ orang. Sektor Informal terdiri dari: Berusaha sendiri ($25.000$) + Berusaha dibantu buruh tidak tetap ($10.000$) + Pekerja keluarga ($5.000$) = $40.000$ orang. $$\\text{Proporsi Informal} = \\frac{40.000}{65.000} \\times 100\\% = 61,54\\%$$ (Sumber: Pertemuan 9 slide 26-28)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 61,54% (karena pekerja informal = $25.000 + 10.000 + 5.000 = 40.000$; $40.000 / 65.000 \\times 100\\%$)",
+        "B. 38,46%",
+        "C. 50,00%",
+        "D. 40,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Definisi Operasional PUK ILO)",
+      "score": 2,
+      "stem": "[OSL-RUM-23] Mengapa BPS menetapkan batas umur minimal 15 tahun untuk Penduduk Usia Kerja (PUK) dalam Sakernas, dan apakah kelemahan konseptual dari batasan tersebut menurut materi kuliah?",
+      "reference": "A",
+      "explanation": "Kunci: A. Sesuai materi kuliah Slide 8: Batasan usia kerja $\\ge 15$ tahun mengikuti standar konvensi ILO. Kelemahannya adalah tidak menggambarkan situasi ketenagakerjaan yang sesungguhnya secara utuh karena banyak pekerja anak usia $< 15$ tahun (child labour) yang tidak tercakup dalam penghitungan resmi TPAK dan TPT. (Sumber: Pertemuan 9 slide 8)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Mengadopsi konvensi ILO batas usia minimal kerja resmi; kelemahannya fenomena pekerja anak di bawah 15 tahun (child labour) tidak tercakup dalam statistik angkatan kerja resmi",
+        "B. Karena undang-undang melarang orang di bawah 17 tahun keluar rumah",
+        "C. Karena pada usia 15 tahun semua penduduk Indonesia sudah menyelesaikan pendidikan tinggi",
+        "D. Tidak ada kelemahan karena tidak ada anak di bawah 15 tahun yang bekerja di Indonesia"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (4 Kriteria Pengangguran Terbuka)",
+      "score": 2,
+      "stem": "[OSL-RUM-24] Seorang sarjana baru lulus kuliah menyatakan tidak mencari pekerjaan selama sebulan terakhir karena ia yakin di daerahnya sedang tidak ada lowongan kerja yang sesuai (merasa tidak mungkin mendapat pekerjaan / discouraged worker). Dalam Sakernas BPS, pemuda ini dikategorikan sebagai...",
+      "reference": "A",
+      "explanation": "Kunci: A. Pengangguran Terbuka BPS mencakup 4 kategori: (1) Mencari kerja, (2) Mempersiapkan usaha, (3) Putus asa / merasa tidak mungkin mendapat pekerjaan (discouraged worker), (4) Sudah punya pekerjaan/diterima tetapi belum mulai bekerja. Jadi, orang yang tidak mencari kerja karena merasa putus asa tetap sah diklasifikasikan sebagai Pengangguran Terbuka (Angkatan Kerja). (Sumber: Pertemuan 9 slide 16)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Pengangguran Terbuka (kategori putus asa / discouraged worker)",
+        "B. Bukan Angkatan Kerja (kategori lainnya)",
+        "C. Pekerja Paruh Waktu",
+        "D. Setengah Penganggur"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Status Unpaid Family Worker)",
+      "score": 2,
+      "stem": "[OSL-RUM-25] Seorang anak membantu di toko kelontong orang tuanya selama 10 jam dalam seminggu terakhir tanpa menerima upah uang maupun barang. Menurut Sakernas BPS, status pekerjaan utama anak tersebut adalah...",
+      "reference": "A",
+      "explanation": "Kunci: A. Kategori status pekerjaan ke-7 BPS adalah 'Pekerja keluarga / tidak dibayar'. Sepanjang kegiatan tersebut membantu usaha ekonomi keluarga dan dilakukan minimal 1 jam seminggu yang lalu, statusnya sah sebagai BEKERJA dan merupakan bagian dari Angkatan Kerja. (Sumber: Pertemuan 9 slide 12, 26; Kuesioner Sakernas Rincian 7.3)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Pekerja keluarga / tidak dibayar (Unpaid Family Worker), berstatus BEKERJA",
+        "B. Bukan Angkatan Kerja karena tidak menerima penghasilan",
+        "C. Pengangguran Terbuka karena tidak digaji",
+        "D. Magang sukarela non-pekerja"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Batas Jam Kerja Normal 35 Jam)",
+      "score": 2,
+      "stem": "[OSL-RUM-26] Standar BPS menetapkan batas jam kerja normal bagi pekerja di Indonesia adalah minimal...",
+      "reference": "A",
+      "explanation": "Kunci: A. Dalam Sakernas BPS, batas jam kerja normal didefinisikan minimal 35 jam per minggu. Pekerja dengan jam kerja $\\ge 35$ jam dikategorikan sebagai Pekerja Penuh (Full-time Worker), sedangkan pekerja dengan jam kerja $< 35$ jam dikategorikan sebagai Bekerja Kurang dari Jam Kerja Normal (terbagi menjadi Setengah Penganggur dan Paruh Waktu). (Sumber: Pertemuan 9 slide 18, 21)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 35 jam per minggu",
+        "B. 40 jam per minggu",
+        "C. 48 jam per minggu",
+        "D. 20 jam per minggu"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Komposisi Bukan Angkatan Kerja)",
+      "score": 3,
+      "stem": "[OSL-RUM-27] Manakah di antara individu berikut yang secara tepat diklasifikasikan oleh BPS ke dalam kelompok BUKAN ANGKATAN KERJA? (Pilih semua yang benar)",
+      "reference": "A, B, C",
+      "explanation": "Kunci: A, B, C. Tiga pilar Bukan Angkatan Kerja BPS adalah: Sekolah (Sinta), Mengurus Rumah Tangga (Ibu Dewi), dan Lainnya/Pensiunan/Lansia (Kakek Broto). Andi sedang aktif mencari pekerjaan, sehingga Andi diklasifikasikan sebagai Pengangguran Terbuka (Angkatan Kerja). (Sumber: Pertemuan 9 slide 12, 21)",
+      "type": "multi",
+      "qtype_label": "Pilihan Ganda Kompleks",
+      "options": [
+        "A. Sinta yang berusia 19 tahun dan sepenuhnya fokus kuliah tanpa bekerja atau mencari kerja (Sekolah)",
+        "B. Ibu Dewi yang sehari-hari merawat anak dan memasak di rumah tanpa melakukan kegiatan ekonomi produktif (Mengurus Rumah Tangga)",
+        "C. Kakek Broto berusia 72 tahun penerima uang pensiun dan sudah tidak mampu bekerja fisik (Lainnya)",
+        "D. Andi yang baru diberhentikan (PHK) dari pabrik dan setiap hari mengirim lamaran kerja ke berbagai perusahaan"
+      ],
+      "answer": [0, 1, 2],
+      "partial": true
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Identitas Mutually Exclusive PUK)",
+      "score": 2,
+      "stem": "[OSL-RUM-28] Dalam statistik ketenagakerjaan BPS, pengelompokan Penduduk Usia Kerja (PUK) ke dalam Angkatan Kerja (AK) dan Bukan Angkatan Kerja (BAK) bersifat mutually exclusive (saling meniadakan), sehingga berlaku identitas: $$PUK = AK + BAK$$",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Setiap individu dalam Penduduk Usia Kerja (15+ tahun) hanya dapat masuk ke dalam salah satu kategori: Angkatan Kerja (jika bekerja atau menganggur) ATAU Bukan Angkatan Kerja (sekolah, mengurus RT, lainnya). Tidak ada seorang pun yang dapat dihitung ganda pada kedua kelompok tersebut. (Sumber: Pertemuan 9 slide 11, 21)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Pengaruh Kenaikan AK terhadap TPT)",
+      "score": 2,
+      "stem": "[OSL-RUM-29] Jika terjadi lonjakan jumlah lulusan baru yang masuk ke pasar kerja (Angkatan Kerja bertambah) namun jumlah lowongan pekerjaan yang tersedia di pasar tidak bertambah (Penduduk Bekerja konstan), maka Tingkat Pengangguran Terbuka (TPT) dipastikan akan meningkat: $$TPT = \\left(1 - \\frac{PB}{AK}\\right) \\times 100\\%$$",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Berdasarkan formula: $$TPT = \\frac{AK - PB}{AK} \\times 100\\% = \\left(1 - \\frac{PB}{AK}\\right) \\times 100\\%$$ Jika $PB$ konstan dan $AK$ bertambah, maka rasio $PB/AK$ menurun, yang menyebabkan nilai $1 - (PB/AK)$ meningkat, sehingga TPT otomatis naik. (Sumber: Pertemuan 9 slide 8, 15)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Ukuran Sampel Februari vs Agustus)",
+      "score": 2,
+      "stem": "[OSL-RUM-30] Survei Angkatan Kerja Nasional (Sakernas) periode Agustus memiliki ukuran sampel yang jauh lebih besar dibandingkan periode Februari karena dirancang untuk menghasilkan data estimasi ketenagakerjaan hingga tingkat kabupaten/kota.",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Sakernas Februari dirancang untuk estimasi tingkat nasional dan provinsi (sampel sekitar 75.000 rumah tangga), sedangkan Sakernas Agustus dirancang untuk estimasi hingga tingkat kabupaten/kota dengan sampel yang jauh lebih masif (sekitar 300.000 rumah tangga). (Sumber: Pedoman Teknis Sakernas BPS; Pertemuan 9 slide 21)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    }
+  ]
+}

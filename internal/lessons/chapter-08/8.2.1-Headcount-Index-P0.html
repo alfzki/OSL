@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke) · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke)</h2><a href="#p-8.2.1">8.2.1 Headcount Index P0 ⭐</a></nav>
+<main>
+<h1>8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke)<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-8.2.1">
+<h2>8.2.1 Headcount Index P0 ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 21, 24-28]</div>
+<div class="box info">📌 <div class="rich"><p>Menghitung persentase penduduk miskin ($P_0$), memahami derivasi formal dari kerangka umum FGT ($\\alpha=0$), menganalisis disparitas spasial (perkotaan vs perdesaan), dan mengevaluasi kelemahan kritis $P_0$ terhadap aksioma Amartya Sen.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Persentase Penduduk Miskin (Headcount Index/P0): Kondef: Persentase penduduk miskin yang berada di bawah garis kemiskinan. Headcount Index secara sederhana mengukur proporsi yang dikategorikan miskin. Kegunaan: Mengetahui persentase penduduk yang dikategorikan miskin. Interpretasi: Angka yang ditunjukkan oleh HCI-P0 menunjukkan proporsi penduduk miskin di suatu wilayah. Persentase penduduk miskin yang tinggi menunjukkan bahwa tingkat kemiskinan di suatu wilayah juga tinggi. Sumber data: SUSENAS [slide 21].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Headcount Index ($P_0$) ibarat sensus hitung kepala secara biner: setiap orang diperiksa apakah pengeluarannya berada di bawah garis kemiskinan ($GK$). Jika ya, diberi label 1 (miskin); jika di atas atau sama dengan $GK$, diberi label 0 (tidak miskin). Setelah itu, seluruh angka 1 dijumlahkan dan dibagi dengan total seluruh orang yang ada di ruangan.</p>
+<p>Kelemahan intuitifnya sangat nyata: $P_0$ menganggap semua orang miskin 'sama miskinnya'. Seseorang yang kekurangan Rp1.000 untuk mencapai garis kemiskinan diperlakukan persis sama dengan gelandangan tunawisma yang tidak memiliki uang sepeser pun. Akibatnya, kepala daerah yang ingin angka kemiskinannya turun cepat akan tergoda hanya memberi bantuan kepada orang yang hampir mentas, bukan kepada mereka yang paling menderita.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Matematis: Kerangka Indeks Foster-Greer-Thorbecke (FGT)</p>
+<p>Indeks kemiskinan parametrik FGT (1984) didefinisikan secara umum sebagai [slide 20]:<br>$$P_\alpha = \frac{1}{n} \sum_{i=1}^q \left(\frac{z - y_i}{z}\right)^\alpha$$</p>
+<p>Dimana:<br>- $\alpha$: Parameter sensitivitas keengganan kemiskinan (*poverty aversion parameter*), $\alpha \ge 0$.<br>- $z$: Garis Kemiskinan ($GK$).<br>- $y_i$: Rata-rata pengeluaran per kapita sebulan penduduk miskin ke-$i$, dengan syarat $y_i &lt; z$.<br>- $q$: Banyaknya penduduk yang hidup di bawah garis kemiskinan ($q = \sum_{i=1}^n \mathbb{I}(y_i &lt; z)$).<br>- $n$: Jumlah total seluruh penduduk di wilayah tersebut (baik miskin maupun tidak miskin).</p>
+<p>### 2. Penurunan Formula Headcount Index ($P_0$)</p>
+<p>Dengan mensubstitusikan parameter $\alpha = 0$ ke dalam rumus umum FGT [slide 20]:<br>$$P_0 = \frac{1}{n} \sum_{i=1}^q \left(\frac{z - y_i}{z}\right)^0$$</p>
+<p>Karena untuk setiap bilangan riil tak-nol $a^0 = 1$, maka suku $\left(\frac{z - y_i}{z}\right)^0 = 1$ untuk seluruh $i = 1, 2, \dots, q$. Oleh karena itu:<br>$$P_0 = \frac{1}{n} \sum_{i=1}^q 1 = \frac{q}{n}$$</p>
+<p>Dalam bentuk persentase resmi publikasi BPS [slide 21]:<br>$$P_0 (\%) = \frac{q}{n} \times 100\%$$</p>
+<p>### 3. Data Empiris Nasional dan Disparitas Spasial (BPS September 2021) [slide 26, 27, 28]</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Wilayah</th><th>Jumlah Penduduk Miskin ($q$, ribu)</th><th>Persentase Penduduk Miskin ($P_0$, %)</th></tr></thead><tbody><tr><td><strong>Perkotaan (K)</strong></td><td>11.859</td><td>7,60%</td></tr><tr><td><strong>Perdesaan (D)</strong></td><td>14.644</td><td>12,53%</td></tr><tr><td><strong>Total Indonesia (K+D)</strong></td><td><strong>26.504</strong></td><td><strong>9,71%</strong></td></tr></tbody></table></div>
+<p>Fakta Kunci:<br>1. Total populasi penduduk Indonesia pada September 2021 adalah $n \approx \frac{26,504\text{ juta}}{0,0971} \approx 272,9\text{ juta orang}$ [slide 27].<br>2. Tingkat kemiskinan di perdesaan ($12,53\%$) jauh lebih tinggi dibandingkan di perkotaan ($7,60\%$).<br>3. Variasi Ekstrem Antar-Provinsi [slide 26, 28]:<br>   - Provinsi dengan $P_0$ terendah: Kalimantan Selatan ($4,56\%$), DKI Jakarta ($4,67\%$), Kep. Bangka Belitung ($4,67\%$), Bali ($4,72\%$).<br>   - Provinsi dengan $P_0$ tertinggi: Papua ($27,38\%$), Papua Barat ($21,82\%$), Nusa Tenggara Timur ($20,44\%$).</p>
+<p>### 4. Evaluasi Aksiomatis Amartya Sen terhadap $P_0$<br>Ukuran $P_0$ sangat populer karena kesederhanaan interpretasinya, namun memiliki dua kelemahan aksiomatis fatal:<br>1. <strong>Pelanggaran Aksioma Monotonisitas (*Monotonicity Axiom*)</strong>: Aksioma ini menyatakan bahwa jika pendapatan seseorang yang miskin berkurang, indeks kemiskinan harus meningkat. Pada $P_0$, jika pengeluaran orang miskin anjlok dari Rp400.000 menjadi Rp10.000, nilai $P_0$ tetap konstan karena jumlah kepala ($q$) tidak bertambah.<br>2. <strong>Pelanggaran Aksioma Transfer (*Transfer Axiom*)</strong>: Aksioma ini menyatakan bahwa jika terjadi transfer pendapatan murni dari seseorang yang sangat miskin kepada orang miskin lain yang lebih makmur, indeks kemiskinan harus meningkat. Pada $P_0$, transfer semacam itu tidak terdeteksi sama sekali, bahkan jika transfer itu mengangkat penerima melewati $GK$, nilai $P_0$ justru turun (memberikan ilusi kemajuan semu).</p></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan data Susenas September 2021, jumlah penduduk miskin di Indonesia tercatat sebanyak 26,50 juta orang dari perkiraan total populasi sebesar 272,90 juta orang. Berapakah nilai Headcount Index ($P_0$) nasional dan manakah pernyataan yang benar mengenai kelemahan indikator tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20-21, 27]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. P0 = 9,71%; P0 tidak mampu mendeteksi penurunan pengeluaran yang dialami oleh seseorang yang sudah berstatus miskin.</button>
+<button class="ex-opt" data-i="1">B. P0 = 12,53%; P0 sangat sensitif terhadap perubahan ketimpangan di antara sesama penduduk miskin.</button>
+<button class="ex-opt" data-i="2">C. P0 = 7,60%; P0 memenuhi Transfer Axiom dari Amartya Sen.</button>
+<button class="ex-opt" data-i="3">D. P0 = 9,71%; P0 secara otomatis mengukur biaya fiskal yang dibutuhkan untuk mengentaskan kemiskinan.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Nilai $P_0$ nasional = $\frac{q}{n} \times 100\% = \frac{26,50}{272,90} \times 100\% = 9,71\%$ [slide 27].<br>2. Kelemahan mendasar dari $P_0$ adalah melanggar *Monotonicity Axiom*: jika pengeluaran seseorang yang sudah miskin makin memburuk, nilai $P_0$ tidak berubah sama sekali karena jumlah penduduk di bawah garis kemiskinan ($q$) tetap sama [slide 21].</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;q=5 orang, P0=0.25 (atau 25%)&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Dalam suatu survei sampel di sebuah desa terpencil berpopulasi $n = 20$ orang, tercatat data pengeluaran per kapita bulanan (dalam ribuan rupiah) sbb:<br><code>[280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]</code>.<br>Jika Garis Kemiskinan ($z$) desa tersebut ditetapkan sebesar Rp500.000 ($z = 500$ ribu rupiah):<br>1. Tentukan jumlah penduduk miskin ($q$).<br>2. Hitunglah nilai Headcount Index ($P_0$) baik dalam proporsi desimal maupun persentase.<br>Tuliskan jawaban akhir dalam format: <code>q=... orang, P0=... (atau ...%)</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 24]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah penyelesaian:<br>1. <strong>Identifikasi Penduduk Miskin ($y_i &lt; z$)</strong>:<br>   - Garis Kemiskinan $z = 500$ ribu rupiah.<br>   - Penduduk dengan pengeluaran di bawah 500 adalah: 280, 310, 350, 420, 480.<br>   - Jumlah penduduk miskin ($q$) = 5 orang.<br>2. <strong>Kalkulasi $P_0$</strong>:<br>   - Total populasi ($n$) = 20 orang.<br>   - $P_0 = \frac{q}{n} = \frac{5}{20} = 0,25$ atau $25\%$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>y = [280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]<br>z = 500<br>poor = [val for val in y if val &lt; z]<br>q = len(poor) # 5<br>n = len(y) # 20<br>p0 = q / n # 0.25<br>print(f'q={q} orang, P0={p0:.2f} (atau {p0*100:.0f}%)')<br># Output: q=5 orang, P0=0.25 (atau 25%)<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Kesalahan Pembagi Populasi ($n$)</strong>: Seringkali mahasiswa membagi jumlah orang miskin ($q$) dengan jumlah angkatan kerja atau jumlah kepala rumah tangga. Pembagi wajib seluruh populasi individu ($n$).</li><li><strong>Kelemahan Kebijakan Mentas Sesaat (*Cream-Skimming Policy*)</strong>: Soal analisis esai sering menanyakan mengapa program bantuan sosial yang hanya mengejar penurunan $P_0$ dinilai bias keadilan sosial. Jawabannya: karena target sasaran akan diprioritaskan pada kelompok berjarak pengeluaran paling tipis di bawah garis kemiskinan (*near-poor*), sedangkan mereka yang miskin ekstrem ditinggalkan.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>P0 = q / n (Hitung Kepala). Mudah dipahami publik, tetapi buta terhadap kedalaman dan keparahan derita kemiskinan.</p></div></div>
+<div class="links">Keterkaitan Konsep: 8.1.1, 8.2.2, 8.2.3</div>
+<button class="donebtn" data-id="8.2.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-29",
+  "chapter": 11,
+  "chapter_title": "Pertemuan 11: Statistik Produksi Pertanian dan Industri",
+  "source": "internal/textbook/chapter-11.md",
+  "expected_points": 5,
+  "lecture_json_files": 5,
+  "lecture_points": 5,
+  "figures": 0,
+  "tables": 5,
+  "examples": 10,
+  "source_markers": {
+    "visual": true,
+    "example": false,
+    "formula": true
+  },
+  "status": "pass",
+  "verdict": "pass",
+  "issues": []
+}

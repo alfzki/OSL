@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 11: Statistik Produksi Pertanian dan Industri · Modul Kuliah</title>
+<script>
+(function(){try{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{localStorage.setItem('esb-theme',t);}catch(e){}}
+function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}
+</script>
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 14px; color: #374151; margin: 0 0 10px; }
+  #toc .toc-sec { display: flex; align-items: center; gap: 4px; padding: 8px 4px 4px;
+                  font-weight: 600; font-size: 12px; color: #4b5563; line-height: 1.5; }
+  #toc .toc-sec + .toc-sec { border-top: 1px solid #e5e7eb; margin-top: 6px; padding-top: 10px; }
+  #toc .modetag-mini { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 99px;
+                        background: #eef2ff; color: #4338ca; font-weight: 400; line-height: 1.6; }
+  #toc a { display: block; padding: 3px 8px; margin-left: 4px; color: #374151; text-decoration: none;
+            border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  div.ch-sec { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+  div.ch-sec:last-child { border-bottom: none; }
+  h2.sec-title { font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>Pertemuan 11: Statistik Produksi Pertanian dan Industri <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2><div class="toc-sec">11.1 Estimasi Produksi Tanaman Pangan<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-11.1.1">11.1.1 Kerangka Sampel Area KSA Padi ⭐</a>
+<a href="#p-11.1.2">11.1.2 Metode Ubinan Produktivitas ⭐</a>
+<a href="#p-11.1.3">11.1.3 Survei Konversi Gabah ke Beras SKGB</a>
+<div class="toc-sec">11.2 Statistik Industri Pengolahan<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-11.2.1">11.2.1 Survei Industri Besar dan Sedang IBS</a>
+<a href="#p-11.2.2">11.2.2 Survei Industri Mikro dan Kecil IMK</a></nav>
+<main>
+<h1>Pertemuan 11: Statistik Produksi Pertanian dan Industri</h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》 ｜ 2 Bagian ｜ 5 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 10 Butir ｜ Kerjakan mandiri sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<div class="ch-sec" id="sec-11.1-Estimasi-Produksi-Tanaman-Pangan">
+<h2 class="sec-title">11.1 Estimasi Produksi Tanaman Pangan<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-11.1.1">
+<h2>11.1.1 Kerangka Sampel Area KSA Padi ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 4-18]</div>
+<div class="box info">📌 <div class="rich"><p>Prinsip dasar Kerangka Sampel Area (KSA), stratifikasi Lahan Baku Sawah (LBS), struktur hierarki segmen (300m x 300m) dan subsegmen (100m x 100m), 9 titik amatan koordinat GPS, klasifikasi fase pertumbuhan padi, serta peramalan luas panen 1-3 bulan ke depan.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Metode Pengumpulan Data 'Eye Estimate' bersifat Subjective Measurement digantikan dengan Pengukuran Objective Measurement yaitu Kerangka Sampel Area (KSA). KSA merupakan kumpulan sampel area (segmen) dengan ukuran tertentu dalam suatu wilayah administrasi yang mewakili suatu populasi (area pertanian/sawah). Merupakan kombinasi sistem informasi geografis, penginderaan jauh, teknologi informasi, dan statistika menjadi satu kolaborasi harmonis [slide 10, 13]. Fase pertumbuhan padi hasil pengamatan KSA untuk kerangka sampel subsegmen mencakup Vegetatif awal (V1), Vegetatif akhir (V2), Generatif awal (G1), Generatif akhir (G2), dan Panen [slide 15].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Sebelum KSA diterapkan pada tahun 2018, BPS mengandalkan laporan eye-estimate (pandangan mata) dari ribuan Mantri Tani di tingkat kecamatan. Metode ini rentan terhadap bias subjektif, kepentingan birokrasi, dan seringkali menghasilkan over-estimate luas panen beras nasional hingga jutaan ton. KSA mengubah pendekatan dari 'menilai menurut perkiraan manusia' menjadi 'pengukuran berbasis bukti spasial objektif'. Setiap hamparan sawah dibagi menjadi petak-petak grid koordinat berukuran 300 m x 300 m (segmen). Pada minggu terakhir setiap bulan (tanggal 21-27), petugas lapangan memotret 9 titik tetap di dalam segmen menggunakan smartphone berbasis GPS. Dari foto-foto ini, fase tumbuh padi (vegetatif, generatif, panen, persiapan lahan, atau puso) dicatat secara presisi dan diaudit secara digital oleh server pusat.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Metodologis dan Arsitektur Sampling KSA</p>
+<p>Kerangka Sampel Area (KSA) dikembangkan melalui kerja sama BPS, BPPT (sekarang BRIN), Kementerian ATR/BPN, Badan Informasi Geospasial (BIG), dan LAPAN (BRIN) untuk memperbaiki estimasi luas panen padi nasional [slide 10, 13].</p>
+<p>#### A. Stratifikasi Populasi Lahan Baku Sawah (LBS)<br>Populasi sampling dibangun menggunakan peta spasial Lahan Baku Sawah (LBS) termutakhir hasil integrasi citra satelit resolusi tinggi. Populasi dikelompokkan ke dalam beberapa stratum berdasarkan intensitas pertanaman dan potensi sawah:<br>- <strong>Stratum Sawah Irigasi</strong>: Intensitas tanam tinggi (IP 200–300).<br>- <strong>Stratum Sawah Non-Irigasi / Tadah Hujan</strong>: Intensitas tanam sedang (IP 100–150).<br>- <strong>Stratum Lahan Bukan Sawah Berpotensi / Lahan Kering</strong>.</p>
+<p>#### B. Hierarki Satuan Sampling<br>1. <strong>Segmen (Sampling Unit)</strong>:<br>   - Berukuran bujur sangkar $300\text{ m} \times 300\text{ m}$ (luas $90.000\text{ m}^2 = 9\text{ hektar}$) [slide 14].<br>   - Dipilih secara acak terstratifikasi (*Stratified Systematic Sampling*) dari grid LBS pada masing-masing kabupaten/kota.<br>2. <strong>Subsegmen (Observation Unit / Grid Amatan)</strong>:<br>   - Setiap segmen dibagi secara teratur menjadi 9 subsegmen berukuran $100\text{ m} \times 100\text{ m}$ ($10.000\text{ m}^2 = 1\text{ hektar}$) [slide 15, 21].<br>   - Diberi kode indeks posisi $A_1, A_2, A_3, B_1, B_2, B_3, C_1, C_2, C_3$.<br>3. <strong>Titik Pengamatan (Sample Point Coordinates)</strong>:<br>   - Di setiap subsegmen terdapat 1 titik koordinat pengamatan tetap (total 9 titik per segmen).<br>   - Petugas mengambil foto lapangan dengan kamera ponsel Android ber-GPS pada sudut pandang tertentu dengan batas toleransi radius maksimum 10–15 meter dari titik koordinat nominal [slide 15].</p>
+<p>### 2. Klasifikasi Fase Pertumbuhan Padi dan Horison Proyeksi Panen</p>
+<p>Setiap titik amatan pada minggu terakhir tiap bulan diklasifikasikan ke dalam salah satu fase biologis [slide 15, 16]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Kode Fase</th><th>Deskripsi Fase Biologis</th><th>Karakteristik Visual Lapangan</th><th>Horison Waktu Menuju Panen</th></tr></thead><tbody><tr><td><strong>V1</strong></td><td>Vegetatif Awal (1–30 HST)</td><td>Semai, pindah tanam, daun muda, rumpun kecil, air sawah terlihat dominan</td><td>Panen 3 bulan berikutnya ($t+3$)</td></tr><tr><td><strong>V2</strong></td><td>Vegetatif Akhir (31–60 HST)</td><td>Anakan maksimal, kanopi daun rimbun hijau pekat menutup permukaan air</td><td>Panen 2 bulan berikutnya ($t+2$)</td></tr><tr><td><strong>G1</strong></td><td>Generatif Awal (61–90 HST)</td><td>Bunting, keluar malai (flowering), tanaman berwarna hijau kekuningan</td><td>Panen 2 bulan berikutnya ($t+2$)</td></tr><tr><td><strong>G2</strong></td><td>Generatif Akhir (91–105 HST)</td><td>Pengisian bulir, malai merunduk, bulir menguning matang fisiologis</td><td>Panen 1 bulan berikutnya ($t+1$)</td></tr><tr><td><strong>P</strong></td><td>Panen (Harvesting)</td><td>Sedang dilakukan pemotongan padi, tumpukan jerami, perontokan</td><td><strong>Panen bulan berjalan ($t$)</strong></td></tr><tr><td><strong>PL</strong></td><td>Persiapan Lahan</td><td>Olah tanah, pembajakan, pelumpuran, sawah tergenang tanpa tanaman</td><td>Panen 4 bulan berikutnya ($t+4$)</td></tr><tr><td><strong>PS</strong></td><td>Puso / Gagal Panen</td><td>Tanaman kering/rusak total akibat banjir, kekeringan, atau hama</td><td>Tidak menghasilkan panen</td></tr><tr><td><strong>BP / BS</strong></td><td>Bukan Padi / Bukan Sawah</td><td>Lahan ditanami palawija/tebu atau beralih fungsi bangunan/kolam</td><td>Dikeluarkan dari estimasi padi</td></tr></tbody></table></div>
+<p>### 3. Formulasi Estimasi Luas Panen BPS</p>
+<p>Misalkan suatu wilayah administratif (kabupaten/provinsi) memiliki $H$ stratum tutupan lahan sawah. Untuk stratum ke-$h$:<br>- $A_h$ : Total luas Lahan Baku Sawah (LBS) pada stratum $h$ (hektar).<br>- $n_h$ : Jumlah segmen sampel terpilih pada stratum $h$.<br>- $M_i = 9$ : Jumlah titik amatan pada segmen ke-$i$.<br>- $y_{hij} \in \{0, 1\}$ : Nilai biner indikator apakah titik amatan ke-$j$ pada segmen ke-$i$ stratum $h$ berada pada fase panen (1 jika panen, 0 jika lainnya).</p>
+<p>Proporsi titik panen pada stratum $h$ dihitung sebagai:<br>$$\hat{p}_{h,\text{panen}} = \frac{\sum_{i=1}^{n_h} \sum_{j=1}^{9} y_{hij}}{9 \cdot n_h}$$</p>
+<p>Total estimasi luas panen pada periode bulan amatan berjalan ($t$) adalah:<br>$$\hat{A}_{\text{panen}} = \sum_{h=1}^H A_h \cdot \hat{p}_{h,\text{panen}}$$</p>
+<p>Untuk peramalan potensi luas panen 1 bulan ke depan ($t+1$), proporsi dihitung dari titik-titik yang berada pada fase Generatif Akhir (G2):<br>$$\hat{A}_{\text{panen}}^{(t+1)} = \sum_{h=1}^H A_h \cdot \hat{p}_{h,G2}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam pelaksanaan Kerangka Sampel Area (KSA) oleh BPS, pengamatan fase pertumbuhan padi dilakukan pada akhir bulan berjalan. Jika pada akhir bulan Maret seorang pencacah KSA mencatat suatu titik amatan berada pada fase Generatif Akhir (G2: pengisian bulir dan malai menguning), pada bulan apakah titik tersebut diproyeksikan akan memasuki fase Panen (P)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 13-16]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Bulan Maret (bulan berjalan)</button>
+<button class="ex-opt" data-i="1">B. Bulan April (1 bulan berikutnya)</button>
+<button class="ex-opt" data-i="2">C. Bulan Mei (2 bulan berikutnya)</button>
+<button class="ex-opt" data-i="3">D. Bulan Juni (3 bulan berikutnya)</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan siklus biologis padi pada KSA BPS [Slide 15, 16], fase Generatif Akhir (G2) terjadi pada umur 91–105 hari setelah tanam, yaitu masa pematangan bulir gabah.<br>2. Titik amatan yang berada pada fase G2 pada akhir bulan Maret diproyeksikan akan dipanen pada 1 bulan berikutnya, yaitu bulan <strong>April</strong>.<br>3. Sebagai perbandingan:<br>   - Fase V1 (Maret) diproyeksikan panen bulan Juni (3 bulan berikutnya).<br>   - Fase V2/G1 (Maret) diproyeksikan panen bulan Mei (2 bulan berikutnya).<br>   - Fase G2 (Maret) diproyeksikan panen bulan April (1 bulan berikutnya).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Mei=6750 ha, Juni=9000 ha, Juli=11250 ha&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Suatu kabupaten memiliki luas Lahan Baku Sawah (LBS) sebesar 45.000 hektar. Terpilih 200 segmen sampel KSA (masing-masing 9 titik amatan, total 1.800 titik amatan). Pada putaran amatan akhir Mei, tercatat 270 titik berada pada fase Panen (P), 360 titik pada fase Generatif Akhir (G2), dan 450 titik pada fase Vegetatif Akhir/Generatif Awal (V2/G1). Tentukan estimasi luas panen bulan Mei serta proyeksi luas panen bulan Juni dan Juli dalam format: <code>Mei=X ha, Juni=Y ha, Juli=Z ha</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 10-16]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Total titik amatan = $200 \times 9 = 1.800\text{ titik}$.<br>2. <strong>Luas Panen Bulan Mei</strong>:<br>   - Titik panen = 270 titik.<br>   - Proporsi panen Mei = $270 / 1.800 = 0,15$ (15%).<br>   - Luas Panen Mei = $0,15 \times 45.000\text{ ha} = 6.750\text{ ha}$.<br>3. <strong>Proyeksi Luas Panen Bulan Juni (dari fase G2)</strong>:<br>   - Titik G2 = 360 titik.<br>   - Proporsi panen Juni = $360 / 1.800 = 0,20$ (20%).<br>   - Luas Panen Juni = $0,20 \times 45.000\text{ ha} = 9.000\text{ ha}$.<br>4. <strong>Proyeksi Luas Panen Bulan Juli (dari fase V2/G1)</strong>:<br>   - Titik V2/G1 = 450 titik.<br>   - Proporsi panen Juli = $450 / 1.800 = 0,25$ (25%).<br>   - Luas Panen Juli = $0,25 \times 45.000\text{ ha} = 11.250\text{ ha}$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>A_1 = 45000<br>total_pts = 200 * 9<br>p_mei = 270 / total_pts<br>luas_mei = p_mei * A_1<br>p_jun = 360 / total_pts<br>luas_jun = p_jun * A_1<br>p_jul = 450 / total_pts<br>luas_jul = p_jul * A_1<br>print(f'Mei={luas_mei:.0f} ha, Juni={luas_jun:.0f} ha, Juli={luas_jul:.0f} ha')<br># Output: Mei=6750 ha, Juni=9000 ha, Juli=11250 ha<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Hirarki Dimensi Segmen vs Subsegmen</strong>: Sering tertukar antara luas segmen (9 ha / 300m x 300m) dan subsegmen (1 ha / 100m x 100m). Pengamatan fase padi dilakukan di tingkat subsegmen (9 titik amatan per segmen).</li><li><strong>Jebakan Proyeksi Waktu Panen</strong>: Menjawab bahwa fase vegetatif awal (V1) akan panen 1 bulan kemudian. Siklus hidup padi normal adalah 110–120 hari (~3,5 s.d. 4 bulan). V1 panen 3 bulan ke depan, V2/G1 panen 2 bulan ke depan, dan hanya G2 yang diproyeksikan panen pada bulan berikutnya ($t+1$).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Segmen 300x300m (9 ha), Subsegmen 100x100m (1 ha), 9 titik foto GPS akhir bulan: V1 panen 3 bln, V2/G1 panen 2 bln, G2 panen 1 bln.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.1.2, 11.1.3</div>
+<button class="donebtn" data-id="11.1.1"></button>
+</section>
+<section class="point" id="p-11.1.2">
+<h2>11.1.2 Metode Ubinan Produktivitas ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 19-27]</div>
+<div class="box info">📌 <div class="rich"><p>Teknik survei ubinan objektif BPS, dimensi plot bujur sangkar 2,5 m x 2,5 m (6,25 m2), penimbangan Gabah Kering Panen (GKP), turunan matematis multiplier 1.600 (kg/ha), 16 (ku/ha), dan 1,6 (ton/ha), serta rekonstruksi soal UAS 2022/2023 Esai 2a Pak Sakri.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Pengukuran dilakukan oleh Petugas BPS Kab/Kota (KSK) dan petugas Dinas Pertanian Kab/Kota (Mantri Tani/KCD/PPL). Frekuensi pengumpulan data: caturwulan/subround. Pengukuran produksi tanaman pangan menggunakan alat ubinan. Untuk satu plot berukuran 2,5 m x 2,5 m. Hasilnya untuk estimasi produksi per hektar [slide 10]. Pelaksanaan Survei Ubinan di lapangan: Alat Ubinan, Memasang Alat, Memanen Plot Ubinan 2,5m x 2,5m, Merontok, Membersihkan, Menimbang [slide 20]. Plot Ubinan: Luas Plot = 6,25 m2. Produktivitas kuintal per ha (GKP) = (3,1 / 100) : (6,25 / 10000) = (3,1 / 100) x (10000 / 6,25) = 3,1 x 16 = 49,60 ku/ha [slide 23].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bagaimana cara BPS mengetahui produktivitas panen padi tanpa harus menimbang seluruh hasil sawah berhektar-hektar? BPS menerapkan metode ubinan (crop-cutting survey). Petak cuplikan representatif berukuran bujur sangkar 2,5 m x 2,5 m (6,25 m2) dipasang secara acak di lahan sawah yang sedang dipanen. Seluruh rumpun padi di dalam petak dipotong, dirontokkan, dibersihkan dari hampa, lalu ditimbang dengan timbangan gantung terkalibrasi. Karena 1 hektar sama dengan 10.000 m2, maka 1 hektar memuat persis 10.000 / 6,25 = 1.600 petak ubinan, sehingga hasil timbangan dalam kilogram dapat langsung dikonversi menjadi produktivitas per hektar.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Metodologi Survei Ubinan BPS</p>
+<p>Survei Ubinan Padi adalah survei berbasis rumah tangga dan petak sawah yang bertujuan untuk mengukur produktivitas per hektar tanaman pangan secara objektif pada saat panen raya [slide 10, 20].</p>
+<p>#### A. Unit Sampling dan Unit Observasi<br>- <strong>Kerangka Sampel</strong>: Menggunakan subsegmen terpilih hasil amatan Kerangka Sampel Area (KSA) yang berada pada fase siap panen [slide 21].<br>- <strong>Unit Sampling</strong>: Subsegmen KSA berukuran $100\text{ m} \times 100\text{ m}$ [slide 21].<br>- <strong>Unit Observasi</strong>: Plot ubinan yang dipasang di petak sawah petani terpilih [slide 21].</p>
+<p>#### B. Standar Operasional Prosedur (SOP) Ubinan<br>Pelaksanaan ubinan di lapangan mengikuti 6 tahapan baku [slide 20]:<br>1. <strong>Memasang Alat Ubinan</strong>: Alat ubinan berbahan pipa besi/paralon berukuran bujur sangkar $2,5\text{ m} \times 2,5\text{ m}$ dibentangkan di petak sawah. Sudut penempatan ditentukan secara acak menggunakan tabel angka acak (berdasarkan panjang pematang barat dan utara).<br>2. <strong>Memotong/Memanen</strong>: Seluruh rumpun tanaman padi yang pangkal batangnya berada di dalam batas tali alat ubinan dipotong.<br>3. <strong>Merontok</strong>: Gabah dirontokkan dari malainya menggunakan perontok manual atau mekanis (*thresher*).<br>4. <strong>Membersihkan</strong>: Gabah diayak untuk memisahkan kotoran, daun, dan bulir hampa.<br>5. <strong>Menimbang</strong>: Gabah bersih ditimbang dengan timbangan gantung berskala ketelitian 0,05 kg atau 0,1 kg dalam wujud <strong>Gabah Kering Panen (GKP)</strong>.</p>
+<p>### 2. Penurunan Matematis Faktor Pengali (Multiplier) Ubinan</p>
+<p>Misalkan:<br>- Ukuran plot ubinan: sisi bujur sangkar $s = 2,5\text{ meter}$.<br>- Luas plot ubinan: $A_{\text{plot}} = 2,5\text{ m} \times 2,5\text{ m} = 6,25\text{ m}^2$ [slide 23].<br>- Luas standar satu hektar: $A_{\text{ha}} = 10.000\text{ m}^2$.<br>- Hasil timbangan plot ubinan: $b\text{ kg GKP}$.</p>
+<p>#### A. Konversi ke Satuan Kilogram per Hektar (kg/ha)<br>$$\text{Produktivitas (kg/ha)} = \frac{b}{A_{\text{plot}}} \times A_{\text{ha}} = \frac{b}{6,25} \times 10.000 = b \times 1.600$$<br>Faktor pengali ke kg/ha adalah <strong>1.600</strong> [slide 23].</p>
+<p>#### B. Konversi ke Satuan Kuintal per Hektar (ku/ha)<br>Karena $1\text{ kuintal (ku)} = 100\text{ kg}$:<br>$$\text{Produktivitas (ku/ha)} = \frac{b \times 1.600}{100} = b \times 16$$<br>Faktor pengali ke ku/ha adalah <strong>16</strong> [slide 23].</p>
+<p>#### C. Konversi ke Satuan Ton per Hektar (ton/ha)<br>Karena $1\text{ ton} = 1.000\text{ kg}$:<br>$$\text{Produktivitas (ton/ha)} = \frac{b \times 1.600}{1.000} = b \times 1,6$$<br>Faktor pengali ke ton/ha adalah <strong>1,6</strong> [slide 11, 23].</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Satuan Target Produktivitas</th><th>Formulasi Lengkap</th><th>Faktor Pengali ($b = \text{berat kg}$)</th><th>Nilai untuk $b = 4,5\text{ kg}$</th></tr></thead><tbody><tr><td><strong>Kilogram per Hektar (kg/ha)</strong></td><td>$\frac{b}{6,25} \times 10.000$</td><td>$b \times 1.600$</td><td>$7.200\text{ kg/ha}$</td></tr><tr><td><strong>Kuintal per Hektar (ku/ha)</strong></td><td>$\frac{b / 100}{6,25 / 10.000}$</td><td>$b \times 16$</td><td>$72,0\text{ ku/ha}$</td></tr><tr><td><strong>Ton per Hektar (ton/ha)</strong></td><td>$\frac{b / 1.000}{6,25 / 10.000}$</td><td>$b \times 1,6$</td><td>$7,2\text{ ton/ha}$</td></tr></tbody></table></div>
+<p>### 3. Estimasi Produksi Agregat Tingkat Wilayah</p>
+<p>Produksi gabah tingkat kabupaten/kota dihitung sebagai hasil kali estimasi luas panen KSA dengan produktivitas ubinan [slide 11, 12]:<br>$$P_k = L_k \times Y_k$$<br>di mana $L_k$ adalah luas panen kabupaten $k$ (ha) dan $Y_k$ adalah produktivitas kabupaten $k$ (ton/ha).</p>
+<p>Untuk tingkat provinsi dan nasional, angka produktivitas <strong>bukan rata-rata sederhana</strong>, melainkan rata-rata tertimbang (*weighted average*) [slide 11, 12]:<br>$$Y_{\text{prov}} = \frac{\sum_{k=1}^K P_k}{\sum_{k=1}^K L_k} = \frac{\sum_{k=1}^K L_k \cdot Y_k}{\sum_{k=1}^K L_k}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam suatu survei ubinan komoditas padi dengan plot baku berukuran 2,5 m x 2,5 m, timbangan Gabah Kering Panen (GKP) menunjukkan angka 3,5 kg. Berapakah produktivitas lahan sawah tersebut dalam satuan kuintal per hektar (ku/ha) dan ton per hektar (ton/ha)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 23]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 56,0 ku/ha dan 5,6 ton/ha</button>
+<button class="ex-opt" data-i="1">B. 56,0 ku/ha dan 0,56 ton/ha</button>
+<button class="ex-opt" data-i="2">C. 35,0 ku/ha dan 3,5 ton/ha</button>
+<button class="ex-opt" data-i="3">D. 5.600 ku/ha dan 56 ton/ha</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Luas plot ubinan = $2,5\text{ m} \times 2,5\text{ m} = 6,25\text{ m}^2$.<br>2. Multiplier ke 1 hektar ($10.000\text{ m}^2$):<br>   - Ke kg/ha: $10.000 / 6,25 = 1.600$.<br>   - Ke ku/ha: $1.600 / 100 = 16$.<br>   - Ke ton/ha: $1.600 / 1.000 = 1,6$.<br>3. Produktivitas ku/ha = $3,5 \times 16 = 56,0\text{ ku/ha}$.<br>4. Produktivitas ton/ha = $3,5 \times 1,6 = 5,6\text{ ton/ha}$.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;ku/ha=72.0, ton/ha=7.2, total=18.0 ton&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Rekonstruksi UAS OSL 2022/2023 Esai 2a: Pak Sakri memanen sawahnya seluas 2,5 hektar di Sukoharjo. Petugas memasang alat ubinan 2,5 m x 2,5 m secara acak dan memperoleh berat timbangan gabah (GKP) sebesar 4,5 kg. Hitunglah produktivitas sawah dalam ku/ha, ton/ha, dan total produksi gabah (GKP) yang dipanen dari lahan seluas 2,5 ha tersebut. Tuliskan jawaban dalam format: <code>ku/ha=X, ton/ha=Y, total=Z ton</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 20-23]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Luas plot ubinan = $2,5 \times 2,5 = 6,25\text{ m}^2$.<br>2. Faktor pengali (multiplier):<br>   - Multiplier kg/ha = $10.000 / 6,25 = 1.600$.<br>   - Multiplier ku/ha = $1.600 / 100 = 16$.<br>   - Multiplier ton/ha = $1.600 / 1.000 = 1,6$.<br>3. Produktivitas ku/ha = $4,5 \times 16 = 72,0\text{ ku/ha}$.<br>4. Produktivitas ton/ha = $4,5 \times 1,6 = 7,2\text{ ton/ha}$.<br>5. Total estimasi produksi gabah (GKP) untuk lahan seluas 2,5 ha:<br>   $$\text{Total Produksi} = 2,5\text{ ha} \times 7,2\text{ ton/ha} = 18,0\text{ ton}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>b = 4.5<br>luas_plot = 2.5 * 2.5<br>mult_kg = 10000.0 / luas_plot<br>kg_ha = b * mult_kg<br>ku_ha = kg_ha / 100.0<br>ton_ha = kg_ha / 1000.0<br>total_prod = ton_ha * 2.5<br>print(f'ku/ha={ku_ha:.1f}, ton/ha={ton_ha:.1f}, total={total_prod:.1f} ton')<br># Output: ku/ha=72.0, ton/ha=7.2, total=18.0 ton<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Satuan Kuintal vs Ton</strong>: Sering terjadi kesalahan fatal di mana mahasiswa menghitung $b \times 16 = 72$ kemudian memberi label 72 ton/ha. Ingat: 16 adalah pengali kuintal/ha (ku/ha), sedangkan pengali ton/ha adalah 1,6 (hasilnya 7,2 ton/ha).</li><li><strong>Rata-rata Produktivitas Provinsi</strong>: Menghitung produktivitas provinsi dengan menjumlahkan produktivitas kabupaten lalu membaginya dengan jumlah kabupaten. Hal ini salah; produktivitas provinsi wajib dihitung sebagai total produksi provinsi dibagi total luas panen provinsi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Plot ubinan 2,5 x 2,5 m (6,25 m2): kali 1.600 jadi kg/ha, kali 16 jadi ku/ha, kali 1,6 jadi ton/ha.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.1.1, 11.1.3</div>
+<button class="donebtn" data-id="11.1.2"></button>
+</section>
+<section class="point" id="p-11.1.3">
+<h2>11.1.3 Survei Konversi Gabah ke Beras SKGB</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 20-24]</div>
+<div class="box info">📌 <div class="rich"><p>Alur konversi gabah menjadi beras hasil SKGB 2018 BPS, parameter rendemen GKP ke GKG (83,38%), rendemen GKG ke Beras (64,02%), perhitungan produktivitas beras per hektar, serta dampaknya terhadap estimasi ketersediaan pangan nasional.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Hasil ubinan berbentuk GKP dikonversi menjadi GKG dengan angka konversi hasil survei tahun 2005-2007. Sedang dikembangkan metode ubinan untuk pola tanam Jajar Legowo. Dilakukan Survei Konversi Gabah ke Beras (SKGB) pada tahun 2018 [slide 10]. Alur Konversi Gabah Menjadi Beras: 83,38% (GKP ke GKG) dan 64,02% (GKG ke Beras) [slide 22]. Produktivitas kuintal per ha (GKG) = 49,60 x 0,8338 = 41,356 ku/ha dalam bentuk GKG. Konversi GKP ke GKG = 0,8338; Konversi GKG ke beras = 0,6402. Produksi Beras (ku) untuk sawah seluas 1 ha ABCD = (41,356 x 1) x 0,6402 = 26,476 kuintal beras [slide 23].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa angka konversi SKGB sangat krusial dalam statistik pangan nasional? Ketika survei ubinan dilakukan di sawah, hasil panen yang ditimbang adalah Gabah Kering Panen (GKP) yang masih basah dan belum dapat dikonsumsi. Masyarakat mengonsumsi beras, bukan gabah. Untuk menghitung neraca pangan beras nasional, BPS harus mengetahui secara persis berapa kilogram beras yang dihasilkan dari setiap kilogram gabah basah. Terdapat dua proses penyusutan fisik: penjemuran (pengurangan kadar air dari GKP ke GKG) dan penggilingan (pemisahan sekam dan dedak dari GKG ke beras).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Latar Belakang SKGB 2018</p>
+<p>Untuk menyelaraskan data produksi beras nasional dengan data konsumsi Susenas, BPS bersama Kementerian Pertanian dan instansi terkait memperbarui angka konversi produksi beras melalui <strong>Survei Konversi Gabah ke Beras (SKGB) 2018</strong> [slide 10, 22]. Angka ini menggantikan angka konversi lama hasil survei tahun 2005–2007 yang dinilai sudah tidak mencerminkan efisiensi mesin penggilingan modern (*Rice Milling Unit* / RMU) dan varietas benih padi unggul mutakhir [slide 10].</p>
+<p>### 2. Tahapan Rantai Pasok Konversi Gabah ke Beras</p>
+<p>Rantai transformasi fisik gabah menuju beras siap konsumsi terdiri atas dua tahapan utama [slide 22, 23]:</p>
+<p>```<br>[Gabah Kering Panen / GKP]<br>        │<br>        ▼  (Proses Penjemuran / Pengeringan: Susut Air 16,62%)<br>[Gabah Kering Giling / GKG]  ── Rendemen: 83,38% (0,8338)<br>        │<br>        ▼  (Proses Penggilingan / RMU: Sekam &amp; Dedak 35,98%)<br>[Beras Siap Konsumsi]       ── Rendemen: 64,02% (0,6402)<br>```</p>
+<p>#### A. Gabah Kering Panen (GKP) ke Gabah Kering Giling (GKG)<br>- <strong>Definisi Mutu</strong>: GKP memiliki kadar air sekitar $20\% - 25\%$ dan kotoran $&gt;3\%$. Melalui penjemuran alami atau mesin pengering (*dryer*), gabah dikeringkan hingga mencapai kadar air maksimum $14\%$ dan kotoran maksimum $3\%$, yang disebut GKG.<br>- <strong>Angka Konversi Resmi BPS ($K_{\text{GKP}\to\text{GKG}}$)</strong>: <strong>$83,38\%$</strong> ($0,8338$) [slide 22, 23].<br>- <strong>Tingkat Susut Bobot</strong>: $100\% - 83,38\% = 16,62\%$ (penguapan air dan pembersihan kotoran ringan).</p>
+<p>#### B. Gabah Kering Giling (GKG) ke Beras Giling<br>- <strong>Definisi Mutu</strong>: GKG dimasukkan ke dalam mesin penggilingan (*huller* dan *polisher*) untuk mengupas kulit luar (sekam $20\% - 22\%$) dan lapisan aleuron (bekatul/dedak $8\% - 10\%$) menghasilkan butir beras sosoh siap masak.<br>- <strong>Angka Konversi Resmi BPS ($K_{\text{GKG}\to\text{Beras}}$)</strong>: <strong>$64,02\%$</strong> ($0,6402$) [slide 22, 23].<br>- <strong>Tingkat Susut Penggilingan</strong>: $100\% - 64,02\% = 35,98\%$.</p>
+<p>#### C. Angka Konversi Gabungan (Direct Multiplier GKP ke Beras)<br>$$\begin{aligned}
+K_{\text{GKP}\to\text{Beras}} &amp;= K_{\text{GKP}\to\text{GKG}} \times K_{\text{GKG}\to\text{Beras}} \\
+&amp;= 0,8338 \times 0,6402 \\
+&amp;= 0,53379876 \approx 53,38\%
+\end{aligned}$$<br>Setiap $100\text{ kg}$ gabah basah yang baru dipotong di sawah rata-rata menghasilkan sekitar $53,38\text{ kg}$ beras siap konsumsi.</p>
+<p>### 3. Matriks Perbandingan Parameter Konversi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Bentuk Komoditas</th><th>Kadar Air Rata-rata</th><th>Rendemen terhadap Tahap Sebelumnya</th><th>Rendemen Kumulatif dari GKP</th><th>Kegunaan dalam Statistik BPS</th></tr></thead><tbody><tr><td><strong>Gabah Kering Panen (GKP)</strong></td><td>20% – 25%</td><td>100% (Titik Awal)</td><td>100%</td><td>Satuan hasil timbangan survei ubinan lapangan</td></tr><tr><td><strong>Gabah Kering Giling (GKG)</strong></td><td>Maksimal 14%</td><td>83,38%</td><td>83,38%</td><td>Standar resmi rilis 'Angka Produksi Padi BPS'</td></tr><tr><td><strong>Beras Siap Konsumsi</strong></td><td>Standar Sosoh</td><td>64,02%</td><td>53,38%</td><td>Penyusunan Neraca Bahan Makanan (NBM) &amp; stok pangan</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan Survei Konversi Gabah ke Beras (SKGB) 2018 resmi BPS, jika suatu wilayah menghasilkan total 10.000 ton Gabah Kering Giling (GKG), berapakah estimasi total produksi beras siap konsumsi yang dihasilkan dari wilayah tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 22, 23]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 8.338 ton beras</button>
+<button class="ex-opt" data-i="1">B. 6.402 ton beras</button>
+<button class="ex-opt" data-i="2">C. 5.338 ton beras</button>
+<button class="ex-opt" data-i="3">D. 7.200 ton beras</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Data yang diberikan adalah produksi dalam bentuk <strong>Gabah Kering Giling (GKG)</strong> sebesar 10.000 ton.<br>2. Berdasarkan hasil SKGB 2018 [Slide 22], angka konversi dari GKG ke Beras adalah <strong>64,02%</strong> ($0,6402$).<br>3. Maka estimasi produksi beras = $10.000\text{ ton} \times 0,6402 = 6.402\text{ ton beras}$.<br>4. Catatan evaluasi pengecoh:<br>   - 8.338 ton adalah jika dikalikan 83,38% (angka konversi GKP ke GKG).<br>   - 5.338 ton adalah jika yang diketahui adalah 10.000 ton GKP (dikalikan 53,38%).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;GKP=49.60 ku/ha, GKG=41.356 ku/ha, Beras=26.476 ku (2647.6 kg)&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Mengacu pada contoh Slide 23 materi kuliah: Sawah 1 hektar menghasilkan ubinan 2,5 m x 2,5 m sebesar 3,1 kg GKP. Menggunakan angka konversi SKGB 2018 (0,8338 dan 0,6402), hitung produktivitas GKP (ku/ha), produktivitas GKG (ku/ha), dan produksi beras (ku dan kg). Tuliskan jawaban dalam format: <code>GKP=X ku/ha, GKG=Y ku/ha, Beras=Z ku (W kg)</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 22, 23]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. <strong>Produktivitas GKP</strong>:<br>   $$\text{ku/ha (GKP)} = 3,1 \times 16 = 49,60\text{ ku/ha}$$<br>2. <strong>Produktivitas GKG</strong> (angka konversi $0,8338$):<br>   $$\text{ku/ha (GKG)} = 49,60 \times 0,8338 = 41,35648 \approx 41,356\text{ ku/ha}$$<br>3. <strong>Produksi Beras</strong> untuk 1 hektar (angka konversi $0,6402$):<br>   $$\text{Produksi Beras} = 41,35648 \times 0,6402 = 26,47642 \approx 26,476\text{ kuintal beras}$$<br>   Dalam satuan kilogram: $26,47642 \times 100 = 2.647,6\text{ kg beras}$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>b = 3.1<br>gkp_ku = b * 16.0<br>gkg_ku = gkp_ku * 0.8338<br>beras_ku = gkg_ku * 0.6402<br>beras_kg = beras_ku * 100.0<br>print(f'GKP={gkp_ku:.2f} ku/ha, GKG={gkg_ku:.3f} ku/ha, Beras={beras_ku:.3f} ku ({beras_kg:.1f} kg)')<br># Output: GKP=49.60 ku/ha, GKG=41.356 ku/ha, Beras=26.476 ku (2647.6 kg)<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Mengalikan GKP Langsung dengan 64,02%</strong>: Banyak mahasiswa mengalikan produktivitas ubinan GKP langsung dengan 0,6402. Ini salah fatal karena mengabaikan penyusutan jemur sebesar 16,62%, yang mengakibatkan estimasi beras menjadi overestimate sekitar 20%.</li><li><strong>Tertukar Rendemen Jemur vs Rendemen Giling</strong>: Menukar angka 83,38% sebagai konversi beras dan 64,02% sebagai konversi gabah. Ingat bahwa rendemen jemur selalu lebih besar (83,38%) karena hanya menghilangkan kadar air, sedangkan penggilingan membuang sekam dan dedak dalam jumlah besar (sehingga rendemennya 64,02%).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>GKP jemur jadi GKG (83,38%), GKG giling jadi Beras (64,02%). Langsung GKP ke Beras = 53,38%.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.1.1, 11.1.2</div>
+<button class="donebtn" data-id="11.1.3"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-11.2-Statistik-Industri-Pengolahan">
+<h2 class="sec-title">11.2 Statistik Industri Pengolahan<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-11.2.1">
+<h2>11.2.1 Survei Industri Besar dan Sedang IBS</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 25-28, 50-51]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi industri pengolahan/manufaktur BPS, batasan tenaga kerja IBS (20 orang atau lebih), indikator efisiensi rasio input terhadap output, indeks produksi manufaktur, serta integrasi ekstensi EXT-5 formula Nilai Pekerjaan Konstruksi NK = (NP - NS) x %NR.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Indeks Produksi Industri Manufaktur Besar Sedang. Industri Pengolahan/Manufaktur adalah usaha yang melakukan kegiatan ekonomi yang mengubah suatu barang dasar secara mekanis, kimia, atau dengan tangan sehingga menjadi barang jadi atau setengah jadi, dan atau barang yang kurang nilainya menjadi barang yang lebih tinggi nilainya [slide 25]. Efisiensi Industri Besar dan Sedang adalah suatu nilai yang menunjukkan perbandingan masukan dan keluaran yang diterima pada industri besar dan sedang yang menunjukkan tingkat penggunaan sumber daya secara minimum guna mencapai hasil yang maksimum. Nilai ini diperoleh dari rasio input terhadap output [slide 26]. Variabel Nilai Pekerjaan Konstruksi: NK = (NP - NS) x %NR. Dimana: NK = Nilai pekerjaan konstruksi, NP = Nilai proyek, NS = Nilai pekerjaan yang disubkontrakkan, %NR = persentase realisasi fisik pekerjaan yang diselesaikan [slide 50].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa BPS menyurvei IBS secara lengkap (complete enumeration) terpisah dari industri kecil? Industri besar dan sedang (IBS) mencakup hanya sekitar 1-2% dari total jumlah entitas industri di Indonesia, namun mereka menyumbang lebih dari 80-85% total nilai tambah dan ekspor manufaktur nasional. Karakteristik IBS memiliki pembukuan formal terstandar, sehingga BPS dapat mengumpulkan data rinci komposisi input, output, tenaga kerja, upah, dan efisiensi. Selain manufaktur, sektor penyumbang output fisik besar lainnya adalah jasa konstruksi, di mana nilai realisasi output dihitung melalui formula Nilai Pekerjaan Konstruksi (NK) dengan mengurangkan pekerjaan yang disubkontrakkan agar tidak terjadi pencatatan ganda (double counting).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Statistik Industri Manufaktur BPS</p>
+<p>Berdasarkan materi resmi perkuliahan [slide 25–28]:<br>- <strong>Definisi Industri Pengolahan</strong>: Kegiatan ekonomi yang mentransformasikan barang dasar secara mekanis, kimia, atau tangan menjadi barang baru dengan nilai ekonomis lebih tinggi, termasuk jasa industri (maklun di mana bahan baku disediakan pihak pemesan) dan perakitan (*assembling*) [slide 25].<br>- <strong>Indikator Penting Industri Manufaktur</strong>: Jumlah perusahaan, jumlah tenaga kerja, produktivitas tenaga kerja, komposisi input, komposisi output, nilai tambah, efisiensi, dan indeks produksi [slide 25].</p>
+<p>#### A. Klasifikasi Skala Tenaga Kerja Industri BPS<br>BPS membagi sektor industri pengolahan ke dalam empat strata tenaga kerja:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Skala Usaha Industri</th><th>Batasan Tenaga Kerja ($L$)</th><th>Pendekatan Pencacahan BPS</th><th>Sifat Karakteristik Usaha</th></tr></thead><tbody><tr><td><strong>Industri Mikro (IM)</strong></td><td>1 – 4 orang</td><td>Survei Sampel (VIMK)</td><td>Informal, tanpa badan hukum, padat karya</td></tr><tr><td><strong>Industri Kecil (IK)</strong></td><td>5 – 19 orang</td><td>Survei Sampel (VIMK)</td><td>Campuran formal-informal, modal terbatas</td></tr><tr><td><strong>Industri Sedang (IS)</strong></td><td>20 – 99 orang</td><td>Sensus Lengkap / Direktori IBS</td><td>Formal, memiliki izin usaha, pembukuan teratur</td></tr><tr><td><strong>Industri Besar (IB)</strong></td><td>100 orang atau lebih</td><td>Sensus Lengkap / Direktori IBS</td><td>Korporasi besar, padat modal, teknologi canggih</td></tr></tbody></table></div>
+<p>Gabungan Industri Besar dan Sedang (<strong>IBS</strong>) didefinisikan sebagai usaha industri dengan tenaga kerja <strong>$\ge 20\text{ orang}$</strong> [slide 25, 27].</p>
+<p>### 2. Indikator Kinerja dan Efisiensi IBS</p>
+<p>- <strong>Efisiensi Industri</strong>: Suatu nilai yang menunjukkan perbandingan masukan (input antara) dan keluaran (output bruto) [slide 26]:<br>$$\text{Efisiensi} = \frac{\text{Nilai Input Antara}}{\text{Nilai Output Bruto}}$$<br>Interpretasi: Jika efisiensi adalah 0,60, maka besarnya biaya input antara yang diperlukan oleh industri untuk menghasilkan setiap satu rupiah output adalah Rp0,60 [slide 27]. Semakin rendah rasio ini, semakin tinggi tingkat efisiensi penggunaan bahan baku dalam proses produksi.<br>- <strong>Nilai Tambah Bruto (NTB)</strong>: Kontribusi bersih industri terhadap PDB/PDRB:<br>$$\text{NTB} = \text{Nilai Output} - \text{Biaya Input Antara}$$</p>
+<p>### 3. Ekstensi EXT-5: Statistik Konstruksi dan Nilai Pekerjaan Konstruksi (NK)</p>
+<p>Sektor konstruksi memiliki karakteristik proyek berbasis kontrak multi-tahun (*multi-year contract*). Untuk mengukur produktivitas dan realisasi pembangunan infrastruktur tanpa terjadi penghitungan ganda (*double counting*), BPS menetapkan formula <strong>Nilai Pekerjaan Konstruksi (NK)</strong> [slide 50]:</p>
+<p>$$NK = (NP - NS) \times \%NR$$</p>
+<p>di mana:<br>- $NK$ : Nilai pekerjaan konstruksi yang diselesaikan (Rupiah).<br>- $NP$ : Nilai kontrak proyek total (*contract value*).<br>- $NS$ : Nilai pekerjaan yang disubkontrakkan kepada kontraktor spesialis lain (*subcontracted value*).<br>- $\%NR$ : Persentase realisasi fisik pekerjaan yang diselesaikan dalam periode survei berjalan, dihitung dari:<br>$$\%NR = \%NR_{\text{akhir periode}} - \%NR_{\text{awal periode}}$$</p>
+<p>Pengurangan $NS$ adalah mutlak secara metodologis karena nilai pekerjaan yang disubkontrakkan akan dilaporkan secara mandiri oleh perusahaan subkontraktor yang bersangkutan dalam survei BPS [slide 50].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>BPS mempublikasikan indikator efisiensi industri manufaktur besar dan sedang pada suatu provinsi sebesar 0,65. Bagaimanakah interpretasi ekonomi yang tepat dari angka rasio efisiensi 0,65 tersebut menurut standar BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 25-27]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Perusahaan memperoleh keuntungan bersih sebesar 65% dari total penjualan produk.</button>
+<button class="ex-opt" data-i="1">B. Untuk menghasilkan setiap satu rupiah output, industri memerlukan biaya input antara sebesar 0,65 rupiah.</button>
+<button class="ex-opt" data-i="2">C. Nilai tambah bruto yang diciptakan perusahaan adalah sebesar 65% dari total input antara.</button>
+<button class="ex-opt" data-i="3">D. Produksi industri manufaktur periode berjalan mengalami peningkatan sebesar 65% dibanding tahun dasar.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan konsep resmi BPS [Slide 26, 27], efisiensi industri manufaktur dihitung dari perbandingan antara input antara terhadap output (rasio Input/Output).<br>2. Nilai efisiensi sebesar 0,65 berarti bahwa untuk menghasilkan setiap satu rupiah nilai keluaran (output), industri tersebut memerlukan masukan (biaya bahan baku dan penolong) sebesar Rp0,65.<br>3. Sisanya, yaitu $1,00 - 0,65 = 0,35$ rupiah (35%), merupakan porsi Nilai Tambah Bruto (NTB) yang menjadi balas jasa faktor produksi (upah tenaga kerja, penyusutan, sewa, dan keuntungan usaha).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;NK=6400000000.0 (Rp6.4 Miliar), Efisiensi=0.60, NTB=Rp2.0 Miliar&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Rekonstruksi Soal Slide 50-51 &amp; EXT-5 Uji E2E Skenario 9: PT Mahakarya memenangkan proyek bernilai kontrak total NP = 10 Miliar Rupiah (Rp10.000.000.000,-). Bagian fondasi disubkontrakkan dengan nilai NS = 2 Miliar Rupiah (Rp2.000.000.000,-). Realisasi fisik yang diselesaikan adalah 80% (%NR = 0,80). Divisi manufaktur IBS milik perusahaan mencatat output Rp5.000.000.000,- dan input Rp3.000.000.000,-. Hitunglah Nilai Pekerjaan Konstruksi (NK), efisiensi IBS, dan Nilai Tambah Bruto (NTB). Tuliskan jawaban dalam format: <code>NK=X (RpY Miliar), Efisiensi=A, NTB=RpB Miliar</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 50-51]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. <strong>Nilai Pekerjaan Konstruksi (NK)</strong>:<br>   $$\begin{aligned}
+   NK &amp;= (NP - NS) \times \%NR \\
+   &amp;= (10.000.000.000 - 2.000.000.000) \times 0,80 \\
+   &amp;= 8.000.000.000 \times 0,80 = 6.400.000.000\text{ Rupiah (6,4 Miliar)}
+   \end{aligned}$$<br>2. <strong>Efisiensi Manufaktur IBS</strong>:<br>   $$\text{Efisiensi} = \frac{\text{Input}}{\text{Output}} = \frac{3.000.000.000}{5.000.000.000} = 0,60$$<br>3. <strong>Nilai Tambah Bruto (NTB) Manufaktur IBS</strong>:<br>   $$\text{NTB} = \text{Output} - \text{Input} = 5.000.000.000 - 3.000.000.000 = 2.000.000.000\text{ Rupiah (2,0 Miliar)}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>np = 10000000000.0<br>ns = 2000000000.0<br>nr_percent = 0.80<br>nk = (np - ns) * nr_percent<br>out_man = 5000000000.0<br>in_man = 3000000000.0<br>eff = in_man / out_man<br>ntb = out_man - in_man<br>print(f'NK={nk:.1f} (Rp{nk/1e9:.1f} Miliar), Efisiensi={eff:.2f}, NTB=Rp{ntb/1e9:.1f} Miliar')<br># Output: NK=6400000000.0 (Rp6.4 Miliar), Efisiensi=0.60, NTB=Rp2.0 Miliar<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Nilai Subkontrak (NS)</strong>: Seringkali mahasiswa menghitung $NK = NP \times \%NR$ tanpa mengurangkan $NS$. Hal ini salah karena menyebabkan pencatatan ganda atas output pekerjaan yang didelegasikan ke subkontraktor.</li><li><strong>Jebakan Rasio Efisiensi</strong>: Mengasumsikan rasio efisiensi 0,7 lebih baik daripada 0,5. Rasio efisiensi BPS adalah Input/Output, sehingga angka 0,5 (biaya input 50%) jauh lebih efisien daripada 0,7 (biaya input 70%).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>IBS tenaga kerja &gt;= 20 orang. Efisiensi = Input / Output (makin kecil makin bagus). Konstruksi NK = (NP - NS) x %NR.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.2.2</div>
+<button class="donebtn" data-id="11.2.1"></button>
+</section>
+<section class="point" id="p-11.2.2">
+<h2>11.2.2 Survei Industri Mikro dan Kecil IMK</h2>
+<div class="source-ref">Sumber: [SUPLEMEN] BPS Sensus Ekonomi 2016 &amp; Publikasi Profil IMK BPS</div>
+<div class="box info">📌 <div class="rich"><p>[SUPLEMEN] Batasan operasional tenaga kerja industri mikro (1-4 orang) dan kecil (5-19 orang) BPS, karakteristik usaha informal manufaktur, metodologi survei sampel VIMK, serta penghitungan nilai tambah dan produktivitas per pekerja.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>[SUPLEMEN] Berdasarkan Sensus Ekonomi dan Survei Industri Mikro dan Kecil BPS, industri pengolahan dikelompokkan menurut banyaknya tenaga kerja: Industri Mikro memiliki tenaga kerja 1-4 orang, Industri Kecil memiliki tenaga kerja 5-19 orang, Industri Sedang memiliki tenaga kerja 20-99 orang, dan Industri Besar memiliki tenaga kerja 100 orang atau lebih. Survei Industri Mikro dan Kecil (VIMK) dilakukan secara triwulanan dan tahunan dengan metode penarikan sampel berbasis blok sensus.</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Sebagian besar unit usaha industri di Indonesia (&gt;98%) berskala mikro dan kecil (seperti pengrajin tempe, konveksi rumahan, pandai besi, kerajinan anyaman). Walaupun skala per unit usahanya kecil, secara agregat mereka menyerap puluhan juta tenaga kerja informal dan menjaga ketahanan ekonomi rakyat dari guncangan krisis. Berbeda dengan IBS yang dicacah lengkap via direktori industri, IMK tersebar luas di lingkungan permukiman tanpa plang usaha resmi atau izin berbadan hukum, sehingga dicacah dengan pendekatan sampling rumah tangga/usaha berbasis blok sensus.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Industri Mikro dan Kecil (IMK) BPS [SUPLEMEN]</p>
+<p>Dalam statistik ekonomi BPS, pembagian industri manufaktur menurut skala usaha berpedoman pada rekomendasi *International Recommendations for Industrial Statistics* (IRIS) PBB dengan penyesuaian kondisi ketenagakerjaan nasional:</p>
+<p>```<br>Sektor Industri Pengolahan (KBLI Golongan Pokok C / 10-33)<br>├── Industri Mikro (IM)  : 1 s.d. 4 tenaga kerja   (Target Survei VIMK)<br>├── Industri Kecil (IK)  : 5 s.d. 19 tenaga kerja  (Target Survei VIMK)<br>├── Industri Sedang (IS) : 20 s.d. 99 tenaga kerja (Target Sensus/Direktori IBS)<br>└── Industri Besar (IB)  : &gt;= 100 tenaga kerja     (Target Sensus/Direktori IBS)<br>```</p>
+<p>#### A. Batasan Operasional Tenaga Kerja<br>- <strong>Tenaga Kerja ($L$)</strong>: Seluruh orang yang terlibat secara aktif dalam aktivitas produksi fisik barang, terdiri atas:<br>  1. Pekerja yang dibayar (buruh tetap, pekerja harian lepas, pekerja borongan).<br>  2. Pekerja yang tidak dibayar (pemilik usaha yang aktif bekerja, pekerja keluarga tidak dibayar / *unpaid family workers*).<br>- <strong>Klasifikasi Formal vs Informal</strong>:<br>  - Usaha mikro hampir seluruhnya berada pada ranah <strong>informal</strong> (tidak berbadan hukum PT/CV/Koperasi, tidak memiliki perizinan formal seperti NIB terverifikasi, dan tidak memisahkan keuangan rumah tangga dengan keuangan usaha).<br>  - Usaha kecil sebagian telah berizin mikro (NIB perseorangan) atau bermitra sebagai pemasok rantai pasok lokal.</p>
+<p>### 2. Matriks Perbandingan IBS vs IMK</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi Karakteristik</th><th>Industri Besar &amp; Sedang (IBS)</th><th>Industri Mikro &amp; Kecil (IMK)</th></tr></thead><tbody><tr><td><strong>Batasan Tenaga Kerja</strong></td><td>$\ge 20\text{ orang}$</td><td>$1 - 19\text{ orang}$ (Mikro: 1-4, Kecil: 5-19)</td></tr><tr><td><strong>Metode Pendataan BPS</strong></td><td>Sensus / Direktori Lengkap (*Complete Enumeration*)</td><td>Survei Sampel Dua Tahap (*Two-stage Sampling*)</td></tr><tr><td><strong>Kerangka Sampel</strong></td><td>Direktori Perusahaan IBS BPS (diperbarui berkala)</td><td>Blok Sensus dari Sensus Ekonomi (SE)</td></tr><tr><td><strong>Pencatatan Keuangan</strong></td><td>Laporan Neraca &amp; Laba Rugi standar akuntansi</td><td>Catatan kas sederhana atau ingatan (*recall*) pemilik</td></tr><tr><td><strong>Pangsa Jumlah Usaha</strong></td><td>Sekitar $1,0\% - 1,5\%$ dari total usaha industri</td><td>Sekitar $98,5\% - 99,0\%$ dari total usaha industri</td></tr><tr><td><strong>Pangsa Penyerapan Kerja</strong></td><td>Sekitar $30\% - 35\%$ tenaga kerja industri</td><td>Sekitar $65\% - 70\%$ tenaga kerja industri</td></tr><tr><td><strong>Pangsa Output &amp; Nilai Tambah</strong></td><td>Dominan ($&gt;80\%$ total nilai tambah industri)</td><td>Minoritas ($&lt;20\%$ total nilai tambah industri)</td></tr></tbody></table></div>
+<p>### 3. Indikator Produktivitas Tenaga Kerja IMK</p>
+<p>Produktivitas tenaga kerja menggambarkan kontribusi nilai tambah bruto rata-rata yang diciptakan oleh setiap orang pekerja dalam satuan waktu tertentu:<br>$$\text{Produktivitas Tenaga Kerja} = \frac{\text{Nilai Tambah Bruto (NTB)}}{L} = \frac{\text{Output Bruto} - \text{Biaya Input Antara}}{L}$$</p>
+<p>Karena modal kapital per pekerja (*capital-labor ratio*) pada industri mikro sangat kecil, produktivitas tenaga kerja IMK umumnya jauh lebih rendah dibandingkan pekerja IBS yang didukung mesin-mesin otomatis modern.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Sebuah usaha pengolahan emping melinjo di perdesaan dikelola oleh seorang pemilik, dibantu oleh 2 orang anggota keluarganya tanpa upah, serta 3 orang tetangga yang dipekerjakan sebagai buruh harian kupas melinjo dengan upah harian. Berdasarkan batasan resmi Badan Pusat Statistik (BPS), usaha pengolahan emping tersebut diklasifikasikan ke dalam kategori:</p></div></div>
+<div class="ex-source">Sumber: [SUPLEMEN] BPS Sensus Ekonomi 2016 &amp; Profil IMK</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Industri Mikro, karena buruh berupah hanya ada 3 orang.</button>
+<button class="ex-opt" data-i="1">B. Industri Kecil, karena total tenaga kerja yang aktif terlibat adalah 6 orang.</button>
+<button class="ex-opt" data-i="2">C. Industri Rumah Tangga Tanpa Badan Usaha, karena melibatkan anggota keluarga.</button>
+<button class="ex-opt" data-i="3">D. Industri Sedang, karena mempekerjakan buruh dari luar keluarga.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Menurut konsep statistik BPS, jumlah tenaga kerja dihitung dari <strong>seluruh orang yang terlibat aktif</strong> dalam kegiatan proses produksi, baik pekerja yang dibayar maupun pekerja keluarga yang tidak dibayar (*unpaid family worker*).<br>2. Total tenaga kerja pada usaha emping melinjo tersebut adalah:<br>   $$L = 1\text{ (pemilik)} + 2\text{ (keluarga tanpa upah)} + 3\text{ (buruh berupah)} = 6\text{ orang}$$<br>3. Berdasarkan kriteria skala tenaga kerja BPS:<br>   - Industri Mikro: $1 - 4\text{ orang}$.<br>   - Industri Kecil: $5 - 19\text{ orang}$.<br>4. Karena $L = 6\text{ orang}$ berada dalam rentang $5 - 19\text{ orang}$, maka usaha tersebut diklasifikasikan sebagai <strong>Industri Kecil</strong>.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Pencacahan VIMK mencatat data 4 usaha pengolahan: Usaha A (L=3, Out=15jt, In=9jt); Usaha B (L=8, Out=60jt, In=36jt); Usaha C (L=15, Out=120jt, In=75jt); Usaha D (L=25, Out=250jt, In=150jt). Tentukan jumlah usaha yang masuk cakupan target IMK serta nilai tambah dan produktivitas per pekerja untuk masing-masing usaha IMK tersebut. Format jawaban: <code>IMK=X usaha; A:NT=Yjt,Prod=Zjt, B:NT=Ujt,Prod=Vjt, C:NT=Wjt,Prod=Kjt</code>.</p></div></div>
+<div class="ex-source">Sumber: [SUPLEMEN] BPS Profil IMK 2024</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah analisis:<br>1. <strong>Klasifikasi Tenaga Kerja BPS</strong>:<br>   - Usaha A ($L=3$): Industri Mikro ($1 - 4$ orang) $\implies$ Masuk IMK.<br>   - Usaha B ($L=8$): Industri Kecil ($5 - 19$ orang) $\implies$ Masuk IMK.<br>   - Usaha C ($L=15$): Industri Kecil ($5 - 19$ orang) $\implies$ Masuk IMK.<br>   - Usaha D ($L=25$): Industri Sedang ($20 - 99$ orang) $\implies$ Tidak masuk IMK (masuk Direktori IBS).<br>   Total usaha masuk target IMK = <strong>3 usaha</strong>.</p>
+<p>2. <strong>Nilai Tambah (NT) dan Produktivitas Tenaga Kerja</strong>:<br>   - <strong>Usaha A</strong>:<br>     $$NT_A = 15 - 9 = 6\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_A = \frac{6\text{ Juta}}{3\text{ orang}} = 2,0\text{ Juta Rp/pekerja}$$<br>   - <strong>Usaha B</strong>:<br>     $$NT_B = 60 - 36 = 24\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_B = \frac{24\text{ Juta}}{8\text{ orang}} = 3,0\text{ Juta Rp/pekerja}$$<br>   - <strong>Usaha C</strong>:<br>     $$NT_C = 120 - 75 = 45\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_C = \frac{45\text{ Juta}}{15\text{ orang}} = 3,0\text{ Juta Rp/pekerja}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>data = [{'u':'A', 'L':3, 'out':15, 'in':9}, {'u':'B', 'L':8, 'out':60, 'in':36}, {'u':'C', 'L':15, 'out':120, 'in':75}, {'u':'D', 'L':25, 'out':250, 'in':150}]<br>imk = [d for d in data if d['L'] &lt; 20]<br>res = [f"{d['u']}:NT={d['out']-d['in']}jt,Prod={(d['out']-d['in'])/d['L']:.1f}jt" for d in imk]<br>print(f"IMK={len(imk)} usaha; " + ", ".join(res))<br># Output: IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Batasan Omzet UU UMKM</strong>: Seringkali mahasiswa menjawab bahwa industri mikro adalah usaha dengan kekayaan bersih maksimal Rp50 juta atau omzet Rp300 juta sesuai UU No. 20 Tahun 2008. Dalam statistik BPS, kriteria operasional murni berbasis jumlah tenaga kerja (1-4 pekerja untuk mikro, 5-19 pekerja untuk kecil).</li><li><strong>Jebakan Pekerja Keluarga Tak Dibayar</strong>: Seringkali pekerja keluarga tidak dihitung sehingga usaha keluarga dengan 1 pemilik dan 4 anak/istri yang membantu dihitung hanya 1 orang (mikro), padahal total 5 orang (masuk industri kecil).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Mikro: 1-4 orang. Kecil: 5-19 orang. Sedang: 20-99 orang. Besar: &gt;= 100 orang. Murni hitung kepala tenaga kerja aktif!</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.2.1</div>
+<button class="donebtn" data-id="11.2.2"></button>
+</section>
+</div>
+</main></div>
+<script>
+const KEY = "lecture-done-chapter-11-";
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

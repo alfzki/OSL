@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>10.1 Indikator Mortalitas Ibu dan Anak · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>10.1 Indikator Mortalitas Ibu dan Anak</h2><a href="#p-10.1.3">10.1.3 Angka Kematian Neo-Natal NMR ⭐</a></nav>
+<main>
+<h1>10.1 Indikator Mortalitas Ibu dan Anak<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 10: Indikator Kesehatan dan SDGs 3 ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-10.1.3">
+<h2>10.1.3 Angka Kematian Neo-Natal NMR ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 24-35]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi dan batas umur neonatal (0-28 hari) vs post-neonatal (1 bln-&lt;1 th), hubungan aditif aditif AKB = NMR + PNMR, perbedaan determinan program kesehatan, data SP2020, dan target SDGs 3.2.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Angka Kematian Neo-Natal adalah kematian yang terjadi sebelum bayi berumur satu bulan atau 28 hari per 1.000 kelahiran hidup pada satu tahun tertentu. Rumus: AK Neo-Natal = (D0-&lt;1 bln / Sigma Lahir Hidup) x 1.000 [slide 24]. Angka Kematian Post Neo-natal adalah kematian bayi umur 1 bulan sampai kurang 1 tahun per 1.000 kelahiran hidup: AK Post Neo-Natal = (D1 bln-&lt;1 th / Sigma Lahir Hidup) x 1.000 [slide 25]. Program penurunan neonatal terkait pelayanan kesehatan ibu hamil (misal pil besi, suntikan anti tetanus). Program post-neonatal berguna untuk mengembangkan imunisasi, penanggulangan penyakit menular, dan gizi [slide 27]. SP2020: Angka kematian neonatal Indonesia 9,3 per 1.000 kelahiran [slide 28]. Target SDGs 3.2: Angka Kematian Neonatal setidaknya turun hingga 12 per 1.000 KH [slide 9].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan garis waktu tahun pertama kehidupan bayi: hari 0 hingga hari ke-28 adalah masa adaptasi biologis dari rahim ke dunia luar (fase neonatal). Organ tubuh masih sangat rentan dan imunitas pasif dari plasenta belum sepenuhnya stabil. Jika bayi meninggal pada fase ini, penyebabnya hampir pasti berkaitan dengan kondisi medis ibu selama hamil atau komplikasi proses persalinan. Setelah hari ke-28 (fase post-neonatal), bayi mulai terpapar lingkungan luar: udara, air, makanan selain ASI, debu, dan droplet virus/bakteri. Maka penyebab kematian bergeser menjadi infeksi pneumonia, diare, dan malnutrisi. Mengetahui rasio kematian neonatal vs post-neonatal memberi tahu dokter dan perencana kebijakan sektor mana yang mendesak diperbaiki: ruang bersalin dan ANC (jika NMR tinggi), atau imunisasi dan sanitasi air (jika PNMR tinggi).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Mortalitas Neonatal &amp; Post-Neonatal</p>
+<p>Berdasarkan materi resmi BPS dan standar WHO [Pertemuan_10_Indikator_Kesehatan.md, slide 24-27]:<br>- <strong>Kematian Neonatal (Neonatal Death)</strong>: Kematian bayi yang terjadi pada kurun waktu antara saat lahir hingga sebelum mencapai usia tepat 28 hari (usia $0$ s.d. $27$ hari penuh, sering dinotasikan sebagai $0 - &lt; 1$ bulan).<br>- <strong>Kematian Post-Neonatal (Post-Neonatal Death)</strong>: Kematian bayi yang terjadi setelah melewati masa neonatal, yaitu dari usia tepat 28 hari (atau 1 bulan) sampai sebelum berusia tepat 1 tahun ($28$ hari s.d. $364$ hari).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>#### A. Angka Kematian Neonatal (Neonatal Mortality Rate / NMR)<br>$$\text{NMR} = \frac{D_{0-&lt;28\text{ hari}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{0-&lt;28\text{ hari}}$ = Jumlah kematian bayi berusia $0$ s.d. kurang dari $28$ hari pada tahun tertentu di daerah tertentu [slide 24].<br>- $\sum \text{Lahir Hidup} = B$ = Banyaknya kelahiran hidup pada tahun tertentu di daerah tertentu.<br>- $K = 1.000$ = Konstanta pengali.</p>
+<p>#### B. Angka Kematian Post-Neonatal (Post-Neonatal Mortality Rate / PNMR)<br>$$\text{PNMR} = \frac{D_{1\text{ bln}-&lt;1\text{ th}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{1\text{ bln}-&lt;1\text{ th}}$ = Jumlah kematian bayi berusia $1$ bulan sampai kurang dari $1$ tahun pada tahun tertentu di daerah tertentu [slide 25].<br>- Penyebut dan pengali identik dengan NMR.</p>
+<p>### 3. Sifat Hubungan Aditif dengan Angka Kematian Bayi (AKB)<br>Karena seluruh kematian bayi berumur kurang dari 1 tahun ($D_{0-&lt;1\text{ th}}$) dapat dipartisi secara mutually exclusive dan exhaustive menjadi kematian neonatal dan kematian post-neonatal:<br>$$D_{0-&lt;1\text{ th}} = D_{0-&lt;28\text{ hari}} + D_{1\text{ bln}-&lt;1\text{ th}}$$<br>Maka pembagian kedua ruas dengan $\sum \text{Lahir Hidup}$ dan perkalian dengan $1.000$ menghasilkan:<br>$$\text{AKB} = \text{NMR} + \text{PNMR}$$</p>
+<p>### 4. Perbedaan Determinan Etiologis dan Sasaran Kebijakan</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Kematian Neonatal (0-28 Hari)</th><th>Kematian Post-Neonatal (1 bln - &lt;1 th)</th></tr></thead><tbody><tr><td><strong>Etiologi Utama</strong></td><td>Faktor endogen/biologis maternal: asfiksia, BBLR, prematuritas, kelainan kongenital, tetanus neonatorum</td><td>Faktor eksogen/lingkungan: pneumonia, diare, malnutrisi, infeksi bakteri/virus</td></tr><tr><td><strong>Fokus Intervensi</strong></td><td>Pelayanan antenatal care (ANC), tablet tambah darah (Fe) ibu, imunisasi Tetanus Toksoid (TT) ibu hamil, persalinan higienis di faskes [slide 27]</td><td>Program Imunisasi Dasar Lengkap (IDL), sanitasi air bersih, ASI eksklusif, gizi seimbang [slide 27]</td></tr><tr><td><strong>Capaian SP2020</strong></td><td>9,3 per 1.000 kelahiran hidup [slide 28]</td><td>Sekitar 10,5 per 1.000 kelahiran hidup</td></tr><tr><td><strong>Target SDGs 3.2</strong></td><td>$\le 12$ per 1.000 kelahiran hidup pada 2030 [slide 9]</td><td>Tercakup dalam target AKABA $\le 25$ per 1.000 KH</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Program intervensi manakah yang paling tepat dan efektif untuk menurunkan Angka Kematian Neo-Natal (NMR) menurut materi resmi BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 9, 24, 27]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Pemberian imunisasi campak dan perbaikan sarana sanitasi jamban keluarga.</button>
+<button class="ex-opt" data-i="1">B. Pelayanan kesehatan ibu hamil, pemberian tablet besi (Fe), dan suntikan anti tetanus toksoid bagi ibu hamil.</button>
+<button class="ex-opt" data-i="2">C. Penyuluhan gizi seimbang dan makanan pendamping ASI untuk anak usia 1-4 tahun.</button>
+<button class="ex-opt" data-i="3">D. Penyediaan air minum perpipaan dan penataan perumahan kumuh perkotaan.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 27: 'Program untuk mengurangi angka kematian neo-natal adalah bersangkutan dengan program pelayanan kesehatan ibu hamil, misalnya program pemberian pil besi dan suntikan anti tetanus.'<br>- Pilihan A, C, dan D ditujukan untuk mengurangi kematian pasca-neonatal (post-neonatal) dan kematian anak balita yang bersumber dari infeksi lingkungan dan gizi.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;NMR=8.00, PNMR=6.00, IMR=14.00&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu daerah pada tahun 2023 tercatat 40.000 kelahiran hidup. Dilaporkan bahwa terjadi 320 kematian bayi berusia 0-28 hari dan 240 kematian bayi berusia 29 hari hingga sebelum 1 tahun. Hitunglah NMR, PNMR, dan AKB total per 1.000 kelahiran hidup. Tuliskan jawaban akhir dalam format: <code>NMR=..., PNMR=..., IMR=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 24, 25, 26]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. $\text{NMR} = \frac{D_{0-&lt;28\text{ hari}}}{B} \times 1.000 = \frac{320}{40.000} \times 1.000 = 8,00$ per 1.000 KH.<br>2. $\text{PNMR} = \frac{D_{1\text{ bln}-&lt;1\text{ th}}}{B} \times 1.000 = \frac{240}{40.000} \times 1.000 = 6,00$ per 1.000 KH.<br>3. $\text{AKB (IMR)} = \text{NMR} + \text{PNMR} = 8,00 + 6,00 = 14,00$ per 1.000 KH.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>births = 40000<br>d_neo = 320<br>d_post = 240<br>nmr = (d_neo / births) * 1000<br>pnmr = (d_post / births) * 1000<br>imr = ((d_neo + d_post) / births) * 1000<br>print(f'NMR={nmr:.2f}, PNMR={pnmr:.2f}, IMR={imr:.2f}')<br># Output: NMR=8.00, PNMR=6.00, IMR=14.00<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menyamakan Usia Neonatal dengan Balita</strong>: Usia neonatal adalah strictly 0-28 hari, bukan 1 tahun dan bukan 5 tahun.</li><li><strong>Kesesuaian Program Kebijakan</strong>: Menangani kematian neonatal dengan penyuluhan sanitasi jamban adalah salah sasaran; kematian neonatal harus ditangani dengan perbaikan gizi ibu hamil, ANC, dan fasilitas emergensi neonatal.</li><li><strong>Sifat Aditif</strong>: Hanya berlaku antara NMR dan PNMR terhadap AKB karena memiliki denominator yang identik.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Neonatal = 0-28 hari (faktor ibu/kandungan); Post-neonatal = 1 bln-&lt;1 th (faktor lingkungan); NMR + PNMR = IMR!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.2, 10.2.1</div>
+<button class="donebtn" data-id="10.1.3"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

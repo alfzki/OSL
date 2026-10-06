@@ -1,0 +1,91 @@
+{
+  "point_id": "13.2.3",
+  "title": "Rata-rata Lama Menginap Tamu RLMT",
+  "importance": "中",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Statistik Akomodasi dan Durasi Kunjungan Wisatawan",
+    "bps_subject": "Statistik Pariwisata dan Perhotelan BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "40-43",
+        "content": "Formula Rata-rata Lama Menginap Tamu (RLMT): banyaknya malam tamu dibagi tamu yang datang dan menginap; disagregasi tamu asing vs tamu nasional; sumber data Kuesioner VHTS BPS; tren pemulihan kunjungan wisman pada Berita Resmi Statistik."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Dua hotel sama-sama kedatangan 500 tamu dalam sebulan. Di hotel A, tamu-tamu tersebut adalah pelaku perjalanan dinas yang hanya menginap satu malam lalu pulang (total 500 malam tamu). Di hotel B, tamu-tamu tersebut adalah wisatawan liburan keluarga yang menginap rata-rata 4 malam (total 2.000 malam tamu). Meskipun jumlah tamunya sama persis, hotel B menghasilkan perputaran uang empat kali lipat lebih besar. Indikator Rata-rata Lama Menginap Tamu (RLMT) atau Average Length of Stay (ALOS) mengukur durasi rata-rata seorang tamu menghabiskan waktu di akomodasi.",
+    "bps_definition": "Rata-rata Lama Menginap Tamu (RLMT / Average Length of Stay) menurut metodologi BPS adalah rata-rata lamanya seorang tamu menginap pada suatu fasilitas akomodasi perhotelan, dihitung dengan membagi total banyaknya malam tamu yang menginap dengan total banyaknya tamu yang datang dan menginap pada periode tersebut. Satuan RLMT dinyatakan dalam hari atau malam. BPS menyajikan RLMT secara disagregasi menurut klasifikasi hotel (bintang vs non-bintang) serta asal kebangsaan tamu (wisatawan mancanegara / asing vs wisatawan nusantara / domestik).",
+    "boundary_conditions": "RLMT >= 1,00 malam (karena tamu yang tercatat di akomodasi komersial menginap minimal 1 malam). RLMT wisman umumnya lebih tinggi (berkisar 2,5 - 4,0 malam) dibandingkan RLMT wisnus (berkisar 1,5 - 2,0 malam) karena wisman menempuh perjalanan jarak jauh antarnegara.",
+    "formula_latex": "$$\\text{RLMT} = \\frac{\\text{Total Malam Tamu Menginap}}{\\text{Total Tamu yang Datang \\& Menginap}} = \\frac{\\sum_{i=1}^N L_i}{N}, \\quad \\text{RLMT}_{\\text{gabungan}} = \\frac{M_{\\text{asing}} + M_{\\text{domestik}}}{T_{\\text{asing}} + T_{\\text{domestik}}}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah hotel resor bintang 5 di kawasan pariwisata mencatat aktivitas tamu selama bulan September 2026 sebagai berikut (rekonstruksi soal ujian dan data resmi perhotelan BPS):\n- Tamu Mancanegara (Wisman/Asing): 300 orang tamu datang, dengan akumulasi lama menginap mencapai 900 malam tamu.\n- Tamu Nusantara (Wisnus/Domestik): 200 orang tamu datang, dengan akumulasi lama menginap mencapai 350 malam tamu.\nHitunglah:\n1. Rata-rata Lama Menginap Tamu Asing (RLMT Wisman).\n2. Rata-rata Lama Menginap Tamu Domestik (RLMT Wisnus).\n3. Total tamu yang datang dan total malam tamu kumulatif hotel tersebut.\n4. Rata-rata Lama Menginap Tamu gabungan (RLMT Total) hotel tersebut.\n5. Persentase jumlah tamu asing dan tamu domestik terhadap total tamu.",
+    "data_table": "| Asal Tamu | Tamu Datang (Orang) | Total Malam Tamu (Malam) | Formula BPS | RLMT (Malam) | Pangsa Tamu (%) |\n|---|---|---|---|---|---|\n| Tamu Asing (Wisman) | 300 | 900 | Malam Tamu / Tamu Datang | 3,00 | 60,00% |\n| Tamu Domestik (Wisnus) | 200 | 350 | Malam Tamu / Tamu Datang | 1,75 | 40,00% |\n| **Total Gabungan** | **500** | **1.250** | **Total Malam / Total Tamu** | **2,50** | **100,00%** |",
+    "step_by_step_solution": "1. Menghitung RLMT Tamu Asing:\n   $$\\text{RLMT}_{\\text{asing}} = \\frac{900}{300} = 3,00 \\text{ malam}$$\n2. Menghitung RLMT Tamu Domestik:\n   $$\\text{RLMT}_{\\text{domestik}} = \\frac{350}{200} = 1,75 \\text{ malam}$$\n3. Menghitung Agregat Total:\n   - Total Tamu Datang = $$300 + 200 = 500 \\text{ orang}$$\n   - Total Malam Tamu = $$900 + 350 = 1.250 \\text{ malam tamu}$$\n4. Menghitung RLMT Gabungan (Total):\n   $$\\text{RLMT}_{\\text{total}} = \\frac{\\text{Total Malam Tamu}}{\\text{Total Tamu Datang}} = \\frac{1.250}{500} = 2,50 \\text{ malam}$$\n5. Menghitung Persentase Tamu:\n   - Asing: $$(300 / 500) \\times 100\\% = 60,00\\%$$\n   - Domestik: $$(200 / 500) \\times 100\\% = 40,00\\%$$.",
+    "python_verification_code": "guests_foreign = 300\nnights_foreign = 900\nrlmt_foreign = nights_foreign / guests_foreign\nguests_domestic = 200\nnights_domestic = 350\nrlmt_domestic = nights_domestic / guests_domestic\ntotal_guests = guests_foreign + guests_domestic\ntotal_nights = nights_foreign + nights_domestic\nrlmt_total = total_nights / total_guests\npct_foreign = (guests_foreign / total_guests) * 100.0\npct_domestic = (guests_domestic / total_guests) * 100.0\nprint(f'RLMT_Foreign={rlmt_foreign:.2f}, RLMT_Domestic={rlmt_domestic:.2f}, TotalGuests={total_guests}, TotalNights={total_nights}, RLMT_Total={rlmt_total:.2f}, PctForeign={pct_foreign:.1f}%')\n",
+    "expected_output": "RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menghitung RLMT gabungan dengan merata-ratakan langsung RLMT asing dan RLMT domestik",
+      "common_mistake": "Menghitung RLMT gabungan sebagai (3,00 + 1,75) / 2 = 2,375 malam.",
+      "safe_strategy": "RLMT adalah rata-rata tertimbang (weighted average). Hitung selalu dari total seluruh malam tamu dibagi total seluruh tamu datang: 1.250 / 500 = 2,50 malam."
+    },
+    {
+      "trap_description": "Tertukar antara Malam Kamar dan Malam Tamu",
+      "common_mistake": "Menggunakan data malam kamar terjual pada pembilang RLMT.",
+      "safe_strategy": "Pembilang RLMT adalah 'Malam Tamu' (person-nights), yaitu akumulasi malam dari setiap individu tamu yang menginap, bukan jumlah fisik kamar."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.2 Statistik Pariwisata dan Perhotelan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.2.3",
+      "name": "Rata-rata Lama Menginap Tamu RLMT",
+      "importance": "中",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-43]",
+      "exam_focus": "Menguasai definisi operasional dan formula RLMT BPS, perbedaan rata-rata tertimbang vs rata-rata sederhana pada RLMT gabungan, serta karakteristik durasi wisman vs wisnus.",
+      "textbook_excerpt": "Rata-rata Lama Menginap Tamu dihitung dari banyaknya malam tamu dibagi tamu yang datang dan menginap. Indikator ini mencerminkan loyalitas dan pola konsumsi wisatawan di destinasi wisata. Disagregasi menurut tamu asing dan tamu nasional disajikan rutin dalam Berita Resmi Statistik (BRS) Perkembangan Pariwisata BPS [slide 41-42].",
+      "intuition": "Jika sebuah bus pariwisata menurunkan 40 orang wisatawan dan mereka tinggal di hotel selama 3 malam, maka mereka menyumbang $40 \\times 3 = 120$ malam tamu. Jika ada tamu lain sebanyak 10 orang yang hanya tinggal 1 malam (10 malam tamu), total tamu datang adalah 50 orang dan total malam tamu adalah 130 malam tamu. Rata-rata lama menginap mereka adalah $130 / 50 = 2,6$ malam. RLMT memberitahu manajer hotel dan dinas pariwisata berapa lama uang belanja turis bertahan di daerah tersebut.",
+      "formal": "### 1. Definisi dan Signifikansi RLMT\n\nRata-rata Lama Menginap Tamu (RLMT / Average Length of Stay - ALOS) mengukur durasi retensi wisatawan di suatu wilayah [slide 41]:\n- Semakin tinggi RLMT, semakin besar multiplier effect pengeluaran wisatawan terhadap perekonomian lokal (transportasi, kuliner, suvenir, atraksi).\n- Menjadi parameter penting dalam memproyeksikan devisa pariwisata pada *Passenger Exit Survey* (PES) dan Neraca Satelit Pariwisata Nasional (NESPARNAS).\n\n### 2. Formulasi Matematis BPS\n\nBerdasarkan kuesioner bulanan VHTS BPS [slide 41]:\n\n1. **RLMT Total / Gabungan**:\n   $$\\text{RLMT} = \\frac{\\text{Banyaknya Malam Tamu Menginap}}{\\text{Banyaknya Tamu yang Datang dan Menginap}}$$\n   $$\\text{RLMT} = \\frac{\\sum_{j=1}^m T_j \\times d_j}{\\sum_{j=1}^m T_j}$$\n   dimana $T_j$ adalah jumlah tamu pada rombongan ke-$j$ dan $d_j$ adalah lama menginap rombongan ke-$j$.\n\n2. **Disagregasi Menurut Kebangsaan Tamu**:\n   - **RLMT Wisman (Tamu Asing)**:\n     $$\\text{RLMT}_{\\text{wisman}} = \\frac{\\text{Malam Tamu Asing}}{\\text{Tamu Asing yang Datang}}$$\n   - **RLMT Wisnus (Tamu Domestik/Nasional)**:\n     $$\\text{RLMT}_{\\text{wisnus}} = \\frac{\\text{Malam Tamu Nasional}}{\\text{Tamu Nasional yang Datang}}$$\n\n3. **Formula Agregasi Tertimbang**:\n   $$\\text{RLMT}_{\\text{total}} = \\frac{\\text{Malam Tamu}_{\\text{wisman}} + \\text{Malam Tamu}_{\\text{wisnus}}}{\\text{Tamu}_{\\text{wisman}} + \\text{Tamu}_{\\text{wisnus}}}$$\n   Atau dapat dituliskan sebagai rata-rata tertimbang (*weighted average*):\n   $$\\text{RLMT}_{\\text{total}} = w_{\\text{wisman}} \\cdot \\text{RLMT}_{\\text{wisman}} + w_{\\text{wisnus}} \\cdot \\text{RLMT}_{\\text{wisnus}}$$\n   dimana pembobot $w$ adalah proporsi jumlah tamu yang datang:\n   $$w_{\\text{wisman}} = \\frac{\\text{Tamu}_{\\text{wisman}}}{\\text{Total Tamu}}, \\quad w_{\\text{wisnus}} = \\frac{\\text{Tamu}_{\\text{wisnus}}}{\\text{Total Tamu}}$$\n\n### 3. Matriks Perbedaan Indikator Perhotelan BPS\n\n| Indikator | Satuan | Pembilang | Penyebut | Fungsi Analisis |\n|---|---|---|---|---|\n| **TPK (Room Occupancy)** | Persen (%) | Malam Kamar Terpakai | Malam Kamar Tersedia | Produktivitas kapasitas kamar fisik |\n| **TPTT (Bed Occupancy)** | Persen (%) | Malam Tamu Terpakai | Tempat Tidur Tersedia | Pemanfaatan kapasitas ranjang |\n| **RLMT (Length of Stay)** | Hari / Malam | Total Malam Tamu | Total Tamu Datang | Durasi retensi tamu di destinasi |\n| **RTK (Guests per Room)** | Orang / Kamar | Total Malam Tamu | Malam Kamar Terjual | Kepadatan hunian kamar |",
+      "pitfalls": "1. **Rata-rata Sederhana yang Menyesatkan**: Jangan pernah merata-ratakan langsung $\\frac{\\text{RLMT}_{\\text{asing}} + \\text{RLMT}_{\\text{domestik}}}{2}$ kecuali jumlah tamu kedua kelompok persis sama.\n2. **Tertukar Tamu Datang vs Tamu yang Masih Menginap**: Pembagi RLMT adalah jumlah tamu baru yang datang mendaftar (*arrivals / check-in*), bukan jumlah tamu yang tercatat ada di hotel setiap harinya.\n3. **Satuan**: Pastikan satuan akhir dinyatakan dalam hari atau malam (bukan persen).",
+      "memory_hook": "RLMT = Total Malam Tamu dibagi Tamu Datang (Bukan dibagi Kamar, Bukan Persen).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 41]",
+          "problem": "Di sebuah hotel resor, terdapat 300 tamu asing dengan 900 malam tamu dan 200 tamu domestik dengan 350 malam tamu. Berapakah Rata-rata Lama Menginap Tamu (RLMT) secara total?",
+          "options": [
+            "2,38 malam",
+            "2,50 malam",
+            "2,75 malam",
+            "3,00 malam"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n1. Total malam tamu = $900 + 350 = 1.250$ malam tamu.\n2. Total tamu datang = $300 + 200 = 500$ orang.\n3. RLMT total = Total malam tamu / Total tamu datang:\n   $$\\text{RLMT}_{\\text{total}} = \\frac{1.250}{500} = 2,50 \\text{ malam}$$ [slide 41].\n(Catatan: Menghitung rata-rata sederhana $(3,00 + 1,75) / 2 = 2,375$ malam adalah salah karena jumlah tamu asing dan domestik tidak seimbang)."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-42 / Rekonstruksi Uji OSL]",
+          "problem": "Data tamu hotel bintang 5: Tamu asing 300 orang (900 malam tamu), tamu domestik 200 orang (350 malam tamu).\nHitunglah:\n1. RLMT tamu asing.\n2. RLMT tamu domestik.\n3. Total tamu dan total malam tamu.\n4. RLMT gabungan (total).\n5. Persentase tamu asing dari total tamu.\nTuliskan format: `RLMT_Foreign=..., RLMT_Domestic=..., TotalGuests=..., TotalNights=..., RLMT_Total=..., PctForeign=...`.",
+          "answer": "RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%",
+          "solution": "Langkah Perhitungan:\n1. **RLMT Tamu Asing** = $900 / 300 = 3,00$ malam.\n2. **RLMT Tamu Domestik** = $350 / 200 = 1,75$ malam.\n3. **Total Tamu** = $300 + 200 = 500$ orang. **Total Malam Tamu** = $900 + 350 = 1.250$ malam.\n4. **RLMT Total** = $1.250 / 500 = 2,50$ malam.\n5. **Persentase Tamu Asing** = $(300 / 500) \\times 100\\% = 60,0\\%$.\n\n**Verifikasi Kode Python**:\n```python\nguests_foreign = 300\nnights_foreign = 900\nrlmt_foreign = nights_foreign / guests_foreign\nguests_domestic = 200\nnights_domestic = 350\nrlmt_domestic = nights_domestic / guests_domestic\ntotal_guests = guests_foreign + guests_domestic\ntotal_nights = nights_foreign + nights_domestic\nrlmt_total = total_nights / total_guests\npct_foreign = (guests_foreign / total_guests) * 100.0\nprint(f'RLMT_Foreign={rlmt_foreign:.2f}, RLMT_Domestic={rlmt_domestic:.2f}, TotalGuests={total_guests}, TotalNights={total_nights}, RLMT_Total={rlmt_total:.2f}, PctForeign={pct_foreign:.1f}%')\n# RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%\n```"
+        }
+      ],
+      "links": [
+        "13.2.1",
+        "13.2.2"
+      ]
+    }
+  ]
+}

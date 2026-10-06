@@ -1,0 +1,103 @@
+{
+  "point_id": "10.2.2",
+  "title": "Imunisasi Dasar Lengkap IDL",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 10,
+    "silabus_topic": "Indikator Kesehatan dan SDGs 3",
+    "bps_subject": "Cakupan Imunisasi dan Indikator Perumahan Layak Huni (SDGs 11)"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "40-42, 62-91",
+        "content": "Imunisasi paradigma sehat & jenis vaksin (BCG, DPT, Polio, Campak, Hep B) slide 40-42, indikator perumahan KFB dan KFR slide 76, data karakteristik perumahan Susenas slide 77-79, indeks komposit rumah tidak layak huni 7 indikator slide 80-82, air minum layak slide 84, kelayakan jamban leher angsa septik slide 85, kriteria rumah tangga kumuh 4 dimensi (air 15%, sanitasi 15%, luas hunian 35%, ketahanan bangunan 35%; kumuh jika total > 35%) slide 88-89."
+      }
+    ],
+    "supplemental_sources": [
+      {
+        "source_name": "Permenkes No. 12 Tahun 2017 & Standar BPS",
+        "citation": "[SUPLEMEN: Permenkes 12/2017 & Standar IDL BPS]",
+        "content": "Definisi paket Imunisasi Dasar Lengkap (IDL) pada bayi usia 0-11 bulan: 1 dosis Hepatitis B0 (< 24 jam), 1 dosis BCG, 3 dosis DPT-HB-Hib, 4 dosis Polio tetes (OPV)/IPV, dan 1 dosis Campak/MR sebelum genap usia 1 tahun."
+      }
+    ],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Imunisasi adalah instrumen paradigma sehat preventif yang paling cost-effective dan memberikan perlindungan aktif jangka panjang terhadap Penyakit yang Dapat Dicegah Dengan Imunisasi (PD3I). Sementara itu, kondisi perumahan (shelter) adalah determinan lingkungan fisik terdepan dalam menjaga status kesehatan keluarga. Hunian yang tidak memiliki akses air bersih, fasilitas sanitasi buruk (jamban cemplung/cubluk), lantai tanah, dan luas hunian sempit memicu penularan penyakit berbasis lingkungan secara eksponensial. BPS dan Kementerian PUPR mengukur kelayakan fisik dan fasilitas tempat tinggal melalui Indeks Rumah Layak Huni (RLH) serta Kriteria Rumah Tangga Kumuh (SDGs 11.1).",
+    "bps_definition": "1. Imunisasi Dasar Lengkap (IDL) [slide 41-42 & SUPLEMEN]: Persentase anak usia 12-23 bulan yang telah menerima seluruh dosis imunisasi dasar sebelum mencapai usia 1 tahun (usia 0-11 bulan), yang terdiri dari: 1 dosis HB0, 1 dosis BCG, 3 dosis DPT-HB-Hib, 4 dosis Polio, dan 1 dosis Campak/MR.\n2. Indeks Komposit Rumah Tidak Layak Huni (7 Indikator BPS Sirusa) [slide 80-82]: Rumah diklasifikasikan sebagai Rumah Tidak Layak Huni (RTLH) bila memenuhi sedikitnya 3 dari 7 kriteria defisit (luas lantai < 7,2 m2/kapita, atap berkualitas rendah, dinding berkualitas rendah, lantai tanah, sanitasi tidak layak, air minum tidak layak, dan penerangan non-listrik).\n3. Kriteria Rumah Tangga Kumuh (SDGs 11 / EXT-4) [slide 88-89]: Rumah tangga dikategorikan kumuh bila total skor tertimbang dari 4 dimensi defisit (air minum tidak layak 15%, sanitasi tidak layak 15%, luas hunian <= 7,2 m2/kapita 35%, dan ketahanan bangunan rendah 35%) melebihi 35% (> 35%).",
+    "boundary_conditions": "Pada IDL, bayi yang melewatkan salah satu dosis vaksin (misal lengkap semua kecuali Campak) dikategorikan sebagai Imunisasi Dasar Tidak Lengkap. Standar kecukupan luas hunian minimum adalah >= 7,2 m2 per kapita [slide 80, 89]. Sanitasi layak mensyaratkan kloset leher angsa yang terhubung ke tangki septik atau SPAL [slide 85]. Air minum layak mensyaratkan sumber terlindung dengan jarak ke pembuangan tinja minimal 10 meter [slide 84, 86]. Rumah tangga dikategorikan kumuh jika total skor kumuh strictly greater than 35% (> 35%), sehingga skor tepat 35% belum dikategorikan kumuh [slide 89].",
+    "formula_latex": "$$\\text{Cakupan IDL} = \\frac{\\sum \\text{Anak(IDL Lengkap)}}{\\sum \\text{Sasaran Anak}} \\times 100\\%, \\quad \\text{Skor Kumuh} = 0,15 D_{\\text{air}} + 0,15 D_{\\text{sanitasi}} + 0,35 D_{\\text{luas}} + 0,35 D_{\\text{durabilitas}}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Di suatu kawasan permukiman perkotaan dilakukan survei perumahan terhadap 4 rumah tangga (RT A, RT B, RT C, RT D) dengan profil berikut:\n- RT A: Luas hunian 6,0 m2/kapita (defisit luas), sumber air leding terlindung (layak), jamban leher angsa septik (layak), atap seng, dinding tembok, lantai semen (ketahanan fisik baik).\n- RT B: Luas hunian 8,5 m2/kapita (layak), sumber air sumur tidak terlindung (defisit air), jamban cubluk (defisit sanitasi), atap genteng, dinding tembok, lantai keramik (ketahanan fisik baik).\n- RT C: Luas hunian 5,0 m2/kapita (defisit luas), air minum layak, sanitasi layak, jenis atap rumbia dan jenis lantai tanah (2 kriteria fisik rendah = defisit ketahanan bangunan).\n- RT D: Luas hunian 11,0 m2/kapita (layak), air minum layak, sanitasi layak, atap genteng, dinding tembok, lantai tanah (hanya 1 kriteria fisik rendah = ketahanan baik).\nHitunglah Skor Kumuh masing-masing rumah tangga berdasarkan pembobotan 4 dimensi BPS/SDGs 11 [air 15%, sanitasi 15%, luas 35%, ketahanan 35%], tentukan status kekumuhannya (ambang > 35%), serta tentukan status kelayakan huniannya berdasarkan 7 kriteria BPS Sirusa (RTLH jika >= 3 kriteria defisit).",
+    "data_table": "| Rumah Tangga | Defisit Air (15%) | Defisit Sanitasi (15%) | Defisit Luas $\\le 7,2\\text{ m}^2$ (35%) | Defisit Ketahanan $\\ge 2$ fisik (35%) | Total Skor Kumuh (%) | Status Kumuh ($>35\\%$) | Jumlah Defisit 7 Kriteria | Status Kelayakan BPS Sirusa |\n|---|---|---|---|---|---|---|---|---|\n| RT A | 0% | 0% | 35% | 0% | 35% | Tidak Kumuh ($\\le 35\\%$) | 1 | Rumah Layak Huni |\n| RT B | 15% | 15% | 0% | 0% | 30% | Tidak Kumuh ($\\le 35\\%$) | 2 | Rumah Hampir Tidak Layak |\n| RT C | 0% | 0% | 35% | 35% | 70% | **Kumuh** ($> 35\\%$) | 3 | **Rumah Tidak Layak Huni (RTLH)** |\n| RT D | 0% | 0% | 0% | 0% | 0% | Tidak Kumuh ($\\le 35\\%$) | 1 | Rumah Layak Huni |",
+    "step_by_step_solution": "1. Perhitungan Skor Kumuh RT A:\n   - Defisit: Luas hunian <= 7,2 m2 (35%). Air (0%), Sanitasi (0%), Ketahanan (0%).\n   - Skor = 0 + 0 + 35% + 0 = 35%.\n   - Karena ambang batas kumuh adalah > 35%, nilai 35% tepat di batas sehingga RT A berstatus Tidak Kumuh.\n   - Defisit 7 kriteria: 1 (luas) -> Rumah Layak Huni.\n2. Perhitungan Skor Kumuh RT B:\n   - Defisit: Air tidak layak (15%) + Sanitasi tidak layak (15%) = 30%.\n   - Skor = 30% <= 35% -> RT B berstatus Tidak Kumuh.\n   - Defisit 7 kriteria: 2 (air dan sanitasi) -> Rumah Hampir Tidak Layak Huni.\n3. Perhitungan Skor Kumuh RT C:\n   - Defisit: Luas hunian <= 7,2 m2 (35%) + Ketahanan fisik (2 bahan rendah: atap rumbia & lantai tanah = 35%).\n   - Skor = 35% + 35% = 70%.\n   - Karena 70% > 35%, RT C dikategorikan sebagai Rumah Tangga Kumuh.\n   - Defisit 7 kriteria: 3 (luas, atap, lantai) -> Rumah Tidak Layak Huni (RTLH).\n4. Perhitungan Skor Kumuh RT D:\n   - RT D hanya memiliki lantai tanah (1 komponen rendah, syarat defisit ketahanan adalah minimal 2 komponen rendah sehingga defisit ketahanan = 0%).\n   - Skor = 0% -> RT D berstatus Tidak Kumuh.\n   - Defisit 7 kriteria: 1 (lantai tanah) -> Rumah Layak Huni.",
+    "python_verification_code": "households = {\n    'RT_A': {'air': 0, 'sanitasi': 0, 'luas': 1, 'durabilitas': 0},\n    'RT_B': {'air': 1, 'sanitasi': 1, 'luas': 0, 'durabilitas': 0},\n    'RT_C': {'air': 0, 'sanitasi': 0, 'luas': 1, 'durabilitas': 1},\n    'RT_D': {'air': 0, 'sanitasi': 0, 'luas': 0, 'durabilitas': 0},\n}\nweights = {'air': 15, 'sanitasi': 15, 'luas': 35, 'durabilitas': 35}\n\nfor rt, flags in households.items():\n    score = sum(flags[dim] * weights[dim] for dim in weights)\n    is_kumuh = score > 35\n    print(f'{rt}: Skor={score}%, Kumuh={is_kumuh}')",
+    "expected_output": "RT_A: Skor=35%, Kumuh=False\nRT_B: Skor=30%, Kumuh=False\nRT_C: Skor=70%, Kumuh=True\nRT_D: Skor=0%, Kumuh=False"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Ambang Batas Nilai Kategori Kumuh (> 35% vs >= 35%)",
+      "common_mistake": "Menyimpulkan bahwa rumah tangga dengan skor tepat 35% (seperti RT A yang hanya defisit luas hunian) sudah tergolong kumuh.",
+      "safe_strategy": "Kriteria resmi BPS (slide 89) secara tegas menyatakan: 'Jika seluruh kriteria 1-4 di atas digabung, nilai kategori > 35%, maka rumah tangga tersebut dikategorikan sebagai rumah tangga kumuh'. Nilai tepat 35% belum memenuhi syarat kumuh."
+    },
+    {
+      "trap_description": "Defisit Durabilitas Ketahanan Bangunan",
+      "common_mistake": "Menganggap satu saja bahan berkualitas rendah (misal hanya lantai tanah) sudah mengaktifkan defisit durabilitas 35%.",
+      "safe_strategy": "Defisit durabilitas ketahanan bangunan mensyaratkan minimal 2 kriteria bahan berkualitas rendah terpenuhi (antara atap ijuk, dinding bambu, dan lantai tanah) [slide 89]."
+    },
+    {
+      "trap_description": "Kelayakan Sanitasi Jamban",
+      "common_mistake": "Menganggap kloset leher angsa yang disalurkan langsung ke sungai/selokan atau kloset plengsengan/cemplung sebagai sanitasi layak.",
+      "safe_strategy": "Sanitasi dinyatakan layak bila menggunakan kloset leher angsa dengan tempat pembuangan akhir berupa tangki septik atau SPAL [slide 85]."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 10,
+  "chapter_title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+  "section": "10.2 Morbiditas dan Pelayanan Kesehatan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "10.2.2",
+      "name": "Imunisasi Dasar Lengkap IDL",
+      "importance": "高",
+      "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 40-42, 62-91]",
+      "exam_focus": "Menguasai konsep imunisasi paradigma sehat, jenis vaksin wajib bayi 0-11 bulan (IDL), indikator perumahan KFB dan KFR, indeks komposit RTLH 7 indikator BPS Sirusa, dan 4 dimensi rumah tangga kumuh SDGs 11 (EXT-4).",
+      "textbook_excerpt": "Imunisasi adalah paradigma sehat dalam upaya pencegahan yang paling efektif. Imunisasi adalah proses membuat seseorang kebal terhadap penyakit melalui pemberian vaksin [slide 40-41]. Jenis vaksin: BCG (tuberkulosa), DPT (difteri, pertusis, tetanus), TT, DT, Polio (OPV), Campak, Hepatitis B, DPT/HB [slide 42]. Indikator perumahan: Kualitas Fisik Bangunan (luas lantai/kapita >= 7,2 m2, atap, lantai, dinding) dan Kelengkapan Fasilitas Rumah (air bersih, sanitasi/jamban, kamar mandi, listrik) [slide 76, 80]. Rumah Tidak Layak Huni: rumah tidak memenuhi persyaratan keselamatan bangunan dan kecukupan minimum luas lantai serta kesehatan penghuninya; jika terpenuhi sedikitnya 3 dari 7 kriteria termasuk kategori tidak layak huni [slide 81-82]. Rumah tangga kumuh bila nilai kategori gabungan 4 kriteria > 35%: air tidak layak (15%), sanitasi tidak layak (15%), luas hunian <= 7,2 m2 (35%), dan minimal 2 kriteria ketahanan bangunan rendah (35%) [slide 89].",
+      "intuition": "Mengapa dalam bab indikator kesehatan terdapat materi perumahan (housing)? Karena rumah bukan sekadar bangunan fisik penahan hujan (shelter), melainkan lingkungan hidup primer di mana imunitas dan kesehatan anggota keluarga dibentuk. Bayi yang telah diimunisasi dasar lengkap (IDL) akan tetap rentan sakit berulang jika tinggal di rumah berlantai tanah (vektor telur cacing), air minum tercemar bakteri E. coli dari septic tank yang berjarak kurang dari 10 meter, dan tidur berdesakan dalam ruangan sempit (< 7,2 m2 per kapita). Oleh karena itu, BPS mengintegrasikan survei kesehatan dengan karakteristik perumahan Susenas untuk mengevaluasi determinan lingkungan kesehatan masyarakat dan capaian SDGs 11 (Kota dan Permukiman Berkelanjutan).",
+      "formal": "### 1. Imunisasi Dasar Lengkap (IDL) pada Bayi\n\nBerdasarkan Permenkes No. 12 Tahun 2017 dan standar BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 41-42 & SUPLEMEN]:\nImunisasi Dasar Lengkap (IDL) merupakan pemberian kekebalan aktif buatan bagi bayi usia $0-11$ bulan dengan jadwal wajib:\n1. **Hepatitis B 0 (HB0)**: Diberikan 1 kali pada usia $0-7$ hari (ideal $< 24$ jam pascalahir) untuk mencegah penularan hepatitis B vertikal ibu ke anak.\n2. **BCG (*Bacillus Calmette-Guérin*)**: Diberikan 1 kali pada usia $1$ bulan untuk kekebalan aktif terhadap tuberkulosis (TBC).\n3. **DPT-HB-Hib**: Diberikan 3 kali pada usia $2, 3,$ dan $4$ bulan untuk kekebalan simultan terhadap difteri, pertusis, tetanus, hepatitis B, dan pneumonia/meningitis akibat *Haemophilus influenzae* tipe b.\n4. **Polio**: Diberikan 4 kali (tetes OPV usia 1, 2, 3, 4 bulan) serta minimal 1 suntikan IPV untuk kekebalan terhadap poliomielitis.\n5. **Campak / MR**: Diberikan 1 kali pada usia $9$ bulan untuk kekebalan terhadap campak dan rubella.\n$$\\text{Cakupan IDL} = \\frac{\\sum \\text{Bayi Usia 12-23 Bulan yang Menerima Paket Lengkap IDL}}{\\sum \\text{Total Sasaran Bayi Usia 12-23 Bulan}} \\times 100\\%$$\n\n### 2. Indeks Komposit Rumah Tidak Layak Huni (RTLH 7 Indikator BPS Sirusa)\nBPS menetapkan 7 indikator defisit kelayakan fisik dan fasilitas hunian [slide 80-82]:\n1. *Insufficient Living Area*: Luas lantai per kapita $< 7,2\\text{ m}^2/\\text{kapita}$.\n2. Atap terluas berkualitas rendah: Jerami, ijuk, rumbia, daun-daunan, atau lainnya.\n3. Dinding terluas berkualitas rendah: Bambu atau lainnya tanpa plester semen.\n4. Lantai terluas berkualitas rendah: Tanah.\n5. Sanitasi tidak layak: Tidak memiliki akses jamban sendiri/bersama dengan kloset leher angsa ke tangki septik/SPAL.\n6. Air minum tidak layak: Tidak memiliki akses air terlindung atau jarak ke sumber kotoran tinja $< 10\\text{ meter}$.\n7. Penerangan tidak layak: Sumber penerangan utama bukan listrik.\n\n**Klasifikasi Derajat Kelayakan Rumah (BPS Sirusa Indikator 798)** [slide 82]:\n- **Rumah Layak Huni (RLH)**: Memenuhi $\\le 1$ kriteria defisit (0 atau 1).\n- **Rumah Hampir Tidak Layak Huni**: Memenuhi tepat $2$ kriteria defisit.\n- **Rumah Tidak Layak Huni (RTLH)**: Memenuhi $\\ge 3$ kriteria defisit.\n\n### 3. Kriteria Rumah Tangga Kumuh SDGs 11 (EXT-4)\nBerdasarkan standar BPS dan Kementerian PUPR [slide 88-89], penentuan rumah tangga kumuh menggunakan 4 dimensi dengan pembobotan:\n$$\\text{Skor Kumuh} = 0,15 D_{\\text{air}} + 0,15 D_{\\text{sanitasi}} + 0,35 D_{\\text{luas}} + 0,35 D_{\\text{durabilitas}}$$\n\n| No | Dimensi Defisit | Bobot | Kriteria Defisit Terpenuhi (Nilai = 1) |\n|---|---|---|---|\n| 1 | Akses Air Minum Tidak Layak ($D_{\\text{air}}$) | 15% | Air sumur/mata air tak terlindung, air sungai, air hujan tanpa filtrasi, atau jarak septic tank < 10 m [slide 84, 89] |\n| 2 | Akses Sanitasi Tidak Layak ($D_{\\text{sanitasi}}$) | 15% | Menggunakan kloset bukan leher angsa (cemplung/cubluk/plengsengan) atau dibuang ke lubang tanah/sungai/terbuka [slide 85, 89] |\n| 3 | Kepadatan Hunian ($D_{\\text{luas}}$) | 35% | Luas lantai hunian $\\le 7,2\\text{ m}^2$ per kapita (*overcrowded*) [slide 80, 89] |\n| 4 | Ketahanan Bangunan Rendah ($D_{\\text{durabilitas}}$) | 35% | Terpenuhi **minimal 2 dari 3** komponen fisik rendah: atap ijuk/rumbia, dinding bambu, dan lantai tanah [slide 89] |\n\n**Kaidah Keputusan Status Kumuh**: Rumah tangga dikategorikan sebagai **Rumah Tangga Kumuh** bila total skor gabungan $> 35\\%$ [slide 89].",
+      "pitfalls": "1. **Ambang Skor Kumuh**: Nilai gabungan harus strictly greater than 35% (> 35%). Nilai tepat 35% (misal hanya defisit luas saja) TIDAK kumuh.\n2. **Syarat Defisit Durabilitas Bangunan**: Minimal 2 dari 3 bahan bangunan berkualitas rendah yang harus terpenuhi. Jika hanya 1 bahan rendah (misal hanya lantai tanah), skor durabilitas adalah 0%.\n3. **Sanitasi Layak**: Kloset plengsengan atau cubluk dikategorikan TIDAK LAYAK meskipun milik sendiri.",
+      "memory_hook": "IDL = HB0 + BCG + 3 DPT + 4 Polio + Campak; Kumuh = Air(15%) + Sanitasi(15%) + Luas(35%) + Ketahanan(35%) > 35%!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 80, 82, 89]",
+          "problem": "Berdasarkan materi resmi BPS mengenai indikator perumahan dan kriteria rumah kumuh (SDGs 11), berapakah standar luas lantai per kapita minimum agar hunian tidak tergolong padat/kurang luas (sufficient living area), dan berapakah batas nilai skor gabungan untuk menetapkan suatu rumah tangga sebagai rumah tangga kumuh?",
+          "options": [
+            "Luas lantai >= 10 m2/kapita dan skor kumuh >= 50%",
+            "Luas lantai >= 7,2 m2/kapita dan skor kumuh > 35%",
+            "Luas lantai >= 8,0 m2/kapita dan skor kumuh >= 35%",
+            "Luas lantai >= 7,2 m2/kapita dan skor kumuh > 50%"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Berdasarkan slide 80 dan 89, kecukupan luas lantai hunian minimum (sufficient living area) adalah luas lantai per kapita >= 7,2 m2/kapita. Jika <= 7,2 m2, maka tergolong defisit luas hunian (bobot 35%).\n- Berdasarkan slide 89: 'Jika seluruh kriteria 1-4 di atas digabung, nilai kategori > 35%, maka rumah tangga tersebut dikategorikan sebagai rumah tangga kumuh'."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 81, 82, 89]",
+          "problem": "Sebuah rumah tangga beranggotakan 5 orang menempati rumah dengan luas lantai 30 m2 (luas per kapita = 6 m2), menggunakan air minum terlindung dan jamban leher angsa septik, namun memiliki atap rumbia dan lantai tanah. Hitunglah Skor Kumuh rumah tangga tersebut dan tentukan status kekumuhannya (> 35%). Tentukan pula status kelayakan huniannya berdasarkan 7 indikator BPS Sirusa. Tuliskan jawaban akhir dalam format: `Skor=...%, StatusKumuh=..., StatusBPS=...`.",
+          "answer": "Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni",
+          "solution": "Langkah-langkah perhitungan:\n1. Identifikasi defisit 4 dimensi kumuh:\n   - Air: Layak -> Defisit = 0%\n   - Sanitasi: Layak -> Defisit = 0%\n   - Luas per kapita: 30 / 5 = 6,0 m2 <= 7,2 m2 -> Defisit = 35%\n   - Ketahanan fisik: Atap rumbia dan lantai tanah (terpenuhi 2 kriteria rendah) -> Defisit = 35%\n2. Total Skor Kumuh = 0% + 0% + 35% + 35% = 70%.\n3. Karena 70% > 35%, rumah tangga tersebut berstatus **Kumuh**.\n4. Evaluasi 7 kriteria BPS Sirusa:\n   - Defisit 1: Luas hunian < 7,2 m2/kapita\n   - Defisit 2: Atap rumbia (kualitas rendah)\n   - Defisit 3: Lantai tanah (kualitas rendah)\n   - Karena memenuhi 3 kriteria defisit (>= 3), rumah tangga tersebut diklasifikasikan sebagai **Rumah Tidak Layak Huni (RTLH)**.\n\n**Verifikasi Kode Python**:\n```python\nweights = {'air': 15, 'sanitasi': 15, 'luas': 35, 'durabilitas': 35}\ndefisits = {'air': 0, 'sanitasi': 0, 'luas': 1, 'durabilitas': 1}\nscore = sum(defisits[k] * weights[k] for k in weights)\nis_kumuh = score > 35\nprint(f'Skor={score}%, StatusKumuh={\"Kumuh\" if is_kumuh else \"Tidak Kumuh\"}, StatusBPS=Rumah Tidak Layak Huni')\n# Output: Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni\n```"
+        }
+      ],
+      "links": [
+        "10.1.2",
+        "10.1.3",
+        "10.2.1"
+      ]
+    }
+  ]
+}

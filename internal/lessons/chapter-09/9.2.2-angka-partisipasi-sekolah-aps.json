@@ -1,0 +1,101 @@
+{
+  "point_id": "9.2.2",
+  "title": "Angka Partisipasi Sekolah APS",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Indikator Pendidikan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "61-65",
+        "content": "Definisi, formula, 4 kelompok umur standar APS (7-12, 13-15, 16-18, 19-24 tahun), data Susenas 2021 menurut gender, tipe daerah, dan kuintil ekonomi."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "57-60",
+        "content": "EXT-2: Angka Melek Huruf (AMH 15+), konsep membaca menulis kalimat sederhana, braille, dan data Susenas 2019-2021."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "72-74",
+        "content": "EXT-2: Rata-rata Lama Sekolah (RLS / MYS), formula tahun belajar formal yang telah diselesaikan tanpa menghitung tahun mengulang."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Jika APM bertanya 'apakah kamu sekolah di jenjang yang benar?', maka APS bertanya lebih mendasar: 'apakah kamu sekolah atau tidak, di jenjang mana pun itu?'. APS memantau hak asasi anak untuk menikmati fasilitas pendidikan formal/kesetaraan pada kelompok umurnya tanpa menghakimi apakah anak tersebut tertinggal kelas atau mengalami percepatan belajar. Indikator outcome pendidikan dalam IPM melengkapinya melalui Angka Melek Huruf (AMH 15+) dan Rata-rata Lama Sekolah (RLS).",
+    "bps_definition": "Angka Partisipasi Sekolah (APS) adalah proporsi dari semua anak yang masih bersekolah pada suatu kelompok umur tertentu terhadap jumlah penduduk dengan kelompok umur yang sesuai, tanpa memandang jenjang pendidikan yang sedang ditempuh. Angka Melek Huruf (AMH 15+) adalah persentase penduduk usia 15 tahun ke atas yang dapat membaca dan menulis kalimat sederhana. Rata-rata Lama Sekolah (RLS) adalah jumlah tahun belajar penduduk usia 15 tahun ke atas yang telah diselesaikan dalam pendidikan formal tanpa mengulang.",
+    "boundary_conditions": "1. Pada APS, jenjang pendidikan tidak dipedulikan: murid usia 13-15 tahun yang masih duduk di bangku SD tetap dihitung dalam pembilang APS 13-15 tahun.\n2. Hubungan hirarkis indikator partisipasi: $\\text{APM}_J \\le \\text{APS}_{\\text{Usia}(J)} \\le 100\\%$.\n3. Aturan RLS: Tahun mengulang kelas (tinggal kelas) TIDAK dihitung sebagai penambah tahun belajar formal.",
+    "formula_latex": "$$\\text{APS}_{x-y} = \\frac{\\sum \\text{Siswa Bersekolah Usia } x-y}{P_{x-y}} \\times 100\\%, \\quad \\text{AMH}_{15+} = \\frac{\\text{MH}_{15+}}{P_{15+}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Di sebuah perdesaan terpencil terdapat 500 orang penduduk berusia 13-15 tahun (usia kelompok SMP). Berdasarkan pencacahan Susenas: 380 anak bersekolah tepat di jenjang SMP/MTs, 40 anak masih duduk di bangku SD karena terlambat masuk, 10 anak bersekolah akselerasi di jenjang SMA, dan 70 anak sudah putus sekolah. Di samping itu, dari 2.000 penduduk usia 15 tahun ke atas, terdapat 1.900 orang yang melek huruf. Hitunglah: (1) Total anak usia 13-15 tahun yang masih bersekolah, (2) APS 13-15 tahun, (3) APM SMP, dan (4) AMH 15+ desa tersebut!",
+    "data_table": "| Kelompok Penduduk / Siswa | Jumlah Jiwa |\n|---|---|\n| Penduduk Usia 13-15 Tahun | 500 |\n| Siswa Usia 13-15 di Jenjang SMP/MTs | 380 |\n| Siswa Usia 13-15 di Jenjang SD | 40 |\n| Siswa Usia 13-15 di Jenjang SMA | 10 |\n| Anak Usia 13-15 Tidak Bersekolah Lagi | 70 |\n| Penduduk Usia 15 Tahun ke Atas (P15+) | 2.000 |\n| Penduduk Usia 15+ yang Melek Huruf (MH15+) | 1.900 |",
+    "step_by_step_solution": "1. Menghitung Total Penduduk 13-15 Tahun yang Masih Bersekolah:\n   $$\\text{Total Siswa}_{13-15} = 380 (\\text{SMP}) + 40 (\\text{SD}) + 10 (\\text{SMA}) = 430 \\text{ anak}$$\n2. Menghitung Angka Partisipasi Sekolah (APS 13-15):\n   $$\\text{APS}_{13-15} = \\frac{430}{500} \\times 100\\% = 86,00\\%$$\n3. Menghitung Angka Partisipasi Murni (APM SMP):\n   $$\\text{APM}_{\\text{SMP}} = \\frac{380}{500} \\times 100\\% = 76,00\\%$$\n   *Buktinya: $\\text{APM SMP} (76,00\\%) \\le \\text{APS}_{13-15} (86,00\\%)$ terpenuhi.*\n4. Menghitung Angka Melek Huruf (AMH 15+):\n   $$\\text{AMH}_{15+} = \\frac{1.900}{2.000} \\times 100\\% = 95,00\\%$$",
+    "python_verification_code": "pop_13_15 = 500\nsmp_tepat = 380\nsd_tertinggal = 40\nsma_akselerasi = 10\ntotal_sekolah = smp_tepat + sd_tertinggal + sma_akselerasi\naps = (total_sekolah / pop_13_15) * 100.0\napm_smp = (smp_tepat / pop_13_15) * 100.0\npokok_15 = 2000\nmh_15 = 1900\namh = (mh_15 / pokok_15) * 100.0\nprint(f'Total Sekolah={total_sekolah}, APS={aps:.2f}%, APM SMP={apm_smp:.2f}%, AMH={amh:.2f}%')",
+    "expected_output": "Total Sekolah=430, APS=86.00%, APM SMP=76.00%, AMH=95.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengecualikan Siswa di Luar Jenjang Standar dalam Pembilang APS",
+      "common_mistake": "Hanya menghitung siswa yang duduk di SMP saat menghitung APS 13-15 tahun sehingga mendapatkan hasil 380/500 = 76% (ini nilai APM, bukan APS).",
+      "safe_strategy": "APS tidak peduli jenjang sekolah: anak usia 13-15 tahun yang duduk di SD maupun SMA wajib dihitung dalam pembilang APS."
+    },
+    {
+      "trap_description": "Memasukkan Tahun Mengulang Kelas ke dalam RLS (MYS)",
+      "common_mistake": "Menambahkan tahun tinggal kelas ke dalam akumulasi Rata-rata Lama Sekolah.",
+      "safe_strategy": "Konsep baku BPS secara tegas mengecualikan tahun mengulang dalam perhitungan Rata-rata Lama Sekolah."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.2 Indikator Pendidikan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.2.2",
+      "name": "Angka Partisipasi Sekolah APS",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 61-65, 57-60, 72-74]",
+      "exam_focus": "Formula 4 kelompok usia APS, komparasi analitis APM vs APK vs APS, integrasi indikator pendidikan IPM (AMH 15+ dan RLS/MYS) (EXT-2).",
+      "textbook_excerpt": "ANGKA PARTISIPASI SEKOLAH (APS): APS 7-12 = Jumlah penduduk 7-12 tahun bersekolah / Jumlah penduduk usia 7-12 tahun * 100 [slide 63]. Kondef: Proporsi dari semua anak yang masih sekolah pada suatu kelompok umur tertentu terhadap penduduk dengan kelompok umur yang sesuai. Sejak 2009 Pendidikan Non Formal turut diperhitungkan [slide 64]. Angka Melek Huruf: AMH15+ = MH15+ / P15+ * 100 [slide 58]. Kondef: Proporsi penduduk berusia 15 tahun ke atas yang memiliki kemampuan membaca dan menulis kalimat sederhana dalam huruf latin/arab/lainnya [slide 59]. Rata-rata Lama Sekolah (MYS): Jumlah tahun belajar penduduk usia 15 tahun ke atas yang telah diselesaikan dalam pendidikan formal (tidak termasuk tahun yang mengulang) [slide 73].",
+      "intuition": "Jika ada sensus di suatu RT, petugas hanya bertanya kepada anak usia 14 tahun: 'Adik masih sekolah atau sudah berhenti?'. Petugas tidak peduli apakah si adik masih kelas 6 SD atau sudah kelas 1 SMA. Selama dia masih aktif sekolah, dia dihitung dalam APS kelompok 13-15 tahun.",
+      "formal": "### 1. Formulasi Matematis Empat Kelompok Usia APS\n\nBPS membagi APS ke dalam 4 kelompok umur standar yang bersesuaian dengan jenjang wajar Dikdasmen dan Dikti [slide 63]:\n\n$$\\text{APS}_{7-12} = \\frac{\\text{Penduduk usia 7-12 tahun masih bersekolah}}{\\text{Jumlah penduduk usia 7-12 tahun}} \\times 100\\%$$\n$$\\text{APS}_{13-15} = \\frac{\\text{Penduduk usia 13-15 tahun masih bersekolah}}{\\text{Jumlah penduduk usia 13-15 tahun}} \\times 100\\%$$\n$$\\text{APS}_{16-18} = \\frac{\\text{Penduduk usia 16-18 tahun masih bersekolah}}{\\text{Jumlah penduduk usia 16-18 tahun}} \\times 100\\%$$\n$$\\text{APS}_{19-24} = \\frac{\\text{Penduduk usia 19-24 tahun masih bersekolah}}{\\text{Jumlah penduduk usia 19-24 tahun}} \\times 100\\%$$\n\n### 2. Matriks Komparasi Segitiga Partisipasi Pendidikan: APM vs APK vs APS\n\n| Aspek Pembeda | Angka Partisipasi Murni (APM) | Angka Partisipasi Kasar (APK) | Angka Partisipasi Sekolah (APS) |\n|---|---|---|---|\n| **Fokus Utama** | Ketepatan usia sekolah (*on-time schooling*) [slide 70] | Kapasitas/daya tampung sekolah (*capacity*) [slide 67] | Akses riil penduduk usia sekolah (*access*) [slide 64] |\n| **Pembilang** | Siswa usia resmi pada jenjang yang sesuai | Seluruh siswa di jenjang tsb (semua umur) | Seluruh anak pada usia tsb yang sekolah (semua jenjang) |\n| **Penyebut** | Penduduk kelompok umur jenjang tsb | Penduduk kelompok umur jenjang tsb | Penduduk kelompok umur tsb |\n| **Rentang Nilai** | $0\\% \\le \\text{APM} \\le 100\\%$ | Bisa $> 100\\%$ | $0\\% \\le \\text{APS} \\le 100\\%$ |\n| **Sifat Relatif** | $\\text{APM} \\le \\text{APK}$ dan $\\text{APM} \\le \\text{APS}$ | APK bisa paling tinggi di antara ketiganya | Selalu lebih besar atau sama dengan APM |\n\n### 3. Indikator Komposit Pendidikan IPM (EXT-2)\n\nDalam mengukur dimensi pengetahuan pada Indeks Pembangunan Manusia (IPM) BPS [slide 58, 73]:\n- **Angka Melek Huruf (AMH 15+)**: Mengukur stok keaksaraan dasar. Sejak metode baru IPM 2014, AMH digantikan oleh Harapan Lama Sekolah (HLS), namun AMH tetap menjadi indikator pemantauan SDGs Target 4.6 [slide 56, 58].\n- **Rata-rata Lama Sekolah (RLS / Mean Years of Schooling)**: Mengukur akumulasi modal manusia (*human capital stock*). Dihitung dari kombinasi ijazah tertinggi dan kelas tertinggi yang pernah diselesaikan, dengan syarat **tahun mengulang tidak dihitung** [slide 73].",
+      "pitfalls": "Mengasumsikan APS bisa melebihi 100%. Berbeda dengan APK yang pembilangnya mencakup siswa lintas umur, pembilang APS adalah subset dari penyebutnya (hanya anak-anak pada kelompok umur tersebut yang bersekolah), sehingga APS secara matematis tidak pernah bisa melebihi 100%.",
+      "memory_hook": "APS = Hak Sekolah pada Kelompok Umur (Tidak peduli jenjang). RLS = Tahun sekolah formal selesai (tidak termasuk mengulang).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 62-64, 70]",
+          "problem": "Manakah pernyataan yang paling akurat mengenai perbandingan antara APM, APK, dan APS untuk kelompok jenjang SMP (usia 13-15 tahun)?",
+          "options": [
+            "Nilai APS 13-15 tahun selalu lebih kecil atau sama dengan APM SMP.",
+            "Nilai APM SMP selalu lebih kecil atau sama dengan APS 13-15 tahun.",
+            "Nilai APK SMP tidak mungkin lebih besar daripada APS 13-15 tahun.",
+            "Nilai APS 13-15 tahun dapat melebihi 100% jika banyak siswa mengulang kelas."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Pembilang APM SMP hanya menghitung anak usia 13-15 tahun yang bersekolah di SMP.\n- Pembilang APS 13-15 tahun menghitung seluruh anak usia 13-15 tahun yang bersekolah di jenjang apa pun (SD, SMP, maupun SMA).\n- Karena pembilang APM adalah himpunan bagian dari pembilang APS, maka nilai $\\text{APM} \\le \\text{APS}$ mutlak selalu berlaku."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 58, 73]",
+          "problem": "Seseorang menempuh pendidikan SD selama 7 tahun (tinggal kelas 1 kali saat kelas 3), kemudian menyelesaikan SMP selama 3 tahun, SMA selama 3 tahun, dan kuliah D4/S1 selama 4 tahun hingga wisuda. Berdasarkan konsep BPS, berapakah Rata-rata Lama Sekolah (RLS) yang disumbangkan oleh individu tersebut? Tuliskan dalam format: `RLS=X tahun`.",
+          "answer": "RLS=16 tahun",
+          "solution": "Langkah-langkah perhitungan:\n1. Pendidikan yang diselesaikan:\n   - SD: 6 tahun jenjang resmi (tahun ke-7 adalah tahun mengulang).\n   - SMP: 3 tahun.\n   - SMA: 3 tahun.\n   - Perguruan Tinggi (S1): 4 tahun.\n2. Sesuai konsep baku BPS [slide 73], tahun yang mengulang TIDAK dihitung sebagai lama sekolah.\n3. Total tahun belajar yang diakui:\n   $$\\text{RLS} = 6 + 3 + 3 + 4 = 16 \\text{ tahun}$$\n\n**Verifikasi Kode Python**:\n```python\nsd_resmi = 6\nsmp = 3\nsma = 3\nperti = 4\nrls = sd_resmi + smp + sma + perti\nprint(f'RLS={rls} tahun')\n# Output: RLS=16 tahun\n```"
+        }
+      ],
+      "links": [
+        "9.1.1",
+        "9.2.1"
+      ]
+    }
+  ]
+}

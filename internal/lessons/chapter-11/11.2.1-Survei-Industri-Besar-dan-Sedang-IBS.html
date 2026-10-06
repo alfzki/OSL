@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>11.2 Statistik Industri Pengolahan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>11.2 Statistik Industri Pengolahan</h2><a href="#p-11.2.1">11.2.1 Survei Industri Besar dan Sedang IBS</a></nav>
+<main>
+<h1>11.2 Statistik Industri Pengolahan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 11: Statistik Produksi Pertanian dan Industri ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-11.2.1">
+<h2>11.2.1 Survei Industri Besar dan Sedang IBS</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 25-28, 50-51]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi industri pengolahan/manufaktur BPS, batasan tenaga kerja IBS (20 orang atau lebih), indikator efisiensi rasio input terhadap output, indeks produksi manufaktur, serta integrasi ekstensi EXT-5 formula Nilai Pekerjaan Konstruksi NK = (NP - NS) x %NR.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Indeks Produksi Industri Manufaktur Besar Sedang. Industri Pengolahan/Manufaktur adalah usaha yang melakukan kegiatan ekonomi yang mengubah suatu barang dasar secara mekanis, kimia, atau dengan tangan sehingga menjadi barang jadi atau setengah jadi, dan atau barang yang kurang nilainya menjadi barang yang lebih tinggi nilainya [slide 25]. Efisiensi Industri Besar dan Sedang adalah suatu nilai yang menunjukkan perbandingan masukan dan keluaran yang diterima pada industri besar dan sedang yang menunjukkan tingkat penggunaan sumber daya secara minimum guna mencapai hasil yang maksimum. Nilai ini diperoleh dari rasio input terhadap output [slide 26]. Variabel Nilai Pekerjaan Konstruksi: NK = (NP - NS) x %NR. Dimana: NK = Nilai pekerjaan konstruksi, NP = Nilai proyek, NS = Nilai pekerjaan yang disubkontrakkan, %NR = persentase realisasi fisik pekerjaan yang diselesaikan [slide 50].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa BPS menyurvei IBS secara lengkap (complete enumeration) terpisah dari industri kecil? Industri besar dan sedang (IBS) mencakup hanya sekitar 1-2% dari total jumlah entitas industri di Indonesia, namun mereka menyumbang lebih dari 80-85% total nilai tambah dan ekspor manufaktur nasional. Karakteristik IBS memiliki pembukuan formal terstandar, sehingga BPS dapat mengumpulkan data rinci komposisi input, output, tenaga kerja, upah, dan efisiensi. Selain manufaktur, sektor penyumbang output fisik besar lainnya adalah jasa konstruksi, di mana nilai realisasi output dihitung melalui formula Nilai Pekerjaan Konstruksi (NK) dengan mengurangkan pekerjaan yang disubkontrakkan agar tidak terjadi pencatatan ganda (double counting).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Statistik Industri Manufaktur BPS</p>
+<p>Berdasarkan materi resmi perkuliahan [slide 25–28]:<br>- <strong>Definisi Industri Pengolahan</strong>: Kegiatan ekonomi yang mentransformasikan barang dasar secara mekanis, kimia, atau tangan menjadi barang baru dengan nilai ekonomis lebih tinggi, termasuk jasa industri (maklun di mana bahan baku disediakan pihak pemesan) dan perakitan (*assembling*) [slide 25].<br>- <strong>Indikator Penting Industri Manufaktur</strong>: Jumlah perusahaan, jumlah tenaga kerja, produktivitas tenaga kerja, komposisi input, komposisi output, nilai tambah, efisiensi, dan indeks produksi [slide 25].</p>
+<p>#### A. Klasifikasi Skala Tenaga Kerja Industri BPS<br>BPS membagi sektor industri pengolahan ke dalam empat strata tenaga kerja:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Skala Usaha Industri</th><th>Batasan Tenaga Kerja ($L$)</th><th>Pendekatan Pencacahan BPS</th><th>Sifat Karakteristik Usaha</th></tr></thead><tbody><tr><td><strong>Industri Mikro (IM)</strong></td><td>1 – 4 orang</td><td>Survei Sampel (VIMK)</td><td>Informal, tanpa badan hukum, padat karya</td></tr><tr><td><strong>Industri Kecil (IK)</strong></td><td>5 – 19 orang</td><td>Survei Sampel (VIMK)</td><td>Campuran formal-informal, modal terbatas</td></tr><tr><td><strong>Industri Sedang (IS)</strong></td><td>20 – 99 orang</td><td>Sensus Lengkap / Direktori IBS</td><td>Formal, memiliki izin usaha, pembukuan teratur</td></tr><tr><td><strong>Industri Besar (IB)</strong></td><td>100 orang atau lebih</td><td>Sensus Lengkap / Direktori IBS</td><td>Korporasi besar, padat modal, teknologi canggih</td></tr></tbody></table></div>
+<p>Gabungan Industri Besar dan Sedang (<strong>IBS</strong>) didefinisikan sebagai usaha industri dengan tenaga kerja <strong>$\ge 20\text{ orang}$</strong> [slide 25, 27].</p>
+<p>### 2. Indikator Kinerja dan Efisiensi IBS</p>
+<p>- <strong>Efisiensi Industri</strong>: Suatu nilai yang menunjukkan perbandingan masukan (input antara) dan keluaran (output bruto) [slide 26]:<br>$$\text{Efisiensi} = \frac{\text{Nilai Input Antara}}{\text{Nilai Output Bruto}}$$<br>Interpretasi: Jika efisiensi adalah 0,60, maka besarnya biaya input antara yang diperlukan oleh industri untuk menghasilkan setiap satu rupiah output adalah Rp0,60 [slide 27]. Semakin rendah rasio ini, semakin tinggi tingkat efisiensi penggunaan bahan baku dalam proses produksi.<br>- <strong>Nilai Tambah Bruto (NTB)</strong>: Kontribusi bersih industri terhadap PDB/PDRB:<br>$$\text{NTB} = \text{Nilai Output} - \text{Biaya Input Antara}$$</p>
+<p>### 3. Ekstensi EXT-5: Statistik Konstruksi dan Nilai Pekerjaan Konstruksi (NK)</p>
+<p>Sektor konstruksi memiliki karakteristik proyek berbasis kontrak multi-tahun (*multi-year contract*). Untuk mengukur produktivitas dan realisasi pembangunan infrastruktur tanpa terjadi penghitungan ganda (*double counting*), BPS menetapkan formula <strong>Nilai Pekerjaan Konstruksi (NK)</strong> [slide 50]:</p>
+<p>$$NK = (NP - NS) \times \%NR$$</p>
+<p>di mana:<br>- $NK$ : Nilai pekerjaan konstruksi yang diselesaikan (Rupiah).<br>- $NP$ : Nilai kontrak proyek total (*contract value*).<br>- $NS$ : Nilai pekerjaan yang disubkontrakkan kepada kontraktor spesialis lain (*subcontracted value*).<br>- $\%NR$ : Persentase realisasi fisik pekerjaan yang diselesaikan dalam periode survei berjalan, dihitung dari:<br>$$\%NR = \%NR_{\text{akhir periode}} - \%NR_{\text{awal periode}}$$</p>
+<p>Pengurangan $NS$ adalah mutlak secara metodologis karena nilai pekerjaan yang disubkontrakkan akan dilaporkan secara mandiri oleh perusahaan subkontraktor yang bersangkutan dalam survei BPS [slide 50].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>BPS mempublikasikan indikator efisiensi industri manufaktur besar dan sedang pada suatu provinsi sebesar 0,65. Bagaimanakah interpretasi ekonomi yang tepat dari angka rasio efisiensi 0,65 tersebut menurut standar BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 25-27]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Perusahaan memperoleh keuntungan bersih sebesar 65% dari total penjualan produk.</button>
+<button class="ex-opt" data-i="1">B. Untuk menghasilkan setiap satu rupiah output, industri memerlukan biaya input antara sebesar 0,65 rupiah.</button>
+<button class="ex-opt" data-i="2">C. Nilai tambah bruto yang diciptakan perusahaan adalah sebesar 65% dari total input antara.</button>
+<button class="ex-opt" data-i="3">D. Produksi industri manufaktur periode berjalan mengalami peningkatan sebesar 65% dibanding tahun dasar.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan konsep resmi BPS [Slide 26, 27], efisiensi industri manufaktur dihitung dari perbandingan antara input antara terhadap output (rasio Input/Output).<br>2. Nilai efisiensi sebesar 0,65 berarti bahwa untuk menghasilkan setiap satu rupiah nilai keluaran (output), industri tersebut memerlukan masukan (biaya bahan baku dan penolong) sebesar Rp0,65.<br>3. Sisanya, yaitu $1,00 - 0,65 = 0,35$ rupiah (35%), merupakan porsi Nilai Tambah Bruto (NTB) yang menjadi balas jasa faktor produksi (upah tenaga kerja, penyusutan, sewa, dan keuntungan usaha).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;NK=6400000000.0 (Rp6.4 Miliar), Efisiensi=0.60, NTB=Rp2.0 Miliar&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Rekonstruksi Soal Slide 50-51 &amp; EXT-5 Uji E2E Skenario 9: PT Mahakarya memenangkan proyek bernilai kontrak total NP = 10 Miliar Rupiah (Rp10.000.000.000,-). Bagian fondasi disubkontrakkan dengan nilai NS = 2 Miliar Rupiah (Rp2.000.000.000,-). Realisasi fisik yang diselesaikan adalah 80% (%NR = 0,80). Divisi manufaktur IBS milik perusahaan mencatat output Rp5.000.000.000,- dan input Rp3.000.000.000,-. Hitunglah Nilai Pekerjaan Konstruksi (NK), efisiensi IBS, dan Nilai Tambah Bruto (NTB). Tuliskan jawaban dalam format: <code>NK=X (RpY Miliar), Efisiensi=A, NTB=RpB Miliar</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 50-51]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. <strong>Nilai Pekerjaan Konstruksi (NK)</strong>:<br>   $$\begin{aligned}
+   NK &amp;= (NP - NS) \times \%NR \\
+   &amp;= (10.000.000.000 - 2.000.000.000) \times 0,80 \\
+   &amp;= 8.000.000.000 \times 0,80 = 6.400.000.000\text{ Rupiah (6,4 Miliar)}
+   \end{aligned}$$<br>2. <strong>Efisiensi Manufaktur IBS</strong>:<br>   $$\text{Efisiensi} = \frac{\text{Input}}{\text{Output}} = \frac{3.000.000.000}{5.000.000.000} = 0,60$$<br>3. <strong>Nilai Tambah Bruto (NTB) Manufaktur IBS</strong>:<br>   $$\text{NTB} = \text{Output} - \text{Input} = 5.000.000.000 - 3.000.000.000 = 2.000.000.000\text{ Rupiah (2,0 Miliar)}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>np = 10000000000.0<br>ns = 2000000000.0<br>nr_percent = 0.80<br>nk = (np - ns) * nr_percent<br>out_man = 5000000000.0<br>in_man = 3000000000.0<br>eff = in_man / out_man<br>ntb = out_man - in_man<br>print(f'NK={nk:.1f} (Rp{nk/1e9:.1f} Miliar), Efisiensi={eff:.2f}, NTB=Rp{ntb/1e9:.1f} Miliar')<br># Output: NK=6400000000.0 (Rp6.4 Miliar), Efisiensi=0.60, NTB=Rp2.0 Miliar<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Nilai Subkontrak (NS)</strong>: Seringkali mahasiswa menghitung $NK = NP \times \%NR$ tanpa mengurangkan $NS$. Hal ini salah karena menyebabkan pencatatan ganda atas output pekerjaan yang didelegasikan ke subkontraktor.</li><li><strong>Jebakan Rasio Efisiensi</strong>: Mengasumsikan rasio efisiensi 0,7 lebih baik daripada 0,5. Rasio efisiensi BPS adalah Input/Output, sehingga angka 0,5 (biaya input 50%) jauh lebih efisien daripada 0,7 (biaya input 70%).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>IBS tenaga kerja &gt;= 20 orang. Efisiensi = Input / Output (makin kecil makin bagus). Konstruksi NK = (NP - NS) x %NR.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.2.2</div>
+<button class="donebtn" data-id="11.2.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

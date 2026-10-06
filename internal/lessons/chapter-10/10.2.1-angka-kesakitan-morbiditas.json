@@ -1,0 +1,103 @@
+{
+  "point_id": "10.2.1",
+  "title": "Angka Kesakitan Morbiditas",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 10,
+    "silabus_topic": "Indikator Kesehatan dan SDGs 3",
+    "bps_subject": "Morbiditas dan Status Gizi Balita (Antropometri WHO)"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "36-65",
+        "content": "Pembangunan kesehatan masyarakat dan 4 pilar (promotif, preventif, kuratif, rehabilitatif) slide 38-40, antropometri penilaian gizi BB/U, TB/U, BB/TB slide 48-53, ambang batas Z-score standar WHO slide 54-55, Riskesdas tren status gizi balita slide 56, prevalensi stunting TB/U (sangat pendek Z < -3 SD, pendek -3 SD s/d < -2 SD) slide 58-60, data stunting provinsi slide 61."
+      }
+    ],
+    "supplemental_sources": [
+      {
+        "source_name": "Standar Susenas Kor BPS",
+        "citation": "[SUPLEMEN: BPS Indikator Kesehatan & Susenas Kor]",
+        "content": "Definisi operasional Angka Kesakitan (Morbidity Rate): persentase penduduk yang mengalami keluhan kesehatan yang mengakibatkan terganggunya aktivitas sehari-hari selama kurun waktu satu bulan terakhir sebelum pencacahan."
+      }
+    ],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Tingkat kesehatan masyarakat tidak semata-mata diukur dari angka kematian (mortalitas), tetapi juga dari frekuensi dan derajat keparahan penyakit yang diderita penduduk saat hidup (morbiditas). Dalam survei BPS Susenas, tidak semua keluhan ringan (seperti bersin sesekali atau lelah biasa) dicatat sebagai angka kesakitan. Angka Kesakitan (Morbiditas) BPS secara spesifik mensyaratkan adanya gangguan terhadap aktivitas harian normal (bekerja, bersekolah, atau mengurus rumah tangga). Pada kelompok balita, penyakit infeksi berulang (diare, infeksi saluran cerna) berkaitan timbal balik dengan status gizi buruk. BPS dan Kementerian Kesehatan mengukur status gizi balita menggunakan standar antropometri WHO (2005) melalui konversi nilai terstandarisasi (Z-score). Indikator TB/U (Tinggi Badan menurut Umur) mencerminkan masalah gizi kronis menahun (Stunting), yang berakibat pada hambatan perkembangan kognitif permanen dan kerugian modal manusia jangka panjang.",
+    "bps_definition": "1. Angka Kesakitan (Morbidity Rate) menurut standar Susenas BPS [SUPLEMEN: BPS Susenas Kor & Slide 38, 51] adalah persentase penduduk yang mengalami keluhan kesehatan yang mengakibatkan terganggunya aktivitas sehari-hari (pekerjaan, sekolah, atau kegiatan rumah tangga) dalam kurun waktu satu bulan terakhir sebelum survei.\n2. Penilaian Status Gizi Balita (Antropometri WHO 2005) [Pertemuan_10_Indikator_Kesehatan.md, slide 48-55]: Status gizi diukur melalui deviasi nilai fisik anak terhadap median populasi rujukan baku WHO yang dinyatakan dalam Skor Simpangan Baku (Z-score):\n   $$Z = \\frac{\\text{Nilai Riil Anak} - \\text{Median Standar WHO}}{\\text{Standar Deviasi (SD) Baku WHO}}$$\n3. Prevalensi Stunting (EXT-3) [slide 58-60]: Persentase anak balita yang tergolong pendek (-3,0 SD <= Z < -2,0 SD) dan sangat pendek (Z < -3,0 SD) berdasarkan indeks Tinggi Badan menurut Umur (TB/U) atau Panjang Badan menurut Umur (PB/U) standar baku WHO 2005.",
+    "boundary_conditions": "Periode rujukan keluhan kesehatan Susenas adalah 1 bulan terakhir. Gangguan aktivitas harus benar-benar menghalangi kegiatan produktif harian. Pada indeks antropometri balita:\n- Indeks TB/U (Gizi Masa Lalu/Kronis): Stunting bila Z-score < -2,0 SD (terdiri dari Sangat Pendek bila Z < -3,0 SD dan Pendek bila -3,0 SD <= Z < -2,0 SD) [slide 59].\n- Indeks BB/U (Gizi Masa Kini & Akut): Underweight bila Z < -2,0 SD (Gizi Buruk bila Z < -3,0 SD dan Gizi Kurang bila -3,0 SD <= Z < -2,0 SD) [slide 52].\n- Indeks BB/TB (Status Akut/Kurus/Wasting): Kurang gizi akut bila Z < -2,0 SD. Jika prevalensi wasting > 10%, WHO menetapkan sebagai kondisi darurat masalah gizi sangat serius [slide 51].",
+    "formula_latex": "$$\\text{Morbiditas} = \\frac{\\sum P_{\\text{terganggu}}}{\\sum P} \\times 100\\%, \\quad Z = \\frac{X - \\text{Median}}{\\text{SD}}, \\quad \\text{Stunting}(\\%) = \\frac{\\sum \\text{Balita}(Z_{\\text{TB/U}} < -2\\text{ SD})}{\\sum \\text{Balita Diukur}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam suatu survei kesehatan terpadu di Kecamatan Makmur:\n1. Dari total 50.000 penduduk, tercatat 8.500 jiwa memiliki keluhan kesehatan dalam satu bulan terakhir, dan 6.000 jiwa di antaranya mengalami keluhan kesehatan yang sampai mengganggu aktivitas pekerjaan/sekolah harian.\n2. Dilakukan pengukuran tinggi/panjang badan terhadap 1.200 anak balita. Hasil konversi Z-score TB/U standar WHO 2005 mengidentifikasi: 108 balita berstatus Sangat Pendek (Z < -3,0 SD), 180 balita berstatus Pendek (-3,0 SD <= Z < -2,0 SD), 888 balita Normal (-2,0 SD <= Z <= +3,0 SD), dan 24 balita Tinggi (Z > +3,0 SD).\nHitunglah Angka Keluhan Kesehatan, Angka Kesakitan (Morbiditas) standar BPS, Prevalensi Balita Sangat Pendek, Prevalensi Balita Pendek, serta Total Prevalensi Stunting (EXT-3) di kecamatan tersebut.",
+    "data_table": "| Indikator Kesehatan & Gizi | Kategori / Ambang Batas | Jumlah Kasus | Total Populasi Basis | Persentase (%) |\n|---|---|---|---|---|\n| Keluhan Kesehatan Total | Seluruh keluhan sebulan terakhir | 8.500 | 50.000 penduduk | 17,00% |\n| Angka Kesakitan (Morbiditas) | Keluhan mengganggu aktivitas | 6.000 | 50.000 penduduk | 12,00% |\n| Balita Sangat Pendek | $Z_{\\text{TB/U}} < -3,0\\text{ SD}$ | 108 | 1.200 balita | 9,00% |\n| Balita Pendek | $-3,0\\text{ SD} \\le Z < -2,0\\text{ SD}$ | 180 | 1.200 balita | 15,00% |\n| Balita Normal | $-2,0\\text{ SD} \\le Z \\le +3,0\\text{ SD}$ | 888 | 1.200 balita | 74,00% |\n| Balita Tinggi | $Z_{\\text{TB/U}} > +3,0\\text{ SD}$ | 24 | 1.200 balita | 2,00% |\n| **Total Stunting (EXT-3)** | $Z_{\\text{TB/U}} < -2,0\\text{ SD}$ | **288** | **1.200 balita** | **24,00%** |",
+    "step_by_step_solution": "1. Menghitung Angka Keluhan Kesehatan:\n   $$\\text{Keluhan Kesehatan} = \\frac{8.500}{50.000} \\times 100\\% = 17,00\\%$$\n2. Menghitung Angka Kesakitan (Morbiditas) BPS [SUPLEMEN: BPS Susenas Kor]:\n   Syarat utama morbiditas adalah keluhan yang mengakibatkan terganggunya aktivitas harian:\n   $$\\text{Morbiditas} = \\frac{6.000}{50.000} \\times 100\\% = 12,00\\%$$\n3. Menghitung Prevalensi Balita Sangat Pendek [Pertemuan_10_Indikator_Kesehatan.md, slide 58-59]:\n   $$\\text{Prevalensi Sangat Pendek} = \\frac{108}{1.200} \\times 100\\% = 9,00\\%$$\n4. Menghitung Prevalensi Balita Pendek [slide 59]:\n   $$\\text{Prevalensi Pendek} = \\frac{180}{1.200} \\times 100\\% = 15,00\\%$$\n5. Menghitung Total Prevalensi Stunting (EXT-3):\n   Total balita stunting mencakup seluruh anak dengan Z-score TB/U < -2,0 SD:\n   $$\\text{Total Stunting} = 9,00\\% + 15,00\\% = 24,00\\%$$\n   Atau via rumus langsung: $\\frac{108 + 180}{1.200} \\times 100\\% = \\frac{288}{1.200} \\times 100\\% = 24,00\\%$.",
+    "python_verification_code": "pop = 50000\ncomplaints = 8500\ndisrupted = 6000\nmorbidity = (disrupted / pop) * 100.0\n\nunder5_total = 1200\nseverely_stunted = 108\nstunted = 180\nprev_severely = (severely_stunted / under5_total) * 100.0\nprev_stunted = (stunted / under5_total) * 100.0\ntotal_stunting = ((severely_stunted + stunted) / under5_total) * 100.0\n\nprint(f'Morbiditas={morbidity:.2f}%, SangatPendek={prev_severely:.2f}%, Pendek={prev_stunted:.2f}%, StuntingTotal={total_stunting:.2f}%')",
+    "expected_output": "Morbiditas=12.00%, SangatPendek=9.00%, Pendek=15.00%, StuntingTotal=24.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Keluhan Kesehatan vs Angka Kesakitan BPS",
+      "common_mistake": "Menggunakan angka 8.500 (seluruh keluhan kesehatan) sebagai pembilang Angka Kesakitan, menghasilkan 17,00%.",
+      "safe_strategy": "Bedakan secara tegas: Keluhan Kesehatan mencakup seluruh gangguan fisik (17,00%), sedangkan Angka Kesakitan (Morbiditas) BPS secara ketat mensyaratkan keluhan yang mengganggu aktivitas sehari-hari (12,00%)."
+    },
+    {
+      "trap_description": "Tertukar Antara Indeks TB/U dan BB/U",
+      "common_mistake": "Mengukur prevalensi stunting menggunakan indeks Berat Badan menurut Umur (BB/U).",
+      "safe_strategy": "Stunting diukur secara eksklusif menggunakan indeks Tinggi Badan (atau Panjang Badan) menurut Umur (TB/U atau PB/U). Indeks BB/U mengukur underweight (gizi kurang/buruk)."
+    },
+    {
+      "trap_description": "Mengabaikan Kategori Sangat Pendek dalam Prevalensi Stunting",
+      "common_mistake": "Hanya menghitung balita pendek (rentang -3 SD s.d. -2 SD) dan mengabaikan balita sangat pendek (< -3 SD).",
+      "safe_strategy": "Total prevalensi stunting adalah gabungan balita Pendek dan Sangat Pendek (seluruh anak dengan Z-score TB/U < -2,0 SD)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 10,
+  "chapter_title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+  "section": "10.2 Morbiditas dan Pelayanan Kesehatan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "10.2.1",
+      "name": "Angka Kesakitan Morbiditas",
+      "importance": "高",
+      "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 36-65]",
+      "exam_focus": "Menguasai konsep dan formula Angka Kesakitan (Morbiditas) BPS, pembedaan keluhan kesehatan vs terganggu aktivitas, penilaian status gizi antropometri balita WHO 2005 (BB/U, TB/U, BB/TB), klasifikasi Z-score, dan perhitungan prevalensi stunting (EXT-3).",
+      "textbook_excerpt": "Meningkatkan derajat dan status kesehatan masyarakat melalui 4 pilar pembangunan kesehatan: promotif, preventif, kuratif, dan rehabilitatif [slide 38-39]. Penilaian status gizi pada kelompok masyarakat dilakukan dengan pengukuran tubuh manusia (Antropometri) menggunakan variabel umur (bulan penuh), berat badan (peka keadaan kini), dan tinggi badan (melihat gizi masa lalu) [slide 48]. Indeks TB/U memberikan gambaran keadaan lingkungan tidak baik, kemiskinan, dan akibat tidak sehat menahun [slide 50]. Stunting (pendek/sangat pendek) adalah kondisi kurang gizi kronis berdasarkan indeks TB/U dibandingkan standar WHO 2005: Sangat pendek jika Z-score < -3,0 SD; Pendek jika -3,0 SD <= Z-score < -2,0 SD [slide 58-59]. Bila prevalensi kurus/wasting (BB/TB < -2 SD) di atas 10%, menunjukkan masalah gizi yang sangat serius dan berhubungan langsung dengan angka kesakitan [slide 51].",
+      "intuition": "Jika seseorang terserang flu ringan tetapi tetap bisa masuk kantor atau sekolah seperti biasa, apakah orang tersebut dihitung sakit dalam statistik morbiditas BPS? Jawabannya: Tidak. BPS mencatatnya sebagai keluhan kesehatan biasa, tetapi belum masuk angka kesakitan (morbiditas). Angka kesakitan baru terhitung jika penyakit tersebut membatasi kemampuan seseorang dalam menjalankan peran sosial dan ekonominya. Sementara itu pada balita, angka kesakitan (seperti diare dan ISPA berulang) memicu hilangnya nafsu makan dan malabsorpsi nutrisi. Jika defisit ini berlangsung kronis dalam 1.000 Hari Pertama Kehidupan (HPK), tubuh anak mengorbankan pertumbuhan linier tulangnya agar organ vital tetap bertahan. Akibatnya anak menjadi kerdil (stunted). Tinggi badan anak mencerminkan rekam jejak akumulatif dari kemiskinan dan ketidaksehatan lingkungan tempat ia dibesarkan.",
+      "formal": "### 1. Definisi Operasional Angka Kesakitan (Morbiditas)\n\nBerdasarkan metodologi Susenas BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 38, 51 & SUPLEMEN]:\n- **Keluhan Kesehatan**: Keadaan seseorang yang mengalami gangguan kesehatan atau kejiwaan, baik karena penyakit menular, tidak menular, kecelakaan, atau kondisi medis lainnya dalam 1 bulan terakhir.\n- **Angka Kesakitan (Morbiditas / Morbidity Rate)**: Persentase penduduk yang mengalami keluhan kesehatan yang sampai mengakibatkan terganggunya kegiatan atau aktivitas sehari-hari (tidak dapat bekerja, sekolah, atau beraktivitas normal) selama satu bulan terakhir.\n$$\\text{Angka Kesakitan} = \\frac{\\sum P_{\\text{terganggu}}}{\\sum P} \\times 100\\%$$\n\n### 2. Metodologi Penilaian Status Gizi Antropometri Balita Standar WHO (EXT-3)\n\nStatus gizi balita ditentukan secara antropometri menggunakan nilai deviasi standar terstandarisasi (*Z-score*) [slide 53-55]:\n$$Z = \\frac{X_i - \\text{Median}_{\\text{ref}}}{\\text{SD}_{\\text{ref}}}$$\ndimana:\n- $X_i$ = Nilai hasil pengukuran antropometri anak ke-$i$ (panjang badan/tinggi badan atau berat badan).\n- $\\text{Median}_{\\text{ref}}$ = Median populasi rujukan standar WHO 2005 menurut jenis kelamin dan umur yang sama.\n- $\\text{SD}_{\\text{ref}}$ = Standar deviasi populasi rujukan WHO 2005.\n\n### 3. Matriks Tiga Indeks Antropometri Balita BPS & Kemenkes\n| Indeks Antropometri | Parameter Klinis & Sifat Refleksi | Kategori Klasifikasi Berdasarkan Z-score | Istilah Baku Internasional |\n|---|---|---|---|\n| **Tinggi Badan menurut Umur (TB/U atau PB/U)** [slide 50, 52, 59] | Status gizi masa lalu / **Gizi Kronis Menahun** (kemiskinan dan sanitasi buruk jangka panjang) | - $Z < -3,0\\text{ SD}$: Sangat Pendek<br>- $-3,0 \\le Z < -2,0\\text{ SD}$: Pendek<br>- $-2,0 \\le Z \\le +3,0\\text{ SD}$: Normal<br>- $Z > +3,0\\text{ SD}$: Tinggi | *Severely Stunted*<br>*Stunted*<br>*Normal*<br>*Tall* |\n| **Berat Badan menurut Umur (BB/U)** [slide 49, 52] | Status gizi saat pengukuran / **Keadaan Kini** (mudah berfluktuasi karena infeksi mendadak) | - $Z < -3,0\\text{ SD}$: Gizi Buruk<br>- $-3,0 \\le Z < -2,0\\text{ SD}$: Gizi Kurang<br>- $-2,0 \\le Z \\le +1,0\\text{ SD}$: Gizi Baik/Normal<br>- $Z > +1,0\\text{ SD}$: Risiko Gizi Lebih | *Severely Underweight*<br>*Underweight*<br>*Normal*<br>*Overweight Risk* |\n| **Berat Badan menurut Tinggi Badan (BB/TB atau BB/PB)** [slide 50, 51, 52] | Status gizi saat ini / **Gizi Akut** (proporsi berat thd tinggi badan) | - $Z < -3,0\\text{ SD}$: Sangat Kurus<br>- $-3,0 \\le Z < -2,0\\text{ SD}$: Kurus<br>- $-2,0 \\le Z \\le +1,0\\text{ SD}$: Gizi Baik/Normal<br>- $Z > +1,0\\text{ SD}$: Berisiko Gemuk | *Severely Wasted*<br>*Wasted*<br>*Normal*<br>*Overweight* |\n\n### 4. Formulasi Prevalensi Stunting (EXT-3)\nBerdasarkan Kepmenkes No. 1995/MENKES/SK/XII/2010 dan standar WHO [slide 58-60]:\n$$\\text{Prevalensi Stunting} = \\frac{\\sum \\text{Balita}(Z_{\\text{TB/U}} < -2,0\\text{ SD})}{\\sum \\text{Seluruh Balita yang Diukur}} \\times 100\\%$$\n$$\\text{Prevalensi Stunting} = \\text{Prevalensi Sangat Pendek (} Z < -3\\text{ SD)} + \\text{Prevalensi Pendek (} -3 \\le Z < -2\\text{ SD)}$$",
+      "pitfalls": "1. **Menyamakan Morbiditas dengan Angka Keluhan Kesehatan**: Keluhan kesehatan tidak selalu berujung pada morbiditas jika aktivitas sehari-hari penderita tidak terganggu.\n2. **Tertukar Antara Stunting (TB/U), Wasting (BB/TB), dan Underweight (BB/U)**: Stunting mencerminkan gizi kronis (TB/U); Wasting mencerminkan gizi akut (BB/TB); Underweight mencerminkan berat badan komposit (BB/U).\n3. **Ambang Batas Stunting Total**: Jangan hanya menjumlahkan kategori pendek tanpa menyertakan kategori sangat pendek (< -3 SD).",
+      "memory_hook": "Morbiditas = Keluhan yang Mengganggu Aktivitas; Stunting = Indeks TB/U dengan Z-score di bawah minus 2 SD!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 49-52, 59]",
+          "problem": "Seorang balita berusia 24 bulan dilakukan pengukuran antropometri. Indeks manakah yang paling tepat digunakan untuk mengidentifikasi kondisi stunting (gizi kurang kronis), dan berapakah batas nilai Z-score yang mengkategorikan anak tersebut sebagai stunting?",
+          "options": [
+            "Indeks BB/U dengan Z-score < -2,0 SD",
+            "Indeks BB/TB dengan Z-score < -2,0 SD",
+            "Indeks TB/U dengan Z-score < -2,0 SD",
+            "Indeks TB/U dengan Z-score < -3,0 SD saja"
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\n- Berdasarkan slide 50, 52, dan 59: Kondisi stunting (pendek dan sangat pendek) dinilai secara eksklusif menggunakan indeks Tinggi Badan menurut Umur (TB/U) atau Panjang Badan menurut Umur (PB/U).\n- Kategori stunting mencakup seluruh anak dengan Z-score < -2,0 SD (yang terdiri dari kategori Pendek pada rentang -3,0 s.d. < -2,0 SD dan Sangat Pendek pada < -3,0 SD).\n- Pilihan A mengukur underweight; Pilihan B mengukur wasting (kurus)."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 38, 58, 59]",
+          "problem": "Dari 50.000 penduduk suatu kecamatan, 8.500 mengalami keluhan kesehatan dan 6.000 di antaranya terganggu aktivitas hariannya. Dari 1.200 balita yang diukur tinggi badannya, 108 anak memiliki Z-score TB/U < -3,0 SD dan 180 anak memiliki Z-score TB/U antara -3,0 s.d. < -2,0 SD. Hitunglah Angka Kesakitan (Morbiditas) BPS dan Total Prevalensi Stunting (EXT-3). Tuliskan jawaban akhir dalam format: `Morbiditas=...%, Stunting=...%`.",
+          "answer": "Morbiditas=12.00%, Stunting=24.00%",
+          "solution": "Langkah-langkah perhitungan:\n1. Angka Kesakitan (Morbiditas) BPS: $\\frac{6.000}{50.000} \\times 100\\% = 12,00\\%$.\n2. Total balita stunting ($Z < -2,0\\text{ SD}$) = $108 + 180 = 288$ balita.\n3. Total Prevalensi Stunting: $\\frac{288}{1.200} \\times 100\\% = 24,00\\%$.\n\n**Verifikasi Kode Python**:\n```python\npop = 50000\ndisrupted = 6000\nmorbidity = (disrupted / pop) * 100.0\nunder5 = 1200\nstunted_total = 108 + 180\nstunting_prev = (stunted_total / under5) * 100.0\nprint(f'Morbiditas={morbidity:.2f}%, Stunting={stunting_prev:.2f}%')\n# Output: Morbiditas=12.00%, Stunting=24.00%\n```"
+        }
+      ],
+      "links": [
+        "10.1.1",
+        "10.1.2",
+        "10.2.2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>10.2 Morbiditas dan Pelayanan Kesehatan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>10.2 Morbiditas dan Pelayanan Kesehatan</h2><a href="#p-10.2.1">10.2.1 Angka Kesakitan Morbiditas ⭐</a></nav>
+<main>
+<h1>10.2 Morbiditas dan Pelayanan Kesehatan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 10: Indikator Kesehatan dan SDGs 3 ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-10.2.1">
+<h2>10.2.1 Angka Kesakitan Morbiditas ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 36-65]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai konsep dan formula Angka Kesakitan (Morbiditas) BPS, pembedaan keluhan kesehatan vs terganggu aktivitas, penilaian status gizi antropometri balita WHO 2005 (BB/U, TB/U, BB/TB), klasifikasi Z-score, dan perhitungan prevalensi stunting (EXT-3).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Meningkatkan derajat dan status kesehatan masyarakat melalui 4 pilar pembangunan kesehatan: promotif, preventif, kuratif, dan rehabilitatif [slide 38-39]. Penilaian status gizi pada kelompok masyarakat dilakukan dengan pengukuran tubuh manusia (Antropometri) menggunakan variabel umur (bulan penuh), berat badan (peka keadaan kini), dan tinggi badan (melihat gizi masa lalu) [slide 48]. Indeks TB/U memberikan gambaran keadaan lingkungan tidak baik, kemiskinan, dan akibat tidak sehat menahun [slide 50]. Stunting (pendek/sangat pendek) adalah kondisi kurang gizi kronis berdasarkan indeks TB/U dibandingkan standar WHO 2005: Sangat pendek jika Z-score &lt; -3,0 SD; Pendek jika -3,0 SD &lt;= Z-score &lt; -2,0 SD [slide 58-59]. Bila prevalensi kurus/wasting (BB/TB &lt; -2 SD) di atas 10%, menunjukkan masalah gizi yang sangat serius dan berhubungan langsung dengan angka kesakitan [slide 51].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seseorang terserang flu ringan tetapi tetap bisa masuk kantor atau sekolah seperti biasa, apakah orang tersebut dihitung sakit dalam statistik morbiditas BPS? Jawabannya: Tidak. BPS mencatatnya sebagai keluhan kesehatan biasa, tetapi belum masuk angka kesakitan (morbiditas). Angka kesakitan baru terhitung jika penyakit tersebut membatasi kemampuan seseorang dalam menjalankan peran sosial dan ekonominya. Sementara itu pada balita, angka kesakitan (seperti diare dan ISPA berulang) memicu hilangnya nafsu makan dan malabsorpsi nutrisi. Jika defisit ini berlangsung kronis dalam 1.000 Hari Pertama Kehidupan (HPK), tubuh anak mengorbankan pertumbuhan linier tulangnya agar organ vital tetap bertahan. Akibatnya anak menjadi kerdil (stunted). Tinggi badan anak mencerminkan rekam jejak akumulatif dari kemiskinan dan ketidaksehatan lingkungan tempat ia dibesarkan.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Angka Kesakitan (Morbiditas)</p>
+<p>Berdasarkan metodologi Susenas BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 38, 51 &amp; SUPLEMEN]:<br>- <strong>Keluhan Kesehatan</strong>: Keadaan seseorang yang mengalami gangguan kesehatan atau kejiwaan, baik karena penyakit menular, tidak menular, kecelakaan, atau kondisi medis lainnya dalam 1 bulan terakhir.<br>- <strong>Angka Kesakitan (Morbiditas / Morbidity Rate)</strong>: Persentase penduduk yang mengalami keluhan kesehatan yang sampai mengakibatkan terganggunya kegiatan atau aktivitas sehari-hari (tidak dapat bekerja, sekolah, atau beraktivitas normal) selama satu bulan terakhir.<br>$$\text{Angka Kesakitan} = \frac{\sum P_{\text{terganggu}}}{\sum P} \times 100\%$$</p>
+<p>### 2. Metodologi Penilaian Status Gizi Antropometri Balita Standar WHO (EXT-3)</p>
+<p>Status gizi balita ditentukan secara antropometri menggunakan nilai deviasi standar terstandarisasi (*Z-score*) [slide 53-55]:<br>$$Z = \frac{X_i - \text{Median}_{\text{ref}}}{\text{SD}_{\text{ref}}}$$<br>dimana:<br>- $X_i$ = Nilai hasil pengukuran antropometri anak ke-$i$ (panjang badan/tinggi badan atau berat badan).<br>- $\text{Median}_{\text{ref}}$ = Median populasi rujukan standar WHO 2005 menurut jenis kelamin dan umur yang sama.<br>- $\text{SD}_{\text{ref}}$ = Standar deviasi populasi rujukan WHO 2005.</p>
+<p>### 3. Matriks Tiga Indeks Antropometri Balita BPS &amp; Kemenkes</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indeks Antropometri</th><th>Parameter Klinis &amp; Sifat Refleksi</th><th>Kategori Klasifikasi Berdasarkan Z-score</th><th>Istilah Baku Internasional</th></tr></thead><tbody><tr><td><strong>Tinggi Badan menurut Umur (TB/U atau PB/U)</strong> [slide 50, 52, 59]</td><td>Status gizi masa lalu / <strong>Gizi Kronis Menahun</strong> (kemiskinan dan sanitasi buruk jangka panjang)</td><td>- $Z &lt; -3,0\text{ SD}$: Sangat Pendek&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Pendek&lt;br&gt;- $-2,0 \le Z \le +3,0\text{ SD}$: Normal&lt;br&gt;- $Z &gt; +3,0\text{ SD}$: Tinggi</td><td>*Severely Stunted*&lt;br&gt;*Stunted*&lt;br&gt;*Normal*&lt;br&gt;*Tall*</td></tr><tr><td><strong>Berat Badan menurut Umur (BB/U)</strong> [slide 49, 52]</td><td>Status gizi saat pengukuran / <strong>Keadaan Kini</strong> (mudah berfluktuasi karena infeksi mendadak)</td><td>- $Z &lt; -3,0\text{ SD}$: Gizi Buruk&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Gizi Kurang&lt;br&gt;- $-2,0 \le Z \le +1,0\text{ SD}$: Gizi Baik/Normal&lt;br&gt;- $Z &gt; +1,0\text{ SD}$: Risiko Gizi Lebih</td><td>*Severely Underweight*&lt;br&gt;*Underweight*&lt;br&gt;*Normal*&lt;br&gt;*Overweight Risk*</td></tr><tr><td><strong>Berat Badan menurut Tinggi Badan (BB/TB atau BB/PB)</strong> [slide 50, 51, 52]</td><td>Status gizi saat ini / <strong>Gizi Akut</strong> (proporsi berat thd tinggi badan)</td><td>- $Z &lt; -3,0\text{ SD}$: Sangat Kurus&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Kurus&lt;br&gt;- $-2,0 \le Z \le +1,0\text{ SD}$: Gizi Baik/Normal&lt;br&gt;- $Z &gt; +1,0\text{ SD}$: Berisiko Gemuk</td><td>*Severely Wasted*&lt;br&gt;*Wasted*&lt;br&gt;*Normal*&lt;br&gt;*Overweight*</td></tr></tbody></table></div>
+<p>### 4. Formulasi Prevalensi Stunting (EXT-3)<br>Berdasarkan Kepmenkes No. 1995/MENKES/SK/XII/2010 dan standar WHO [slide 58-60]:<br>$$\text{Prevalensi Stunting} = \frac{\sum \text{Balita}(Z_{\text{TB/U}} &lt; -2,0\text{ SD})}{\sum \text{Seluruh Balita yang Diukur}} \times 100\%$$<br>$$\text{Prevalensi Stunting} = \text{Prevalensi Sangat Pendek (} Z &lt; -3\text{ SD)} + \text{Prevalensi Pendek (} -3 \le Z &lt; -2\text{ SD)}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Seorang balita berusia 24 bulan dilakukan pengukuran antropometri. Indeks manakah yang paling tepat digunakan untuk mengidentifikasi kondisi stunting (gizi kurang kronis), dan berapakah batas nilai Z-score yang mengkategorikan anak tersebut sebagai stunting?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 49-52, 59]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Indeks BB/U dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="1">B. Indeks BB/TB dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="2">C. Indeks TB/U dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="3">D. Indeks TB/U dengan Z-score &lt; -3,0 SD saja</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 50, 52, dan 59: Kondisi stunting (pendek dan sangat pendek) dinilai secara eksklusif menggunakan indeks Tinggi Badan menurut Umur (TB/U) atau Panjang Badan menurut Umur (PB/U).<br>- Kategori stunting mencakup seluruh anak dengan Z-score &lt; -2,0 SD (yang terdiri dari kategori Pendek pada rentang -3,0 s.d. &lt; -2,0 SD dan Sangat Pendek pada &lt; -3,0 SD).<br>- Pilihan A mengukur underweight; Pilihan B mengukur wasting (kurus).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Morbiditas=12.00%, Stunting=24.00%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Dari 50.000 penduduk suatu kecamatan, 8.500 mengalami keluhan kesehatan dan 6.000 di antaranya terganggu aktivitas hariannya. Dari 1.200 balita yang diukur tinggi badannya, 108 anak memiliki Z-score TB/U &lt; -3,0 SD dan 180 anak memiliki Z-score TB/U antara -3,0 s.d. &lt; -2,0 SD. Hitunglah Angka Kesakitan (Morbiditas) BPS dan Total Prevalensi Stunting (EXT-3). Tuliskan jawaban akhir dalam format: <code>Morbiditas=...%, Stunting=...%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 38, 58, 59]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Angka Kesakitan (Morbiditas) BPS: $\frac{6.000}{50.000} \times 100\% = 12,00\%$.<br>2. Total balita stunting ($Z &lt; -2,0\text{ SD}$) = $108 + 180 = 288$ balita.<br>3. Total Prevalensi Stunting: $\frac{288}{1.200} \times 100\% = 24,00\%$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>pop = 50000<br>disrupted = 6000<br>morbidity = (disrupted / pop) * 100.0<br>under5 = 1200<br>stunted_total = 108 + 180<br>stunting_prev = (stunted_total / under5) * 100.0<br>print(f'Morbiditas={morbidity:.2f}%, Stunting={stunting_prev:.2f}%')<br># Output: Morbiditas=12.00%, Stunting=24.00%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menyamakan Morbiditas dengan Angka Keluhan Kesehatan</strong>: Keluhan kesehatan tidak selalu berujung pada morbiditas jika aktivitas sehari-hari penderita tidak terganggu.</li><li><strong>Tertukar Antara Stunting (TB/U), Wasting (BB/TB), dan Underweight (BB/U)</strong>: Stunting mencerminkan gizi kronis (TB/U); Wasting mencerminkan gizi akut (BB/TB); Underweight mencerminkan berat badan komposit (BB/U).</li><li><strong>Ambang Batas Stunting Total</strong>: Jangan hanya menjumlahkan kategori pendek tanpa menyertakan kategori sangat pendek (&lt; -3 SD).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Morbiditas = Keluhan yang Mengganggu Aktivitas; Stunting = Indeks TB/U dengan Z-score di bawah minus 2 SD!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.2, 10.2.2</div>
+<button class="donebtn" data-id="10.2.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

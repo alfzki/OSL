@@ -1,0 +1,91 @@
+{
+  "point_id": "13.2.2",
+  "title": "Tingkat Penghunian Kamar TPK Hotel",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Statistik Perhotelan dan Indikator Okupansi",
+    "bps_subject": "Statistik Akomodasi Perhotelan BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "36-41",
+        "content": "Definisi TPK hotel: perbandingan antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia (dalam persen); sumber data Kuesioner VHTS (bulanan) dan VHTL (tahunan); formula TPK, TPTT, RTK, dan RTH pada slide 40-41."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Tingkat Penghunian Kamar (TPK) atau Room Occupancy Rate adalah barometer paling sensitif dari denyut ekonomi pariwisata. Jika kamar hotel banyak yang kosong, bukan hanya pemilik hotel yang merugi, tetapi pedagang oleh-oleh, sopir taksi, pemandu wisata, dan restoran di sekitarnya juga sepi pembeli. TPK mengukur persentase kapasitas kamar yang berhasil diisi oleh tamu dibandingkan total kapasitas kamar yang siap dijual selama periode operasional tertentu.",
+    "bps_definition": "Tingkat Penghunian Kamar (TPK) hotel menurut BPS adalah perbandingan antara banyaknya malam kamar yang terpakai (terjual) dengan banyaknya malam kamar yang tersedia untuk disewakan selama periode pelaporan, dinyatakan dalam persentase. Malam kamar yang tersedia dihitung dari jumlah fisik kamar yang layak jual dikalikan jumlah hari operasi hotel pada periode tersebut. Data dihimpun secara rutin melalui Kuesioner Survei Perusahaan Akomodasi Bulanan (VHTS) secara sensus untuk hotel berbintang dan secara sampel untuk hotel non-bintang.",
+    "boundary_conditions": "0% <= TPK <= 100%. TPK = 100% berarti seluruh kamar terisi penuh setiap malam sepanjang periode (full booked). Kamar yang sedang rusak berat atau dalam renovasi jangka panjang dikeluarkan dari penghitungan malam kamar yang tersedia.",
+    "formula_latex": "$$\\text{TPK} = \\frac{\\text{Malam Kamar Terpakai}}{\\text{Malam Kamar Tersedia}} \\times 100\\% = \\frac{\\sum_{t=1}^D K_{\\text{terpakai}, t}}{\\text{Jumlah Kamar} \\times \\text{Jumlah Hari Buka}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah hotel berbintang di kawasan wisata memiliki kapasitas 100 kamar yang dapat disewakan dan 160 tempat tidur. Selama bulan September 2026 (periode 30 hari kalender), hotel beroperasi penuh setiap hari. Catatan operasional resepsionis menunjukkan bahwa selama bulan tersebut:\n- Jumlah malam kamar yang berhasil terjual dan dihuni tamu adalah 1.800 malam kamar.\n- Total tamu yang datang dan menginap adalah 1.200 orang.\n- Total lama menginap seluruh tamu secara kumulatif adalah 2.700 malam tamu.\nHitunglah:\n1. Jumlah malam kamar yang tersedia selama bulan September.\n2. Tingkat Penghunian Kamar (TPK) hotel.\n3. Tingkat Pemakaian Tempat Tidur (TPTT) hotel.\n4. Rata-rata Tamu per Kamar terjual (RTK) dan Rata-rata Tamu per Hari operasi (RTH).",
+    "data_table": "| Parameter Operasional | Nilai Riil | Formula BPS | Hasil Perhitungan |\n|---|---|---|---|\n| Kapasitas Fisik Kamar | 100 kamar | - | - |\n| Jumlah Hari Operasi | 30 hari | - | - |\n| Malam Kamar Tersedia | - | Kamar * Hari | 3.000 malam kamar |\n| Malam Kamar Terjual | 1.800 malam kamar | - | - |\n| TPK Hotel | - | (Terpakai / Tersedia) * 100% | 60,00% |\n| Malam Tempat Tidur Tersedia | - | 160 tempat tidur * 30 hari | 4.800 malam bed |\n| Total Malam Tamu | 2.700 malam tamu | - | - |\n| TPTT Hotel | - | (Malam Tamu / Bed Tersedia) * 100% | 56,25% |\n| Rata-rata Tamu per Kamar (RTK) | - | Malam Tamu / Kamar Terjual | 1,50 orang/kamar |\n| Rata-rata Tamu per Hari (RTH) | - | Total Tamu / Hari Buka | 40,0 tamu/hari |",
+    "step_by_step_solution": "1. Menghitung Malam Kamar Tersedia:\n   $$\\text{Malam Kamar Tersedia} = \\text{Jumlah Kamar} \\times \\text{Hari Buka} = 100 \\times 30 = 3.000 \\text{ malam kamar}$$\n2. Menghitung Tingkat Penghunian Kamar (TPK):\n   $$\\text{TPK} = \\frac{\\text{Malam Kamar Terpakai}}{\\text{Malam Kamar Tersedia}} \\times 100\\% = \\frac{1.800}{3.000} \\times 100\\% = 60,00\\%$$\n3. Menghitung Tingkat Pemakaian Tempat Tidur (TPTT):\n   - Malam tempat tidur tersedia = $$160 \\times 30 = 4.800 \\text{ malam tempat tidur}$$.\n   $$\\text{TPTT} = \\frac{\\text{Banyaknya Malam Tamu}}{\\text{Tempat Tidur Tersedia}} \\times 100\\% = \\frac{2.700}{4.800} \\times 100\\% = 56,25\\%$$\n4. Menghitung Indikator Turunan:\n   - Rata-rata Tamu per Kamar (RTK): $$\\text{RTK} = \\frac{2.700}{1.800} = 1,50 \\text{ orang per kamar}$$.\n   - Rata-rata Tamu per Hari (RTH): $$\\text{RTH} = \\frac{1.200}{30} = 40,0 \\text{ tamu per hari}$$.",
+    "python_verification_code": "rooms = 100\ndays = 30\navailable_room_nights = rooms * days\nsold_room_nights = 1800\ntpk = (sold_room_nights / available_room_nights) * 100.0\nbeds = 160\navailable_bed_nights = beds * days\nguest_nights = 2700\ntptt = (guest_nights / available_bed_nights) * 100.0\nrtk = guest_nights / sold_room_nights\ntotal_guests = 1200\nrth = total_guests / days\nprint(f'AvailableRoomNights={available_room_nights}, TPK={tpk:.2f}%, TPTT={tptt:.2f}%, RTK={rtk:.2f}, RTH={rth:.1f}')",
+    "expected_output": "AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Salah menghitung penyebut malam kamar tersedia (lupa mengalikan dengan jumlah hari buka)",
+      "common_mistake": "Hanya membagi malam kamar terjual dengan jumlah fisik kamar (1.800 / 100 = 1800%).",
+      "safe_strategy": "Penyebut TPK adalah 'malam kamar' (room-nights), yaitu kapasitas fisik kamar dikalikan jumlah hari dalam periode observasi (misal 100 kamar * 30 hari = 3.000 malam kamar)."
+    },
+    {
+      "trap_description": "Tertukar antara TPK (kamar) dan TPTT (tempat tidur)",
+      "common_mistake": "Menggunakan data jumlah tamu pada pembilang TPK alih-alih jumlah kamar yang terpakai.",
+      "safe_strategy": "Satu kamar bisa dihuni oleh 2 orang atau lebih. TPK mengukur okupansi fisik kamar (kamar terpakai / kamar tersedia), sedangkan TPTT mengukur okupansi ranjang (malam tamu / ranjang tersedia)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.2 Statistik Pariwisata dan Perhotelan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.2.2",
+      "name": "Tingkat Penghunian Kamar TPK Hotel",
+      "importance": "高",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 36-41]",
+      "exam_focus": "Menguasai formulasi TPK BPS, penghitungan malam kamar tersedia (kamar x hari), formula TPTT, RTK, dan RTH, serta pemahaman instrumen survei VHTS vs VHTL.",
+      "textbook_excerpt": "Tingkat Penghunian Kamar (TPK) hotel yaitu perbandingan antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia (dalam persen). Angka ini memberikan gambaran berapa persen kamar yang tersedia pada akomodasi terisi oleh tamu yang menginap dalam suatu waktu tertentu. Sumber data: Kuesioner VHTS (bulanan) secara sensus untuk hotel berbintang dan sampel untuk non-bintang; VHTL (tahunan) secara sensus [slide 39-41].",
+      "intuition": "Jika sebuah hotel memiliki 100 kamar dan di suatu malam terisi 60 kamar, maka TPK malam itu adalah 60%. Bagaimana jika kita menghitung selama satu bulan penuh (30 hari)? Hotel tersebut memiliki 'stok jualan' sebanyak 100 kamar x 30 malam = 3.000 malam kamar. Jika selama sebulan itu total transaksi menginap mencapai 1.800 malam kamar, maka TPK bulanannya adalah 1.800 / 3.000 = 60%. Angka 60% ini mencerminkan produktivitas aset hotel.",
+      "formal": "### 1. Definisi dan Konseptualisasi TPK Hotel\n\nTingkat Penghunian Kamar (TPK / Room Occupancy Rate) adalah indikator pokok kinerja industri akomodasi [slide 39]:\n- Mengukur efisiensi pemanfaatan fasilitas akomodasi komersial.\n- Menjadi indikator proksi sisi penawaran (*supply side*) dalam Neraca Satelit Pariwisata Nasional (NESPARNAS) menggunakan kerangka Tabel Input-Output (I-O).\n\n### 2. Formulasi Matematis Indikator Akomodasi Perhotelan BPS\n\nBerdasarkan pedoman Survei VHTS BPS [slide 41]:\n\n1. **Tingkat Penghunian Kamar (TPK)**:\n   $$\\text{TPK} = \\frac{\\text{Malam Kamar Terpakai}}{\\text{Malam Kamar Tersedia}} \\times 100\\%$$\n   $$\\text{Malam Kamar Tersedia} = \\text{Jumlah Kamar yang Siap Jual} \\times \\text{Jumlah Hari Operasi Hotel}$$\n\n2. **Tingkat Pemakaian Tempat Tidur (TPTT / Bed Occupancy Rate)**:\n   $$\\text{TPTT} = \\frac{\\text{Banyaknya Malam Tamu}}{\\text{Tempat Tidur yang Tersedia}} \\times 100\\%$$\n   $$\\text{Tempat Tidur Tersedia} = \\text{Jumlah Tempat Tidur Fisik} \\times \\text{Jumlah Hari Operasi Hotel}$$\n\n3. **Rata-rata Tamu per Kamar (RTK / Guests per Room)**:\n   $$\\text{RTK} = \\frac{\\text{Banyaknya Malam Tamu}}{\\text{Malam Kamar yang Terjual}}$$\n   - Menunjukkan rata-rata densitas hunian per kamar yang disewa (biasanya bernilai antara 1,2 s.d. 2,0 orang per kamar).\n\n4. **Rata-rata Tamu per Hari (RTH)**:\n   $$\\text{RTH} = \\frac{\\text{Banyaknya Tamu yang Menginap}}{\\text{Jumlah Hari Kerja/Operasi Hotel}}$$\n\n### 3. Instrumen Pengumpulan Data Akomodasi BPS\n\n| Karakteristik | Survei VHTS (Bulanan) | Survei VHTL (Tahunan) |\n|---|---|---|\n| **Frekuensi Pendataan** | Bulanan | Tahunan |\n| **Cakupan Akomodasi** | Sensus untuk Hotel Berbintang; Sampel probabilitas untuk Hotel Non-Bintang | Sensus seluruh usaha akomodasi (berbintang dan non-bintang) |\n| **Variabel Utama** | TPK, RLMT, jumlah tamu datang (wisman & wisnus), malam kamar terjual | Direktori hotel, tenaga kerja, tarif kamar, fasilitas, pendapatan usaha, neraca rugi-laba |",
+      "pitfalls": "1. **Lupa Faktor Hari**: Menghitung malam kamar tersedia hanya dari jumlah kamar tanpa dikali jumlah hari dalam sebulan.\n2. **Kamar Rusak / Renovasi**: Kamar yang sedang rusak berat atau tidak dapat dihuni (*out of order*) dikeluarkan dari pembagi malam kamar tersedia.\n3. **Komplementer Tamu**: Tamu komplementer (gratis) yang menempati kamar tetap dihitung sebagai kamar terpakai jika kamar tersebut tercatat dihuni dalam sistem reservasi.",
+      "memory_hook": "TPK = Kamar Terjual dibagi (Jumlah Kamar x Jumlah Hari Buka) x 100%.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 39-41]",
+          "problem": "Sebuah hotel memiliki 50 kamar dan buka selama 30 hari dalam sebulan. Jika selama bulan tersebut tercatat 900 malam kamar yang terhuni oleh tamu, berapakah Tingkat Penghunian Kamar (TPK) hotel tersebut?",
+          "options": [
+            "30,0%",
+            "45,0%",
+            "60,0%",
+            "75,0%"
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\n1. Malam kamar tersedia = 50 kamar x 30 hari = 1.500 malam kamar.\n2. TPK = (Malam kamar terpakai / Malam kamar tersedia) x 100%:\n   $$\\text{TPK} = \\frac{900}{1.500} \\times 100\\% = 60,0\\%$$ [slide 41]."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-41 / Rekonstruksi Uji OSL]",
+          "problem": "Sebuah hotel berbintang memiliki 100 kamar dan 160 tempat tidur, beroperasi selama 30 hari di bulan September. Terjual 1.800 malam kamar, 1.200 tamu menginap, dengan total akumulasi 2.700 malam tamu.\nHitunglah:\n1. Malam kamar tersedia.\n2. TPK hotel (persen).\n3. TPTT hotel (persen).\n4. Rata-rata tamu per kamar (RTK).\n5. Rata-rata tamu per hari (RTH).\nTuliskan jawaban format: `AvailableRoomNights=..., TPK=..., TPTT=..., RTK=..., RTH=...`.",
+          "answer": "AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0",
+          "solution": "Langkah Perhitungan:\n1. **AvailableRoomNights** = $100 \\times 30 = 3.000$.\n2. **TPK** = $(1.800 / 3.000) \\times 100\\% = 60,00\\%$.\n3. **TPTT** = Bed tersedia = $160 \\times 30 = 4.800$.\n   $$\\text{TPTT} = \\frac{2.700}{4.800} \\times 100\\% = 56,25\\%$$\n4. **RTK** = $2.700 / 1.800 = 1,50$ orang/kamar.\n5. **RTH** = $1.200 / 30 = 40,0$ tamu/hari.\n\n**Verifikasi Kode Python**:\n```python\nrooms = 100\ndays = 30\navailable_room_nights = rooms * days\nsold_room_nights = 1800\ntpk = (sold_room_nights / available_room_nights) * 100.0\nbeds = 160\navailable_bed_nights = beds * days\nguest_nights = 2700\ntptt = (guest_nights / available_bed_nights) * 100.0\nrtk = guest_nights / sold_room_nights\ntotal_guests = 1200\nrth = total_guests / days\nprint(f'AvailableRoomNights={available_room_nights}, TPK={tpk:.2f}%, TPTT={tptt:.2f}%, RTK={rtk:.2f}, RTH={rth:.1f}')\n# AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0\n```"
+        }
+      ],
+      "links": [
+        "13.2.1",
+        "13.2.3"
+      ]
+    }
+  ]
+}

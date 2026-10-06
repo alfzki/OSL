@@ -1,0 +1,339 @@
+{
+  "title": "Kuis Tambahan Remedial & Penguatan Materi UAS Official Statistics Lanjutan (OSL)",
+  "questions": [
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan: Konsep Bekerja ICLS 13",
+      "score": 2,
+      "stem": "[OSL-REM-01] Berdasarkan standar BPS yang mengadopsi resolusi ICLS 13, seseorang dikategorikan sebagai 'Bekerja' jika melakukan kegiatan ekonomi dengan maksud memperoleh atau membantu memperoleh pendapatan/keuntungan dengan durasi minimal...",
+      "reference": "A",
+      "explanation": "Kunci: A. Menurut standar BPS (ICLS 13), konsep 'Bekerja' adalah kegiatan ekonomi yang dilakukan seseorang dengan maksud memperoleh atau membantu memperoleh pendapatan atau keuntungan, paling sedikit 1 jam tidak terputus selama seminggu terakhir (periode referensi 7 hari yang lalu). Konsep ini mencakup pekerja keluarga tidak dibayar (unpaid family worker) tanpa batasan jam kerja khusus. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12; Pedoman Sakernas BPS)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 1 jam berturut-turut dalam seminggu terakhir",
+        "B. 1 jam terakumulasi dalam sebulan terakhir",
+        "C. Minimal 15 jam dalam seminggu terakhir",
+        "D. Minimal 35 jam dalam seminggu terakhir"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi (Nilai Tukar Petani - NTP)",
+      "score": 2,
+      "stem": "[OSL-REM-02] Dalam rilis resmi Berita Resmi Statistik (BRS) BPS, jika suatu provinsi memiliki Indeks Harga yang Diterima Petani ($I_t$) sebesar 116,38 dan Indeks Harga yang Dibayar Petani ($I_b$) sebesar 110,00, berapakah nilai NTP dan apakah interpretasi ekonominya?",
+      "reference": "A",
+      "explanation": "Kunci: A. Perhitungan: $NTP = (I_t / I_b) \\times 100 = (116,38 / 110,00) \\times 100 = 105,80$. NTP merupakan angka indeks berskala 100 (bukan desimal 1,058). Karena $NTP > 100$, petani mengalami surplus daya tukar/daya beli sebesar $105,80 - 100 = 5,80\\%$ dibandingkan periode tahun dasar ($I_t$ naik lebih cepat daripada $I_b$). (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 28)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. NTP = 105,80; Petani mengalami surplus daya tukar sebesar 5,80% terhadap tahun dasar",
+        "B. NTP = 1,058; Petani mengalami keuntungan absolut sebesar Rp1.058 per komoditas",
+        "C. NTP = 94,52; Petani mengalami defisit daya beli sebesar 5,48%",
+        "D. NTP = 105,80; Petani mengalami kenaikan biaya produksi sebesar 5,80%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Diagram Timbang IHK)",
+      "score": 2,
+      "stem": "[OSL-REM-03] Dalam penyusunan Indeks Harga Konsumen (IHK) di Indonesia, paket komoditas dan diagram timbang (bobot pengeluaran konsumsi rumah tangga) diperoleh BPS secara berkala melalui...",
+      "reference": "A",
+      "explanation": "Kunci: A. Sumber utama diagram timbang dan paket komoditas IHK adalah Survei Biaya Hidup (SBH) yang dilaksanakan BPS setiap beberapa tahun (terakhir SBH 2022). Susenas menghasilkan data konsumsi untuk garis kemiskinan, bukan penimbang IHK; sedangkan SHK adalah survei pencacahan harga komoditasnya, bukan penimbangnya. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 19; Publikasi IHK BPS 2025)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Survei Biaya Hidup (SBH)",
+        "B. Survei Sosial Ekonomi Nasional (Susenas)",
+        "C. Sensus Ekonomi (SE)",
+        "D. Survei Harga Konsumen (SHK) Mingguan"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 8",
+      "point_name": "Indikator Kemiskinan: Indeks Keparahan Kemiskinan FGT (P2)",
+      "score": 2,
+      "stem": "[OSL-REM-04] Mengapa Indeks Keparahan Kemiskinan ($P_2$ / Poverty Severity Index) lebih sensitif terhadap distribusi pengeluaran di antara sesama penduduk miskin dibandingkan Indeks Kedalaman Kemiskinan ($P_1$ / Poverty Gap Index)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Indeks FGT adalah $P_\\alpha = \\frac{1}{n}\\sum_{i=1}^q \\left(\\frac{z - y_i}{z}\\right)^\\alpha$. Untuk $P_1$ ($\\alpha=1$), setiap unit defisit dihargai linier. Untuk $P_2$ ($\\alpha=2$), defisit dikuadratkan, sehingga transfer pendapatan dari orang yang sangat miskin ke orang yang mendekati garis kemiskinan akan meningkatkan $P_2$. Oleh karena itu, $P_2$ mengukur ketimpangan pengeluaran di antara sesama penduduk miskin. (Sumber: Pertemuan 8 OSL Indikator Kemiskinan dan Ketimpangan, slide 27)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Karena formula $P_2$ mengkuadratkan shortfall gap $(z - y_i)/z$, sehingga memberikan bobot penalti yang semakin eksponensial bagi mereka yang berada jauh di bawah garis kemiskinan",
+        "B. Karena formula $P_2$ membagi jumlah penduduk miskin dengan total populasi nasional",
+        "C. Karena $P_2$ menghitung deviasi pengeluaran terhadap rata-rata pendapatan nasional bukan garis kemiskinan",
+        "D. Karena $P_2$ memasukkan komponen garis kemiskinan non-makanan secara terpisah"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Tahun Dasar IHK 2022)",
+      "score": 2,
+      "stem": "[OSL-REM-05] Mulai Januari 2024, BPS merilis IHK menggunakan tahun dasar baru hasil SBH 2022 ($2022=100$). Berapakah jumlah kota/kabupaten yang dicakup dalam penghitungan IHK tahun dasar 2022 tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. Pada IHK tahun dasar 2022 ($2022=100$), cakupan survei diperluas menjadi 150 kabupaten/kota (terdiri dari 90 kota lama pada SBH 2018 ditambah 60 kabupaten/kota baru). 82 kota adalah cakupan SBH 2012, dan 90 kota adalah cakupan SBH 2018. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 22; Publikasi IHK BPS 2025)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 150 kabupaten/kota (90 kota lama + 60 kabupaten baru)",
+        "B. 90 kota (34 ibukota provinsi + 56 kota lainnya)",
+        "C. 82 kota (33 ibukota provinsi + 49 kota lainnya)",
+        "D. 514 seluruh kabupaten/kota se-Indonesia"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan: Formulasi TPAK dan TPT",
+      "score": 2,
+      "stem": "[OSL-REM-06] Dalam evaluasi statistik ketenagakerjaan BPS, manakah pernyataan yang BENAR mengenai penyebut (denominator) dari rumus Tingkat Partisipasi Angkatan Kerja (TPAK) dan Tingkat Pengangguran Terbuka (TPT)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Rumus resmi BPS: $TPAK = \\frac{\\text{Angkatan Kerja}}{\\text{Penduduk Usia Kerja (15+)}} \\times 100\\%$, sedangkan $TPT = \\frac{\\text{Penganggur Terbuka}}{\\text{Angkatan Kerja}} \\times 100\\%$. Kesalahan umum mahasiswa adalah membagi penganggur dengan penduduk usia kerja atau total penduduk. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 19)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Denominator TPAK adalah Penduduk Usia Kerja (15+ tahun), sedangkan denominator TPT adalah Angkatan Kerja",
+        "B. Denominator TPAK adalah Angkatan Kerja, sedangkan denominator TPT adalah Penduduk Usia Kerja (15+ tahun)",
+        "C. Keduanya menggunakan denominator yang sama yaitu Penduduk Usia Kerja (15+ tahun)",
+        "D. Keduanya menggunakan denominator yang sama yaitu Total Penduduk Seluruh Usia"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan: Periode Referensi Morbiditas Susenas",
+      "score": 2,
+      "stem": "[OSL-REM-07] Dalam Kuesioner Susenas Kor BPS, data keluhan kesehatan (angka kesakitan / morbiditas) dicatat dengan menggunakan periode referensi...",
+      "reference": "A",
+      "explanation": "Kunci: A. Dalam modul kesehatan Susenas Kor, keluhan kesehatan dan rawat jalan diukur dengan periode referensi 1 bulan (30 hari) terakhir. Periode 1 tahun terakhir digunakan khusus untuk rawat inap (hospitalization). (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 22; Buku Pedoman Pencacah Susenas BPS)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 1 bulan (30 hari) terakhir sebelum pencacahan",
+        "B. 7 hari (seminggu) terakhir sebelum pencacahan",
+        "C. 3 bulan terakhir sebelum pencacahan",
+        "D. 1 tahun (12 bulan) terakhir sebelum pencacahan"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi (Klasifikasi Tenaga Kerja IBS BPS)",
+      "score": 2,
+      "stem": "[OSL-REM-08] Berdasarkan standar sensus dan survei industri BPS, suatu perusahaan manufaktur dikategorikan masuk ke dalam cakupan Survei Industri Besar dan Sedang (IBS) jika mempekerjakan tenaga kerja minimal...",
+      "reference": "A",
+      "explanation": "Kunci: A. Klasifikasi industri pengolahan BPS berdasarkan jumlah tenaga kerja: Industri Mikro (1-4 orang), Industri Kecil (5-19 orang), Industri Sedang (20-99 orang), dan Industri Besar (>= 100 orang). Cakupan Survei IBS (Industri Besar dan Sedang) adalah gabungan Industri Sedang dan Besar, yaitu perusahaan dengan tenaga kerja >= 20 orang. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 41)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 20 orang tenaga kerja",
+        "B. 5 orang tenaga kerja",
+        "C. 50 orang tenaga kerja",
+        "D. 100 orang tenaga kerja"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi (Metode Ubinan Padi)",
+      "score": 2,
+      "stem": "[OSL-INT-09] Pada survei ubinan tanaman padi BPS, ukuran plot ubinan standar yang digunakan di sawah adalah $2,5\\text{ m} \\times 2,5\\text{ m}$. Berapakah angka faktor konversi (pengali) untuk mengonversi hasil timbangan ubinan (kg) menjadi produktivitas per hektar (kuintal/ha)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Luas 1 plot ubinan = 2,5 m x 2,5 m = 6,25 m^2. Luas 1 hektar = 10.000 m^2. Jumlah plot ubinan per hektar = 10.000 / 6,25 = 1.600. Jika hasil ubinan X kg, maka per hektar = X x 1.600 kg = X x 16 kuintal/ha (karena 1 kuintal = 100 kg). Jadi faktor pengali ke kuintal/ha adalah 16 (atau 1.600 jika ke kg/ha). (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 16)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 16 (karena 1 ha = 1.600 plot ubinan, dikalikan 1.600 lalu dibagi 100 kg/kuintal)",
+        "B. 1.600 (langsung dalam kuintal)",
+        "C. 10 (faktor desimal)",
+        "D. 6,25 (sesuai luas plot)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi (SKGB)",
+      "score": 2,
+      "stem": "[OSL-INT-10] Dalam penghitungan produksi beras nasional oleh BPS, data Gabah Kering Panen (GKP) hasil ubinan dikonversi menjadi Gabah Kering Giling (GKG) dan selanjutnya menjadi beras menggunakan angka konversi yang dihasilkan dari survei...",
+      "reference": "A",
+      "explanation": "Kunci: A. BPS menggunakan angka konversi resmi dari Survei Konversi Gabah ke Beras (SKGB) untuk menghitung: (1) konversi GKP ke GKG (penyusutan kadar air dan kotoran), dan (2) konversi GKG ke Beras (rendemen penggilingan beras). KSA hanya mengestimasi luas panen, bukan angka konversi rendemen. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 19)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Survei Konversi Gabah ke Beras (SKGB)",
+        "B. Survei Pertanian Antar Sensus (SUTAS)",
+        "C. Kerangka Sampel Area (KSA)",
+        "D. Sensus Pertanian (ST)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi (Kerangka Sampel Area - KSA)",
+      "score": 2,
+      "stem": "[OSL-INT-11] Kerangka Sampel Area (KSA) yang dikembangkan BPS dan BPPT untuk mengestimasi luas panen padi menggunakan unit segmen berukuran...",
+      "reference": "A",
+      "explanation": "Kunci: A. Struktur segmen KSA BPS: Setiap segmen berukuran 300 m x 300 m (9 hektar), yang dibagi menjadi 9 subsegmen bujursangkar berukuran 100 m x 100 m (1 hektar). Titik pengamatan diambil pada titik persilangan di setiap subsegmen dan dipotret menggunakan aplikasi berbasis Android pada 7 hari terakhir setiap bulan. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 300 m x 300 m (9 ha), dibagi menjadi 9 subsegmen berukuran 100 m x 100 m",
+        "B. 100 m x 100 m (1 ha), dibagi menjadi 4 subsegmen berukuran 50 m x 50 m",
+        "C. 500 m x 500 m (25 ha), dibagi menjadi 25 subsegmen",
+        "D. 2,5 m x 2,5 m, diamati pada fase generatif"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Formula IHK BPS)",
+      "score": 3,
+      "stem": "[OSL-INT-12] BPS menggunakan rumus Modifikasi Laspeyres untuk menghitung IHK bulanan. Manakah formulasi matematis yang menunjukkan prinsip perantaian (chaining) indeks bulan ke-$t$ terhadap bulan ke-$(t-1)$?",
+      "reference": "A",
+      "explanation": "Kunci: A. BPS menerapkan formula Modified Laspeyres berantai: $I_t = \\sum_{i=1}^k \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i}$, di mana $w_{(t-1)i}$ adalah nilai konsumsi relatif bulan $(t-1)$ yang diperbarui dengan rasio harga bulan $(t-1)$ terhadap tahun dasar. Hal ini memungkinkan penyesuaian harga secara bertahap tanpa harus menyurvei kuantitas baru setiap bulan. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 28; Publikasi IHK BPS 2025)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. $I_t = \\sum_{i=1}^k \\left[ \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i} \\right]$ dengan perantaian bobot nilai konsumsi bulan sebelumnya",
+        "B. $I_t = \\frac{\\sum P_{ti} Q_{ti}}{\\sum P_{0i} Q_{ti}} \\times 100$ (Formula Paasche)",
+        "C. $I_t = \\sqrt{I_{\\text{Laspeyres}} \\times I_{\\text{Paasche}}}$ (Formula Fisher)",
+        "D. $I_t = \\frac{\\sum P_{ti} Q_{0i}}{\\sum P_{0i} Q_{0i}} \\times 100$ tanpa perantaian harga bulan sebelumnya"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Margin Perdagangan & Pengangkutan - MPP)",
+      "score": 3,
+      "stem": "[OSL-INT-13] Jika harga beras di tingkat produsen (penggilingan) adalah Rp10.000/kg dan harga jual eceran di tingkat konsumen akhir adalah Rp12.500/kg, berapakah Margin Perdagangan dan Pengangkutan (MPP) Total komoditas tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. Perhitungan MPP Total: $MPP = \\frac{\\text{Harga Konsumen} - \\text{Harga Produsen}}{\\text{Harga Produsen}} \\times 100\\% = \\frac{12.500 - 10.000}{10.000} \\times 100\\% = \\frac{2.500}{10.000} \\times 100\\% = 25,00\\%$. MPP menunjukkan persentase kenaikan harga akibat margin pedagang perantara dan biaya transportasi dari produsen ke konsumen akhir. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 25,00%",
+        "B. 20,00%",
+        "C. 80,00%",
+        "D. 125,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Indikator Ekonomi: Ekspor-Impor (Valuasi FOB dan CIF)",
+      "score": 2,
+      "stem": "[OSL-INT-14] Dalam statistik perdagangan luar negeri BPS dan standar internasional UN Comtrade, transaksi ekspor dinilai berdasarkan harga FOB sedangkan transaksi impor dicatat berdasarkan harga CIF. Apakah kepanjangan dan perbedaan mendasar kedua valuasi tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. Ekspor dicatat secara Free On Board (FOB), yaitu harga barang sampai di atas kapal di pelabuhan muat negara pengekspor (tidak termasuk biaya angkut dan premi asuransi ke negara tujuan). Impor dicatat secara Cost, Insurance, and Freight (CIF), yaitu harga barang ditambah seluruh biaya asuransi dan ongkos pengangkutan internasional hingga pelabuhan bongkar di negara pengimpor. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 24)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. FOB (Free on Board) menilai barang di atas kapal pelabuhan muat tanpa biaya asuransi/ongkos angkut internasional; CIF (Cost, Insurance, Freight) mencakup nilai barang ditambah asuransi dan ongkos angkut sampai pelabuhan bongkar",
+        "B. FOB mencakup seluruh biaya asuransi internasional; CIF bebas dari biaya pengapalan",
+        "C. FOB digunakan khusus untuk perdagangan migas; CIF digunakan khusus untuk nonmigas",
+        "D. FOB mencakup bea masuk negara tujuan; CIF tidak mencakup bea masuk"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Indikator Ekonomi: Ekspor-Impor (Indeks Spesialisasi Perdagangan - ISP)",
+      "score": 3,
+      "stem": "[OSL-INT-15] Suatu negara mencatat nilai ekspor komoditas mesin sebesar USD 80 juta dan impor komoditas yang sama sebesar USD 20 juta. Berapakah nilai Indeks Spesialisasi Perdagangan (ISP) dan berada pada tahap apakah komoditas tersebut dalam siklus hidup produk perdagangan?",
+      "reference": "A",
+      "explanation": "Kunci: A. Rumus ISP: $ISP = \\frac{X - M}{X + M} = \\frac{80 - 20}{80 + 20} = \\frac{60}{100} = +0,60$. Menurut teori siklus produk perdagangan internasional: (1) Tahap Pengenalan: -1,00 <= ISP <= -0,80; (2) Tahap Substitusi Impor: -0,80 < ISP <= -0,40; (3) Tahap Pertumbuhan Ekspor: -0,40 < ISP <= 0,40; (4) Tahap Pematangan Ekspor: 0,40 < ISP <= 0,80; (5) Tahap Menurun / Re-impor: 0,80 < ISP <= 1,00. Karena ISP = +0,60, produk berada pada tahap Pematangan Ekspor. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 32)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. ISP = +0,60; Tahap Pematangan Ekspor (Mature / Export Stage karena 0,40 < ISP <= 0,80)",
+        "B. ISP = +0,25; Tahap Substitusi Impor",
+        "C. ISP = +4,00; Tahap Monopoli Ekspor",
+        "D. ISP = -0,60; Tahap Pengenalan Impor"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Indikator Ekonomi: Ekspor-Impor (Net Barter Terms of Trade)",
+      "score": 2,
+      "stem": "[OSL-INT-16] Jika indeks harga ekspor suatu negara ($P_x$) meningkat sebesar 10% menjadi 110 dan indeks harga impor ($P_m$) meningkat sebesar 25% menjadi 125, bagaimanakah kondisi Net Barter Terms of Trade ($N$) negara tersebut dan implikasinya?",
+      "reference": "A",
+      "explanation": "Kunci: A. Formula Net Barter Terms of Trade: $N = (P_x / P_m) \\times 100 = (110 / 125) \\times 100 = 88,00$. Karena $N < 100$, terjadi perburukan nilai tukar perdagangan (terms of trade deterioration). Artinya daya beli ekspor terhadap barang impor menurun, sehingga negara harus menjual barang ekspor secara fisik lebih banyak untuk memperoleh sejumlah impor yang sama. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 35)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. N = 88,00; Kondisi perdagangan memburuk (deteriorating), negara harus mengekspor volume fisik lebih banyak untuk memperoleh volume impor yang sama",
+        "B. N = 113,64; Kondisi perdagangan membaik (improving)",
+        "C. N = 15,00; Mengalami surplus neraca perdagangan sebesar 15 miliar USD",
+        "D. N = 100,00; Tidak terjadi perubahan daya beli ekspor"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan: Angka Kematian Ibu (AKI / MMR)",
+      "score": 2,
+      "stem": "[OSL-INT-17] Berbeda dari indikator demografi kematian lainnya (seperti AKB atau AKBa yang menggunakan per 1.000 kelahiran hidup), Angka Kematian Ibu (AKI / Maternal Mortality Ratio) dinyatakan dalam satuan kematian per...",
+      "reference": "A",
+      "explanation": "Kunci: A. Sesuai standar internasional WHO dan BPS, Maternal Mortality Ratio (MMR/AKI) didefinisikan sebagai jumlah kematian ibu selama masa kehamilan, persalinan, atau 42 hari setelah terminasi kehamilan per 100.000 Kelahiran Hidup pada tahun tertentu. Konstanta 100.000 digunakan karena probabilitas kematian maternal secara statistik relatif jarang dibandingkan kelahiran secara keseluruhan. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 100.000 Kelahiran Hidup",
+        "B. 1.000 Kelahiran Hidup",
+        "C. 10.000 Wanita Usia Subur",
+        "D. 100.000 Penduduk Total"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan: Imunisasi Dasar Lengkap (IDL)",
+      "score": 2,
+      "stem": "[OSL-INT-18] Dalam indikator kesehatan anak BPS dan Kementerian Kesehatan, seorang anak usia 12-23 bulan dinyatakan telah menerima Imunisasi Dasar Lengkap (IDL) jika telah memperoleh jenis vaksin...",
+      "reference": "A",
+      "explanation": "Kunci: A. Kriteria standar BPS dan Kemenkes untuk IDL sebelum anak berusia 1 tahun: 1 kali Hepatitis B (HB0 saat lahir), 1 kali BCG, 3 kali DPT-HB-Hib (Pentavalen), 4 kali Polio tetes (OPV) / 1 kali IPV, dan 1 kali Campak/MR. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 29)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 1 dosis HB0, 1 dosis BCG, 3 dosis DPT-HB-Hib, 4 dosis Polio tetes (OPV), dan 1 dosis Campak/Rubella",
+        "B. 1 dosis BCG, 1 dosis Campak, dan 2 dosis Polio saja",
+        "C. 3 dosis Covid-19 dan 1 dosis Polio",
+        "D. Semua vaksin tambahan non-program wajib seperti Influenza dan Cacar Air"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Pendidikan: Karakteristik Nilai APM vs APK",
+      "score": 2,
+      "stem": "[OSL-INT-19] Nilai Angka Partisipasi Kasar (APK) pada jenjang pendidikan tertentu (misalnya SMP) dapat melebihi 100%, sedangkan Angka Partisipasi Murni (APM) secara teoritis tidak akan pernah melebihi 100%.",
+      "reference": "true",
+      "explanation": "Kunci: Benar. APM mengukur proporsi siswa kelompok usia resmi jenjang tertentu yang benar-benar bersekolah pada jenjang tersebut terhadap populasi kelompok usia resmi yang bersangkutan (pembilang merupakan subset dari penyebut, sehingga batas maksimal 100%). Sebaliknya, APK menghitung seluruh siswa pada jenjang tersebut tanpa memandang usia (termasuk siswa yang usianya lebih muda atau lebih tua akibat terlambat masuk sekolah atau tinggal kelas), sehingga pembilang dapat melebihi penyebut dan menghasilkan APK > 100%. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 25)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    },
+    {
+      "point_id": "Pertemuan 8",
+      "point_name": "Indikator Ketimpangan: Kriteria Bank Dunia 40% Terbawah",
+      "score": 2,
+      "stem": "[OSL-INT-20] Berdasarkan kriteria Bank Dunia yang digunakan BPS untuk mengukur tingkat ketimpangan distribusi pengeluaran, suatu wilayah dikategorikan mengalami ketimpangan TINGGI (high inequality) apabila porsi pengeluaran dari 40% penduduk berpendapatan terendah adalah...",
+      "reference": "A",
+      "explanation": "Kunci: A. Kriteria Bank Dunia membagi 40% penduduk terbawah ke dalam 3 kategori: (1) Ketimpangan Tinggi: jika porsi pengeluaran < 12%; (2) Ketimpangan Sedang: jika porsi pengeluaran antara 12% - 17%; (3) Ketimpangan Rendah: jika porsi pengeluaran > 17%. (Sumber: Pertemuan 8 OSL Indikator Kemiskinan dan Ketimpangan, slide 42)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Kurang dari 12 persen dari total pengeluaran",
+        "B. Antara 12 persen sampai 17 persen dari total pengeluaran",
+        "C. Lebih dari 17 persen dari total pengeluaran",
+        "D. Kurang dari 40 persen dari total pengeluaran"
+      ],
+      "answer": 0
+    }
+  ]
+}

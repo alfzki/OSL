@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>12.2 Indeks Harga Konsumen dan Inflasi · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>12.2 Indeks Harga Konsumen dan Inflasi</h2><a href="#p-12.2.3">12.2.3 Disagregasi Inflasi Inti Bergejolak Administered ⭐</a></nav>
+<main>
+<h1>12.2 Indeks Harga Konsumen dan Inflasi<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 12: Perdagangan dan Indikator Harga ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 1 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-12.2.3">
+<h2>12.2.3 Disagregasi Inflasi Inti Bergejolak Administered ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 18-21]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi tiga komponen disagregasi inflasi BPS, formula andil inflasi tertimbang, pembagian kewenangan pengendalian inflasi antara BI (Moneter) dan Pemerintah (Fiskal/Pangan/TPID).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Inflasi umum (headline) dapat didisagregasikan berdasarkan komponen pembentuknya menjadi inflasi inti, inflasi harga diatur pemerintah (administered prices), dan inflasi bergejolak (volatile foods). Pengelompokan ini penting untuk merumuskan kebijakan pengendalian inflasi yang tepat sasaran [slide 18-21].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika dokter mendiagnosis pasien demam tinggi, dokter harus tahu apakah demam itu karena infeksi virus musiman yang akan reda sendiri, atau karena penyakit kronis menular yang butuh antibiotik keras. Dalam perekonomian, inflasi adalah demam harga. Inflasi volatile foods ibarat batuk pilek cuaca (perlu pasokan pangan lancar). Inflasi administered ibarat efek samping obat suntik dokter (akibat kebijakan harga energi pemerintah). Sedangkan inflasi inti adalah kondisi kesehatan pembuluh darah moneter yang dipantau terus-menerus oleh Bank Indonesia.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Tiga Komponen Disagregasi Inflasi BPS</p>
+<p>Untuk mendukung analisis kebijakan moneter dan stabilitas perekonomian makro, BPS mendisagregasikan IHK Umum (*Headline Inflation*) menjadi tiga komponen [slide 18-21]:</p>
+<ol><li><strong>Inflasi Inti (*Core Inflation*)</strong>:</li><li>Komponen yang pergerakan harganya mencerminkan kecenderungan persisten (*trend component*).</li><li>Dipengaruhi oleh faktor-faktor fundamental makroekonomi: interaksi permintaan agregat dan penawaran barang/jasa, stabilitas nilai tukar valuta asing, harga komoditas primer internasional, serta ekspektasi inflasi pedagang dan konsumen.</li><li>Menjadi sasaran utama (*policy anchor*) kerangka kebijakan moneter Bank Indonesia (*Inflation Targeting Framework*).</li></ol>
+<ol><li><strong>Inflasi Harga Bergejolak (*Volatile Foods*)</strong>:</li><li>Komponen inflasi yang pergerakan harganya sangat fluktuatif (*volatile*) karena dipicu oleh kejutan temporer (*temporary supply shocks*).</li><li>Faktor pemicu: kondisi iklim/cuaca ekstrem (El Nino/La Nina), serangan hama pertanian, musim panen raya versus masa paceklik, serta kendala logistik dan rantai distribusi pangan.</li><li>Contoh komoditas: cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, beras, dan sayuran segar.</li></ol>
+<ol><li><strong>Inflasi Harga Diatur Pemerintah (*Administered Prices*)</strong>:</li><li>Komponen inflasi yang harga barang dan jasanya ditetapkan atau dikendalikan secara administratif oleh keputusan kebijakan pemerintah (pusat maupun daerah).</li><li>Contoh komoditas: Bahan Bakar Minyak (BBM) bersubsidi (Pertalite, Solar), tarif listrik rumah tangga (PLN), gas elpiji tabung 3 kg, rokok kretek/putih (melalui penyesuaian tarif cukai tembakau), air minum PAM, serta tarif batas atas/bawah angkutan udara dan kereta api.</li></ol>
+<p>### 2. Formulasi Andil Inflasi (*Inflation Contribution*)</p>
+<p>Laju inflasi umum gabungan merupakan rata-rata tertimbang linier dari laju inflasi masing-masing komponen:<br>$$\pi_{\text{headline}} = \sum_{k=1}^3 \left( \frac{w_k}{100} \times \pi_k \right)$$<br>di mana $w_k$ adalah bobot diagram timbang komponen ke-$k$ ($w_{\text{inti}} + w_{\text{bergejolak}} + w_{\text{administered}} = 100\%$), dan $\pi_k$ adalah laju inflasi komponen ke-$k$.</p>
+<p>Andil inflasi komponen ke-$k$ terhadap inflasi headline didefinisikan sebagai:<br>$$\text{Andil}_k = \frac{w_k}{100} \times \pi_k$$<br>Sehingga:<br>$$\pi_{\text{headline}} = \text{Andil}_{\text{inti}} + \text{Andil}_{\text{bergejolak}} + \text{Andil}_{\text{administered}}$$</p>
+<p>### 3. Matriks Perbandingan Karakteristik Komponen Disagregasi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Komponen Inti (*Core*)</th><th>Komponen Bergejolak (*Volatile*)</th><th>Diatur Pemerintah (*Administered*)</th></tr></thead><tbody><tr><td><strong>Karakteristik Harga</strong></td><td>Persisten, bergerak bertahap, lambat berbalik</td><td>Sangat fluktuatif, fluktuasi tajam jangka pendek</td><td>Bergerak diskrit/kejutan sesaat saat kebijakan diumumkan</td></tr><tr><td><strong>Pemicu Utama</strong></td><td>Permintaan agregat, nilai tukar, ekspektasi</td><td>Cuaca, gagal panen, hama, distribusi logistik</td><td>Keputusan regulasi tarif dan subsidi pemerintah</td></tr><tr><td><strong>Bobot IHK Nasional</strong></td><td>Terbesar (sekitar 60% - 65%)</td><td>Menengah (sekitar 15% - 20%)</td><td>Menengah (sekitar 18% - 22%)</td></tr><tr><td><strong>Otoritas Kebijakan</strong></td><td>Bank Indonesia (kebijakan suku bunga BI-Rate)</td><td>TPIP, TPID, Kementan, Bapanas, Bulog</td><td>Kementerian ESDM, Kemenhub, Kemenkeu, Pemda</td></tr><tr><td><strong>Instrumen Penanganan</strong></td><td>Operasi moneter, pengendalian likuiditas</td><td>Operasi pasar pangan, fasilitasi ongkos angkut</td><td>Penyesuaian subsidi energi, penetapan tarif HET</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Pemerintah memutuskan untuk menaikkan harga BBM bersubsidi dan tarif tenaga listrik secara serentak. Kenaikan harga kedua komoditas ini secara langsung akan tercermin pada peningkatan laju inflasi komponen...</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 18-21]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Inflasi Inti (Core Inflation)</button>
+<button class="ex-opt" data-i="1">B. Inflasi Komponen Bergejolak (Volatile Foods)</button>
+<button class="ex-opt" data-i="2">C. Inflasi Komponen Diatur Pemerintah (Administered Prices)</button>
+<button class="ex-opt" data-i="3">D. Inflasi Musiman (Seasonal Inflation)</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Tarif BBM bersubsidi dan tarif listrik adalah komoditas strategis yang harganya diatur dan ditetapkan secara langsung oleh keputusan pemerintah. Oleh karena itu, lonjakan harganya secara langsung dicatat sebagai inflasi komponen *Administered Prices*. Meskipun dalam jangka panjang biaya BBM dapat merembet ke biaya produksi barang lain (efek putaran kedua / *second-round effect* pada inflasi inti), efek putaran pertama secara langsung masuk ke administered prices.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Antara Laju Inflasi dan Andil</strong>: Dalam ujian esai, jangan menjawab bahwa komponen bergejolak otomatis menyumbang inflasi terbesar hanya karena laju inflasinya 5% sementara inti hanya 1%. Selalu kalikan dengan bobotnya masing-masing terlebih dahulu.</li><li><strong>Karakteristik Komoditas Ganda</strong>: Beras adalah makanan pokok tetapi di Indonesia sering dipengaruhi intervensi harga eceran tertinggi (HET) dan operasi pasar Bulog, namun secara klasifikasi standar BPS tetap dimasukkan dalam kelompok volatile foods.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Inti untuk Moneter BI; Bergejolak untuk Pangan dan Panen; Administered untuk BBM, Tarif Listrik, dan Kebijakan.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.2.1, 12.2.2, 12.3.1</div>
+<button class="donebtn" data-id="12.2.3"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

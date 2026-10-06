@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 10: Indikator Kesehatan dan SDGs 3 · Modul Kuliah</title>
+<script>
+(function(){try{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{localStorage.setItem('esb-theme',t);}catch(e){}}
+function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}
+</script>
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 14px; color: #374151; margin: 0 0 10px; }
+  #toc .toc-sec { display: flex; align-items: center; gap: 4px; padding: 8px 4px 4px;
+                  font-weight: 600; font-size: 12px; color: #4b5563; line-height: 1.5; }
+  #toc .toc-sec + .toc-sec { border-top: 1px solid #e5e7eb; margin-top: 6px; padding-top: 10px; }
+  #toc .modetag-mini { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 99px;
+                        background: #eef2ff; color: #4338ca; font-weight: 400; line-height: 1.6; }
+  #toc a { display: block; padding: 3px 8px; margin-left: 4px; color: #374151; text-decoration: none;
+            border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  div.ch-sec { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+  div.ch-sec:last-child { border-bottom: none; }
+  h2.sec-title { font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>Pertemuan 10: Indikator Kesehatan dan SDGs 3 <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2><div class="toc-sec">10.1 Indikator Mortalitas Ibu dan Anak<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-10.1.1">10.1.1 Angka Kematian Ibu AKI MMR ⭐</a>
+<a href="#p-10.1.2">10.1.2 Angka Kematian Bayi AKB dan Balita AKABA ⭐</a>
+<a href="#p-10.1.3">10.1.3 Angka Kematian Neo-Natal NMR ⭐</a>
+<div class="toc-sec">10.2 Morbiditas dan Pelayanan Kesehatan<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-10.2.1">10.2.1 Angka Kesakitan Morbiditas ⭐</a>
+<a href="#p-10.2.2">10.2.2 Imunisasi Dasar Lengkap IDL ⭐</a></nav>
+<main>
+<h1>Pertemuan 10: Indikator Kesehatan dan SDGs 3</h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》 ｜ 2 Bagian ｜ 5 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 10 Butir ｜ Kerjakan mandiri sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<div class="ch-sec" id="sec-10.1-Indikator-Mortalitas-Ibu-dan-Anak">
+<h2 class="sec-title">10.1 Indikator Mortalitas Ibu dan Anak<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-10.1.1">
+<h2>10.1.1 Angka Kematian Ibu AKI MMR ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 4-20]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi operasional AKI/MMR, formula per 100.000 kelahiran hidup, penyebab maternal 42 hari pascasalin, hasil Long Form SP2020, disparitas regional, dan target SDGs 3.1.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Definisi Mortalitas WHO: menghilangnya semua tanda-tanda kehidupan secara permanen setelah kelahiran hidup. Rumus Angka Kematian Ibu (Maternal Mortality): AKI = (Jumlah Kematian Ibu / Jumlah Kelahiran Hidup) x K, dimana K = 100.000. Jumlah kematian ibu adalah banyaknya kematian ibu yang disebabkan karena kehamilan, persalinan sampai 42 hari setelah melahirkan pada tahun tertentu di daerah tertentu [slide 12-13]. Berdasarkan Long Form SP2020, MMR Indonesia adalah 189 per 100.000 kelahiran hidup [slide 14]. Target SDGs 3.1 adalah mengurangi rasio AKI hingga kurang dari 70 per 100.000 kelahiran hidup pada tahun 2030 [slide 9].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa pengali kematian ibu 100.000 sedangkan kematian bayi 1.000? Kematian ibu adalah peristiwa yang frekuensinya jauh lebih rendah daripada kelahiran. Jika digunakan per 1.000 KH, angka kematian ibu Indonesia adalah 0,189 (sulit dikomunikasikan ke publik dan pembuat kebijakan). Dengan skala 100.000 KH, angka tersebut menjadi 189 kematian per 100.000 kelahiran hidup. Indikator ini merupakan sinyal paling tajam mengenai keterlambatan rujukan gawat darurat obstetri (tiga terlambat: terlambat mengambil keputusan, terlambat tiba di fasilitas kesehatan, dan terlambat mendapat penanganan medis).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konsep &amp; Definisi Operasional BPS</p>
+<p>Berdasarkan standar BPS dan WHO [Pertemuan_10_Indikator_Kesehatan.md, slide 12-13]:<br>- <strong>Kematian Maternal</strong>: Kematian seorang wanita saat hamil atau dalam kurun waktu 42 hari sejak terminasi kehamilan, terlepas dari durasi dan tempat kehamilan, yang diakibatkan oleh sebab apa pun yang terkait dengan atau diperberat oleh kehamilan atau penanganannya, namun bukan karena sebab kecelakaan atau trauma insidental.<br>- <strong>Kelahiran Hidup</strong>: Keluarnya secara lengkap produk konsepsi dari rahim ibunya yang menunjukkan tanda-tanda kehidupan (bernafas, denyut jantung, pulsasi tali pusat, gerakan otot volunter) tanpa memandang usia gestasi.</p>
+<p>### 2. Formulasi Matematis AKI (MMR)</p>
+<p>$$\text{MMR} = \frac{\sum \text{Kematian Ibu Maternal}}{\sum \text{Kelahiran Hidup}} \times 100.000$$</p>
+<p>Secara notasi simbolik:<br>$$\text{MMR} = \frac{D_{\text{mat}}}{B} \times 100.000$$<br>dimana:<br>- $D_{\text{mat}}$ = Banyaknya kematian ibu karena kehamilan, persalinan, dan nifas (&lt; 42 hari) pada satu tahun tertentu di daerah tertentu.<br>- $B$ = Banyaknya bayi yang lahir hidup pada tahun tertentu di daerah tertentu.<br>- $K = 100.000$ = Bilangan konstan standar internasional.</p>
+<p>### 3. Komplikasi Utama Penyebab Kematian Maternal<br>Hampir $75\%$ kematian ibu disebabkan oleh 5 komplikasi klinis utama [Pertemuan_10_Indikator_Kesehatan.md, slide 35]:<br>1. *Severe bleeding* (Perdarahan hebat pascapersalinan / HPP).<br>2. *Infections* (Infeksi nifas / sepsis puerperalis pascamelahirkan).<br>3. *High blood pressure* (Preeklampsia berat dan eklamsia selama kehamilan).<br>4. *Complications from delivery* (Persalinan macet atau partus lama terlantar).<br>5. *Unsafe abortion* (Aborsi yang tidak aman).</p>
+<p>### 4. Gambaran Empiris Long Form SP2020 dan SDGs</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Wilayah</th><th>Nilai MMR (per 100.000 KH)</th><th>Keterangan Sumber</th></tr></thead><tbody><tr><td>DKI Jakarta</td><td>48</td><td>Terendah nasional [slide 14]</td></tr><tr><td>DI Yogyakarta</td><td>58</td><td>Terendah kedua [slide 14]</td></tr><tr><td>Bali</td><td>85</td><td>Rendah [slide 14]</td></tr><tr><td><strong>INDONESIA</strong></td><td><strong>189</strong></td><td><strong>Rata-rata Nasional SP2020 LF [slide 14]</strong></td></tr><tr><td>Nusa Tenggara Timur</td><td>316</td><td>Tinggi [slide 14]</td></tr><tr><td>Papua Barat</td><td>343</td><td>Sangat tinggi [slide 14]</td></tr><tr><td>Papua</td><td>565</td><td>Tertinggi nasional [slide 14]</td></tr><tr><td><strong>Target SDGs 3.1</strong></td><td><strong>&lt; 70</strong></td><td><strong>Batas Target Global 2030 [slide 9]</strong></td></tr></tbody></table></div>
+<p>Sebagai komparasi regional ASEAN tahun 2017 [slide 16]: Malaysia (29), Thailand (37), Vietnam (43), Filipina (121), dan Indonesia (177).</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berapakah konstanta pengali standar yang digunakan oleh BPS dalam menghitung Angka Kematian Ibu (Maternal Mortality Ratio / MMR), dan berapakah target SDGs 3.1 yang harus dicapai pada tahun 2030?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 9, 13]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Pengali 1.000 kelahiran hidup; target SDGs 3.1 kurang dari 12 per 1.000 KH</button>
+<button class="ex-opt" data-i="1">B. Pengali 10.000 kelahiran hidup; target SDGs 3.1 kurang dari 50 per 10.000 KH</button>
+<button class="ex-opt" data-i="2">C. Pengali 100.000 kelahiran hidup; target SDGs 3.1 kurang dari 70 per 100.000 KH</button>
+<button class="ex-opt" data-i="3">D. Pengali 100.000 wanita usia subur; target SDGs 3.1 kurang dari 25 per 100.000 WUS</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 13, formula resmi BPS adalah AKI = (Jumlah Kematian Ibu / Jumlah Kelahiran Hidup) x 100.000.<br>- Berdasarkan slide 9, Target 3.1 SDGs menyatakan: 'Pada tahun 2030, mengurangi rasio angka kematian ibu hingga kurang dari 70 per 100.000 kelahiran hidup'.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;MMR=192.00&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu provinsi terdapat 62.500 kelahiran hidup pada tahun 2023. Pada tahun yang sama dilaporkan terdapat 120 kematian ibu akibat komplikasi kehamilan, persalinan, dan nifas (&lt; 42 hari). Hitunglah nilai Maternal Mortality Ratio (MMR) provinsi tersebut. Tuliskan jawaban akhir dalam format: <code>MMR=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 13, 14]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Rumus MMR BPS: $\text{MMR} = \frac{D_{\text{mat}}}{B} \times 100.000$.<br>2. Masukkan nilai: $\text{MMR} = \frac{120}{62.500} \times 100.000 = 0,00192 \times 100.000 = 192,00$.<br>3. Nilai MMR provinsi tersebut adalah 192,00 per 100.000 kelahiran hidup.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>deaths = 120<br>births = 62500<br>k = 100000<br>mmr = (deaths / births) * k<br>print(f'MMR={mmr:.2f}')<br># Output: MMR=192.00<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar dengan AKB/AKABA pada Pengali</strong>: AKI wajib dikalikan 100.000, bukan 1.000.</li><li><strong>Denominator Bukan WUS</strong>: Maternal Mortality Ratio (MMR) membagi dengan Kelahiran Hidup; sedangkan Maternal Mortality Rate (MMRate) membagi dengan Wanita Usia Subur (15-49 tahun).</li><li><strong>Periode 42 Hari Pascasalin</strong>: Kematian setelah hari ke-43 tidak dihitung sebagai kematian maternal standar (dikelompokkan sebagai late maternal death).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>MMR = Kematian Maternal per 100 Ribu Kelahiran Hidup; Target SDGs 3.1 adalah Kurang dari 70!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.2, 10.1.3, 10.2.1</div>
+<button class="donebtn" data-id="10.1.1"></button>
+</section>
+<section class="point" id="p-10.1.2">
+<h2>10.1.2 Angka Kematian Bayi AKB dan Balita AKABA ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 18-35]</div>
+<div class="box info">📌 <div class="rich"><p>Membedakan konsep, definisi, dan formula AKB (IMR), AK Anak (CMR 1-4 th), dan AKABA (U5MR), memahami perbedaan penyebut kelahiran hidup vs penduduk pertengahan tahun, capaian SP2020, dan target SDGs 3.2.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Balita atau bawah lima tahun adalah semua anak termasuk bayi yang baru lahir, yang berusia 0 sampai menjelang tepat 5 tahun (notasi 0-4 tahun). Angka Kematian Balita adalah jumlah kematian anak berusia 0-4 tahun selama satu tahun tertentu per 1.000 anak umur yang sama pada pertengahan tahun itu [slide 18-19]. Angka Kematian Anak mencerminkan kematian anak usia 1-4 tahun per 1.000 penduduk 1-4 tahun pertengahan tahun, sangat dipengaruhi gizi buruk, sanitasi lingkungan buruk, dan penyakit menular [slide 20-21]. Angka Kematian Bayi (IMR): kematian antara saat lahir sampai sebelum berusia tepat satu tahun per 1.000 kelahiran hidup [slide 26]. Target SDGs 3.2: mengakhiri kematian balita yang dapat dicegah dengan menurunkan AKABA setidaknya hingga 25 per 1.000 KH [slide 9].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seorang bayi meninggal dalam 1 tahun pertama kehidupannya, kematian tersebut dihitung dalam AKB (IMR). Jika anak tersebut berhasil melewati ulang tahun pertamanya namun meninggal sebelum ulang tahun kelimanya (antara usia 1 s.d. 4 tahun 11 bulan), kematiannya dihitung dalam AK Anak (CMR). AKABA (U5MR) adalah payung komprehensif yang merangkum seluruh kematian anak sebelum genap usia 5 tahun. Perbedaan determinan: kematian bayi lebih banyak dipengaruhi oleh faktor biologis/kehamilan ibu, sedangkan kematian anak 1-4 tahun sangat dipengaruhi faktor lingkungan eksternal (air minum, jamban, infeksi, asupan makanan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Tiga Ukuran Mortalitas Anak</p>
+<p>Berdasarkan materi resmi BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 18-26]:<br>- <strong>Bayi (Infant)</strong>: Anak berusia $0$ sampai menjelang tepat $1$ tahun ($0$ s.d. $11$ bulan $29$ hari).<br>- <strong>Anak (Child)</strong>: Penduduk berusia $1$ tahun sampai menjelang $5$ tahun ($1$ s.d. $4$ tahun $11$ bulan $29$ hari, notasi $1-4$ tahun).<br>- <strong>Balita (Under-Five Children)</strong>: Semua anak termasuk bayi baru lahir yang berusia $0$ sampai menjelang tepat $5$ tahun (notasi $0-4$ tahun).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>#### A. Angka Kematian Bayi (Infant Mortality Rate / AKB / IMR)<br>$$\text{AKB} = \frac{D_{0-&lt;1\text{ th}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{0-&lt;1\text{ th}}$ = Jumlah kematian bayi berumur kurang dari 1 tahun pada satu tahun tertentu di daerah tertentu.<br>- $\sum \text{Lahir Hidup} = B$ = Jumlah kelahiran hidup pada satu tahun tertentu di daerah tertentu [slide 26].</p>
+<p>#### B. Angka Kematian Anak (Child Mortality Rate / AK Anak / CMR 1-4 Tahun)<br>$$\text{AK Anak} = \frac{D_{1-4\text{ th}}}{\sum P_{1-4\text{ th}}} \times 1.000$$<br>dimana:<br>- $D_{1-4\text{ th}}$ = Banyaknya kematian anak berusia 1-4 tahun pada satu tahun tertentu di daerah tertentu.<br>- $\sum P_{1-4\text{ th}}$ = Jumlah penduduk berusia 1-4 tahun pada pertengahan tahun tertentu di daerah tertentu [slide 21].</p>
+<p>#### C. Angka Kematian Balita (Under-Five Mortality Rate / AKABA / U5MR)<br>$$\text{AKABA} = \frac{D_{0-4\text{ th}}}{\sum P_{0-4\text{ th}}} \times 1.000$$<br>dimana:<br>- $D_{0-4\text{ th}} = D_{0-&lt;1\text{ th}} + D_{1-4\text{ th}}$ = Total kematian balita usia 0-4 tahun.<br>- $\sum P_{0-4\text{ th}}$ = Jumlah penduduk berusia 0-4 tahun pada pertengahan tahun tertentu [slide 19].</p>
+<p>### 3. Matriks Perbandingan Karakteristik Indikator Mortalitas Anak</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Parameter</th><th>Angka Kematian Bayi (AKB)</th><th>Angka Kematian Anak (AK Anak)</th><th>Angka Kematian Balita (AKABA)</th></tr></thead><tbody><tr><td><strong>Batasan Umur</strong></td><td>0 s.d. &lt; 1 tahun [slide 26]</td><td>1 s.d. &lt; 5 tahun [slide 20]</td><td>0 s.d. &lt; 5 tahun [slide 18]</td></tr><tr><td><strong>Pembilang ($D$)</strong></td><td>Kematian bayi ($D_{0-&lt;1}$)</td><td>Kematian anak 1-4 th ($D_{1-4}$)</td><td>Total kematian balita ($D_{0-4}$)</td></tr><tr><td><strong>Penyebut Basis</strong></td><td>Kelahiran Hidup ($B$)</td><td>Penduduk usia 1-4 th ($P_{1-4}$)</td><td>Penduduk usia 0-4 th ($P_{0-4}$)</td></tr><tr><td><strong>Konstanta ($K$)</strong></td><td>1.000 [slide 26]</td><td>1.000 [slide 21]</td><td>1.000 [slide 19]</td></tr><tr><td><strong>Determinan Kunci</strong></td><td>Kondisi maternal, asuhan antenatal, BBLR [slide 27]</td><td>Sanitasi, kebersihan, gizi buruk, diare [slide 20]</td><td>Komposit status kesehatan &amp; lingkungan anak</td></tr><tr><td><strong>Capaian SP2020</strong></td><td>Tercakup dalam balita</td><td>2,98 per 1.000 KH [slide 28]</td><td>19,83 per 1.000 KH [slide 28]</td></tr><tr><td><strong>Target SDGs 3.2</strong></td><td>Diturunkan signifikan</td><td>Diturunkan signifikan</td><td>$\le 25$ per 1.000 KH pada 2030 [slide 9]</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Pernyataan manakah yang paling tepat mengenai perbedaan metodologis antara Angka Kematian Bayi (AKB) dan Angka Kematian Anak (AK Anak) menurut BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 9, 21, 26]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. AKB menggunakan penyebut kelahiran hidup dan konstanta 1.000, sedangkan AK Anak menggunakan penyebut penduduk usia 1-4 tahun pertengahan tahun dan konstanta 1.000.</button>
+<button class="ex-opt" data-i="1">B. AKB menggunakan konstanta 100.000, sedangkan AK Anak menggunakan konstanta 1.000.</button>
+<button class="ex-opt" data-i="2">C. AKB dan AK Anak sama-sama menggunakan penyebut kelahiran hidup, sehingga AKABA merupakan hasil penjumlahan langsung AKB + AK Anak.</button>
+<button class="ex-opt" data-i="3">D. AKB mengukur kematian usia 0-4 tahun, sedangkan AK Anak mengukur kematian usia 1-4 tahun.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 26, formula AKB membagi jumlah kematian bayi umur kurang dari 1 tahun dengan jumlah kelahiran hidup dikalikan 1.000.<br>- Berdasarkan slide 21, formula AK Anak membagi banyaknya kematian anak berusia 1-4 tahun dengan jumlah penduduk berusia 1-4 tahun pertengahan tahun dikalikan 1.000.<br>- Karena penyebutnya berbeda, AKABA tidak dapat diperoleh dari penjumlahan langsung AKB dan AK Anak.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AKB=12.00, AK_Anak=2.00, AKABA=4.08&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di Kabupaten Sejahtera tercatat 25.000 kelahiran hidup sepanjang tahun 2023. Terdapat 300 kematian bayi (&lt; 1 tahun) pada tahun tersebut. Pada pertengahan tahun, jumlah penduduk usia 1-4 tahun tercatat 95.000 jiwa dengan 190 kematian anak. Jumlah seluruh penduduk balita (0-4 tahun) adalah 120.000 jiwa dengan total 490 kematian balita. Hitunglah nilai AKB, AK Anak, dan AKABA. Tuliskan jawaban akhir dalam format: <code>AKB=..., AK_Anak=..., AKABA=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 19, 21, 26]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. $\text{AKB} = \frac{D_{0-&lt;1}}{B} \times 1.000 = \frac{300}{25.000} \times 1.000 = 12,00$ per 1.000 KH.<br>2. $\text{AK Anak} = \frac{D_{1-4}}{P_{1-4}} \times 1.000 = \frac{190}{95.000} \times 1.000 = 2,00$ per 1.000 anak 1-4 th.<br>3. $\text{AKABA} = \frac{D_{0-4}}{P_{0-4}} \times 1.000 = \frac{490}{120.000} \times 1.000 = 4,0833 \approx 4,08$ per 1.000 balita.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>d_infant = 300<br>live_births = 25000<br>imr = (d_infant / live_births) * 1000</p>
+<p>d_child = 190<br>p_child = 95000<br>cmr = (d_child / p_child) * 1000</p>
+<p>d_u5 = 490<br>p_u5 = 120000<br>akaba = (d_u5 / p_u5) * 1000</p>
+<p>print(f'AKB={imr:.2f}, AK_Anak={cmr:.2f}, AKABA={akaba:.2f}')<br># Output: AKB=12.00, AK_Anak=2.00, AKABA=4.08<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Penjumlahan Sembarangan</strong>: Mengira AKABA = AKB + AK Anak. Ini keliru fatal karena penyebut AKB adalah kelahiran hidup, sedangkan penyebut AK Anak adalah penduduk umur 1-4 tahun pertengahan tahun.</li><li><strong>Definisi Usia Balita</strong>: Balita adalah 0-4 tahun (kurang dari 5 tahun), bukan 1-4 tahun. Anak 1-4 tahun adalah subset dari balita.</li><li><strong>Pengali Pengukuran</strong>: Seluruh indikator mortalitas anak menggunakan K = 1.000, jangan gunakan 100.000 (khusus AKI).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>AKB = Bayi (&lt;1 th) / Kelahiran; AK Anak = Anak (1-4 th) / Penduduk 1-4; AKABA = Balita (0-4 th) / Penduduk 0-4; Semuanya kali 1.000!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.3, 10.2.1</div>
+<button class="donebtn" data-id="10.1.2"></button>
+</section>
+<section class="point" id="p-10.1.3">
+<h2>10.1.3 Angka Kematian Neo-Natal NMR ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 24-35]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi dan batas umur neonatal (0-28 hari) vs post-neonatal (1 bln-&lt;1 th), hubungan aditif aditif AKB = NMR + PNMR, perbedaan determinan program kesehatan, data SP2020, dan target SDGs 3.2.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Angka Kematian Neo-Natal adalah kematian yang terjadi sebelum bayi berumur satu bulan atau 28 hari per 1.000 kelahiran hidup pada satu tahun tertentu. Rumus: AK Neo-Natal = (D0-&lt;1 bln / Sigma Lahir Hidup) x 1.000 [slide 24]. Angka Kematian Post Neo-natal adalah kematian bayi umur 1 bulan sampai kurang 1 tahun per 1.000 kelahiran hidup: AK Post Neo-Natal = (D1 bln-&lt;1 th / Sigma Lahir Hidup) x 1.000 [slide 25]. Program penurunan neonatal terkait pelayanan kesehatan ibu hamil (misal pil besi, suntikan anti tetanus). Program post-neonatal berguna untuk mengembangkan imunisasi, penanggulangan penyakit menular, dan gizi [slide 27]. SP2020: Angka kematian neonatal Indonesia 9,3 per 1.000 kelahiran [slide 28]. Target SDGs 3.2: Angka Kematian Neonatal setidaknya turun hingga 12 per 1.000 KH [slide 9].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan garis waktu tahun pertama kehidupan bayi: hari 0 hingga hari ke-28 adalah masa adaptasi biologis dari rahim ke dunia luar (fase neonatal). Organ tubuh masih sangat rentan dan imunitas pasif dari plasenta belum sepenuhnya stabil. Jika bayi meninggal pada fase ini, penyebabnya hampir pasti berkaitan dengan kondisi medis ibu selama hamil atau komplikasi proses persalinan. Setelah hari ke-28 (fase post-neonatal), bayi mulai terpapar lingkungan luar: udara, air, makanan selain ASI, debu, dan droplet virus/bakteri. Maka penyebab kematian bergeser menjadi infeksi pneumonia, diare, dan malnutrisi. Mengetahui rasio kematian neonatal vs post-neonatal memberi tahu dokter dan perencana kebijakan sektor mana yang mendesak diperbaiki: ruang bersalin dan ANC (jika NMR tinggi), atau imunisasi dan sanitasi air (jika PNMR tinggi).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Mortalitas Neonatal &amp; Post-Neonatal</p>
+<p>Berdasarkan materi resmi BPS dan standar WHO [Pertemuan_10_Indikator_Kesehatan.md, slide 24-27]:<br>- <strong>Kematian Neonatal (Neonatal Death)</strong>: Kematian bayi yang terjadi pada kurun waktu antara saat lahir hingga sebelum mencapai usia tepat 28 hari (usia $0$ s.d. $27$ hari penuh, sering dinotasikan sebagai $0 - &lt; 1$ bulan).<br>- <strong>Kematian Post-Neonatal (Post-Neonatal Death)</strong>: Kematian bayi yang terjadi setelah melewati masa neonatal, yaitu dari usia tepat 28 hari (atau 1 bulan) sampai sebelum berusia tepat 1 tahun ($28$ hari s.d. $364$ hari).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>#### A. Angka Kematian Neonatal (Neonatal Mortality Rate / NMR)<br>$$\text{NMR} = \frac{D_{0-&lt;28\text{ hari}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{0-&lt;28\text{ hari}}$ = Jumlah kematian bayi berusia $0$ s.d. kurang dari $28$ hari pada tahun tertentu di daerah tertentu [slide 24].<br>- $\sum \text{Lahir Hidup} = B$ = Banyaknya kelahiran hidup pada tahun tertentu di daerah tertentu.<br>- $K = 1.000$ = Konstanta pengali.</p>
+<p>#### B. Angka Kematian Post-Neonatal (Post-Neonatal Mortality Rate / PNMR)<br>$$\text{PNMR} = \frac{D_{1\text{ bln}-&lt;1\text{ th}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{1\text{ bln}-&lt;1\text{ th}}$ = Jumlah kematian bayi berusia $1$ bulan sampai kurang dari $1$ tahun pada tahun tertentu di daerah tertentu [slide 25].<br>- Penyebut dan pengali identik dengan NMR.</p>
+<p>### 3. Sifat Hubungan Aditif dengan Angka Kematian Bayi (AKB)<br>Karena seluruh kematian bayi berumur kurang dari 1 tahun ($D_{0-&lt;1\text{ th}}$) dapat dipartisi secara mutually exclusive dan exhaustive menjadi kematian neonatal dan kematian post-neonatal:<br>$$D_{0-&lt;1\text{ th}} = D_{0-&lt;28\text{ hari}} + D_{1\text{ bln}-&lt;1\text{ th}}$$<br>Maka pembagian kedua ruas dengan $\sum \text{Lahir Hidup}$ dan perkalian dengan $1.000$ menghasilkan:<br>$$\text{AKB} = \text{NMR} + \text{PNMR}$$</p>
+<p>### 4. Perbedaan Determinan Etiologis dan Sasaran Kebijakan</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Kematian Neonatal (0-28 Hari)</th><th>Kematian Post-Neonatal (1 bln - &lt;1 th)</th></tr></thead><tbody><tr><td><strong>Etiologi Utama</strong></td><td>Faktor endogen/biologis maternal: asfiksia, BBLR, prematuritas, kelainan kongenital, tetanus neonatorum</td><td>Faktor eksogen/lingkungan: pneumonia, diare, malnutrisi, infeksi bakteri/virus</td></tr><tr><td><strong>Fokus Intervensi</strong></td><td>Pelayanan antenatal care (ANC), tablet tambah darah (Fe) ibu, imunisasi Tetanus Toksoid (TT) ibu hamil, persalinan higienis di faskes [slide 27]</td><td>Program Imunisasi Dasar Lengkap (IDL), sanitasi air bersih, ASI eksklusif, gizi seimbang [slide 27]</td></tr><tr><td><strong>Capaian SP2020</strong></td><td>9,3 per 1.000 kelahiran hidup [slide 28]</td><td>Sekitar 10,5 per 1.000 kelahiran hidup</td></tr><tr><td><strong>Target SDGs 3.2</strong></td><td>$\le 12$ per 1.000 kelahiran hidup pada 2030 [slide 9]</td><td>Tercakup dalam target AKABA $\le 25$ per 1.000 KH</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Program intervensi manakah yang paling tepat dan efektif untuk menurunkan Angka Kematian Neo-Natal (NMR) menurut materi resmi BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 9, 24, 27]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Pemberian imunisasi campak dan perbaikan sarana sanitasi jamban keluarga.</button>
+<button class="ex-opt" data-i="1">B. Pelayanan kesehatan ibu hamil, pemberian tablet besi (Fe), dan suntikan anti tetanus toksoid bagi ibu hamil.</button>
+<button class="ex-opt" data-i="2">C. Penyuluhan gizi seimbang dan makanan pendamping ASI untuk anak usia 1-4 tahun.</button>
+<button class="ex-opt" data-i="3">D. Penyediaan air minum perpipaan dan penataan perumahan kumuh perkotaan.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 27: 'Program untuk mengurangi angka kematian neo-natal adalah bersangkutan dengan program pelayanan kesehatan ibu hamil, misalnya program pemberian pil besi dan suntikan anti tetanus.'<br>- Pilihan A, C, dan D ditujukan untuk mengurangi kematian pasca-neonatal (post-neonatal) dan kematian anak balita yang bersumber dari infeksi lingkungan dan gizi.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;NMR=8.00, PNMR=6.00, IMR=14.00&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu daerah pada tahun 2023 tercatat 40.000 kelahiran hidup. Dilaporkan bahwa terjadi 320 kematian bayi berusia 0-28 hari dan 240 kematian bayi berusia 29 hari hingga sebelum 1 tahun. Hitunglah NMR, PNMR, dan AKB total per 1.000 kelahiran hidup. Tuliskan jawaban akhir dalam format: <code>NMR=..., PNMR=..., IMR=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 24, 25, 26]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. $\text{NMR} = \frac{D_{0-&lt;28\text{ hari}}}{B} \times 1.000 = \frac{320}{40.000} \times 1.000 = 8,00$ per 1.000 KH.<br>2. $\text{PNMR} = \frac{D_{1\text{ bln}-&lt;1\text{ th}}}{B} \times 1.000 = \frac{240}{40.000} \times 1.000 = 6,00$ per 1.000 KH.<br>3. $\text{AKB (IMR)} = \text{NMR} + \text{PNMR} = 8,00 + 6,00 = 14,00$ per 1.000 KH.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>births = 40000<br>d_neo = 320<br>d_post = 240<br>nmr = (d_neo / births) * 1000<br>pnmr = (d_post / births) * 1000<br>imr = ((d_neo + d_post) / births) * 1000<br>print(f'NMR={nmr:.2f}, PNMR={pnmr:.2f}, IMR={imr:.2f}')<br># Output: NMR=8.00, PNMR=6.00, IMR=14.00<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menyamakan Usia Neonatal dengan Balita</strong>: Usia neonatal adalah strictly 0-28 hari, bukan 1 tahun dan bukan 5 tahun.</li><li><strong>Kesesuaian Program Kebijakan</strong>: Menangani kematian neonatal dengan penyuluhan sanitasi jamban adalah salah sasaran; kematian neonatal harus ditangani dengan perbaikan gizi ibu hamil, ANC, dan fasilitas emergensi neonatal.</li><li><strong>Sifat Aditif</strong>: Hanya berlaku antara NMR dan PNMR terhadap AKB karena memiliki denominator yang identik.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Neonatal = 0-28 hari (faktor ibu/kandungan); Post-neonatal = 1 bln-&lt;1 th (faktor lingkungan); NMR + PNMR = IMR!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.2, 10.2.1</div>
+<button class="donebtn" data-id="10.1.3"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-10.2-Morbiditas-dan-Pelayanan-Kesehatan">
+<h2 class="sec-title">10.2 Morbiditas dan Pelayanan Kesehatan<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-10.2.1">
+<h2>10.2.1 Angka Kesakitan Morbiditas ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 36-65]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai konsep dan formula Angka Kesakitan (Morbiditas) BPS, pembedaan keluhan kesehatan vs terganggu aktivitas, penilaian status gizi antropometri balita WHO 2005 (BB/U, TB/U, BB/TB), klasifikasi Z-score, dan perhitungan prevalensi stunting (EXT-3).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Meningkatkan derajat dan status kesehatan masyarakat melalui 4 pilar pembangunan kesehatan: promotif, preventif, kuratif, dan rehabilitatif [slide 38-39]. Penilaian status gizi pada kelompok masyarakat dilakukan dengan pengukuran tubuh manusia (Antropometri) menggunakan variabel umur (bulan penuh), berat badan (peka keadaan kini), dan tinggi badan (melihat gizi masa lalu) [slide 48]. Indeks TB/U memberikan gambaran keadaan lingkungan tidak baik, kemiskinan, dan akibat tidak sehat menahun [slide 50]. Stunting (pendek/sangat pendek) adalah kondisi kurang gizi kronis berdasarkan indeks TB/U dibandingkan standar WHO 2005: Sangat pendek jika Z-score &lt; -3,0 SD; Pendek jika -3,0 SD &lt;= Z-score &lt; -2,0 SD [slide 58-59]. Bila prevalensi kurus/wasting (BB/TB &lt; -2 SD) di atas 10%, menunjukkan masalah gizi yang sangat serius dan berhubungan langsung dengan angka kesakitan [slide 51].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seseorang terserang flu ringan tetapi tetap bisa masuk kantor atau sekolah seperti biasa, apakah orang tersebut dihitung sakit dalam statistik morbiditas BPS? Jawabannya: Tidak. BPS mencatatnya sebagai keluhan kesehatan biasa, tetapi belum masuk angka kesakitan (morbiditas). Angka kesakitan baru terhitung jika penyakit tersebut membatasi kemampuan seseorang dalam menjalankan peran sosial dan ekonominya. Sementara itu pada balita, angka kesakitan (seperti diare dan ISPA berulang) memicu hilangnya nafsu makan dan malabsorpsi nutrisi. Jika defisit ini berlangsung kronis dalam 1.000 Hari Pertama Kehidupan (HPK), tubuh anak mengorbankan pertumbuhan linier tulangnya agar organ vital tetap bertahan. Akibatnya anak menjadi kerdil (stunted). Tinggi badan anak mencerminkan rekam jejak akumulatif dari kemiskinan dan ketidaksehatan lingkungan tempat ia dibesarkan.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Angka Kesakitan (Morbiditas)</p>
+<p>Berdasarkan metodologi Susenas BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 38, 51 &amp; SUPLEMEN]:<br>- <strong>Keluhan Kesehatan</strong>: Keadaan seseorang yang mengalami gangguan kesehatan atau kejiwaan, baik karena penyakit menular, tidak menular, kecelakaan, atau kondisi medis lainnya dalam 1 bulan terakhir.<br>- <strong>Angka Kesakitan (Morbiditas / Morbidity Rate)</strong>: Persentase penduduk yang mengalami keluhan kesehatan yang sampai mengakibatkan terganggunya kegiatan atau aktivitas sehari-hari (tidak dapat bekerja, sekolah, atau beraktivitas normal) selama satu bulan terakhir.<br>$$\text{Angka Kesakitan} = \frac{\sum P_{\text{terganggu}}}{\sum P} \times 100\%$$</p>
+<p>### 2. Metodologi Penilaian Status Gizi Antropometri Balita Standar WHO (EXT-3)</p>
+<p>Status gizi balita ditentukan secara antropometri menggunakan nilai deviasi standar terstandarisasi (*Z-score*) [slide 53-55]:<br>$$Z = \frac{X_i - \text{Median}_{\text{ref}}}{\text{SD}_{\text{ref}}}$$<br>dimana:<br>- $X_i$ = Nilai hasil pengukuran antropometri anak ke-$i$ (panjang badan/tinggi badan atau berat badan).<br>- $\text{Median}_{\text{ref}}$ = Median populasi rujukan standar WHO 2005 menurut jenis kelamin dan umur yang sama.<br>- $\text{SD}_{\text{ref}}$ = Standar deviasi populasi rujukan WHO 2005.</p>
+<p>### 3. Matriks Tiga Indeks Antropometri Balita BPS &amp; Kemenkes</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indeks Antropometri</th><th>Parameter Klinis &amp; Sifat Refleksi</th><th>Kategori Klasifikasi Berdasarkan Z-score</th><th>Istilah Baku Internasional</th></tr></thead><tbody><tr><td><strong>Tinggi Badan menurut Umur (TB/U atau PB/U)</strong> [slide 50, 52, 59]</td><td>Status gizi masa lalu / <strong>Gizi Kronis Menahun</strong> (kemiskinan dan sanitasi buruk jangka panjang)</td><td>- $Z &lt; -3,0\text{ SD}$: Sangat Pendek&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Pendek&lt;br&gt;- $-2,0 \le Z \le +3,0\text{ SD}$: Normal&lt;br&gt;- $Z &gt; +3,0\text{ SD}$: Tinggi</td><td>*Severely Stunted*&lt;br&gt;*Stunted*&lt;br&gt;*Normal*&lt;br&gt;*Tall*</td></tr><tr><td><strong>Berat Badan menurut Umur (BB/U)</strong> [slide 49, 52]</td><td>Status gizi saat pengukuran / <strong>Keadaan Kini</strong> (mudah berfluktuasi karena infeksi mendadak)</td><td>- $Z &lt; -3,0\text{ SD}$: Gizi Buruk&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Gizi Kurang&lt;br&gt;- $-2,0 \le Z \le +1,0\text{ SD}$: Gizi Baik/Normal&lt;br&gt;- $Z &gt; +1,0\text{ SD}$: Risiko Gizi Lebih</td><td>*Severely Underweight*&lt;br&gt;*Underweight*&lt;br&gt;*Normal*&lt;br&gt;*Overweight Risk*</td></tr><tr><td><strong>Berat Badan menurut Tinggi Badan (BB/TB atau BB/PB)</strong> [slide 50, 51, 52]</td><td>Status gizi saat ini / <strong>Gizi Akut</strong> (proporsi berat thd tinggi badan)</td><td>- $Z &lt; -3,0\text{ SD}$: Sangat Kurus&lt;br&gt;- $-3,0 \le Z &lt; -2,0\text{ SD}$: Kurus&lt;br&gt;- $-2,0 \le Z \le +1,0\text{ SD}$: Gizi Baik/Normal&lt;br&gt;- $Z &gt; +1,0\text{ SD}$: Berisiko Gemuk</td><td>*Severely Wasted*&lt;br&gt;*Wasted*&lt;br&gt;*Normal*&lt;br&gt;*Overweight*</td></tr></tbody></table></div>
+<p>### 4. Formulasi Prevalensi Stunting (EXT-3)<br>Berdasarkan Kepmenkes No. 1995/MENKES/SK/XII/2010 dan standar WHO [slide 58-60]:<br>$$\text{Prevalensi Stunting} = \frac{\sum \text{Balita}(Z_{\text{TB/U}} &lt; -2,0\text{ SD})}{\sum \text{Seluruh Balita yang Diukur}} \times 100\%$$<br>$$\text{Prevalensi Stunting} = \text{Prevalensi Sangat Pendek (} Z &lt; -3\text{ SD)} + \text{Prevalensi Pendek (} -3 \le Z &lt; -2\text{ SD)}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Seorang balita berusia 24 bulan dilakukan pengukuran antropometri. Indeks manakah yang paling tepat digunakan untuk mengidentifikasi kondisi stunting (gizi kurang kronis), dan berapakah batas nilai Z-score yang mengkategorikan anak tersebut sebagai stunting?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 49-52, 59]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Indeks BB/U dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="1">B. Indeks BB/TB dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="2">C. Indeks TB/U dengan Z-score &lt; -2,0 SD</button>
+<button class="ex-opt" data-i="3">D. Indeks TB/U dengan Z-score &lt; -3,0 SD saja</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 50, 52, dan 59: Kondisi stunting (pendek dan sangat pendek) dinilai secara eksklusif menggunakan indeks Tinggi Badan menurut Umur (TB/U) atau Panjang Badan menurut Umur (PB/U).<br>- Kategori stunting mencakup seluruh anak dengan Z-score &lt; -2,0 SD (yang terdiri dari kategori Pendek pada rentang -3,0 s.d. &lt; -2,0 SD dan Sangat Pendek pada &lt; -3,0 SD).<br>- Pilihan A mengukur underweight; Pilihan B mengukur wasting (kurus).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Morbiditas=12.00%, Stunting=24.00%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Dari 50.000 penduduk suatu kecamatan, 8.500 mengalami keluhan kesehatan dan 6.000 di antaranya terganggu aktivitas hariannya. Dari 1.200 balita yang diukur tinggi badannya, 108 anak memiliki Z-score TB/U &lt; -3,0 SD dan 180 anak memiliki Z-score TB/U antara -3,0 s.d. &lt; -2,0 SD. Hitunglah Angka Kesakitan (Morbiditas) BPS dan Total Prevalensi Stunting (EXT-3). Tuliskan jawaban akhir dalam format: <code>Morbiditas=...%, Stunting=...%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 38, 58, 59]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Angka Kesakitan (Morbiditas) BPS: $\frac{6.000}{50.000} \times 100\% = 12,00\%$.<br>2. Total balita stunting ($Z &lt; -2,0\text{ SD}$) = $108 + 180 = 288$ balita.<br>3. Total Prevalensi Stunting: $\frac{288}{1.200} \times 100\% = 24,00\%$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>pop = 50000<br>disrupted = 6000<br>morbidity = (disrupted / pop) * 100.0<br>under5 = 1200<br>stunted_total = 108 + 180<br>stunting_prev = (stunted_total / under5) * 100.0<br>print(f'Morbiditas={morbidity:.2f}%, Stunting={stunting_prev:.2f}%')<br># Output: Morbiditas=12.00%, Stunting=24.00%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menyamakan Morbiditas dengan Angka Keluhan Kesehatan</strong>: Keluhan kesehatan tidak selalu berujung pada morbiditas jika aktivitas sehari-hari penderita tidak terganggu.</li><li><strong>Tertukar Antara Stunting (TB/U), Wasting (BB/TB), dan Underweight (BB/U)</strong>: Stunting mencerminkan gizi kronis (TB/U); Wasting mencerminkan gizi akut (BB/TB); Underweight mencerminkan berat badan komposit (BB/U).</li><li><strong>Ambang Batas Stunting Total</strong>: Jangan hanya menjumlahkan kategori pendek tanpa menyertakan kategori sangat pendek (&lt; -3 SD).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Morbiditas = Keluhan yang Mengganggu Aktivitas; Stunting = Indeks TB/U dengan Z-score di bawah minus 2 SD!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.2, 10.2.2</div>
+<button class="donebtn" data-id="10.2.1"></button>
+</section>
+<section class="point" id="p-10.2.2">
+<h2>10.2.2 Imunisasi Dasar Lengkap IDL ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 40-42, 62-91]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai konsep imunisasi paradigma sehat, jenis vaksin wajib bayi 0-11 bulan (IDL), indikator perumahan KFB dan KFR, indeks komposit RTLH 7 indikator BPS Sirusa, dan 4 dimensi rumah tangga kumuh SDGs 11 (EXT-4).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Imunisasi adalah paradigma sehat dalam upaya pencegahan yang paling efektif. Imunisasi adalah proses membuat seseorang kebal terhadap penyakit melalui pemberian vaksin [slide 40-41]. Jenis vaksin: BCG (tuberkulosa), DPT (difteri, pertusis, tetanus), TT, DT, Polio (OPV), Campak, Hepatitis B, DPT/HB [slide 42]. Indikator perumahan: Kualitas Fisik Bangunan (luas lantai/kapita &gt;= 7,2 m2, atap, lantai, dinding) dan Kelengkapan Fasilitas Rumah (air bersih, sanitasi/jamban, kamar mandi, listrik) [slide 76, 80]. Rumah Tidak Layak Huni: rumah tidak memenuhi persyaratan keselamatan bangunan dan kecukupan minimum luas lantai serta kesehatan penghuninya; jika terpenuhi sedikitnya 3 dari 7 kriteria termasuk kategori tidak layak huni [slide 81-82]. Rumah tangga kumuh bila nilai kategori gabungan 4 kriteria &gt; 35%: air tidak layak (15%), sanitasi tidak layak (15%), luas hunian &lt;= 7,2 m2 (35%), dan minimal 2 kriteria ketahanan bangunan rendah (35%) [slide 89].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa dalam bab indikator kesehatan terdapat materi perumahan (housing)? Karena rumah bukan sekadar bangunan fisik penahan hujan (shelter), melainkan lingkungan hidup primer di mana imunitas dan kesehatan anggota keluarga dibentuk. Bayi yang telah diimunisasi dasar lengkap (IDL) akan tetap rentan sakit berulang jika tinggal di rumah berlantai tanah (vektor telur cacing), air minum tercemar bakteri E. coli dari septic tank yang berjarak kurang dari 10 meter, dan tidur berdesakan dalam ruangan sempit (&lt; 7,2 m2 per kapita). Oleh karena itu, BPS mengintegrasikan survei kesehatan dengan karakteristik perumahan Susenas untuk mengevaluasi determinan lingkungan kesehatan masyarakat dan capaian SDGs 11 (Kota dan Permukiman Berkelanjutan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Imunisasi Dasar Lengkap (IDL) pada Bayi</p>
+<p>Berdasarkan Permenkes No. 12 Tahun 2017 dan standar BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 41-42 &amp; SUPLEMEN]:<br>Imunisasi Dasar Lengkap (IDL) merupakan pemberian kekebalan aktif buatan bagi bayi usia $0-11$ bulan dengan jadwal wajib:<br>1. <strong>Hepatitis B 0 (HB0)</strong>: Diberikan 1 kali pada usia $0-7$ hari (ideal $&lt; 24$ jam pascalahir) untuk mencegah penularan hepatitis B vertikal ibu ke anak.<br>2. <strong>BCG (*Bacillus Calmette-Guérin*)</strong>: Diberikan 1 kali pada usia $1$ bulan untuk kekebalan aktif terhadap tuberkulosis (TBC).<br>3. <strong>DPT-HB-Hib</strong>: Diberikan 3 kali pada usia $2, 3,$ dan $4$ bulan untuk kekebalan simultan terhadap difteri, pertusis, tetanus, hepatitis B, dan pneumonia/meningitis akibat *Haemophilus influenzae* tipe b.<br>4. <strong>Polio</strong>: Diberikan 4 kali (tetes OPV usia 1, 2, 3, 4 bulan) serta minimal 1 suntikan IPV untuk kekebalan terhadap poliomielitis.<br>5. <strong>Campak / MR</strong>: Diberikan 1 kali pada usia $9$ bulan untuk kekebalan terhadap campak dan rubella.<br>$$\text{Cakupan IDL} = \frac{\sum \text{Bayi Usia 12-23 Bulan yang Menerima Paket Lengkap IDL}}{\sum \text{Total Sasaran Bayi Usia 12-23 Bulan}} \times 100\%$$</p>
+<p>### 2. Indeks Komposit Rumah Tidak Layak Huni (RTLH 7 Indikator BPS Sirusa)<br>BPS menetapkan 7 indikator defisit kelayakan fisik dan fasilitas hunian [slide 80-82]:<br>1. *Insufficient Living Area*: Luas lantai per kapita $&lt; 7,2\text{ m}^2/\text{kapita}$.<br>2. Atap terluas berkualitas rendah: Jerami, ijuk, rumbia, daun-daunan, atau lainnya.<br>3. Dinding terluas berkualitas rendah: Bambu atau lainnya tanpa plester semen.<br>4. Lantai terluas berkualitas rendah: Tanah.<br>5. Sanitasi tidak layak: Tidak memiliki akses jamban sendiri/bersama dengan kloset leher angsa ke tangki septik/SPAL.<br>6. Air minum tidak layak: Tidak memiliki akses air terlindung atau jarak ke sumber kotoran tinja $&lt; 10\text{ meter}$.<br>7. Penerangan tidak layak: Sumber penerangan utama bukan listrik.</p>
+<p><strong>Klasifikasi Derajat Kelayakan Rumah (BPS Sirusa Indikator 798)</strong> [slide 82]:<br>- <strong>Rumah Layak Huni (RLH)</strong>: Memenuhi $\le 1$ kriteria defisit (0 atau 1).<br>- <strong>Rumah Hampir Tidak Layak Huni</strong>: Memenuhi tepat $2$ kriteria defisit.<br>- <strong>Rumah Tidak Layak Huni (RTLH)</strong>: Memenuhi $\ge 3$ kriteria defisit.</p>
+<p>### 3. Kriteria Rumah Tangga Kumuh SDGs 11 (EXT-4)<br>Berdasarkan standar BPS dan Kementerian PUPR [slide 88-89], penentuan rumah tangga kumuh menggunakan 4 dimensi dengan pembobotan:<br>$$\text{Skor Kumuh} = 0,15 D_{\text{air}} + 0,15 D_{\text{sanitasi}} + 0,35 D_{\text{luas}} + 0,35 D_{\text{durabilitas}}$$</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Dimensi Defisit</th><th>Bobot</th><th>Kriteria Defisit Terpenuhi (Nilai = 1)</th></tr></thead><tbody><tr><td>1</td><td>Akses Air Minum Tidak Layak ($D_{\text{air}}$)</td><td>15%</td><td>Air sumur/mata air tak terlindung, air sungai, air hujan tanpa filtrasi, atau jarak septic tank &lt; 10 m [slide 84, 89]</td></tr><tr><td>2</td><td>Akses Sanitasi Tidak Layak ($D_{\text{sanitasi}}$)</td><td>15%</td><td>Menggunakan kloset bukan leher angsa (cemplung/cubluk/plengsengan) atau dibuang ke lubang tanah/sungai/terbuka [slide 85, 89]</td></tr><tr><td>3</td><td>Kepadatan Hunian ($D_{\text{luas}}$)</td><td>35%</td><td>Luas lantai hunian $\le 7,2\text{ m}^2$ per kapita (*overcrowded*) [slide 80, 89]</td></tr><tr><td>4</td><td>Ketahanan Bangunan Rendah ($D_{\text{durabilitas}}$)</td><td>35%</td><td>Terpenuhi <strong>minimal 2 dari 3</strong> komponen fisik rendah: atap ijuk/rumbia, dinding bambu, dan lantai tanah [slide 89]</td></tr></tbody></table></div>
+<p><strong>Kaidah Keputusan Status Kumuh</strong>: Rumah tangga dikategorikan sebagai <strong>Rumah Tangga Kumuh</strong> bila total skor gabungan $&gt; 35\%$ [slide 89].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan materi resmi BPS mengenai indikator perumahan dan kriteria rumah kumuh (SDGs 11), berapakah standar luas lantai per kapita minimum agar hunian tidak tergolong padat/kurang luas (sufficient living area), dan berapakah batas nilai skor gabungan untuk menetapkan suatu rumah tangga sebagai rumah tangga kumuh?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 80, 82, 89]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Luas lantai &gt;= 10 m2/kapita dan skor kumuh &gt;= 50%</button>
+<button class="ex-opt" data-i="1">B. Luas lantai &gt;= 7,2 m2/kapita dan skor kumuh &gt; 35%</button>
+<button class="ex-opt" data-i="2">C. Luas lantai &gt;= 8,0 m2/kapita dan skor kumuh &gt;= 35%</button>
+<button class="ex-opt" data-i="3">D. Luas lantai &gt;= 7,2 m2/kapita dan skor kumuh &gt; 50%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 80 dan 89, kecukupan luas lantai hunian minimum (sufficient living area) adalah luas lantai per kapita &gt;= 7,2 m2/kapita. Jika &lt;= 7,2 m2, maka tergolong defisit luas hunian (bobot 35%).<br>- Berdasarkan slide 89: 'Jika seluruh kriteria 1-4 di atas digabung, nilai kategori &gt; 35%, maka rumah tangga tersebut dikategorikan sebagai rumah tangga kumuh'.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah rumah tangga beranggotakan 5 orang menempati rumah dengan luas lantai 30 m2 (luas per kapita = 6 m2), menggunakan air minum terlindung dan jamban leher angsa septik, namun memiliki atap rumbia dan lantai tanah. Hitunglah Skor Kumuh rumah tangga tersebut dan tentukan status kekumuhannya (&gt; 35%). Tentukan pula status kelayakan huniannya berdasarkan 7 indikator BPS Sirusa. Tuliskan jawaban akhir dalam format: <code>Skor=...%, StatusKumuh=..., StatusBPS=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 81, 82, 89]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Identifikasi defisit 4 dimensi kumuh:<br>   - Air: Layak -&gt; Defisit = 0%<br>   - Sanitasi: Layak -&gt; Defisit = 0%<br>   - Luas per kapita: 30 / 5 = 6,0 m2 &lt;= 7,2 m2 -&gt; Defisit = 35%<br>   - Ketahanan fisik: Atap rumbia dan lantai tanah (terpenuhi 2 kriteria rendah) -&gt; Defisit = 35%<br>2. Total Skor Kumuh = 0% + 0% + 35% + 35% = 70%.<br>3. Karena 70% &gt; 35%, rumah tangga tersebut berstatus <strong>Kumuh</strong>.<br>4. Evaluasi 7 kriteria BPS Sirusa:<br>   - Defisit 1: Luas hunian &lt; 7,2 m2/kapita<br>   - Defisit 2: Atap rumbia (kualitas rendah)<br>   - Defisit 3: Lantai tanah (kualitas rendah)<br>   - Karena memenuhi 3 kriteria defisit (&gt;= 3), rumah tangga tersebut diklasifikasikan sebagai <strong>Rumah Tidak Layak Huni (RTLH)</strong>.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>weights = {'air': 15, 'sanitasi': 15, 'luas': 35, 'durabilitas': 35}<br>defisits = {'air': 0, 'sanitasi': 0, 'luas': 1, 'durabilitas': 1}<br>score = sum(defisits[k] * weights[k] for k in weights)<br>is_kumuh = score &gt; 35<br>print(f'Skor={score}%, StatusKumuh={"Kumuh" if is_kumuh else "Tidak Kumuh"}, StatusBPS=Rumah Tidak Layak Huni')<br># Output: Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Ambang Skor Kumuh</strong>: Nilai gabungan harus strictly greater than 35% (&gt; 35%). Nilai tepat 35% (misal hanya defisit luas saja) TIDAK kumuh.</li><li><strong>Syarat Defisit Durabilitas Bangunan</strong>: Minimal 2 dari 3 bahan bangunan berkualitas rendah yang harus terpenuhi. Jika hanya 1 bahan rendah (misal hanya lantai tanah), skor durabilitas adalah 0%.</li><li><strong>Sanitasi Layak</strong>: Kloset plengsengan atau cubluk dikategorikan TIDAK LAYAK meskipun milik sendiri.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>IDL = HB0 + BCG + 3 DPT + 4 Polio + Campak; Kumuh = Air(15%) + Sanitasi(15%) + Luas(35%) + Ketahanan(35%) &gt; 35%!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.2, 10.1.3, 10.2.1</div>
+<button class="donebtn" data-id="10.2.2"></button>
+</section>
+</div>
+</main></div>
+<script>
+const KEY = "lecture-done-chapter-10-";
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

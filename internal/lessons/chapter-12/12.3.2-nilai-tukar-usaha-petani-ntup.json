@@ -1,0 +1,84 @@
+{
+  "point_id": "12.3.2",
+  "title": "Nilai Tukar Usaha Petani NTUP",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Statistik Usaha Pertanian & NTUP"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "37-38",
+        "content": "Definisi Nilai Tukar Usaha Petani (NTUP), pengeluaran konsumsi dikeluarkan dari Ib, formula It / BPPBM * 100, perbedaan konseptual dengan NTP, dan konsep upah riil buruh tani."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Mengapa BPS mempublikasikan NTUP berdampingan dengan NTP? Karena sering kali terjadi paradoks di lapangan: teknologi pertanian berhasil meningkatkan efisiensi dan harga jual panen melampaui biaya pupuk/traktor (usaha tani sangat menguntungkan), tetapi angka NTP petani justru anjlok. Hal itu terjadi karena harga minyak goreng, gula, atau biaya sekolah di desa melonjak tajam. NTUP sengaja memisahkan urusan 'kegiatan berusahatani' dari urusan 'konsumsi rumah tangga' guna mengevaluasi kelayakan ekonomi dan daya saing murni dari sektor produksi pertanian.",
+    "bps_definition": "Perbandingan antara Indeks Harga yang Diterima Petani (It) dengan Indeks Biaya Produksi dan Penambahan Barang Modal (BPPBM) yang dinyatakan dalam persentase. NTUP mengeluarkan komponen Indeks Konsumsi Rumah Tangga (IKRT) dari indeks yang dibayar petani (Ib), sehingga lebih mencerminkan kemampuan produksi riil usahatani.",
+    "boundary_conditions": "1) NTUP > 100: Usaha tani menghasilkan margin keuntungan di atas biaya input sarana produksi; 2) NTUP = 100: Usaha tani berada pada titik impas biaya operasional produksi; 3) Hubungan terhadap NTP: Jika laju kenaikan IKRT lebih besar daripada laju kenaikan BPPBM, maka NTP akan bergerak lebih rendah daripada NTUP (NTP < NTUP).",
+    "formula_latex": "$$NTUP = \\frac{I_t}{BPPBM} \\times 100, \\quad \\text{Upah Riil Buruh Tani} = \\frac{\\text{Upah Nominal}}{IKRT} \\times 100$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam analisis kebijakan pertanian daerah, diketahui kondisi harga usahatani pada dua periode berturut-turut:\n- Bulan ke-1: Indeks Diterima Petani It = 120,0; Indeks Konsumsi RT IKRT = 110,0; Indeks Biaya Produksi BPPBM = 100,0. Bobot diagram timbang Ib adalah 60% IKRT dan 40% BPPBM.\n- Bulan ke-2: Terjadi guncangan pasokan pangan di perdesaan sehingga IKRT melonjak 10% menjadi 121,0. Sementara itu, harga hasil panen (It) tetap 120,0 dan biaya sarana produksi (BPPBM) tetap stabil di angka 100,0.\nHitunglah nilai NTP dan NTUP untuk bulan ke-1 dan bulan ke-2, serta simpulkan perbedaan indikasi antara kesejahteraan rumah tangga versus profitabilitas usahatani!",
+    "data_table": "| Periode | $I_t$ | $IKRT$ (Bobot 60%) | $BPPBM$ (Bobot 40%) | $I_b$ Gabungan |\n|---|---|---|---|---|\n| Bulan 1 | 120,0 | 110,0 | 100,0 | $0,6(110) + 0,4(100) = 106,0$ |\n| Bulan 2 | 120,0 | 121,0 | 100,0 | $0,6(121) + 0,4(100) = 112,6$ |",
+    "step_by_step_solution": "1. Menghitung NTP dan NTUP Bulan ke-1:\n   Ib1 = (0,6 * 110,0) + (0,4 * 100,0) = 66,0 + 40,0 = 106,0.\n   NTP1 = (It / Ib1) * 100 = (120,0 / 106,0) * 100 = 113,2075% -> 113,21.\n   NTUP1 = (It / BPPBM) * 100 = (120,0 / 100,0) * 100 = 120,00% -> 120,00.\n2. Menghitung NTP dan NTUP Bulan ke-2:\n   Ib2 = (0,6 * 121,0) + (0,4 * 100,0) = 72,6 + 40,0 = 112,6.\n   NTP2 = (It / Ib2) * 100 = (120,0 / 112,6) * 100 = 106,5719% -> 106,57.\n   NTUP2 = (It / BPPBM) * 100 = (120,0 / 100,0) * 100 = 120,00% -> 120,00.\n3. Kesimpulan Analitis:\n   Nilai NTUP tetap konstan pada 120,00 (profitabilitas usaha tani stabil), namun NTP tergerus dari 113,21 menjadi 106,57 akibat lonjakan inflasi biaya hidup keluarga petani (IKRT naik 10%).",
+    "python_verification_code": "it = 120.0\nbppbm = 100.0\nikrt1, ikrt2 = 110.0, 121.0\nib1 = 0.6 * ikrt1 + 0.4 * bppbm\nib2 = 0.6 * ikrt2 + 0.4 * bppbm\nntp1 = (it / ib1) * 100.0\nntp2 = (it / ib2) * 100.0\nntup1 = (it / bppbm) * 100.0\nntup2 = (it / bppbm) * 100.0\nprint(f'NTP1={ntp1:.2f}, NTP2={ntp2:.2f}, NTUP1={ntup1:.2f}, NTUP2={ntup2:.2f}')",
+    "expected_output": "NTP1=113.21, NTP2=106.57, NTUP1=120.00, NTUP2=120.00"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengasumsikan NTP dan NTUP selalu bergerak searah",
+      "common_mistake": "Menyimpulkan bahwa ketika NTUP meningkat, kesejahteraan keluarga petani (NTP) dipastikan ikut membaik.",
+      "safe_strategy": "Dekomposisi menunjukkan jika laju inflasi bahan makanan (IKRT) melonjak drastis, NTP dapat turun drastis meskipun NTUP meningkat."
+    },
+    {
+      "trap_description": "Memasukkan upah buruh tani ke dalam indeks konsumsi rumah tangga",
+      "common_mistake": "Menggolongkan upah buruh tani ke dalam IKRT keluarga petani.",
+      "safe_strategy": "Upah buruh tani yang dikeluarkan oleh petani pemilik usaha tani merupakan biaya input tenaga kerja langsung dalam proses produksi sehingga masuk ke kelompok BPPBM."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.3 Nilai Tukar Petani NTP",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.3.2",
+      "name": "Nilai Tukar Usaha Petani NTUP",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 37-38]",
+      "exam_focus": "Perbedaan fundamental antara NTP dan NTUP, formula NTUP = It / BPPBM * 100, analisis divergensi akibat inflasi perdesaan IKRT, dan konsep upah riil buruh tani.",
+      "textbook_excerpt": "Nilai Tukar Usaha Rumah Tangga Pertanian (NTUP) mengeluarkan konsumsi dari komponen indeks harga yang dibayar petani (Ib), sehingga NTUP dapat lebih mencerminkan kemampuan produksi petani, karena yang dibandingkan hanya produksi dengan biaya produksinya. Upah riil buruh tani menggambarkan daya beli dari pendapatan/upah harian dibagi dengan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38].",
+      "intuition": "Petani memiliki dua peran sekaligus: produsen di sawah dan konsumen di rumah tangga. Bila seorang petani ingin mengetahui apakah modal bertaninya menghasilkan imbal balik yang sepadan terhadap harga pupuk dan bibit, petani melihat NTUP. Bila petani ingin mengetahui apakah uang hasil panennya cukup untuk membiayai makan keluarga dan uang saku anak sekolah, petani melihat NTP. NTUP adalah cermin efisiensi sawah/kebun, sedangkan NTP adalah cermin daya beli dompet keluarga.",
+      "formal": "### 1. Landasan Konseptual NTUP BPS\n\nDalam publikasi statistik BPS [slide 37-38]:\n- **Kelemahan NTP sebagai Indikator Kinerja Usaha**: Angka NTP dipengaruhi oleh harga sekeranjang barang konsumsi rumah tangga (IKRT). Ketika terjadi gejolak harga pangan eceran di desa (misalnya harga minyak goreng atau rokok naik), NTP akan merosot meskipun efisiensi usaha tani dan harga jual gabah di tingkat petani sedang sangat bagus.\n- **Tujuan Pembentukan NTUP**: Menghilangkan pengaruh dinamika harga barang konsumsi rumah tangga dari indeks harga yang dibayar petani, sehingga indikator ini murni merefleksikan daya saing dan profitabilitas sektor produksi pertanian terhadap biaya input sarana produksi.\n\n### 2. Formulasi Matematis NTUP\n\nFormulasi matematis NTUP adalah rasio antara Indeks Harga yang Diterima Petani ($I_t$) terhadap Indeks Biaya Produksi dan Penambahan Barang Modal ($BPPBM$):\n$$NTUP = \\frac{I_t}{BPPBM} \\times 100$$\n\nKomponen pembentuk BPPBM terdiri atas 6 kelompok pengeluaran sarana produksi [slide 36]:\n1. **Bibit / Benih**: Pengeluaran pembelian bibit tanaman pangan, bibit buah/sayur, bibit tanaman perkebunan, dan anakan hewan ternak/benur ikan.\n2. **Pupuk dan Obat-obatan**: Pupuk kimia (urea, NPK, ZA), pupuk organik, pestisida, herbisida, insektisida, dan vaksin ternak.\n3. **Pakan dan Obat Ternak/Ikan**: Konsentrat, bekatul, jagung pakan, dan suplemen vitamin ternak.\n4. **Sewa Lahan dan Pengeluaran Lainnya**: Pajak PBB lahan pertanian, retribusi irigasi desa, sewa lahan garapan, dan jasa asuransi usaha tani.\n5. **Transportasi**: Biaya angkut sarana produksi dari toko pertanian ke lahan sawah/kebun.\n6. **Penambahan Barang Modal (Investasi Alat)**: Pembelian dan perbaikan alat produksi tahan lama (cangkul, arit, tangki semprot, mesin pompa air, traktor tangan).\n7. **Upah Buruh Tani**: Upah membajak/mengolah tanah, upah penanaman, upah penyiangan, dan upah panen yang dibayarkan kepada buruh upahan.\n\n### 3. Matriks Perbandingan Komparatif NTP vs NTUP\n\n| Dimensi Analisis | Nilai Tukar Petani (NTP) | Nilai Tukar Usaha Petani (NTUP) |\n|---|---|---|\n| **Pembilang ($Numerator$)** | Indeks Harga yang Diterima ($I_t$) | Indeks Harga yang Diterima ($I_t$) |\n| **Penyebut ($Denominator$)** | Indeks Harga yang Dibayar ($I_b = IKRT + BPPBM$) | Hanya Biaya Produksi ($BPPBM$) |\n| **Komponen Konsumsi RT** | **Termasuk** (melalui sub-indeks IKRT) | **Dikeluarkan** (tidak diperhitungkan) |\n| **Fokus Pengukuran** | Tingkat kesejahteraan dan daya beli keluarga petani | Efisiensi, daya saing, dan profitabilitas usahatani |\n| **Respons thd Inflasi Sembako** | Langsung merosot jika sembako di desa naik | Tidak terpengaruh fluktuasi sembako eceran |\n\n### 4. Konsep Upah Riil Buruh Tani\nBPS juga merilis indikator daya beli pekerja sektor pertanian yang tidak memiliki lahan garapan (buruh tani). **Upah Riil Buruh Tani** dihitung dengan mengempiskan (*deflating*) upah nominal harian buruh menggunakan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38]:\n$$\\text{Upah Riil} = \\frac{\\text{Upah Nominal Harian}}{IKRT} \\times 100$$\nBila upah nominal buruh tani naik 2% tetapi IKRT desa naik 3%, maka upah riil buruh tani mengalami penurunan daya beli sebesar 1%.",
+      "pitfalls": "1. **Menghitung NTUP dengan Membagi Ib**: Mahasiswa sering tertukar dan membagi It dengan Ib saat ditanya NTUP. Ingat kata kunci: Usaha Pertanian -> hanya bandingkan hasil produksi dengan biaya produksi (BPPBM).\n2. **Divergensi Arah Tren**: Jangan terkejut bila melihat grafik BPS di mana garis NTUP meningkat sementara garis NTP menurun; hal ini sah secara ekonomi ketika inflasi pedesaan melonjak tinggi.",
+      "memory_hook": "NTUP = It / BPPBM * 100; NTUP Bicara Untung Rugi Usahatani di Sawah, NTP Bicara Dapur Keluarga di Rumah.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 37-38]",
+          "problem": "Dalam suatu periode pengamatan, tercatat indeks It = 125, IKRT = 120, dan BPPBM = 110. Jika bobot IKRT adalah 65% dan BPPBM adalah 35%, bagaimanakah posisi perbandingan antara nilai NTP dan NTUP?",
+          "options": [
+            "NTP lebih besar daripada NTUP karena mencakup pengeluaran konsumsi keluarga.",
+            "NTP lebih kecil daripada NTUP karena nilai IKRT lebih tinggi daripada nilai BPPBM.",
+            "NTP sama persis dengan NTUP karena pembilangnya sama-sama bernilai 125.",
+            "NTP dan NTUP tidak dapat diperbandingkan karena menggunakan tahun dasar yang berbeda."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n1. Hitung Ib: $$I_b = (0,65 \\times 120) + (0,35 \\times 110) = 78 + 38,5 = 116,5$$\n2. Hitung NTP: $$NTP = \\frac{125}{116,5} \\times 100 = 107,30$$\n3. Hitung NTUP: $$NTUP = \\frac{125}{110} \\times 100 = 113,64$$\nKarena $IKRT (120) > BPPBM (110)$, indeks gabungan yang dibayar petani ($I_b = 116,5$) lebih besar daripada biaya produksi saja ($BPPBM = 110$). Akibatnya, nilai NTP (107,30) bergerak **lebih rendah** dibandingkan NTUP (113,64)."
+        }
+      ],
+      "links": [
+        "12.3.1",
+        "12.3.3"
+      ]
+    }
+  ]
+}

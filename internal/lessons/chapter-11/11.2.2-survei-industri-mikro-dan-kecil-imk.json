@@ -1,0 +1,90 @@
+{
+  "point_id": "11.2.2",
+  "title": "Survei Industri Mikro dan Kecil IMK",
+  "importance": "低",
+  "curriculum_alignment": {
+    "pertemuan": 11,
+    "silabus_topic": "Statistik Industri Pengolahan",
+    "bps_subject": "Statistik Industri Mikro dan Kecil"
+  },
+  "grounding": {
+    "primary_sources": [],
+    "supplemental_sources": [
+      {
+        "file": "[SUPLEMEN] BPS Sensus Ekonomi 2016 & Publikasi Profil Industri Mikro dan Kecil 2024",
+        "slide_or_page": "BPS SE2016",
+        "content": "Batasan operasional tenaga kerja BPS: Industri Mikro (1-4 pekerja) dan Industri Kecil (5-19 pekerja), karakteristik dominan sektor informal, ketiadaan pembukuan formal, produktivitas tenaga kerja rendah, dan metodologi penarikan sampel survei dua-tahap (two-stage sampling)."
+      }
+    ],
+    "coverage_status": "SUPPLEMENTED"
+  },
+  "theory": {
+    "intuition": "Sebagian besar unit usaha industri di Indonesia (>98%) berskala mikro dan kecil (seperti pengrajin tempe, konveksi rumahan, pandai besi, kerajinan anyaman). Walaupun skala per unit usahanya kecil, secara agregat mereka menyerap puluhan juta tenaga kerja informal dan menjaga ketahanan ekonomi rakyat dari guncangan krisis. Berbeda dengan IBS yang dicacah lengkap via direktori industri, IMK tersebar luas di lingkungan permukiman tanpa plang usaha resmi atau izin berbadan hukum, sehingga dicacah dengan pendekatan sampling rumah tangga/usaha berbasis blok sensus.",
+    "bps_definition": "[SUPLEMEN] Survei Industri Mikro dan Kecil (VIMK) adalah survei berbasis sampel yang dilaksanakan BPS untuk menangkap profil, dinamika produksi, kendala usaha, dan nilai tambah dari usaha industri berskala kecil di Indonesia. Definisi operasional batas tenaga kerja BPS: (1) Industri Mikro (IM) adalah usaha industri pengolahan dengan 1 sampai 4 orang tenaga kerja; (2) Industri Kecil (IK) adalah usaha industri pengolahan dengan 5 sampai 19 orang tenaga kerja. Tenaga kerja mencakup pemilik usaha, pekerja keluarga tanpa bayaran (unpaid family workers), dan buruh/karyawan.",
+    "boundary_conditions": "Konsep IMK merupakan materi pelengkap resmi [SUPLEMEN] karena slide perkuliahan Pertemuan 11 menitikberatkan pada IBS. Kriteria BPS secara operasional murni berbasis jumlah tenaga kerja aktif (1-4 mikro, 5-19 kecil), bukan kriteria omzet atau aset kekayaan bersih versi UU Koperasi & UMKM. Usaha dengan 20 tenaga kerja atau lebih masuk ke dalam populasi IBS.",
+    "formula_latex": "$$\\text{Klasifikasi IMK} = \\begin{cases} \\text{Industri Mikro (IM)}, & 1 \\le L \\le 4 \\\\ \\text{Industri Kecil (IK)}, & 5 \\le L \\le 19 \\\\ \\text{Industri Sedang (IS)}, & 20 \\le L \\le 99 \\\\ \\text{Industri Besar (IB)}, & L \\ge 100 \\end{cases}, \\quad \\text{Produktivitas} = \\frac{\\text{Nilai Tambah}}{L}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam kegiatan pencacahan Survei Industri Mikro dan Kecil (VIMK) di sebuah kecamatan, tercatat data 4 unit usaha pengolahan makanan rakyat sebagai berikut: Usaha A (Pembuat Keripik Singkong, L=3 orang, output Rp15 juta, input Rp9 juta); Usaha B (Pabrik Tahu Rumahan, L=8 orang, output Rp60 juta, input Rp36 juta); Usaha C (Konveksi Daster, L=15 orang, output Rp120 juta, input Rp75 juta); Usaha D (Pabrik Roti Modern, L=25 orang, output Rp250 juta, input Rp150 juta). Tentukan klasifikasi masing-masing usaha menurut BPS, unit usaha yang masuk target survei IMK, serta produktivitas tenaga kerja per orang pada unit usaha IMK tersebut.",
+    "data_table": "| Usaha | Tenaga Kerja ($L$) | Output (Juta Rp) | Input (Juta Rp) | Klasifikasi BPS | Masuk IMK? |\n|---|---|---|---|---|---|\n| Usaha A | 3 orang | 15,0 | 9,0 | Industri Mikro | Ya (Mikro) |\n| Usaha B | 8 orang | 60,0 | 36,0 | Industri Kecil | Ya (Kecil) |\n| Usaha C | 15 orang | 120,0 | 75,0 | Industri Kecil | Ya (Kecil) |\n| Usaha D | 25 orang | 250,0 | 150,0 | Industri Sedang | Tidak (Masuk IBS) |",
+    "step_by_step_solution": "1. Klasifikasi Tenaga Kerja BPS:\n   - Usaha A (L=3 orang) -> Industri Mikro (1-4 orang).\n   - Usaha B (L=8 orang) -> Industri Kecil (5-19 orang).\n   - Usaha C (L=15 orang) -> Industri Kecil (5-19 orang).\n   - Usaha D (L=25 orang) -> Industri Sedang (20-99 orang, masuk IBS).\n2. Target Populasi Survei IMK:\n   - Usaha yang masuk cakupan survei IMK adalah Usaha A, B, dan C (total 3 usaha). Usaha D dicatat dalam Direktori IBS.\n3. Nilai Tambah (NT) dan Produktivitas per Tenaga Kerja:\n   - Usaha A: NT = 15 - 9 = 6 Juta Rp. Produktivitas = 6 / 3 = 2,0 Juta Rp/pekerja.\n   - Usaha B: NT = 60 - 36 = 24 Juta Rp. Produktivitas = 24 / 8 = 3,0 Juta Rp/pekerja.\n   - Usaha C: NT = 120 - 75 = 45 Juta Rp. Produktivitas = 45 / 15 = 3,0 Juta Rp/pekerja.",
+    "python_verification_code": "data = [{'u':'A', 'L':3, 'out':15, 'in':9}, {'u':'B', 'L':8, 'out':60, 'in':36}, {'u':'C', 'L':15, 'out':120, 'in':75}, {'u':'D', 'L':25, 'out':250, 'in':150}]\nimk = [d for d in data if d['L'] < 20]\nres = [f\"{d['u']}:NT={d['out']-d['in']}jt,Prod={(d['out']-d['in'])/d['L']:.1f}jt\" for d in imk]\nprint(f\"IMK={len(imk)} usaha; \" + \", \".join(res))",
+    "expected_output": "IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menggunakan Kriteria Modal atau Omzet",
+      "common_mistake": "Mengklasifikasikan industri mikro dan kecil berdasarkan batasan modal atau omzet penjualan versi UU UMKM.",
+      "safe_strategy": "Official Statistics BPS secara operasional murni menggunakan jumlah tenaga kerja yang bekerja (1-4 pekerja untuk mikro, 5-19 pekerja untuk kecil)."
+    },
+    {
+      "trap_description": "Mengabaikan Pekerja Keluarga Tak Dibayar",
+      "common_mistake": "Hanya menghitung pekerja yang menerima gaji formal dan mengabaikan pemilik atau anggota keluarga yang ikut memproduksi.",
+      "safe_strategy": "Seluruh tenaga kerja yang terlibat aktif dalam proses produksi fisik (termasuk pekerja keluarga tanpa bayaran) wajib diperhitungkan."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 11,
+  "chapter_title": "Pertemuan 11: Statistik Produksi Pertanian dan Industri",
+  "section": "11.2 Statistik Industri Pengolahan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "11.2.2",
+      "name": "Survei Industri Mikro dan Kecil IMK",
+      "importance": "低",
+      "source_ref": "[SUPLEMEN] BPS Sensus Ekonomi 2016 & Publikasi Profil IMK BPS",
+      "exam_focus": "[SUPLEMEN] Batasan operasional tenaga kerja industri mikro (1-4 orang) dan kecil (5-19 orang) BPS, karakteristik usaha informal manufaktur, metodologi survei sampel VIMK, serta penghitungan nilai tambah dan produktivitas per pekerja.",
+      "textbook_excerpt": "[SUPLEMEN] Berdasarkan Sensus Ekonomi dan Survei Industri Mikro dan Kecil BPS, industri pengolahan dikelompokkan menurut banyaknya tenaga kerja: Industri Mikro memiliki tenaga kerja 1-4 orang, Industri Kecil memiliki tenaga kerja 5-19 orang, Industri Sedang memiliki tenaga kerja 20-99 orang, dan Industri Besar memiliki tenaga kerja 100 orang atau lebih. Survei Industri Mikro dan Kecil (VIMK) dilakukan secara triwulanan dan tahunan dengan metode penarikan sampel berbasis blok sensus.",
+      "intuition": "Sebagian besar unit usaha industri di Indonesia (>98%) berskala mikro dan kecil (seperti pengrajin tempe, konveksi rumahan, pandai besi, kerajinan anyaman). Walaupun skala per unit usahanya kecil, secara agregat mereka menyerap puluhan juta tenaga kerja informal dan menjaga ketahanan ekonomi rakyat dari guncangan krisis. Berbeda dengan IBS yang dicacah lengkap via direktori industri, IMK tersebar luas di lingkungan permukiman tanpa plang usaha resmi atau izin berbadan hukum, sehingga dicacah dengan pendekatan sampling rumah tangga/usaha berbasis blok sensus.",
+      "formal": "### 1. Landasan Konseptual Industri Mikro dan Kecil (IMK) BPS [SUPLEMEN]\n\nDalam statistik ekonomi BPS, pembagian industri manufaktur menurut skala usaha berpedoman pada rekomendasi *International Recommendations for Industrial Statistics* (IRIS) PBB dengan penyesuaian kondisi ketenagakerjaan nasional:\n\n```\nSektor Industri Pengolahan (KBLI Golongan Pokok C / 10-33)\n├── Industri Mikro (IM)  : 1 s.d. 4 tenaga kerja   (Target Survei VIMK)\n├── Industri Kecil (IK)  : 5 s.d. 19 tenaga kerja  (Target Survei VIMK)\n├── Industri Sedang (IS) : 20 s.d. 99 tenaga kerja (Target Sensus/Direktori IBS)\n└── Industri Besar (IB)  : >= 100 tenaga kerja     (Target Sensus/Direktori IBS)\n```\n\n#### A. Batasan Operasional Tenaga Kerja\n- **Tenaga Kerja ($L$)**: Seluruh orang yang terlibat secara aktif dalam aktivitas produksi fisik barang, terdiri atas:\n  1. Pekerja yang dibayar (buruh tetap, pekerja harian lepas, pekerja borongan).\n  2. Pekerja yang tidak dibayar (pemilik usaha yang aktif bekerja, pekerja keluarga tidak dibayar / *unpaid family workers*).\n- **Klasifikasi Formal vs Informal**:\n  - Usaha mikro hampir seluruhnya berada pada ranah **informal** (tidak berbadan hukum PT/CV/Koperasi, tidak memiliki perizinan formal seperti NIB terverifikasi, dan tidak memisahkan keuangan rumah tangga dengan keuangan usaha).\n  - Usaha kecil sebagian telah berizin mikro (NIB perseorangan) atau bermitra sebagai pemasok rantai pasok lokal.\n\n### 2. Matriks Perbandingan IBS vs IMK\n\n| Dimensi Karakteristik | Industri Besar & Sedang (IBS) | Industri Mikro & Kecil (IMK) |\n|---|---|---|\n| **Batasan Tenaga Kerja** | $\\ge 20\\text{ orang}$ | $1 - 19\\text{ orang}$ (Mikro: 1-4, Kecil: 5-19) |\n| **Metode Pendataan BPS** | Sensus / Direktori Lengkap (*Complete Enumeration*) | Survei Sampel Dua Tahap (*Two-stage Sampling*) |\n| **Kerangka Sampel** | Direktori Perusahaan IBS BPS (diperbarui berkala) | Blok Sensus dari Sensus Ekonomi (SE) |\n| **Pencatatan Keuangan** | Laporan Neraca & Laba Rugi standar akuntansi | Catatan kas sederhana atau ingatan (*recall*) pemilik |\n| **Pangsa Jumlah Usaha** | Sekitar $1,0\\% - 1,5\\%$ dari total usaha industri | Sekitar $98,5\\% - 99,0\\%$ dari total usaha industri |\n| **Pangsa Penyerapan Kerja** | Sekitar $30\\% - 35\\%$ tenaga kerja industri | Sekitar $65\\% - 70\\%$ tenaga kerja industri |\n| **Pangsa Output & Nilai Tambah** | Dominan ($>80\\%$ total nilai tambah industri) | Minoritas ($<20\\%$ total nilai tambah industri) |\n\n### 3. Indikator Produktivitas Tenaga Kerja IMK\n\nProduktivitas tenaga kerja menggambarkan kontribusi nilai tambah bruto rata-rata yang diciptakan oleh setiap orang pekerja dalam satuan waktu tertentu:\n$$\\text{Produktivitas Tenaga Kerja} = \\frac{\\text{Nilai Tambah Bruto (NTB)}}{L} = \\frac{\\text{Output Bruto} - \\text{Biaya Input Antara}}{L}$$\n\nKarena modal kapital per pekerja (*capital-labor ratio*) pada industri mikro sangat kecil, produktivitas tenaga kerja IMK umumnya jauh lebih rendah dibandingkan pekerja IBS yang didukung mesin-mesin otomatis modern.",
+      "pitfalls": "1. **Jebakan Batasan Omzet UU UMKM**: Seringkali mahasiswa menjawab bahwa industri mikro adalah usaha dengan kekayaan bersih maksimal Rp50 juta atau omzet Rp300 juta sesuai UU No. 20 Tahun 2008. Dalam statistik BPS, kriteria operasional murni berbasis jumlah tenaga kerja (1-4 pekerja untuk mikro, 5-19 pekerja untuk kecil).\n2. **Jebakan Pekerja Keluarga Tak Dibayar**: Seringkali pekerja keluarga tidak dihitung sehingga usaha keluarga dengan 1 pemilik dan 4 anak/istri yang membantu dihitung hanya 1 orang (mikro), padahal total 5 orang (masuk industri kecil).",
+      "memory_hook": "Mikro: 1-4 orang. Kecil: 5-19 orang. Sedang: 20-99 orang. Besar: >= 100 orang. Murni hitung kepala tenaga kerja aktif!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[SUPLEMEN] BPS Sensus Ekonomi 2016 & Profil IMK",
+          "problem": "Sebuah usaha pengolahan emping melinjo di perdesaan dikelola oleh seorang pemilik, dibantu oleh 2 orang anggota keluarganya tanpa upah, serta 3 orang tetangga yang dipekerjakan sebagai buruh harian kupas melinjo dengan upah harian. Berdasarkan batasan resmi Badan Pusat Statistik (BPS), usaha pengolahan emping tersebut diklasifikasikan ke dalam kategori:",
+          "options": [
+            "Industri Mikro, karena buruh berupah hanya ada 3 orang.",
+            "Industri Kecil, karena total tenaga kerja yang aktif terlibat adalah 6 orang.",
+            "Industri Rumah Tangga Tanpa Badan Usaha, karena melibatkan anggota keluarga.",
+            "Industri Sedang, karena mempekerjakan buruh dari luar keluarga."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan Bertahap**:\n1. Menurut konsep statistik BPS, jumlah tenaga kerja dihitung dari **seluruh orang yang terlibat aktif** dalam kegiatan proses produksi, baik pekerja yang dibayar maupun pekerja keluarga yang tidak dibayar (*unpaid family worker*).\n2. Total tenaga kerja pada usaha emping melinjo tersebut adalah:\n   $$L = 1\\text{ (pemilik)} + 2\\text{ (keluarga tanpa upah)} + 3\\text{ (buruh berupah)} = 6\\text{ orang}$$\n3. Berdasarkan kriteria skala tenaga kerja BPS:\n   - Industri Mikro: $1 - 4\\text{ orang}$.\n   - Industri Kecil: $5 - 19\\text{ orang}$.\n4. Karena $L = 6\\text{ orang}$ berada dalam rentang $5 - 19\\text{ orang}$, maka usaha tersebut diklasifikasikan sebagai **Industri Kecil**."
+        },
+        {
+          "type": "text",
+          "source_ref": "[SUPLEMEN] BPS Profil IMK 2024",
+          "problem": "Pencacahan VIMK mencatat data 4 usaha pengolahan: Usaha A (L=3, Out=15jt, In=9jt); Usaha B (L=8, Out=60jt, In=36jt); Usaha C (L=15, Out=120jt, In=75jt); Usaha D (L=25, Out=250jt, In=150jt). Tentukan jumlah usaha yang masuk cakupan target IMK serta nilai tambah dan produktivitas per pekerja untuk masing-masing usaha IMK tersebut. Format jawaban: `IMK=X usaha; A:NT=Yjt,Prod=Zjt, B:NT=Ujt,Prod=Vjt, C:NT=Wjt,Prod=Kjt`.",
+          "answer": "IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt",
+          "solution": "Langkah-langkah analisis:\n1. **Klasifikasi Tenaga Kerja BPS**:\n   - Usaha A ($L=3$): Industri Mikro ($1 - 4$ orang) $\\implies$ Masuk IMK.\n   - Usaha B ($L=8$): Industri Kecil ($5 - 19$ orang) $\\implies$ Masuk IMK.\n   - Usaha C ($L=15$): Industri Kecil ($5 - 19$ orang) $\\implies$ Masuk IMK.\n   - Usaha D ($L=25$): Industri Sedang ($20 - 99$ orang) $\\implies$ Tidak masuk IMK (masuk Direktori IBS).\n   Total usaha masuk target IMK = **3 usaha**.\n\n2. **Nilai Tambah (NT) dan Produktivitas Tenaga Kerja**:\n   - **Usaha A**:\n     $$NT_A = 15 - 9 = 6\\text{ Juta Rp}$$\n     $$\\text{Produktivitas}_A = \\frac{6\\text{ Juta}}{3\\text{ orang}} = 2,0\\text{ Juta Rp/pekerja}$$\n   - **Usaha B**:\n     $$NT_B = 60 - 36 = 24\\text{ Juta Rp}$$\n     $$\\text{Produktivitas}_B = \\frac{24\\text{ Juta}}{8\\text{ orang}} = 3,0\\text{ Juta Rp/pekerja}$$\n   - **Usaha C**:\n     $$NT_C = 120 - 75 = 45\\text{ Juta Rp}$$\n     $$\\text{Produktivitas}_C = \\frac{45\\text{ Juta}}{15\\text{ orang}} = 3,0\\text{ Juta Rp/pekerja}$$\n\n**Verifikasi Kode Python**:\n```python\ndata = [{'u':'A', 'L':3, 'out':15, 'in':9}, {'u':'B', 'L':8, 'out':60, 'in':36}, {'u':'C', 'L':15, 'out':120, 'in':75}, {'u':'D', 'L':25, 'out':250, 'in':150}]\nimk = [d for d in data if d['L'] < 20]\nres = [f\"{d['u']}:NT={d['out']-d['in']}jt,Prod={(d['out']-d['in'])/d['L']:.1f}jt\" for d in imk]\nprint(f\"IMK={len(imk)} usaha; \" + \", \".join(res))\n# Output: IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt\n```"
+        }
+      ],
+      "links": [
+        "11.2.1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 8,
+  "chapter_title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+  "section": "8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke)",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "8.2.1",
+      "name": "Headcount Index P0",
+      "importance": "高",
+      "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 21, 24-28]",
+      "exam_focus": "Menghitung persentase penduduk miskin ($P_0$), memahami derivasi formal dari kerangka umum FGT ($\\alpha=0$), menganalisis disparitas spasial (perkotaan vs perdesaan), dan mengevaluasi kelemahan kritis $P_0$ terhadap aksioma Amartya Sen.",
+      "textbook_excerpt": "Persentase Penduduk Miskin (Headcount Index/P0): Kondef: Persentase penduduk miskin yang berada di bawah garis kemiskinan. Headcount Index secara sederhana mengukur proporsi yang dikategorikan miskin. Kegunaan: Mengetahui persentase penduduk yang dikategorikan miskin. Interpretasi: Angka yang ditunjukkan oleh HCI-P0 menunjukkan proporsi penduduk miskin di suatu wilayah. Persentase penduduk miskin yang tinggi menunjukkan bahwa tingkat kemiskinan di suatu wilayah juga tinggi. Sumber data: SUSENAS [slide 21].",
+      "intuition": "Headcount Index ($P_0$) ibarat sensus hitung kepala secara biner: setiap orang diperiksa apakah pengeluarannya berada di bawah garis kemiskinan ($GK$). Jika ya, diberi label 1 (miskin); jika di atas atau sama dengan $GK$, diberi label 0 (tidak miskin). Setelah itu, seluruh angka 1 dijumlahkan dan dibagi dengan total seluruh orang yang ada di ruangan.\n\nKelemahan intuitifnya sangat nyata: $P_0$ menganggap semua orang miskin 'sama miskinnya'. Seseorang yang kekurangan Rp1.000 untuk mencapai garis kemiskinan diperlakukan persis sama dengan gelandangan tunawisma yang tidak memiliki uang sepeser pun. Akibatnya, kepala daerah yang ingin angka kemiskinannya turun cepat akan tergoda hanya memberi bantuan kepada orang yang hampir mentas, bukan kepada mereka yang paling menderita.",
+      "formal": "### 1. Landasan Matematis: Kerangka Indeks Foster-Greer-Thorbecke (FGT)\n\nIndeks kemiskinan parametrik FGT (1984) didefinisikan secara umum sebagai [slide 20]:\n$$P_\\alpha = \\frac{1}{n} \\sum_{i=1}^q \\left(\\frac{z - y_i}{z}\\right)^\\alpha$$\n\nDimana:\n- $\\alpha$: Parameter sensitivitas keengganan kemiskinan (*poverty aversion parameter*), $\\alpha \\ge 0$.\n- $z$: Garis Kemiskinan ($GK$).\n- $y_i$: Rata-rata pengeluaran per kapita sebulan penduduk miskin ke-$i$, dengan syarat $y_i < z$.\n- $q$: Banyaknya penduduk yang hidup di bawah garis kemiskinan ($q = \\sum_{i=1}^n \\mathbb{I}(y_i < z)$).\n- $n$: Jumlah total seluruh penduduk di wilayah tersebut (baik miskin maupun tidak miskin).\n\n### 2. Penurunan Formula Headcount Index ($P_0$)\n\nDengan mensubstitusikan parameter $\\alpha = 0$ ke dalam rumus umum FGT [slide 20]:\n$$P_0 = \\frac{1}{n} \\sum_{i=1}^q \\left(\\frac{z - y_i}{z}\\right)^0$$\n\nKarena untuk setiap bilangan riil tak-nol $a^0 = 1$, maka suku $\\left(\\frac{z - y_i}{z}\\right)^0 = 1$ untuk seluruh $i = 1, 2, \\dots, q$. Oleh karena itu:\n$$P_0 = \\frac{1}{n} \\sum_{i=1}^q 1 = \\frac{q}{n}$$\n\nDalam bentuk persentase resmi publikasi BPS [slide 21]:\n$$P_0 (\\%) = \\frac{q}{n} \\times 100\\%$$\n\n### 3. Data Empiris Nasional dan Disparitas Spasial (BPS September 2021) [slide 26, 27, 28]\n\n| Wilayah | Jumlah Penduduk Miskin ($q$, ribu) | Persentase Penduduk Miskin ($P_0$, %) |\n|---|---|---|\n| **Perkotaan (K)** | 11.859 | 7,60% |\n| **Perdesaan (D)** | 14.644 | 12,53% |\n| **Total Indonesia (K+D)** | **26.504** | **9,71%** |\n\nFakta Kunci:\n1. Total populasi penduduk Indonesia pada September 2021 adalah $n \\approx \\frac{26,504\\text{ juta}}{0,0971} \\approx 272,9\\text{ juta orang}$ [slide 27].\n2. Tingkat kemiskinan di perdesaan ($12,53\\%$) jauh lebih tinggi dibandingkan di perkotaan ($7,60\\%$).\n3. Variasi Ekstrem Antar-Provinsi [slide 26, 28]:\n   - Provinsi dengan $P_0$ terendah: Kalimantan Selatan ($4,56\\%$), DKI Jakarta ($4,67\\%$), Kep. Bangka Belitung ($4,67\\%$), Bali ($4,72\\%$).\n   - Provinsi dengan $P_0$ tertinggi: Papua ($27,38\\%$), Papua Barat ($21,82\\%$), Nusa Tenggara Timur ($20,44\\%$).\n\n### 4. Evaluasi Aksiomatis Amartya Sen terhadap $P_0$\nUkuran $P_0$ sangat populer karena kesederhanaan interpretasinya, namun memiliki dua kelemahan aksiomatis fatal:\n1. **Pelanggaran Aksioma Monotonisitas (*Monotonicity Axiom*)**: Aksioma ini menyatakan bahwa jika pendapatan seseorang yang miskin berkurang, indeks kemiskinan harus meningkat. Pada $P_0$, jika pengeluaran orang miskin anjlok dari Rp400.000 menjadi Rp10.000, nilai $P_0$ tetap konstan karena jumlah kepala ($q$) tidak bertambah.\n2. **Pelanggaran Aksioma Transfer (*Transfer Axiom*)**: Aksioma ini menyatakan bahwa jika terjadi transfer pendapatan murni dari seseorang yang sangat miskin kepada orang miskin lain yang lebih makmur, indeks kemiskinan harus meningkat. Pada $P_0$, transfer semacam itu tidak terdeteksi sama sekali, bahkan jika transfer itu mengangkat penerima melewati $GK$, nilai $P_0$ justru turun (memberikan ilusi kemajuan semu).",
+      "pitfalls": "1. **Kesalahan Pembagi Populasi ($n$)**: Seringkali mahasiswa membagi jumlah orang miskin ($q$) dengan jumlah angkatan kerja atau jumlah kepala rumah tangga. Pembagi wajib seluruh populasi individu ($n$).\n2. **Kelemahan Kebijakan Mentas Sesaat (*Cream-Skimming Policy*)**: Soal analisis esai sering menanyakan mengapa program bantuan sosial yang hanya mengejar penurunan $P_0$ dinilai bias keadilan sosial. Jawabannya: karena target sasaran akan diprioritaskan pada kelompok berjarak pengeluaran paling tipis di bawah garis kemiskinan (*near-poor*), sedangkan mereka yang miskin ekstrem ditinggalkan.",
+      "memory_hook": "P0 = q / n (Hitung Kepala). Mudah dipahami publik, tetapi buta terhadap kedalaman dan keparahan derita kemiskinan.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20-21, 27]",
+          "problem": "Berdasarkan data Susenas September 2021, jumlah penduduk miskin di Indonesia tercatat sebanyak 26,50 juta orang dari perkiraan total populasi sebesar 272,90 juta orang. Berapakah nilai Headcount Index ($P_0$) nasional dan manakah pernyataan yang benar mengenai kelemahan indikator tersebut?",
+          "options": [
+            "P0 = 9,71%; P0 tidak mampu mendeteksi penurunan pengeluaran yang dialami oleh seseorang yang sudah berstatus miskin.",
+            "P0 = 12,53%; P0 sangat sensitif terhadap perubahan ketimpangan di antara sesama penduduk miskin.",
+            "P0 = 7,60%; P0 memenuhi Transfer Axiom dari Amartya Sen.",
+            "P0 = 9,71%; P0 secara otomatis mengukur biaya fiskal yang dibutuhkan untuk mengentaskan kemiskinan."
+          ],
+          "answer": 0,
+          "solution": "Jawaban: **A**.\n\n**Pembahasan**:\n1. Nilai $P_0$ nasional = $\\frac{q}{n} \\times 100\\% = \\frac{26,50}{272,90} \\times 100\\% = 9,71\\%$ [slide 27].\n2. Kelemahan mendasar dari $P_0$ adalah melanggar *Monotonicity Axiom*: jika pengeluaran seseorang yang sudah miskin makin memburuk, nilai $P_0$ tidak berubah sama sekali karena jumlah penduduk di bawah garis kemiskinan ($q$) tetap sama [slide 21]."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 24]",
+          "problem": "Dalam suatu survei sampel di sebuah desa terpencil berpopulasi $n = 20$ orang, tercatat data pengeluaran per kapita bulanan (dalam ribuan rupiah) sbb:\n`[280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]`.\nJika Garis Kemiskinan ($z$) desa tersebut ditetapkan sebesar Rp500.000 ($z = 500$ ribu rupiah):\n1. Tentukan jumlah penduduk miskin ($q$).\n2. Hitunglah nilai Headcount Index ($P_0$) baik dalam proporsi desimal maupun persentase.\nTuliskan jawaban akhir dalam format: `q=... orang, P0=... (atau ...%)`.",
+          "answer": "q=5 orang, P0=0.25 (atau 25%)",
+          "solution": "Langkah-langkah penyelesaian:\n1. **Identifikasi Penduduk Miskin ($y_i < z$)**:\n   - Garis Kemiskinan $z = 500$ ribu rupiah.\n   - Penduduk dengan pengeluaran di bawah 500 adalah: 280, 310, 350, 420, 480.\n   - Jumlah penduduk miskin ($q$) = 5 orang.\n2. **Kalkulasi $P_0$**:\n   - Total populasi ($n$) = 20 orang.\n   - $P_0 = \\frac{q}{n} = \\frac{5}{20} = 0,25$ atau $25\\%$.\n\n**Verifikasi Kode Python**:\n```python\ny = [280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]\nz = 500\npoor = [val for val in y if val < z]\nq = len(poor) # 5\nn = len(y) # 20\np0 = q / n # 0.25\nprint(f'q={q} orang, P0={p0:.2f} (atau {p0*100:.0f}%)')\n# Output: q=5 orang, P0=0.25 (atau 25%)\n```"
+        }
+      ],
+      "links": [
+        "8.1.1",
+        "8.2.2",
+        "8.2.3"
+      ]
+    }
+  ],
+  "point_id": "8.2.1",
+  "title": "Headcount Index P0",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 8,
+    "silabus_topic": "Kemiskinan dan Ketimpangan Pendapatan",
+    "bps_subject": "Indikator Kemiskinan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md",
+        "slide_or_page": "20-21, 24-28",
+        "content": "Rumus FGT Headcount Index P0 = q / n, interpretasi persentase penduduk miskin, dan keterbatasan P0 terhadap kedalaman kemiskinan."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Headcount Index P0 mengukur prevalensi atau proporsi penduduk yang hidup di bawah garis kemiskinan terhadap seluruh total populasi.",
+    "bps_definition": "Persentase penduduk miskin (Headcount Index / P0) mengukur proporsi penduduk yang memiliki pengeluaran per kapita sebulan di bawah garis kemiskinan.",
+    "boundary_conditions": "0 <= P0 <= 1 (atau 0% s.d. 100%). P0 mengukur insidensi kemiskinan tetapi tidak sensitif terhadap seberapa jauh pengeluaran orang miskin di bawah GK (insensitif terhadap kedalaman dan keparahan kemiskinan).",
+    "formula_latex": "$$P_0 = \\frac{q}{n} = \\frac{1}{n} \\sum_{i=1}^q \\left( \\frac{z - y_i}{z} \\right)^0$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam suatu survei sampel di sebuah desa berpopulasi n = 20 orang, tercatat data pengeluaran per kapita bulanan (dalam ribuan rupiah): [280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]. Jika Garis Kemiskinan ditetapkan z = 500 ribu rupiah, hitunglah jumlah orang miskin (q) dan nilai Headcount Index (P0).",
+    "data_table": "| Kelompok | Pengeluaran (ribu Rp) | Jumlah Penduduk |\n|---|---|---|\n| y_i < 500 | 280, 310, 350, 420, 480 | 5 orang |\n| y_i >= 500 | 520, 550, ..., 1200 | 15 orang |\n| Total | - | 20 orang |",
+    "step_by_step_solution": "1. Garis kemiskinan z = 500 ribu rupiah.\n2. Identifikasi penduduk dengan y_i < 500: 280, 310, 350, 420, 480. Diperoleh q = 5 orang miskin.\n3. Total populasi n = 20 orang.\n4. Headcount Index P0 = q / n = 5 / 20 = 0,25 (atau 25%).",
+    "python_verification_code": "y = [280, 310, 350, 420, 480, 520, 550, 580, 600, 620, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200]\nz = 500\npoor = [x for x in y if x < z]\nq = len(poor)\nn = len(y)\np0 = q / n\nprint(f'q={q} orang, P0={p0:.2f} (atau {p0*100:.0f}%)')",
+    "expected_output": "q=5 orang, P0=0.25 (atau 25%)"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Kesalahan Pembagi Populasi (n vs q atau angkatan kerja)",
+      "common_mistake": "Membagi jumlah orang miskin q dengan jumlah kepala keluarga atau angkatan kerja.",
+      "safe_strategy": "Pembagi wajib seluruh populasi individu (n), baik tua, muda, bekerja, maupun tidak bekerja."
+    },
+    {
+      "trap_description": "Kelemahan Kebijakan Mentas Sesaat (Cream-Skimming Policy)",
+      "common_mistake": "Mengasumsikan bahwa penurunan P0 selalu berarti intervensi sosial berjalan adil bagi yang paling menderita.",
+      "safe_strategy": "P0 hanya menghitung orang yang melintasi garis kemiskinan, sehingga rawan dieksploitasi dengan hanya membantu orang yang sedikit di bawah GK (near poor) dan mengabaikan orang yang miskin ekstrem."
+    }
+  ]
+}

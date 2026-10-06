@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "mata_kuliah": "Official Statistics Lanjutan",
+    "target_ujian": "2026-09-30",
+    "interval_spaced_repetition_hari": [
+      1,
+      3,
+      7,
+      14
+    ],
+    "ambang_batas_topik_lemah_persen": 70.0,
+    "terakhir_diperbarui": "2026-09-29T21:26:00+07:00"
+  },
+  "ringkasan_topik": {
+    "Indikator Kemiskinan dan Ketimpangan": {
+      "total_dikerjakan": 3,
+      "total_benar": 2,
+      "total_salah": 1,
+      "akurasi_persen": 66.67,
+      "topik_lemah": true
+    },
+    "Indikator Ketenagakerjaan dan Pendidikan": {
+      "total_dikerjakan": 4,
+      "total_benar": 2,
+      "total_salah": 2,
+      "akurasi_persen": 50.0,
+      "topik_lemah": true
+    },
+    "Indikator Kesehatan": {
+      "total_dikerjakan": 3,
+      "total_benar": 2,
+      "total_salah": 1,
+      "akurasi_persen": 66.67,
+      "topik_lemah": true
+    },
+    "Indikator Ekonomi: Produksi": {
+      "total_dikerjakan": 3,
+      "total_benar": 1,
+      "total_salah": 2,
+      "akurasi_persen": 33.33,
+      "topik_lemah": true
+    },
+    "Indikator Ekonomi: Perdagangan dan Harga": {
+      "total_dikerjakan": 4,
+      "total_benar": 2,
+      "total_salah": 2,
+      "akurasi_persen": 50.0,
+      "topik_lemah": true
+    },
+    "Indikator Ekonomi: Ekspor-Impor dan Neraca Perdagangan": {
+      "total_dikerjakan": 1,
+      "total_benar": 1,
+      "total_salah": 0,
+      "akurasi_persen": 100.0,
+      "topik_lemah": false
+    },
+    "Indikator Pariwisata": {
+      "total_dikerjakan": 2,
+      "total_benar": 2,
+      "total_salah": 0,
+      "akurasi_persen": 100.0,
+      "topik_lemah": false
+    }
+  },
+  "riwayat_soal": {
+    "OSL-P08-PG-001": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P09-PG-002": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P10-PG-003": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P11-HIT-004": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P12-PG-005": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P13-PG-006": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P08-ESAI-007": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P13-HIT-008": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-UAS22-ISN-009": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-SUP-PG-010": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P08-HIT-011": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P09-ISN-012": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P09-HIT-013": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P10-HIT-014": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P10-PG-015": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P11-PG-016": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P11-ISN-017": {
+      "attempts": 1,
+      "benar": 0,
+      "salah": 1,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 0,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "perlu_latihan"
+    },
+    "OSL-P12-HIT-018": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P12-PG-019": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    },
+    "OSL-P13-HIT-020": {
+      "attempts": 1,
+      "benar": 1,
+      "salah": 0,
+      "tanggal_terakhir_latihan": "2026-09-29",
+      "tahap_interval": 1,
+      "jadwal_ulang_berikutnya": "2026-09-30",
+      "status": "dikuasai"
+    }
+  }
+}

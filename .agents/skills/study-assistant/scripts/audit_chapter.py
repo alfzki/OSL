@@ -291,6 +291,7 @@ def audit(study_dir, chapter_id):
             "formula": source_has_formula,
         },
         "status": "blocked" if blockers else "pass",
+        "verdict": "blocked" if blockers else "pass",
         "issues": issues,
     }
     return summary

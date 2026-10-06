@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>8.1 Konsep dan Metodologi Garis Kemiskinan BPS · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>8.1 Konsep dan Metodologi Garis Kemiskinan BPS</h2><a href="#p-8.1.3">8.1.3 Metodologi Cost of Basic Needs BPS ⭐</a></nav>
+<main>
+<h1>8.1 Konsep dan Metodologi Garis Kemiskinan BPS<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-8.1.3">
+<h2>8.1.3 Metodologi Cost of Basic Needs BPS ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 14, 17-19, 42-43]</div>
+<div class="box info">📌 <div class="rich"><p>Membedakan metodologi Kemiskinan Makro (Susenas, sampel, agregat wilayah) vs Kemiskinan Mikro (PMT/Sensus, 14 kriteria, by name by address), mekanisme targeting bansos, serta kerentanan kelompok Near Poor terhadap guncangan harga.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Kemiskinan Makro: dihitung dari hasil estimasi atau perkiraan sampel data Susenas. Data yang dihasilkan: Proporsi penduduk (rumah tangga) miskin. Data Kemiskinan Makro digunakan untuk perencanaan dan evaluasi program kemiskinan dengan target geografis tapi tidak menunjukkan siapa dan dimana alamat penduduk. Kemiskinan Mikro: dihitung secara sensus. Berdasarkan indeks atau Proxy-Means Testing (PMT) dari ciri-ciri rumah tangga miskin (14 indikator kemiskinan). Data yang dihasilkan: Rumah Tangga Sasaran (sangat miskin, miskin, hampir miskin) - by name by address untuk sasaran bantuan seperti BLT, PKH, Raskin [slide 17, 18].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan dua alat navigasi:<br>1. Radar Makro (Susenas): Bagaikan citra satelit atau peta cuaca yang memperlihatkan bahwa di Kecamatan A terdapat 30% penduduk miskin dan di Kecamatan B hanya 5%. Peta ini memberi tahu pemerintah ke mana anggaran pembangunan harus dikucurkan (target geografis), tetapi tidak bisa memberi tahu rumah mana saja yang lapar di gang sempit.<br>2. Sensus Mikro (PMT / Regsosek): Bagaikan sensus pintu ke pintu (*door-to-door*) yang mencatat kondisi fisik rumah Pak Budi (lantai tanah, tanpa jamban, penghasilan tidak tetap). Hasilnya adalah daftar 'by name by address' yang memuat nama dan alamat penerima manfaat kartu bantuan sosial.</p>
+<p>Jika seorang bupati membagikan sembako menggunakan data Susenas, program tersebut pasti kacau karena petugas pos tidak memiliki daftar nama penerima!</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Metodologi Cost of Basic Needs (CBN)</p>
+<p>Metodologi resmi yang digunakan BPS sejak tahun 1998 untuk mengukur kemiskinan moneter di Indonesia adalah pendekatan <strong>Cost of Basic Needs (CBN)</strong> atau Kebutuhan Dasar [slide 14]. Dalam pendekatan ini:<br>1. <strong>Garis Kemiskinan Makanan ($GKM$)</strong>: Menghitung biaya pemenuhan kebutuhan energi pangan sebesar 2.100 kkal per kapita per hari dari 52 komoditas pangan pokok.<br>2. <strong>Garis Kemiskinan Bukan Makanan ($GKNM$)</strong>: Menghitung pengeluaran minimum untuk paket kebutuhan esensial non-makanan (51 komoditas perkotaan, 47 komoditas perdesaan).<br>3. <strong>Penduduk Rujukan (*Reference Population*)</strong>: Paket komoditas dan pembobotannya diperoleh dari sekelompok penduduk marjinal, yaitu mereka yang hidup sedikit di atas garis kemiskinan sementara (kuintil pengeluaran terbawah yang diasumsikan mendekati garis batas kelayakan).</p>
+<p>### 2. Dikotomi Fundamental: Kemiskinan Makro vs Kemiskinan Mikro</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Aspek Pembeda</th><th>Kemiskinan Makro (Macro Poverty)</th><th>Kemiskinan Mikro (Micro Poverty)</th></tr></thead><tbody><tr><td><strong>Metode Pengumpulan Data</strong></td><td>Survei Sampel Rumah Tangga (Susenas Maret &amp; September)</td><td>Pendataan Sensus Lengkap / Registrasi Sosial Ekonomi (Regsosek / PBDT)</td></tr><tr><td><strong>Pendekatan Teoretis</strong></td><td>Moneter: Pemenuhan pengeluaran konsumsi minimum ($y_i &lt; GK$)</td><td>Non-Moneter / Multidimensi: Proxy-Means Testing (PMT) ciri fisik rumah tangga</td></tr><tr><td><strong>Instrumen Penilaian</strong></td><td>Catatan nilai rupiah pengeluaran konsumsi 1 bulan terakhir</td><td>14 Kriteria Kemiskinan BPS (kualitas aset, perumahan, pekerjaan)</td></tr><tr><td><strong>Bentuk Luaran Data</strong></td><td>Angka agregat: Jumlah dan persentase penduduk miskin ($P_0, P_1, P_2$)</td><td>Basis data individu / Rumah Tangga Sasaran (*by name by address*)</td></tr><tr><td><strong>Level Representasi</strong></td><td>Nasional, Provinsi, dan Kabupaten/Kota (tidak sampai level desa/RT)</td><td>Tingkat desa, RT/RW, keluarga, dan individu penerima</td></tr><tr><td><strong>Pemanfaatan Kebijakan</strong></td><td>Perencanaan makro, evaluasi dampak kebijakan, target geografis</td><td>Penyaluran bansos bersasaran: Program Keluarga Harapan (PKH), BLT, BPNT, KIS</td></tr></tbody></table></div>
+<p>### 3. Instrumen 14 Kriteria Kemiskinan Mikro BPS<br>Dalam pendataan kemiskinan mikro, suatu rumah tangga dikategorikan miskin apabila memenuhi minimal 9 dari 14 indikator berikut [slide 18]:<br>1. Luas lantai bangunan tempat tinggal kurang dari $8\text{ m}^2$ per orang.<br>2. Jenis lantai bangunan tempat tinggal berupa tanah/bambu/kayu berkualitas rendah.<br>3. Jenis dinding tempat tinggal berupa bambu/rumbia/kayu berkualitas rendah/tanpa plester.<br>4. Tidak memiliki fasilitas buang air besar sendiri / bersama rumah tangga lain / tanpa jamban.<br>5. Sumber air minum berasal dari sumur tak terlindung/mata air tak terlindung/sungai/air hujan.<br>6. Penerangan rumah tangga tidak menggunakan listrik.<br>7. Bahan bakar untuk memasak sehari-hari adalah kayu bakar/arang/minyak tanah.<br>8. Hanya mengonsumsi daging/susu/ayam satu kali dalam seminggu.<br>9. Hanya membeli satu stel pakaian baru dalam setahun.<br>10. Hanya sanggup makan satu atau dua kali dalam sehari.<br>11. Tidak sanggup membayar biaya pengobatan di puskesmas/poliklinik.<br>12. Sumber penghasilan kepala keluarga adalah petani gurem (lahan $&lt; 0,5\text{ Ha}$), buruh tani, nelayan tradisional, atau buruh kasar dengan pendapatan rendah.<br>13. Pendidikan tertinggi kepala rumah tangga tidak tamat SD / hanya tamat SD.<br>14. Tidak memiliki tabungan atau barang berharga yang mudah dijual dengan nilai minimal Rp500.000.</p>
+<p>### 4. Dinamika Kelompok Hampir Miskin (Near Poor) dan Kerentanan Ekonomi<br>- <strong>Distribusi Pengeluaran Asimetris</strong>: Kurva pengeluaran masyarakat Indonesia memiliki kemiringan ke arah kanan (*skewed to the right*), yang berarti sebagian besar penduduk terkonsentrasi padat tepat di sekitar garis kemiskinan [slide 42].<br>- <strong>Kelompok Near Poor</strong>: Penduduk yang memiliki tingkat pengeluaran sedikit di atas garis kemiskinan (misal antara $1,0 \times GK$ hingga $1,2 \times GK$ atau kelompok yang berada di antara garis $1 PPP dan $2 PPP) [slide 42, 43].<br>- <strong>Kerentanan (*Vulnerability*)</strong>: Kelompok ini tidak tercatat sebagai penduduk miskin dalam statistik resmi ($P_0$), namun sangat rentan jatuh kembali ke bawah garis kemiskinan saat terjadi guncangan harga pangan, inflasi bahan bakar, gagal panen, atau pandemi.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dinas Sosial sebuah kabupaten berencana menyalurkan Bantuan Langsung Tunai (BLT) kepada 5.000 keluarga miskin ekstrem di wilayahnya. Sumber data manakah yang seharusnya digunakan oleh Dinas Sosial tersebut dan mengapa?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 17-19]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Data Susenas BPS, karena menyajikan angka persentase penduduk miskin paling mutakhir per semester.</button>
+<button class="ex-opt" data-i="1">B. Data Sensus/Pendataan Mikro Kemiskinan (Regsosek/DTKS), karena menyediakan informasi rumah tangga sasaran by name by address berbasis indikator karakteristik fisik dan sosial ekonomi.</button>
+<button class="ex-opt" data-i="2">C. Publikasi Indeks P1 dan P2 BPS, karena mampu menunjukkan besarnya jurang pengeluaran masing-masing individu miskin.</button>
+<button class="ex-opt" data-i="3">D. Data PDRB per kapita kabupaten, karena mencerminkan total pendapatan rata-rata masyarakat secara riil.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Penyaluran bantuan sosial langsung tunai kepada keluarga/individu membutuhkan data mikro bersasaran lengkap dengan identitas nama dan alamat tempat tinggal (*by name by address*) [slide 18].<br>- Data Susenas (pilihan A) merupakan data survei sampel makro yang hanya menghasilkan estimasi proporsi kemiskinan agregat wilayah dan tidak menyajikan data by name by address [slide 17].<br>- Pilihan C salah karena P1 dan P2 adalah indeks makro agregat, bukan data operasional lapangan.<br>- Pilihan D salah karena PDRB per kapita adalah indikator makro ekonomi agregat.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;11 kriteria, Status=Miskin (Layak Menerima Bansos)&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Suatu survei verifikasi keluarga pra-sejahtera menguji rumah tangga Bapak Joko. Dari hasil wawancara dan observasi fisik diperoleh fakta berikut:<br>1. Luas lantai rumah $6\text{ m}^2$ per kapita (kriteria: $&lt; 8\text{ m}^2$).<br>2. Lantai rumah berupa semen retak beralas tanah.<br>3. Dinding dari anyaman bambu tanpa plester.<br>4. Menggunakan jamban bersama tetangga.<br>5. Air minum dari sumur terbuka tidak terlindung.<br>6. Menggunakan listrik PLN 450 watt bersubsidi.<br>7. Memasak menggunakan kayu bakar.<br>8. Makan daging/ayam 2 kali sebulan.<br>9. Membeli baju baru hanya 1 kali setahun.<br>10. Frekuensi makan 2 kali sehari.<br>11. Tidak mampu berobat ke puskesmas swasta/klinik mandiri.<br>12. Kepala keluarga bekerja sebagai buruh tani musiman.<br>13. Pendidikan kepala keluarga tamat SMP.<br>14. Tidak memiliki tabungan ataupun aset berharga.</p>
+<p>Berdasarkan 14 kriteria kemiskinan mikro BPS (di mana ambang batas rumah tangga miskin adalah memenuhi minimal 9 kriteria), hitung berapa jumlah kriteria kemiskinan yang dipenuhi rumah tangga Bapak Joko, dan tentukan status kelayakannya!</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 18, 42]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Analisis kecocokan 14 Kriteria Kemiskinan Mikro BPS [slide 18]:<br>1. Luas lantai $&lt; 8\text{ m}^2$ per kapita $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>2. Jenis lantai tanah/kayu rendah $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>3. Dinding anyaman bambu tanpa plester $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>4. Fasilitas BAB bersama/tanpa jamban sendiri $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>5. Air minum sumur terbuka tak terlindung $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>6. Penerangan menggunakan listrik $\rightarrow$ *TIDAK MEMENUHI* (listrik ada).<br>7. Bahan bakar memasak kayu bakar $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>8. Konsumsi daging/ayam $&lt; 1$ kali/minggu (2x/bulan) $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>9. Beli baju baru 1 setel/tahun $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>10. Makan 2 kali sehari $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>11. Tidak sanggup bayar pengobatan $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>12. Pekerjaan buruh tani musiman $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).<br>13. Pendidikan tamat SMP $\rightarrow$ *TIDAK MEMENUHI* (syarat indikator: tidak tamat SD / hanya tamat SD).<br>14. Tidak punya tabungan/aset $\ge Rp500.000$ $\rightarrow$ *TIDAK MEMENUHI* / MEMENUHI: tidak memiliki tabungan $\rightarrow$ <strong>MEMENUHI</strong> (skor 1).</p>
+<p>Total kriteria yang terpenuhi adalah 11 kriteria.<br>Karena $11 \ge 9$ (ambang batas minimum), maka Rumah Tangga Bapak Joko diklasifikasikan sebagai <strong>Miskin</strong> dan layak ditetapkan sebagai Rumah Tangga Sasaran (RTS) penerima bantuan sosial.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>kriteria_joko = [True, True, True, True, True, False, True, True, True, True, True, True, False, True]<br>total_terpenuhi = sum(kriteria_joko) # 11<br>status = 'Miskin (Layak Menerima Bansos)' if total_terpenuhi &gt;= 9 else 'Tidak Miskin'<br>print(f'{total_terpenuhi} kriteria, Status={status}')<br># Output: 11 kriteria, Status=Miskin (Layak Menerima Bansos)<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Kesalahan Kebijakan Penyaluran Bansos</strong>: Kesalahan fatal yang sering muncul dalam studi kasus kebijakan adalah usulan kepala daerah yang ingin *'menggunakan data Susenas BPS untuk membagikan paket sembako kepada penduduk miskin di Kelurahan X'*. Susenas adalah survei sampel yang dirancang untuk estimasi makro dan tidak menyimpan informasi by name by address. Untuk bansos, wajib digunakan data mikro (Regsosek/DTKS/PBDT).</li><li><strong>Mengabaikan Karakteristik Near Poor</strong>: Penurunan angka $P_0$ tidak berarti masalah kemiskinan selesai, karena banyak penduduk yang terangkat keluar dari kemiskinan hanya berjarak beberapa ribu rupiah di atas GK sehingga sewaktu-waktu dapat kembali miskin.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Makro = Sampel Susenas, Angka Wilayah, Target Geografis. Mikro = Sensus PMT, 14 Kriteria, By Name By Address.</p></div></div>
+<div class="links">Keterkaitan Konsep: 8.1.1, 8.1.2, 8.2.1</div>
+<button class="donebtn" data-id="8.1.3"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

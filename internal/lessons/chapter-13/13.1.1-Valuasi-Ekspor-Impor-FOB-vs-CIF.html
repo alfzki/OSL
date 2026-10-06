@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>13.1 Statistik Perdagangan Internasional · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>13.1 Statistik Perdagangan Internasional</h2><a href="#p-13.1.1">13.1.1 Valuasi Ekspor Impor FOB vs CIF ⭐</a></nav>
+<main>
+<h1>13.1 Statistik Perdagangan Internasional<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-13.1.1">
+<h2>13.1.1 Valuasi Ekspor Impor FOB vs CIF ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 4-9]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai prinsip alih kepemilikan ekonomi SNA 2008, perbedaan titik valuasi FOB dan CIF, peran dokumen PEB/PIB Bea Cukai, serta mekanisme konversi kurs beli vs kurs jual BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Ekspor-impor didefinisikan sebagai transaksi alih kepemilikan ekonomi atas barang dan jasa antara residen suatu perekonomian dengan non-residen, termasuk re-ekspor dan merchanting. Ekspor dan impor barang dinilai menurut harga Free on Board (FOB). Pada International Merchandise Trade Statistics (IMTS), impor barang dicatat dalam nilai cost, insurance, and freight (CIF) sehingga biaya angkut barang dan asuransi harus dikeluarkan jika disesuaikan ke FOB. Data dikumpulkan dari PEB dan PIB Ditjen Bea Cukai. Ekspor dikonversi dengan kurs beli tertimbang, sedangkan impor dengan kurs jual tertimbang [slide 5-7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan Anda memesan barang dari pabrik di luar negeri:<br>- <strong>FOB (Free on Board)</strong>: Harga barang hanya sampai di atas dek kapal pelabuhan asal. Setelah tali kapal dilepas, semua risiko gelombang, badai, biaya bahan bakar kapal laut, dan asuransi perjalanan menjadi urusan Anda.<br>- <strong>CIF (Cost, Insurance, and Freight)</strong>: Penjual mengurus segalanya sampai kapal bersandar di pelabuhan negara Anda. Harga yang Anda bayar sudah 'paket komplit' meliputi harga barang, premi asuransi, dan tarif kapal kargo.<br>- Oleh karena itu, neraca perdagangan resmi BPS mencatat ekspor barang kita dengan FOB (karena pembeli asing menanggung ongkos kirim internasionalnya), sedangkan impor kita dicatat dengan CIF (karena devisa kita keluar untuk membayar barang sekaligus jasa angkut dan asuransinya).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Ekspor-Impor (SNA 2008)</p>
+<p>Berdasarkan kerangka kerja *System of National Accounts* (SNA 2008) dan *BPM6* [slide 5]:<br>- <strong>Ekspor dan Impor</strong>: Transaksi alih kepemilikan ekonomi (*change of economic ownership*) atas barang dan jasa antara penduduk (*resident*) suatu wilayah ekonomi dengan bukan penduduk (*non-resident*).<br>- Mencakup barang dagangan reguler, barang kiriman pos/kurir, re-ekspor, barang *merchanting*, serta pembelian langsung (*direct purchase*) oleh penduduk Indonesia di luar negeri maupun warga asing di Indonesia [slide 5].</p>
+<p>### 2. Skema Valuasi Internasional: FOB vs CIF</p>
+<p>Dalam statistik perdagangan luar negeri, terdapat dua titik penilaian harga utama [slide 6]:</p>
+<ol><li><strong>Free on Board (FOB)</strong>:</li><ul><li>Titik penilaian: Di atas kapal pengangkut di pelabuhan muat negara pengekspor.</li><li>Eksportir menanggung biaya produksi, pengangkutan dari gudang ke pelabuhan domestik, biaya muat (*loading* / *stevedoring*), dan bea keluar/pajak ekspor.</li><li>Importir menanggung biaya transportasi lintas samudra (*ocean/air freight*), premi asuransi perjalanan internasional, dan bea masuk di negara tujuan.</li><li><strong>Standar Ekspor BPS</strong>: Seluruh barang ekspor Indonesia dinilai menurut harga FOB [slide 6].</li></ul></ol>
+<p>2. <strong>Cost, Insurance, and Freight (CIF)</strong>:<br>   - Titik penilaian: Di pelabuhan bongkar negara pengimpor sebelum bea masuk dibayarkan.<br>   - Mencakup tiga komponen terpadu:<br>     $$\text{CIF} = \text{FOB} + \text{Freight} + \text{Insurance}$$<br>   - <strong>Standar Impor IMTS BPS</strong>: Impor barang dicatat dalam nilai CIF karena faktur perdagangan internasional yang diterima oleh Bea Cukai umumnya memuat total biaya sampai di pelabuhan Indonesia [slide 6].<br>   - <strong>Penyesuaian SNA/BOP</strong>: Untuk penyusunan PDB penggunaan dan Neraca Pembayaran oleh Bank Indonesia, impor CIF harus dikurangi komponen *freight* dan *insurance* agar menjadi impor barang FOB murni, sedangkan biaya angkut dan asuransi asing dipindahkan ke pos Neraca Jasa [slide 6].</p>
+<p>### 3. Sumber Data dan Prosedur Konversi Valuta BPS</p>
+<p>Alur pengumpulan dan konversi data statistik perdagangan [slide 7]:<br>1. <strong>Dokumen Pabean Legal</strong>:<br>   - Ekspor: Pemberitahuan Ekspor Barang (PEB).<br>   - Impor: Pemberitahuan Impor Barang (PIB).<br>   - Dikelola oleh Direktorat Jenderal Bea dan Cukai (DJBC), lalu diserahkan secara elektronik ke BPS dan BI.<br>2. <strong>Konversi Mata Uang Asing ke Rupiah</strong>:<br>   - Data faktur perdagangan mayoritas dinyatakan dalam Dolar Amerika Serikat (USD).<br>   - <strong>Nilai Ekspor</strong>: Dikonversi menggunakan <strong>rata-rata kurs beli</strong> dolar AS yang ditimbang dengan nilai nominal transaksi ekspor bulanan:<br>     $$X_{\text{IDR}} = X_{\text{USD}} \times \bar{K}_{\text{beli}}$$<br>   - <strong>Nilai Impor</strong>: Dikonversi menggunakan <strong>rata-rata kurs jual</strong> dolar AS yang ditimbang dengan nilai nominal transaksi impor bulanan:<br>     $$M_{\text{IDR}} = M_{\text{USD}} \times \bar{K}_{\text{jual}}$$<br>   - Dasar pertimbangan: Dari perspektif perbankan devisa, eksportir menukarkan USD hasil ekspor ke Rupiah (Bank membeli valas -&gt; Kurs Beli), sedangkan importir membeli USD dari bank untuk membayar ke luar negeri (Bank menjual valas -&gt; Kurs Jual).</p>
+<p>### 4. Ringkasan Perbandingan Valuasi IMTS vs SNA 2008</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Publikasi IMTS BPS</th><th>Neraca Pembayaran (BI) / SNA 2008</th></tr></thead><tbody><tr><td><strong>Valuasi Ekspor Barang</strong></td><td>Free on Board (FOB)</td><td>Free on Board (FOB)</td></tr><tr><td><strong>Valuasi Impor Barang</strong></td><td>Cost, Insurance, Freight (CIF)</td><td>Free on Board (FOB)</td></tr><tr><td><strong>Pos Asuransi &amp; Freight Impor</strong></td><td>Melekat di dalam Impor Barang</td><td>Dikeluarkan dari barang, dicatat di Neraca Jasa</td></tr><tr><td><strong>Sumber Data Barang</strong></td><td>BPS (dokumen PEB/PIB Bea Cukai)</td><td>BPS disesuaikan Bank Indonesia</td></tr><tr><td><strong>Sumber Data Jasa</strong></td><td>Bank Indonesia (ITRS &amp; Survei)</td><td>Bank Indonesia</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam statistik perdagangan luar negeri resmi BPS, mengapa data transaksi impor pada dokumen PIB yang dinyatakan dalam USD dikonversikan ke Rupiah menggunakan kurs 'jual' dolar AS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Karena nilai kurs jual selalu lebih rendah sehingga menekan angka defisit perdagangan.</button>
+<button class="ex-opt" data-i="1">B. Karena dari sudut pandang bank devisa, importir harus membeli valas dari bank untuk membayar kewajiban ke luar negeri.</button>
+<button class="ex-opt" data-i="2">C. Karena eksportir di luar negeri menjual barangnya dengan mata uang lokal.</button>
+<button class="ex-opt" data-i="3">D. Karena peraturan menteri keuangan mengharuskan penggunaan kurs tengah Bank Indonesia.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai metodologi BPS [slide 7], konversi valuta transaksi perdagangan luar negeri didasarkan pada posisi perbankan devisa. Importir membutuhkan mata uang asing (USD) untuk melunasi pembayaran barang ke mitra dagang non-residen. Oleh karena itu, importir mendatangi bank devisa untuk membeli USD, sehingga bank mengenakan kurs 'jual' (kurs di mana bank menjual valas kepada nasabah). Sebaliknya, untuk ekspor digunakan kurs 'beli' karena eksportir menjual valas penerimaan ekspor kepada bank.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah perusahaan di Medan mengekspor CPO dengan nilai FOB USD 120.000 (kurs beli Rp 15.500/USD). Pada saat yang sama, perusahaan lain mengimpor mesin dengan nilai CIF USD 100.000 yang terdiri dari komponen FOB USD 90.000, freight USD 8.000, dan asuransi USD 2.000 (kurs jual Rp 15.600/USD).<br>Hitunglah:<br>1. Nilai Ekspor FOB dalam Rupiah.<br>2. Nilai Impor CIF dalam Rupiah.<br>3. Saldo neraca perdagangan barang IMTS dalam USD.<br>4. Saldo neraca perdagangan barang menurut SNA 2008 (valuasi FOB-FOB) dalam USD.<br>Tuliskan format: <code>Ekspor_FOB_IDR=..., Impor_CIF_IDR=..., Surplus_IMTS_USD=..., Surplus_SNA_USD=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7, 9]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>Ekspor FOB (IDR)</strong>:<br>   $$X_{\text{IDR}} = 120.000 \times 15.500 = \text{Rp } 1.860.000.000$$<br>2. <strong>Impor CIF (IDR)</strong>:<br>   $$M_{\text{IDR}} = 100.000 \times 15.600 = \text{Rp } 1.560.000.000$$<br>3. <strong>Surplus IMTS (USD)</strong> (FOB - CIF):<br>   $$\text{Surplus}_{\text{IMTS}} = 120.000 - 100.000 = +\text{USD } 20.000$$<br>4. <strong>Surplus SNA (USD)</strong> (FOB - FOB):<br>   $$M_{\text{FOB}} = 100.000 - 8.000 - 2.000 = \text{USD } 90.000$$<br>   $$\text{Surplus}_{\text{SNA}} = 120.000 - 90.000 = +\text{USD } 30.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>x_fob_usd = 120000.0<br>kurs_beli = 15500.0<br>x_fob_idr = x_fob_usd * kurs_beli<br>m_cif_usd = 100000.0<br>freight_usd = 8000.0<br>ins_usd = 2000.0<br>m_fob_usd = m_cif_usd - freight_usd - ins_usd<br>kurs_jual = 15600.0<br>m_cif_idr = m_cif_usd * kurs_jual<br>m_fob_idr = m_fob_usd * kurs_jual<br>surplus_imts_usd = x_fob_usd - m_cif_usd<br>surplus_imts_idr = x_fob_idr - m_cif_idr<br>surplus_sna_usd = x_fob_usd - m_fob_usd<br>print(f'Ekspor_FOB_IDR={x_fob_idr:.0f}, Impor_CIF_IDR={m_cif_idr:.0f}, Surplus_IMTS_USD={surplus_imts_usd:.0f}, Surplus_SNA_USD={surplus_sna_usd:.0f}')<br># Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Kurs Konversi</strong>: Eksportir memakai kurs beli bank, importir memakai kurs jual bank. Jangan gunakan kurs tengah atau membalik keduanya.</li><li><strong>Menyamakan Valuasi Impor BPS dan Neraca Pembayaran</strong>: BPS merilis impor CIF secara bulanan, tetapi BI dan PDB penggunaan menghitung impor secara FOB (CIF dikurangi ongkos angkut dan asuransi).</li><li><strong>Menyertakan Pajak Impor dalam Nilai CIF</strong>: Nilai CIF hanya mencakup harga barang + freight + insurance sampai pelabuhan bongkar, belum termasuk Bea Masuk, PPN Impor, atau PPh Pasal 22.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Ekspor itu Pergi (FOB di Pelabuhan Kita, Kurs Beli Bank); Impor itu Datang (CIF sampai Pelabuhan Kita, Kurs Jual Bank).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.2, 13.1.3, 13.1.4</div>
+<button class="donebtn" data-id="13.1.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

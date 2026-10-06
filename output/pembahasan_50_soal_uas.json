@@ -1,0 +1,1002 @@
+[
+  {
+    "id": 1,
+    "stem": "Berikut ini merupakan sumber data untuk penghitungan NTP, kecuali...",
+    "options": {
+      "A": "Survei Harga Pedesaan (SHPed)",
+      "B": "Survei Pola Distribusi Perdagangan",
+      "C": "Survei Penyempurnaan Diagram Timbang (SPDT-NTP)",
+      "D": "Survei Harga Produsen dan Konsumen Pedesaan"
+    },
+    "correct": "B",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 8-10]",
+    "explanation": "Nilai Tukar Petani (NTP) dihitung dari rasio Indeks Harga yang Diterima Petani ($I_t$) terhadap Indeks Harga yang Dibayar Petani ($I_b$). Sumber data harga produsen dan konsumen di perdesaan dikumpulkan melalui Survei Harga Perdesaan (SHPed), sedangkan bobot penimbangnya diperoleh dari Survei Penyempurnaan Diagram Timbang (SPDT-NTP). Sebaliknya, Survei Pola Distribusi Perdagangan (Poldis) bertujuan memetakan alur distribusi barang niaga dan Margin Perdagangan dan Pengangkutan (MPP), bukan untuk menghitung NTP.",
+    "distractors": {
+      "A": "SHPed adalah sumber data utama harga perdesaan bulanan yang dicakup BPS.",
+      "C": "SPDT-NTP adalah survei khusus untuk memperbarui diagram timbang komoditas pertanian.",
+      "D": "Survei Harga Produsen dan Konsumen Perdesaan merupakan komponen inti dalam penghitungan $I_t$ dan $I_b$ pada SHPed."
+    }
+  },
+  {
+    "id": 2,
+    "stem": "Menurut pemahaman anda, pekerja yang bekerja < 35 jam/minggu dan bersedia bekerja lebih banyak dapat disebut:",
+    "options": {
+      "A": "Penganggur terselubung",
+      "B": "Setengah penganggur",
+      "C": "Buruh musiman",
+      "D": "Pekerja lepas"
+    },
+    "correct": "B",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 18]",
+    "explanation": "Berdasarkan standar BPS dan ICLS (International Conference of Labour Statisticians), pekerja yang bekerja di bawah jam kerja normal (< 35 jam per minggu) dan masih mencari pekerjaan atau bersedia menerima pekerjaan tambahan / menambah jam kerja dikategorikan sebagai 'Setengah Penganggur' (underemployment). Jika pekerja bekerja < 35 jam seminggu namun tidak bersedia menambah jam kerja (secara sukarela), ia diklasifikasikan sebagai 'Pekerja Paruh Waktu'.",
+    "distractors": {
+      "A": "Penganggur terselubung (disguised unemployment) adalah tenaga kerja yang bekerja tetapi produktivitas marjinalnya nol/sangat rendah karena kelebihan tenaga kerja.",
+      "C": "Buruh musiman merujuk pada pola waktu kerja berdasarkan musim tertentu (misal musim panen), bukan kriteria jam kerja dan kesediaan kerja.",
+      "D": "Pekerja lepas (freelancer) merujuk pada status hubungan kerja mandiri/proyek, bukan klasifikasi pemanfaatan jam kerja."
+    }
+  },
+  {
+    "id": 3,
+    "stem": "Berikan penjelasan anda menurut pilihan dibawah ini mengenai alasan Kelompok Hampir Miskin mudah sekali masuk dan keluar dari jurang kemiskinan:",
+    "options": {
+      "A": "Pembangunan yang tidak merata",
+      "B": "Posisinya yang sangat dekat dengan Garis Kemiskinan",
+      "C": "Sensitif terhadap fluktuasi dan gejolak drastis yang dapat langsung memengaruhi ekonomi keluarga",
+      "D": "Kurangnya akses terhadap layanan pendidikan dan kesehatan"
+    },
+    "correct": "B",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 16]",
+    "explanation": "Kelompok Hampir Miskin (Near Poor) secara definisi memiliki tingkat pengeluaran konsumsi per kapita yang berada sedikit di atas Garis Kemiskinan (GK), umumnya dalam rentang 1,0 hingga 1,2 kali GK. Karena kedekatan posisi densitas distribusi pengeluaran mereka dengan ambang batas GK (clustering around the poverty line), sedikit saja perubahan ekonomi (kenaikan harga bahan pangan atau sakit) akan langsung menyeret mereka ke bawah garis kemiskinan (transient poor), dan sebaliknya bantuan kecil dapat mengangkat mereka kembali keluar.",
+    "distractors": {
+      "A": "Pembangunan tidak merata adalah isu makro regional, bukan penyebab spesifik volatilitas posisi garis kemiskinan kelompok hampir miskin.",
+      "C": "Sensitivitas ekonomi merupakan konsekuensi/dampak lanjutan dari posisi pengeluaran yang berada tepat di ambang batas garis kemiskinan.",
+      "D": "Akses pendidikan dan kesehatan merupakan determinan kemiskinan kronis jangka panjang, bukan pemicu utama keluar-masuk kemiskinan sesaat."
+    }
+  },
+  {
+    "id": 4,
+    "stem": "Nilai Tukar Usaha Tani (NTUP) menjadi ukuran yang lebih relevan untuk mencerminkan kemampuan produksi petani. Hal tersebut karena NTUP . . .",
+    "options": {
+      "A": "Membandingkan indeks yang diterima petani dan indeks yang dibayarkan petani",
+      "B": "Membandingkan indeks yang diterima petani dan indeks biaya produksi dan penambahan barang modal",
+      "C": "Membandingkan indeks yang dibayarkan petani dan indeks yang diterima petani",
+      "D": "Membandingkan indeks yang diterima petani dan indeks konsumsi petani"
+    },
+    "correct": "B",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 12-14]",
+    "explanation": "Rumus NTUP adalah: $$\\text{NTUP} = \\frac{I_t}{\\text{BPPBM}} \\times 100$$ Di mana $I_t$ adalah Indeks Harga yang Diterima Petani, dan BPPBM adalah Biaya Produksi dan Penambahan Barang Modal. Berbeda dengan NTP yang memasukkan komponen konsumsi rumah tangga petani (IKRT), NTUP murni mengisolasi aktivitas produksi pertanian, sehingga menjadi indikator yang lebih tajam dalam mencerminkan profitabilitas dan kemampuan usaha produksi tani murni.",
+    "distractors": {
+      "A": "Membandingkan $I_t$ dengan $I_b$ (yang mencakup IKRT + BPPBM) adalah definisi dari Nilai Tukar Petani (NTP).",
+      "C": "Perbandingan terbalik ($I_b / I_t$) bukanlah indikator standar nilai tukar BPS.",
+      "D": "Membandingkan $I_t$ dengan indeks konsumsi rumah tangga saja tidak mencerminkan biaya produksi pertanian."
+    }
+  },
+  {
+    "id": 5,
+    "stem": "Menurut pemahaman anda, pernyataan yang benar mengenai tingkat kemahalan konstruksi (TKK) adalah",
+    "options": {
+      "A": "TKK menunjukkan perubahan harga dari waktu ke waktu",
+      "B": "TKK menunjukkan peningkatan harga pada level produsen",
+      "C": "TKK menunjukkan peningkatan harga pada level konsumen",
+      "D": "TKK menunjukkan perbedaan harga antar daerah"
+    },
+    "correct": "D",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 39-40]",
+    "explanation": "Indeks Kemahalan Konstruksi (IKK) / Tingkat Kemahalan Konstruksi (TKK) adalah indeks harga spasial (spatial price index). Fungsinya bukan mengukur inflasi antarwaktu (time series), melainkan mengukur perbandingan tingkat harga bahan bangunan/konstruksi, sewa alat berat, dan upah tenaga kerja konstruksi antar kabupaten/kota dibandingkan dengan satu kota acuan (reference city) pada periode waktu yang sama. IKK digunakan sebagai variabel penyeimbang dalam formulasi Dana Alokasi Umum (DAU).",
+    "distractors": {
+      "A": "Perubahan harga dari waktu ke waktu diukur oleh indeks temporal seperti IHK atau IHPB.",
+      "B": "Peningkatan harga level produsen diukur oleh Indeks Harga Produsen (IHP).",
+      "C": "Peningkatan harga level konsumen diukur oleh Indeks Harga Konsumen (IHK)."
+    }
+  },
+  {
+    "id": 6,
+    "stem": "Alasan seseorang dapat dikatakan sebagai pekerja paruh waktu karena:",
+    "options": {
+      "A": "Bekerja >40 jam seminggu",
+      "B": "Bekerja 40 jam seminggu",
+      "C": "Bekerja 35 jam seminggu",
+      "D": "Bekerja 30 jam seminggu"
+    },
+    "correct": "D",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 18]",
+    "explanation": "BPS mendefinisikan jam kerja normal adalah minimal 35 jam dalam seminggu. Pekerja yang bekerja di bawah jam kerja normal (< 35 jam seminggu) dan tidak mencari pekerjaan atau tidak bersedia menerima pekerjaan tambahan disebut 'Pekerja Paruh Waktu' (Part-time Worker). Di antara opsi yang tersedia (40 jam, 35 jam, 30 jam), hanya nilai 30 jam seminggu yang memenuhi syarat secara mutlak (< 35 jam/minggu).",
+    "distractors": {
+      "A": "Bekerja >40 jam seminggu dikategorikan sebagai pekerja purnawaktu berlebih (overtime/excessive hours).",
+      "B": "Bekerja 40 jam seminggu adalah pekerja purnawaktu (full-time worker).",
+      "C": "Bekerja 35 jam seminggu merupakan batas ambang bawah pekerja purnawaktu menurut kriteria BPS ($\\ge 35$ jam/minggu)."
+    }
+  },
+  {
+    "id": 7,
+    "stem": "Berikan penjelasan anda dengan memilih jawaban dibawah ini mengenai Inflasi tahunan dihitung sebagai",
+    "options": {
+      "A": "Pertumbuhan indeks harga dengan metode poin to poin dengan dasar tahun sebelumnya",
+      "B": "Pertumbuhan indeks harga dengan metode poin to poin dengan dasar bulan sebelumnya",
+      "C": "Pertumbuhan indeks harga dengan metode poin to poin dengan dasar bulan Desember tahun sebelumnya",
+      "D": "Pertumbuhan indeks harga dengan metode poin to poin dengan dasar bulan pada tahun sebelumnya"
+    },
+    "correct": "D",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 35]",
+    "explanation": "Inflasi tahunan (year-on-year / y-o-y) dihitung dengan membandingkan angka IHK pada bulan berjalan dengan IHK pada bulan yang sama di tahun sebelumnya menggunakan metode point-to-point: $$\\text{Inflasi y-o-y} = \\frac{\\text{IHK}_{t, m} - \\text{IHK}_{t-1, m}}{\\text{IHK}_{t-1, m}} \\times 100\\%$$",
+    "distractors": {
+      "A": "Dasar tahun sebelumnya secara agregat adalah perubahan indeks tahunan rata-rata, bukan inflasi bulanan y-o-y.",
+      "B": "Dasar bulan sebelumnya ($\text{IHK}_t - \text{IHK}_{t-1}$) adalah definisi inflasi bulanan (month-to-month / m-o-m).",
+      "C": "Dasar bulan Desember tahun sebelumnya adalah definisi inflasi tahun kalender (year-to-date / y-t-d)."
+    }
+  },
+  {
+    "id": 8,
+    "stem": "Menurut pemahaman anda, Angka Melek Huruf (AMH) dapat digunakan untuk mengukur:",
+    "options": {
+      "A": "Kemampuan menghitung, membaca dan menulis",
+      "B": "Kemampuan membaca dan menulis",
+      "C": "Kemampuan berbicara, membaca dan menulis",
+      "D": "Kemampuan berbicara, menghitung, membaca dan menulis"
+    },
+    "correct": "B",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 36]",
+    "explanation": "BPS mendefinisikan Angka Melek Huruf (AMH) / Literacy Rate sebagai proporsi penduduk usia 15 tahun ke atas yang memiliki kemampuan membaca dan menulis kalimat sederhana, baik dalam huruf Latin, huruf Arab, maupun aksara daerah lainnya. Aspek berhitung (numerasi) tidak dimasukkan dalam definisi AMH BPS.",
+    "distractors": {
+      "A": "Kemampuan berhitung masuk dalam literasi fungsional/numerasi tersendiri, bukan komponen AMH.",
+      "C": "Kemampuan berbicara adalah keterampilan lisan alami, bukan tolok ukur melek aksara (literasi).",
+      "D": "Kombinasi berbicara dan menghitung tidak tercakup dalam definisi AMH BPS."
+    }
+  },
+  {
+    "id": 9,
+    "stem": "Indeks spesialisasi perdagangan barang A sebesar 0,5 artinya barang tersebut berada pada tahap:",
+    "options": {
+      "A": "Pengenalan produk dalam negeri",
+      "B": "Substitusi impor",
+      "C": "Perluasan ekspor",
+      "D": "Pematangan menjadi pengekspor"
+    },
+    "correct": "C",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 10]",
+    "explanation": "Berdasarkan materi kuliah Slide 10 Pertemuan 13, siklus perkembangan produk menurut Indeks Spesialisasi Perdagangan (ISP) dikelompokkan menjadi: (1) Tahap Pengenalan: -1,0 s.d. -0,5; (2) Tahap Substitusi Impor: -0,5 s.d. 0,0; (3) Tahap Perluasan Ekspor: 0,0 s.d. 0,8; (4) Tahap Pematangan: mendekati 1,0 (0,8 s.d. 1,0). Nilai ISP sebesar 0,5 berada tepat di dalam rentang 0 s.d. 0,8, sehingga barang A berada pada Tahap Perluasan Ekspor.",
+    "distractors": {
+      "A": "Tahap pengenalan berada pada rentang ISP -1,0 sampai -0,5.",
+      "B": "Tahap substitusi impor berada pada rentang ISP -0,5 sampai 0,0.",
+      "D": "Tahap pematangan dalam slide perkuliahan dispesifikasikan untuk nilai ISP mendekati 1 (0,8 s.d. 1,0)."
+    }
+  },
+  {
+    "id": 10,
+    "stem": "Menurut pemahaman anda mengenai indikator produksi dan statistik energi, Neraca energi memberikan gambaran mengenai . . .",
+    "options": {
+      "A": "Nilai tambah energi dan konsumsi antara energi",
+      "B": "Supply energi dan pasokan energi",
+      "C": "Demand energi dan output energi",
+      "D": "Sumber energi dan penggunaan energi"
+    },
+    "correct": "D",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 33]",
+    "explanation": "Menurut UU No. 30/2007 dan publikasi Statistik Energi BPS (Slide 33), Neraca Energi adalah gambaran keseimbangan antara pasokan berbagai sumber energi dan penggunaan energi dalam suatu wilayah dan periode tertentu. Neraca disajikan dalam bentuk matriks di mana lajur kolom menunjukkan jenis sumber/komoditas energi, dan lajur baris menunjukkan aliran transaksi dari asal energi hingga ke penggunaannya.",
+    "distractors": {
+      "A": "Nilai tambah dan konsumsi antara merupakan terminologi dari Tabel Input-Output atau PDB sektoral.",
+      "B": "'Supply' dan 'pasokan' bermakna sama (redundansi kata), mengabaikan sisi konsumsi/penggunaan.",
+      "C": "'Demand' dan 'output' tidak menggambarkan struktur matriks komprehensif neraca energi."
+    }
+  },
+  {
+    "id": 11,
+    "stem": "Pada tahun 2024, nilai ekspor barang dan jasa Indonesia mencapai 1.500 triliun rupiah, sedangkan impor sebesar 1.200 triliun rupiah. Berdasarkan data tersebut, neraca perdagangan Indonesia pada tahun 2024 adalah ...",
+    "options": {
+      "A": "2.700 triliun rupiah (defisit)",
+      "B": "2.700 triliun rupiah (surplus)",
+      "C": "300 triliun rupiah (defisit)",
+      "D": "300 triliun rupiah (surplus)"
+    },
+    "correct": "D",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 7]",
+    "explanation": "Neraca Perdagangan (Trade Balance) dihitung dengan formula: $$\\text{Neraca Perdagangan} = \\text{Ekspor } (X) - \\text{Impor } (M)$$ $$\\text{Neraca Perdagangan} = 1.500 - 1.200 = +300\\text{ triliun rupiah}$$ Karena nilai ekspor lebih besar daripada impor ($X > M$), neraca perdagangan mengalami surplus sebesar 300 triliun rupiah.",
+    "distractors": {
+      "A": "2.700 triliun rupiah adalah total perputaran perdagangan ($X + M$), bukan neraca perdagangan.",
+      "B": "2.700 triliun rupiah adalah penjumlahan ekspor dan impor, bukan selisih.",
+      "C": "Nilai 300 triliun rupiah bertanda positif (surplus), bukan defisit."
+    }
+  },
+  {
+    "id": 12,
+    "stem": "Berikan penjelasan anda mengenai kondisi perfectly equal income distribution pada Kurva Lorenz terjadi bila:",
+    "options": {
+      "A": "Setiap orang dalam sekelompok penduduk memiliki tingkat pendapatan yang berbeda",
+      "B": "Setiap orang dalam sekelompok penduduk memiliki tingkat pendapatan yang sama",
+      "C": "Setiap rumah tangga dalam suatu wilayah memiliki tingkat pendapatan yang sama",
+      "D": "Setiap rumah tangga dalam suatu wilayah memiliki tingkat pendapatan yang berbeda"
+    },
+    "correct": "B",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 34]",
+    "explanation": "Slide 34 menyatakan secara verbatim: 'Kurva Lorenz: distribusi pendapatan yang merata secara sempurna (perfectly equal income distribution) terjadi bila setiap orang dalam sekelompok penduduk mempunyai tingkat pendapatan yang sama.' Kondisi ini digambarkan oleh garis diagonal 45 derajat (line of perfect equality), di mana setiap $x\\%$ kumulatif penduduk menguasai persis $x\\%$ kumulatif pendapatan.",
+    "distractors": {
+      "A": "Tingkat pendapatan yang berbeda justru mencerminkan adanya ketimpangan distribusi.",
+      "C": "Teks resmi modul kuliah menggunakan basis 'setiap orang dalam sekelompok penduduk' untuk konsep teoretis kurva Lorenz dasar.",
+      "D": "Perbedaan pendapatan rumah tangga merefleksikan ketimpangan, bukan kesetaraan sempurna."
+    }
+  },
+  {
+    "id": 13,
+    "stem": "Berikan penjelasan dengan benar dan akurat melalui pilihan jawaban dibawah ini perihal konsep indikator \"Produksi Padi dan Palawija\"?",
+    "options": {
+      "A": "Sebuah indikator yang perhitungannya didasarkan pada rumusan perkalian antara luas tanam dengan produktivitas, yang secara khusus dihitung oleh Kementerian Pertanian untuk mencegah terjadinya kekurangan pangan nasional.",
+      "B": "Sebuah indikator yang perhitungannya didasarkan pada rumusan perkalian antara luas tanam dengan produktivitas, yang datanya bersumber dari Statistik Pertanian, Survei KSA, dan Survei Ubinan untuk digunakan dalam evaluasi kebijakan ketahanan pangan.",
+      "C": "Sebuah indikator yang secara konsep merupakan hasil perkalian antara luas panen dengan produktivitas, yang kegunaan utamanya adalah untuk menjamin tidak terjadinya impor pangan dan menjadi satu-satunya indikator keberhasilan sektor tanaman pangan.",
+      "D": "Sebuah indikator yang secara konsep merupakan hasil perkalian antara luas panen dengan produktivitas, yang datanya bersumber dari Statistik Pertanian, Survei KSA, dan Survei Ubinan untuk digunakan dalam evaluasi kebijakan ketahanan pangan."
+    },
+    "correct": "D",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 6-12]",
+    "explanation": "Sesuai metodologi BPS, rumus resmi produksi tanaman pangan adalah: $$\\text{Produksi} = \\text{Luas Panen} \\times \\text{Produktivitas}$$ Luas panen dihitung melalui Kerangka Sampel Area (KSA), sedangkan angka produktivitas diperoleh dari Survei Ubinan (plot 2,5m x 2,5m). Data ini dimanfaatkan oleh pemerintah untuk perumusan dan evaluasi kebijakan ketahanan pangan nasional.",
+    "distractors": {
+      "A": "Rumusan menggunakan 'luas panen', bukan 'luas tanam' (karena ada risiko puso/gagal panen).",
+      "B": "Salah pada penggunaan istilah 'luas tanam' (seharusnya luas panen).",
+      "C": "Klaim 'menjamin tidak terjadinya impor pangan' dan 'menjadi satu-satunya indikator keberhasilan' bersifat absolut dan salah secara substansi statistik."
+    }
+  },
+  {
+    "id": 14,
+    "stem": "Menurut pemahaman anda, berikut ini yang tidak termasuk target dalam Tujuan 3, TPB/SDGs adalah . . .",
+    "options": {
+      "A": "Mengurangi kematian ibu",
+      "B": "Meningkatkan ketahanan terhadap bencana lingkungan, ekonomi dan sosial",
+      "C": "Memerangi penyakit menular",
+      "D": "Mengurangi kecelakaan lalulintas dan kematian"
+    },
+    "correct": "B",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 6-8]",
+    "explanation": "SDG Tujuan 3 adalah 'Kehidupan Sehat dan Sejahtera' (Good Health and Well-being). Target-targetnya meliputi: pengurangan rasio kematian ibu (Target 3.1), mengakhiri epidemi penyakit menular seperti TBC, malaria, dan HIV (Target 3.3), serta memangkas angka kematian akibat kecelakaan lalu lintas (Target 3.6). Sebaliknya, target meningkatkan ketahanan terhadap bencana lingkungan, ekonomi, dan sosial merupakan target dari Tujuan 1 (Tanpa Kemiskinan, Target 1.5) serta Tujuan 11/13.",
+    "distractors": {
+      "A": "Mengurangi kematian ibu adalah Target 3.1 TPB/SDGs.",
+      "C": "Memerangi penyakit menular adalah Target 3.3 TPB/SDGs.",
+      "D": "Mengurangi kecelakaan lalu lintas adalah Target 3.6 TPB/SDGs."
+    }
+  },
+  {
+    "id": 15,
+    "stem": "Berdasarkan pemahaman anda mengenai kerangka ketenagakerjaan (ICLS13), manakah berikut ini yang tidak termasuk dalam konsep Bukan Angkatan kerja?:",
+    "options": {
+      "A": "Sedang bersekolah",
+      "B": "Sementara tidak bekerja",
+      "C": "Pensiunan",
+      "D": "Mengurus rumah tangga"
+    },
+    "correct": "B",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 12]",
+    "explanation": "Menurut kerangka ICLS-13 dan BPS, Penduduk Usia Kerja (15+ tahun) dibagi menjadi Angkatan Kerja dan Bukan Angkatan Kerja. Angkatan Kerja terdiri dari: (1) Bekerja (mencakup mereka yang sedang bekerja dan yang sementara tidak bekerja karena sakit, cuti, atau mogok), dan (2) Pengangguran. Kelompok 'Sementara tidak bekerja' tetap memiliki ikatan kerja resmi, sehingga masuk kelompok BEKERJA (bagian dari Angkatan Kerja).",
+    "distractors": {
+      "A": "Penduduk yang kegiatan utamanya sekolah masuk kategori Bukan Angkatan Kerja.",
+      "C": "Pensiunan dan penerima jaminan sosial diklasifikasikan sebagai Bukan Angkatan Kerja (kategori Lainnya).",
+      "D": "Mengurus rumah tangga secara sukarela tanpa upah masuk kelompok Bukan Angkatan Kerja."
+    }
+  },
+  {
+    "id": 16,
+    "stem": "Garis kemiskinan di suatu wilayah dihitung berdasarkan hasil pendataan Susenas modul konsumsi. Jenis data SUSENAS modul konsumsi yang dapat digunakan sebagai dasar penghitungan garis kemiskinan, yaitu . . .",
+    "options": {
+      "A": "Data pendapatan serta pola konsumsi masyarakat",
+      "B": "Data pengeluaran serta pola konsumsi masyarakat",
+      "C": "Data sosial ekonomi rumah tangga",
+      "D": "Data sosial kependudukan rumah tangga"
+    },
+    "correct": "B",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 14-16]",
+    "explanation": "BPS menggunakan pendekatan Cost of Basic Needs (CBN) berbasis data PENGELUARAN (bukan pendapatan) dari Susenas Modul Konsumsi dan Pengeluaran. Data pengeluaran dan pola konsumsi ini digunakan untuk menyusun keranjang kebutuhan minimum Garis Kemiskinan Makanan (setara 2.100 kkal per kapita per hari) dan Garis Kemiskinan Non-Makanan (komoditas kebutuhan esensial perumahan, sandang, pendidikan, dan kesehatan).",
+    "distractors": {
+      "A": "BPS tidak menggunakan data pendapatan karena kecenderungan under-reporting yang tinggi pada sektor informal.",
+      "C": "Data sosial ekonomi terlalu umum dan tidak mencerminkan data nominal pengeluaran konsumsi modul Susenas.",
+      "D": "Data sosial kependudukan hanya mencakup demografi (umur, jenis kelamin), bukan konsumsi."
+    }
+  },
+  {
+    "id": 17,
+    "stem": "Penjelasan dibawah ini yang tidak sesuai dengan konsep perbedaan antara kemiskinan makro dan kemiskinan mikro adalah",
+    "options": {
+      "A": "Didasarkan pada Garis Kemiskinan vs Didasarkan pada Gini Rasio",
+      "B": "Basic need approach vs Multidimensi",
+      "C": "Pendekatan moneter vs Pendekatan non moneter",
+      "D": "Jumlah penduduk miskin (estimasi) vs Jumlah rumah tangga sasaran"
+    },
+    "correct": "A",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 16]",
+    "explanation": "Kemiskinan makro dihitung berbasis Garis Kemiskinan (CBN moneter) dari data sampel Susenas untuk menghasilkan estimasi angka agregat wilayah. Kemiskinan mikro dihitung melalui pendataan lengkap/sensus (Regsosek/DTKS) menggunakan Proxy Means Testing (PMT) kriteria fisik non-moneter untuk menetapkan rumah tangga sasaran (by name by address). Gini Rasio bukanlah dasar penghitungan kemiskinan mikro, melainkan indikator ketimpangan distribusi pengeluaran makro.",
+    "distractors": {
+      "B": "Sesuai: Makro memakai Basic Needs, sedangkan Mikro memakai PMT/multidimensi.",
+      "C": "Sesuai: Makro memakai pendekatan moneter (rupiah/kapita/bulan), Mikro memakai pendekatan non-moneter.",
+      "D": "Sesuai: Makro menghasilkan estimasi jumlah/persentase penduduk, Mikro menghasilkan daftar rumah tangga sasaran program bantuan."
+    }
+  },
+  {
+    "id": 18,
+    "stem": "Di sebuah wilayah X, diketahui terdapat 150.000 kelahiran hidup dalam satu tahun. Pada tahun yang sama terdapat 75 kematian ibu akibat komplikasi kehamilan/persalinan. Berapakah Angka Kematian Ibu (AKI) di wilayah X:",
+    "options": {
+      "A": "5",
+      "B": "20",
+      "C": "50",
+      "D": "75"
+    },
+    "correct": "C",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 12]",
+    "explanation": "Rumus Angka Kematian Ibu (Maternal Mortality Ratio / MMR): $$\\text{AKI} = \\frac{\\text{Jumlah Kematian Ibu}}{\\text{Jumlah Kelahiran Hidup}} \\times 100.000$$ $$\\text{AKI} = \\frac{75}{150.000} \\times 100.000 = 0{,}0005 \\times 100.000 = 50$$ Artinya terdapat 50 kematian ibu untuk setiap 100.000 kelahiran hidup di wilayah X.",
+    "distractors": {
+      "A": "Hasil jika konstanta pengali salah dihitung menjadi 10.000.",
+      "B": "Hasil pembagian terbalik.",
+      "D": "Angka 75 adalah jumlah absolut kematian ibu, bukan rasio per 100.000 kelahiran hidup."
+    }
+  },
+  {
+    "id": 19,
+    "stem": "Berikan penjelasan anda mengenai ekspor dengan merchanting menurut konsep ekspor-impor SNA 2008?",
+    "options": {
+      "A": "Merchanting melibatkan perubahan wilayah ekonomi barang",
+      "B": "Merchanting mencakup transformasi barang sebelum dijual",
+      "C": "Merchanting tidak melibatkan kepemilikan barang",
+      "D": "Barang pada merchanting tidak masuk ke wilayah ekonomi merchant"
+    },
+    "correct": "D",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 8-9]",
+    "explanation": "Menurut konsep SNA 2008 (Slide 8-9), 'Merchanting adalah pembelian barang oleh residen (merchant) dari non-residen untuk selanjutnya dijual kembali kepada non-residen negara lain, di mana barang tersebut tidak memasuki wilayah ekonomi residen merchant'. Transaksi ini melibatkan transfer kepemilikan ekonomi barang kepada merchant tanpa ada transformasi fisik substansial atas barang tersebut.",
+    "distractors": {
+      "A": "Barang tidak pernah masuk ke wilayah ekonomi merchant.",
+      "B": "Pada merchanting, barang tidak boleh mengalami transformasi substansial (hanya diperdagangkan ulang).",
+      "C": "Merchanting secara hukum dan ekonomi melibatkan perpindahan kepemilikan kepada merchant sebelum dijual lagi."
+    }
+  },
+  {
+    "id": 20,
+    "stem": "Kelayakan fasilitas sanitasi dapat ditunjukkan oleh:",
+    "options": {
+      "A": "Jarak rumah ke jalan raya",
+      "B": "Jenis kloset dan saluran pembuangan",
+      "C": "Jenis atap dan dinding rumah",
+      "D": "Ketersediaan halaman"
+    },
+    "correct": "B",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 29-30]",
+    "explanation": "Berdasarkan indikator SDGs dan BPS (Slide 29-30), fasilitas sanitasi layak ditentukan oleh dua aspek teknis utama: (1) Jenis kloset yang digunakan (leher angsa atau plengsengan dengan tutup), dan (2) Tempat pembuangan akhir tinja/saluran pembuangan yang aman (tangki septik terawat, IPAL, atau SPAL terpusat).",
+    "distractors": {
+      "A": "Jarak ke jalan raya merupakan indikator aksesibilitas transportasi, bukan sanitasi.",
+      "C": "Jenis atap dan dinding adalah indikator ketahanan fisik bangunan perumahan.",
+      "D": "Ketersediaan halaman adalah kelengkapan tata ruang pekarangan."
+    }
+  },
+  {
+    "id": 21,
+    "stem": "Menurut pemahaman anda, trade openness menunjukkan keterbukaan suatu negara terhadap negara lain. Hal ini ditunjukkan dengan:",
+    "options": {
+      "A": "Nilai ekspor dikurangi impor",
+      "B": "Nilai ekspor ditambah impor",
+      "C": "Nilai ekspor dikurangi impor dibagi PDB",
+      "D": "Nilai ekspor ditambah impor dibagi PDB"
+    },
+    "correct": "D",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 13]",
+    "explanation": "Derajat keterbukaan perdagangan (Trade Openness Ratio) mengukur seberapa besar porsi perputaran perdagangan internasional suatu negara dalam perekonomian nasionalnya, dirumuskan sebagai: $$\\text{Trade Openness} = \\frac{\\text{Ekspor } (X) + \\text{Impor } (M)}{\\text{PDB}}$$",
+    "distractors": {
+      "A": "Ekspor dikurangi impor adalah Neraca Perdagangan (Trade Balance).",
+      "B": "Ekspor ditambah impor adalah total volume perdagangan barang dan jasa (Total Trade Volume).",
+      "C": "Ekspor dikurangi impor dibagi PDB adalah rasio surplus/defisit perdagangan terhadap PDB."
+    }
+  },
+  {
+    "id": 22,
+    "stem": "Indikator ekspor/impor yang digunakan untuk mengukur perubahan harga komoditi ekspor/impor yang dijual oleh penduduk suatu negara ke penduduk di negara lain, serta menggambarkan perkembangan harga-harga dari seluruh kelompok komoditi ekspor/impor adalah",
+    "options": {
+      "A": "Neraca Perdagangan (Trade Balance)",
+      "B": "Persentase Share Komoditi terhadap Total Ekspor/Impor",
+      "C": "Revealed Comparative Advantage (RCA)",
+      "D": "Indeks Unit Value Ekspor/Impor"
+    },
+    "correct": "D",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 15]",
+    "explanation": "Indeks Unit Value Ekspor/Impor (Unit Value Index) adalah indikator yang dihitung oleh BPS untuk memantau perubahan tingkat harga komoditas yang diekspor dan diimpor dari waktu ke waktu. Nilai unit didapatkan dari pembagian nilai transaksi komoditas terhadap volume fisiknya ($P = V / Q$).",
+    "distractors": {
+      "A": "Neraca perdagangan mengukur selisih nilai nominal ekspor dan impor, bukan fluktuasi harga komoditas.",
+      "B": "Persentase share mengukur komposisi/pangsa barang terhadap total nilai ekspor/impor.",
+      "C": "RCA mengukur keunggulan komparatif daya saing ekspor relatif terhadap dunia."
+    }
+  },
+  {
+    "id": 23,
+    "stem": "Menurut pemahaman anda, ketika Indonesia melakukan impor energi, maka yang terjadi pada neraca energi adalah",
+    "options": {
+      "A": "Negatif karena melihat dari sisi supply",
+      "B": "Negatif karena meningkatkan konsumsi energi",
+      "C": "Positif karena meningkatkan stok energi",
+      "D": "Positif karena melihat dari sisi demand"
+    },
+    "correct": "C",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 40]",
+    "explanation": "Slide 40 Pertemuan 11 menyatakan secara eksplisit: 'Impor bernilai positif karena menambah stok energi, sedangkan Ekspor bertanda negatif karena mengurangi Stok Energi'. Dalam struktur Top Block Neraca Energi (Penyediaan Energi Primer), Pasokan Energi = Produksi Primer + Impor - Ekspor - International Bunkers $\\pm$ Perubahan Stok. Impor masuk dengan tanda positif karena menambah persediaan fisik energi domestik.",
+    "distractors": {
+      "A": "Pada sisi supply (penyediaan), impor justru bertanda positif (+), bukan negatif.",
+      "B": "Impor dicatat pada blok penyediaan (supply), bukan langsung dikurangkan di konsumsi.",
+      "D": "Impor dicatat pada blok penyediaan primer (supply side), bukan pada demand."
+    }
+  },
+  {
+    "id": 24,
+    "stem": "Bagaimana konsekuensinya jika suatu negara terus menerus mengalami defisit energi, tanpa peningkatan kapasitas produksi?",
+    "options": {
+      "A": "Harga ekspor energi akan meningkat",
+      "B": "Negara akan menjadi lebih mandiri dalam energi",
+      "C": "Ketergantungan terhadap energi impor meningkat",
+      "D": "Ekspor energi akan naik untuk menyeimbangkan neraca perdagangan"
+    },
+    "correct": "C",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 39-44]",
+    "explanation": "Defisit energi terjadi ketika laju konsumsi domestik melampaui produksi energi primer dalam negeri. Jika kondisi ini berlangsung terus-menerus tanpa penambahan eksplorasi atau kapasitas produksi, negara terpaksa meningkatkan pasokan impor untuk menutupi kesenjangan tersebut, sehingga tingkat ketergantungan impor energi melonjak dan memperbesar kerentanan energi nasional terhadap gejolak harga minyak/gas global.",
+    "distractors": {
+      "A": "Kondisi defisit domestik tidak otomatis menaikkan harga ekspor energi di pasar internasional.",
+      "B": "Negara justru kehilangan kemandirian energi (energy independence).",
+      "D": "Negara yang mengalami defisit tidak dapat menaikkan ekspor energinya karena pasokan domestik saja kurang."
+    }
+  },
+  {
+    "id": 25,
+    "stem": "Menurut pemahaman anda, Indeks yang diterima petani dirinci menurut:",
+    "options": {
+      "A": "Konsumsi yang dilakukan petani",
+      "B": "Subsektor pertanian",
+      "C": "Pengeluaran yang dilakukan petani",
+      "D": "Jenis input yang digunakan dalam produksi"
+    },
+    "correct": "B",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 9]",
+    "explanation": "Indeks Harga yang Diterima Petani ($I_t$) dirinci menurut 5 subsektor pertanian BPS: (1) Tanaman Pangan, (2) Hortikultura, (3) Tanaman Perkebunan Rakyat, (4) Peternakan, dan (5) Perikanan (Nelayan Tangkap dan Pembudidaya Ikan). Sebaliknya, rincian konsumsi dan jenis input merupakan klasifikasi pada Indeks yang Dibayar Petani ($I_b$).",
+    "distractors": {
+      "A": "Konsumsi yang dilakukan petani dirinci dalam Indeks Konsumsi Rumah Tangga (IKRT) pada $I_b$.",
+      "C": "Pengeluaran petani dicakup dalam $I_b$ (IKRT + BPPBM).",
+      "D": "Jenis input produksi dirinci dalam indeks BPPBM pada $I_b$."
+    }
+  },
+  {
+    "id": 26,
+    "stem": "Standar minimum yang digunakan untuk mengukur luas rumah layak huni per kapita adalah:",
+    "options": {
+      "A": "7 m²",
+      "B": "7,1 m²",
+      "C": "7,2 m²",
+      "D": "10 m²"
+    },
+    "correct": "C",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 31]",
+    "explanation": "Berdasarkan standar BPS dan Kementerian PUPR/SDGs untuk kriteria ketahanan bangunan dan kecukupan ruang (Slide 31), standar minimum luas lantai per kapita untuk kategori Rumah Layak Huni (RLH) adalah minimal $7{,}2\\text{ m}^2$ per anggota keluarga.",
+    "distractors": {
+      "A": "Angka 7 m² di bawah standar kecukupan per kapita resmi.",
+      "B": "Angka 7,1 m² adalah angka pengecoh.",
+      "D": "10 m² adalah patokan luas di beberapa negara maju, bukan patokan minimum resmi BPS."
+    }
+  },
+  {
+    "id": 27,
+    "stem": "Menurut pemahaman anda, bila digambarkan dengan grafik, pola kematian di Indonesia menurut umur akan menyerupai:",
+    "options": {
+      "A": "Huruf O",
+      "B": "Huruf U",
+      "C": "Huruf V",
+      "D": "Huruf W"
+    },
+    "correct": "B",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 15]",
+    "explanation": "Kurva angka kematian menurut kelompok umur (Age-Specific Death Rate / ASDR) di Indonesia dan sebagian besar negara berkembang menyerupai 'Huruf U' (U-shaped). Risiko kematian relatif tinggi pada masa bayi dan anak-anak usia dini (kiri atas huruf U), kemudian turun ke titik terendah pada usia remaja dan dewasa muda (dasar huruf U), lalu meningkat tajam kembali seiring penuaan populasi lansia (kanan atas huruf U).",
+    "distractors": {
+      "A": "Bentuk O bukanlah bentuk kurva fungsi distribusi mortalitas.",
+      "C": "Bentuk V tidak memiliki dasar landai pada rentang usia produktif.",
+      "D": "Bentuk W biasanya hanya muncul pada masa pandemi ekstrem (seperti Flu Spanyol 1918)."
+    }
+  },
+  {
+    "id": 28,
+    "stem": "Berikut ini merupakan penjelasan mengenai jenis-jenis inflasi yang umum dihitung dan dipublikasikan secara berkala oleh instansi statistik resmi negara, kecuali...",
+    "options": {
+      "A": "Inflasi bulanan (month to month), yaitu berdasarkan perubahan IHK bulan ini terhadap bulan sebelumnya",
+      "B": "Inflasi musiman (seasonal inflation), yaitu berdasarkan perubahan harga karena faktor liburan, cuaca, dan musim panen secara berkala",
+      "C": "Inflasi tahunan (year on year), yaitu berdasarkan perubahan IHK bulan ini terhadap bulan yang sama tahun lalu",
+      "D": "Inflasi tahun kalender (year to date), yaitu berdasarkan perubahan IHK bulan ini terhadap IHK bulan Desember tahun sebelumnya"
+    },
+    "correct": "B",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 35]",
+    "explanation": "BPS secara rutin merilis 3 jenis angka laju inflasi IHK resmi: (1) Inflasi bulanan (m-o-m), (2) Inflasi tahunan (y-o-y), dan (3) Inflasi tahun kalender (y-t-d). 'Inflasi musiman' bukan merupakan kategori angka indikator resmi yang dirilis tersendiri oleh BPS; fluktuasi panen dan hari raya dianalisis melalui disagregasi komponen harga bergejolak (volatile food).",
+    "distractors": {
+      "A": "Definisi m-o-m benar dan merupakan rilis bulanan resmi BPS.",
+      "C": "Definisi y-o-y benar dan merupakan tolok ukur inflasi tahunan resmi BPS.",
+      "D": "Definisi y-t-d benar dan merupakan rilis laju inflasi kumulatif tahun berjalan resmi BPS."
+    }
+  },
+  {
+    "id": 29,
+    "stem": "Menurut pemahaman anda, komponen sumber data yang digunakan untuk menyusun Indeks Pembangunan Teknologi Informasi dan Komunikasi (IP-TIK) adalah ...",
+    "options": {
+      "A": "Efisiensi, intensitas dan efektivitas",
+      "B": "Akses infrastruktur, penggunaan dan keahlian",
+      "C": "Informasi, kesiapan dan dampak",
+      "D": "Kesiapan, efisiensi dan keahlian"
+    },
+    "correct": "B",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 31-33]",
+    "explanation": "Sesuai standar International Telecommunication Union (ITU) yang diadopsi BPS, pembentukan IP-TIK (ICT Development Index / IDI) terdiri dari 3 subindeks: (1) Subindeks Akses dan Infrastruktur (ICT Access, bobot 40%), (2) Subindeks Penggunaan (ICT Use, bobot 40%), dan (3) Subindeks Keahlian (ICT Skills, bobot 20%).",
+    "distractors": {
+      "A": "Efisiensi dan efektivitas bukan subindeks standar penyusun IP-TIK.",
+      "C": "Kesiapan dan dampak bukan nama resmi tiga pilar penyusun IP-TIK ITU/BPS.",
+      "D": "Efisiensi bukan komponen IP-TIK."
+    }
+  },
+  {
+    "id": 30,
+    "stem": "Angka produksi padi suatu wilayah dihitung berdasarkan data luas panen dan produktivitas. Pernyataan yang kurang tepat mengenai hal tersebut dibawah ini adalah",
+    "options": {
+      "A": "Level penyajian angka produksi hingga tingkat kabupaten/kota",
+      "B": "Metode baru perhitungan luas panen menggunakan KSA",
+      "C": "Pengukuran lahan siap panen menggunakan alat ubinan berukuran 2,5m x 2,5m",
+      "D": "Angka produktivitas provinsi dan nasional merupakan hasil kali produksi terhadap luas panen"
+    },
+    "correct": "D",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 6-12]",
+    "explanation": "Formula dasar produksi adalah: $\\text{Produksi} = \\text{Luas Panen} \\times \\text{Produktivitas}$. Dengan demikian, angka produktivitas dihitung dari pembagian total produksi terhadap luas panen ($\\text{Produktivitas} = \\text{Produksi} / \\text{Luas Panen}$), BUKAN hasil perkalian. Oleh karena itu, pernyataan D adalah pernyataan yang tidak tepat (salah).",
+    "distractors": {
+      "A": "Benar: BPS menyajikan estimasi angka produksi tanaman pangan hingga level kabupaten/kota.",
+      "B": "Benar: Sejak 2018 perhitungan luas panen menggunakan metode objektif Kerangka Sampel Area (KSA).",
+      "C": "Benar: Survei Ubinan memakai petak plot berukuran standar 2,5 m x 2,5 m."
+    }
+  },
+  {
+    "id": 31,
+    "stem": "Menurut pemahaman anda, Tingkat Partisipasi Angkatan Kerja (TPAK) dapat dihitung dari:",
+    "options": {
+      "A": "Angkatan kerja / jumlah penduduk 15 tahun ke atas",
+      "B": "Penduduk bekerja / jumlah penduduk",
+      "C": "Penganggur / penduduk usia kerja",
+      "D": "Pekerja tetap / pekerja informal"
+    },
+    "correct": "A",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 14]",
+    "explanation": "Tingkat Partisipasi Angkatan Kerja (TPAK) mengukur persentase penduduk usia kerja (15 tahun ke atas) yang aktif secara ekonomi (bekerja atau mencari kerja): $$\\text{TPAK} = \\frac{\\text{Jumlah Angkatan Kerja}}{\\text{Jumlah Penduduk Usia Kerja (15+)}} \\times 100\\%$$",
+    "distractors": {
+      "B": "Penduduk bekerja dibagi jumlah penduduk total adalah rasio ketenagakerjaan kasar (Employment to Population Ratio jika dibagi PUK).",
+      "C": "Penganggur dibagi penduduk usia kerja bukan TPAK (Tingkat Pengangguran Terbuka adalah Penganggur dibagi Angkatan Kerja).",
+      "D": "Pekerja tetap terhadap pekerja informal adalah rasio struktur ketenagakerjaan formal-informal."
+    }
+  },
+  {
+    "id": 32,
+    "stem": "Tingkat Penghunian Kamar (TPK) Hotel merupakan salah satu ukuran penting pada sektor pariwisata. Dari pengukuran ini, dapat diperoleh",
+    "options": {
+      "A": "Perbandingan antara banyaknya malam tamu dan tempat tidur yang tersedia (%)",
+      "B": "Perbandingan antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia (%)",
+      "C": "Persentase antara banyaknya malam kamar terpakai dengan banyaknya malam kamar yang terjual",
+      "D": "Persentase antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia + kamar yang tidak tersedia"
+    },
+    "correct": "B",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 37]",
+    "explanation": "Tingkat Penghunian Kamar (TPK) Hotel (Room Occupancy Rate) mengukur persentase kapasitas kamar yang terpakai: $$\\text{TPK} = \\frac{\\text{Banyaknya Malam Kamar yang Terpakai}}{\\text{Banyaknya Malam Kamar yang Tersedia}} \\times 100\\%$$ Jika yang dibandingkan adalah malam tamu dengan tempat tidur yang tersedia, indikator tersebut dinamakan Tingkat Pemakaian Tempat Tidur (TPTT / Bed Occupancy Rate).",
+    "distractors": {
+      "A": "Ini adalah definisi dari Tingkat Pemakaian Tempat Tidur (TPTT / Bed Occupancy Rate).",
+      "C": "Malam kamar terpakai dan terjual memiliki pengertian yang hampir identik dalam okupansi hotel.",
+      "D": "Kamar yang rusak/tidak tersedia (out of order) dikeluarkan dari penyebut malam kamar yang tersedia."
+    }
+  },
+  {
+    "id": 33,
+    "stem": "Berikan penjelasan anda yang benar mengenai APM (Angka Partisipasi Murni) sesuai dengan pilihan jawaban dibawah ini:",
+    "options": {
+      "A": "Proporsi anak bersekolah di kelompok usia tertentu",
+      "B": "Semua murid di suatu jenjang / jumlah penduduk usia standar jenjang",
+      "C": "Murid sesuai usia dan jenjang pendidikan",
+      "D": "Semua jawaban benar"
+    },
+    "correct": "C",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 35]",
+    "explanation": "Angka Partisipasi Murni (APM) mengukur ketepatan usia sekolah pada jenjang pendidikan yang sesuai. APM adalah persentase siswa kelompok usia sekolah resmi pada jenjang tertentu (misal usia 7-12 tahun di jenjang SD) terhadap total penduduk kelompok usia tersebut: $$\\text{APM} = \\frac{\\text{Jumlah Siswa Usia Tepat di Jenjang Tertentu}}{\\text{Jumlah Penduduk Usia Jenjang Tersebut}} \\times 100\\%$$",
+    "distractors": {
+      "A": "Ini adalah konsep Angka Partisipasi Sekolah (APS), yang tidak membatasi pada jenjang pendidikan tertentu.",
+      "B": "Ini adalah definisi Angka Partisipasi Kasar (APK), yang mencakup seluruh siswa di jenjang tersebut termasuk yang over-age atau under-age.",
+      "D": "Pilihan A dan B merujuk pada indikator pendidikan yang berbeda (APS dan APK)."
+    }
+  },
+  {
+    "id": 34,
+    "stem": "Menurut pemahaman anda, penjelasan yang bukan merujuk pada definisi tentang pengangguran adalah . . .",
+    "options": {
+      "A": "Penduduk yang tidak bekerja dan sedang mencari pekerjaan",
+      "B": "Penduduk yang tidak bekerja dan sedang mempersiapkan usaha",
+      "C": "Penduduk yang sudah diterima bekerja namun merasa putus asa",
+      "D": "Penduduk yang sudah diterima bekerja namun belum mulai bekerja"
+    },
+    "correct": "C",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 16]",
+    "explanation": "Definisi resmi Pengangguran Terbuka BPS mencakup 4 kategori yang saling lepas: (1) Mereka yang tidak bekerja dan sedang mencari pekerjaan, (2) Mereka yang tidak bekerja dan sedang mempersiapkan usaha, (3) Mereka yang tidak bekerja dan merasa tidak mungkin mendapat pekerjaan (putus asa / discouraged workers), dan (4) Mereka yang sudah diterima bekerja tetapi belum mulai bekerja (future starts). Kalimat 'sudah diterima bekerja namun merasa putus asa' merupakan kontradiksi dan tidak ada dalam konsep statistik ketenagakerjaan.",
+    "distractors": {
+      "A": "Kategori 1 Pengangguran Terbuka BPS.",
+      "B": "Kategori 2 Pengangguran Terbuka BPS.",
+      "D": "Kategori 4 Pengangguran Terbuka BPS."
+    }
+  },
+  {
+    "id": 35,
+    "stem": "Suatu negara tetap melakukan perdagangan internasional meskipun memiliki sumber daya alam melimpah. Jelaskan apa alasan utamanya?",
+    "options": {
+      "A": "Ketergantungan terhadap pasar luar negeri akan menurunkan biaya produksi dalam negeri",
+      "B": "Negara tetap membutuhkan akses terhadap barang dan jasa yang tidak bisa dihasilkan sendiri",
+      "C": "Perdagangan internasional dibutuhkan agar neraca pembayaran tetap surplus",
+      "D": "Produk dalam negeri harus diuji di pasar global untuk menghindari persaingan lokal"
+    },
+    "correct": "B",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 4-6]",
+    "explanation": "Berdasarkan teori perdagangan internasional (teori keunggulan komparatif David Ricardo & Heckscher-Ohlin) dan Slide 4-6, tidak ada satu negara pun yang memiliki autarki mandiri sempurna. Meskipun kaya SDA, suatu negara tetap membutuhkan pasokan teknologi tinggi, barang modal mesin, dan jasa spesialis tertentu yang tidak efisien atau tidak dapat dihasilkan di dalam negeri.",
+    "distractors": {
+      "A": "Ketergantungan terhadap pasar luar negeri tidak otomatis menurunkan biaya produksi domestik.",
+      "C": "Surplus neraca pembayaran adalah target makro ekonomi, bukan alasan mendasar spesialisasi perdagangan riil.",
+      "D": "Tujuan perdagangan internasional adalah efisiensi komparatif, bukan menghindari persaingan lokal."
+    }
+  },
+  {
+    "id": 36,
+    "stem": "Penjelasan yang benar terkait dengan Indeks Produksi Industri Manufaktur pada pilihan jawaban dibawah ini yaitu . . .",
+    "options": {
+      "A": "Indeks menunjukkan perkembangan produksi industri manufaktur terhadap tahun dasar",
+      "B": "Indeks menunjukkan perkembangan produksi industri manufaktur terhadap tahun sebelumnya",
+      "C": "Indeks menunjukkan perkembangan harga industri manufaktur terhadap tahun dasar",
+      "D": "Indeks menunjukkan perkembangan harga industri manufaktur terhadap tahun sebelumnya"
+    },
+    "correct": "A",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 16-18]",
+    "explanation": "Indeks Produksi Industri Manufaktur (IPI) adalah indeks kuantum/volume fisik yang menggambarkan perkembangan keluaran (output fisik) industri manufaktur dari waktu ke waktu relatif terhadap tahun dasar yang telah ditetapkan (base year = 100).",
+    "distractors": {
+      "B": "Perkembangan terhadap tahun sebelumnya merupakan laju pertumbuhan produksi tahunan (growth rate), bukan nilai indeks itu sendiri.",
+      "C": "Perkembangan harga pada level produsen manufaktur diukur oleh Indeks Harga Produsen (IHP), bukan Indeks Produksi.",
+      "D": "Perkembangan harga terhadap tahun sebelumnya adalah laju inflasi produsen."
+    }
+  },
+  {
+    "id": 37,
+    "stem": "Berikut ini adalah berbagai penyebab masih tingginya Angka Kematian Ibu (AKI) di Indonesia, kecuali:",
+    "options": {
+      "A": "Severe bleeding",
+      "B": "Partus",
+      "C": "Preeklampsia dan Eklamsia",
+      "D": "Infeksi"
+    },
+    "correct": "B",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 13]",
+    "explanation": "Penyebab medis langsung kematian ibu di Indonesia adalah: (1) Pendarahan hebat / severe bleeding pasca persalinan (~30%), (2) Preeklampsia dan Eklamsia (hipertensi kehamilan ~25%), dan (3) Infeksi / sepsis. Kata 'Partus' hanyalah istilah medis untuk proses persalinan atau melahirkan itu sendiri (peristiwa biologis fisiologis normal), bukan penyakit fatal atau komplikasi kematian.",
+    "distractors": {
+      "A": "Severe bleeding (pendarahan hebat) adalah penyebab nomor satu kematian maternal di Indonesia.",
+      "C": "Preeklampsia dan eklamsia merupakan komplikasi hipertensi fatal penyebab kedua terbesar.",
+      "D": "Infeksi pasca persalinan adalah salah satu dari trias penyebab kematian ibu."
+    }
+  },
+  {
+    "id": 38,
+    "stem": "Menurut pemahaman anda, berikut ini adalah kategori status pekerjaan menurut BPS, kecuali:",
+    "options": {
+      "A": "Buruh/karyawan/pegawai",
+      "B": "Pekerja kontrak",
+      "C": "Pekerja keluarga",
+      "D": "Berusaha sendiri"
+    },
+    "correct": "B",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 20]",
+    "explanation": "BPS (Sakernas) mengklasifikasikan status pekerjaan utama menjadi 6 kategori baku: (1) Berusaha sendiri, (2) Berusaha dibantu buruh tidak tetap/pekerja keluarga, (3) Berusaha dibantu buruh tetap/dibayar, (4) Buruh/karyawan/pegawai, (5) Pekerja bebas (di pertanian dan non-pertanian), dan (6) Pekerja keluarga/tak dibayar. 'Pekerja kontrak' adalah sistem perjanjian kerja (PKWT), bukan status kedudukan kerja baku menurut BPS.",
+    "distractors": {
+      "A": "Buruh/karyawan/pegawai adalah status pekerjaan nomor 4 resmi BPS.",
+      "C": "Pekerja keluarga/tidak dibayar adalah status pekerjaan nomor 6 resmi BPS.",
+      "D": "Berusaha sendiri adalah status pekerjaan nomor 1 resmi BPS."
+    }
+  },
+  {
+    "id": 39,
+    "stem": "Berikut ini merupakan informasi mengenai faktor-faktor yang memengaruhi pola kematian di Indonesia, kecuali:",
+    "options": {
+      "A": "Kualitas layanan kesehatan",
+      "B": "Akses terhadap layanan kesehatan",
+      "C": "Kondisi sosial ekonomi tenaga kesehatan",
+      "D": "Gaya hidup"
+    },
+    "correct": "C",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 14-16]",
+    "explanation": "Tingkat dan pola kematian (mortalitas) penduduk ditentukan oleh determinan kesehatan masyarakat: kualitas faskes, akses geografis dan finansial menuju fasilitas medis, gaya hidup penduduk (merokok, pola makan, olahraga), dan status sosial ekonomi pasien/populasi. Status sosial ekonomi dari 'tenaga kesehatan' sendiri tidak berpengaruh langsung dalam membentuk tren kurva mortalitas penduduk.",
+    "distractors": {
+      "A": "Kualitas layanan medis (kelengkapan alat, obat, kompetensi) mempengaruhi tingkat kesembuhan pasien.",
+      "B": "Keterjangkauan akses fisik dan geografis berpengaruh pada kecepatan penanganan gawat darurat.",
+      "D": "Gaya hidup (lifestyle) sangat berpengaruh terhadap prevalensi penyakit tidak menular (jantung, stroke, diabetes)."
+    }
+  },
+  {
+    "id": 40,
+    "stem": "Menurut pemahaman anda, jenis vaksin dibawah ini dimanfaatkan untuk perlindungan dari berbagai penyakit infeksi bagi anak, kecuali:",
+    "options": {
+      "A": "HPV",
+      "B": "DPT",
+      "C": "DT",
+      "D": "BCG"
+    },
+    "correct": "A",
+    "category": "Kesehatan, Sanitasi & Perumahan",
+    "meeting": "Pertemuan 10",
+    "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 23-25]",
+    "explanation": "Vaksin BCG (mencegah Tuberkulosis), DPT (mencegah Difteri, Pertusis, Tetanus), dan DT (vaksin lanjutan difteri-tetanus) adalah vaksinasi dasar dan lanjutan wajib bagi bayi dan anak usia sekolah. Sebaliknya, vaksin HPV (Human Papillomavirus) ditujukan khusus untuk pencegahan kanker leher rahim (serviks) pada remaja putri dan wanita dewasa.",
+    "distractors": {
+      "B": "DPT adalah vaksin dasar wajib anak untuk mencegah 3 penyakit infeksi bakteri mematikan.",
+      "C": "DT adalah vaksin booster anak usia sekolah dasar dalam Bulan Imunisasi Anak Sekolah (BIAS).",
+      "D": "BCG adalah vaksin wajib bayi baru lahir untuk mencegah TBC berat (meningitis TB)."
+    }
+  },
+  {
+    "id": 41,
+    "stem": "Indikator yang digunakan untuk mengukur tingkat kemiskinan salah satunya adalah P1 (Poverty Gap Index). Penjelasan dibawah ini digunakan untuk menggambarkan P1 adalah",
+    "options": {
+      "A": "Penyebab utama kemiskinan",
+      "B": "Selisih rata-rata pengeluaran miskin dari GK",
+      "C": "Keparahan ketimpangan",
+      "D": "Jumlah rumah tangga miskin"
+    },
+    "correct": "B",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 28]",
+    "explanation": "Indeks Kedalaman Kemiskinan ($P_1$ / Poverty Gap Index) mengukur jarak rata-rata pengeluaran seluruh penduduk miskin terhadap Garis Kemiskinan (poverty deficit): $$P_1 = \\frac{1}{n} \\sum_{i=1}^q \\left( \\frac{z - y_i}{z} \\right)$$ Semakin tinggi nilai $P_1$, semakin jauh rata-rata pengeluaran penduduk miskin dari garis kemiskinan (semakin berat dana yang dibutuhkan untuk mengentaskan mereka).",
+    "distractors": {
+      "A": "$P_1$ tidak mengukur determinan/faktor penyebab kemiskinan.",
+      "C": "Keparahan ketimpangan di antara penduduk miskin diukur oleh Indeks Keparahan Kemiskinan ($P_2$ / Poverty Severity Index).",
+      "D": "Jumlah penduduk miskin diukur oleh Head Count Index ($q$ atau $P_0$)."
+    }
+  },
+  {
+    "id": 42,
+    "stem": "Menurut pemahaman anda, berikut ini yang tidak termasuk sebagai hasil dari Survei Pola Distribusi Perdagangan adalah",
+    "options": {
+      "A": "Rantai distribusi suatu barang",
+      "B": "Margin perdagangan dan pengangkutan",
+      "C": "Output sektor perdagangan",
+      "D": "Konsumsi antara sektor perdagangan"
+    },
+    "correct": "C",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 6-8]",
+    "explanation": "Survei Pola Distribusi Perdagangan (Poldis) secara spesifik dirancang untuk menghasilkan dua keluaran pokok: (1) Rantai distribusi utama barang komoditas strategis dari produsen ke konsumen akhir, serta (2) Margin Perdagangan dan Pengangkutan (MPP/MPPA). Nilai Output dan Konsumsi Antara sektor perdagangan dihitung melalui Sensus Ekonomi dan Survei Industri/Tahunan untuk penyusunan Tabel Penyediaan dan Penggunaan (SUT) / Input-Output.",
+    "distractors": {
+      "A": "Rantai distribusi adalah hasil pokok dari Survei Poldis.",
+      "B": "Margin perdagangan dan pengangkutan (MPP) adalah hasil utama kuantitatif dari Survei Poldis.",
+      "D": "Konsumsi antara juga merupakan variabel neraca I-O, namun opsi C (Output) mewakili agregat nilai produksi usaha dagang yang dicakup survei ekonomi terpisah."
+    }
+  },
+  {
+    "id": 43,
+    "stem": "Data utama yang digunakan dalam menghitung Indeks Harga Konsumen adalah:",
+    "options": {
+      "A": "Data harga-harga semua komoditas pada periode t dan t-1",
+      "B": "Relatif harga dan nilai konsumsi pada tahun dasar",
+      "C": "Nilai konsumsi pada tahun dasar dan tahun berjalan",
+      "D": "Relatif harga dan nilai konsumsi pada periode berjalan"
+    },
+    "correct": "B",
+    "category": "Perdagangan Domestik & Harga",
+    "meeting": "Pertemuan 12",
+    "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36]",
+    "explanation": "Dalam metodologi BPS, penghitungan IHK menggunakan rumus Modified Laspeyres: $$I_t = \\frac{\\sum \\left( \\frac{P_{ti}}{P_{(t-1)i}} \\cdot W_{(t-1)i} \\right)}{\\sum W_{0i}} \\times 100$$ Dua data pilar utamanya adalah: (1) Relatif harga (rasio harga periode sekarang dibanding periode dasar/sebelumnya), dan (2) Nilai konsumsi tahun dasar (diagram timbang $P_0 Q_0$) yang diperoleh dari Survei Biaya Hidup (SBH).",
+    "distractors": {
+      "A": "IHK hanya mencakup komoditas terpilih dalam paket komoditas SBH, bukan semua komoditas dalam perekonomian.",
+      "C": "Nilai konsumsi periode berjalan tidak dikumpulkan setiap bulan (hanya dikumpulkan saat SBH 5 tahunan).",
+      "D": "Formula Laspeyres mensyaratkan penimbang nilai konsumsi tahun dasar, bukan periode berjalan (jika periode berjalan dinamakan Paasche)."
+    }
+  },
+  {
+    "id": 44,
+    "stem": "Hasil produksi padi berdasarkan plot ubinan suatu daerah adalah 4 kg. Berdasarkan informasi tersebut, hitung produktivitas padinya. Manakah pilihan dibawah ini yang benar?",
+    "options": {
+      "A": "16 ku/ha",
+      "B": "25 ku/ha",
+      "C": "50 ku/ha",
+      "D": "64 ku/ha"
+    },
+    "correct": "D",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 10]",
+    "explanation": "Perhitungan produktivitas ubinan BPS: \\n1. Luas plot ubinan standar $= 2{,}5\\text{ m} \\times 2{,}5\\text{ m} = 6{,}25\\text{ m}^2$.\\n2. Luas 1 hektar $= 10.000\\text{ m}^2$.\\n3. Faktor konversi ke hektar $= \\frac{10.000}{6{,}25} = 1.600$.\\n4. Hasil ubinan per hektar $= 4\\text{ kg} \\times 1.600 = 6.400\\text{ kg/ha}$.\\n5. Konversi ke satuan kuintal ($1\\text{ kuintal} = 100\\text{ kg}$): $$\\text{Produktivitas} = \\frac{6.400\\text{ kg/ha}}{100} = 64\\text{ ku/ha}$$",
+    "distractors": {
+      "A": "Hasil jika faktor pengali salah dihitung menjadi 400.",
+      "B": "Hasil dari perkalian $2,5 \\times 2,5 \\times 4$.",
+      "C": "Angka pembulatan acak."
+    }
+  },
+  {
+    "id": 45,
+    "stem": "Menurut pemahaman anda, Revealed Comparative Advantage (RCA) menunjukkan:",
+    "options": {
+      "A": "Perbandingan kontribusi ekspor komoditas suatu negara terhadap kontribusi ekspor barang tersebut di dunia",
+      "B": "Perbandingan kontribusi impor komoditas suatu negara terhadap kontribusi impor barang tersebut di dunia",
+      "C": "Perbandingan kontribusi ekspor komoditas dunia terhadap kontribusi ekspor barang tersebut di suatu negara",
+      "D": "Perbandingan kontribusi impor komoditas dunia terhadap kontribusi impor barang tersebut di suatu negara"
+    },
+    "correct": "A",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 16]",
+    "explanation": "Rumus Balassa Revealed Comparative Advantage (RCA): $$\\text{RCA} = \\frac{X_{ij} / X_j}{X_{iw} / X_w}$$ Di mana $X_{ij}/X_j$ adalah pangsa/kontribusi ekspor komoditas $i$ negara $j$ dalam total ekspornya, dan $X_{iw}/X_w$ adalah pangsa ekspor komoditas $i$ dunia dalam total ekspor dunia. Jika RCA > 1, komoditas negara tersebut memiliki daya saing komparatif yang kuat di pasar global.",
+    "distractors": {
+      "B": "RCA dihitung berbasis ekspor, bukan impor.",
+      "C": "Rasio pembagian terbalik (dunia terhadap negara).",
+      "D": "Bukan berbasis data impor komoditas."
+    }
+  },
+  {
+    "id": 46,
+    "stem": "Indikator efisiensi industri manufaktur dapat dijelaskan melalui penghitungan sebagai:",
+    "options": {
+      "A": "Perbandingan output terhadap input",
+      "B": "Perbandingan input terhadap output",
+      "C": "Perbandingan output terhadap tenaga kerja",
+      "D": "Perbandingan pertumbuhan dari nilai tambah"
+    },
+    "correct": "B",
+    "category": "Produksi, Pertanian, Industri & Energi",
+    "meeting": "Pertemuan 11",
+    "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 26]",
+    "explanation": "Slide 26 Pertemuan 11 mendefinisikan secara spesifik: 'Efisiensi Industri Besar dan Sedang adalah suatu nilai yang menunjukkan perbandingan masukan dan keluaran yang diterima pada industri besar dan sedang... Nilai ini diperoleh dari rasio input terhadap output.' Slide 27 menjelaskan interpretasinya: jika efisiensi = 0,6, artinya dibutuhkan biaya input sebesar 0,6 rupiah untuk menghasilkan setiap 1 rupiah output.",
+    "distractors": {
+      "A": "Dalam teori umum sering disebut output/input, namun metodologi resmi Statistik Industri BPS menetapkannya sebagai rasio input terhadap output.",
+      "C": "Perbandingan output terhadap tenaga kerja adalah produktivitas tenaga kerja (labor productivity).",
+      "D": "Pertumbuhan nilai tambah adalah pertumbuhan output bersih industri."
+    }
+  },
+  {
+    "id": 47,
+    "stem": "Menurut pemahaman anda, banyaknya barang impor yang diterima suatu negara untuk sekumpulan barang ekspor tertentu merupakan konsep dari ...",
+    "options": {
+      "A": "Trade Openess",
+      "B": "Term of Trade",
+      "C": "Revealed Comparative Advantage",
+      "D": "Trade Specialisation Ratio"
+    },
+    "correct": "B",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 14]",
+    "explanation": "Term of Trade (ToT) atau Nilai Tukar Perdagangan mengukur daya beli (purchasing power) dari ekspor suatu negara terhadap impornya: $$\\text{ToT} = \\frac{\\text{Indeks Harga Ekspor}}{\\text{Indeks Harga Impor}} \\times 100$$ Angka ini mencerminkan berapa kuantitas barang impor yang bisa diperoleh melalui penyerahan sejumlah tertentu barang ekspor negara tersebut.",
+    "distractors": {
+      "A": "Trade Openness mengukur derajat keterbukaan ekonomi terhadap perdagangan internasional ($(X+M)/\\text{PDB}$).",
+      "C": "RCA mengukur keunggulan komparatif daya saing ekspor komoditas.",
+      "D": "Trade Specialisation Ratio (TSR/ISP) menganalisis tahapan siklus produk ekspor-impor."
+    }
+  },
+  {
+    "id": 48,
+    "stem": "Menurut pemahaman anda, pernyataan yang tidak benar terkait dengan pelancong (excursionist) adalah",
+    "options": {
+      "A": "Termasuk eligible sampel dalam statistik pariwisata",
+      "B": "Hanya transit selama 12 jam untuk penerbangan berikutnya",
+      "C": "Berada di dalam bandara tanpa keluar dari pintu kedatangan",
+      "D": "Tidak bisa menjadi sampel dari VIOT"
+    },
+    "correct": "C",
+    "category": "Ekspor-Impor, Pariwisata & TIK",
+    "meeting": "Pertemuan 13",
+    "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 34-35]",
+    "explanation": "Menurut standar UNWTO dan BPS, pengunjung (visitors) terbagi menjadi Tourist (wisatawan, tinggal $\\ge 24$ jam) dan Excursionist (pelancong, tinggal < 24 jam dan tidak menginap). Namun, penumpang yang hanya melakukan transit di dalam bandara tanpa melewati pos imigrasi/pintu kedatangan (airside transit) TIDAK dikategorikan sebagai pengunjung/pelancong, karena belum secara legal dan fisik memasuki wilayah ekonomi negara tujuan. Maka pernyataan C salah (tidak benar sebagai sifat pelancong).",
+    "distractors": {
+      "A": "Pelancong masuk dalam lingkup pengunjung pariwisata (same-day visitors).",
+      "B": "Transit darat/wisata belanja selama 12 jam di luar bandara adalah bentuk excursionist sah.",
+      "D": "VIOT (Survei Inbound-Outbound Tourist) menyasar wisatawan menginap, bukan pelancong harian non-menginap."
+    }
+  },
+  {
+    "id": 49,
+    "stem": "Sistem pendidikan yang dimandatkan oleh UU No. 20 Tahun 2003, mencakup:",
+    "options": {
+      "A": "Formal, informal dan Vokasi",
+      "B": "Formal, informal, dan nonformal",
+      "C": "Dasar, menengah dan tinggi",
+      "D": "Umum, Vokasi dan Kejuruan"
+    },
+    "correct": "B",
+    "category": "Ketenagakerjaan & Pendidikan",
+    "meeting": "Pertemuan 9",
+    "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 32]",
+    "explanation": "Berdasarkan UU No. 20 Tahun 2003 tentang Sistem Pendidikan Nasional (Sisdiknas) Pasal 13 ayat (1): 'Jalur pendidikan terdiri atas pendidikan formal, nonformal, dan informal yang dapat saling melengkapi dan memperkaya.' Ketiganya merupakan jalur resmi penyelenggaraan pendidikan di Indonesia.",
+    "distractors": {
+      "A": "Vokasi adalah jenis pendidikan tinggi, bukan klasifikasi jalur pendidikan dasar UU Sisdiknas.",
+      "C": "Dasar, menengah, dan tinggi merupakan 'jenjang' pendidikan formal, bukan jalur pendidikan.",
+      "D": "Umum, kejuruan, dan vokasi merupakan 'jenis' pendidikan."
+    }
+  },
+  {
+    "id": 50,
+    "stem": "Menurut pemahaman anda manakah yang tidak termasuk kedalam indikator-indikator dalam pengukuran kemiskinan dengan pendekatan kemiskinan relatif...",
+    "options": {
+      "A": "Koefisien Gini",
+      "B": "Indeks Theil",
+      "C": "Head Count Index",
+      "D": "Kuintil pengeluaran"
+    },
+    "correct": "C",
+    "category": "Kemiskinan & Ketimpangan",
+    "meeting": "Pertemuan 8",
+    "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20-22]",
+    "explanation": "Pengukuran kemiskinan dengan pendekatan kemiskinan relatif didasarkan pada ketimpangan distribusi pendapatan antarkelompok masyarakat dalam suatu populasi (menggunakan Koefisien Gini, Indeks Theil, atau persentase pengeluaran 40% terbawah/Kuintil). Sebaliknya, Head Count Index ($P_0$) adalah indikator pendekatan KEMISKINAN ABSOLUT yang menghitung proporsi orang dengan pengeluaran di bawah batas tetap Garis Kemiskinan (CBN).",
+    "distractors": {
+      "A": "Koefisien Gini adalah indikator utama ketimpangan/kemiskinan relatif.",
+      "B": "Indeks Theil (entropi) adalah ukuran ketimpangan relatif yang dapat didekomposisi.",
+      "D": "Kuintil pengeluaran membagi populasi menjadi lima kelompok untuk mengukur ketimpangan relatif."
+    }
+  }
+]

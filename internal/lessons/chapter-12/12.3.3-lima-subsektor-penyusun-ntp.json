@@ -1,0 +1,84 @@
+{
+  "point_id": "12.3.3",
+  "title": "Lima Subsektor Penyusun NTP",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Disagregasi Subsektor NTP & IKK"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "36-40",
+        "content": "Rincian lima subsektor penyusun NTP BPS: Tanaman Pangan, Hortikultura, Perkebunan Rakyat, Peternakan, dan Perikanan Tangkap/Budidaya, serta kaitan dengan Indeks Kemahalan Konstruksi (IKK) Slide 22-29."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Petani di Indonesia tidak homogen: petani padi di Karawang memiliki siklus panen dan pasar yang sangat berbeda dengan pekebun kelapa sawit di Riau, peternak ayam broiler di Blitar, atau nelayan tangkap cumi di Maluku. Jika BPS hanya merilis satu angka NTP nasional, kesejahteraan nelayan yang anjlok akibat cuaca buruk bisa tertutupi oleh rezeki nomplok pekebun sawit saat harga CPO dunia melonjak. Oleh karena itu, BPS menyusun NTP secara independen untuk 5 subsektor pertanian.",
+    "bps_definition": "Disagregasi Nilai Tukar Petani menurut lima subsektor pertanian resmi BPS: 1) NTP Subsektor Tanaman Pangan (NTPR); 2) NTP Subsektor Hortikultura (NTPH); 3) NTP Subsektor Tanaman Perkebunan Rakyat (NTPR/BUN); 4) NTP Subsektor Peternakan (NTPT); 5) NTP Subsektor Perikanan (NTNP, mencakup Perikanan Tangkap dan Perikanan Budidaya).",
+    "boundary_conditions": "1) Setiap subsektor memiliki paket komoditas, harga produsen (It), dan struktur biaya produksi (BPPBM) yang spesifik hasil SPDT-NTP; 2) NTP gabungan provinsi/nasional merupakan rata-rata tertimbang dari kelima subsektor: NTP_gabungan = sum(w_s * NTP_s) dengan sum(w_s) = 1,0; 3) Ekstensi IKK: mengukur disparitas harga konstruksi spasial antarwilayah untuk Dana Alokasi Umum (DAU).",
+    "formula_latex": "$$NTP_{\\text{gabungan}} = \\sum_{s=1}^5 \\left( w_s \\times NTP_s \\right), \\quad \\text{di mana } \\sum_{s=1}^5 w_s = 1,0$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah provinsi agraris di luar Jawa memiliki struktur ekonomi pertanian yang ditopang oleh 5 subsektor. Berdasarkan hasil SPDT-NTP dan Survei Harga Perdesaan, tercatat bobot diagram timbang serta nilai NTP masing-masing subsektor sebagai berikut:\n- Subsektor Tanaman Pangan (NTPR): bobot w = 0,35, nilai NTP = 102,50\n- Subsektor Hortikultura (NTPH): bobot w = 0,20, nilai NTP = 115,00\n- Subsektor Tanaman Perkebunan Rakyat (TPR): bobot w = 0,25, nilai NTP = 120,00\n- Subsektor Peternakan (NTPT): bobot w = 0,10, nilai NTP = 108,00\n- Subsektor Perikanan (NTNP): bobot w = 0,10, nilai NTP = 104,00\nHitunglah nilai NTP gabungan provinsi tersebut!",
+    "data_table": "| No | Subsektor Pertanian | Bobot Timbang ($w_s$) | Nilai NTP Subsektor ($NTP_s$) | Kontribusi Tertimbang |\n|---|---|---|---|---|\n| 1 | Tanaman Pangan (NTPR) | 0,35 | 102,50 | $0,35 \\times 102,50 = 35,875$ |\n| 2 | Hortikultura (NTPH) | 0,20 | 115,00 | $0,20 \\times 115,00 = 23,000$ |\n| 3 | Perkebunan Rakyat (TPR) | 0,25 | 120,00 | $0,25 \\times 120,00 = 30,000$ |\n| 4 | Peternakan (NTPT) | 0,10 | 108,00 | $0,10 \\times 108,00 = 10,800$ |\n| 5 | Perikanan (NTNP) | 0,10 | 104,00 | $0,10 \\times 104,00 = 10,400$ |",
+    "step_by_step_solution": "1. Menghitung kontribusi tertimbang masing-masing subsektor:\n   - Tanaman Pangan = 0,35 * 102,50 = 35,875\n   - Hortikultura = 0,20 * 115,00 = 23,000\n   - Perkebunan Rakyat = 0,25 * 120,00 = 30,000\n   - Peternakan = 0,10 * 108,00 = 10,800\n   - Perikanan = 0,10 * 104,00 = 10,400\n2. Menjumlahkan seluruh kontribusi tertimbang:\n   NTP_Gabungan = 35,875 + 23,000 + 30,000 + 10,800 + 10,400 = 110,075 -> dibulatkan 110,08.\n3. Interpretasi Hasil:\n   NTP gabungan provinsi sebesar 110,08 (> 100) mengindikasikan sektor pertanian provinsi secara agregat mengalami surplus daya tukar riil, ditopang paling kuat oleh performa subsektor perkebunan rakyat (120,00) dan hortikultura (115,00).",
+    "python_verification_code": "subsektor = [\n    ('Tanaman Pangan', 0.35, 102.50),\n    ('Hortikultura', 0.20, 115.00),\n    ('Perkebunan Rakyat', 0.25, 120.00),\n    ('Peternakan', 0.10, 108.00),\n    ('Perikanan', 0.10, 104.00)\n]\nntp_gabungan = sum(w * ntp for _, w, ntp in subsektor)\nprint(f'NTP_Gabungan={ntp_gabungan:.2f}')",
+    "expected_output": "NTP_Gabungan=110.08"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengelompokkan komoditas sayuran dan cabai ke dalam subsektor tanaman pangan",
+      "common_mistake": "Menganggap cabai merah, bawang merah, dan tomat masuk ke dalam subsektor Tanaman Pangan (NTPR).",
+      "safe_strategy": "Sesuai klasifikasi BPS Slide 36: Tanaman Pangan HANYA mencakup Padi dan Palawija (jagung, kedelai, dsb). Sayur-sayuran, buah-buahan, dan tanaman biofarmaka/obat masuk ke subsektor Hortikultura (NTPH)."
+    },
+    {
+      "trap_description": "Menghitung rata-rata aritmetika sederhana dari kelima subsektor",
+      "common_mistake": "Menjumlahkan NTP kelima subsektor lalu membaginya langsung dengan 5: (102,5 + 115 + 120 + 108 + 104) / 5 = 109,90.",
+      "safe_strategy": "NTP gabungan wajib dihitung menggunakan rata-rata tertimbang (weighted average) berdasarkan bobot diagram timbang SPDT-NTP, bukan rata-rata sederhana."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.3 Nilai Tukar Petani NTP",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.3.3",
+      "name": "Lima Subsektor Penyusun NTP",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36-40]",
+      "exam_focus": "Klasifikasi komoditas 5 subsektor pertanian BPS, formula agregasi rata-rata tertimbang NTP gabungan, serta keterkaitan indeks spasial IKK dalam alokasi fiskal DAU.",
+      "textbook_excerpt": "Indeks Harga Yang Diterima Petani (It) terdiri dari: 1. Subsektor Tanaman Pangan (Padi dan Palawija); 2. Subsektor Tanaman Hortikultura (Sayur-sayuran, Buah-buahan, Obat-obatan); 3. Subsektor Tanaman Perkebunan Rakyat (TPR); 4. Subsektor Peternakan (Ternak Besar, Ternak Kecil, Unggas, Hasil Ternak); 5. Subsektor Perikanan (Penangkapan dan Budidaya) [slide 36].",
+      "intuition": "Dunia pertanian bukan hanya hamparan sawah padi. Petani kakao di Sulawesi menghadapi gejolak bursa komoditas berjangka London dan New York; peternak sapi perah di Boyolali menghadapi harga pakan konsentrat dan persaingan impor susu; sementara nelayan di Bitung menghadapi lonjakan harga solar dan gelombang laut tinggi. Memisahkan pengukuran NTP ke dalam 5 subsektor memastikan setiap kementerian teknis (Kementerian Pertanian, Kementerian Kelautan dan Perikanan) memiliki instrumen evaluasi yang presisi.",
+      "formal": "### 1. Klasifikasi 5 Subsektor Pertanian Resmi BPS\n\nBerdasarkan klasifikasi teknis BPS [slide 36]:\n\n1. **Subsektor Tanaman Pangan (NTPR)**:\n- Kelompok Padi: padi sawah dan padi ladang.\n- Kelompok Palawija: jagung, kedelai, kacang tanah, kacang hijau, ubi kayu (singkong), dan ubi jalar.\n\n2. **Subsektor Hortikultura (NTPH)**:\n- Sayur-sayuran: cabai merah, cabai rawit, bawang merah, tomat, kubis/kol, kentang, wortel, sawi/caisim, terung, buncis.\n- Buah-buahan: pisang, jeruk, mangga, pepaya, durian, nanas, salak.\n- Tanaman Biofarmaka/Obat-obatan: jahe, kunyit, temulawak, kencur, kapulaga.\n\n3. **Subsektor Tanaman Perkebunan Rakyat (NTPR/BUN)**:\n- Khusus perkebunan yang diusahakan oleh rakyat (bukan perkebunan besar swasta/negara PTPN).\n- Komoditas utama: kelapa sawit, karet, kopi, kakao/cokelat, kelapa dalam, cengkih, tembakau, tebu, lada, pala.\n\n4. **Subsektor Peternakan (NTPT)**:\n- Ternak Besar: sapi potong, sapi perah, kerbau, kuda.\n- Ternak Kecil: kambing, domba, babi.\n- Unggas: ayam ras pedaging (broiler), ayam ras petelur (layer), ayam buras/kampung, itik/bebek.\n- Hasil Ternak: telur ayam ras, telur ayam kampung, telur itik, susu sapi murni segar, sarang burung walet.\n\n5. **Subsektor Perikanan (NTNP)**:\n- **Perikanan Tangkap (NTN)**: penangkapan di laut (tuna, cakalang, tongkol, kembung, teri, udang laut) dan perairan umum darat (sungai, danau, rawa, waduk).\n- **Perikanan Budidaya (NTPi)**: budidaya air tawar (ikan mas, nila, lele, gurami), budidaya air payau/tambak (udang vaname, bandeng), dan budidaya laut (kerapu, rumput laut).\n\n### 2. Formulasi Agregasi NTP Gabungan\n\nNTP Gabungan tingkat provinsi atau nasional dihitung menggunakan formula rata-rata tertimbang (*weighted average*):\n$$NTP_{\\text{gabungan}} = \\sum_{s=1}^5 \\left( w_s \\times NTP_s \\right)$$\ndi mana $w_s$ adalah proporsi nilai tukar/produksi subsektor $s$ terhadap total sektor pertanian di wilayah bersangkutan, dengan syarat $\\sum_{s=1}^5 w_s = 1,0$.\n\n### 3. Matriks Karakteristik 5 Subsektor NTP\n\n| Subsektor | Singkatan | Karakteristik Siklus Panen | Sumber Risiko Utama | Sensitivitas Pasar |\n|---|---|---|---|---|\n| **Tanaman Pangan** | NTPR | Musiman (3 - 4 bulan) | Banjir, kekeringan, serangan hama wereng | Intervensi HET dan impor Bulog |\n| **Hortikultura** | NTPH | Cepat rusak (*perishable*) | Curah hujan tinggi, penyakit jamur | Fluktuasi harga harian ekstrem |\n| **Perkebunan Rakyat** | TPR/BUN | Tahunan / tahunan berulang | Fluktuasi harga komoditas global | Sangat sensitif thd kurs valas dan pasar ekspor |\n| **Peternakan** | NTPT | Siklus cepat unggas, panjang ruminansia | Wabah penyakit (PMK, flu burung) | Biaya pakan impor (jagung & bungkil kedelai) |\n| **Perikanan** | NTNP | Harian (tangkap), berkala (budidaya) | Cuaca ekstrem laut, kenaikan harga solar BBM | Biaya armada kapal dan cold chain |\n\n### 4. Ekstensi: Indeks Kemahalan Konstruksi (IKK) dan Alokasi Fiskal DAU [SUPLEMEN]\nSebagai pelengkap indikator harga perdesaan, BPS menyusun **Indeks Kemahalan Konstruksi (IKK)** [slide 22-29]:\n- **Formula DAU APBN**: DAU dialokasikan melalui Alokasi Dasar (gaji PNS daerah) dan Celah Fiskal (Kebutuhan Fiskal minus Kapasitas Fiskal) [slide 24].\n- **IKK sebagai Pengali Kebutuhan Fiskal**: Semakin tinggi indeks IKK di suatu kabupaten/kota (misalnya Kabupaten Puncak di Papua Pegunungan yang mencapai IKK 251,25 [slide 28]), semakin tinggi indeks kesulitan geografis daerah tersebut, sehingga porsi transfer DAU dari pemerintah pusat meningkat secara signifikan.",
+      "pitfalls": "1. **Mengabaikan Bobot Subsektor**: Nilai NTP gabungan bukan rata-rata biasa. Jika subsektor hortikultura NTP-nya 150 tetapi bobotnya hanya 5%, dampaknya terhadap NTP gabungan sangat kecil dibanding perkebunan sawit yang berbobot 50%.\n2. **Kategori Budidaya vs Tangkap**: Dalam rilis BPS, jika terjadi paceklik laut karena badai, nelayan tangkap terpuruk (NTN anjlok), tetapi pembudidaya tambak udang (NTPi) mungkin tetap stabil.",
+      "memory_hook": "5 Subsektor NTP: Pangan, Hortikultura, Kebun Rakyat, Ternak, dan Ikan (Tangkap & Budidaya); Diagregasi Pakai Rata-rata Tertimbang!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36-39]",
+          "problem": "Berdasarkan klasifikasi resmi BPS, kelompok komoditas manakah di bawah ini yang seluruhnya termasuk ke dalam Subsektor Hortikultura (NTPH)?",
+          "options": [
+            "Padi sawah, jagung hibrida, dan ubi jalar",
+            "Cabai rawit, bawang merah, tomat, dan jahe",
+            "Kelapa sawit, karet alam, kopi robusta, dan kakao",
+            "Ayam ras pedaging, sapi potong, dan telur itik"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Pilihan A adalah Subsektor Tanaman Pangan (padi dan palawija).\n- Pilihan B (cabai rawit, bawang merah, tomat, jahe) adalah Subsektor Hortikultura (sayur-sayuran, buah-buahan, dan tanaman biofarmaka/obat).\n- Pilihan C adalah Subsektor Tanaman Perkebunan Rakyat (TPR).\n- Pilihan D adalah Subsektor Peternakan (ternak dan unggas)."
+        }
+      ],
+      "links": [
+        "12.3.1",
+        "12.3.2"
+      ]
+    }
+  ]
+}

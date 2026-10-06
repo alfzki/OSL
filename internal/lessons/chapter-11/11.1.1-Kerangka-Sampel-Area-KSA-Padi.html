@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>11.1 Estimasi Produksi Tanaman Pangan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>11.1 Estimasi Produksi Tanaman Pangan</h2><a href="#p-11.1.1">11.1.1 Kerangka Sampel Area KSA Padi ⭐</a></nav>
+<main>
+<h1>11.1 Estimasi Produksi Tanaman Pangan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 11: Statistik Produksi Pertanian dan Industri ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-11.1.1">
+<h2>11.1.1 Kerangka Sampel Area KSA Padi ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 4-18]</div>
+<div class="box info">📌 <div class="rich"><p>Prinsip dasar Kerangka Sampel Area (KSA), stratifikasi Lahan Baku Sawah (LBS), struktur hierarki segmen (300m x 300m) dan subsegmen (100m x 100m), 9 titik amatan koordinat GPS, klasifikasi fase pertumbuhan padi, serta peramalan luas panen 1-3 bulan ke depan.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Metode Pengumpulan Data 'Eye Estimate' bersifat Subjective Measurement digantikan dengan Pengukuran Objective Measurement yaitu Kerangka Sampel Area (KSA). KSA merupakan kumpulan sampel area (segmen) dengan ukuran tertentu dalam suatu wilayah administrasi yang mewakili suatu populasi (area pertanian/sawah). Merupakan kombinasi sistem informasi geografis, penginderaan jauh, teknologi informasi, dan statistika menjadi satu kolaborasi harmonis [slide 10, 13]. Fase pertumbuhan padi hasil pengamatan KSA untuk kerangka sampel subsegmen mencakup Vegetatif awal (V1), Vegetatif akhir (V2), Generatif awal (G1), Generatif akhir (G2), dan Panen [slide 15].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Sebelum KSA diterapkan pada tahun 2018, BPS mengandalkan laporan eye-estimate (pandangan mata) dari ribuan Mantri Tani di tingkat kecamatan. Metode ini rentan terhadap bias subjektif, kepentingan birokrasi, dan seringkali menghasilkan over-estimate luas panen beras nasional hingga jutaan ton. KSA mengubah pendekatan dari 'menilai menurut perkiraan manusia' menjadi 'pengukuran berbasis bukti spasial objektif'. Setiap hamparan sawah dibagi menjadi petak-petak grid koordinat berukuran 300 m x 300 m (segmen). Pada minggu terakhir setiap bulan (tanggal 21-27), petugas lapangan memotret 9 titik tetap di dalam segmen menggunakan smartphone berbasis GPS. Dari foto-foto ini, fase tumbuh padi (vegetatif, generatif, panen, persiapan lahan, atau puso) dicatat secara presisi dan diaudit secara digital oleh server pusat.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Metodologis dan Arsitektur Sampling KSA</p>
+<p>Kerangka Sampel Area (KSA) dikembangkan melalui kerja sama BPS, BPPT (sekarang BRIN), Kementerian ATR/BPN, Badan Informasi Geospasial (BIG), dan LAPAN (BRIN) untuk memperbaiki estimasi luas panen padi nasional [slide 10, 13].</p>
+<p>#### A. Stratifikasi Populasi Lahan Baku Sawah (LBS)<br>Populasi sampling dibangun menggunakan peta spasial Lahan Baku Sawah (LBS) termutakhir hasil integrasi citra satelit resolusi tinggi. Populasi dikelompokkan ke dalam beberapa stratum berdasarkan intensitas pertanaman dan potensi sawah:<br>- <strong>Stratum Sawah Irigasi</strong>: Intensitas tanam tinggi (IP 200–300).<br>- <strong>Stratum Sawah Non-Irigasi / Tadah Hujan</strong>: Intensitas tanam sedang (IP 100–150).<br>- <strong>Stratum Lahan Bukan Sawah Berpotensi / Lahan Kering</strong>.</p>
+<p>#### B. Hierarki Satuan Sampling<br>1. <strong>Segmen (Sampling Unit)</strong>:<br>   - Berukuran bujur sangkar $300\text{ m} \times 300\text{ m}$ (luas $90.000\text{ m}^2 = 9\text{ hektar}$) [slide 14].<br>   - Dipilih secara acak terstratifikasi (*Stratified Systematic Sampling*) dari grid LBS pada masing-masing kabupaten/kota.<br>2. <strong>Subsegmen (Observation Unit / Grid Amatan)</strong>:<br>   - Setiap segmen dibagi secara teratur menjadi 9 subsegmen berukuran $100\text{ m} \times 100\text{ m}$ ($10.000\text{ m}^2 = 1\text{ hektar}$) [slide 15, 21].<br>   - Diberi kode indeks posisi $A_1, A_2, A_3, B_1, B_2, B_3, C_1, C_2, C_3$.<br>3. <strong>Titik Pengamatan (Sample Point Coordinates)</strong>:<br>   - Di setiap subsegmen terdapat 1 titik koordinat pengamatan tetap (total 9 titik per segmen).<br>   - Petugas mengambil foto lapangan dengan kamera ponsel Android ber-GPS pada sudut pandang tertentu dengan batas toleransi radius maksimum 10–15 meter dari titik koordinat nominal [slide 15].</p>
+<p>### 2. Klasifikasi Fase Pertumbuhan Padi dan Horison Proyeksi Panen</p>
+<p>Setiap titik amatan pada minggu terakhir tiap bulan diklasifikasikan ke dalam salah satu fase biologis [slide 15, 16]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Kode Fase</th><th>Deskripsi Fase Biologis</th><th>Karakteristik Visual Lapangan</th><th>Horison Waktu Menuju Panen</th></tr></thead><tbody><tr><td><strong>V1</strong></td><td>Vegetatif Awal (1–30 HST)</td><td>Semai, pindah tanam, daun muda, rumpun kecil, air sawah terlihat dominan</td><td>Panen 3 bulan berikutnya ($t+3$)</td></tr><tr><td><strong>V2</strong></td><td>Vegetatif Akhir (31–60 HST)</td><td>Anakan maksimal, kanopi daun rimbun hijau pekat menutup permukaan air</td><td>Panen 2 bulan berikutnya ($t+2$)</td></tr><tr><td><strong>G1</strong></td><td>Generatif Awal (61–90 HST)</td><td>Bunting, keluar malai (flowering), tanaman berwarna hijau kekuningan</td><td>Panen 2 bulan berikutnya ($t+2$)</td></tr><tr><td><strong>G2</strong></td><td>Generatif Akhir (91–105 HST)</td><td>Pengisian bulir, malai merunduk, bulir menguning matang fisiologis</td><td>Panen 1 bulan berikutnya ($t+1$)</td></tr><tr><td><strong>P</strong></td><td>Panen (Harvesting)</td><td>Sedang dilakukan pemotongan padi, tumpukan jerami, perontokan</td><td><strong>Panen bulan berjalan ($t$)</strong></td></tr><tr><td><strong>PL</strong></td><td>Persiapan Lahan</td><td>Olah tanah, pembajakan, pelumpuran, sawah tergenang tanpa tanaman</td><td>Panen 4 bulan berikutnya ($t+4$)</td></tr><tr><td><strong>PS</strong></td><td>Puso / Gagal Panen</td><td>Tanaman kering/rusak total akibat banjir, kekeringan, atau hama</td><td>Tidak menghasilkan panen</td></tr><tr><td><strong>BP / BS</strong></td><td>Bukan Padi / Bukan Sawah</td><td>Lahan ditanami palawija/tebu atau beralih fungsi bangunan/kolam</td><td>Dikeluarkan dari estimasi padi</td></tr></tbody></table></div>
+<p>### 3. Formulasi Estimasi Luas Panen BPS</p>
+<p>Misalkan suatu wilayah administratif (kabupaten/provinsi) memiliki $H$ stratum tutupan lahan sawah. Untuk stratum ke-$h$:<br>- $A_h$ : Total luas Lahan Baku Sawah (LBS) pada stratum $h$ (hektar).<br>- $n_h$ : Jumlah segmen sampel terpilih pada stratum $h$.<br>- $M_i = 9$ : Jumlah titik amatan pada segmen ke-$i$.<br>- $y_{hij} \in \{0, 1\}$ : Nilai biner indikator apakah titik amatan ke-$j$ pada segmen ke-$i$ stratum $h$ berada pada fase panen (1 jika panen, 0 jika lainnya).</p>
+<p>Proporsi titik panen pada stratum $h$ dihitung sebagai:<br>$$\hat{p}_{h,\text{panen}} = \frac{\sum_{i=1}^{n_h} \sum_{j=1}^{9} y_{hij}}{9 \cdot n_h}$$</p>
+<p>Total estimasi luas panen pada periode bulan amatan berjalan ($t$) adalah:<br>$$\hat{A}_{\text{panen}} = \sum_{h=1}^H A_h \cdot \hat{p}_{h,\text{panen}}$$</p>
+<p>Untuk peramalan potensi luas panen 1 bulan ke depan ($t+1$), proporsi dihitung dari titik-titik yang berada pada fase Generatif Akhir (G2):<br>$$\hat{A}_{\text{panen}}^{(t+1)} = \sum_{h=1}^H A_h \cdot \hat{p}_{h,G2}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam pelaksanaan Kerangka Sampel Area (KSA) oleh BPS, pengamatan fase pertumbuhan padi dilakukan pada akhir bulan berjalan. Jika pada akhir bulan Maret seorang pencacah KSA mencatat suatu titik amatan berada pada fase Generatif Akhir (G2: pengisian bulir dan malai menguning), pada bulan apakah titik tersebut diproyeksikan akan memasuki fase Panen (P)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 13-16]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Bulan Maret (bulan berjalan)</button>
+<button class="ex-opt" data-i="1">B. Bulan April (1 bulan berikutnya)</button>
+<button class="ex-opt" data-i="2">C. Bulan Mei (2 bulan berikutnya)</button>
+<button class="ex-opt" data-i="3">D. Bulan Juni (3 bulan berikutnya)</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan siklus biologis padi pada KSA BPS [Slide 15, 16], fase Generatif Akhir (G2) terjadi pada umur 91–105 hari setelah tanam, yaitu masa pematangan bulir gabah.<br>2. Titik amatan yang berada pada fase G2 pada akhir bulan Maret diproyeksikan akan dipanen pada 1 bulan berikutnya, yaitu bulan <strong>April</strong>.<br>3. Sebagai perbandingan:<br>   - Fase V1 (Maret) diproyeksikan panen bulan Juni (3 bulan berikutnya).<br>   - Fase V2/G1 (Maret) diproyeksikan panen bulan Mei (2 bulan berikutnya).<br>   - Fase G2 (Maret) diproyeksikan panen bulan April (1 bulan berikutnya).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Mei=6750 ha, Juni=9000 ha, Juli=11250 ha&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Suatu kabupaten memiliki luas Lahan Baku Sawah (LBS) sebesar 45.000 hektar. Terpilih 200 segmen sampel KSA (masing-masing 9 titik amatan, total 1.800 titik amatan). Pada putaran amatan akhir Mei, tercatat 270 titik berada pada fase Panen (P), 360 titik pada fase Generatif Akhir (G2), dan 450 titik pada fase Vegetatif Akhir/Generatif Awal (V2/G1). Tentukan estimasi luas panen bulan Mei serta proyeksi luas panen bulan Juni dan Juli dalam format: <code>Mei=X ha, Juni=Y ha, Juli=Z ha</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 10-16]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Total titik amatan = $200 \times 9 = 1.800\text{ titik}$.<br>2. <strong>Luas Panen Bulan Mei</strong>:<br>   - Titik panen = 270 titik.<br>   - Proporsi panen Mei = $270 / 1.800 = 0,15$ (15%).<br>   - Luas Panen Mei = $0,15 \times 45.000\text{ ha} = 6.750\text{ ha}$.<br>3. <strong>Proyeksi Luas Panen Bulan Juni (dari fase G2)</strong>:<br>   - Titik G2 = 360 titik.<br>   - Proporsi panen Juni = $360 / 1.800 = 0,20$ (20%).<br>   - Luas Panen Juni = $0,20 \times 45.000\text{ ha} = 9.000\text{ ha}$.<br>4. <strong>Proyeksi Luas Panen Bulan Juli (dari fase V2/G1)</strong>:<br>   - Titik V2/G1 = 450 titik.<br>   - Proporsi panen Juli = $450 / 1.800 = 0,25$ (25%).<br>   - Luas Panen Juli = $0,25 \times 45.000\text{ ha} = 11.250\text{ ha}$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>A_1 = 45000<br>total_pts = 200 * 9<br>p_mei = 270 / total_pts<br>luas_mei = p_mei * A_1<br>p_jun = 360 / total_pts<br>luas_jun = p_jun * A_1<br>p_jul = 450 / total_pts<br>luas_jul = p_jul * A_1<br>print(f'Mei={luas_mei:.0f} ha, Juni={luas_jun:.0f} ha, Juli={luas_jul:.0f} ha')<br># Output: Mei=6750 ha, Juni=9000 ha, Juli=11250 ha<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Hirarki Dimensi Segmen vs Subsegmen</strong>: Sering tertukar antara luas segmen (9 ha / 300m x 300m) dan subsegmen (1 ha / 100m x 100m). Pengamatan fase padi dilakukan di tingkat subsegmen (9 titik amatan per segmen).</li><li><strong>Jebakan Proyeksi Waktu Panen</strong>: Menjawab bahwa fase vegetatif awal (V1) akan panen 1 bulan kemudian. Siklus hidup padi normal adalah 110–120 hari (~3,5 s.d. 4 bulan). V1 panen 3 bulan ke depan, V2/G1 panen 2 bulan ke depan, dan hanya G2 yang diproyeksikan panen pada bulan berikutnya ($t+1$).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Segmen 300x300m (9 ha), Subsegmen 100x100m (1 ha), 9 titik foto GPS akhir bulan: V1 panen 3 bln, V2/G1 panen 2 bln, G2 panen 1 bln.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.1.2, 11.1.3</div>
+<button class="donebtn" data-id="11.1.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

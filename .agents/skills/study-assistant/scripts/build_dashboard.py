@@ -26,6 +26,21 @@ BUCKETS = [
     ("精通", lambda p: p["mastery"] >= 5, "#16a34a"),
 ]
 
+BUCKET_LABELS = {
+    "未学": "Belum Dipelajari",
+    "薄弱": "Perlu Penguatan",
+    "基本": "Dasar",
+    "熟练": "Mahir",
+    "精通": "Sangat Mahir",
+}
+
+STATUS_LABELS = {
+    "未学": "Belum Dipelajari",
+    "已讲解": "Sudah Dibahas",
+    "已测验": "Sudah Diuji (Kuis)",
+    "已检验": "Terverifikasi (Feynman)",
+}
+
 
 def state_dir(study_dir):
     internal = study_dir / "internal" / "state"
@@ -202,8 +217,8 @@ SCRIPT_DIR="${{0:A:h}}"
 STUDY_DIR="${{SCRIPT_DIR:h}}"
 python3 "{script}" "$STUDY_DIR"
 echo
-echo "仪表盘已更新：$SCRIPT_DIR/dashboard.html"
-echo "按任意键关闭..."
+echo "Dashboard berhasil diperbarui: $SCRIPT_DIR/dashboard.html"
+echo "Tekan tombol apa saja untuk menutup..."
 read -k 1
 """, encoding="utf-8")
     cmd.chmod(0o755)
@@ -215,40 +230,41 @@ def build_digest(knowledge, points, progress, events, pending_mistakes, bank_ent
     counts = {name: sum(1 for p in points if bucket_of(p) == name) for name, _, _ in BUCKETS}
     avg = round(sum(p["mastery"] for p in points) / n, 2) if n else 0
     lines = [
-        f"# 学习摘要：{knowledge.get('textbook','')}（{datetime.date.today().isoformat()} 自动生成）",
+        f"# Ringkasan Pembelajaran: {knowledge.get('textbook','')} ({datetime.date.today().isoformat()} Otomatis)",
         "",
-        f"- 知识点 {n} 个：未学 {counts['未学']} ｜ 薄弱 {counts['薄弱']} ｜ 基本 {counts['基本']} ｜ 熟练 {counts['熟练']} ｜ 精通 {counts['精通']} ｜ 平均掌握 {avg}/5",
-        f"- 错题本待复盘：{pending_mistakes} 条 ｜ 全局题库：{bank_entries} 题",
-        "- 常用入口：open/dashboard.html；双击 open/update_dashboard.command 可刷新仪表盘",
+        f"- Total 39 Poin Konsep ({n} poin): Belum {counts['未学']} ｜ Perlu Penguatan {counts['薄弱']} ｜ Dasar {counts['基本']} ｜ Mahir {counts['熟练']} ｜ Sangat Mahir {counts['精通']} ｜ Rata-rata Penguasaan {avg}/5",
+        f"- Evaluasi Kesalahan Tertunda: {pending_mistakes} butir ｜ Bank Soal Global: {bank_entries} butir",
+        "- Akses Utama: open/dashboard.html; Jalankan open/update_dashboard.command untuk memuat ulang",
     ]
     if progress:
         lines.append(
-            f"- 上次位置：第{progress.get('current_chapter','?')}章 {progress.get('current_point','?')} ｜ "
-            f"建议下一步：{progress.get('next_action','?')} ｜ 讲义格式：{progress.get('lecture_format','未选')}"
+            f"- Posisi Terakhir: Bab {progress.get('current_chapter','?')} {progress.get('current_point','?')} ｜ "
+            f"Langkah Rekomendasi: {progress.get('next_action','?')} ｜ Format Modul: {progress.get('lecture_format','Belum Ditentukan')}"
         )
     lines.append("")
-    lines.append("## 各章进度")
+    lines.append("## Kemajuan Per Pertemuan")
     by_ch = {}
     for p in points:
         by_ch.setdefault((p["chapter_id"], p["chapter"]), []).append(p)
     for (cid, title), pts in sorted(by_ch.items()):
         cavg = round(sum(p["mastery"] for p in pts) / len(pts), 2)
         unstudied = sum(1 for p in pts if bucket_of(p) == "未学")
-        lines.append(f"- {title}：{len(pts)} 点，平均 {cavg}/5，未掌握（含已讲未测）{unstudied}")
+        lines.append(f"- {title}: {len(pts)} poin, rata-rata {cavg}/5, belum tuntas {unstudied}")
     weak = weak_points(points)
     if weak:
         lines.append("")
-        lines.append("## 高优先回炉（重要度高 × 掌握≤2）")
+        lines.append("## Prioritas Pengulangan (Penting × Penguasaan ≤ 2)")
         for p in weak:
-            note = f"（{p['note']}）" if p.get("note") else ""
-            lines.append(f"- {p['id']} {p['name']}：掌握 {p['mastery']}/5，{p['status']}{note}")
+            note = f" ({p['note']})" if p.get("note") else ""
+            status_id = STATUS_LABELS.get(p['status'], p['status'])
+            lines.append(f"- {p['id']} {p['name']}: Penguasaan {p['mastery']}/5, {status_id}{note}")
     if events:
         lines.append("")
-        lines.append("## 最近活动")
+        lines.append("## Aktivitas Terakhir")
         for e in events[-5:]:
             lines.append(
-                f"- {e.get('date','?')} {e.get('event','?')} {e.get('point','')}："
-                f"掌握 {e.get('prev','?')}→{e.get('mastery','?')} {e.get('note','')}".rstrip()
+                f"- {e.get('date','?')} {e.get('event','?')} {e.get('point','')}: "
+                f"Penguasaan {e.get('prev','?')}→{e.get('mastery','?')} {e.get('note','')}".rstrip()
             )
     return "\n".join(lines) + "\n"
 
@@ -257,10 +273,11 @@ def stacked_bar(pts, width=100):
     n = len(pts) or 1
     segs = []
     for name, _, color in BUCKETS:
+        label = BUCKET_LABELS.get(name, name)
         c = sum(1 for p in pts if bucket_of(p) == name)
         if c:
             segs.append(
-                f'<span title="{name} {c}" style="display:inline-block;height:14px;'
+                f'<span title="{label} {c}" style="display:inline-block;height:14px;'
                 f'width:{c / n * width:.1f}%;background:{color}"></span>'
             )
     return f'<div style="font-size:0;border-radius:4px;overflow:hidden;background:#eee">{"".join(segs)}</div>'
@@ -268,7 +285,7 @@ def stacked_bar(pts, width=100):
 
 def trend_svg(series):
     if len(series) < 2:
-        return "<p class='hint'>掌握度变化不足两次，暂无趋势图。</p>"
+        return "<p class='hint'>Data perubahan penguasaan materi belum mencukupi (minimal 2 kali aktivitas).</p>"
     w, h, pad = 640, 140, 24
     xs = [pad + i * (w - 2 * pad) / (len(series) - 1) for i in range(len(series))]
     ys = [h - pad - (v / 5) * (h - 2 * pad) for _, v in series]
@@ -280,7 +297,7 @@ def trend_svg(series):
     return (
         f'<svg viewBox="0 0 {w} {h}" style="width:100%;max-width:680px">'
         f'<line x1="{pad}" y1="{h-pad}" x2="{w-pad}" y2="{h-pad}" stroke="#d1d5db"/>'
-        f'<text x="{pad}" y="14" font-size="11" fill="#6b7280">平均掌握度走势（0-5）</text>'
+        f'<text x="{pad}" y="14" font-size="11" fill="#6b7280">Tren Rata-rata Penguasaan Materi (Skala 0-5)</text>'
         f'<polyline points="{pts}" fill="none" stroke="#2563eb" stroke-width="2"/>{dots}</svg>'
     )
 
@@ -305,18 +322,18 @@ def build_html(knowledge, points, progress, events, pending_mistakes, bank_entri
     chapter_parts = []
     for (c, t), pts in sorted(by_ch.items()):
         if c in chapter_links:
-            main_link = f'<a href="{esc(chapter_links[c])}">打开整章讲义</a>'
+            main_link = f'<a href="{esc(chapter_links[c])}">Buka Modul Lengkap</a>'
             if audit_status.get(c) == "pass":
-                completeness = '<span style="color:#15803d">已完成</span>'
+                completeness = '<span style="color:#15803d">Selesai Diverifikasi</span>'
             elif audit_status.get(c) == "blocked":
-                completeness = '<span style="color:#b91c1c">需修改</span>'
+                completeness = '<span style="color:#b91c1c">Perlu Revisi</span>'
             elif audit_status.get(c) == "invalid":
-                completeness = '<span style="color:#b91c1c">审查文件异常</span>'
+                completeness = '<span style="color:#b91c1c">Laporan Anomali</span>'
             else:
-                completeness = '<span style="color:#a16207">待审查</span>'
+                completeness = '<span style="color:#a16207">Menunggu Audit</span>'
         else:
-            main_link = '<span class="hint">待合并</span>'
-            completeness = '<span class="hint">待合并</span>'
+            main_link = '<span class="hint">Belum Digabung</span>'
+            completeness = '<span class="hint">Belum Digabung</span>'
         chapter_parts.append(
             f"<tr><td>{esc(t)}</td><td>{main_link}</td><td>{completeness}</td>"
             f"<td style='width:38%'>{stacked_bar(pts)}</td>"
@@ -326,22 +343,22 @@ def build_html(knowledge, points, progress, events, pending_mistakes, bank_entri
     weak = weak_points(points)
     weak_rows = "".join(
         f"<tr><td>{esc(p['id'])}</td><td>{esc(p['name'])}</td><td>{p['mastery']}/5</td>"
-        f"<td>{esc(p['status'])}</td><td>{esc(p.get('note',''))}</td></tr>" for p in weak
-    ) or "<tr><td colspan=5>暂无（要么还没开始测验，要么都掌握得不错）</td></tr>"
+        f"<td>{esc(STATUS_LABELS.get(p['status'], p['status']))}</td><td>{esc(p.get('note',''))}</td></tr>" for p in weak
+    ) or "<tr><td colspan=5>Tidak ada topik tertinggal (seluruh materi berprioritas tinggi telah dipahami dengan baik)</td></tr>"
     activity = "".join(
         f"<li><b>{esc(e.get('date',''))}</b> ｜ {esc(e.get('event',''))} ｜ {esc(e.get('point',''))} "
-        f"掌握 {esc(e.get('prev','?'))}→{esc(e.get('mastery','?'))} {esc(e.get('note',''))}</li>"
+        f"Penguasaan {esc(e.get('prev','?'))}→{esc(e.get('mastery','?'))} {esc(e.get('note',''))}</li>"
         for e in reversed(events[-12:])
-    ) or "<li>暂无记录</li>"
+    ) or "<li>Belum ada aktivitas tercatat</li>"
     legend = " ".join(
         f'<span style="display:inline-block;width:10px;height:10px;background:{c};'
-        f'border-radius:2px"></span>{name} {counts[name]}' for name, _, c in BUCKETS
+        f'border-radius:2px"></span>{BUCKET_LABELS.get(name, name)} {counts[name]}' for name, _, c in BUCKETS
     )
     command_href = esc(rel_href(dashboard_path.parent, public_dir(study_dir) / "update_dashboard.command"))
     return f"""<!DOCTYPE html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><title>学习仪表盘 · {esc(knowledge.get('textbook',''))}</title>
+<html lang="id"><head><meta charset="UTF-8"><title>Dashboard Pembelajaran · {esc(knowledge.get('textbook',''))}</title>
 <style>
-:root {{ font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }}
+:root {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }}
 body {{ margin:0; background:#f5f5f2; color:#1f2937; }}
 #wrap {{ max-width:920px; margin:0 auto; padding:28px 20px 60px; }}
 h1 {{ font-size:20px; margin-bottom:4px; }} h2 {{ font-size:15px; margin:26px 0 10px; }}
@@ -356,27 +373,27 @@ ul {{ font-size:13px; line-height:1.9; }} .hint {{ color:#6b7280; font-size:13px
 a {{ color:#1d4ed8; text-decoration:none; }} a:hover {{ text-decoration:underline; }}
 .entry {{ background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:12px 16px; margin:10px 0; }}
 </style></head><body><div id="wrap">
-<h1>学习仪表盘 · {esc(knowledge.get('textbook',''))}</h1>
-<div class="meta">更新于 {datetime.date.today().isoformat()} ｜ 双击 <a href="{command_href}">update_dashboard.command</a> 可一键刷新</div>
+<h1>Dashboard Pembelajaran · {esc(knowledge.get('textbook',''))}</h1>
+<div class="meta">Diperbarui pada {datetime.date.today().isoformat()} ｜ Klik ganda <a href="{command_href}">update_dashboard.command</a> untuk memperbarui</div>
 <div class="cards">
-<div class="card"><div class="v">{n}</div><div class="k">知识点总数</div></div>
-<div class="card"><div class="v">{avg}<span style="font-size:13px">/5</span></div><div class="k">平均掌握度</div></div>
-<div class="card"><div class="v">{good}</div><div class="k">熟练及以上（{(good*100//n) if n else 0}%）</div></div>
-<div class="card"><div class="v">{pending_mistakes}</div><div class="k">错题待复盘</div></div>
-<div class="card"><div class="v">{bank_entries}</div><div class="k">全局题库</div></div>
+<div class="card"><div class="v">{n}</div><div class="k">Total Poin Konsep</div></div>
+<div class="card"><div class="v">{avg}<span style="font-size:13px">/5</span></div><div class="k">Rata-rata Penguasaan</div></div>
+<div class="card"><div class="v">{good}</div><div class="k">Mahir & Sangat Mahir ({(good*100//n) if n else 0}%)</div></div>
+<div class="card"><div class="v">{pending_mistakes}</div><div class="k">Evaluasi Kesalahan</div></div>
+<div class="card"><div class="v">{bank_entries}</div><div class="k">Bank Soal Global</div></div>
 </div>
 <div class="legend">{legend}</div>
 <div style="margin-top:8px">{stacked_bar(points)}</div>
-<h2>常用入口</h2>
-<div class="entry"><b>最近题目</b>{link_list(quiz_links, "还没有生成可打开的题目 HTML。")}</div>
-<div class="entry"><b>审查报告</b>{link_list(audit_links, "还没有章节审查报告。")}</div>
-<h2>各章进度</h2>
-<table><tr><th>章节</th><th>主讲义</th><th>完整性</th><th>掌握度分布</th><th>平均</th><th>知识点</th></tr>{chapter_rows}</table>
-<h2>掌握度走势</h2>
+<h2>Akses Cepat</h2>
+<div class="entry"><b>Latihan Soal Interaktif</b>{link_list(quiz_links, "Belum ada paket kuis yang digenerasi.")}</div>
+<div class="entry"><b>Laporan Audit Materi</b>{link_list(audit_links, "Belum ada laporan audit bab.")}</div>
+<h2>Kemajuan Belajar Per Pertemuan</h2>
+<table><tr><th>Materi Pertemuan</th><th>Modul Bab</th><th>Status Kelengkapan</th><th>Distribusi Penguasaan</th><th>Rata-rata</th><th>Jumlah Poin</th></tr>{chapter_rows}</table>
+<h2>Tren Penguasaan Materi</h2>
 {trend_svg(trend_series(points, events))}
-<h2>高优先回炉（重要度高 × 掌握 ≤ 2）</h2>
-<table><tr><th>编号</th><th>知识点</th><th>掌握</th><th>状态</th><th>备注</th></tr>{weak_rows}</table>
-<h2>最近活动</h2>
+<h2>Prioritas Pengulangan / Remedial (Prioritas Tinggi × Penguasaan ≤ 2)</h2>
+<table><tr><th>ID</th><th>Poin Konsep</th><th>Penguasaan</th><th>Status</th><th>Catatan</th></tr>{weak_rows}</table>
+<h2>Riwayat Aktivitas Terakhir</h2>
 <ul>{activity}</ul>
 </div></body></html>"""
 

@@ -1,0 +1,97 @@
+{
+  "point_id": "9.1.2",
+  "title": "Tingkat Partisipasi Angkatan Kerja TPAK",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Statistik Ketenagakerjaan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "13-14",
+        "content": "Definisi, formula TPAK = (a / b) * 100 dimana a = Angkatan Kerja dan b = Penduduk 15 tahun ke atas, kegunaan, dan interpretasi pasokan tenaga kerja (labor supply)."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "21-23",
+        "content": "Tabel seri perkembangan TPAK nasional 2019-2021 Sakernas menurut perkotaan, perdesaan, dan gender."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "TPAK mengukur proporsi penduduk usia kerja yang benar-benar terjun ke gelanggang pasar kerja, baik yang sudah berhasil mendapatkan pekerjaan maupun yang masih aktif mencari kerja. TPAK merupakan indikator utama dari sisi penawaran tenaga kerja (labor supply side). Jika TPAK naik, ekonomi memiliki lebih banyak tangan produktif; namun jika tidak diimbangi penciptaan lapangan kerja, kenaikan TPAK dapat memicu lonjakan angka pengangguran.",
+    "bps_definition": "Tingkat Partisipasi Angkatan Kerja (TPAK) adalah persentase penduduk usia 15 tahun ke atas yang merupakan angkatan kerja terhadap seluruh penduduk usia 15 tahun ke atas. Sumber data resmi diperoleh dari Survei Angkatan Kerja Nasional (SAKERNAS).",
+    "boundary_conditions": "1. Rentang matematis: $0\\% \\le \\text{TPAK} \\le 100\\%$. Pada praktiknya di Indonesia, TPAK berkisar antara 67% hingga 70%.\n2. Pembagi mutlak: Penduduk Usia Kerja (PUK, 15+ tahun). Pembagian dengan total populasi (0+ tahun) adalah kekeliruan fatal.\n3. Disagregasi gender: TPAK laki-laki konsisten jauh lebih tinggi (~83%) dibanding perempuan (~54%), karena sebagian besar perempuan yang tidak bekerja berada di kelompok mengurus rumah tangga (BAK).\n4. Disagregasi wilayah: TPAK perdesaan umumnya lebih tinggi dibanding perkotaan karena dominasi sektor pertanian keluarga.",
+    "formula_latex": "$$\\text{TPAK} = \\frac{\\text{AK}}{\\text{PUK}} \\times 100\\% = \\frac{\\text{Bekerja} + \\text{Penganggur}}{\\text{Penduduk Usia } \\ge 15 \\text{ Tahun}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam publikasi profil ketenagakerjaan Provinsi Harmoni, tercatat data demografi penduduk usia 15 tahun ke atas sbb: Penduduk usia kerja laki-laki berjumlah 5.000.000 jiwa dengan 4.150.000 jiwa di antaranya tergolong angkatan kerja. Penduduk usia kerja perempuan berjumlah 5.000.000 jiwa dengan 2.700.000 jiwa di antaranya tergolong angkatan kerja. Hitunglah: (1) TPAK Laki-laki, (2) TPAK Perempuan, (3) TPAK Total Provinsi, dan (4) Kesenjangan Partisipasi Gender (Gender Gap).",
+    "data_table": "| Kelompok Gender | PUK (15+ Tahun) | Angkatan Kerja (AK) |\n|---|---|---|\n| Laki-laki | 5.000.000 | 4.150.000 |\n| Perempuan | 5.000.000 | 2.700.000 |\n| Total Provinsi | 10.000.000 | 6.850.000 |",
+    "step_by_step_solution": "1. TPAK Laki-laki:\n   $$\\text{TPAK}_L = \\frac{4.150.000}{5.000.000} \\times 100\\% = 83,00\\%$$\n2. TPAK Perempuan:\n   $$\\text{TPAK}_P = \\frac{2.700.000}{5.000.000} \\times 100\\% = 54,00\\%$$\n3. TPAK Total Provinsi:\n   $$\\text{TPAK}_{\\text{Total}} = \\frac{4.150.000 + 2.700.000}{5.000.000 + 5.000.000} \\times 100\\% = \\frac{6.850.000}{10.000.000} \\times 100\\% = 68,50\\%$$\n4. Gender Gap TPAK:\n   $$\\Delta \\text{TPAK} = \\text{TPAK}_L - \\text{TPAK}_P = 83,00\\% - 54,00\\% = 29,00\\%$$",
+    "python_verification_code": "puk_l = 5000000\nak_l = 4150000\ntpak_l = (ak_l / puk_l) * 100\n\npuk_p = 5000000\nak_p = 2700000\ntpak_p = (ak_p / puk_p) * 100\n\npuk_tot = puk_l + puk_p\nak_tot = ak_l + ak_p\ntpak_tot = (ak_tot / puk_tot) * 100\ngap = tpak_l - tpak_p\n\nprint(f'TPAK L={tpak_l:.2f}%, TPAK P={tpak_p:.2f}%, TPAK Total={tpak_tot:.2f}%, Gap={gap:.2f}%')",
+    "expected_output": "TPAK L=83.00%, TPAK P=54.00%, TPAK Total=68.50%, Gap=29.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Penyebut TPAK Tertukar dengan Total Penduduk",
+      "common_mistake": "Membagi Angkatan Kerja dengan total populasi (termasuk anak < 15 tahun).",
+      "safe_strategy": "Ingat rumus resmi BPS: Pembagi TPAK adalah Penduduk Usia Kerja (PUK >= 15 tahun), BUKAN total penduduk."
+    },
+    {
+      "trap_description": "Kesimpulan Keliru bahwa Perempuan yang Tidak Masuk AK Adalah Pengangguran",
+      "common_mistake": "Mengasumsikan rendahnya TPAK perempuan berarti tingkat pengangguran perempuan sangat tinggi.",
+      "safe_strategy": "Perempuan yang tidak berpartisipasi dalam angkatan kerja berada pada kelompok Bukan Angkatan Kerja (terutama mengurus rumah tangga), bukan pengangguran terbuka."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.1.2",
+      "name": "Tingkat Partisipasi Angkatan Kerja TPAK",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13-14, 21-23]",
+      "exam_focus": "Formula resmi TPAK, perhitungan bobot disagregasi wilayah/gender, analisis dinamika penawaran tenaga kerja (labor supply), dan interpretasi tren TPAK BPS.",
+      "textbook_excerpt": "Tingkat Partisipasi Angkatan Kerja (TPAK) = a / b * 100, dimana a = Jumlah Angkatan Kerja, b = Jumlah penduduk 15 tahun ke atas [slide 13]. Kondef: Persentase penduduk usia 15 tahun ke atas yang merupakan angkatan kerja. Kegunaan: Mengindikasikan besarnya persentase penduduk usia kerja yang aktif secara ekonomi di suatu negara/wilayah. Interpretasi: Semakin tinggi TPAK menunjukkan semakin tinggi pasokan tenaga kerja (labour supply) yang tersedia untuk memproduksi barang dan jasa dalam suatu perekonomian [slide 14].",
+      "intuition": "Jika ada 100 orang berumur 15 tahun ke atas di suatu desa, berapa orang yang siap bekerja atau sudah bekerja? Angka itulah TPAK. Bila TPAK bernilai 68%, artinya 68 orang aktif mencari nafkah atau menyediakan jasanya di pasar kerja, sedangkan 32 orang lainnya sedang fokus sekolah, mengurus rumah tangga, atau sudah pensiun.",
+      "formal": "### 1. Definisi dan Formulasi Matematis\n\nBerdasarkan pedoman resmi BPS:\n$$\\text{TPAK} = \\frac{\\text{AK}}{\\text{PUK}} \\times 100\\% = \\frac{\\text{Bekerja} + \\text{Pengangguran}}{P_{15+}} \\times 100\\%$$\n\nSecara demografis, TPAK dapat didekomposisi berdasarkan kelompok jenis kelamin atau wilayah:\n$$\\text{TPAK}_{\\text{Total}} = w_L \\cdot \\text{TPAK}_L + w_P \\cdot \\text{TPAK}_P$$\ndi mana bobot $w_L = \\frac{\\text{PUK}_L}{\\text{PUK}_{\\text{Total}}}$ dan $w_P = \\frac{\\text{PUK}_P}{\\text{PUK}_{\\text{Total}}}$.\n\n### 2. Tren Empiris Sakernas BPS 2019-2021\n\nBerdasarkan data seri Sakernas BPS [slide 21]:\n\n| Periode Survei | Penduduk 15+ (PUK) | Angkatan Kerja (AK) | Bekerja | Pengangguran | TPAK (%) |\n|---|---|---|---|---|---|\n| **Februari 2019** | 199.785.195 | 138.591.388 | 131.692.592 | 6.898.796 | **69,37** |\n| **Agustus 2019** | 201.185.014 | 135.859.695 | 128.755.271 | 7.104.424 | **67,53** |\n| **Februari 2020** | 202.597.063 | 140.218.352 | 133.292.866 | 6.925.486 | **69,21** |\n| **Agustus 2020** | 203.972.460 | 138.221.938 | 128.454.184 | 9.767.754 | **67,77** |\n| **Februari 2021** | 205.360.436 | 139.810.313 | 131.064.305 | 8.746.008 | **68,08** |\n| **Agustus 2021** | 206.708.299 | 140.152.575 | 131.050.523 | 9.102.052 | **67,80** |\n\n*Catatan Pola Musiman*: TPAK Februari selalu lebih tinggi dari TPAK Agustus karena siklus panen raya pertanian menyerap banyak tenaga kerja musiman.",
+      "pitfalls": "Menghitung rata-rata sederhana TPAK Laki-laki dan Perempuan tanpa pembobotan populasi PUK. Jika jumlah laki-laki dan perempuan tidak sama, rata-rata sederhana akan bias.",
+      "memory_hook": "TPAK = AK / PUK * 100%. Mengukur labor supply. Pria ~83%, Wanita ~54%.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13-14]",
+          "problem": "Pernyataan manakah yang paling tepat mengenai karakteristik dan interpretasi indikator TPAK di Indonesia?",
+          "options": [
+            "Kenaikan TPAK selalu menjamin penurunan angka pengangguran di suatu daerah.",
+            "TPAK mengindikasikan besarnya penawaran tenaga kerja (labour supply) yang tersedia dalam perekonomian.",
+            "TPAK dihitung dengan membagi penduduk yang bekerja dengan total seluruh penduduk.",
+            "TPAK perkotaan di Indonesia umumnya selalu lebih tinggi daripada TPAK perdesaan."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Pilihan A salah: Jika peningkatan penawaran tenaga kerja tidak disertai ekspansi lapangan kerja, pengangguran justru meningkat.\n- Pilihan B benar: Sesuai slide 14, interpretasi resmi TPAK adalah mengindikasikan besarnya penawaran tenaga kerja (labour supply) yang tersedia untuk memproduksi barang dan jasa.\n- Pilihan C salah: Pembaginya adalah PUK (15+), dan pembilangnya adalah AK (Bekerja + Penganggur).\n- Pilihan D salah: TPAK perdesaan secara empiris lebih tinggi daripada perkotaan."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13, 21]",
+          "problem": "Suatu wilayah memiliki 60.000 penduduk usia kerja laki-laki dan 40.000 penduduk usia kerja perempuan. Jika TPAK Laki-laki adalah 80% dan TPAK Perempuan adalah 50%, hitunglah TPAK Gabungan wilayah tersebut. Tuliskan jawaban dalam format: `TPAK=X%` (dengan 1 desimal).",
+          "answer": "TPAK=68.0%",
+          "solution": "Langkah-langkah perhitungan:\n1. Angkatan Kerja Laki-laki:\n   $$\\text{AK}_L = 80\\% \\times 60.000 = 48.000$$\n2. Angkatan Kerja Perempuan:\n   $$\\text{AK}_P = 50\\% \\times 40.000 = 20.000$$\n3. Total Angkatan Kerja:\n   $$\\text{AK}_{\\text{Total}} = 48.000 + 20.000 = 68.000$$\n4. Total PUK:\n   $$\\text{PUK}_{\\text{Total}} = 60.000 + 40.000 = 100.000$$\n5. TPAK Gabungan:\n   $$\\text{TPAK} = \\frac{68.000}{100.000} \\times 100\\% = 68,0\\%$$\n\n**Verifikasi Kode Python**:\n```python\npuk_l = 60000\nak_l = 0.80 * puk_l\npuk_p = 40000\nak_p = 0.50 * puk_p\ntpak = (ak_l + ak_p) / (puk_l + puk_p) * 100\nprint(f'TPAK={tpak:.1f}%')\n# Output: TPAK=68.0%\n```"
+        }
+      ],
+      "links": [
+        "9.1.1",
+        "9.1.3",
+        "9.1.4"
+      ]
+    }
+  ]
+}

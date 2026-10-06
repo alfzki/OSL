@@ -1,0 +1,335 @@
+{
+  "title": "Kuis Fokus Tematik: 10 Soal IHK & 10 Soal Sakernas Persiapan UAS OSL",
+  "questions": [
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Sumber Diagram Timbang & Paket Komoditas)",
+      "score": 2,
+      "stem": "[OSL-IHK-01] Dalam metodologi penyusunan Indeks Harga Konsumen (IHK) oleh BPS, data pengeluaran konsumsi rumah tangga yang digunakan untuk menetapkan diagram timbang (bobot nilai konsumsi) dan paket komoditas diperoleh dari...",
+      "reference": "A",
+      "explanation": "Kunci: A. Sumber utama penetapan paket komoditas dan diagram timbang IHK adalah Survei Biaya Hidup (SBH) yang diselenggarakan BPS secara berkala. Susenas digunakan untuk menghitung garis kemiskinan dan konsumsi per kapita makro, bukan penimbang IHK; sedangkan SHK (Survei Harga Konsumen) adalah survei pencatatan harga berkala mingguan/bulanan. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 18; Publikasi IHK BPS 2025)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Survei Biaya Hidup (SBH)",
+        "B. Survei Sosial Ekonomi Nasional (Susenas)",
+        "C. Survei Harga Konsumen (SHK)",
+        "D. Sensus Ekonomi (SE)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Cakupan Geografis Tahun Dasar 2022=100)",
+      "score": 2,
+      "stem": "[OSL-IHK-02] Mulai Januari 2024, BPS menghitung IHK dan inflasi dengan tahun dasar $2022=100$ hasil SBH 2022. Cakupan wilayah pemantauan harga diperluas menjadi...",
+      "reference": "A",
+      "explanation": "Kunci: A. Cakupan wilayah IHK tahun dasar 2022 ($2022=100$) diperluas menjadi 150 kabupaten/kota (terdiri dari 90 kota lama pada SBH 2018 ditambah 60 kabupaten baru yang mewakili dinamika ekonomi daerah). BPS tidak menghitung IHK di seluruh 514 kabupaten/kota karena keterbatasan efisiensi operasional dan keterwakilan sampel. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 22; Publikasi IHK BPS 2025)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 150 kabupaten/kota (terdiri dari 90 kota lama dan 60 kabupaten baru)",
+        "B. 90 kota di 34 provinsi",
+        "C. 82 kota di 33 provinsi",
+        "D. 514 seluruh kabupaten/kota se-Indonesia"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Klasifikasi COICOP 11 Kelompok)",
+      "score": 2,
+      "stem": "[OSL-IHK-03] Sejak IHK tahun dasar 2018 hingga tahun dasar 2022, BPS mengadopsi klasifikasi internasional COICOP (Classification of Individual Consumption According to Purpose) yang membagi pengeluaran konsumsi ke dalam...",
+      "reference": "A",
+      "explanation": "Kunci: A. Sejak SBH 2018 dan dilanjutkan pada SBH 2022, BPS mengadopsi klasifikasi COICOP yang membagi pengeluaran konsumsi menjadi 11 kelompok (menggantikan sistem lama 7 kelompok pengeluaran pada SBH 2012). 11 kelompok tersebut meliputi: (1) Makanan, Minuman, dan Tembakau, (2) Pakaian dan Alas Kaki, (3) Perumahan, Air, Listrik, dan Bahan Bakar, (4) Perlengkapan RT, (5) Kesehatan, (6) Transportasi, (7) Informasi, Komunikasi, dan Jasa Keuangan, (8) Rekreasi, (9) Pendidikan, (10) Penyediaan Makanan-Minuman/Restoran, (11) Perawatan Pribadi dan Jasa Lainnya. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 18)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 11 kelompok pengeluaran (menggantikan sistem lama 7 kelompok pengeluaran)",
+        "B. 7 kelompok pengeluaran tradisional",
+        "C. 9 kelompok sektor ekonomi lapangan usaha (KBLI)",
+        "D. 17 sektor ekonomi PDRB"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Prinsip Formula Modifikasi Laspeyres)",
+      "score": 3,
+      "stem": "[OSL-IHK-04] Formula Modified Laspeyres yang diterapkan BPS dalam menghitung IHK bulanan memiliki keunggulan sistem perantaian (*chaining*). Manakah pernyataan yang paling tepat mengenai pembentukan indeks bulan berjalan ($I_t$)?",
+      "reference": "A",
+      "explanation": "Kunci: A. BPS menerapkan rumus: $I_t = \\sum_{i=1}^k \\left[ \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i} \\right]$, di mana relatif harga bulan berjalan terhadap bulan sebelumnya ($P_t / P_{t-1}$) dikalikan dengan bobot nilai konsumsi bulan sebelumnya ($w_{t-1}$). Bobot nilai konsumsi dimutakhirkan setiap bulan dengan rasio harga bulan lalu terhadap tahun dasar, sementara kuantitas dasar tetap berasal dari SBH ($Q_0$). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 28; Publikasi IHK BPS 2025, hal. xxiv)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Dihitung dengan mengalikan Relatif Harga bulan berjalan terhadap bulan sebelumnya ($P_t / P_{t-1}$) dengan bobot nilai konsumsi bulan sebelumnya ($w_{t-1}$)",
+        "B. Dihitung dengan membandingkan harga bulan berjalan langsung terhadap harga tahun dasar tanpa perantaian ($P_t / P_0$)",
+        "C. Dihitung dengan memperbarui kuantitas fisik konsumsi setiap bulan melalui survei rumah tangga bulanan",
+        "D. Dihitung dengan rata-rata ukur geometrik harga seluruh komoditas (Formula Jevons)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Penghitungan Inflasi Bulanan m-to-m)",
+      "score": 3,
+      "stem": "[OSL-IHK-05] Jika IHK Kota Surabaya pada bulan April 2025 tercatat sebesar 108,00 dan pada bulan Mei 2025 meningkat menjadi 108,54, berapakah tingkat inflasi bulanan (*month to month* / m-to-m) Kota Surabaya pada bulan Mei 2025?",
+      "reference": "A",
+      "explanation": "Kunci: A. Formula inflasi bulanan m-to-m: $\\text{Inflasi}_{m-to-m} = \\frac{IHK_t - IHK_{t-1}}{IHK_{t-1}} \\times 100\\% = \\frac{108,54 - 108,00}{108,00} \\times 100\\% = \\frac{0,54}{108,00} \\times 100\\% = 0,50\\%$. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 0,50%",
+        "B. 0,54%",
+        "C. 8,54%",
+        "D. 5,00%"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Perbedaan Inflasi y-on-y dan y-to-d)",
+      "score": 2,
+      "stem": "[OSL-IHK-06] Dalam rilis resmi inflasi BPS untuk bulan Agustus 2025, apakah perbedaan dasar antara inflasi *year to date* (y-to-d) dengan inflasi *year on year* (y-on-y)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Inflasi tahun kalender (year to date / y-to-d) adalah persentase perubahan IHK bulan berjalan dibandingkan terhadap IHK bulan Desember tahun sebelumnya (misal Agustus 2025 terhadap Desember 2024). Sedangkan inflasi tahunan (year on year / y-on-y) adalah persentase perubahan IHK bulan berjalan dibandingkan terhadap IHK bulan yang sama pada tahun sebelumnya (Agustus 2025 terhadap Agustus 2024). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 19)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Inflasi y-to-d membandingkan IHK Agustus 2025 terhadap IHK Desember 2024, sedangkan inflasi y-on-y membandingkannya terhadap IHK Agustus 2024",
+        "B. Inflasi y-to-d membandingkan IHK terhadap bulan Januari tahun berjalan, sedangkan y-on-y terhadap Desember tahun sebelumnya",
+        "C. Keduanya menggunakan dasar yang sama yaitu IHK tahun dasar 2022",
+        "D. Inflasi y-to-d mencakup seluruh 150 kota, sedangkan y-on-y hanya mencakup ibukota provinsi"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Disagregasi Inflasi Volatile Foods)",
+      "score": 2,
+      "stem": "[OSL-IHK-07] Lonjakan harga cabai rawit, bawang merah, dan daging ayam ras yang disebabkan oleh faktor cuaca ekstrem, musim panen, atau gangguan distribusi pasokan diklasifikasikan BPS ke dalam komponen inflasi...",
+      "reference": "A",
+      "explanation": "Kunci: A. Komponen Harga Bergejolak (Volatile Foods) adalah kelompok komoditas pangan yang perkembangan harganya sangat dipengaruhi oleh guncangan sisi penawaran (supply shocks) seperti iklim, bencana alam, musiman panen, dan jalur logistik (contoh: cabai, bawang merah, daging ayam, beras, telur). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 35)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Komponen Harga Bergejolak (Volatile Foods)",
+        "B. Inflasi Inti (Core Inflation)",
+        "C. Komponen Harga yang Diatur Pemerintah (Administered Prices)",
+        "D. Inflasi Impor (Imported Inflation)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Karakteristik Inflasi Inti / Core Inflation)",
+      "score": 3,
+      "stem": "[OSL-IHK-08] Inflasi Inti (Core Inflation) merupakan salah satu indikator penting bagi Bank Indonesia dalam penetapan kebijakan moneter suku bunga acuan. Manakah pernyataan yang BENAR mengenai karakteristik inflasi inti? (Pilih semua yang benar)",
+      "reference": "A, B, C",
+      "explanation": "Kunci: A, B, C. Inflasi inti mengukur komponen inflasi yang cenderung persisten/menetap dan dipengaruhi oleh faktor fundamental penawaran dan permintaan makro, ekspektasi inflasi, serta nilai tukar. Inflasi inti diperoleh dengan mengeluarkan komponen volatile foods dan administered prices dari inflasi umum (headline). Paket komoditasnya tetap dan tidak berganti tiap triwulan. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 35)",
+      "type": "multi",
+      "qtype_label": "Pilihan Ganda Kompleks",
+      "options": [
+        "A. Menggambarkan tekanan harga yang bersifat persisten dan dipengaruhi faktor fundamental ekonomi (permintaan dan penawaran makro)",
+        "B. Mengeluarkan komoditas yang harganya bergejolak (volatile foods) dan komoditas yang harganya diatur pemerintah (administered prices)",
+        "C. Menjadi target acuan perumusan sasaran inflasi moneter (inflation targeting framework)",
+        "D. Dihitung secara terpisah menggunakan paket komoditas yang berganti setiap triwulan"
+      ],
+      "answer": [0, 1, 2],
+      "partial": true
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Pengaruh Bobot Penimbang terhadap Andil Inflasi)",
+      "score": 2,
+      "stem": "[OSL-IHK-09] Suatu komoditas bensin mengalami kenaikan harga 5% dengan bobot nilai konsumsi (diagram timbang) 8%, sedangkan komoditas garam dapur mengalami kenaikan harga 20% dengan bobot nilai konsumsi 0,05%. Manakah pernyataan yang BENAR mengenai 'Andil Inflasi' kedua komoditas tersebut terhadap inflasi umum?",
+      "reference": "A",
+      "explanation": "Kunci: A. Andil inflasi (share/contribution to inflation) komoditas berbanding lurus dengan perkalian antara persentase perubahan harga dengan bobot penimbangnya ($w_i$). Walaupun persentase kenaikan harga bensin lebih kecil (5% vs 20%), bobot nilai konsumsinya sangat besar (8% vs 0,05%), sehingga andil inflasi bensin ($5\\% \\times 8\\% = 0,40\\%$ poin) jauh lebih besar daripada garam ($20\\% \\times 0,05\\% = 0,01\\%$ poin). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 20)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Andil inflasi bensin jauh lebih besar daripada garam karena bobot diagram timbang bensin jauh lebih dominan dalam pengeluaran konsumsi",
+        "B. Andil inflasi garam lebih besar daripada bensin karena persentase kenaikan harganya (20%) lebih tinggi",
+        "C. Andil inflasi kedua komoditas bernilai sama karena keduanya sama-sama mengalami inflasi positif",
+        "D. Andil inflasi tidak dipengaruhi oleh bobot konsumsi rumah tangga"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: IHK (Metode Agregasi IHK Nasional)",
+      "score": 2,
+      "stem": "[OSL-IHK-10] Dalam penghitungan IHK Nasional, angka IHK gabungan nasional dihitung dengan merata-ratakan angka IHK dari 150 kabupaten/kota secara sederhana (aritmetika tanpa bobot/bobot sama rata).",
+      "reference": "false",
+      "explanation": "Kunci: Salah. IHK gabungan nasional dihitung dengan rata-rata tertimbang (weighted average), di mana masing-masing kota/kabupaten memiliki bobot penimbang yang proporsional terhadap total nilai konsumsi rumah tangga di wilayah tersebut hasil SBH. Kota-kota metropolitan dengan populasi dan pengeluaran besar memiliki bobot yang jauh lebih dominan dalam menggerakkan inflasi nasional dibanding kabupaten kecil. (Sumber: Publikasi IHK BPS 2025, hal. xxv)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": false
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Periode Referensi Baku Ketenagakerjaan)",
+      "score": 2,
+      "stem": "[OSL-SAK-11] Dalam Kuesioner Survei Angkatan Kerja Nasional (Sakernas) BPS, seluruh pertanyaan mengenai kegiatan ekonomi dan jam kerja responden diajukan dengan periode referensi...",
+      "reference": "A",
+      "explanation": "Kunci: A. Sesuai standar ILO (ICLS 13) dan Kuesioner Sakernas BPS Blok VII (ATW), periode referensi baku kegiatan ketenagakerjaan adalah 'seminggu yang lalu', yaitu jangka waktu 7 hari berturut-turut yang berakhir sehari sebelum tanggal pencacahan. (Sumber: Kuesioner SAK.AGS25-AK.pdf, Rincian 7.1-7.3; Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Seminggu yang lalu (7 hari berturut-turut yang berakhir sehari sebelum tanggal pencacahan)",
+        "B. 1 bulan (30 hari) terakhir sebelum pencacahan",
+        "C. 1 tahun (12 bulan) terakhir sebelum pencacahan",
+        "D. Hari kemarin saat petugas berkunjung"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Batasan Usia Kerja PUK 15+)",
+      "score": 2,
+      "stem": "[OSL-SAK-12] Berdasarkan konvensi ILO yang diadopsi secara resmi oleh BPS dalam Sakernas, batas usia minimum penduduk yang diklasifikasikan ke dalam Penduduk Usia Kerja (PUK) di Indonesia adalah...",
+      "reference": "A",
+      "explanation": "Kunci: A. Di Indonesia, Penduduk Usia Kerja (PUK) didefinisikan sebagai penduduk berusia 15 tahun ke atas tanpa batas maksimal. Rentang usia 15-64 tahun adalah konsep usia produktif untuk analisis rasio ketergantungan (dependency ratio), tetapi dalam statistik ketenagakerjaan resmi Sakernas, lansia (65+ tahun) yang bekerja tetap dihitung sebagai bagian dari PUK dan Angkatan Kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 8)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 15 tahun ke atas (tanpa batas usia maksimal)",
+        "B. 17 tahun ke atas (sesuai batas usia memiliki KTP)",
+        "C. 18 tahun sampai dengan 60 tahun",
+        "D. 15 tahun sampai dengan 64 tahun"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Kriteria Bekerja ICLS 13)",
+      "score": 2,
+      "stem": "[OSL-SAK-13] Manakah dari individu berikut yang secara resmi diklasifikasikan sebagai 'BEKERJA' dalam Sakernas BPS?",
+      "reference": "A",
+      "explanation": "Kunci: A. Konsep 'Bekerja' BPS (ICLS 13) adalah kegiatan ekonomi minimal 1 jam tanpa terputus dalam seminggu terakhir untuk memperoleh atau membantu memperoleh pendapatan/keuntungan. Termasuk pekerja keluarga tidak dibayar (unpaid family worker) yang membantu usaha keluarga (seperti Bu Siti). Doni berstatus penganggur terbuka (mencari kerja); Rian melakukan kegiatan hobi non-ekonomi; Nia mengurus rumah tangga/bukan angkatan kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12; Kuesioner Sakernas Rincian 7.3)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Bu Siti yang membantu menjahit pakaian di konveksi milik suaminya selama 2 jam seminggu yang lalu tanpa menerima bayaran uang",
+        "B. Doni yang mencari lowongan pekerjaan di internet selama 40 jam seminggu tetapi belum diterima kerja",
+        "C. Rian yang merawat kebun bunga miliknya sendiri semata-mata untuk hobi tanpa ada hasil yang dijual",
+        "D. Nia yang sedang libur kuliah dan membantu mencuci piring di rumah keluarganya sendiri"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Pekerja Sementara Tidak Bekerja)",
+      "score": 2,
+      "stem": "[OSL-SAK-14] Pak Ridwan adalah seorang guru PNS tetap yang sedang mengambil cuti sakit selama 2 minggu dan pada seminggu terakhir sama sekali tidak mengajar di sekolah. Dalam Sakernas BPS, bagaimana status kegiatan Pak Ridwan seminggu yang lalu?",
+      "reference": "A",
+      "explanation": "Kunci: A. Penduduk yang memiliki pekerjaan/kegiatan usaha tetap namun pada periode seminggu yang lalu sedang tidak bekerja karena alasan cuti sakit, cuti bersalin, mogok kerja, menunggu panen, atau faktor cuaca buruk diklasifikasikan sebagai Bekerja (punya pekerjaan tetapi sementara tidak bekerja / temporarily absent from work), bagian dari Angkatan Kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12; Kuesioner Sakernas Rincian 8.1)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Bekerja (kategori punya pekerjaan tetapi sementara tidak bekerja / temporarily absent)",
+        "B. Bukan Angkatan Kerja karena tidak melakukan aktivitas ekonomi fisik",
+        "C. Pengangguran Terbuka karena jam kerjanya 0 jam",
+        "D. Setengah Penganggur"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Komposisi Bukan Angkatan Kerja)",
+      "score": 3,
+      "stem": "[OSL-SAK-15] Penduduk Usia Kerja yang tidak termasuk dalam Angkatan Kerja (tidak bekerja dan tidak mencari pekerjaan) diklasifikasikan oleh BPS ke dalam kelompok Bukan Angkatan Kerja. Manakah kegiatan yang termasuk dalam kelompok ini? (Pilih semua yang benar)",
+      "reference": "A, B, C",
+      "explanation": "Kunci: A, B, C. Bukan Angkatan Kerja BPS dibagi ke dalam 3 rincian kegiatan utama: (1) Bersekolah / kuliah, (2) Mengurus rumah tangga, (3) Lainnya (seperti lansia, penerima pensiun, dan penyandang disabilitas yang tidak mampu bekerja). Pencari kerja yang sedang menunggu panggilan wawancara (opsi D) berstatus Pengangguran Terbuka (masuk Angkatan Kerja). (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12, 21)",
+      "type": "multi",
+      "qtype_label": "Pilihan Ganda Kompleks",
+      "options": [
+        "A. Bersekolah / kuliah",
+        "B. Mengurus rumah tangga",
+        "C. Penerima pensiun / lanjut usia yang tidak mampu bekerja lagi (kategori lainnya)",
+        "D. Pencari kerja yang sedang menunggu panggilan wawancara"
+      ],
+      "answer": [0, 1, 2],
+      "partial": true
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Denominator Tingkat Setengah Pengangguran)",
+      "score": 2,
+      "stem": "[OSL-SAK-16] Berdasarkan pedoman resmi indikator ketenagakerjaan BPS, apakah penyebut (denominator) yang digunakan dalam menghitung Tingkat Setengah Pengangguran (TSP)?",
+      "reference": "A",
+      "explanation": "Kunci: A. Formula Tingkat Setengah Pengangguran (TSP) BPS: $\\text{TSP} = \\frac{\\text{Pekerja Jam Kerja < 35 Jam yang mencari/mau kerja}}{\\text{Jumlah Penduduk yang Bekerja (PB)}} \\times 100\\%$. Penyebut TSP adalah total penduduk yang Bekerja (PB), BUKAN total Angkatan Kerja (AK). Ini adalah jebakan ujian yang sering menguji ketelitian mahasiswa. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 17)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Jumlah Penduduk yang Bekerja (PB)",
+        "B. Jumlah Angkatan Kerja (AK)",
+        "C. Jumlah Penduduk Usia Kerja (PUK 15+)",
+        "D. Jumlah Pengangguran Terbuka"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (7 Status Pekerjaan Utama BPS)",
+      "score": 2,
+      "stem": "[OSL-SAK-17] Dalam Kuesioner Sakernas, BPS mengidentifikasi status pekerjaan utama ke dalam 7 kategori baku. Manakah yang BUKAN merupakan salah satu dari 7 status pekerjaan utama tersebut?",
+      "reference": "A",
+      "explanation": "Kunci: A. 7 status pekerjaan utama BPS adalah: (1) Berusaha sendiri, (2) Berusaha dibantu buruh tidak tetap, (3) Berusaha dibantu buruh tetap, (4) Buruh/Karyawan/Pegawai, (5) Pekerja bebas pertanian, (6) Pekerja bebas non-pertanian, (7) Pekerja keluarga/tidak dibayar. 'Pekerja Paruh Waktu' adalah kategori durasi jam kerja (< 35 jam), bukan status pekerjaan! (Sumber: Kuesioner SAK.AGS25-AK.pdf; Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 24-26)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Pekerja Paruh Waktu",
+        "B. Berusaha sendiri",
+        "C. Berusaha dibantu buruh tetap / buruh dibayar",
+        "D. Pekerja bebas di pertanian"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Tenaga Kerja Formal vs Informal)",
+      "score": 2,
+      "stem": "[OSL-SAK-18] Berdasarkan pendekatan status pekerjaan utama BPS, penduduk yang bekerja diklasifikasikan ke dalam Sektor Formal apabila berstatus sebagai...",
+      "reference": "A",
+      "explanation": "Kunci: A. Klasifikasi status formal-informal BPS mengelompokkan: (1) Tenaga Kerja Formal: Berusaha dibantu buruh tetap/dibayar dan Buruh/Karyawan/Pegawai; (2) Tenaga Kerja Informal: Berusaha sendiri, Berusaha dibantu buruh tidak tetap, Pekerja bebas pertanian, Pekerja bebas non-pertanian, dan Pekerja keluarga/tidak dibayar. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 26-28)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Berusaha dibantu buruh tetap/dibayar dan Buruh/Karyawan/Pegawai",
+        "B. Berusaha sendiri dan Berusaha dibantu buruh tidak tetap",
+        "C. Pekerja bebas di pertanian dan pekerja bebas non-pertanian",
+        "D. Pekerja keluarga/tidak dibayar"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Indikator Ketenagakerjaan Pemuda NEET)",
+      "score": 2,
+      "stem": "[OSL-SAK-19] Dalam statistik ketenagakerjaan modern BPS dan indikator SDGs 8.6.1, persentase penduduk usia muda (15-24 tahun) yang sedang tidak bekerja, tidak menempuh pendidikan, dan tidak mengikuti pelatihan diukur melalui indikator...",
+      "reference": "A",
+      "explanation": "Kunci: A. Indikator NEET (Youth Not in Employment, Education, or Training) mengukur proporsi generasi muda usia 15-24 tahun yang menganggur atau pasif secara ekonomi serta tidak sedang bersekolah atau mengikuti kursus/pelatihan kejuruan, sebagai sinyal potensi disrupsi transisi dari sekolah ke dunia kerja. (Sumber: Publikasi Ketenagakerjaan Sakernas BPS; Indikator SDGs BPS)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Youth NEET Rate (Not in Employment, Education, or Training)",
+        "B. Youth Underemployment Index",
+        "C. Child Labor Prevalence Rate",
+        "D. Youth Labor Turnover Ratio"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Sosial: Sakernas (Frekuensi Penyelenggaraan Sakernas)",
+      "score": 2,
+      "stem": "[OSL-SAK-20] BPS menyelenggarakan Survei Angkatan Kerja Nasional (Sakernas) dua kali dalam setahun, yaitu pada bulan Februari (dirancang untuk estimasi hingga tingkat provinsi) dan bulan Agustus (dirancang untuk estimasi hingga tingkat kabupaten/kota).",
+      "reference": "true",
+      "explanation": "Kunci: Benar. Sakernas dilaksanakan dua putaran per tahun: (1) Sakernas Februari memiliki ukuran sampel sekitar 75.000 rumah tangga yang dirancang menghasilkan angka estimasi ketenagakerjaan tingkat nasional dan provinsi; sedangkan (2) Sakernas Agustus memiliki ukuran sampel sekitar 300.000 rumah tangga yang dirancang untuk estimasi hingga tingkat kabupaten/kota. (Sumber: Buku Pedoman Teknis Sakernas BPS 2025; Pertemuan 9 slide 21)",
+      "type": "judge",
+      "qtype_label": "Benar / Salah",
+      "answer": true
+    }
+  ]
+}

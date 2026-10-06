@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>8.1 Konsep dan Metodologi Garis Kemiskinan BPS · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>8.1 Konsep dan Metodologi Garis Kemiskinan BPS</h2><a href="#p-8.1.2">8.1.2 Garis Kemiskinan Makanan dan Non-Makanan ⭐</a></nav>
+<main>
+<h1>8.1 Konsep dan Metodologi Garis Kemiskinan BPS<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-8.1.2">
+<h2>8.1.2 Garis Kemiskinan Makanan dan Non-Makanan ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 14-16, 27]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai pembentukan Garis Kemiskinan Total BPS ($GK = GKM + GKNM$), standar kecukupan energi 2.100 kkal (WNPG 1978), paket komoditas perkotaan vs perdesaan, alasan penggunaan pengeluaran sebagai proksi pendapatan, dan disparitas nilai GK antar-wilayah.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Konsep kemiskinan di Indonesia (BPS) merujuk pada pendekatan 'the costs of basic needs', dimana kemiskinan didefinisikan sbg kurangnya kemampuan atas kebutuhan konsumsi dasar, baik makanan maupun bukan makanan. Garis Kemiskinan (GK) adalah suatu standar minimum yang dibutuhkan seseorang untuk memenuhi kebutuhan dasar hidupnya, termasuk makanan dan bukan makanan. GK = GK makanan + GK bukan makanan. Penduduk dg pengeluaran bulanan per orang di bawah GK akan dikategorikan sbg MISKIN [slide 14, 16].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Garis Kemiskinan (GK) BPS dapat diibaratkan sebagai 'biaya tiket minimal' untuk bertahan hidup layak selama satu bulan di suatu daerah.<br>Tiket ini terdiri dari dua kompartemen wajib:<br>1. Kompartemen Makanan ($GKM$): Berapa rupiah yang harus Anda keluarkan agar tubuh mendapatkan energi minimal 2.100 kilokalori sehari dari makanan pokok setempat (seperti nasi, telur, tahu, tempe, ikan).<br>2. Kompartemen Bukan Makanan ($GKNM$): Berapa rupiah minimal yang dibutuhkan untuk kebutuhan non-makanan esensial tanpa embel-embel kemewahan (sewa atap tempat berteduh, pakaian dasar, sabun mandi, listrik, transportasi dasar, dan biaya kesehatan dasar).</p>
+<p>Jika seorang individu membelanjakan uangnya kurang dari total kedua kompartemen ini, BPS mencatatnya sebagai penduduk miskin, karena secara biologis dan sosial ia tidak mampu memenuhi standar hidup minimum.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional dan Identitas Garis Kemiskinan BPS</p>
+<p>Garis Kemiskinan ($GK$) per kapita sebulan di suatu wilayah disusun atas penjumlahan dua sub-garis [slide 16]:<br>$$GK = GKM + GKNM$$</p>
+<p>Seseorang ke-$i$ dinyatakan berstatus <strong>Miskin</strong> jika dan hanya jika pengeluaran per kapita sebulannya ($y_i$) memenuhi:<br>$$y_i &lt; GK$$</p>
+<p>### 2. Garis Kemiskinan Makanan ($GKM$)<br>- <strong>Dasar Acuan Energi</strong>: Disetarakan dengan kebutuhan minimum <strong>2.100 kilokalori (kkal)</strong> per kapita per hari, mengacu pada rekomendasi Widyakarya Nasional Pangan dan Gizi (WNPG) 1978 [slide 15].<br>- <strong>Paket Komoditas</strong>: Terdiri dari <strong>52 komoditas makanan rujukan</strong> yang paling banyak dikonsumsi oleh populasi rujukan (*reference population*), yaitu kelompok masyarakat yang hidup sedikit di atas garis kemiskinan sementara (penduduk marjinal) [slide 15].<br>- <strong>Formulasi Matematis $GKM$</strong>:<br>$$GKM = \sum_{k=1}^{52} P_k \cdot Q_k^*$$<br>Dimana $P_k$ adalah harga komoditas ke-$k$, dan $Q_k^*$ adalah jumlah fisik kuantitas konsumsi komoditas ke-$k$ yang telah diskalakan secara proporsional sehingga total kandungan energinya persis mencapai 2.100 kkal:<br>$$Q_k^* = Q_k \cdot \left(\frac{2.100}{\sum_{j=1}^{52} c_j \cdot Q_j}\right)$$<br>dengan $c_j$ menyatakan kandungan kalori per unit komoditas ke-$j$.</p>
+<p>### 3. Garis Kemiskinan Bukan Makanan ($GKNM$)<br>- <strong>Dasar Acuan</strong>: Nilai pengeluaran minimum untuk memenuhi kebutuhan dasar tempat tinggal, pakaian, pendidikan, kesehatan, dan transportasi yang dikonsumsi oleh populasi rujukan [slide 16].<br>- <strong>Paket Komoditas</strong>: Mencakup <strong>51 komoditas bukan makanan di perkotaan</strong> dan <strong>47 komoditas bukan makanan di perdesaan</strong> (mencakup perumahan, sandang, aneka barang dan jasa, pendidikan, dan kesehatan) [slide 16].<br>- <strong>Formulasi Matematis $GKNM$</strong>:<br>$$GKNM = \sum_{l=1}^m \alpha_l \cdot P_l \cdot Q_l$$<br>dengan $\alpha_l$ adalah rasio pengeluaran kebutuhan dasar bukan makanan terhadap total pengeluaran komoditas tersebut pada kelompok populasi rujukan.</p>
+<p>### 4. Matriks Komparasi Karakteristik GKM vs GKNM</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Parameter</th><th>Garis Kemiskinan Makanan (GKM)</th><th>Garis Kemiskinan Bukan Makanan (GKNM)</th></tr></thead><tbody><tr><td><strong>Standar Kebutuhan</strong></td><td>Fisiologis objektif: 2.100 kkal per kapita per hari (WNPG 1978)</td><td>Kebutuhan hidup minimum esensial (perumahan, sandang, kesehatan, dll)</td></tr><tr><td><strong>Jumlah Komoditas</strong></td><td>52 jenis komoditas makanan pokok</td><td>51 komoditas (perkotaan) / 47 komoditas (perdesaan)</td></tr><tr><td><strong>Pangsa terhadap Total GK</strong></td><td>Dominan (sekitar 73% s.d. 75% dari total GK)</td><td>Sekitar 25% s.d. 27% dari total GK</td></tr><tr><td><strong>Komoditas Terbesar</strong></td><td>Beras (penyumbang utama), disusul rokok kretek filter, telur, daging ayam</td><td>Biaya sewa rumah/perumahan, listrik, bensin, pendidikan</td></tr><tr><td><strong>Sensitivitas Harga</strong></td><td>Sangat rentan terhadap gejolak harga pangan (*volatile food*)</td><td>Dipengaruhi tarif administered (listrik, BBM) dan inflasi inti</td></tr></tbody></table></div>
+<p>### 5. Alasan Metodologis Penggunaan Data Pengeluaran Susenas<br>BPS menggunakan data <strong>pengeluaran konsumsi rumah tangga</strong> dari Survei Sosial Ekonomi Nasional (Susenas) sebagai proksi pendapatan (*proxy to income*) karena [slide 14]:<br>1. Di negara berkembang (*LDCs*), data pendapatan cenderung mengalami pelaporan yang lebih rendah dari sebenarnya (*under-reporting*) akibat ketakutan terhadap pajak atau keengganan mengaku.<br>2. Banyak penduduk bekerja di sektor informal dengan pendapatan yang fluktuatif dan tidak teratur setiap bulannya, sementara pola konsumsi cenderung lebih stabil (*consumption smoothing*).</p>
+<p>### 6. Bukti Empiris Angka Garis Kemiskinan BPS (September 2021) [slide 27]<br>- <strong>GK Perkotaan</strong>: <strong>Rp502.730</strong> per kapita per bulan.<br>- <strong>GK Perdesaan</strong>: <strong>Rp464.474</strong> per kapita per bulan.<br>- <strong>GK Nasional</strong>: Rata-rata tertimbang sekitar Rp486.168 per kapita per bulan.<br>- GK perkotaan secara konsisten lebih tinggi daripada GK perdesaan karena tingkat harga barang kebutuhan dan biaya perumahan di kota lebih mahal.</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam metodologi penghitungan kemiskinan makro yang diterapkan oleh BPS, manakah pernyataan berikut yang BENAR?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 14-16]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Garis Kemiskinan Makanan (GKM) disusun berdasarkan standar kecukupan 2.500 kkal per kapita per hari rekomendasi FAO.</button>
+<button class="ex-opt" data-i="1">B. Garis Kemiskinan Bukan Makanan (GKNM) mencakup jumlah paket komoditas yang sama persis antara daerah perkotaan dan perdesaan, yaitu 52 komoditas.</button>
+<button class="ex-opt" data-i="2">C. BPS menggunakan data pengeluaran konsumsi rumah tangga dari Susenas sebagai proksi pendapatan karena data pendapatan di negara berkembang rentan mengalami under-reporting.</button>
+<button class="ex-opt" data-i="3">D. Penduduk dikategorikan miskin apabila pengeluaran konsumsinya berada di bawah Garis Kemiskinan Makanan (GKM), tanpa memperhitungkan GKNM.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A salah: Standar kecukupan kalori BPS adalah 2.100 kkal per kapita per hari berdasarkan rekomendasi WNPG 1978 (bukan 2.500 kkal) [slide 15].<br>- Pilihan B salah: Paket GKNM terdiri dari 51 komoditas di perkotaan dan 47 komoditas di perdesaan (sedangkan 52 komoditas adalah paket GKM) [slide 15, 16].<br>- Pilihan C <strong>benar</strong>: BPS menggunakan data pengeluaran Susenas sebagai proksi pendapatan karena pelaporan pendapatan di negara berkembang cenderung dilaporkan lebih rendah (*under-reporting*) [slide 14].<br>- Pilihan D salah: Batas kemiskinan adalah Garis Kemiskinan Total ($GK = GKM + GKNM$), bukan hanya GKM [slide 16].</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;GK=Rp500.000, Pangsa GKM=73,4%, Pengeluaran/kapita=Rp460.000, Status=Miskin&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu kabupaten pada September 2021, Garis Kemiskinan Makanan dihitung sebesar Rp367.000 per kapita per bulan, dan Garis Kemiskinan Bukan Makanan sebesar Rp133.000 per kapita per bulan.<br>Sebuah keluarga terdiri dari Ayah, Ibu, dan 3 orang anak. Total pengeluaran konsumsi seluruh rumah tangga tersebut dalam satu bulan adalah Rp2.300.000.<br>1. Hitunglah nilai Garis Kemiskinan Total ($GK$) kabupaten tersebut.<br>2. Hitunglah persentase kontribusi GKM terhadap Garis Kemiskinan Total.<br>3. Hitunglah pengeluaran per kapita sebulan keluarga tersebut dan tentukan apakah keluarga tersebut tergolong miskin atau tidak miskin.<br>Tuliskan jawaban akhir dalam format: <code>GK=Rp..., Pangsa GKM=...%, Pengeluaran/kapita=Rp..., Status=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 16, 27]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. <strong>Garis Kemiskinan Total ($GK$)</strong>:<br>   $$GK = GKM + GKNM = Rp367.000 + Rp133.000 = Rp500.000$$<br>2. <strong>Pangsa Pengeluaran Makanan ($GKM$)</strong>:<br>   $$\text{Pangsa } GKM = \frac{Rp367.000}{Rp500.000} \times 100\% = 73,4\%$$<br>3. <strong>Pengeluaran Per Kapita Sebulan Keluarga</strong>:<br>   - Jumlah anggota rumah tangga ($ART$) = $1 + 1 + 3 = 5$ orang.<br>   - Pengeluaran per kapita ($y$) = $\frac{\text{Total Pengeluaran RT}}{ART} = \frac{Rp2.300.000}{5} = Rp460.000$ per kapita per bulan.<br>4. <strong>Penentuan Status Kemiskinan</strong>:<br>   - Karena $y = Rp460.000 &lt; GK = Rp500.000$, maka keluarga tersebut dikategorikan sebagai <strong>Miskin</strong>.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>gkm = 367000<br>gknm = 133000<br>gk = gkm + gknm # 500000<br>pangsa_gkm = (gkm / gk) * 100 # 73.4%<br>art = 5<br>total_exp = 2300000<br>y_capita = total_exp / art # 460000<br>status = 'Miskin' if y_capita &lt; gk else 'Tidak Miskin'<br>print(f'GK=Rp{gk:,}, Pangsa GKM={pangsa_gkm:.1f}%, Pengeluaran/kapita=Rp{y_capita:,.0f}, Status={status}')<br># Output: GK=Rp500,000, Pangsa GKM=73.4%, Pengeluaran/kapita=Rp460,000, Status=Miskin<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Rokok Kretek Filter</strong>: Sering muncul pertanyaan: *'Apakah rokok masuk ke dalam perhitungan Garis Kemiskinan BPS?'* Jawabannya adalah <strong>YA, MASUK</strong>. Rokok kretek filter merupakan komoditas penyumbang GKM terbesar kedua setelah beras di perkotaan maupun di perdesaan, mencerminkan pola konsumsi riil populasi rujukan.</li><li><strong>Salah Menghitung Status Kemiskinan Rumah Tangga</strong>: Status kemiskinan ditentukan oleh <strong>pengeluaran per kapita</strong> ($y_i = \text{Total Pengeluaran RT} / \text{Jumlah Anggota RT}$), bukan total pengeluaran rumah tangga. Rumah tangga dengan pengeluaran Rp2.000.000 sebulan tetapi beranggotakan 5 orang memiliki pengeluaran per kapita Rp400.000. Jika $GK = Rp464.474$, seluruh anggota rumah tangga tersebut dikategorikan miskin.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Total GK = Makanan 2.100 kkal (52 komoditi, ~74%) + Non-Makanan Esensial (51/47 komoditi, ~26%).</p></div></div>
+<div class="links">Keterkaitan Konsep: 8.1.1, 8.1.3, 8.2.1</div>
+<button class="donebtn" data-id="8.1.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "point_id": "9.1.1",
+  "title": "Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Statistik Ketenagakerjaan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "4-20",
+        "content": "Kerangka ICLS 13, batasan Penduduk Usia Kerja (PUK >= 15 tahun), Bukan Usia Kerja (BUK < 15 tahun), konsep bekerja minimal 1 jam, Angkatan Kerja (AK), dan Bukan Angkatan Kerja (BAK)."
+      },
+      {
+        "file": "Kuesioner_SAK.AGS25-AK.md",
+        "slide_or_page": "15-22",
+        "content": "Rincian kegiatan seminggu yang lalu, batasan 1 jam berturut-turut untuk kegiatan ekonomi, dan penapisan sementara tidak bekerja."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Kerangka ketenagakerjaan membagi seluruh penduduk ke dalam piramida aktivitas ekonomi. Ambang batas 'bekerja minimal 1 jam tanpa putus dalam seminggu terakhir' diadopsi dari standar internasional ILO (ICLS 13) dengan filosofi inklusivitas: menangkap setiap sumbangan marginal terhadap produksi nasional barang dan jasa, sekecil apa pun jam kerjanya. Aturan prioritas menetapkan bahwa kegiatan ekonomi (bekerja atau mencari kerja) mengalahkan kegiatan non-ekonomi (sekolah atau mengurus rumah tangga).",
+    "bps_definition": "Penduduk Usia Kerja (PUK) adalah seluruh penduduk berumur 15 tahun ke atas. PUK terbagi menjadi Angkatan Kerja (AK) dan Bukan Angkatan Kerja (BAK). Bekerja adalah kegiatan ekonomi yang dilakukan seseorang dengan maksud memperoleh atau membantu memperoleh pendapatan/keuntungan, paling sedikit 1 jam secara tidak terputus dalam seminggu terakhir. Bekerja juga mencakup pekerja keluarga tak dibayar (unpaid worker) dan mereka yang sementara tidak bekerja karena sakit, cuti, atau mogok.",
+    "boundary_conditions": "1. Batas umur PUK di Indonesia sejak 1998 adalah >= 15 tahun (sebelumnya >= 10 tahun). Pekerja anak (< 15 tahun) tidak dimasukkan dalam statistik resmi PUK/AK.\n2. Bekerja minimal 1 jam harus dalam kurun waktu 7 hari terakhir (reference period).\n3. Pekerja yang sementara tidak bekerja (cuti sakit, cuti melahirkan, menunggu panen) tetap diklasifikasikan sebagai Bekerja, bukan Pengangguran.\n4. Persamaan identitas demografi ketenagakerjaan: PUK = AK + BAK = (Bekerja + Penganggur) + (Sekolah + Mengurus Rumah Tangga + Lainnya).",
+    "formula_latex": "$$\\text{Populasi} = \\text{PUK} + \\text{BUK}, \\quad \\text{PUK} = \\text{AK} + \\text{BAK}, \\quad \\text{AK} = \\text{Bekerja} + \\text{Penganggur}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam suatu wilayah sensus terdapat total populasi 20.000.000 jiwa. Dari jumlah tersebut, penduduk berusia 0-14 tahun berjumlah 5.000.000 jiwa. Di antara penduduk usia 15 tahun ke atas, tercatat 9.500.000 orang aktif bekerja (termasuk 200.000 pekerja yang sedang cuti/sementara tidak bekerja), 500.000 orang sedang mencari pekerjaan secara aktif, 2.000.000 orang bersekolah penuh waktu, 2.500.000 orang mengurus rumah tangga tanpa kegiatan komersial, dan 500.000 orang lansia/penerima pensiun (lainnya). Hitunglah nilai PUK, AK, BAK, dan buktikan persamaan PUK = AK + BAK.",
+    "data_table": "| Komponen Ketenagakerjaan | Jumlah Jiwa |\n|---|---|\n| Penduduk Berumur 0-14 Tahun (BUK) | 5.000.000 |\n| Penduduk Bekerja (termasuk cuti sementara) | 9.500.000 |\n| Pengangguran Terbuka (mencari kerja) | 500.000 |\n| Sekolah Penuh Waktu | 2.000.000 |\n| Mengurus Rumah Tangga | 2.500.000 |\n| Lainnya (Pensiunan/Lansia/Disabilitas) | 500.000 |",
+    "step_by_step_solution": "1. Menghitung Penduduk Usia Kerja (PUK):\n   $$\\text{PUK} = \\text{Total Populasi} - \\text{BUK} = 20.000.000 - 5.000.000 = 15.000.000$$\n2. Menghitung Angkatan Kerja (AK):\n   $$\\text{AK} = \\text{Bekerja} + \\text{Pengangguran} = 9.500.000 + 500.000 = 10.000.000$$\n3. Menghitung Bukan Angkatan Kerja (BAK):\n   $$\\text{BAK} = \\text{Sekolah} + \\text{Mengurus RT} + \\text{Lainnya} = 2.000.000 + 2.500.000 + 500.000 = 5.000.000$$\n4. Verifikasi Identitas Neraca Tenaga Kerja:\n   $$\\text{AK} + \\text{BAK} = 10.000.000 + 5.000.000 = 15.000.000 = \\text{PUK} \\quad (\\text{Terbukti Identik})$$",
+    "python_verification_code": "total_pop = 20000000\nbuk = 5000000\npuk = total_pop - buk\nbekerja = 9500000\npenganggur = 500000\nak = bekerja + penganggur\nsekolah = 2000000\nirt = 2500000\nlainnya = 500000\nbak = sekolah + irt + lainnya\nvalid = (puk == ak + bak)\nprint(f'PUK={puk}, AK={ak}, BAK={bak}, Valid={valid}')",
+    "expected_output": "PUK=15000000, AK=10000000, BAK=5000000, Valid=True"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Aturan Prioritas ICLS terhadap Mahasiswa/IRT yang Bekerja Marginal",
+      "common_mistake": "Menggolongkan mahasiswa atau ibu rumah tangga yang bekerja 2 jam seminggu sebagai Bukan Angkatan Kerja (Sekolah/IRT).",
+      "safe_strategy": "Patuhi aturan prioritas ICLS: Kegiatan ekonomi (bekerja minimal 1 jam) mengalahkan kegiatan non-ekonomi. Individu tersebut harus diklasifikasikan sebagai Bekerja (Angkatan Kerja)."
+    },
+    {
+      "trap_description": "Pekerja Sementara Tidak Bekerja (Temporarily Absent)",
+      "common_mistake": "Menganggap karyawan yang cuti sakit seminggu penuh atau petani yang menunggu masa tanam sebagai pengangguran terbuka.",
+      "safe_strategy": "Selama memiliki ikatan kerja formal atau usaha yang masih aktif beroperasi, individu sementara tidak bekerja tetap tergolong Bekerja."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.1.1",
+      "name": "Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 4-20]",
+      "exam_focus": "Menguasai dekomposisi piramida ketenagakerjaan ICLS 13, definisi bekerja minimal 1 jam, pemilahan AK vs BAK, dan penerapan aturan prioritas ketenagakerjaan pada Sakernas BPS.",
+      "textbook_excerpt": "Klasifikasi 2 kelompok penduduk dalam statistik tenaga kerja: Penduduk mencapai usia minimum bekerja (berumur >= 15 tahun) => PUK juga disebut angkatan kerja potensi; Selebihnya (berumur < 15 tahun) => bukan usia kerja (BUK). PUK yang aktif secara ekonomi terdiri dari: (1) bekerja, dan (2) mencari pekerjaan => unemployed. PUK 'tidak siap bekerja' karena sekolah, atau mengurus rumahtangga => bukan angkatan kerja [slide 6]. Batasan usia kerja di Indonesia >= 15 tahun sesuai konvensi ILO [slide 8]. Bekerja adalah melakukan kegiatan ekonomi minimal 1 jam berturut-turut selama seminggu yang lalu [slide 7].",
+      "intuition": "Statistik ketenagakerjaan dirancang untuk mengukur dua hal: pasokan daya kerja (labor supply) dan tingkat penyerapan oleh sistem ekonomi (labor absorption). Batasan 1 jam seminggu tampak sangat longgar, namun ini adalah standar global ILO agar tidak ada satu pun kontribusi ekonomi riil yang terlewatkan (misalnya membantu panen keluarga, berdagang online sesaat, atau ojek sambilan).",
+      "formal": "### 1. Kerangka Ketenagakerjaan ICLS 13\n\nBerdasarkan resolusi International Conference of Labour Statisticians ke-13 (ICLS 13 tahun 1982) yang diadopsi resmi oleh Badan Pusat Statistik (BPS):\n\n| Tingkat Klasifikasi | Kategori | Batasan Operasional BPS |\n|---|---|---|\n| **Tingkat 1: Batas Usia** | Penduduk Usia Kerja (PUK) | Penduduk berumur $\\ge 15$ tahun pada saat pencacahan [slide 6, 8] |\n| | Bukan Usia Kerja (BUK) | Penduduk berumur $< 15$ tahun [slide 6] |\n| **Tingkat 2: Aktivitas Ekonomi** | Angkatan Kerja (AK) | Penduduk usia kerja yang aktif secara ekonomi (*economically active*): Bekerja atau Pengangguran [slide 6] |\n| | Bukan Angkatan Kerja (BAK) | Penduduk usia kerja yang tidak aktif secara ekonomi (*economically inactive*): Sekolah, Mengurus Rumah Tangga, atau Lainnya [slide 6, 21] |\n| **Tingkat 3: Status Angkatan Kerja** | Bekerja (*Employed*) | Melakukan kegiatan ekonomi $\\ge 1$ jam berturut-turut dalam seminggu terakhir demi upah/laba, atau sementara tidak bekerja [slide 5, 7] |\n| | Pengangguran (*Unemployed*) | Tidak bekerja, bersedia bekerja, dan aktif mencari kerja atau mempersiapkan usaha [slide 5, 16] |\n\n### 2. Aturan Prioritas Ketenagakerjaan (The Priority Rule)\n\nDalam kuesioner Sakernas, seorang individu dapat melakukan beberapa aktivitas sekaligus dalam seminggu terakhir (misalnya kuliah sambil menjadi barista 4 jam seminggu, atau ibu rumah tangga yang menjual kue secara daring). BPS menerapkan **Aturan Prioritas** hierarkis sbb:\n\n$$\\text{Bekerja} \\succ \\text{Mencari Kerja (Penganggur)} \\succ \\text{Bukan Angkatan Kerja (Sekolah/IRT/Lainnya)}$$\n\n- Jika seseorang bekerja $\\ge 1$ jam, statusnya mutlak **Bekerja**, mengabaikan status sekolah atau mengurus rumah tangganya.\n- Jika seseorang tidak bekerja tetapi aktif mencari pekerjaan atau mempersiapkan usaha baru, statusnya mutlak **Pengangguran**, mengabaikan waktu luangnya yang dihabiskan di rumah.\n- Hanya jika seseorang tidak bekerja dan tidak mencari kerja, barulah diklasifikasikan ke dalam salah satu dari tiga sub-kelompok **BAK**:\n  1. **Sekolah**: Bersekolah formal atau nonformal.\n  2. **Mengurus Rumah Tangga**: Mengurus keluarga tanpa upah/laba ekonomi komersial.\n  3. **Lainnya**: Penerima pensiun, lansia tidak berdaya, orang dengan disabilitas berat yang tidak mampu bekerja.",
+      "pitfalls": "1. **Mengabaikan Pekerja Keluarga Tak Dibayar**: Dianggap BAK karena tidak menerima gaji uang. Padahal BPS menghitung pekerja keluarga tak dibayar minimal 1 jam sebagai Bekerja.\n2. **Kekeliruan Ambang Batas 15 Jam Internasional**: Beberapa literatur asing mencantumkan 15 jam untuk unpaid worker, namun BPS secara konsisten menetapkan batas 1 jam tanpa putus untuk seluruh kategori pekerja.",
+      "memory_hook": "Piramida Tenaga Kerja: PUK (15+) = AK (Bekerja + Penganggur) + BAK (Sekolah + IRT + Lainnya). Prioritas: Bekerja > Penganggur > BAK.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 6-8]",
+          "problem": "Seorang pemuda berusia 19 tahun merupakan mahasiswa aktif semester 3. Pada hari Sabtu minggu lalu, ia bekerja selama 3 jam sebagai barista di kedai kopi pamannya dan menerima upah harian. Berdasarkan konsep ketenagakerjaan BPS dan aturan prioritas ICLS, pemuda tersebut diklasifikasikan sebagai:",
+          "options": [
+            "Bukan Angkatan Kerja karena kegiatan utamanya adalah mahasiswa aktif.",
+            "Angkatan Kerja dengan status Bekerja karena melakukan kegiatan ekonomi minimal 1 jam seminggu terakhir.",
+            "Pengangguran Terbuka karena belum tamat kuliah dan belum memiliki pekerjaan tetap.",
+            "Pekerja Paruh Waktu sukarela yang digolongkan ke dalam Bukan Usia Kerja."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan Bertahap**:\n1. Berdasarkan aturan prioritas ICLS 13 dan BPS, kegiatan ekonomi (bekerja $\\ge 1$ jam) mendapat prioritas tertinggi di atas kegiatan non-ekonomi (bersekolah/kuliah).\n2. Pemuda tersebut berusia 19 tahun (PUK $\\ge 15$) dan bekerja selama 3 jam (memenuhi syarat $\\ge 1$ jam berturut-turut untuk memperoleh upah).\n3. Oleh karena itu, ia sah diklasifikasikan ke dalam **Angkatan Kerja** dengan status **Bekerja**."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 21]",
+          "problem": "Berdasarkan data Sakernas suatu kabupaten, penduduk usia 15 tahun ke atas berjumlah 500.000 orang. Diketahui penduduk yang bekerja berjumlah 320.000 orang, pengangguran terbuka berjumlah 20.000 orang, penduduk yang bersekolah 60.000 orang, dan mengurus rumah tangga 90.000 orang. Tentukan:\n1. Jumlah Angkatan Kerja (AK).\n2. Jumlah Bukan Angkatan Kerja kategori 'Lainnya'.\nTuliskan jawaban akhir dalam format: `AK=X, Lainnya=Y`.",
+          "answer": "AK=340000, Lainnya=10000",
+          "solution": "Langkah-langkah perhitungan:\n1. Menghitung Angkatan Kerja (AK):\n   $$\\text{AK} = \\text{Bekerja} + \\text{Pengangguran} = 320.000 + 20.000 = 340.000$$\n2. Menghitung total Bukan Angkatan Kerja (BAK):\n   $$\\text{BAK} = \\text{PUK} - \\text{AK} = 500.000 - 340.000 = 160.000$$\n3. Menghitung BAK kategori 'Lainnya':\n   $$\\text{BAK} = \\text{Sekolah} + \\text{Mengurus RT} + \\text{Lainnya}$$\n   $$160.000 = 60.000 + 90.000 + \\text{Lainnya}$$\n   $$\\text{Lainnya} = 160.000 - 150.000 = 10.000$$\n\n**Verifikasi Kode Python**:\n```python\npuk = 500000\nbekerja = 320000\npenganggur = 20000\nsekolah = 60000\nirt = 90000\nak = bekerja + penganggur\nbak = puk - ak\nlainnya = bak - (sekolah + irt)\nprint(f'AK={ak}, Lainnya={lainnya}')\n# Output: AK=340000, Lainnya=10000\n```"
+        }
+      ],
+      "links": [
+        "9.1.2",
+        "9.1.3",
+        "9.1.4"
+      ]
+    }
+  ]
+}

@@ -363,16 +363,16 @@ def source_text(obj):
     return str(obj.get("source_ref") or obj.get("source") or "").strip()
 
 
-def markdown_source_line(obj, prefix="来源"):
+def markdown_source_line(obj, prefix="Sumber"):
     src = source_text(obj)
-    return f"*{prefix}：{src}*" if src else ""
+    return f"*{prefix}: {src}*" if src else ""
 
 
 def render_markdown(data):
     mode = data["mode"]
-    mode_label = "深入讲解" if mode == "deep" else "考试速通"
+    mode_label = "Pembahasan Mendalam" if mode == "deep" else "Ringkasan Kilat Ujian"
     ex_count = example_count(data)
-    practice_note = f"例题 {ex_count} 道，答案默认折叠，先自己做再展开。" if ex_count else "本节按考频未配置例题，重点看讲解与易错辨析。"
+    practice_note = f"Contoh Soal {ex_count} Butir, jawaban terlipat, kerjakan mandiri terlebih dahulu." if ex_count else "Bagian ini fokus pada pemahaman konsep dan jebakan ujian."
     lines = [
         "---",
         f"textbook: {data['textbook']}",
@@ -385,8 +385,8 @@ def render_markdown(data):
         "",
         f"# {data['section']}",
         "",
-        f"> 《{data['textbook']}》{data['chapter_title']} ｜ {mode_label}模式 ｜ "
-        f"{len(data['points'])} 个知识点 ｜ {practice_note}",
+        f"> 《{data['textbook']}》{data['chapter_title']} ｜ Mode {mode_label} ｜ "
+        f"{len(data['points'])} Poin Konsep ｜ {practice_note}",
         "",
     ]
     for p in data["points"]:
@@ -402,31 +402,31 @@ def render_markdown(data):
             lines.append("")
         if mode == "deep":
             if p.get("textbook_excerpt"):
-                lines.append(quote_block("**教材原文**\n" + p["textbook_excerpt"], "quote"))
+                lines.append(quote_block("**Teks Materi Kuliah**\n" + p["textbook_excerpt"], "quote"))
                 lines.append("")
             if p.get("intuition"):
-                lines.append(f"**直观理解**　{p['intuition']}")
+                lines.append(f"**Intuisi Konsep**　{p['intuition']}")
                 lines.append("")
             if p.get("formal"):
-                lines.append(f"**严谨表述**　{p['formal']}")
+                lines.append(f"**Definisi & Penjelasan Rigor**　{p['formal']}")
                 lines.append("")
         else:  # speedrun
             if p.get("key_point"):
-                lines.append(f"**核心结论**　{p['key_point']}")
+                lines.append(f"**Kesimpulan Utama**　{p['key_point']}")
                 lines.append("")
             if p.get("method"):
-                lines.append(quote_block("**解题思维**\n" + p["method"], "example"))
+                lines.append(quote_block("**Metode Pengerjaan Soal**\n" + p["method"], "example"))
                 lines.append("")
         figs = figure_list(p)
         if figs:
             lines.extend(render_markdown_figures(figs))
         exs = example_list(p)
-        TYPE_LABEL = {"single": "单选", "multi": "多选", "judge": "判断", "text": ""}
+        TYPE_LABEL = {"single": "Pilihan Ganda", "multi": "Pilihan Jamak", "judge": "Benar/Salah", "text": "Isian/Esai"}
         for n, ex in enumerate(exs, 1):
-            base = f"例题{n}" if len(exs) > 1 else "例题"
+            base = f"Contoh Soal {n}" if len(exs) > 1 else "Contoh Soal"
             etype = ex.get("type", "text")
             tlabel = TYPE_LABEL.get(etype, "")
-            head = f"{base}（{tlabel}）" if tlabel else base
+            head = f"{base} ({tlabel})" if tlabel else base
             lines.append(f"**{head}**　{ex['problem']}")
             ex_src = markdown_source_line(ex)
             if ex_src:
@@ -438,26 +438,26 @@ def render_markdown(data):
                     lines.append(f"- {chr(65 + i)}. {o}")
                 lines.append("")
             if etype == "single":
-                ans_line = f"**答案：{chr(65 + ex['answer'])}**\n"
+                ans_line = f"**Jawaban: {chr(65 + ex['answer'])}**\n"
             elif etype == "multi":
-                ans_line = f"**答案：{'、'.join(chr(65 + i) for i in sorted(ex['answer']))}**\n"
+                ans_line = f"**Jawaban: {', '.join(chr(65 + i) for i in sorted(ex['answer']))}**\n"
             elif etype == "judge":
-                ans_line = f"**答案：{'正确' if ex.get('answer') else '错误'}**\n"
+                ans_line = f"**Jawaban: {'Benar' if ex.get('answer') else 'Salah'}**\n"
             else:
                 ans_line = ""
             sol_text = ans_line + ex["solution"].strip()
             sol = "\n".join("> " + l for l in sol_text.splitlines())
-            lines.append(f"> [!success]- 参考解答（{base}，先自己做，再点开）")
+            lines.append(f"> [!success]- Kunci Jawaban & Solusi ({base}, kerjakan mandiri terlebih dahulu)")
             lines.append(sol)
             lines.append("")
         if p.get("pitfalls"):
-            lines.append(quote_block("**易错辨析**　" + p["pitfalls"], "warning"))
+            lines.append(quote_block("**Jebakan & Kesalahan Umum**　" + p["pitfalls"], "warning"))
             lines.append("")
         if p.get("memory_hook"):
-            lines.append(quote_block("**记忆抓手**　" + p["memory_hook"], "tip"))
+            lines.append(quote_block("**Jembatan Keledai / Tips Mengingat**　" + p["memory_hook"], "tip"))
             lines.append("")
         if p.get("links"):
-            lines.append(f"*关联知识点：{'、'.join(p['links'])}*")
+            lines.append(f"*Keterkaitan Konsep: {', '.join(p['links'])}*")
             lines.append("")
         lines.append("---")
         lines.append("")
@@ -472,11 +472,9 @@ HTML_HEAD = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <title>{title}</title>
-<script>
-window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }} }};
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-        onerror="document.getElementById('mjwarn').style.display='block'"></script>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
 <style>
   :root {{ font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }}
   body {{ margin: 0; background: #f7f7f4; color: #1f2937; }}
@@ -493,7 +491,7 @@ window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']
   .meta {{ color: #6b7280; font-size: 13px; margin-bottom: 8px; }}
   .modetag {{ display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
              background:#eef2ff; color:#4338ca; margin-left:6px; }}
-  #mjwarn {{ display: none; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
+  #mjwarn {{ display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
   section.point {{ background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }}
   section.point h2 {{ font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }}
   .box {{ border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }}
@@ -566,8 +564,8 @@ window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']
 <nav id="toc"><h2>{section}</h2>{toc}</nav>
 <main>
 <h1>{section}<span class="modetag">{mode_label}</span></h1>
-<div class="meta">《{textbook}》{chapter} ｜ {n} 个知识点 ｜ 生成于 {date} ｜ {practice_note}</div>
-<div id="mjwarn">⚠️ 离线状态：公式渲染（MathJax）加载失败，以下公式显示为 LaTeX 源码，含义不受影响。</div>
+<div class="meta">《{textbook}》{chapter} ｜ {n} Poin Konsep ｜ Dibuat: {date} ｜ {practice_note}</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
 """
 
 HTML_TAIL = """</main></div>
@@ -578,7 +576,7 @@ function refresh() {
   document.querySelectorAll(".donebtn").forEach(b => {
     const on = done.has(b.dataset.id);
     b.classList.toggle("on", on);
-    b.textContent = on ? "✓ 已学完" : "标记为已学";
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
     const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
     if (a) a.classList.toggle("done", on);
   });
@@ -615,8 +613,8 @@ document.querySelectorAll(".ex").forEach(ex => {
         const i = +o.dataset.i;
         o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
       });
-      const correctTxt = type === "judge" ? (ans === 0 ? "正确" : "错误") : L(ans);
-      verdict(ok, ok ? "✓ 回答正确" : "✗ 回答错误（正确答案：" + correctTxt + "）");
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
       reveal();
     }));
   } else if (type === "multi") {
@@ -636,7 +634,7 @@ document.querySelectorAll(".ex").forEach(ex => {
         o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
       });
       go.disabled = true;
-      verdict(allRight, allRight ? "✓ 全部正确" : "✗ 未全对（正确答案：" + [...want].sort((a, b) => a - b).map(L).join("、") + "）");
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
       reveal();
     });
   } else {  // text
@@ -647,10 +645,10 @@ document.querySelectorAll(".ex").forEach(ex => {
       if (list.length && user) {
         const hit = list.some(a => normAns(a) === user);
         verdict(hit, hit
-          ? "✓ 最终答案正确（参考：" + list[0] + "）。展开解答核对步骤。"
-          : "✗ 与参考最终答案不一致（参考：" + list[0] + "）。对照解答看看哪一步出了问题。");
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
       } else if (list.length && !user) {
-        verdict(false, "你还没作答。参考最终答案：" + list[0]);
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
       }
       go.disabled = true; inp.readOnly = true; reveal();
     });
@@ -689,9 +687,9 @@ def render_html_figures(figures):
     return "".join(out)
 
 
-def html_source(obj, cls="source-ref", prefix="来源"):
+def html_source(obj, cls="source-ref", prefix="Sumber"):
     src = source_text(obj)
-    return f'<div class="{cls}">{esc(prefix)}：{esc(src)}</div>' if src else ""
+    return f'<div class="{cls}">{esc(prefix)}: {esc(src)}</div>' if src else ""
 
 
 def render_html_points(points, mode):
@@ -710,27 +708,27 @@ def render_html_points(points, mode):
             out.append(f'<div class="box info">📌 <div class="rich">{render_rich(p["exam_focus"])}</div></div>')
         if mode == "deep":
             if p.get("textbook_excerpt"):
-                out.append(f'<div class="excerpt"><span class="lead">📖 教材原文</span>'
+                out.append(f'<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span>'
                            f'<div class="rich">{render_rich(p["textbook_excerpt"])}</div></div>')
             if p.get("intuition"):
-                out.append(field("直观理解", p["intuition"]))
+                out.append(field("💡 Intuisi Konsep", p["intuition"]))
             if p.get("formal"):
-                out.append(field("严谨表述", p["formal"]))
+                out.append(field("📐 Definisi & Penjelasan Rigor", p["formal"]))
         else:
             if p.get("key_point"):
-                out.append(field("核心结论", p["key_point"]))
+                out.append(field("🎯 Kesimpulan Utama", p["key_point"]))
             if p.get("method"):
-                out.append(f'<div class="method"><span class="lead">🧭 解题思维</span>'
+                out.append(f'<div class="method"><span class="lead">🧭 Metode Pengerjaan Soal</span>'
                            f'<div class="rich">{render_rich(p["method"])}</div></div>')
         if figure_list(p):
             out.append(render_html_figures(figure_list(p)))
         exs = example_list(p)
-        TYPE_LABEL = {"single": "单选", "multi": "多选", "judge": "判断", "text": ""}
+        TYPE_LABEL = {"single": "Pilihan Ganda", "multi": "Pilihan Jamak", "judge": "Benar/Salah", "text": "Isian/Esai"}
         for n, ex in enumerate(exs, 1):
-            base = f"例题{n}" if len(exs) > 1 else "例题"
+            base = f"Contoh Soal {n}" if len(exs) > 1 else "Contoh Soal"
             etype = ex.get("type", "text")
             tlabel = TYPE_LABEL.get(etype, "")
-            head = f"{base}（{tlabel}）" if tlabel else base
+            head = f"{base} ({tlabel})" if tlabel else base
             if etype == "single":
                 ans_data = json.dumps(ex.get("answer"))
             elif etype == "judge":
@@ -750,30 +748,30 @@ def render_html_points(points, mode):
                     out.append(f'<button class="ex-opt" data-i="{i}">{chr(65 + i)}. {render_inline_rich(o)}</button>')
                 out.append('</div>')
                 if etype == "multi":
-                    out.append('<div class="hint" style="font-size:12px;color:#6b7280">多选：选齐后点确认</div>'
-                               '<div><button class="ex-go">确认作答</button></div>')
+                    out.append('<div class="hint" style="font-size:12px;color:#6b7280">Pilihan Jamak: Pilih semua yang sesuai lalu klik Konfirmasi</div>'
+                               '<div><button class="ex-go">Konfirmasi Jawaban</button></div>')
             elif etype == "judge":
                 out.append('<div class="ex-opts judge">'
-                           '<button class="ex-opt" data-i="0">正确</button>'
-                           '<button class="ex-opt" data-i="1">错误</button></div>')
+                           '<button class="ex-opt" data-i="0">Benar</button>'
+                           '<button class="ex-opt" data-i="1">Salah</button></div>')
             else:
-                out.append('<textarea class="ex-in" placeholder="先自己作答，写出关键步骤或最终答案…"></textarea>')
-                out.append('<div><button class="ex-go">提交批改</button></div>')
+                out.append('<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>')
+                out.append('<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>')
             out.append('<div class="ex-vd"></div>')
-            out.append(f'<div class="ex-sol"><div class="ex-sol-h">📖 参考解答（{base}）</div>'
+            out.append(f'<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi ({base})</div>'
                        f'<div class="rich">{render_rich(ex["solution"])}</div></div>')
             if etype == "text":
-                out.append('<div class="ex-sg">对照参考给自己打分：'
-                           '<button data-g="right">完全正确</button>'
-                           '<button data-g="part">部分正确</button>'
-                           '<button data-g="no">还不太会</button></div>')
+                out.append('<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:'
+                           '<button data-g="right">Benar Penuh</button>'
+                           '<button data-g="part">Benar Sebagian</button>'
+                           '<button data-g="no">Belum Paham</button></div>')
             out.append('</div>')
         if p.get("pitfalls"):
-            out.append(f'<div class="box warn">⚠️ <b>易错辨析</b> <div class="rich">{render_rich(p["pitfalls"])}</div></div>')
+            out.append(f'<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich">{render_rich(p["pitfalls"])}</div></div>')
         if p.get("memory_hook"):
-            out.append(f'<div class="box tip">💡 <b>记忆抓手</b> <div class="rich">{render_rich(p["memory_hook"])}</div></div>')
+            out.append(f'<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich">{render_rich(p["memory_hook"])}</div></div>')
         if p.get("links"):
-            out.append(f'<div class="links">关联知识点：{esc("、".join(p["links"]))}</div>')
+            out.append(f'<div class="links">Keterkaitan Konsep: {esc(", ".join(p["links"]))}</div>')
         out.append(f'<button class="donebtn" data-id="{esc(p["id"])}"></button>')
         out.append("</section>")
     return "\n".join(out)
@@ -781,15 +779,15 @@ def render_html_points(points, mode):
 
 def render_html(data):
     mode = data["mode"]
-    mode_label = "深入讲解" if mode == "deep" else "考试速通"
+    mode_label = "Pembahasan Mendalam" if mode == "deep" else "Ringkasan Kilat Ujian"
     ex_count = example_count(data)
-    practice_note = f"例题 {ex_count} 道 ｜ 例题请先作答，提交后批改并展开解答" if ex_count else "本节按考频未配置例题，重点看讲解与易错辨析"
+    practice_note = f"Total Contoh Soal {ex_count} Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan" if ex_count else "Fokus pada pemahaman konsep dan jebakan ujian"
     toc = "".join(
         f'<a href="#p-{esc(p["id"])}">{esc(p["id"])} {esc(p["name"])}'
         f'{" ⭐" if p.get("importance") == "高" else ""}</a>'
         for p in data["points"])
     out = [HTML_HEAD.format(
-        title=f"{data['section']} · 讲义", section=esc(data["section"]),
+        title=f"{data['section']} · Modul Kuliah", section=esc(data["section"]),
         textbook=esc(data["textbook"]), chapter=esc(data["chapter_title"]),
         n=len(data["points"]), date=datetime.date.today().isoformat(),
         toc=toc, mode_label=mode_label, practice_note=esc(practice_note))]

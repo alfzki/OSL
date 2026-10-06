@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>13.2 Statistik Pariwisata dan Perhotelan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>13.2 Statistik Pariwisata dan Perhotelan</h2><a href="#p-13.2.2">13.2.2 Tingkat Penghunian Kamar TPK Hotel ⭐</a></nav>
+<main>
+<h1>13.2 Statistik Pariwisata dan Perhotelan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-13.2.2">
+<h2>13.2.2 Tingkat Penghunian Kamar TPK Hotel ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 36-41]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai formulasi TPK BPS, penghitungan malam kamar tersedia (kamar x hari), formula TPTT, RTK, dan RTH, serta pemahaman instrumen survei VHTS vs VHTL.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Tingkat Penghunian Kamar (TPK) hotel yaitu perbandingan antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia (dalam persen). Angka ini memberikan gambaran berapa persen kamar yang tersedia pada akomodasi terisi oleh tamu yang menginap dalam suatu waktu tertentu. Sumber data: Kuesioner VHTS (bulanan) secara sensus untuk hotel berbintang dan sampel untuk non-bintang; VHTL (tahunan) secara sensus [slide 39-41].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah hotel memiliki 100 kamar dan di suatu malam terisi 60 kamar, maka TPK malam itu adalah 60%. Bagaimana jika kita menghitung selama satu bulan penuh (30 hari)? Hotel tersebut memiliki 'stok jualan' sebanyak 100 kamar x 30 malam = 3.000 malam kamar. Jika selama sebulan itu total transaksi menginap mencapai 1.800 malam kamar, maka TPK bulanannya adalah 1.800 / 3.000 = 60%. Angka 60% ini mencerminkan produktivitas aset hotel.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Konseptualisasi TPK Hotel</p>
+<p>Tingkat Penghunian Kamar (TPK / Room Occupancy Rate) adalah indikator pokok kinerja industri akomodasi [slide 39]:<br>- Mengukur efisiensi pemanfaatan fasilitas akomodasi komersial.<br>- Menjadi indikator proksi sisi penawaran (*supply side*) dalam Neraca Satelit Pariwisata Nasional (NESPARNAS) menggunakan kerangka Tabel Input-Output (I-O).</p>
+<p>### 2. Formulasi Matematis Indikator Akomodasi Perhotelan BPS</p>
+<p>Berdasarkan pedoman Survei VHTS BPS [slide 41]:</p>
+<p>1. <strong>Tingkat Penghunian Kamar (TPK)</strong>:<br>   $$\text{TPK} = \frac{\text{Malam Kamar Terpakai}}{\text{Malam Kamar Tersedia}} \times 100\%$$<br>   $$\text{Malam Kamar Tersedia} = \text{Jumlah Kamar yang Siap Jual} \times \text{Jumlah Hari Operasi Hotel}$$</p>
+<p>2. <strong>Tingkat Pemakaian Tempat Tidur (TPTT / Bed Occupancy Rate)</strong>:<br>   $$\text{TPTT} = \frac{\text{Banyaknya Malam Tamu}}{\text{Tempat Tidur yang Tersedia}} \times 100\%$$<br>   $$\text{Tempat Tidur Tersedia} = \text{Jumlah Tempat Tidur Fisik} \times \text{Jumlah Hari Operasi Hotel}$$</p>
+<p>3. <strong>Rata-rata Tamu per Kamar (RTK / Guests per Room)</strong>:<br>   $$\text{RTK} = \frac{\text{Banyaknya Malam Tamu}}{\text{Malam Kamar yang Terjual}}$$<br>   - Menunjukkan rata-rata densitas hunian per kamar yang disewa (biasanya bernilai antara 1,2 s.d. 2,0 orang per kamar).</p>
+<p>4. <strong>Rata-rata Tamu per Hari (RTH)</strong>:<br>   $$\text{RTH} = \frac{\text{Banyaknya Tamu yang Menginap}}{\text{Jumlah Hari Kerja/Operasi Hotel}}$$</p>
+<p>### 3. Instrumen Pengumpulan Data Akomodasi BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Karakteristik</th><th>Survei VHTS (Bulanan)</th><th>Survei VHTL (Tahunan)</th></tr></thead><tbody><tr><td><strong>Frekuensi Pendataan</strong></td><td>Bulanan</td><td>Tahunan</td></tr><tr><td><strong>Cakupan Akomodasi</strong></td><td>Sensus untuk Hotel Berbintang; Sampel probabilitas untuk Hotel Non-Bintang</td><td>Sensus seluruh usaha akomodasi (berbintang dan non-bintang)</td></tr><tr><td><strong>Variabel Utama</strong></td><td>TPK, RLMT, jumlah tamu datang (wisman &amp; wisnus), malam kamar terjual</td><td>Direktori hotel, tenaga kerja, tarif kamar, fasilitas, pendapatan usaha, neraca rugi-laba</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Sebuah hotel memiliki 50 kamar dan buka selama 30 hari dalam sebulan. Jika selama bulan tersebut tercatat 900 malam kamar yang terhuni oleh tamu, berapakah Tingkat Penghunian Kamar (TPK) hotel tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 39-41]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 30,0%</button>
+<button class="ex-opt" data-i="1">B. 45,0%</button>
+<button class="ex-opt" data-i="2">C. 60,0%</button>
+<button class="ex-opt" data-i="3">D. 75,0%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Malam kamar tersedia = 50 kamar x 30 hari = 1.500 malam kamar.<br>2. TPK = (Malam kamar terpakai / Malam kamar tersedia) x 100%:<br>   $$\text{TPK} = \frac{900}{1.500} \times 100\% = 60,0\%$$ [slide 41].</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah hotel berbintang memiliki 100 kamar dan 160 tempat tidur, beroperasi selama 30 hari di bulan September. Terjual 1.800 malam kamar, 1.200 tamu menginap, dengan total akumulasi 2.700 malam tamu.<br>Hitunglah:<br>1. Malam kamar tersedia.<br>2. TPK hotel (persen).<br>3. TPTT hotel (persen).<br>4. Rata-rata tamu per kamar (RTK).<br>5. Rata-rata tamu per hari (RTH).<br>Tuliskan jawaban format: <code>AvailableRoomNights=..., TPK=..., TPTT=..., RTK=..., RTH=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-41 / Rekonstruksi Uji OSL]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>AvailableRoomNights</strong> = $100 \times 30 = 3.000$.<br>2. <strong>TPK</strong> = $(1.800 / 3.000) \times 100\% = 60,00\%$.<br>3. <strong>TPTT</strong> = Bed tersedia = $160 \times 30 = 4.800$.<br>   $$\text{TPTT} = \frac{2.700}{4.800} \times 100\% = 56,25\%$$<br>4. <strong>RTK</strong> = $2.700 / 1.800 = 1,50$ orang/kamar.<br>5. <strong>RTH</strong> = $1.200 / 30 = 40,0$ tamu/hari.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>rooms = 100<br>days = 30<br>available_room_nights = rooms * days<br>sold_room_nights = 1800<br>tpk = (sold_room_nights / available_room_nights) * 100.0<br>beds = 160<br>available_bed_nights = beds * days<br>guest_nights = 2700<br>tptt = (guest_nights / available_bed_nights) * 100.0<br>rtk = guest_nights / sold_room_nights<br>total_guests = 1200<br>rth = total_guests / days<br>print(f'AvailableRoomNights={available_room_nights}, TPK={tpk:.2f}%, TPTT={tptt:.2f}%, RTK={rtk:.2f}, RTH={rth:.1f}')<br># AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Lupa Faktor Hari</strong>: Menghitung malam kamar tersedia hanya dari jumlah kamar tanpa dikali jumlah hari dalam sebulan.</li><li><strong>Kamar Rusak / Renovasi</strong>: Kamar yang sedang rusak berat atau tidak dapat dihuni (*out of order*) dikeluarkan dari pembagi malam kamar tersedia.</li><li><strong>Komplementer Tamu</strong>: Tamu komplementer (gratis) yang menempati kamar tetap dihitung sebagai kamar terpakai jika kamar tersebut tercatat dihuni dalam sistem reservasi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>TPK = Kamar Terjual dibagi (Jumlah Kamar x Jumlah Hari Buka) x 100%.</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.2.1, 13.2.3</div>
+<button class="donebtn" data-id="13.2.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

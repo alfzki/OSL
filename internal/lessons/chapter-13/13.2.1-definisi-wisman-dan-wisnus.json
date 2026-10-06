@@ -1,0 +1,91 @@
+{
+  "point_id": "13.2.1",
+  "title": "Definisi Wisman dan Wisnus",
+  "importance": "中",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Statistik Pariwisata dan Karakteristik Pengunjung",
+    "bps_subject": "Statistik Pariwisata BPS dan Rekomendasi UNWTO"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "32-38",
+        "content": "Definisi wisatawan mancanegara (wisman) menurut UNWTO: kunjungan < 1 tahun, bukan mencari nafkah/bekerja dengan penduduk negara yang dikunjungi; pembagian wisman, wisnas, wisnus; pembedaan wisatawan (menginap >= 24 jam) vs pelancong (< 24 jam/cruise); wisnus sebelum vs setelah Sensus Penduduk 2020; pemanfaatan Big Data Mobile Positioning Data (MPD) dan Susenas."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Apakah semua warga negara asing yang turun dari pesawat di Bandara Soekarno-Hatta otomatis dihitung sebagai wisatawan mancanegara? Jawabannya: tidak! Seorang diplomat yang bertugas di kedutaan, seorang ekspatriat yang telah tinggal di Kemang selama 2 tahun, atau seorang insinyur asing yang digaji langsung oleh perusahaan lokal di Cikarang bukanlah wisatawan. Pariwisata secara statistik mensyaratkan perpindahan sementara di luar lingkungan keseharian (usual environment), dengan durasi kurang dari satu tahun, dan tidak mencari nafkah dari perekonomian setempat.",
+    "bps_definition": "Wisatawan Mancanegara (wisman / inbound tourist) menurut rekomendasi United Nations World Tourism Organization (UNWTO) dan BPS adalah setiap orang yang melakukan perjalanan ke suatu negara di luar tempat tinggal biasanya (usual country of residence), kurang dari satu tahun (12 bulan), didorong oleh suatu tujuan utama (berlibur, bisnis, berobat, olahraga, atau keperluan pribadi lainnya), selain untuk bekerja dan memperoleh upah dari penduduk negara yang dikunjungi. Pengunjung internasional (visitors) dibagi menjadi: (1) Wisatawan (tourist) yang tinggal minimal 24 jam (menginap di akomodasi setempat), dan (2) Pelancong (excursionist) yang tinggal kurang dari 24 jam tanpa menginap di akomodasi setempat (termasuk penumpang kapal pesiar yang tidur di kapal). Wisatawan Nusantara (wisnus) setelah SP 2020 adalah penduduk Indonesia yang melakukan perjalanan di wilayah Indonesia dengan lama kurang dari 12 bulan di luar usual environment, bukan untuk bekerja rutin atau sekolah rutin.",
+    "boundary_conditions": "WNA yang telah menetap di Indonesia lebih dari 12 bulan berturut-turut telah berstatus sebagai penduduk (resident) Indonesia, sehingga perjalanannya kembali ke Indonesia tidak dicatat sebagai wisman. Diplomat, konsulat, anggota angkatan bersenjata asing yang bertugas, pekerja lintas batas (commuter workers), dan pengungsi dikecualikan dari statistik wisatawan. Durasi batas atas wisata adalah < 365 hari (12 bulan).",
+    "formula_latex": "$$\\text{Total Pengunjung Mancanegara (Visitors)} = \\text{Wisatawan (Tourists)} + \\text{Pelancong (Excursionists)}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Selama bulan Juli 2026, Tempat Pemeriksaan Imigrasi (TPI) dan pelabuhan laut internasional di Batam mencatat 10.000 kedatangan orang asing dari luar negeri dengan profil sebagai berikut:\n1. 6.500 orang wisatawan yang menginap di berbagai hotel/resor selama rata-rata 3 malam untuk berlibur dan bermain golf.\n2. 1.200 orang penumpang kapal pesiar internasional (*cruise passengers*) yang tiba di pagi hari, berbelanja dan berkuliner selama 8 jam di Batam, lalu kembali tidur di atas kapal pesiar di perairan internasional.\n3. 300 orang diplomat dan pejabat konsuler asing beserta keluarganya yang tiba untuk bertugas di pos diplomatik.\n4. 1.500 orang tenaga kerja asing (TKA) yang memegang visa kerja 2 tahun dan menerima gaji langsung dari entitas manufaktur lokal di Batam.\n5. 500 orang warga negara asing yang telah tinggal dan menyewa rumah di Batam selama 18 bulan (sudah berstatus penduduk Indonesia) yang baru pulang dari kunjungan singkat 2 hari di Singapura.\nHitunglah:\n1. Jumlah kedatangan yang sah diklasifikasikan sebagai Wisatawan Mancanegara (*tourists*).\n2. Jumlah kedatangan yang diklasifikasikan sebagai Pelancong Mancanegara (*excursionists*).\n3. Total Pengunjung Mancanegara yang sah (*inbound visitors*).\n4. Jumlah kedatangan yang tidak dihitung sebagai pengunjung mancanegara (*non-visitors*) beserta alasannya.\n5. Persentase wisatawan terhadap total pengunjung mancanegara yang sah.",
+    "data_table": "| Kelompok Kedatangan | Jumlah (Orang) | Durasi / Karakteristik | Klasifikasi Statistik BPS/UNWTO |\n|---|---|---|---|\n| Tamu Resor / Hotel | 6.500 | Menginap 3 malam, tujuan rekreasi | Wisatawan Mancanegara (Tourist) |\n| Penumpang Cruise | 1.200 | Kunjungan 8 jam, tidur di kapal | Pelancong Mancanegara (Excursionist) |\n| Korps Diplomatik | 300 | Pejabat kedutaan/konsuler | Bukan Pengunjung (Immunity/Exempt) |\n| Tenaga Kerja Kontrak | 1.500 | Kontrak 2 tahun, digaji residen | Bukan Wisatawan (Pekerja Remunerasi) |\n| WNA Residen Batam | 500 | Tinggal > 12 bulan di Batam | Bukan Wisman (Penduduk Pulang) |",
+    "step_by_step_solution": "1. Mengidentifikasi Wisatawan Mancanegara (*tourists*):\n   Kriteria UNWTO: durasi $\\ge 24$ jam, $< 12$ bulan, tujuan rekreasi/pribadi/bisnis, tidak digaji lokal.\n   $$\\text{Tourists} = 6.500$$\n2. Mengidentifikasi Pelancong Mancanegara (*excursionists*):\n   Kriteria UNWTO: durasi $< 24$ jam, tidak menginap di akomodasi setempat (penumpang kapal pesiar).\n   $$\\text{Excursionists} = 1.200$$\n3. Menghitung Total Pengunjung Mancanegara (*inbound visitors*):\n   $$\\text{Total Visitors} = \\text{Tourists} + \\text{Excursionists} = 6.500 + 1.200 = 7.700$$\n4. Menghitung Kedatangan yang Dikecualikan (*non-visitors*):\n   - Diplomat asing: 300 orang (ekstrateritorial).\n   - Tenaga kerja asing digaji lokal: 1.500 orang (mencari nafkah dari penduduk).\n   - WNA tinggal $> 12$ bulan: 500 orang (sudah berstatus penduduk Indonesia).\n   $$\\text{Non-Visitors} = 300 + 1.500 + 500 = 2.300$$\n   Total verifikasi: $$7.700 + 2.300 = 10.000$$ (cocok).\n5. Menghitung Persentase Wisatawan terhadap Total Pengunjung Sah:\n   $$\\% \\text{Tourists} = \\frac{6.500}{7.700} \\times 100\\% \\approx 84,4156\\% \\rightarrow 84,42\\%$$.",
+    "python_verification_code": "total_arrivals = 10000\ntourists = 6500\nexcursionists = 1200\ndiplomats = 300\ncontract_workers = 1500\nresidents_foreign = 500\ntotal_inbound_visitors = tourists + excursionists\nnon_visitors = diplomats + contract_workers + residents_foreign\npct_tourists = (tourists / total_inbound_visitors) * 100.0\nprint(f'Tourists={tourists}, Excursionists={excursionists}, TotalVisitors={total_inbound_visitors}, NonVisitors={non_visitors}, PctTourists={pct_tourists:.2f}')",
+    "expected_output": "Tourists=6500, Excursionists=1200, TotalVisitors=7700, NonVisitors=2300, PctTourists=84.42"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menganggap semua pemegang paspor asing otomatis dihitung sebagai Wisman",
+      "common_mistake": "Memasukkan ekspatriat yang telah tinggal 2 tahun di Indonesia atau TKA yang digaji lokal ke dalam jumlah wisman.",
+      "safe_strategy": "Kunci UNWTO: WNA yang tinggal > 12 bulan berstatus 'penduduk Indonesia' (bukan wisman), dan orang yang datang untuk bekerja/memperoleh penghasilan dari residen lokal dikeluarkan dari hitungan."
+    },
+    {
+      "trap_description": "Menyamakan istilah 'Wisatawan' (Tourist) dengan 'Pengunjung' (Visitor)",
+      "common_mistake": "Menghitung penumpang kapal pesiar satu hari (excursionist) sebagai 'tourist'.",
+      "safe_strategy": "Pengunjung (Visitor) adalah kategori payung besar. Jika menginap >= 24 jam disebut Wisatawan (Tourist); jika kurang dari 24 jam disebut Pelancong (Excursionist)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.2 Statistik Pariwisata dan Perhotelan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.2.1",
+      "name": "Definisi Wisman dan Wisnus",
+      "importance": "中",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 32-38]",
+      "exam_focus": "Menguasai definisi operasional wisman UNWTO, pembedaan wisman vs wisnas vs wisnus, kriteria durasi (< 12 bulan) dan non-remunerasi, pembedaan tourist vs excursionist, serta pergeseran konsep wisnus pasca SP 2020.",
+      "textbook_excerpt": "Definisi wisatawan mancanegara (wisman) sesuai rekomendasi UNWTO: setiap orang yang melakukan perjalanan ke suatu negara di luar tempat tinggalnya (usual country of residence), kurang dari satu tahun, didorong oleh suatu tujuan utama (bisnis, berlibur, atau tujuan pribadi lainnya), selain untuk bekerja dengan penduduk negara yang dikunjungi. Wisatawan (tourist) tinggal paling sedikit 24 jam; pelancong (excursionist) tinggal kurang dari 24 jam. Wisnus pasca SP 2020: perjalanan < 12 bulan bukan untuk bekerja/sekolah rutin [slide 33-36].",
+      "intuition": "Statistik pariwisata adalah pengukur konsumsi devisa dan peredaran uang rekreasi. Jika seorang turis asal Australia berlibur 5 hari di Bali, dia membawa tabungan dari negaranya untuk dibelanjakan di restoran, hotel, dan toko kerajinan lokal. Ini adalah *inbound tourism* murni. Sebaliknya, jika ada insinyur Australia yang dikontrak setahun oleh pabrik semen di Gresik dan digaji rupiah dari kas pabrik tersebut, uangnya berasal dari dalam negeri, sehingga ia bukan wisatawan melainkan tenaga kerja.",
+      "formal": "### 1. Klasifikasi Pengunjung Menurut Rekomendasi UNWTO\n\nDalam *International Recommendations for Tourism Statistics* (IRTS 2008) yang diadopsi BPS [slide 33]:\n- **Wisatawan Mancanegara (Wisman / Inbound Tourists)**: Orang yang melakukan perjalanan ke suatu negara di luar lingkungan tempat tinggal biasanya (*usual country of residence*), berlangsung selama **kurang dari 12 bulan**, dengan tujuan apa pun selain dipekerjakan oleh entitas residen di negara yang dikunjungi.\n- **Wisatawan Nasional (Wisnas / Outbound Tourists)**: Penduduk Indonesia yang melakukan perjalanan ke luar negeri bukan untuk bekerja tetap atau memperoleh penghasilan di luar negeri, berlangsung kurang dari 12 bulan [slide 35].\n- **Wisatawan Nusantara (Wisnus / Domestic Tourists)**: Penduduk Indonesia yang melakukan perjalanan di dalam wilayah teritori Indonesia di luar *usual environment* [slide 36].\n\n### 2. Pembedaan Wisatawan (*Tourist*) vs Pelancong (*Excursionist*)\n\nBerdasarkan durasi menginap pada lokasi tujuan [slide 34]:\n1. **Wisatawan (*Tourist* / Pengunjung Menginap)**:\n   - Menginap paling sedikit 24 jam (minimal satu malam) di fasilitas akomodasi komersial maupun akomodasi pribadi di tempat yang dikunjungi.\n   - Durasi: $24 \\text{ jam} \\le t < 12 \\text{ bulan}$.\n2. **Pelancong (*Excursionist* / Same-day Visitor / Day Tripper)**:\n   - Berada di wilayah tujuan kurang dari 24 jam (tidak bermalam di akomodasi setempat).\n   - Termasuk penumpang kapal pesiar (*cruise passengers*) yang singgah di pelabuhan untuk berkeliling di darat pada siang hari namun kembali tidur di kabin kapal pesiar.\n\n### 3. Pengecualian dari Kategori Wisatawan Mancanegara (UNWTO)\n\nKelompok yang **tidak dicatat** sebagai wisman saat memasuki perbatasan [slide 35]:\n1. Pejabat diplomatik, korps konsuler, dan anggota angkatan bersenjata asing yang ditugaskan resmi beserta tanggungan keluarganya.\n2. Warga Negara Asing (WNA) yang telah tinggal di Indonesia lebih dari 12 bulan (berstatus *resident* penduduk Indonesia).\n3. Pekerja migran dan tenaga kerja asing yang datang dengan tujuan utama bekerja dan menerima remunerasi dari perusahaan residen Indonesia.\n4. Pengungsi (*refugees*) dan nomad imigran yang mencari suaka.\n\n### 4. Pergeseran Konsep Wisatawan Nusantara (Wisnus) BPS\n\n| Dimensi | Konsep Sebelum Sensus Penduduk 2020 | Konsep Setelah Sensus Penduduk 2020 |\n|---|---|---|\n| **Batas Waktu** | Kurang dari 6 bulan | Kurang dari 12 bulan (selaras UNWTO) |\n| **Kriteria Perjalanan** | Menuju objek komersial berbayar, menginap di hotel, ATAU jarak $> 100\\text{ km}$ pp | Di luar *usual environment*, bukan perjalanan rutin bekerja/sekolah |\n| **Definisi Lingkungan Keseharian** | Belum terdefinisi secara ketat berbasis geolokasi | Rumah tinggal, tempat bekerja, dan rumah kedua |\n| **Pendekatan Sumber Data** | Survei Susenas & Survei Wisnus konvensional | Integrasi Big Data **Mobile Positioning Data (MPD)** operator seluler + Penimbang Susenas Maret |",
+      "pitfalls": "1. **Tertukar Batas 24 Jam**: Menginap minimal 24 jam adalah syarat menjadi Tourist (bukan Excursionist).\n2. **Salah Memperlakukan WNA Residen**: WNA yang sudah tinggal > 1 tahun di Indonesia dianggap penduduk; saat pulang dari luar negeri dicatat sebagai 'penduduk yang kembali', bukan wisman.\n3. **Penumpang Cruise**: Penumpang kapal pesiar yang singgah 1-2 hari namun tidur di atas kapal dihitung sebagai Excursionist (bukan Tourist).",
+      "memory_hook": "Tourist itu Tidur/Menginap (>= 24 jam); Excursionist itu Ekskursi Singkat (< 24 jam); Keduanya adalah Pengunjung (Visitor).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 33-35]",
+          "problem": "Manakah dari individu berikut yang SAH diklasifikasikan sebagai wisatawan mancanegara (inbound tourist) ke Indonesia menurut standar UNWTO dan BPS?",
+          "options": [
+            "Seorang WNA yang bertugas sebagai sekretaris kedutaan besar asing di Jakarta selama 3 tahun.",
+            "Warga negara Jepang yang berlibur di Bali selama 7 hari dan menginap di hotel kawasan Nusa Dua.",
+            "Penumpang kapal pesiar yang turun berbelanja cenderamata di Pelabuhan Benoa selama 6 jam lalu kembali tidur di kapal.",
+            "Warga negara asing yang bekerja dan menerima gaji bulanan sebagai manajer pabrik tekstil di Karawang."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Pilihan A: Diplomat asing dikecualikan dari statistik pariwisata [slide 35].\n- Pilihan B: WNA Jepang menginap $\\ge 24$ jam (7 hari), $< 12$ bulan, tujuan rekreasi, tidak digaji penduduk lokal -> sah sebagai Wisatawan Mancanegara (Tourist) [slide 33-34].\n- Pilihan C: Penumpang kapal pesiar $< 24$ jam dan tidur di kapal diklasifikasikan sebagai Pelancong (Excursionist), bukan Tourist [slide 34].\n- Pilihan D: Bekerja dan digaji oleh entitas lokal merupakan kriteria eksklusi (bukan wisatawan) [slide 33]."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 33-35]",
+          "problem": "Dari 10.000 kedatangan WNA di pelabuhan laut internasional, terdapat: 6.500 wisatawan menginap di hotel, 1.200 penumpang cruise singgah 8 jam (tidur di kapal), 300 staf kedutaan asing, 1.500 TKA kontrak 2 tahun digaji lokal, dan 500 ekspatriat residen Indonesia pulang dari luar negeri.\nHitunglah:\n1. Jumlah wisatawan mancanegara (tourists).\n2. Jumlah pelancong mancanegara (excursionists).\n3. Total pengunjung mancanegara (inbound visitors).\n4. Total bukan pengunjung mancanegara (non-visitors).\n5. Persentase wisatawan terhadap total pengunjung sah.\nTuliskan format: `Tourists=..., Excursionists=..., TotalVisitors=..., NonVisitors=..., PctTourists=...`.",
+          "answer": "Tourists=6500, Excursionists=1200, TotalVisitors=7700, NonVisitors=2300, PctTourists=84.42",
+          "solution": "Langkah Perhitungan:\n1. **Tourists** = 6.500 orang (menginap $\\ge 24$ jam, non-remunerasi).\n2. **Excursionists** = 1.200 orang (kunjungan $< 24$ jam kapal pesiar).\n3. **Total Visitors** = $6.500 + 1.200 = 7.700$ orang.\n4. **Non-Visitors** = $300 (\\text{diplomat}) + 1.500 (\\text{TKA}) + 500 (\\text{residen}) = 2.300$ orang.\n5. **Persentase Wisatawan**:\n   $$\\% \\text{Tourists} = \\frac{6.500}{7.700} \\times 100\\% \\approx 84,42\\%$$\n\n**Verifikasi Kode Python**:\n```python\ntotal_arrivals = 10000\ntourists = 6500\nexcursionists = 1200\ndiplomats = 300\ncontract_workers = 1500\nresidents_foreign = 500\ntotal_inbound_visitors = tourists + excursionists\nnon_visitors = diplomats + contract_workers + residents_foreign\npct_tourists = (tourists / total_inbound_visitors) * 100.0\nprint(f'Tourists={tourists}, Excursionists={excursionists}, TotalVisitors={total_inbound_visitors}, NonVisitors={non_visitors}, PctTourists={pct_tourists:.2f}')\n# Tourists=6500, Excursionists=1200, TotalVisitors=7700, NonVisitors=2300, PctTourists=84.42\n```"
+        }
+      ],
+      "links": [
+        "13.2.2",
+        "13.2.3"
+      ]
+    }
+  ]
+}

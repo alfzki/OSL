@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kuis Drill Mandiri 30 Soal Objektif Persiapan UAS Official Statistics Lanjutan (OSL)</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<!-- Offline-first: this quiz loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  body { margin: 0; background: #f5f5f2; color: #1f2937; }
+  #wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 60px; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  #meta { font-size: 12px; color: #6b7280; margin-bottom: 14px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #92400e; margin-bottom: 12px; }
+  #bar { height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin-bottom: 6px; }
+  #fill { height: 100%; width: 0; background: #3b82f6; transition: width .3s; }
+  #stats { font-size: 12px; color: #4b5563; margin-bottom: 18px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .chips { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .chip { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .chip.point { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+  .stem { font-size: 15px; line-height: 1.9; white-space: pre-wrap; margin-bottom: 16px; }
+  .opt { display: block; width: 100%; text-align: left; margin: 8px 0; padding: 10px 14px; font-size: 14px; line-height: 1.6;
+         border: 1.5px solid #d1d5db; border-radius: 10px; background: #fff; cursor: pointer; }
+  .opt:hover { border-color: #3b82f6; background: #f8fafc; }
+  .opt:disabled { cursor: default; opacity: 1; color: #1f2937; }
+  .opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .opt.dim { opacity: .55; }
+  .judge-row { display: flex; gap: 12px; }
+  .judge-row .opt { width: auto; flex: 1; text-align: center; font-weight: 600; }
+  textarea { width: 100%; box-sizing: border-box; min-height: 130px; padding: 10px 12px; font: inherit; font-size: 14px;
+             border: 1.5px solid #d1d5db; border-radius: 10px; resize: vertical; outline: none; }
+  textarea:focus { border-color: #3b82f6; }
+  .btn { padding: 8px 18px; font-size: 14px; border: none; border-radius: 10px; background: #2563eb; color: #fff; cursor: pointer; margin-top: 12px; }
+  .btn:hover { background: #1d4ed8; }
+  .btn:disabled { background: #93c5fd; cursor: not-allowed; }
+  .btn.ghost { background: #fff; color: #374151; border: 1px solid #d1d5db; }
+  .btn.ghost:hover { background: #f3f4f6; }
+  .panel { margin-top: 16px; border-radius: 10px; padding: 14px 16px; font-size: 14px; line-height: 1.9; white-space: pre-wrap; }
+  .panel.ok { background: #f0fdf4; border: 1px solid #86efac; }
+  .panel.bad { background: #fef2f2; border: 1px solid #fca5a5; }
+  .panel.half { background: #fffbeb; border: 1px solid #fcd34d; }
+  .panel.ref { background: #fffbeb; border: 1px solid #fde68a; }
+  .panel b.tag { display: block; margin-bottom: 6px; }
+  #selfgrade { margin-top: 12px; }
+  #selfgrade button { margin: 4px 6px 0 0; padding: 6px 14px; font-size: 13px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  #selfgrade button:hover { border-color: #2563eb; color: #2563eb; }
+  #selfgrade button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  #nav { display: flex; justify-content: space-between; margin-top: 18px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 14px 0; }
+  th, td { border: 1px solid #e5e7eb; padding: 7px 10px; text-align: left; }
+  th { background: #f9fafb; }
+  tr.miss td { background: #fef2f2; }
+  #score { font-size: 26px; font-weight: 700; margin: 6px 0 2px; }
+  #export-area { width: 100%; box-sizing: border-box; min-height: 140px; margin-top: 10px; font: 12px/1.6 monospace; padding: 10px; border: 1px solid #d1d5db; border-radius: 10px; display: none; }
+  .hint { font-size: 12px; color: #6b7280; margin-top: 8px; }
+  /* Tipografi Formula Matematis Offline */
+  .math-inline { font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Georgia", serif; font-style: normal; font-weight: 500; padding: 0 2px; }
+  .math-disp { font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Georgia", serif; display: block; text-align: center; margin: 12px 0; padding: 10px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; overflow-x: auto; font-size: 1.05em; font-style: normal; }
+  .m-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; padding: 0 4px; font-size: 0.9em; line-height: 1.15; font-style: normal; }
+  .m-num { border-bottom: 1.5px solid currentColor; padding-bottom: 2px; display: block; font-weight: 500; }
+  .m-den { padding-top: 2px; display: block; font-weight: 500; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>Kuis Drill Mandiri 30 Soal Objektif Persiapan UAS Official Statistics Lanjutan (OSL)</h1>
+  <div id="meta">Dibuat pada 2026-09-29 · Total <span id="total"></span> Soal · Selesai satu butir langsung tampil pembahasan</div>
+  <div id="mjwarn">💡 Tip Formula: Kuis ini mandiri tanpa dependensi internet, rumus disajikan dalam rendering tipografi matematis yang bersih dan mudah dibaca.</div>
+  <div id="bar"><div id="fill"></div></div>
+  <div id="stats"></div>
+  <div id="main"></div>
+</div>
+
+<script>
+const DATA = {"title": "Kuis Drill Mandiri 30 Soal Objektif Persiapan UAS Official Statistics Lanjutan (OSL)", "questions": [{"point_id": "Pertemuan 9", "point_name": "Indikator Ketenagakerjaan: Konsep Bekerja vs Pekerja Penuh", "score": 2, "stem": "[OSL-DRL-01] Pak Joko membantu menjaga warung kelontong milik pamannya selama 5 jam dalam seminggu terakhir tanpa menerima upah (pekerja keluarga tidak dibayar), dan ia tidak mencari pekerjaan lain. Menurut konsep ketenagakerjaan BPS (ICLS 13), bagaimana status ketenagakerjaan Pak Joko?", "reference": "A", "explanation": "Kunci: A. Berdasarkan konsep BPS (ICLS 13): (1) Bekerja adalah kegiatan ekonomi minimal 1 jam tanpa terputus dalam seminggu terakhir untuk memperoleh atau membantu memperoleh pendapatan/keuntungan, termasuk pekerja keluarga tidak dibayar (unpaid family worker). Jadi Pak Joko berstatus Bekerja. (2) Karena jam kerjanya < 35 jam dan ia TIDAK mencari pekerjaan atau tidak bersedia menerima pekerjaan lain, ia dikategorikan sebagai Pekerja Paruh Waktu (Part-time Worker), bukan Setengah Penganggur. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12-14)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Termasuk kelompok Bekerja (kategori Pekerja Paruh Waktu)", "B. Termasuk Bukan Angkatan Kerja karena tidak menerima upah uang", "C. Termasuk Pengangguran Terbuka karena jam kerjanya di bawah 35 jam seminggu", "D. Tidak dapat diklasifikasikan karena jam kerjanya kurang dari 15 jam seminggu"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Ketenagakerjaan: Setengah Penganggur vs Pekerja Paruh Waktu", "score": 2, "stem": "[OSL-DRL-02] Dalam publikasi BPS, penduduk yang bekerja dengan jam kerja kurang dari 35 jam per minggu dibedakan menjadi dua kelompok. Manakah kriteria yang membedakan 'Setengah Penganggur' (Underemployed) dari 'Pekerja Paruh Waktu' (Part-time Worker)?", "reference": "A", "explanation": "Kunci: A. Keduanya sama-sama bekerja < 35 jam seminggu. Pembedanya adalah motivasi/kesediaan menambah jam kerja: Setengah Penganggur (Underemployed) adalah mereka yang bekerja < 35 jam dan masih mencari pekerjaan atau bersedia menerima pekerjaan tambahan; sedangkan Pekerja Paruh Waktu (Part-Time Worker) adalah mereka yang bekerja < 35 jam tetapi tidak mencari pekerjaan atau tidak bersedia menerima pekerjaan tambahan. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 14)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Setengah penganggur masih mencari pekerjaan atau masih bersedia menerima pekerjaan tambahan, sedangkan pekerja paruh waktu tidak mencari pekerjaan tambahan", "B. Setengah penganggur bekerja di sektor informal, sedangkan pekerja paruh waktu bekerja di sektor formal", "C. Setengah penganggur menerima upah di bawah UMR, sedangkan pekerja paruh waktu menerima upah di atas UMR", "D. Setengah penganggur bekerja antara 15-34 jam, sedangkan pekerja paruh waktu bekerja kurang dari 15 jam"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Ketenagakerjaan: 4 Kelompok Pengangguran Terbuka BPS", "score": 3, "stem": "[OSL-DRL-03] BPS mendefinisikan Pengangguran Terbuka (Open Unemployment) ke dalam 4 kelompok spesifik. Manakah kelompok-kelompok berikut yang BENAR termasuk dalam Pengangguran Terbuka menurut BPS? (Pilih semua yang benar)", "reference": "A, B, C, D", "explanation": "Kunci: A, B, C, D. BPS mengklasifikasikan 4 kelompok Pengangguran Terbuka: (1) Mencari pekerjaan, (2) Mempersiapkan usaha, (3) Merasa tidak mungkin mendapat pekerjaan (putus asa/discouraged), dan (4) Sudah punya pekerjaan/diterima bekerja tetapi belum mulai bekerja. Opsi E adalah kelompok 'Setengah Penganggur', yang status utamanya sudah Bekerja (Angkatan Kerja), bukan penganggur terbuka. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 15)", "type": "multi", "qtype_label": "Pilihan Ganda Kompleks", "options": ["A. Mereka yang tidak bekerja dan sedang mencari pekerjaan", "B. Mereka yang tidak bekerja dan sedang mempersiapkan suatu usaha", "C. Mereka yang tidak bekerja dan merasa tidak mungkin mendapat pekerjaan (putus asa / discouraged workers)", "D. Mereka yang sudah diterima bekerja atau punya pekerjaan tetapi belum mulai bekerja", "E. Mereka yang bekerja kurang dari 35 jam dan sedang mencari pekerjaan tambahan"], "answer": [0, 1, 2, 3], "partial": true}, {"point_id": "Pertemuan 9", "point_name": "Indikator Ketenagakerjaan: Tingkat Kesempatan Kerja (TKK)", "score": 2, "stem": "[OSL-DRL-04] Jika suatu daerah memiliki Tingkat Pengangguran Terbuka (TPT) sebesar 6,25%, berapakah Tingkat Kesempatan Kerja (TKK) daerah tersebut dan bagaimana formulasinya?", "reference": "A", "explanation": "Kunci: A. Tingkat Kesempatan Kerja (TKK) mengukur proporsi angkatan kerja yang berhasil terserap dalam lapangan kerja: $\\text{TKK} = (\\text{Bekerja} / \\text{Angkatan Kerja}) \\times 100\\%$. Karena Angkatan Kerja = Bekerja + Penganggur, maka $\\text{TKK} + \\text{TPT} = 100\\%$. Jadi $\\text{TKK} = 100\\% - 6,25\\% = 93,75\\%$. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 20)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. TKK = 93,75%; Formulasi: $\\text{TKK} = \\frac{\\text{Penduduk Bekerja}}{\\text{Angkatan Kerja}} \\times 100\\% = 100\\% - \\text{TPT}$", "B. TKK = 93,75%; Formulasi: $\\text{TKK} = \\frac{\\text{Penduduk Bekerja}}{\\text{Penduduk Usia Kerja}} \\times 100\\%$", "C. TKK = 6,25%; Formulasi: $\\text{TKK} = 100\\% - \\text{TPAK}$", "D. TKK = 50,00%; Formulasi: $\\text{TKK} = \\frac{\\text{Angkatan Kerja}}{\\text{Penduduk Usia Kerja}} \\times 100\\%$"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Pendidikan: Hubungan Matematis APK dan APM", "score": 2, "stem": "[OSL-DRL-05] Dalam statistik pendidikan BPS, nilai Angka Partisipasi Murni (APM) pada jenjang Sekolah Menengah Pertama (SMP) tidak akan pernah lebih besar daripada nilai Angka Partisipasi Kasar (APK) pada jenjang yang sama.", "reference": "true", "explanation": "Kunci: Benar. Pembilang APM (jumlah siswa usia resmi SMP yang bersekolah di SMP) selalu merupakan subset dari pembilang APK (seluruh siswa di SMP tanpa memandang usia). Karena penyebut keduanya sama (jumlah penduduk kelompok usia resmi SMP), maka nilai APM secara matematis selalu <= APK ($APM \\le APK$). (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 25)", "type": "judge", "qtype_label": "Benar / Salah", "answer": true}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Konversi Ubinan kg ke Ton/ha)", "score": 2, "stem": "[OSL-DRL-06] Petugas statistik BPS melakukan ubinan padi dengan luas plot standar $2,5\\text{ m} \\times 2,5\\text{ m}$. Hasil penimbangan gabah basah pada plot tersebut adalah 4,00 kg. Berapakah produktivitas panen tersebut jika dinyatakan dalam satuan Ton per Hektar (ton/ha)?", "reference": "A", "explanation": "Kunci: A. Luas 1 plot = 2,5 m x 2,5 m = 6,25 m^2. Luas 1 ha = 10.000 m^2. Jumlah plot ubinan per hektar = 10.000 / 6,25 = 1.600. Hasil per hektar = 4,00 kg x 1.600 = 6.400 kg/ha. Karena 1 ton = 1.000 kg, maka produktivitas = 6.400 / 1.000 = 6,40 ton/ha (faktor pengali cepat dari kg plot ke ton/ha adalah 1,6; jadi 4,00 x 1,6 = 6,40 ton/ha). (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 16)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 6,40 ton/ha", "B. 64,00 ton/ha", "C. 4,00 ton/ha", "D. 0,64 ton/ha"], "answer": 0}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Ubinan Tanaman Pohon/Ubi Kayu)", "score": 2, "stem": "[OSL-DRL-07] Untuk komoditas tanaman ubi kayu (singkong), BPS menggunakan ukuran plot ubinan $5\\text{ m} \\times 5\\text{ m}$. Jika hasil ubinan ubi kayu diperoleh seberat 50 kg, berapakah taksiran produksi per hektar dalam satuan ton/ha?", "reference": "A", "explanation": "Kunci: A. Luas plot ubinan ubi kayu = 5 m x 5 m = 25 m^2. Jumlah plot dalam 1 hektar (10.000 m^2) = 10.000 / 25 = 400 plot. Hasil per hektar = 50 kg x 400 = 20.000 kg/ha = 20 ton/ha (faktor pengali dari kg plot 5 m x 5 m ke ton/ha adalah 400/1000 = 0,4; 50 x 0,4 = 20 ton/ha). (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 16)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 20 ton/ha", "B. 80 ton/ha", "C. 50 ton/ha", "D. 12,5 ton/ha"], "answer": 0}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Perbedaan Mendasar NTP vs NTUP)", "score": 2, "stem": "[OSL-DRL-08] Apakah perbedaan mendasar antara Nilai Tukar Petani (NTP) dan Nilai Tukar Usaha Pertanian (NTUP) yang dirilis oleh BPS?", "reference": "A", "explanation": "Kunci: A. Rumus NTP: $NTP = (I_t / I_b) \\times 100$, di mana $I_b$ terdiri dari Indeks Biaya Produksi dan Penambahan Barang Modal (BPPBM) ditambah Indeks Konsumsi Rumah Tangga (IKRT). Sedangkan NTUP murni mengukur profitabilitas usaha tani: $NTUP = (I_t / BPPBM) \\times 100$, tanpa memperhitungkan inflasi kebutuhan konsumsi rumah tangga petani. Keduanya sama-sama berskala 100. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 29)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. NTP membandingkan $I_t$ dengan $I_b$ (yang mencakup Biaya Produksi/BPPBM dan Konsumsi Rumah Tangga/IKRT), sedangkan NTUP hanya membandingkan $I_t$ dengan BPPBM saja", "B. NTP dihitung untuk subsektor tanaman pangan, sedangkan NTUP dihitung untuk perkebunan rakyat", "C. NTP mencakup harga eceran kota, sedangkan NTUP mencakup harga eceran perdesaan", "D. NTP berskala 100, sedangkan NTUP berskala desimal 1,00"], "answer": 0}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Subsektor Perikanan NTNP)", "score": 2, "stem": "[OSL-DRL-09] Dalam publikasi BPS, subsektor Perikanan pada penghitungan Nilai Tukar Petani (NTNP) dibagi secara terpisah menjadi dua kelompok pelaku usaha, yaitu...", "reference": "A", "explanation": "Kunci: A. BPS membagi subsektor perikanan (NTNP) menjadi dua indeks terpisah: (1) Nilai Tukar Nelayan (NTN) untuk kegiatan perikanan tangkap, dan (2) Nilai Tukar Pembudidaya Ikan (NTPi) untuk kegiatan budidaya perikanan, karena struktur biaya produksi dan risiko usaha keduanya berbeda signifikan. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 30)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Perikanan Tangkap (Nelayan) dan Perikanan Budidaya (Pembudidaya Ikan)", "B. Perikanan Air Tawar dan Perikanan Air Payau", "C. Perikanan Tradisional dan Perikanan Industri Modern", "D. Nelayan Pemilik Kapal dan Nelayan Buruh"], "answer": 0}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Skala Tenaga Kerja Industri BPS)", "score": 2, "stem": "[OSL-DRL-10] Suatu pabrik roti mempekerjakan 15 orang tenaga kerja tetap. Menurut klasifikasi resmi BPS, industri pengolahan tersebut tergolong ke dalam...", "reference": "A", "explanation": "Kunci: A. Klasifikasi BPS berdasarkan jumlah pekerja: (1) Industri Mikro: 1 - 4 orang; (2) Industri Kecil: 5 - 19 orang; (3) Industri Sedang: 20 - 99 orang; (4) Industri Besar: >= 100 orang. Karena pabrik mempekerjakan 15 orang, pabrik tersebut masuk kategori Industri Kecil. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 41)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Industri Kecil (5 - 19 tenaga kerja)", "B. Industri Mikro (1 - 4 tenaga kerja)", "C. Industri Sedang (20 - 99 tenaga kerja)", "D. Industri Besar (>= 100 tenaga kerja)"], "answer": 0}, {"point_id": "Pertemuan 11", "point_name": "Indikator Ekonomi: Produksi (Output Bersih Nilai Konstruksi)", "score": 2, "stem": "[OSL-DRL-11] Suatu perusahaan konstruksi memiliki Nilai Pekerjaan yang Diselesaikan (NP) sebesar Rp10 miliar dan Nilai Subkontrak (NS) yang diserahkan ke pihak lain sebesar Rp2 miliar. Jika persentase Nilai Realisasi (%NR) fisik pekerjaan adalah 100%, berapakah Nilai Konstruksi (NK / output bersih) perusahaan tersebut?", "reference": "A", "explanation": "Kunci: A. Sesuai metodologi statistik konstruksi BPS: Nilai Konstruksi Bersih dihitung dengan rumus $NK = (NP - NS) \\times \\%NR = (10 - 2) \\times 100\\% = \\text{Rp8 miliar}$. Pengurangan subkontrak (NS) dilakukan untuk menghindari penghitungan ganda (double counting) dengan kontraktor spesialis penerima subkontrak. (Sumber: Pertemuan 11 Indikator Ekonomi - Produksi.pptx, slide 52)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Rp8 miliar", "B. Rp10 miliar", "C. Rp12 miliar", "D. Rp2 miliar"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Cakupan Geografis IHK SBH 2022)", "score": 2, "stem": "[OSL-DRL-12] Pernyataan manakah yang BENAR mengenai cakupan wilayah penghitungan Indeks Harga Konsumen (IHK) di Indonesia sejak diberlakukannya tahun dasar $2022=100$?", "reference": "A", "explanation": "Kunci: A. SBH 2022 memperluas cakupan penghitungan IHK dari 90 kota (pada SBH 2018) menjadi 150 kabupaten/kota (menambah 60 kabupaten yang mengalami perkembangan ekonomi pesat). Angka inflasi nasional merupakan agregasi berbobot dari 150 kabupaten/kota tersebut, bukan sensus ke seluruh 514 kabupaten/kota. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 22; Publikasi IHK BPS 2025)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. IHK dihitung dari 150 kabupaten/kota sampel SBH 2022 (terdiri dari 90 kota lama dan 60 kabupaten/kota baru), lalu diagregasikan untuk membentuk inflasi nasional", "B. IHK dihitung dari seluruh 514 kabupaten/kota di Indonesia tanpa sampling", "C. IHK hanya dihitung di 38 ibukota provinsi di Indonesia", "D. IHK dihitung dari 90 kota lama SBH 2018 tanpa penambahan wilayah kabupaten baru"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Komponen Disagregasi Inflasi)", "score": 2, "stem": "[OSL-DRL-13] Kenaikan tarif cukai rokok, tarif listrik PLN, dan tarif bahan bakar minyak (BBM) bersubsidi oleh pemerintah dikelompokkan oleh BPS dan Bank Indonesia ke dalam komponen inflasi...", "reference": "A", "explanation": "Kunci: A. Disagregasi inflasi BPS membagi inflasi umum (headline) menjadi: (1) Inflasi Inti: komponen yang cenderung persisten/didorong faktor fundamental penawaran-permintaan; (2) Komponen Harga Bergejolak (Volatile Foods): dipengaruhi musiman, iklim, dan gangguan pasokan panen seperti cabai dan bawang; (3) Komponen Harga Diatur Pemerintah (Administered Prices): harga komoditas/tarif yang ditetapkan secara regulasi oleh pemerintah seperti BBM, listrik, rokok, tarif angkutan. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 35)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Harga yang Diatur Pemerintah (Administered Prices)", "B. Harga Bergejolak (Volatile Foods)", "C. Inflasi Inti (Core Inflation)", "D. Inflasi Impor (Imported Inflation)"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Hitungan Inflasi m-to-m dan y-on-y)", "score": 3, "stem": "[OSL-DRL-14] Diketahui data IHK suatu kota: Desember 2024 = 105,00; Juni 2025 = 107,10; Juli 2025 = 107,635; Juli 2024 = 104,50. Berapakah inflasi bulan Juli 2025 secara bulanan (m-to-m) dan tahun ke tahun (y-on-y)?", "reference": "A", "explanation": "Kunci: A. (1) Inflasi bulanan (m-to-m Juli 2025) = (107,635 - 107,10) / 107,10 x 100% = 0,535 / 107,10 x 100% = 0,50%. (2) Inflasi tahun ke tahun (y-on-y Juli 2025) = (107,635 - 104,50) / 104,50 x 100% = 3,135 / 104,50 x 100% = 3,00%. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 32)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Inflasi m-to-m = 0,50%; Inflasi y-on-y = 3,00%", "B. Inflasi m-to-m = 2,51%; Inflasi y-on-y = 0,50%", "C. Inflasi m-to-m = 3,00%; Inflasi y-on-y = 0,50%", "D. Inflasi m-to-m = 0,50%; Inflasi y-on-y = 2,51%"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Karakteristik Modifikasi Laspeyres)", "score": 3, "stem": "[OSL-DRL-15] Manakah pernyataan yang BENAR mengenai formula Modifikasi Laspeyres yang digunakan BPS dalam menghitung IHK? (Pilih semua yang benar)", "reference": "A, B, C", "explanation": "Kunci: A, B, C. Formula Modified Laspeyres BPS mempertahankan kuantitas tahun dasar dari SBH ($Q_0$), namun formulasinya dirantai: $I_t = \\sum \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i}$, di mana $w_{(t-1)i}$ adalah nilai konsumsi relatif bulan lalu. Paket komoditas bersifat tetap selama periode tahun dasar (tidak berganti tiap bulan, sehingga D salah). (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 28)", "type": "multi", "qtype_label": "Pilihan Ganda Kompleks", "options": ["A. Menggunakan kuantitas tetap tahun dasar dari Survei Biaya Hidup (SBH)", "B. Menggunakan sistem perantaian (chaining) relatif harga bulan berjalan terhadap bulan sebelumnya ($P_t / P_{t-1}$)", "C. Memperbarui penimbang nilai konsumsi setiap bulan menggunakan rasio harga bulan sebelumnya ($w_{t-1}$)", "D. Mengganti paket komoditas setiap bulan secara dinamis"], "answer": [0, 1, 2], "partial": true}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (Margin Perdagangan Bertingkat)", "score": 3, "stem": "[OSL-DRL-16] Berdasarkan Survei Pola Distribusi Perdagangan (Poldis) BPS, jika MPP Pedagang Besar adalah 10% dan MPP Pedagang Eceran adalah 15%, dan harga produsen Rp10.000, berapakah harga jual di tingkat pedagang eceran (konsumen)?", "reference": "A", "explanation": "Kunci: A. Rantai distribusi komoditas: (1) Harga jual Pedagang Besar = 10.000 x (1 + 0,10) = Rp11.000. (2) Harga beli Pedagang Eceran adalah Rp11.000, sehingga dengan margin 15%, harga jual ke konsumen akhir = 11.000 x (1 + 0,15) = Rp12.650. (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 14)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Rp12.650 (karena pembentukan harga terjadi bertingkat: $10.000 \\times 1,10 \\times 1,15$)", "B. Rp12.500 (dijumlahkan langsung $10\\% + 15\\%$)", "C. Rp11.500", "D. Rp13.000"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: Perdagangan dan Harga (SHK Rutin vs SBH Berkala)", "score": 2, "stem": "[OSL-DRL-17] Dalam penyusunan IHK, Survei Biaya Hidup (SBH) dilaksanakan setiap bulan untuk mencatat perubahan harga barang dan jasa di pasar.", "reference": "false", "explanation": "Kunci: Salah. SBH dilaksanakan secara berkala dalam interval beberapa tahun (misalnya SBH 2018, SBH 2022) khusus untuk menyusun paket komoditas dan diagram timbang. Survei yang dilaksanakan secara rutin setiap minggu, dua mingguan, atau bulanan untuk mencatat perubahan harga pasar adalah Survei Harga Konsumen (SHK). (Sumber: Pertemuan 12 Indikator Ekonomi - Perdagangan dan Harga.pptx, slide 18-20)", "type": "judge", "qtype_label": "Benar / Salah", "answer": false}, {"point_id": "Pertemuan 13", "point_name": "Indikator Ekonomi: Ekspor-Impor (Penyesuaian Impor CIF ke FOB)", "score": 2, "stem": "[OSL-DRL-18] Mengapa dalam neraca perdagangan internasional konseptual BPM6/SNA 2008, nilai impor CIF perlu disesuaikan menjadi FOB?", "reference": "A", "explanation": "Kunci: A. Dalam statistik perdagangan pabean BPS, impor dicatat secara CIF (mencakup ongkos angkut dan asuransi). Namun dalam Neraca Pembayaran (BOP BPM6/SNA 2008), komponen asuransi dan pengangkutan internasional dikeluarkan dari neraca barang (impor disesuaikan ke FOB) dan dipindahkan ke Neraca Jasa (Services Account) agar nilai barang fisik murni terpisah dari jasa logistik. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 25)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Agar biaya jasa pengangkutan (freight) dan asuransi internasional dipisahkan ke neraca jasa (services account), sehingga neraca barang murni mencerminkan nilai fisik barang", "B. Karena harga CIF tidak diakui oleh bea cukai internasional", "C. Untuk menaikkan surplus neraca perdagangan secara artifisial", "D. Karena impor tidak dikenakan biaya pengapalan"], "answer": 0}, {"point_id": "Pertemuan 13", "point_name": "Indikator Ekonomi: Ekspor-Impor (Goods Under Merchanting SNA 2008)", "score": 2, "stem": "[OSL-DRL-19] Seorang pedagang di Indonesia membeli barang elektronik dari pabrik di Taiwan dan menjualnya langsung ke pembeli di Filipina tanpa barang tersebut pernah masuk ke wilayah pabean Indonesia. Menurut pedoman SNA 2008 / BPM6, transaksi ini dicatat sebagai...", "reference": "A", "explanation": "Kunci: A. Sesuai standar BPM6 dan SNA 2008, 'Goods under merchanting' didefinisikan sebagai pembelian barang oleh penduduk domestik dari non-penduduk yang kemudian dijual kembali kepada non-penduduk lain tanpa barang tersebut masuk ke wilayah ekonomi domestik. Transaksi ini dicatat pada Neraca Barang (Goods Account) negara perantara sebagai: (1) Ekspor negatif saat pembelian, (2) Ekspor positif saat penjualan, dengan selisih neto (net exports under merchanting) mencerminkan margin keuntungan pedagang. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 26)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Net Exports of Goods Under Merchanting (dicatat di neraca barang Indonesia sebesar nilai jual neto)", "B. Impor barang Indonesia dari Taiwan dan Ekspor barang ke Filipina", "C. Tidak dicatat sama sekali di neraca pembayaran Indonesia karena barang tidak melintasi batas negara Indonesia", "D. Dicatat sebagai transaksi neraca modal dan finansial"], "answer": 0}, {"point_id": "Pertemuan 13", "point_name": "Indikator Ekonomi: Ekspor-Impor (Tahapan Siklus Hidup Produk ISP)", "score": 3, "stem": "[OSL-DRL-20] Jika suatu komoditas industri tekstil nasional memiliki nilai ekspor USD 10 juta dan impor USD 90 juta, berapakah nilai ISP dan pada tahap apakah komoditas tersebut?", "reference": "A", "explanation": "Kunci: A. Perhitungan ISP: $ISP = \\frac{X - M}{X + M} = \\frac{10 - 90}{10 + 90} = \\frac{-80}{100} = -0,80$. Nilai ISP terletak pada batas Tahap Pengenalan ($-1,00 \\le ISP \\le -0,80$) dan Tahap Substitusi Impor ($-0,80 < ISP \\le -0,40$). (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 32)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. ISP = -0,80; Berada pada batas Tahap Pengenalan Impor / Substitusi Impor", "B. ISP = +0,80; Tahap Pematangan Ekspor", "C. ISP = -0,89; Tahap Pematangan Impor", "D. ISP = +0,10; Tahap Pertumbuhan Ekspor"], "answer": 0}, {"point_id": "Pertemuan 13", "point_name": "Indikator Ekonomi: Ekspor-Impor (Gross Barter Terms of Trade)", "score": 2, "stem": "[OSL-DRL-21] Berbeda dari Net Barter Terms of Trade yang membandingkan indeks harga, Gross Barter Terms of Trade ($G$) membandingkan indeks kuantitas fisik. Bagaimanakah formula resminya?", "reference": "A", "explanation": "Kunci: A. Gross Barter Terms of Trade dirumuskan sebagai $G = (Q_m / Q_x) \\times 100$. Kenaikan nilai $G$ menunjukkan kondisi yang menguntungkan karena suatu negara menerima volume fisik impor yang lebih besar untuk setiap unit volume fisik ekspor yang dikeluarkannya. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 36)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. $G = \\frac{Q_m}{Q_x} \\times 100$ (Indeks Kuantitas Impor dibagi Indeks Kuantitas Ekspor)", "B. $G = \\frac{Q_x}{Q_m} \\times 100$", "C. $G = \\frac{P_x \\cdot Q_x}{P_m \\cdot Q_m} \\times 100$", "D. $G = \\frac{P_x}{P_m} \\times 100$"], "answer": 0}, {"point_id": "Pertemuan 13", "point_name": "Indikator Pariwisata: Definisi Wisman & Kriteria Kunjungan", "score": 2, "stem": "[OSL-DRL-22] Berdasarkan definisi UNWTO dan BPS, seorang warga negara asing yang berkunjung ke Indonesia dikategorikan sebagai Wisatawan Mancanegara (Wisman) jika memenuhi kriteria berikut, KECUALI...", "reference": "A", "explanation": "Kunci: A. Kriteria resmi Wisman (UNWTO & BPS): (1) Tinggal di luar negeri; (2) Melakukan perjalanan ke Indonesia tidak lebih dari 12 bulan; (3) Tujuan utama BUKAN untuk melakukan kegiatan yang menghasilkan upah/penghasilan dari tempat yang dikunjungi. Orang asing yang datang untuk bekerja/mencari upah di Indonesia dikategorikan sebagai Tenaga Kerja Asing / Migran, bukan Wisman. (Sumber: Pertemuan 13 Indikator Pariwisata dan Perdagangan Luar Negeri.pptx, slide 8)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Bertujuan mencari pekerjaan tetap dan memperoleh penghasilan dari perusahaan di Indonesia", "B. Lama kunjungan tidak lebih dari 12 bulan (1 tahun) berturut-turut", "C. Bertujuan untuk rekreasi, liburan, bisnis, atau kunjungan keluarga", "D. Bukan merupakan penduduk resmi di Indonesia"], "answer": 0}, {"point_id": "Pertemuan 8", "point_name": "Indikator Kemiskinan: Garis Kemiskinan Makanan (GKM 2100 kkal)", "score": 2, "stem": "[OSL-DRL-23] Dalam metodologi pengukuran kemiskinan makro BPS (Cost of Basic Needs), patokan kecukupan energi pada Garis Kemiskinan Makanan (GKM) adalah setara...", "reference": "A", "explanation": "Kunci: A. BPS menggunakan standar kecukupan energi sebesar 2.100 kkal per kapita per hari berdasarkan rekomendasi Widyakarya Nasional Pangan dan Gizi (WNPG). Paket komoditas makanan dasar penentu GKM diwakili oleh 52 jenis komoditi. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 16)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 2.100 kilokalori (kkal) per kapita per hari (diwakili oleh 52 komoditas makanan dasar)", "B. 2.500 kilokalori (kkal) per kapita per hari", "C. 1.800 kilokalori (kkal) per kapita per hari", "D. 3.000 kilokalori (kkal) per kapita per hari"], "answer": 0}, {"point_id": "Pertemuan 8", "point_name": "Indikator Kemiskinan: Headcount Index (P0)", "score": 2, "stem": "[OSL-DRL-24] Jika dari total populasi suatu kabupaten sebesar 50.000 jiwa terdapat 4.000 jiwa yang memiliki pengeluaran per kapita per bulan di bawah Garis Kemiskinan ($z$), berapakah persentase penduduk miskin ($P_0$ / Headcount Index) kabupaten tersebut?", "reference": "A", "explanation": "Kunci: A. Formula Headcount Index: $P_0 = \\frac{q}{n} \\times 100\\%$, di mana $q$ adalah jumlah penduduk miskin ($y_i < z$) dan $n$ adalah total populasi. $P_0 = \\frac{4.000}{50.000} \\times 100\\% = 8,00\\%$. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 24)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 8,00%", "B. 0,08%", "C. 12,50%", "D. 4,00%"], "answer": 0}, {"point_id": "Pertemuan 8", "point_name": "Indikator Ketimpangan: Kriteria Batas Koefisien Gini BPS", "score": 2, "stem": "[OSL-DRL-25] Suatu provinsi mencatat penurunan Gini Ratio dari 0,420 menjadi 0,365. Berdasarkan kriteria BPS, bagaimanakah perubahan kategori ketimpangan provinsi tersebut?", "reference": "A", "explanation": "Kunci: A. Kriteria batas Koefisien Gini BPS: (1) Ketimpangan Rendah: Gini < 0,4; (2) Ketimpangan Sedang: 0,4 <= Gini <= 0,5; (3) Ketimpangan Tinggi: Gini > 0,5. Nilai 0,420 berada pada rentang sedang, sedangkan 0,365 berada pada rentang rendah. Penurunan Gini menunjukkan distribusi pengeluaran yang semakin merata. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 40)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Berubah dari Ketimpangan Sedang ($0,4 \\le \\text{Gini} \\le 0,5$) menjadi Ketimpangan Rendah ($\\text{Gini} < 0,4$)", "B. Berubah dari Ketimpangan Tinggi menjadi Ketimpangan Sedang", "C. Tetap berada pada kategori Ketimpangan Sedang", "D. Mengalami kemunduran distribusi pendapatan"], "answer": 0}, {"point_id": "Pertemuan 8", "point_name": "Indikator Kemiskinan: Aksioma Monotonisitas FGT", "score": 2, "stem": "[OSL-DRL-26] Jika terjadi penurunan pengeluaran pada seorang penduduk miskin yang sudah berada di bawah garis kemiskinan, nilai Headcount Index ($P_0$) tidak akan mengalami perubahan, sedangkan nilai Poverty Gap Index ($P_1$) dan Poverty Severity Index ($P_2$) dipastikan akan meningkat.", "reference": "true", "explanation": "Kunci: Benar. Headcount index $P_0$ melanggar aksioma monotonisitas (karena $P_0$ hanya menghitung proporsi kepala tanpa peduli seberapa jauh mereka jatuh di bawah garis kemiskinan). Sebaliknya, $P_1$ dan $P_2$ memenuhi aksioma monotonisitas: ketika pengeluaran orang miskin semakin berkurang, kesenjangan $(z - y_i)$ membesar sehingga $P_1$ dan $P_2$ otomatis naik. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 26)", "type": "judge", "qtype_label": "Benar / Salah", "answer": true}, {"point_id": "Pertemuan 10", "point_name": "Indikator Kesehatan: Klasifikasi Baku Antropometri Stunting", "score": 2, "stem": "[OSL-DRL-27] Dalam indikator kesehatan balita BPS (mengadopsi baku rujukan WHO Child Growth Standards), seorang anak balita dikategorikan menderita stunting (pendek/sangat pendek) apabila memiliki nilai Z-score...", "reference": "A", "explanation": "Kunci: A. Baku klasifikasi antropometri balita WHO/BPS: (1) Stunting (pendek/sangat pendek): PB/U atau TB/U < -2 SD (mengindikasikan malnutrisi kronis jangka panjang); (2) Wasting (kurus/sangat kurus): BB/PB atau BB/TB < -2 SD (mengindikasikan malnutrisi akut/kejadian baru); (3) Underweight (berat badan kurang): BB/U < -2 SD. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 32)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Panjang Badan menurut Umur (PB/U) atau Tinggi Badan menurut Umur (TB/U) kurang dari -2 Standar Deviasi (< -2 SD)", "B. Berat Badan menurut Umur (BB/U) kurang dari -2 Standar Deviasi (< -2 SD)", "C. Berat Badan menurut Panjang/Tinggi Badan (BB/PB atau BB/TB) kurang dari -2 Standar Deviasi (< -2 SD)", "D. Lingkar Lengan Atas (LiLA) di atas +2 Standar Deviasi (> +2 SD)"], "answer": 0}, {"point_id": "Pertemuan 10", "point_name": "Indikator Kesehatan: Periode Referensi Rawat Inap Susenas", "score": 2, "stem": "[OSL-DRL-28] Dalam Kuesioner Susenas Kor BPS, informasi pemanfaatan fasilitas kesehatan untuk 'Rawat Inap' (hospitalization) ditanyakan dengan periode referensi...", "reference": "A", "explanation": "Kunci: A. Susenas Kor menggunakan dua periode referensi utama untuk pemanfaatan layanan kesehatan: (1) 1 bulan (30 hari) terakhir untuk keluhan kesehatan umum dan rawat jalan; (2) 1 tahun (12 bulan) terakhir untuk rawat inap (karena frekuensi kejadian rawat inap relatif jarang sehingga membutuhkan periode jendela amatan yang lebih panjang agar sampel mencukupi). (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 22; Kuesioner Susenas Kor BPS)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 1 tahun (12 bulan) terakhir sebelum pencacahan", "B. 1 bulan (30 hari) terakhir sebelum pencacahan", "C. 6 bulan terakhir sebelum pencacahan", "D. 7 hari terakhir sebelum pencacahan"], "answer": 0}, {"point_id": "Pertemuan 10", "point_name": "Indikator Kesehatan: Angka Kematian Bayi (AKB / IMR)", "score": 2, "stem": "[OSL-DRL-29] Angka Kematian Bayi (Infant Mortality Rate / IMR) didefinisikan sebagai jumlah kematian bayi berusia di bawah 1 tahun pada tahun tertentu per...", "reference": "A", "explanation": "Kunci: A. IMR dirumuskan sebagai: $IMR = \\frac{D_0}{B} \\times 1.000$, yaitu jumlah kematian bayi usia < 1 tahun ($D_0$) dibagi jumlah kelahiran hidup ($B$) pada tahun yang sama dikalikan konstanta 1.000. Ingat: hanya AKI (Maternal Mortality Ratio) yang menggunakan pengali 100.000; sedangkan AKB, AKABA, dan AKN menggunakan pengali 1.000 kelahiran hidup. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 14)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 1.000 Kelahiran Hidup", "B. 100.000 Kelahiran Hidup", "C. 1.000 Penduduk Usia Kerja", "D. 10.000 Wanita Usia Subur"], "answer": 0}, {"point_id": "Pertemuan 10", "point_name": "Indikator Kesehatan: Komposisi Imunisasi Dasar Lengkap", "score": 3, "stem": "[OSL-DRL-30] Manakah di antara vaksin berikut yang WAJIB diterima oleh bayi sebelum usia 1 tahun untuk memenuhi kriteria Imunisasi Dasar Lengkap (IDL) BPS? (Pilih semua yang benar)", "reference": "A, B, C, D, E", "explanation": "Kunci: A, B, C, D, E (Semua Benar). Sesuai pedoman Kementerian Kesehatan dan BPS, bayi dikategorikan telah mendapatkan Imunisasi Dasar Lengkap (IDL) jika telah menerima: 1 dosis HB0, 1 dosis BCG, 3 dosis DPT-HB-Hib, 4 dosis Polio tetes (atau 1 dosis IPV), dan 1 dosis Campak/MR sebelum mencapai usia 1 tahun. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 29)", "type": "multi", "qtype_label": "Pilihan Ganda Kompleks", "options": ["A. Hepatitis B (HB0 saat lahir)", "B. BCG (Bacillus Calmette-Guérin untuk tuberkulosis)", "C. DPT-HB-Hib (Pentavalen sebanyak 3 dosis)", "D. Polio (tetes OPV 4 dosis / suntik IPV)", "E. Campak / MR (Measles Rubella)"], "answer": [0, 1, 2, 3, 4], "partial": true}]};
+const QS = DATA.questions;
+document.getElementById("total").textContent = QS.length;
+
+/* Normalisasi pilihan */
+QS.forEach(q => {
+  if (q.type === "judge") { q._opts = ["Benar", "Salah"]; q._ans = (q.answer === true) ? 0 : 1; }
+  else if (q.type === "single") { q._opts = q.options; q._ans = q.answer; }
+  else if (q.type === "multi") { q._opts = q.options; q._ansArr = [...q.answer].sort((a, b) => a - b); }
+});
+
+const state = QS.map(q => ({
+  answered: false, correct: null, earned: 0,
+  userAnswer: q.type === "multi" ? [] : "", selfLabel: ""
+}));
+let idx = 0;
+
+const GRADES = [
+  ["Benar Sempurna", 1.0], ["Sebagian Besar Benar", 0.75], ["Benar Separuh", 0.5], ["Sebagian Kecil Benar", 0.25], ["Belum Menguasai", 0]
+];
+
+function esc(s) { const d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
+function L(i) { return String.fromCharCode(65 + i); }
+function letters(arr) { return arr.length ? arr.map(L).join(", ") : "—"; }
+function fullScore() { return QS.reduce((a, q) => a + (q.score || 0), 0); }
+function earned() { return state.reduce((a, s) => a + s.earned, 0); }
+function round1(x) { return Math.round(x * 10) / 10; }
+function isChoice(q) { return q.type === "single" || q.type === "judge"; }
+
+function cleanLatex(tex) {
+  let t = tex;
+  t = t.replace(/\\text\{([^}]+)\}/g, "$1");
+  let prev;
+  do {
+    prev = t;
+    t = t.replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '<span class="m-frac"><span class="m-num">$1</span><span class="m-den">$2</span></span>');
+  } while (t !== prev && t.includes("\\frac{"));
+  t = t.replace(/\\times/g, "×")
+       .replace(/\\cdot/g, "·")
+       .replace(/\\le/g, "≤")
+       .replace(/\\ge/g, "≥")
+       .replace(/\\ne/g, "≠")
+       .replace(/\\approx/g, "≈")
+       .replace(/\\pm/g, "±")
+       .replace(/\\sum/g, "∑")
+       .replace(/\\alpha/g, "α")
+       .replace(/\\beta/g, "β")
+       .replace(/\\lambda/g, "λ")
+       .replace(/\\Delta/g, "Δ")
+       .replace(/\\left\[/g, "[")
+       .replace(/\\right\]/g, "]")
+       .replace(/\\left\(/g, "(")
+       .replace(/\\right\)/g, ")")
+       .replace(/\\%/g, "%")
+       .replace(/\\,/g, " ")
+       .replace(/\\quad/g, "   ");
+  t = t.replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>");
+  t = t.replace(/_([a-zA-Z0-9])/g, "<sub>$1</sub>");
+  t = t.replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>");
+  t = t.replace(/\^([a-zA-Z0-9])/g, "<sup>$1</sup>");
+  return t;
+}
+
+function formatMath(str) {
+  if (!str) return "";
+  let s = esc(str);
+  s = s.replace(/\$\$([\s\S]*?)\$\$/g, (m, c) => `<div class="math-disp">${cleanLatex(c)}</div>`);
+  s = s.replace(/\$([^\$\n]+?)\$/g, (m, c) => `<span class="math-inline">${cleanLatex(c)}</span>`);
+  return s;
+}
+
+function typesetMath() {
+  const warn = document.getElementById("mjwarn");
+  if (window.__MATHJAX_FAILED__ && warn) warn.style.display = "block";
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([document.getElementById("main")]).catch(() => {
+      if (warn) warn.style.display = "block";
+    });
+  }
+}
+
+function updateHeader() {
+  const done = state.filter(s => s.answered).length;
+  document.getElementById("fill").style.width = (done / QS.length * 100) + "%";
+  document.getElementById("stats").textContent =
+    `Selesai ${done} / ${QS.length} Soal ｜ Skor Saat Ini ${round1(earned())} / ${fullScore()} Poin`;
+}
+
+function render() {
+  updateHeader();
+  const main = document.getElementById("main");
+  if (idx >= QS.length) { renderSummary(main); return; }
+  const q = QS[idx], st = state[idx];
+  let html = `<div class="card">
+    <div class="chips">
+      <span class="chip">Soal ${idx + 1} / ${QS.length} · ${esc(q.qtype_label || q.type)}</span>
+      ${q.point_name ? `<span class="chip point">Materi: ${esc(q.point_name)}</span>` : ""}
+    </div>
+    <div class="stem">${formatMath(q.stem)}</div>`;
+
+  if (isChoice(q)) {
+    const isJudge = q.type === "judge";
+    html += (isJudge ? '<div class="judge-row">' : "") + q._opts.map((o, i) => {
+      let cls = "opt";
+      if (st.answered) {
+        if (i === q._ans) cls += " right";
+        else if (i === st.userAnswer) cls += " wrong";
+        else cls += " dim";
+      }
+      const text = esc(o).replace(/^[A-Z]\.\s*/, "");
+      const label = isJudge ? esc(o) : `${L(i)}. ${formatMath(text)}`;
+      return `<button class="${cls}" data-i="${i}" ${st.answered ? "disabled" : ""}>${label}</button>`;
+    }).join("") + (isJudge ? "</div>" : "");
+    if (st.answered) {
+      const ansLabel = isJudge ? q._opts[q._ans] : L(q._ans);
+      html += `<div class="panel ${st.correct ? "ok" : "bad"}"><b class="tag">${st.correct ? "✓ Benar" : "✗ Salah"} ｜ Kunci Jawaban: ${ansLabel} ｜ Skor: ${round1(st.earned)}/${q.score} Poin</b>${formatMath(q.explanation || "")}</div>`;
+    }
+  } else if (q.type === "multi") {
+    const sel = new Set(st.userAnswer);
+    html += q._opts.map((o, i) => {
+      let cls = "opt";
+      if (!st.answered) { if (sel.has(i)) cls += " picked"; }
+      else {
+        const isAns = q._ansArr.includes(i), isPick = sel.has(i);
+        if (isAns && isPick) cls += " right";
+        else if (!isAns && isPick) cls += " wrong";
+        else if (isAns && !isPick) cls += " missed";
+        else cls += " dim";
+      }
+      const text = esc(o).replace(/^[A-Z]\.\s*/, "");
+      return `<button class="${cls}" data-i="${i}" ${st.answered ? "disabled" : ""}>${L(i)}. ${formatMath(text)}</button>`;
+    }).join("");
+    if (!st.answered) {
+      html += `<div class="hint">Pilihan Ganda Kompleks: Pilih semua jawaban yang benar lalu klik konfirmasi${q.partial ? " (Jawaban sebagian tanpa pilihan keliru mendapat setengah poin)" : " (Salah memilih atau kurang memilih tidak mendapat poin)"}</div>`;
+      html += `<button class="btn" id="confirm" ${sel.size ? "" : "disabled"}>Konfirmasi Jawaban</button>`;
+    } else {
+      const cls = st.correct ? "ok" : (st.earned > 0 ? "half" : "bad");
+      const head = st.correct ? "✓ Benar Sempurna" : (st.earned > 0 ? "◐ Jawaban Sebagian (Dapat Setengah Poin)" : "✗ Salah");
+      html += `<div class="panel ${cls}"><b class="tag">${head} ｜ Kunci Jawaban: ${letters(q._ansArr)} ｜ Pilihan Anda: ${letters([...sel].sort((a, b) => a - b))} ｜ Skor: ${round1(st.earned)}/${q.score} Poin</b>${formatMath(q.explanation || "")}</div>`;
+    }
+  } else { /* text esai / isian */
+    html += `<textarea id="ta" placeholder="Tuliskan jawaban Anda di sini (untuk soal hitungan/analisis, sertakan langkah perhitungan kunci)" ${st.answered ? "disabled" : ""}>${esc(st.userAnswer)}</textarea>`;
+    if (!st.answered) html += `<button class="btn" id="submit">Kirim & Lihat Kunci Jawaban / Rubrik</button>`;
+    else {
+      html += `<div class="panel ref"><b class="tag">📖 Kunci Jawaban & Rubrik Penilaian (Maks ${q.score} Poin)</b>${formatMath(q.reference || "")}${q.explanation ? "\n\n【Peringatan Kesalahan Umum】" + formatMath(q.explanation) : ""}</div>`;
+      html += `<div id="selfgrade"><span class="hint">Evaluasi mandiri berdasarkan rubrik penilaian:</span><br>` +
+        GRADES.map(([label, f], gi) =>
+          `<button data-g="${gi}" class="${st.selfLabel === label ? "sel" : ""}">${label} (${round1(q.score * f)} Poin)</button>`).join("") + `</div>`;
+    }
+  }
+
+  html += `<div id="nav">
+    <button class="btn ghost" id="prev" ${idx === 0 ? "style='visibility:hidden'" : ""}>← Soal Sebelumnya</button>
+    ${navRight(q, st)}
+  </div></div>`;
+  main.innerHTML = html;
+  typesetMath();
+  bind(q, st);
+}
+
+function navRight(q, st) {
+  const canGo = st.answered && (q.type !== "text" || st.selfLabel);
+  if (!canGo) return `<span class="hint" style="align-self:center">${st.answered ? "Silakan beri nilai evaluasi mandiri terlebih dahulu" : "Jawab soal terlebih dahulu untuk melanjutkan"}</span>`;
+  return `<button class="btn" id="next">${idx === QS.length - 1 ? "Lihat Transkrip Nilai →" : "Soal Berikutnya →"}</button>`;
+}
+
+function bind(q, st) {
+  document.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    if (st.answered) return;
+    const i = +b.dataset.i;
+    if (isChoice(q)) {
+      st.userAnswer = i;
+      st.correct = i === q._ans;
+      st.earned = st.correct ? q.score : 0;
+      st.answered = true;
+    } else if (q.type === "multi") {
+      const sel = new Set(st.userAnswer);
+      sel.has(i) ? sel.delete(i) : sel.add(i);
+      st.userAnswer = [...sel].sort((a, b) => a - b);
+    }
+    render();
+  }));
+  const confirm = document.getElementById("confirm");
+  if (confirm) confirm.addEventListener("click", () => {
+    const picks = st.userAnswer, ans = q._ansArr;
+    const wrongPick = picks.some(i => !ans.includes(i));
+    const allRight = picks.length === ans.length && !wrongPick;
+    st.correct = allRight;
+    st.earned = allRight ? q.score : (!wrongPick && picks.length > 0 && q.partial ? q.score / 2 : 0);
+    st.answered = true;
+    render();
+  });
+  const ta = document.getElementById("ta");
+  if (ta) ta.addEventListener("input", () => st.userAnswer = ta.value);
+  const sub = document.getElementById("submit");
+  if (sub) sub.addEventListener("click", () => { st.answered = true; render(); });
+  document.querySelectorAll("#selfgrade button").forEach(b => b.addEventListener("click", () => {
+    const [label, f] = GRADES[+b.dataset.g];
+    st.selfLabel = label; st.earned = q.score * f;
+    render();
+  }));
+  const prev = document.getElementById("prev");
+  if (prev) prev.addEventListener("click", () => { idx--; render(); });
+  const next = document.getElementById("next");
+  if (next) next.addEventListener("click", () => { idx++; render(); });
+}
+
+function resultText(q, st) {
+  if (q.type === "text") return `Evaluasi Mandiri: ${st.selfLabel || "—"}`;
+  if (q.type === "multi") return st.correct ? "✓ Benar" : `${st.earned > 0 ? "◐ Jawaban Sebagian" : "✗ Salah"} (Pilihan: ${letters(st.userAnswer)})`;
+  const pick = st.userAnswer === "" ? "—" : (q.type === "judge" ? q._opts[st.userAnswer] : L(st.userAnswer));
+  return st.correct ? "✓ Benar" : `✗ Salah (Pilihan: ${pick})`;
+}
+
+function renderSummary(main) {
+  const total = fullScore(), got = round1(earned());
+  const pct = total ? Math.round(got / total * 100) : 0;
+  const rows = QS.map((q, i) => {
+    const st = state[i], miss = st.earned < q.score;
+    return `<tr class="${miss ? "miss" : ""}"><td>${i + 1}</td><td>${esc(q.qtype_label || q.type)}</td><td>${esc(q.point_name || "-")}</td><td>${round1(st.earned)}/${q.score}</td><td>${resultText(q, st)}</td></tr>`;
+  }).join("");
+  const missCount = QS.filter((q, i) => state[i].earned < q.score).length;
+  main.innerHTML = `<div class="card">
+    <div class="chips"><span class="chip">Transkrip Nilai</span></div>
+    <div id="score">${got} / ${total} Poin (${pct}%)</div>
+    <div class="hint">${missCount ? "Baris berwarna merah menandakan soal yang belum maksimal. Pelajari kembali pembahasannya untuk evaluasi berkala." : "Sempurna! Semua soal dijawab dengan benar."}</div>
+    <table><tr><th>#</th><th>Tipe Soal</th><th>Materi</th><th>Skor</th><th>Hasil</th></tr>${rows}</table>
+    <button class="btn" id="export">Salin Catatan Evaluasi Jawaban (untuk Asisten/Dosen)</button>
+    <button class="btn ghost" id="review">← Tinjau Ulang Soal</button>
+    <textarea id="export-area" readonly></textarea>
+    <div class="hint" id="copyhint"></div>
+  </div>`;
+  typesetMath();
+  document.getElementById("review").addEventListener("click", () => { idx = 0; render(); });
+  document.getElementById("export").addEventListener("click", () => {
+    const text = exportText();
+    const area = document.getElementById("export-area");
+    area.style.display = "block"; area.value = text;
+    area.select();
+    try { navigator.clipboard.writeText(text); document.getElementById("copyhint").textContent = "Berhasil disalin ke clipboard! Silakan tempelkan ke kolom pesan."; }
+    catch (e) { document.getElementById("copyhint").textContent = "Silakan pilih dan salin teks di atas secara manual, lalu tempelkan ke kolom pesan."; }
+  });
+}
+
+function exportText() {
+  const lines = [`【Riwayat Latihan UAS OSL】${DATA.title} ｜ ${new Date().toLocaleString("id-ID")}`,
+                 `Total Skor: ${round1(earned())} / ${fullScore()} Poin`];
+  QS.forEach((q, i) => {
+    const st = state[i];
+    lines.push(`---`);
+    lines.push(`Q${i + 1} ｜ ${q.qtype_label || q.type} ｜ Materi: ${q.point_id || ""} ${q.point_name || ""} ｜ Skor: ${round1(st.earned)}/${q.score} Poin`);
+    if (q.type === "multi") {
+      lines.push(`Pilihan Saya: ${letters(st.userAnswer)} (Kunci: ${letters(q._ansArr)}, ${st.correct ? "Benar" : st.earned > 0 ? "Jawaban Sebagian" : "Salah"})`);
+    } else if (isChoice(q)) {
+      const pick = st.userAnswer === "" ? "Belum dijawab" : (q.type === "judge" ? q._opts[st.userAnswer] : L(st.userAnswer));
+      const ans = q.type === "judge" ? q._opts[q._ans] : L(q._ans);
+      lines.push(`Pilihan Saya: ${pick} (Kunci: ${ans}, ${st.correct ? "Benar" : "Salah"})`);
+    } else {
+      lines.push(`Evaluasi Mandiri: ${st.selfLabel || "Belum dievaluasi"}`);
+      lines.push(`Jawaban Saya: ${(st.userAnswer || "（Belum dijawab）").trim()}`);
+    }
+  });
+  return lines.join("\n");
+}
+
+render();
+</script>
+</body>
+</html>

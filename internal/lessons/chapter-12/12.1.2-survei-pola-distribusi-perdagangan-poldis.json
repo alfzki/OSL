@@ -1,0 +1,84 @@
+{
+  "point_id": "12.1.2",
+  "title": "Survei Pola Distribusi Perdagangan Poldis",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Statistik Distribusi Perdagangan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "10-13",
+        "content": "Konsep Survei Pola Distribusi Perdagangan (Poldis), pemetaan rantai distribusi komoditas strategis dari produsen ke pedagang besar, pedagang eceran, hingga konsumen akhir, serta konsep marketed surplus."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Komoditas pangan strategis seperti cabai merah, bawang merah, dan daging sapi sering mengalami lonjakan harga tajam di pasar kota meskipun harga di tingkat petani sedang jatuh. Mengapa disparitas harga ini terjadi? Survei Poldis menelusuri secara empiris jejak perjalanan fisik komoditas: siapa saja pedagang perantara yang terlibat, rute antarpulau yang dilewati, dan di titik simpul mana penumpukan margin keuntungan serta biaya logistik terjadi. Rantai yang ramping mencerminkan sistem distribusi yang efisien.",
+    "bps_definition": "Survei terstruktur yang diselenggarakan BPS untuk memetakan alur distribusi perdagangan komoditas barang strategis mulai dari produsen sampai konsumen akhir, mengidentifikasi pola rantai utama per komoditas, dan menghitung Margin Perdagangan dan Pengangkutan (MPP) di setiap pelaku usaha perdagangan serta antarwilayah.",
+    "boundary_conditions": "Saluran distribusi perdagangan membedakan pelaku menjadi 4 tingkatan: Produsen, Pedagang Besar (Grosir/Distributor I & II), Pedagang Eceran (Pasar tradisional/modern), dan Konsumen Akhir (Rumah Tangga dan Non-Rumah Tangga). Rantai distribusi yang pendek menunjukkan distribusi yang efisien, sedangkan rantai yang panjang meningkatkan beban biaya pada konsumen akhir.",
+    "formula_latex": "$$\\text{MPP}_{\\text{rantai}} = \\frac{P_{\\text{konsumen akhir}} - P_{\\text{produsen}}}{P_{\\text{produsen}}} \\times 100\\%, \\quad \\Delta \\text{Beban} = \\text{MPP}_{\\text{rantai panjang}} - \\text{MPP}_{\\text{rantai pendek}}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam kajian Survei Poldis komoditas cabai merah di suatu provinsi, BPS mengidentifikasi dua pola distribusi perdagangan alternatif:\n- Rantai A (Pola Distribusi Pendek): Petani Produsen -> Pedagang Eceran / Pasar Tani -> Konsumen Akhir. Harga di tingkat petani adalah Rp25.000,-/kg dan harga beli konsumen akhir adalah Rp32.000,-/kg.\n- Rantai B (Pola Distribusi Panjang): Petani Produsen -> Tengkulak Desa -> Pedagang Besar Pasar Induk -> Pedagang Eceran -> Konsumen Akhir. Harga di tingkat petani adalah Rp25.000,-/kg dan harga beli konsumen akhir adalah Rp40.000,-/kg.\nHitunglah persentase MPP Total untuk Rantai A dan Rantai B, serta hitung selisih beban harga yang ditanggung oleh konsumen akibat rantai distribusi yang panjang.",
+    "data_table": "| Pola Rantai | Rute Pelaku Perdagangan | Harga Produsen (Rp/kg) | Harga Konsumen Akhir (Rp/kg) |\n|---|---|---|---|\n| Rantai A | Petani -> Pedagang Eceran -> Konsumen | 25.000 | 32.000 |\n| Rantai B | Petani -> Tengkulak -> Pedagang Besar -> Pengecer -> Konsumen | 25.000 | 40.000 |",
+    "step_by_step_solution": "1. Menghitung MPP Total Rantai A (Pola Pendek):\n   MPP_A = ((32.000 - 25.000) / 25.000) * 100% = (7.000 / 25.000) * 100% = 28,00%.\n2. Menghitung MPP Total Rantai B (Pola Panjang):\n   MPP_B = ((40.000 - 25.000) / 25.000) * 100% = (15.000 / 25.000) * 100% = 60,00%.\n3. Menghitung Selisih Beban Kenaikan Harga bagi Konsumen:\n   Selisih_Beban = MPP_B - MPP_A = 60,00% - 28,00% = 32,00%.\n   Konsumen pada Rantai B menanggung tambahan beban harga sebesar 32,00% poin lebih tinggi dibandingkan Rantai A.",
+    "python_verification_code": "p0 = 25000.0\npa_end = 32000.0\npb_end = 40000.0\nmpp_a = ((pa_end - p0) / p0) * 100.0\nmpp_b = ((pb_end - p0) / p0) * 100.0\nselisih = mpp_b - mpp_a\nprint(f'MPP_Rantai_A={mpp_a:.2f}%, MPP_Rantai_B={mpp_b:.2f}%, Selisih_Beban={selisih:.2f}%')",
+    "expected_output": "MPP_Rantai_A=28.00%, MPP_Rantai_B=60.00%, Selisih_Beban=32.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengabaikan konsumen non-rumah tangga dalam analisis saluran akhir Poldis",
+      "common_mistake": "Mengasumsikan seluruh komoditas yang didistribusikan pasti berakhir di konsumen rumah tangga.",
+      "safe_strategy": "SNA dan BPS secara tegas membagi konsumen akhir menjadi dua: konsumen rumah tangga (household) dan konsumen non-rumah tangga (seperti industri pengolahan makanan, hotel, restoran, dan katering)."
+    },
+    {
+      "trap_description": "Mengira panjang rantai selalu menandakan mutu produk yang lebih baik",
+      "common_mistake": "Menganggap semakin banyak tahapan perantara, kualitas barang semakin terjamin.",
+      "safe_strategy": "Dalam statistik distribusi pangan, rantai yang terlalu panjang sering kali mengindikasikan inefisiensi pasar, monopsoni lokal oleh tengkulak, dan memperbesar risiko penyusutan fisik komoditas pangan."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.1 Margin Perdagangan dan Distribusi",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.1.2",
+      "name": "Survei Pola Distribusi Perdagangan Poldis",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 10-13]",
+      "exam_focus": "Tujuan dan metodologi Survei Poldis, pemetaan rantai saluran distribusi komoditas strategis, konsep marketed surplus produsen, dan analisis efisiensi perdagangan antarpelaku.",
+      "textbook_excerpt": "Survei Pola Distribusi Perdagangan melihat rantai distribusi suatu barang mulai dari produsen hingga konsumen. Konsep: untuk melihat pola distribusi perdagangan komoditi antar pelaku usaha perdagangan dan antar wilayah perdagangan. Rantai distribusi perdagangan yang pendek menunjukkan distribusi suatu komoditas dari wilayah tersebut baik, sedang jika rantai distribusinya panjang menyebabkan beban konsumen semakin tinggi [slide 7].",
+      "intuition": "Jika sebuah barang diproduksi di desa tetapi dikonsumsi di kota metropolitan, barang tersebut dapat berpindah melalui berbagai alternatif jalur distribusi. Jalur yang efisien (misalnya melalui koperasi tani atau sentra distribusi langsung) memungkinkan petani menikmati harga jual yang adil dan konsumen membayar harga yang terjangkau. Sebaliknya, bila barang harus melewati tengkulak lokal, pedagang pengumpul kecamatan, pedagang besar kabupaten, distributor provinsi, hingga pedagang pengecer pasar becek, biaya dan margin keuntungan akan bertumpuk berlipat ganda.",
+      "formal": "### 1. Tujuan dan Ruang Lingkup Survei Poldis BPS\nSurvei Pola Distribusi Perdagangan (Poldis) diselenggarakan oleh Direktorat Statistik Distribusi BPS dengan tujuan utama [slide 7-8]:\n1. Mengidentifikasi pola utama rantai distribusi perdagangan untuk komoditas-komoditas kebutuhan pokok dan strategis (seperti beras, cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, dan minyak goreng).\n2. Mengetahui simpul-simpul pedagang perantara yang terlibat, baik pedagang besar (grosir/distributor), agen, sub-agen, pedagang pengumpul, maupun pedagang eceran.\n3. Menghitung besaran Margin Perdagangan dan Pengangkutan (MPP) pada setiap rantai transaksi perdagangan, dari tingkat produsen hingga ke konsumen akhir.\n4. Mengetahui cakupan wilayah distribusi perdagangan (perdagangan dalam provinsi, antarkabupaten/kota, maupun antarpulau/antarprovinsi).\n\n### 2. Saluran Perdagangan dan Konsep Marketed Surplus\nBerdasarkan bagan saluran perdagangan BPS [slide 10]:\n- **Produsen**: Penghasil komoditas pertama (seperti petani tanaman pangan, peternak, atau pabrik pengolahan).\n- **Marketed Surplus Produsen**: Sebagian dari total produksi fisik yang benar-benar dijual ke pasar komersial setelah dikurangi konsumsi sendiri oleh rumah tangga produsen, benih/bibit simpanan, dan penyusutan susut panen.\n- **Pedagang Besar I & II (*Wholesaler/Distributor*)**: Membeli dalam partai besar dari produsen atau sentra produksi antarpulau untuk disalurkan ke distributor sekunder atau pengecer.\n- **Pedagang Eceran (*Retailer*)**: Menjual komoditas dalam satuan eceran langsung ke pemakai akhir.\n- **Konsumen Akhir**: Terbagi menjadi Konsumen Rumah Tangga (*household*) dan Konsumen Non-Rumah Tangga (hotel, restoran, katering/horeka, industri makanan olahan).\n\n### 3. Matriks Perbandingan Karakteristik Rantai Distribusi\n\n| Indikator | Rantai Distribusi Pendek | Rantai Distribusi Panjang |\n|---|---|---|\n| **Jumlah Pelaku Perantara** | 1 - 2 simpul (misal: Produsen -> Pengecer -> Konsumen) | $\\ge 3$ simpul (Produsen -> Tengkulak -> Pedagang Besar -> Pengecer -> Konsumen) |\n| **Tingkat Efisiensi** | Tinggi (biaya logistik minimal) | Rendah (banyak perpindahan dan biaya bongkar muat) |\n| **Nilai MPP Total** | Rendah (umumnya $< 30\\%$) | Tinggi (dapat mencapai $> 60\\%$) |\n| **Disparitas Harga** | Selisih harga produsen-konsumen sempit | Selisih harga produsen-konsumen sangat lebar |\n| **Risiko Susut Fisik** | Rendah (barang cepat sampai ke konsumen) | Tinggi (risiko busuk/rusak tinggi pada hortikultura) |\n\n### 4. Manfaat Kebijakan Pengendalian Inflasi Pangan\nData Poldis digunakan oleh Tim Pengendalian Inflasi Daerah (TPID) dan Tim Pengendalian Inflasi Pusat (TPIP) untuk mendeteksi simpul distribusi mana yang mengalami hambatan (*bottleneck*). Bila disparitas harga terjadi karena kartel atau penimbunan pada tingkat pedagang besar, pemerintah dapat melakukan intervensi operasi pasar terarah di sentra grosir terkait.",
+      "pitfalls": "1. **Mengecilkan Peran Konsumen Non-Rumah Tangga**: Dalam survei Poldis komoditas beras atau minyak goreng, serapan oleh industri katering dan pabrik makanan sering kali mendominasi saluran perdagangan eceran.\n2. **Menyederhanakan Rantai Tanpa Bukti Survei**: Dalam soal analisis, jangan berasumsi setiap komoditas memiliki rantai yang seragam; rantai distribusi beras antarprovinsi sangat berbeda karakternya dengan rantai distribusi sayuran segar lokal.",
+      "memory_hook": "Poldis Memetakan Jejak Distribusi: Rantai Pendek Efisien dan Menyejahterakan, Rantai Panjang Membebani Konsumen.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 7, 10]",
+          "problem": "Berdasarkan rilis hasil Survei Poldis BPS, komoditas bawang merah memiliki dua saluran perdagangan. Saluran 1 memiliki MPP Total 25% dengan melibatkan satu perantara, sedangkan Saluran 2 memiliki MPP Total 65% dengan melibatkan empat perantara. Dari sudut pandang stabilitas harga dan efisiensi pasar, kesimpulan yang paling valid adalah...",
+          "options": [
+            "Saluran 2 lebih efisien karena melibatkan lebih banyak tenaga kerja pedagang perantara.",
+            "Saluran 1 lebih efisien karena memiliki rantai yang lebih pendek dan membebani konsumen dengan margin harga yang lebih rendah.",
+            "Saluran 2 memberikan jaminan keuntungan yang jauh lebih tinggi bagi petani produsen.",
+            "Kedua saluran memiliki efisiensi yang sama karena harga di tingkat produsen identik."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\nSesuai konsep resmi BPS pada Slide 7, rantai distribusi perdagangan yang pendek menunjukkan distribusi yang efisien dan baik bagi perekonomian, karena meminimalkan biaya logistik perantara dan tidak membebani konsumen akhir dengan margin yang berlebihan (MPP 25% vs 65%). Pada Saluran 2, penambahan simpul perantara justru memperlebar disparitas harga tanpa memberikan tambahan pendapatan riil bagi petani produsen."
+        }
+      ],
+      "links": [
+        "12.1.1",
+        "12.2.1"
+      ]
+    }
+  ]
+}

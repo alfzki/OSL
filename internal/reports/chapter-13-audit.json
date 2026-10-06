@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-29",
+  "chapter": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor dan Pariwisata",
+  "source": "internal/textbook/chapter-13.md",
+  "expected_points": 7,
+  "lecture_json_files": 7,
+  "lecture_points": 7,
+  "figures": 0,
+  "tables": 7,
+  "examples": 14,
+  "source_markers": {
+    "visual": true,
+    "example": false,
+    "formula": true
+  },
+  "status": "pass",
+  "verdict": "pass",
+  "issues": []
+}

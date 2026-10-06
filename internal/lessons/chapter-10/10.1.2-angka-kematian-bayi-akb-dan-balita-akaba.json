@@ -1,0 +1,97 @@
+{
+  "point_id": "10.1.2",
+  "title": "Angka Kematian Bayi AKB dan Balita AKABA",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 10,
+    "silabus_topic": "Indikator Kesehatan dan SDGs 3",
+    "bps_subject": "Indikator Mortalitas Bayi dan Balita"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "18-35",
+        "content": "Konsep dan definisi Angka Kematian Balita (AKABA) slide 18-19, Angka Kematian Anak (AK Anak / CMR 1-4 th) slide 20-21, 23, karakteristik SDKI slide 22, definisi dan formula AKB (IMR) slide 26, kegunaan indikator mortalitas anak slide 27, data SP2020 slide 28 (AKB/balita 19,83 per 1000 KH, anak 1-4 th 2,98), target SDGs 3.2 (AKABA <= 25 per 1.000 KH) slide 9."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Bayi dan anak di bawah lima tahun (balita) adalah kelompok populasi yang paling rentan terhadap gangguan nutrisi, infeksi saluran napas, diare, dan penyakit menular. Tingkat kelangsungan hidup mereka merupakan cermin paling sensitif terhadap kesejahteraan sosio-ekonomi, kualitas sanitasi lingkungan, ketersediaan air bersih, serta jangkauan pelayanan imunisasi. BPS secara cermat membedakan tiga ukuran mortalitas anak: Angka Kematian Bayi (AKB / IMR, usia 0-<1 tahun), Angka Kematian Anak (AK Anak / CMR, usia 1-<5 tahun), dan Angka Kematian Balita (AKABA / U5MR, usia 0-<5 tahun). Ketiganya menggunakan pengali K = 1.000.",
+    "bps_definition": "1. Angka Kematian Bayi (Infant Mortality Rate / IMR / AKB) adalah banyaknya kematian bayi yang terjadi antara saat lahir sampai bayi belum berusia tepat satu tahun (0-<1 tahun) per 1.000 kelahiran hidup pada satu tahun tertentu di daerah tertentu [Pertemuan_10_Indikator_Kesehatan.md, slide 26].\n2. Angka Kematian Anak (Child Mortality Rate / CMR / AK Anak) adalah banyaknya kematian anak berusia 1 tahun sampai kurang dari 5 tahun (1-4 tahun 11 bulan 29 hari) per 1.000 penduduk anak berumur 1-4 tahun pada pertengahan tahun tertentu di daerah tertentu [slide 20-21].\n3. Angka Kematian Balita (Under-Five Mortality Rate / U5MR / AKABA) adalah jumlah kematian anak berusia 0 sampai kurang dari 5 tahun (0-4 tahun 11 bulan 29 hari) selama satu tahun tertentu per 1.000 anak umur yang sama pada pertengahan tahun tertentu (atau per 1.000 kelahiran hidup pada analisis kohor demografi) [slide 18-19].",
+    "boundary_conditions": "Batas usia bayi adalah 0 sampai kurang dari 1 tahun (0-11 bulan 29 hari). Batas usia anak adalah 1 sampai kurang dari 5 tahun (12-59 bulan). Batas usia balita adalah 0 sampai kurang dari 5 tahun (0-59 bulan, gabungan bayi dan anak). Denominator AKB adalah Kelahiran Hidup (B). Denominator AK Anak adalah Penduduk Usia 1-4 tahun pertengahan tahun (P_1-4). Denominator AKABA pada formula prevalensi BPS adalah Penduduk Usia 0-4 tahun pertengahan tahun (P_0-4). Konstanta pengali standar adalah K = 1.000. Target SDGs 3.2 menetapkan bahwa seluruh negara berusaha menurunkan Angka Kematian Balita setidaknya hingga 25 per 1.000 KH pada tahun 2030 [slide 9]. Hasil SP2020 mencatat AKABA Indonesia sebesar 19,83 per 1.000 KH dan kematian anak 1-4 tahun sebesar 2,98 per 1.000 KH [slide 28].",
+    "formula_latex": "$$\\text{AKB} = \\frac{D_{0-<1\\text{ th}}}{B} \\times 1.000, \\quad \\text{AK Anak} = \\frac{D_{1-4\\text{ th}}}{P_{1-4}} \\times 1.000, \\quad \\text{AKABA} = \\frac{D_{0-4\\text{ th}}}{P_{0-4}} \\times 1.000$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah kabupaten pada tahun 2023 mencatat 25.000 kelahiran hidup. Pada tahun yang sama terjadi 300 kematian bayi berusia kurang dari 1 tahun. Jumlah penduduk anak usia 1-4 tahun pada pertengahan tahun adalah 95.000 jiwa dengan 190 kematian pada kelompok usia tersebut. Total penduduk balita (0-4 tahun) pada pertengahan tahun adalah 120.000 jiwa dengan total kematian balita sebanyak 490 jiwa. Hitunglah:\n1. Angka Kematian Bayi (AKB / IMR)\n2. Angka Kematian Anak (AK Anak / CMR 1-4 tahun)\n3. Angka Kematian Balita (AKABA / U5MR)\nBandingkan hasil AKABA dengan target SDGs 3.2 tahun 2030 (maksimal 25 per 1.000).",
+    "data_table": "| Kelompok Populasi | Rentang Usia | Jumlah Kematian ($D$) | Populasi / Kelahiran Basis | Nilai Basis | Konstanta ($K$) |\n|---|---|---|---|---|---|\n| Bayi (Infant) | 0 - < 1 tahun | 300 | Kelahiran Hidup ($B$) | 25.000 | 1.000 |\n| Anak (Child) | 1 - < 5 tahun | 190 | Penduduk Usia 1-4 ($P_{1-4}$) | 95.000 | 1.000 |\n| Balita (Under-Five) | 0 - < 5 tahun | 490 | Penduduk Usia 0-4 ($P_{0-4}$) | 120.000 | 1.000 |",
+    "step_by_step_solution": "1. Menghitung Angka Kematian Bayi (AKB / IMR) [Pertemuan_10_Indikator_Kesehatan.md, slide 26]:\n   $$\\text{AKB} = \\frac{D_{0-<1\\text{ th}}}{B} \\times 1.000 = \\frac{300}{25.000} \\times 1.000 = 12,00 \\text{ per 1.000 kelahiran hidup}$$\n2. Menghitung Angka Kematian Anak (AK Anak / CMR 1-4 th) [slide 21]:\n   $$\\text{AK Anak} = \\frac{D_{1-4\\text{ th}}}{P_{1-4}} \\times 1.000 = \\frac{190}{95.000} \\times 1.000 = 2,00 \\text{ per 1.000 anak usia 1-4 th}$$\n3. Menghitung Angka Kematian Balita (AKABA / U5MR) [slide 19]:\n   $$\\text{AKABA} = \\frac{D_{0-4\\text{ th}}}{P_{0-4}} \\times 1.000 = \\frac{490}{120.000} \\times 1.000 = 4,0833 \\approx 4,08 \\text{ per 1.000 balita}$$\n4. Evaluasi terhadap target SDGs 3.2:\n   - Target SDGs 3.2 menetapkan batas maksimal 25 per 1.000 [slide 9].\n   - Nilai AKABA kabupaten sebesar 4,08 per 1.000 balita berada jauh di bawah ambang batas maksimal SDGs 2030, menunjukkan kinerja kelangsungan hidup anak yang sangat baik.",
+    "python_verification_code": "d_infant = 300\nlive_births = 25000\nimr = (d_infant / live_births) * 1000\n\nd_child = 190\np_child = 95000\ncmr = (d_child / p_child) * 1000\n\nd_u5 = 490\np_u5 = 120000\nakaba = (d_u5 / p_u5) * 1000\n\nprint(f'AKB={imr:.2f}, AK_Anak={cmr:.2f}, AKABA={akaba:.2f}')",
+    "expected_output": "AKB=12.00, AK_Anak=2.00, AKABA=4.08"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Penjumlahan Langsung AKB dan AK Anak (Denominator Fallacy)",
+      "common_mistake": "Menjumlahkan secara aritmatika AKB + AK Anak untuk mendapatkan AKABA (misal 12,00 + 2,00 = 14,00).",
+      "safe_strategy": "Jangan pernah menjumlahkan langsung AKB dan AK Anak. Penyebut keduanya berbeda: AKB membagi kelahiran hidup, sedangkan AK Anak membagi penduduk usia 1-4 tahun pertengahan tahun."
+    },
+    {
+      "trap_description": "Tertukar Antara Kelompok Anak (1-4 Tahun) dan Balita (0-4 Tahun)",
+      "common_mistake": "Menganggap istilah 'anak' sama dengan 'balita', sehingga mengeluarkan bayi dari kelompok balita.",
+      "safe_strategy": "Ingat hierarki umur: Bayi (0-<1 tahun) + Anak (1-<5 tahun) = Balita (0-<5 tahun). Balita selalu mencakup bayi."
+    },
+    {
+      "trap_description": "Kesalahan Konstanta Pengali terhadap AKI",
+      "common_mistake": "Mengalikan rumus AKB atau AKABA dengan 100.000 seperti AKI.",
+      "safe_strategy": "Konstanta untuk seluruh indikator mortalitas anak (AKB, AKABA, AK Anak, NMR) selalu K = 1.000, sedangkan AKI/MMR selalu K = 100.000."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 10,
+  "chapter_title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+  "section": "10.1 Indikator Mortalitas Ibu dan Anak",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "10.1.2",
+      "name": "Angka Kematian Bayi AKB dan Balita AKABA",
+      "importance": "高",
+      "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 18-35]",
+      "exam_focus": "Membedakan konsep, definisi, dan formula AKB (IMR), AK Anak (CMR 1-4 th), dan AKABA (U5MR), memahami perbedaan penyebut kelahiran hidup vs penduduk pertengahan tahun, capaian SP2020, dan target SDGs 3.2.",
+      "textbook_excerpt": "Balita atau bawah lima tahun adalah semua anak termasuk bayi yang baru lahir, yang berusia 0 sampai menjelang tepat 5 tahun (notasi 0-4 tahun). Angka Kematian Balita adalah jumlah kematian anak berusia 0-4 tahun selama satu tahun tertentu per 1.000 anak umur yang sama pada pertengahan tahun itu [slide 18-19]. Angka Kematian Anak mencerminkan kematian anak usia 1-4 tahun per 1.000 penduduk 1-4 tahun pertengahan tahun, sangat dipengaruhi gizi buruk, sanitasi lingkungan buruk, dan penyakit menular [slide 20-21]. Angka Kematian Bayi (IMR): kematian antara saat lahir sampai sebelum berusia tepat satu tahun per 1.000 kelahiran hidup [slide 26]. Target SDGs 3.2: mengakhiri kematian balita yang dapat dicegah dengan menurunkan AKABA setidaknya hingga 25 per 1.000 KH [slide 9].",
+      "intuition": "Jika seorang bayi meninggal dalam 1 tahun pertama kehidupannya, kematian tersebut dihitung dalam AKB (IMR). Jika anak tersebut berhasil melewati ulang tahun pertamanya namun meninggal sebelum ulang tahun kelimanya (antara usia 1 s.d. 4 tahun 11 bulan), kematiannya dihitung dalam AK Anak (CMR). AKABA (U5MR) adalah payung komprehensif yang merangkum seluruh kematian anak sebelum genap usia 5 tahun. Perbedaan determinan: kematian bayi lebih banyak dipengaruhi oleh faktor biologis/kehamilan ibu, sedangkan kematian anak 1-4 tahun sangat dipengaruhi faktor lingkungan eksternal (air minum, jamban, infeksi, asupan makanan).",
+      "formal": "### 1. Definisi Operasional Tiga Ukuran Mortalitas Anak\n\nBerdasarkan materi resmi BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 18-26]:\n- **Bayi (Infant)**: Anak berusia $0$ sampai menjelang tepat $1$ tahun ($0$ s.d. $11$ bulan $29$ hari).\n- **Anak (Child)**: Penduduk berusia $1$ tahun sampai menjelang $5$ tahun ($1$ s.d. $4$ tahun $11$ bulan $29$ hari, notasi $1-4$ tahun).\n- **Balita (Under-Five Children)**: Semua anak termasuk bayi baru lahir yang berusia $0$ sampai menjelang tepat $5$ tahun (notasi $0-4$ tahun).\n\n### 2. Formulasi Matematis BPS\n\n#### A. Angka Kematian Bayi (Infant Mortality Rate / AKB / IMR)\n$$\\text{AKB} = \\frac{D_{0-<1\\text{ th}}}{\\sum \\text{Lahir Hidup}} \\times 1.000$$\ndimana:\n- $D_{0-<1\\text{ th}}$ = Jumlah kematian bayi berumur kurang dari 1 tahun pada satu tahun tertentu di daerah tertentu.\n- $\\sum \\text{Lahir Hidup} = B$ = Jumlah kelahiran hidup pada satu tahun tertentu di daerah tertentu [slide 26].\n\n#### B. Angka Kematian Anak (Child Mortality Rate / AK Anak / CMR 1-4 Tahun)\n$$\\text{AK Anak} = \\frac{D_{1-4\\text{ th}}}{\\sum P_{1-4\\text{ th}}} \\times 1.000$$\ndimana:\n- $D_{1-4\\text{ th}}$ = Banyaknya kematian anak berusia 1-4 tahun pada satu tahun tertentu di daerah tertentu.\n- $\\sum P_{1-4\\text{ th}}$ = Jumlah penduduk berusia 1-4 tahun pada pertengahan tahun tertentu di daerah tertentu [slide 21].\n\n#### C. Angka Kematian Balita (Under-Five Mortality Rate / AKABA / U5MR)\n$$\\text{AKABA} = \\frac{D_{0-4\\text{ th}}}{\\sum P_{0-4\\text{ th}}} \\times 1.000$$\ndimana:\n- $D_{0-4\\text{ th}} = D_{0-<1\\text{ th}} + D_{1-4\\text{ th}}$ = Total kematian balita usia 0-4 tahun.\n- $\\sum P_{0-4\\text{ th}}$ = Jumlah penduduk berusia 0-4 tahun pada pertengahan tahun tertentu [slide 19].\n\n### 3. Matriks Perbandingan Karakteristik Indikator Mortalitas Anak\n| Parameter | Angka Kematian Bayi (AKB) | Angka Kematian Anak (AK Anak) | Angka Kematian Balita (AKABA) |\n|---|---|---|---|\n| **Batasan Umur** | 0 s.d. < 1 tahun [slide 26] | 1 s.d. < 5 tahun [slide 20] | 0 s.d. < 5 tahun [slide 18] |\n| **Pembilang ($D$)** | Kematian bayi ($D_{0-<1}$) | Kematian anak 1-4 th ($D_{1-4}$) | Total kematian balita ($D_{0-4}$) |\n| **Penyebut Basis** | Kelahiran Hidup ($B$) | Penduduk usia 1-4 th ($P_{1-4}$) | Penduduk usia 0-4 th ($P_{0-4}$) |\n| **Konstanta ($K$)** | 1.000 [slide 26] | 1.000 [slide 21] | 1.000 [slide 19] |\n| **Determinan Kunci** | Kondisi maternal, asuhan antenatal, BBLR [slide 27] | Sanitasi, kebersihan, gizi buruk, diare [slide 20] | Komposit status kesehatan & lingkungan anak |\n| **Capaian SP2020** | Tercakup dalam balita | 2,98 per 1.000 KH [slide 28] | 19,83 per 1.000 KH [slide 28] |\n| **Target SDGs 3.2** | Diturunkan signifikan | Diturunkan signifikan | $\\le 25$ per 1.000 KH pada 2030 [slide 9] |",
+      "pitfalls": "1. **Penjumlahan Sembarangan**: Mengira AKABA = AKB + AK Anak. Ini keliru fatal karena penyebut AKB adalah kelahiran hidup, sedangkan penyebut AK Anak adalah penduduk umur 1-4 tahun pertengahan tahun.\n2. **Definisi Usia Balita**: Balita adalah 0-4 tahun (kurang dari 5 tahun), bukan 1-4 tahun. Anak 1-4 tahun adalah subset dari balita.\n3. **Pengali Pengukuran**: Seluruh indikator mortalitas anak menggunakan K = 1.000, jangan gunakan 100.000 (khusus AKI).",
+      "memory_hook": "AKB = Bayi (<1 th) / Kelahiran; AK Anak = Anak (1-4 th) / Penduduk 1-4; AKABA = Balita (0-4 th) / Penduduk 0-4; Semuanya kali 1.000!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 9, 21, 26]",
+          "problem": "Pernyataan manakah yang paling tepat mengenai perbedaan metodologis antara Angka Kematian Bayi (AKB) dan Angka Kematian Anak (AK Anak) menurut BPS?",
+          "options": [
+            "AKB menggunakan penyebut kelahiran hidup dan konstanta 1.000, sedangkan AK Anak menggunakan penyebut penduduk usia 1-4 tahun pertengahan tahun dan konstanta 1.000.",
+            "AKB menggunakan konstanta 100.000, sedangkan AK Anak menggunakan konstanta 1.000.",
+            "AKB dan AK Anak sama-sama menggunakan penyebut kelahiran hidup, sehingga AKABA merupakan hasil penjumlahan langsung AKB + AK Anak.",
+            "AKB mengukur kematian usia 0-4 tahun, sedangkan AK Anak mengukur kematian usia 1-4 tahun."
+          ],
+          "answer": 0,
+          "solution": "Jawaban: **A**.\n\n**Pembahasan**:\n- Berdasarkan slide 26, formula AKB membagi jumlah kematian bayi umur kurang dari 1 tahun dengan jumlah kelahiran hidup dikalikan 1.000.\n- Berdasarkan slide 21, formula AK Anak membagi banyaknya kematian anak berusia 1-4 tahun dengan jumlah penduduk berusia 1-4 tahun pertengahan tahun dikalikan 1.000.\n- Karena penyebutnya berbeda, AKABA tidak dapat diperoleh dari penjumlahan langsung AKB dan AK Anak."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 19, 21, 26]",
+          "problem": "Di Kabupaten Sejahtera tercatat 25.000 kelahiran hidup sepanjang tahun 2023. Terdapat 300 kematian bayi (< 1 tahun) pada tahun tersebut. Pada pertengahan tahun, jumlah penduduk usia 1-4 tahun tercatat 95.000 jiwa dengan 190 kematian anak. Jumlah seluruh penduduk balita (0-4 tahun) adalah 120.000 jiwa dengan total 490 kematian balita. Hitunglah nilai AKB, AK Anak, dan AKABA. Tuliskan jawaban akhir dalam format: `AKB=..., AK_Anak=..., AKABA=...`.",
+          "answer": "AKB=12.00, AK_Anak=2.00, AKABA=4.08",
+          "solution": "Langkah-langkah perhitungan:\n1. $\\text{AKB} = \\frac{D_{0-<1}}{B} \\times 1.000 = \\frac{300}{25.000} \\times 1.000 = 12,00$ per 1.000 KH.\n2. $\\text{AK Anak} = \\frac{D_{1-4}}{P_{1-4}} \\times 1.000 = \\frac{190}{95.000} \\times 1.000 = 2,00$ per 1.000 anak 1-4 th.\n3. $\\text{AKABA} = \\frac{D_{0-4}}{P_{0-4}} \\times 1.000 = \\frac{490}{120.000} \\times 1.000 = 4,0833 \\approx 4,08$ per 1.000 balita.\n\n**Verifikasi Kode Python**:\n```python\nd_infant = 300\nlive_births = 25000\nimr = (d_infant / live_births) * 1000\n\nd_child = 190\np_child = 95000\ncmr = (d_child / p_child) * 1000\n\nd_u5 = 490\np_u5 = 120000\nakaba = (d_u5 / p_u5) * 1000\n\nprint(f'AKB={imr:.2f}, AK_Anak={cmr:.2f}, AKABA={akaba:.2f}')\n# Output: AKB=12.00, AK_Anak=2.00, AKABA=4.08\n```"
+        }
+      ],
+      "links": [
+        "10.1.1",
+        "10.1.3",
+        "10.2.1"
+      ]
+    }
+  ]
+}

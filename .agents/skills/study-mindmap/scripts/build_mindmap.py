@@ -34,11 +34,11 @@ def short_label(name, max_len=16):
 
 def point_node(p):
     return {
-        "name": p["name"],                       # 完整名称（悬停显示）
-        "label": p.get("short") or short_label(p["name"]),  # 节点上显示的短名
+        "name": p["name"],
+        "label": p.get("short") or short_label(p["name"]),
         "id": p.get("id", ""),
-        "importance": p.get("importance", "中"),
-        "status": p.get("status", "未学"),
+        "importance": "Tinggi" if p.get("importance") == "高" else ("Rendah" if p.get("importance") == "低" else "Sedang"),
+        "status": {"未学": "Belum Dipelajari", "已讲解": "Sudah Dibahas", "已测验": "Sudah Diuji", "已检验": "Terverifikasi"}.get(p.get("status"), "Belum Dipelajari"),
         "mastery": p.get("mastery", 0),
         "note": p.get("note", ""),
     }
@@ -57,11 +57,11 @@ def chapter_tree(ch):
 def write_map(tree, title, out_path, template):
     html = (template
             .replace("__TITLE__", title)
-            .replace("__GENERATED__", "更新于 " + datetime.date.today().isoformat())
+            .replace("__GENERATED__", "Diperbarui pada " + datetime.date.today().isoformat())
             .replace("__DATA__", json.dumps(tree, ensure_ascii=False)))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
-    print(f"已生成 {out_path}")
+    print(f"Berhasil dibuat: {out_path}")
 
 
 def main():
@@ -87,7 +87,7 @@ def main():
     chapters = data.get("chapters", [])
     if args.book:
         tree = {"name": book, "children": [chapter_tree(ch) for ch in chapters]}
-        write_map(tree, f"{book} · 全书知识图谱", out_dir / "book.html", template)
+        write_map(tree, f"{book} · Peta Konsep Lengkap", out_dir / "book.html", template)
         return
 
     wanted = set(args.chapter) if args.chapter else None

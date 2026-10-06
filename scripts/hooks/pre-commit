@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Git pre-commit hook untuk validasi bank/soal.json
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+# Cek apakah bank/soal.json termasuk berkas yang di-stage
+if git diff --cached --name-only | grep -q "^bank/soal.json$"; then
+    echo "[HOOK] Mendeteksi perubahan pada bank/soal.json. Menjalankan validasi otomatis..."
+    if command -v uv >/dev/null 2>&1; then
+        uv run python scripts/validate_bank.py bank/soal.json
+    else
+        python3 scripts/validate_bank.py bank/soal.json
+    fi
+    EXIT_CODE=$?
+    if [ $EXIT_CODE -ne 0 ]; then
+        echo "[HOOK ERROR] Validasi bank/soal.json GAGAL. Perubahan tidak dapat di-commit sebelum diperbaiki."
+        exit 1
+    fi
+    echo "[HOOK SUCCESS] bank/soal.json valid. Melanjutkan commit."
+fi
+
+exit 0

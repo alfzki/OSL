@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>11.2 Statistik Industri Pengolahan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>11.2 Statistik Industri Pengolahan</h2><a href="#p-11.2.2">11.2.2 Survei Industri Mikro dan Kecil IMK</a></nav>
+<main>
+<h1>11.2 Statistik Industri Pengolahan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 11: Statistik Produksi Pertanian dan Industri ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-11.2.2">
+<h2>11.2.2 Survei Industri Mikro dan Kecil IMK</h2>
+<div class="source-ref">Sumber: [SUPLEMEN] BPS Sensus Ekonomi 2016 &amp; Publikasi Profil IMK BPS</div>
+<div class="box info">📌 <div class="rich"><p>[SUPLEMEN] Batasan operasional tenaga kerja industri mikro (1-4 orang) dan kecil (5-19 orang) BPS, karakteristik usaha informal manufaktur, metodologi survei sampel VIMK, serta penghitungan nilai tambah dan produktivitas per pekerja.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>[SUPLEMEN] Berdasarkan Sensus Ekonomi dan Survei Industri Mikro dan Kecil BPS, industri pengolahan dikelompokkan menurut banyaknya tenaga kerja: Industri Mikro memiliki tenaga kerja 1-4 orang, Industri Kecil memiliki tenaga kerja 5-19 orang, Industri Sedang memiliki tenaga kerja 20-99 orang, dan Industri Besar memiliki tenaga kerja 100 orang atau lebih. Survei Industri Mikro dan Kecil (VIMK) dilakukan secara triwulanan dan tahunan dengan metode penarikan sampel berbasis blok sensus.</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Sebagian besar unit usaha industri di Indonesia (&gt;98%) berskala mikro dan kecil (seperti pengrajin tempe, konveksi rumahan, pandai besi, kerajinan anyaman). Walaupun skala per unit usahanya kecil, secara agregat mereka menyerap puluhan juta tenaga kerja informal dan menjaga ketahanan ekonomi rakyat dari guncangan krisis. Berbeda dengan IBS yang dicacah lengkap via direktori industri, IMK tersebar luas di lingkungan permukiman tanpa plang usaha resmi atau izin berbadan hukum, sehingga dicacah dengan pendekatan sampling rumah tangga/usaha berbasis blok sensus.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Industri Mikro dan Kecil (IMK) BPS [SUPLEMEN]</p>
+<p>Dalam statistik ekonomi BPS, pembagian industri manufaktur menurut skala usaha berpedoman pada rekomendasi *International Recommendations for Industrial Statistics* (IRIS) PBB dengan penyesuaian kondisi ketenagakerjaan nasional:</p>
+<p>```<br>Sektor Industri Pengolahan (KBLI Golongan Pokok C / 10-33)<br>├── Industri Mikro (IM)  : 1 s.d. 4 tenaga kerja   (Target Survei VIMK)<br>├── Industri Kecil (IK)  : 5 s.d. 19 tenaga kerja  (Target Survei VIMK)<br>├── Industri Sedang (IS) : 20 s.d. 99 tenaga kerja (Target Sensus/Direktori IBS)<br>└── Industri Besar (IB)  : &gt;= 100 tenaga kerja     (Target Sensus/Direktori IBS)<br>```</p>
+<p>#### A. Batasan Operasional Tenaga Kerja<br>- <strong>Tenaga Kerja ($L$)</strong>: Seluruh orang yang terlibat secara aktif dalam aktivitas produksi fisik barang, terdiri atas:<br>  1. Pekerja yang dibayar (buruh tetap, pekerja harian lepas, pekerja borongan).<br>  2. Pekerja yang tidak dibayar (pemilik usaha yang aktif bekerja, pekerja keluarga tidak dibayar / *unpaid family workers*).<br>- <strong>Klasifikasi Formal vs Informal</strong>:<br>  - Usaha mikro hampir seluruhnya berada pada ranah <strong>informal</strong> (tidak berbadan hukum PT/CV/Koperasi, tidak memiliki perizinan formal seperti NIB terverifikasi, dan tidak memisahkan keuangan rumah tangga dengan keuangan usaha).<br>  - Usaha kecil sebagian telah berizin mikro (NIB perseorangan) atau bermitra sebagai pemasok rantai pasok lokal.</p>
+<p>### 2. Matriks Perbandingan IBS vs IMK</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi Karakteristik</th><th>Industri Besar &amp; Sedang (IBS)</th><th>Industri Mikro &amp; Kecil (IMK)</th></tr></thead><tbody><tr><td><strong>Batasan Tenaga Kerja</strong></td><td>$\ge 20\text{ orang}$</td><td>$1 - 19\text{ orang}$ (Mikro: 1-4, Kecil: 5-19)</td></tr><tr><td><strong>Metode Pendataan BPS</strong></td><td>Sensus / Direktori Lengkap (*Complete Enumeration*)</td><td>Survei Sampel Dua Tahap (*Two-stage Sampling*)</td></tr><tr><td><strong>Kerangka Sampel</strong></td><td>Direktori Perusahaan IBS BPS (diperbarui berkala)</td><td>Blok Sensus dari Sensus Ekonomi (SE)</td></tr><tr><td><strong>Pencatatan Keuangan</strong></td><td>Laporan Neraca &amp; Laba Rugi standar akuntansi</td><td>Catatan kas sederhana atau ingatan (*recall*) pemilik</td></tr><tr><td><strong>Pangsa Jumlah Usaha</strong></td><td>Sekitar $1,0\% - 1,5\%$ dari total usaha industri</td><td>Sekitar $98,5\% - 99,0\%$ dari total usaha industri</td></tr><tr><td><strong>Pangsa Penyerapan Kerja</strong></td><td>Sekitar $30\% - 35\%$ tenaga kerja industri</td><td>Sekitar $65\% - 70\%$ tenaga kerja industri</td></tr><tr><td><strong>Pangsa Output &amp; Nilai Tambah</strong></td><td>Dominan ($&gt;80\%$ total nilai tambah industri)</td><td>Minoritas ($&lt;20\%$ total nilai tambah industri)</td></tr></tbody></table></div>
+<p>### 3. Indikator Produktivitas Tenaga Kerja IMK</p>
+<p>Produktivitas tenaga kerja menggambarkan kontribusi nilai tambah bruto rata-rata yang diciptakan oleh setiap orang pekerja dalam satuan waktu tertentu:<br>$$\text{Produktivitas Tenaga Kerja} = \frac{\text{Nilai Tambah Bruto (NTB)}}{L} = \frac{\text{Output Bruto} - \text{Biaya Input Antara}}{L}$$</p>
+<p>Karena modal kapital per pekerja (*capital-labor ratio*) pada industri mikro sangat kecil, produktivitas tenaga kerja IMK umumnya jauh lebih rendah dibandingkan pekerja IBS yang didukung mesin-mesin otomatis modern.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Sebuah usaha pengolahan emping melinjo di perdesaan dikelola oleh seorang pemilik, dibantu oleh 2 orang anggota keluarganya tanpa upah, serta 3 orang tetangga yang dipekerjakan sebagai buruh harian kupas melinjo dengan upah harian. Berdasarkan batasan resmi Badan Pusat Statistik (BPS), usaha pengolahan emping tersebut diklasifikasikan ke dalam kategori:</p></div></div>
+<div class="ex-source">Sumber: [SUPLEMEN] BPS Sensus Ekonomi 2016 &amp; Profil IMK</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Industri Mikro, karena buruh berupah hanya ada 3 orang.</button>
+<button class="ex-opt" data-i="1">B. Industri Kecil, karena total tenaga kerja yang aktif terlibat adalah 6 orang.</button>
+<button class="ex-opt" data-i="2">C. Industri Rumah Tangga Tanpa Badan Usaha, karena melibatkan anggota keluarga.</button>
+<button class="ex-opt" data-i="3">D. Industri Sedang, karena mempekerjakan buruh dari luar keluarga.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Menurut konsep statistik BPS, jumlah tenaga kerja dihitung dari <strong>seluruh orang yang terlibat aktif</strong> dalam kegiatan proses produksi, baik pekerja yang dibayar maupun pekerja keluarga yang tidak dibayar (*unpaid family worker*).<br>2. Total tenaga kerja pada usaha emping melinjo tersebut adalah:<br>   $$L = 1\text{ (pemilik)} + 2\text{ (keluarga tanpa upah)} + 3\text{ (buruh berupah)} = 6\text{ orang}$$<br>3. Berdasarkan kriteria skala tenaga kerja BPS:<br>   - Industri Mikro: $1 - 4\text{ orang}$.<br>   - Industri Kecil: $5 - 19\text{ orang}$.<br>4. Karena $L = 6\text{ orang}$ berada dalam rentang $5 - 19\text{ orang}$, maka usaha tersebut diklasifikasikan sebagai <strong>Industri Kecil</strong>.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Pencacahan VIMK mencatat data 4 usaha pengolahan: Usaha A (L=3, Out=15jt, In=9jt); Usaha B (L=8, Out=60jt, In=36jt); Usaha C (L=15, Out=120jt, In=75jt); Usaha D (L=25, Out=250jt, In=150jt). Tentukan jumlah usaha yang masuk cakupan target IMK serta nilai tambah dan produktivitas per pekerja untuk masing-masing usaha IMK tersebut. Format jawaban: <code>IMK=X usaha; A:NT=Yjt,Prod=Zjt, B:NT=Ujt,Prod=Vjt, C:NT=Wjt,Prod=Kjt</code>.</p></div></div>
+<div class="ex-source">Sumber: [SUPLEMEN] BPS Profil IMK 2024</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah analisis:<br>1. <strong>Klasifikasi Tenaga Kerja BPS</strong>:<br>   - Usaha A ($L=3$): Industri Mikro ($1 - 4$ orang) $\implies$ Masuk IMK.<br>   - Usaha B ($L=8$): Industri Kecil ($5 - 19$ orang) $\implies$ Masuk IMK.<br>   - Usaha C ($L=15$): Industri Kecil ($5 - 19$ orang) $\implies$ Masuk IMK.<br>   - Usaha D ($L=25$): Industri Sedang ($20 - 99$ orang) $\implies$ Tidak masuk IMK (masuk Direktori IBS).<br>   Total usaha masuk target IMK = <strong>3 usaha</strong>.</p>
+<p>2. <strong>Nilai Tambah (NT) dan Produktivitas Tenaga Kerja</strong>:<br>   - <strong>Usaha A</strong>:<br>     $$NT_A = 15 - 9 = 6\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_A = \frac{6\text{ Juta}}{3\text{ orang}} = 2,0\text{ Juta Rp/pekerja}$$<br>   - <strong>Usaha B</strong>:<br>     $$NT_B = 60 - 36 = 24\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_B = \frac{24\text{ Juta}}{8\text{ orang}} = 3,0\text{ Juta Rp/pekerja}$$<br>   - <strong>Usaha C</strong>:<br>     $$NT_C = 120 - 75 = 45\text{ Juta Rp}$$<br>     $$\text{Produktivitas}_C = \frac{45\text{ Juta}}{15\text{ orang}} = 3,0\text{ Juta Rp/pekerja}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>data = [{'u':'A', 'L':3, 'out':15, 'in':9}, {'u':'B', 'L':8, 'out':60, 'in':36}, {'u':'C', 'L':15, 'out':120, 'in':75}, {'u':'D', 'L':25, 'out':250, 'in':150}]<br>imk = [d for d in data if d['L'] &lt; 20]<br>res = [f"{d['u']}:NT={d['out']-d['in']}jt,Prod={(d['out']-d['in'])/d['L']:.1f}jt" for d in imk]<br>print(f"IMK={len(imk)} usaha; " + ", ".join(res))<br># Output: IMK=3 usaha; A:NT=6jt,Prod=2.0jt, B:NT=24jt,Prod=3.0jt, C:NT=45jt,Prod=3.0jt<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Batasan Omzet UU UMKM</strong>: Seringkali mahasiswa menjawab bahwa industri mikro adalah usaha dengan kekayaan bersih maksimal Rp50 juta atau omzet Rp300 juta sesuai UU No. 20 Tahun 2008. Dalam statistik BPS, kriteria operasional murni berbasis jumlah tenaga kerja (1-4 pekerja untuk mikro, 5-19 pekerja untuk kecil).</li><li><strong>Jebakan Pekerja Keluarga Tak Dibayar</strong>: Seringkali pekerja keluarga tidak dihitung sehingga usaha keluarga dengan 1 pemilik dan 4 anak/istri yang membantu dihitung hanya 1 orang (mikro), padahal total 5 orang (masuk industri kecil).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Mikro: 1-4 orang. Kecil: 5-19 orang. Sedang: 20-99 orang. Besar: &gt;= 100 orang. Murni hitung kepala tenaga kerja aktif!</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.2.1</div>
+<button class="donebtn" data-id="11.2.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

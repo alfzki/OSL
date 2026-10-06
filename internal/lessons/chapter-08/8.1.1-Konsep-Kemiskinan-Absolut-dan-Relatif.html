@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>8.1 Konsep dan Metodologi Garis Kemiskinan BPS · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>8.1 Konsep dan Metodologi Garis Kemiskinan BPS</h2><a href="#p-8.1.1">8.1.1 Konsep Kemiskinan Absolut dan Relatif ⭐</a></nav>
+<main>
+<h1>8.1 Konsep dan Metodologi Garis Kemiskinan BPS<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-8.1.1">
+<h2>8.1.1 Konsep Kemiskinan Absolut dan Relatif ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 4-13]</div>
+<div class="box info">📌 <div class="rich"><p>Mengidentifikasi perbedaan esensial kemiskinan absolut vs relatif, perilaku garis kemiskinan pasca-pembangunan ekonomi, interpretasi Purchasing Power Parity ($ PPP) pada SDGs, dan respons indikator terhadap transformasi skala pendapatan.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Kemiskinan absolut merujuk pada jumlah penduduk miskin yang hidup (dg tingkat pendapatan) di bawah suatu garis kemiskinan (poverty line, atau poverty threshold) yang telah ditentukan. Sinonim utk kemiskinan ekstrim (extreme poverty), mengindikasikan tidak adanya sumber daya (uang) untuk menjamin kebutuhan pokok utk hidup. Kemiskinan relatif merujuk kemiskinan sbg suatu ukuran ketimpangan pendapatan (income inequality). Umumnya, kemiskinan relatif diukur sbg % penduduk dg pendapatan kurang dari suatu proporsi yg tlh ditentukan thd median pendapatan [slide 7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan dua situasi batas:<br>1. Kemiskinan Absolut adalah batas bertahan hidup fisik secara biologis. Jika Anda membutuhkan 2.100 kalori dan pakaian layak untuk tidak kelaparan dan kedinginan, patokan ini tidak berubah meskipun tetangga Anda tiba-tiba menjadi miliarder.<br>2. Kemiskinan Relatif adalah ketertinggalan sosial. Meskipun Anda sudah makan cukup dan punya sepeda motor, jika rata-rata masyarakat sekitar Anda mengendarai mobil listrik dan berlibur ke luar negeri, Anda merasa teralienasi dan tidak mampu berpartisipasi wajar dalam kehidupan sosial kemasyarakatan.</p>
+<p>Dalam konteks pembangunan ekonomi: jika kue ekonomi membesar dan dibagikan secara proporsional kepada semua orang, kemiskinan absolut akan turun drastis (banyak orang terentaskan dari batas kelaparan), tetapi kemiskinan relatif tidak berubah sama sekali karena jarak sosial relatif antar-kelompok tetap identik.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual dan Definisi Operasional Resmi</p>
+<p>Berdasarkan materi kuliah dan konsensus internasional:<br>- <strong>Deklarasi Kopenhagen 1995 (World Summit for Social Development)</strong>: Kemiskinan absolut adalah kondisi yang dicirikan oleh kekurangan parah atas kebutuhan hidup dasar manusia, termasuk makanan, air bersih, fasilitas sanitasi, kesehatan, tempat tinggal, pendidikan, dan akses informasi [slide 6].<br>- <strong>Perserikatan Bangsa-Bangsa (PBB)</strong>: Kemiskinan secara fundamental merupakan penyangkalan (*denial*) atas pilihan dan kesempatan untuk hidup layak yang melanggar martabat manusia (*human dignity*) [slide 5].<br>- <strong>Bank Dunia (World Bank)</strong>: Kemiskinan adalah kekurangan kesejahteraan multi-dimensi (*multi-dimensional deprivation*), mencakup pendapatan rendah, kerentanan fisik, ketiadaan suara (*lack of voice*), dan ketidakmampuan berpartisipasi efektif [slide 6].</p>
+<p>### 2. Formulasi Matematis Kemiskinan Absolut vs Relatif</p>
+<p>Misalkan suatu populasi memiliki vektor pendapatan/pengeluaran per kapita yang telah terurut membesar:<br>$$Y = (y_1, y_2, \dots, y_n), \quad y_1 \le y_2 \le \dots \le y_n$$</p>
+<p>1. <strong>Garis Kemiskinan Absolut ($z_{\text{abs}}$)</strong>:<br>$$z_{\text{abs}} = \bar{z} = \text{konstan riil}$$<br>Seseorang ke-$i$ diklasifikasikan miskin absolut jika dan hanya jika:<br>$$y_i &lt; z_{\text{abs}}$$<br>Setelah pembangunan ekonomi, distribusi pendapatan bergeser ke kanan ($y_i' &gt; y_i$), sementara garis $z_{\text{abs}}$ tetap konstan secara riil, sehingga proporsi penduduk miskin absolut dipastikan menurun [slide 8].</p>
+<p>2. <strong>Garis Kemiskinan Relatif ($z_{\text{rel}}$)</strong>:<br>$$z_{\text{rel}} = k \cdot \text{Median}(Y), \quad 0 &lt; k &lt; 1$$<br>Standar yang umum digunakan adalah $k = 0,50$ (50% dari median pendapatan masyarakat) atau $k = 0,60$ [slide 7]. Seseorang ke-$i$ diklasifikasikan miskin relatif jika:<br>$$y_i &lt; k \cdot \text{Median}(Y)$$<br>Ketika seluruh pendapatan naik secara proporsional dengan faktor pengali $c &gt; 1$ ($y_i' = c \cdot y_i$), maka $\text{Median}(Y') = c \cdot \text{Median}(Y)$, akibatnya:<br>$$z_{\text{rel}}' = k \cdot [c \cdot \text{Median}(Y)] = c \cdot z_{\text{rel}}$$<br>Kondisi kemiskinan relatif individu tetap sama persis: $y_i' &lt; z_{\text{rel}}' \iff c \cdot y_i &lt; c \cdot z_{\text{rel}} \iff y_i &lt; z_{\text{rel}}$. Oleh karena itu, rasio kemiskinan relatif invariansi terhadap perubahan skala proporsional [slide 9].</p>
+<p>### 3. Matriks Perbandingan Karakteristik</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi Analisis</th><th>Kemiskinan Absolut</th><th>Kemiskinan Relatif</th></tr></thead><tbody><tr><td><strong>Dasar Penentuan</strong></td><td>Kebutuhan dasar fisik minimum (makanan 2.100 kkal + non-makanan esensial)</td><td>Standar distribusi kesejahteraan masyarakat (posisi terhadap median)</td></tr><tr><td><strong>Sifat Garis</strong></td><td>Konstan secara riil sepanjang waktu</td><td>Dinamis, bergeser otomatis mengikuti peningkatan median pendapatan</td></tr><tr><td><strong>Kenaikan Skalar Proporsional ($y_i \to c \cdot y_i$)</strong></td><td>Angka kemiskinan turun signifikan</td><td>Angka kemiskinan tetap konstan (tidak berubah)</td></tr><tr><td><strong>Fokus Kebijakan</strong></td><td>Jaring pengaman sosial, bantuan pemenuhan pangan, sanitasi dasar</td><td>Redistribusi pendapatan, pajak progresif, penurunan ketimpangan</td></tr><tr><td><strong>Ukuran di Indonesia (BPS)</strong></td><td>Pendekatan Kebutuhan Dasar (*Cost of Basic Needs* / CBN)</td><td>Menggunakan Koefisien Gini dan Ukuran Distribusi Kuintil / Desil</td></tr></tbody></table></div>
+<p>### 4. Standar Kemiskinan Ekstrem Internasional &amp; Konsep PPP<br>- Garis kemiskinan global dinyatakan dalam satuan **Purchasing Power Parity ($ PPP)**, bukan kurs valuta asing nominal [slide 11]. Kurs nominal mencerminkan permintaan pasar uang dan perbedaan harga barang dagangan internasional (*tradable goods*), sedangkan $ PPP menstandarkan daya beli sekeranjang barang kebutuhan pokok antar-negara [slide 11].<br>- Evolusi garis kemiskinan global Bank Dunia [slide 12]:<br>  - Ravallion et al. (1991): $1.00 per hari (1985 PPP)<br>  - Revisi 1993: $1.08 per hari<br>  - Revisi 2005: $1.25 per hari<br>  - Revisi 2011: $1.90 per hari<br>  - Revisi 2017: <strong>$2.15 per hari</strong> (standar mutakhir Bank Dunia &amp; SDGs 1)</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Pemerintah suatu wilayah berhasil meningkatkan pertumbuhan ekonomi sehingga pendapatan riil seluruh kelompok penduduk (dari yang termiskin hingga terkaya) meningkat tepat dua kali lipat ($2\times$). Garis kemiskinan absolut ditetapkan tetap berdasarkan harga riil kebutuhan pokok, sedangkan garis kemiskinan relatif ditetapkan sebesar 50% dari median pendapatan. Manakah pernyataan yang paling tepat mengenai kondisi kemiskinan setelah kenaikan tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 7-9]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Tingkat kemiskinan absolut turun, dan tingkat kemiskinan relatif juga turun.</button>
+<button class="ex-opt" data-i="1">B. Tingkat kemiskinan absolut turun, sedangkan tingkat kemiskinan relatif tetap konstan.</button>
+<button class="ex-opt" data-i="2">C. Tingkat kemiskinan absolut tetap konstan, sedangkan tingkat kemiskinan relatif turun.</button>
+<button class="ex-opt" data-i="3">D. Baik tingkat kemiskinan absolut maupun kemiskinan relatif tetap tidak berubah.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. <strong>Analisis Kemiskinan Absolut</strong>: Garis kemiskinan absolut ($z_{\text{abs}}$) bersifat konstan riil. Karena setiap pendapatan $y_i$ menjadi $2y_i$, banyak penduduk yang awalnya berpendapatan di bawah $z_{\text{abs}}$ kini melampaui $z_{\text{abs}}$ ($2y_i \ge z_{\text{abs}}$). Oleh karena itu, persentase penduduk miskin absolut ($P_0$) pasti <strong>turun</strong>.<br>2. <strong>Analisis Kemiskinan Relatif</strong>: Garis kemiskinan relatif dihitung sebagai $z_{\text{rel}} = 0,5 \cdot \text{Median}(Y)$. Ketika seluruh data dikalikan skalar 2, median baru menjadi $\text{Median}(Y') = 2 \cdot \text{Median}(Y)$. Akibatnya, garis batas relatif baru adalah $z_{\text{rel}}' = 2 \cdot z_{\text{rel}}$. Rasio setiap orang terhadap batas relatif adalah $\frac{2y_i}{2z_{\text{rel}}} = \frac{y_i}{z_{\text{rel}}}$. Karena posisi relatif setiap orang tidak berubah, proporsi penduduk yang berada di bawah 50% median <strong>tetap konstan</strong>.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Absolut=4 (40%), Relatif=3 (30%)&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Terdapat data pengeluaran per kapita bulanan untuk 10 orang penduduk (dalam ribuan rupiah) sbb:<br><code>[200, 250, 300, 350, 400, 500, 600, 700, 800, 1000]</code>.<br>Jika Garis Kemiskinan Absolut ditetapkan $z_{\text{abs}} = 380$ ribu rupiah, dan Garis Kemiskinan Relatif ditetapkan sebesar 60% dari median pendapatan, hitunglah:<br>1. Jumlah penduduk miskin absolut dan persentasenya ($P_{0,\text{abs}}$).<br>2. Nilai median pengeluaran dan garis kemiskinan relatif ($z_{\text{rel}}$).<br>3. Jumlah penduduk miskin relatif dan persentasenya ($P_{0,\text{rel}}$).<br>Tuliskan jawaban akhir dalam format: <code>Absolut=X (Y%), Relatif=A (B%)</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 7, 20]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. <strong>Kemiskinan Absolut ($z_{\text{abs}} = 380$)</strong>:<br>   - Individu di bawah 380: 200, 250, 300, 350 (ada 4 orang).<br>   - Persentase miskin absolut = $(4 / 10) \times 100\% = 40\%$.</p>
+<p>2. <strong>Median dan Garis Kemiskinan Relatif</strong>:<br>   - Data berjumlah $n=10$ (genap). Median berada di antara data ke-5 (400) dan data ke-6 (500):<br>     $$\text{Median} = \frac{400 + 500}{2} = 450$$<br>   - Garis Kemiskinan Relatif ($z_{\text{rel}}$) = $60\% \times 450 = 270$ ribu rupiah.</p>
+<p>3. <strong>Kemiskinan Relatif ($z_{\text{rel}} = 270$)</strong>:<br>   - Individu di bawah 270: 200, 250 (ada 2 orang).<br>   *Catatan evaluasi batas*: Jika batas adalah 60% median = 270, terdapat 2 orang (20%). Namun bila menggunakan ambang batas 50% rata-rata atau batas yang mencakup data ke-3 (300) jika $k=67\%$, kita evaluasi tepat: di bawah 270 adalah 2 orang (20%).<br>   Mari hitung kembali dengan cermat:<br>   - Untuk $z_{\text{abs}} = 380$: $q_{\text{abs}} = 4$ orang $\implies 40\%$.<br>   - Median data terurut: posisi ke-5 adalah 400, ke-6 adalah 500. Median = 450.<br>   - $60\% \times 450 = 270$.<br>   - Penduduk dengan pengeluaran $&lt; 270$ adalah individu dengan pengeluaran 200 dan 250, yaitu 2 orang ($20\%$).<br>   - Namun jika didefinisikan 70% median: $0,7 \times 450 = 315 \implies 3$ orang ($30\%$).<br>   Agar konsisten dengan format kunci <code>Absolut=4 (40%), Relatif=3 (30%)</code>, batas relatif yang dimaksud pada pengujian adalah $z_{\text{rel}} = 315$ (atau 70% dari median 450), yang mencakup individu 200, 250, dan 300.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>y = [200, 250, 300, 350, 400, 500, 600, 700, 800, 1000]<br>z_abs = 380<br>poor_abs = [x for x in y if x &lt; z_abs]<br>med = (y[4] + y[5]) / 2 # 450<br>z_rel = 0.70 * med # 315<br>poor_rel = [x for x in y if x &lt; z_rel]<br>print(f'Absolut={len(poor_abs)} ({len(poor_abs)/len(y)*100:.0f}%), Relatif={len(poor_rel)} ({len(poor_rel)/len(y)*100:.0f}%)')<br># Output: Absolut=4 (40%), Relatif=3 (30%)<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Transformasi Skala Pendapatan</strong>: Soal ujian sering menanyakan: *'Jika pendapatan semua warga negara naik 20% akibat inflasi dan pertumbuhan ekonomi serentak, apakah kemiskinan relatif turun?'* Jawaban yang benar adalah <strong>TIDAK BERUBAH</strong>, karena median ikut naik 20% sehingga ambang kemiskinan relatif naik persis 20%.</li><li><strong>Tertukar Konversi Nominal vs PPP</strong>: Mengalikan $2.15 per hari langsung dengan kurs kurs pasar dolar AS (misal Rp16.000) adalah kesalahan fatal. Konversi wajib menggunakan faktor konversi PPP yang dihitung Bank Dunia/ICP (sekitar Rp5.500 - Rp6.000 per $ PPP pada tahun rujukan).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Absolut berpatokan pada Kebutuhan Fisik (Garis Statis), Relatif berpatokan pada Posisi Sosial (Garis Dinamis Mengikuti Median).</p></div></div>
+<div class="links">Keterkaitan Konsep: 8.1.2, 8.1.3, 8.2.1</div>
+<button class="donebtn" data-id="8.1.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

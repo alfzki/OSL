@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-29",
+  "chapter": 8,
+  "chapter_title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+  "source": "internal/textbook/chapter-08.md",
+  "expected_points": 8,
+  "lecture_json_files": 8,
+  "lecture_points": 8,
+  "figures": 0,
+  "tables": 8,
+  "examples": 16,
+  "source_markers": {
+    "visual": true,
+    "example": false,
+    "formula": true
+  },
+  "status": "pass",
+  "verdict": "pass",
+  "issues": []
+}

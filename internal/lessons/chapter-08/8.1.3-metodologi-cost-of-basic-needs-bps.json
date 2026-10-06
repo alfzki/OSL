@@ -1,0 +1,92 @@
+{
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 8,
+  "chapter_title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+  "section": "8.1 Konsep dan Metodologi Garis Kemiskinan BPS",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "8.1.3",
+      "name": "Metodologi Cost of Basic Needs BPS",
+      "importance": "高",
+      "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 14, 17-19, 42-43]",
+      "exam_focus": "Membedakan metodologi Kemiskinan Makro (Susenas, sampel, agregat wilayah) vs Kemiskinan Mikro (PMT/Sensus, 14 kriteria, by name by address), mekanisme targeting bansos, serta kerentanan kelompok Near Poor terhadap guncangan harga.",
+      "textbook_excerpt": "Kemiskinan Makro: dihitung dari hasil estimasi atau perkiraan sampel data Susenas. Data yang dihasilkan: Proporsi penduduk (rumah tangga) miskin. Data Kemiskinan Makro digunakan untuk perencanaan dan evaluasi program kemiskinan dengan target geografis tapi tidak menunjukkan siapa dan dimana alamat penduduk. Kemiskinan Mikro: dihitung secara sensus. Berdasarkan indeks atau Proxy-Means Testing (PMT) dari ciri-ciri rumah tangga miskin (14 indikator kemiskinan). Data yang dihasilkan: Rumah Tangga Sasaran (sangat miskin, miskin, hampir miskin) - by name by address untuk sasaran bantuan seperti BLT, PKH, Raskin [slide 17, 18].",
+      "intuition": "Bayangkan dua alat navigasi:\n1. Radar Makro (Susenas): Bagaikan citra satelit atau peta cuaca yang memperlihatkan bahwa di Kecamatan A terdapat 30% penduduk miskin dan di Kecamatan B hanya 5%. Peta ini memberi tahu pemerintah ke mana anggaran pembangunan harus dikucurkan (target geografis), tetapi tidak bisa memberi tahu rumah mana saja yang lapar di gang sempit.\n2. Sensus Mikro (PMT / Regsosek): Bagaikan sensus pintu ke pintu (*door-to-door*) yang mencatat kondisi fisik rumah Pak Budi (lantai tanah, tanpa jamban, penghasilan tidak tetap). Hasilnya adalah daftar 'by name by address' yang memuat nama dan alamat penerima manfaat kartu bantuan sosial.\n\nJika seorang bupati membagikan sembako menggunakan data Susenas, program tersebut pasti kacau karena petugas pos tidak memiliki daftar nama penerima!",
+      "formal": "### 1. Metodologi Cost of Basic Needs (CBN)\n\nMetodologi resmi yang digunakan BPS sejak tahun 1998 untuk mengukur kemiskinan moneter di Indonesia adalah pendekatan **Cost of Basic Needs (CBN)** atau Kebutuhan Dasar [slide 14]. Dalam pendekatan ini:\n1. **Garis Kemiskinan Makanan ($GKM$)**: Menghitung biaya pemenuhan kebutuhan energi pangan sebesar 2.100 kkal per kapita per hari dari 52 komoditas pangan pokok.\n2. **Garis Kemiskinan Bukan Makanan ($GKNM$)**: Menghitung pengeluaran minimum untuk paket kebutuhan esensial non-makanan (51 komoditas perkotaan, 47 komoditas perdesaan).\n3. **Penduduk Rujukan (*Reference Population*)**: Paket komoditas dan pembobotannya diperoleh dari sekelompok penduduk marjinal, yaitu mereka yang hidup sedikit di atas garis kemiskinan sementara (kuintil pengeluaran terbawah yang diasumsikan mendekati garis batas kelayakan).\n\n### 2. Dikotomi Fundamental: Kemiskinan Makro vs Kemiskinan Mikro\n\n| Aspek Pembeda | Kemiskinan Makro (Macro Poverty) | Kemiskinan Mikro (Micro Poverty) |\n|---|---|---|\n| **Metode Pengumpulan Data** | Survei Sampel Rumah Tangga (Susenas Maret & September) | Pendataan Sensus Lengkap / Registrasi Sosial Ekonomi (Regsosek / PBDT) |\n| **Pendekatan Teoretis** | Moneter: Pemenuhan pengeluaran konsumsi minimum ($y_i < GK$) | Non-Moneter / Multidimensi: Proxy-Means Testing (PMT) ciri fisik rumah tangga |\n| **Instrumen Penilaian** | Catatan nilai rupiah pengeluaran konsumsi 1 bulan terakhir | 14 Kriteria Kemiskinan BPS (kualitas aset, perumahan, pekerjaan) |\n| **Bentuk Luaran Data** | Angka agregat: Jumlah dan persentase penduduk miskin ($P_0, P_1, P_2$) | Basis data individu / Rumah Tangga Sasaran (*by name by address*) |\n| **Level Representasi** | Nasional, Provinsi, dan Kabupaten/Kota (tidak sampai level desa/RT) | Tingkat desa, RT/RW, keluarga, dan individu penerima |\n| **Pemanfaatan Kebijakan** | Perencanaan makro, evaluasi dampak kebijakan, target geografis | Penyaluran bansos bersasaran: Program Keluarga Harapan (PKH), BLT, BPNT, KIS |\n\n### 3. Instrumen 14 Kriteria Kemiskinan Mikro BPS\nDalam pendataan kemiskinan mikro, suatu rumah tangga dikategorikan miskin apabila memenuhi minimal 9 dari 14 indikator berikut [slide 18]:\n1. Luas lantai bangunan tempat tinggal kurang dari $8\\text{ m}^2$ per orang.\n2. Jenis lantai bangunan tempat tinggal berupa tanah/bambu/kayu berkualitas rendah.\n3. Jenis dinding tempat tinggal berupa bambu/rumbia/kayu berkualitas rendah/tanpa plester.\n4. Tidak memiliki fasilitas buang air besar sendiri / bersama rumah tangga lain / tanpa jamban.\n5. Sumber air minum berasal dari sumur tak terlindung/mata air tak terlindung/sungai/air hujan.\n6. Penerangan rumah tangga tidak menggunakan listrik.\n7. Bahan bakar untuk memasak sehari-hari adalah kayu bakar/arang/minyak tanah.\n8. Hanya mengonsumsi daging/susu/ayam satu kali dalam seminggu.\n9. Hanya membeli satu stel pakaian baru dalam setahun.\n10. Hanya sanggup makan satu atau dua kali dalam sehari.\n11. Tidak sanggup membayar biaya pengobatan di puskesmas/poliklinik.\n12. Sumber penghasilan kepala keluarga adalah petani gurem (lahan $< 0,5\\text{ Ha}$), buruh tani, nelayan tradisional, atau buruh kasar dengan pendapatan rendah.\n13. Pendidikan tertinggi kepala rumah tangga tidak tamat SD / hanya tamat SD.\n14. Tidak memiliki tabungan atau barang berharga yang mudah dijual dengan nilai minimal Rp500.000.\n\n### 4. Dinamika Kelompok Hampir Miskin (Near Poor) dan Kerentanan Ekonomi\n- **Distribusi Pengeluaran Asimetris**: Kurva pengeluaran masyarakat Indonesia memiliki kemiringan ke arah kanan (*skewed to the right*), yang berarti sebagian besar penduduk terkonsentrasi padat tepat di sekitar garis kemiskinan [slide 42].\n- **Kelompok Near Poor**: Penduduk yang memiliki tingkat pengeluaran sedikit di atas garis kemiskinan (misal antara $1,0 \\times GK$ hingga $1,2 \\times GK$ atau kelompok yang berada di antara garis $1 PPP dan $2 PPP) [slide 42, 43].\n- **Kerentanan (*Vulnerability*)**: Kelompok ini tidak tercatat sebagai penduduk miskin dalam statistik resmi ($P_0$), namun sangat rentan jatuh kembali ke bawah garis kemiskinan saat terjadi guncangan harga pangan, inflasi bahan bakar, gagal panen, atau pandemi.",
+      "pitfalls": "1. **Kesalahan Kebijakan Penyaluran Bansos**: Kesalahan fatal yang sering muncul dalam studi kasus kebijakan adalah usulan kepala daerah yang ingin *'menggunakan data Susenas BPS untuk membagikan paket sembako kepada penduduk miskin di Kelurahan X'*. Susenas adalah survei sampel yang dirancang untuk estimasi makro dan tidak menyimpan informasi by name by address. Untuk bansos, wajib digunakan data mikro (Regsosek/DTKS/PBDT).\n2. **Mengabaikan Karakteristik Near Poor**: Penurunan angka $P_0$ tidak berarti masalah kemiskinan selesai, karena banyak penduduk yang terangkat keluar dari kemiskinan hanya berjarak beberapa ribu rupiah di atas GK sehingga sewaktu-waktu dapat kembali miskin.",
+      "memory_hook": "Makro = Sampel Susenas, Angka Wilayah, Target Geografis. Mikro = Sensus PMT, 14 Kriteria, By Name By Address.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 17-19]",
+          "problem": "Dinas Sosial sebuah kabupaten berencana menyalurkan Bantuan Langsung Tunai (BLT) kepada 5.000 keluarga miskin ekstrem di wilayahnya. Sumber data manakah yang seharusnya digunakan oleh Dinas Sosial tersebut dan mengapa?",
+          "options": [
+            "Data Susenas BPS, karena menyajikan angka persentase penduduk miskin paling mutakhir per semester.",
+            "Data Sensus/Pendataan Mikro Kemiskinan (Regsosek/DTKS), karena menyediakan informasi rumah tangga sasaran by name by address berbasis indikator karakteristik fisik dan sosial ekonomi.",
+            "Publikasi Indeks P1 dan P2 BPS, karena mampu menunjukkan besarnya jurang pengeluaran masing-masing individu miskin.",
+            "Data PDRB per kapita kabupaten, karena mencerminkan total pendapatan rata-rata masyarakat secara riil."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Penyaluran bantuan sosial langsung tunai kepada keluarga/individu membutuhkan data mikro bersasaran lengkap dengan identitas nama dan alamat tempat tinggal (*by name by address*) [slide 18].\n- Data Susenas (pilihan A) merupakan data survei sampel makro yang hanya menghasilkan estimasi proporsi kemiskinan agregat wilayah dan tidak menyajikan data by name by address [slide 17].\n- Pilihan C salah karena P1 dan P2 adalah indeks makro agregat, bukan data operasional lapangan.\n- Pilihan D salah karena PDRB per kapita adalah indikator makro ekonomi agregat."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 18, 42]",
+          "problem": "Suatu survei verifikasi keluarga pra-sejahtera menguji rumah tangga Bapak Joko. Dari hasil wawancara dan observasi fisik diperoleh fakta berikut:\n1. Luas lantai rumah $6\\text{ m}^2$ per kapita (kriteria: $< 8\\text{ m}^2$).\n2. Lantai rumah berupa semen retak beralas tanah.\n3. Dinding dari anyaman bambu tanpa plester.\n4. Menggunakan jamban bersama tetangga.\n5. Air minum dari sumur terbuka tidak terlindung.\n6. Menggunakan listrik PLN 450 watt bersubsidi.\n7. Memasak menggunakan kayu bakar.\n8. Makan daging/ayam 2 kali sebulan.\n9. Membeli baju baru hanya 1 kali setahun.\n10. Frekuensi makan 2 kali sehari.\n11. Tidak mampu berobat ke puskesmas swasta/klinik mandiri.\n12. Kepala keluarga bekerja sebagai buruh tani musiman.\n13. Pendidikan kepala keluarga tamat SMP.\n14. Tidak memiliki tabungan ataupun aset berharga.\n\nBerdasarkan 14 kriteria kemiskinan mikro BPS (di mana ambang batas rumah tangga miskin adalah memenuhi minimal 9 kriteria), hitung berapa jumlah kriteria kemiskinan yang dipenuhi rumah tangga Bapak Joko, dan tentukan status kelayakannya!",
+          "answer": "11 kriteria, Status=Miskin (Layak Menerima Bansos)",
+          "solution": "Analisis kecocokan 14 Kriteria Kemiskinan Mikro BPS [slide 18]:\n1. Luas lantai $< 8\\text{ m}^2$ per kapita $\\rightarrow$ **MEMENUHI** (skor 1).\n2. Jenis lantai tanah/kayu rendah $\\rightarrow$ **MEMENUHI** (skor 1).\n3. Dinding anyaman bambu tanpa plester $\\rightarrow$ **MEMENUHI** (skor 1).\n4. Fasilitas BAB bersama/tanpa jamban sendiri $\\rightarrow$ **MEMENUHI** (skor 1).\n5. Air minum sumur terbuka tak terlindung $\\rightarrow$ **MEMENUHI** (skor 1).\n6. Penerangan menggunakan listrik $\\rightarrow$ *TIDAK MEMENUHI* (listrik ada).\n7. Bahan bakar memasak kayu bakar $\\rightarrow$ **MEMENUHI** (skor 1).\n8. Konsumsi daging/ayam $< 1$ kali/minggu (2x/bulan) $\\rightarrow$ **MEMENUHI** (skor 1).\n9. Beli baju baru 1 setel/tahun $\\rightarrow$ **MEMENUHI** (skor 1).\n10. Makan 2 kali sehari $\\rightarrow$ **MEMENUHI** (skor 1).\n11. Tidak sanggup bayar pengobatan $\\rightarrow$ **MEMENUHI** (skor 1).\n12. Pekerjaan buruh tani musiman $\\rightarrow$ **MEMENUHI** (skor 1).\n13. Pendidikan tamat SMP $\\rightarrow$ *TIDAK MEMENUHI* (syarat indikator: tidak tamat SD / hanya tamat SD).\n14. Tidak punya tabungan/aset $\\ge Rp500.000$ $\\rightarrow$ *TIDAK MEMENUHI* / MEMENUHI: tidak memiliki tabungan $\\rightarrow$ **MEMENUHI** (skor 1).\n\nTotal kriteria yang terpenuhi adalah 11 kriteria.\nKarena $11 \\ge 9$ (ambang batas minimum), maka Rumah Tangga Bapak Joko diklasifikasikan sebagai **Miskin** dan layak ditetapkan sebagai Rumah Tangga Sasaran (RTS) penerima bantuan sosial.\n\n**Verifikasi Kode Python**:\n```python\nkriteria_joko = [True, True, True, True, True, False, True, True, True, True, True, True, False, True]\ntotal_terpenuhi = sum(kriteria_joko) # 11\nstatus = 'Miskin (Layak Menerima Bansos)' if total_terpenuhi >= 9 else 'Tidak Miskin'\nprint(f'{total_terpenuhi} kriteria, Status={status}')\n# Output: 11 kriteria, Status=Miskin (Layak Menerima Bansos)\n```"
+        }
+      ],
+      "links": [
+        "8.1.1",
+        "8.1.2",
+        "8.2.1"
+      ]
+    }
+  ],
+  "point_id": "8.1.3",
+  "title": "Metodologi Cost of Basic Needs BPS",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 8,
+    "silabus_topic": "Kemiskinan dan Ketimpangan Pendapatan",
+    "bps_subject": "Indikator Kemiskinan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md",
+        "slide_or_page": "14, 17-19, 42-43",
+        "content": "Metodologi Cost of Basic Needs (CBN), penentuan populasi rujukan (reference population), pemutakhiran paket komoditas, dan kerentanan kelompok near poor."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Metodologi Cost of Basic Needs (CBN) menghitung rupiah yang secara riil dibutuhkan oleh kelompok masyarakat yang hidup sedikit di atas garis kemiskinan sementara (populasi rujukan) untuk memenuhi kebutuhan makanan pokok dan bukan makanan esensial.",
+    "bps_definition": "Pendekatan Kebutuhan Dasar (Cost of Basic Needs Approach) adalah metode pengukuran kemiskinan dengan menghitung besarnya rupiah yang harus dikeluarkan untuk memenuhi kebutuhan minimum makanan setara 2.100 kkal per hari serta kebutuhan minimum bukan makanan dari populasi rujukan.",
+    "boundary_conditions": "Populasi rujukan didefinisikan sebagai kelompok penduduk yang berada di kelas pengeluaran marjinal (sedikit di atas garis kemiskinan sementara). Susenas menghasilkan estimasi kemiskinan tingkat makro (kabupaten/kota ke atas), bukan basis data sasaran bansos by name by address.",
+    "formula_latex": "$$GK = \\sum_{k=1}^{52} P_k Q_k^* + \\sum_{l=1}^m \\alpha_l P_l Q_l, \\quad Q_k^* = Q_k \\cdot \\left(\\frac{2.100}{\\sum_{j=1}^{52} c_j Q_j}\\right)$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Suatu survei verifikasi keluarga pra-sejahtera menguji rumah tangga Bapak Joko berdasarkan kriteria kemiskinan mikro BPS. Dari hasil observasi diperoleh 13 dari 14 indikator kekurangan terpenuhi (ambang batas miskin mikro adalah minimal 9 kriteria). Tentukan status kemiskinan mikro keluarga tersebut.",
+    "data_table": "| Indikator Mikro | Standar Miskin | Hasil Observasi | Terpenuhi? |\n|---|---|---|---|\n| Luas Lantai | < 8 m2/kapita | 6 m2/kapita | Ya |\n| Jenis Lantai | Tanah/Bambu murah | Tanah | Ya |\n| Bahan Bakar | Kayu/Arang/Minyak | Kayu bakar | Ya |\n| Fasilitas BAB | Bersama/Tidak ada | Bersama | Ya |\n| Sumber Air | Tak terlindung | Sumur terbuka | Ya |\n| Total Terpenuhi | - | 13 dari 14 | 13 (>= 9) |",
+    "step_by_step_solution": "1. Evaluasi kriteria mikro: Sebanyak 13 dari 14 kriteria terpenuhi.\n2. Berdasarkan standar perlindungan sosial BPS, rumah tangga dengan minimal 9 kriteria terpenuhi dikategorikan miskin.\n3. Karena 13 >= 9, maka keluarga Bapak Joko diklasifikasikan sebagai Miskin (Layak Menerima Bansos).",
+    "python_verification_code": "criteria_fulfilled = 13\nthreshold = 9\nstatus = 'Miskin (Layak Menerima Bansos)' if criteria_fulfilled >= threshold else 'Tidak Miskin'\nprint(f'{criteria_fulfilled} kriteria, Status={status}')",
+    "expected_output": "13 kriteria, Status=Miskin (Layak Menerima Bansos)"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Kesalahan Kebijakan Penyaluran Bansos berbasis data makro Susenas",
+      "common_mistake": "Menggunakan angka atau sampel data Susenas BPS untuk membagikan paket sembako kepada penduduk miskin by name by address.",
+      "safe_strategy": "Susenas adalah survei sampel untuk estimasi makro dan tidak menyimpan by name by address lengkap; untuk penyaluran bansos mikro wajib digunakan basis data sensus/registrasi (Regsosek/DTKS)."
+    },
+    {
+      "trap_description": "Mengabaikan Karakteristik Penduduk Near Poor",
+      "common_mistake": "Menganggap penurunan P0 secara otomatis menyelesaikan kerentanan kemiskinan secara permanen.",
+      "safe_strategy": "Perhatikan bahwa banyak penduduk keluar dari kemiskinan hanya berada tipis di atas GK (kelompok rentan/near poor) yang dapat kembali jatuh miskin akibat sedikit kenaikan inflasi pangan."
+    }
+  ]
+}

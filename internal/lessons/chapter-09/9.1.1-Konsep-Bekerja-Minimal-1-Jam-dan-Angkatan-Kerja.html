@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS</h2><a href="#p-9.1.1">9.1.1 Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja ⭐</a></nav>
+<main>
+<h1>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 9: Ketenagakerjaan dan Pendidikan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-9.1.1">
+<h2>9.1.1 Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 4-20]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai dekomposisi piramida ketenagakerjaan ICLS 13, definisi bekerja minimal 1 jam, pemilahan AK vs BAK, dan penerapan aturan prioritas ketenagakerjaan pada Sakernas BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Klasifikasi 2 kelompok penduduk dalam statistik tenaga kerja: Penduduk mencapai usia minimum bekerja (berumur &gt;= 15 tahun) =&gt; PUK juga disebut angkatan kerja potensi; Selebihnya (berumur &lt; 15 tahun) =&gt; bukan usia kerja (BUK). PUK yang aktif secara ekonomi terdiri dari: (1) bekerja, dan (2) mencari pekerjaan =&gt; unemployed. PUK 'tidak siap bekerja' karena sekolah, atau mengurus rumahtangga =&gt; bukan angkatan kerja [slide 6]. Batasan usia kerja di Indonesia &gt;= 15 tahun sesuai konvensi ILO [slide 8]. Bekerja adalah melakukan kegiatan ekonomi minimal 1 jam berturut-turut selama seminggu yang lalu [slide 7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Statistik ketenagakerjaan dirancang untuk mengukur dua hal: pasokan daya kerja (labor supply) dan tingkat penyerapan oleh sistem ekonomi (labor absorption). Batasan 1 jam seminggu tampak sangat longgar, namun ini adalah standar global ILO agar tidak ada satu pun kontribusi ekonomi riil yang terlewatkan (misalnya membantu panen keluarga, berdagang online sesaat, atau ojek sambilan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Kerangka Ketenagakerjaan ICLS 13</p>
+<p>Berdasarkan resolusi International Conference of Labour Statisticians ke-13 (ICLS 13 tahun 1982) yang diadopsi resmi oleh Badan Pusat Statistik (BPS):</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Tingkat Klasifikasi</th><th>Kategori</th><th>Batasan Operasional BPS</th></tr></thead><tbody><tr><td><strong>Tingkat 1: Batas Usia</strong></td><td>Penduduk Usia Kerja (PUK)</td><td>Penduduk berumur $\ge 15$ tahun pada saat pencacahan [slide 6, 8]</td></tr><tr><td></td><td>Bukan Usia Kerja (BUK)</td><td>Penduduk berumur $&lt; 15$ tahun [slide 6]</td></tr><tr><td><strong>Tingkat 2: Aktivitas Ekonomi</strong></td><td>Angkatan Kerja (AK)</td><td>Penduduk usia kerja yang aktif secara ekonomi (*economically active*): Bekerja atau Pengangguran [slide 6]</td></tr><tr><td></td><td>Bukan Angkatan Kerja (BAK)</td><td>Penduduk usia kerja yang tidak aktif secara ekonomi (*economically inactive*): Sekolah, Mengurus Rumah Tangga, atau Lainnya [slide 6, 21]</td></tr><tr><td><strong>Tingkat 3: Status Angkatan Kerja</strong></td><td>Bekerja (*Employed*)</td><td>Melakukan kegiatan ekonomi $\ge 1$ jam berturut-turut dalam seminggu terakhir demi upah/laba, atau sementara tidak bekerja [slide 5, 7]</td></tr><tr><td></td><td>Pengangguran (*Unemployed*)</td><td>Tidak bekerja, bersedia bekerja, dan aktif mencari kerja atau mempersiapkan usaha [slide 5, 16]</td></tr></tbody></table></div>
+<p>### 2. Aturan Prioritas Ketenagakerjaan (The Priority Rule)</p>
+<p>Dalam kuesioner Sakernas, seorang individu dapat melakukan beberapa aktivitas sekaligus dalam seminggu terakhir (misalnya kuliah sambil menjadi barista 4 jam seminggu, atau ibu rumah tangga yang menjual kue secara daring). BPS menerapkan <strong>Aturan Prioritas</strong> hierarkis sbb:</p>
+<p>$$\text{Bekerja} \succ \text{Mencari Kerja (Penganggur)} \succ \text{Bukan Angkatan Kerja (Sekolah/IRT/Lainnya)}$$</p>
+<ul><li>Jika seseorang bekerja $\ge 1$ jam, statusnya mutlak <strong>Bekerja</strong>, mengabaikan status sekolah atau mengurus rumah tangganya.</li><li>Jika seseorang tidak bekerja tetapi aktif mencari pekerjaan atau mempersiapkan usaha baru, statusnya mutlak <strong>Pengangguran</strong>, mengabaikan waktu luangnya yang dihabiskan di rumah.</li><li>Hanya jika seseorang tidak bekerja dan tidak mencari kerja, barulah diklasifikasikan ke dalam salah satu dari tiga sub-kelompok <strong>BAK</strong>:</li><ol><li><strong>Sekolah</strong>: Bersekolah formal atau nonformal.</li><li><strong>Mengurus Rumah Tangga</strong>: Mengurus keluarga tanpa upah/laba ekonomi komersial.</li><li><strong>Lainnya</strong>: Penerima pensiun, lansia tidak berdaya, orang dengan disabilitas berat yang tidak mampu bekerja.</li></ol></ul></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Seorang pemuda berusia 19 tahun merupakan mahasiswa aktif semester 3. Pada hari Sabtu minggu lalu, ia bekerja selama 3 jam sebagai barista di kedai kopi pamannya dan menerima upah harian. Berdasarkan konsep ketenagakerjaan BPS dan aturan prioritas ICLS, pemuda tersebut diklasifikasikan sebagai:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 6-8]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Bukan Angkatan Kerja karena kegiatan utamanya adalah mahasiswa aktif.</button>
+<button class="ex-opt" data-i="1">B. Angkatan Kerja dengan status Bekerja karena melakukan kegiatan ekonomi minimal 1 jam seminggu terakhir.</button>
+<button class="ex-opt" data-i="2">C. Pengangguran Terbuka karena belum tamat kuliah dan belum memiliki pekerjaan tetap.</button>
+<button class="ex-opt" data-i="3">D. Pekerja Paruh Waktu sukarela yang digolongkan ke dalam Bukan Usia Kerja.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan aturan prioritas ICLS 13 dan BPS, kegiatan ekonomi (bekerja $\ge 1$ jam) mendapat prioritas tertinggi di atas kegiatan non-ekonomi (bersekolah/kuliah).<br>2. Pemuda tersebut berusia 19 tahun (PUK $\ge 15$) dan bekerja selama 3 jam (memenuhi syarat $\ge 1$ jam berturut-turut untuk memperoleh upah).<br>3. Oleh karena itu, ia sah diklasifikasikan ke dalam <strong>Angkatan Kerja</strong> dengan status <strong>Bekerja</strong>.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AK=340000, Lainnya=10000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Berdasarkan data Sakernas suatu kabupaten, penduduk usia 15 tahun ke atas berjumlah 500.000 orang. Diketahui penduduk yang bekerja berjumlah 320.000 orang, pengangguran terbuka berjumlah 20.000 orang, penduduk yang bersekolah 60.000 orang, dan mengurus rumah tangga 90.000 orang. Tentukan:<br>1. Jumlah Angkatan Kerja (AK).<br>2. Jumlah Bukan Angkatan Kerja kategori 'Lainnya'.<br>Tuliskan jawaban akhir dalam format: <code>AK=X, Lainnya=Y</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 21]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Menghitung Angkatan Kerja (AK):<br>   $$\text{AK} = \text{Bekerja} + \text{Pengangguran} = 320.000 + 20.000 = 340.000$$<br>2. Menghitung total Bukan Angkatan Kerja (BAK):<br>   $$\text{BAK} = \text{PUK} - \text{AK} = 500.000 - 340.000 = 160.000$$<br>3. Menghitung BAK kategori 'Lainnya':<br>   $$\text{BAK} = \text{Sekolah} + \text{Mengurus RT} + \text{Lainnya}$$<br>   $$160.000 = 60.000 + 90.000 + \text{Lainnya}$$<br>   $$\text{Lainnya} = 160.000 - 150.000 = 10.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>puk = 500000<br>bekerja = 320000<br>penganggur = 20000<br>sekolah = 60000<br>irt = 90000<br>ak = bekerja + penganggur<br>bak = puk - ak<br>lainnya = bak - (sekolah + irt)<br>print(f'AK={ak}, Lainnya={lainnya}')<br># Output: AK=340000, Lainnya=10000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Mengabaikan Pekerja Keluarga Tak Dibayar</strong>: Dianggap BAK karena tidak menerima gaji uang. Padahal BPS menghitung pekerja keluarga tak dibayar minimal 1 jam sebagai Bekerja.</li><li><strong>Kekeliruan Ambang Batas 15 Jam Internasional</strong>: Beberapa literatur asing mencantumkan 15 jam untuk unpaid worker, namun BPS secara konsisten menetapkan batas 1 jam tanpa putus untuk seluruh kategori pekerja.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Piramida Tenaga Kerja: PUK (15+) = AK (Bekerja + Penganggur) + BAK (Sekolah + IRT + Lainnya). Prioritas: Bekerja &gt; Penganggur &gt; BAK.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.2, 9.1.3, 9.1.4</div>
+<button class="donebtn" data-id="9.1.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

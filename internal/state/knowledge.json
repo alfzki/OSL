@@ -1,0 +1,425 @@
+{
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "subject_type": "Statistika Resmi BPS",
+  "updated": "2026-09-29",
+  "chapters": [
+    {
+      "id": 8,
+      "title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+      "sections": [
+        {
+          "title": "8.1 Konsep dan Metodologi Garis Kemiskinan BPS",
+          "points": [
+            {
+              "id": "8.1.1",
+              "name": "Konsep Kemiskinan Absolut dan Relatif",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "8.1.2",
+              "name": "Garis Kemiskinan Makanan dan Non-Makanan",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "8.1.3",
+              "name": "Metodologi Cost of Basic Needs BPS",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke)",
+          "points": [
+            {
+              "id": "8.2.1",
+              "name": "Headcount Index P0",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "8.2.2",
+              "name": "Poverty Gap Index P1",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "8.2.3",
+              "name": "Poverty Severity Index P2",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "8.3 Ukuran Ketimpangan Pendapatan dan Pengeluaran",
+          "points": [
+            {
+              "id": "8.3.1",
+              "name": "Kurva Lorenz dan Koefisien Gini",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "8.3.2",
+              "name": "Kriteria Ketimpangan Bank Dunia",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+      "sections": [
+        {
+          "title": "9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS",
+          "points": [
+            {
+              "id": "9.1.1",
+              "name": "Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "9.1.2",
+              "name": "Tingkat Partisipasi Angkatan Kerja TPAK",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "9.1.3",
+              "name": "Tingkat Pengangguran Terbuka TPT",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "9.1.4",
+              "name": "Setengah Penganggur vs Pekerja Paruh Waktu",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "9.2 Indikator Pendidikan",
+          "points": [
+            {
+              "id": "9.2.1",
+              "name": "Angka Partisipasi Murni APM dan Kasar APK",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "9.2.2",
+              "name": "Angka Partisipasi Sekolah APS",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+      "sections": [
+        {
+          "title": "10.1 Indikator Mortalitas Ibu dan Anak",
+          "points": [
+            {
+              "id": "10.1.1",
+              "name": "Angka Kematian Ibu AKI MMR",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "10.1.2",
+              "name": "Angka Kematian Bayi AKB dan Balita AKABA",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "10.1.3",
+              "name": "Angka Kematian Neo-Natal NMR",
+              "importance": "低",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "10.2 Morbiditas dan Pelayanan Kesehatan",
+          "points": [
+            {
+              "id": "10.2.1",
+              "name": "Angka Kesakitan Morbiditas",
+              "importance": "低",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "10.2.2",
+              "name": "Imunisasi Dasar Lengkap IDL",
+              "importance": "低",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Pertemuan 11: Statistik Produksi Pertanian dan Industri",
+      "sections": [
+        {
+          "title": "11.1 Estimasi Produksi Tanaman Pangan",
+          "points": [
+            {
+              "id": "11.1.1",
+              "name": "Kerangka Sampel Area KSA Padi",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "11.1.2",
+              "name": "Metode Ubinan Produktivitas",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "11.1.3",
+              "name": "Survei Konversi Gabah ke Beras SKGB",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "11.2 Statistik Industri Pengolahan",
+          "points": [
+            {
+              "id": "11.2.1",
+              "name": "Survei Industri Besar dan Sedang IBS",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "11.2.2",
+              "name": "Survei Industri Mikro dan Kecil IMK",
+              "importance": "低",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+      "sections": [
+        {
+          "title": "12.1 Margin Perdagangan dan Distribusi",
+          "points": [
+            {
+              "id": "12.1.1",
+              "name": "Margin Perdagangan dan Pengangkutan MPP",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "12.1.2",
+              "name": "Survei Pola Distribusi Perdagangan Poldis",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "12.2 Indeks Harga Konsumen dan Inflasi",
+          "points": [
+            {
+              "id": "12.2.1",
+              "name": "IHK Rumus Modified Laspeyres",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "12.2.2",
+              "name": "Tiga Laju Inflasi BPS mtom yony ytd",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "12.2.3",
+              "name": "Disagregasi Inflasi Inti Bergejolak Administered",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "12.3 Nilai Tukar Petani NTP",
+          "points": [
+            {
+              "id": "12.3.1",
+              "name": "Konsep dan Rasio NTP It per Ib",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "12.3.2",
+              "name": "Nilai Tukar Usaha Petani NTUP",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "12.3.3",
+              "name": "Lima Subsektor Penyusun NTP",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Pertemuan 13: Ekspor-Impor dan Pariwisata",
+      "sections": [
+        {
+          "title": "13.1 Statistik Perdagangan Internasional",
+          "points": [
+            {
+              "id": "13.1.1",
+              "name": "Valuasi Ekspor Impor FOB vs CIF",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "13.1.2",
+              "name": "Barang Dagangan Tanpa Masuk Pabean Merchanting",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "13.1.3",
+              "name": "Net Barter Terms of Trade NBToT",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "13.1.4",
+              "name": "Gross Barter dan Income ToT",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        },
+        {
+          "title": "13.2 Statistik Pariwisata dan Perhotelan",
+          "points": [
+            {
+              "id": "13.2.1",
+              "name": "Definisi Wisman dan Wisnus",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "13.2.2",
+              "name": "Tingkat Penghunian Kamar TPK Hotel",
+              "importance": "高",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            },
+            {
+              "id": "13.2.3",
+              "name": "Rata-rata Lama Menginap Tamu RLMT",
+              "importance": "中",
+              "status": "已讲解",
+              "mastery": 3,
+              "note": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

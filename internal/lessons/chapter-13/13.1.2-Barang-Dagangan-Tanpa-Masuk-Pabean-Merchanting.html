@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>13.1 Statistik Perdagangan Internasional · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>13.1 Statistik Perdagangan Internasional</h2><a href="#p-13.1.2">13.1.2 Barang Dagangan Tanpa Masuk Pabean Merchanting</a></nav>
+<main>
+<h1>13.1 Statistik Perdagangan Internasional<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-13.1.2">
+<h2>13.1.2 Barang Dagangan Tanpa Masuk Pabean Merchanting</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10-15]</div>
+<div class="box info">📌 <div class="rich"><p>Memahami konsep merchanting goods SNA 2008, 3 syarat utama transaksi merchanting, perlakuan 'ekspor negatif' dan 'ekspor positif', serta reklasifikasi pos dari neraca jasa (BPM5) ke neraca barang (BPM6/SNA 2008).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Merchanting adalah pembelian barang oleh residen (merchant) dari nonresiden, untuk selanjutnya dijual kembali pada nonresiden negara lain, dimana barang itu tanpa atau tidak berada di wilayah ekonomi residen merchant. Terjadi perubahan kepemilikan; tidak ada transformasi substansial pada barang; barang tidak memasuki wilayah residen merchant [slide 5].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Pernahkah Anda mendengar model bisnis dropshipping atau perantara komoditas global? Pedagang di Indonesia membeli batubara dari Australia dan menjualnya langsung ke pabrik baja di India. Kapal batubara berlayar lurus dari Sydney ke Mumbai tanpa pernah lewat laut Indonesia. Pedagang Indonesia menanggung risiko harga dan memiliki hak milik legal atas batubara tersebut sebelum menjualnya dengan keuntungan. Inilah *merchanting*. Meskipun Bea Cukai Indonesia tidak mencatatnya di pelabuhan, rekening bank pedagang di Indonesia menerima devisa neto hasil perdagangan barang tersebut.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Karakteristik Utama Merchanting (SNA 2008 &amp; BPM6)</p>
+<p>Menurut standar statistik internasional SNA 2008 paragraf 14.73 dan *Balance of Payments Manual 6th Edition* (BPM6) [slide 5]:<br>*Merchanting* didefinisikan sebagai perolehan barang oleh penduduk dari bukan penduduk yang diikuti oleh penjualan kembali barang tersebut kepada bukan penduduk lain, tanpa barang tersebut pernah memasuki wilayah ekonomi penduduk pedagang (*resident merchant*).</p>
+<p>Tiga syarat kumulatif yang wajib dipenuhi [slide 5]:<br>1. <strong>Alih Kepemilikan Ekonomi (*Change of Economic Ownership*)</strong>:<br>   Pedagang residen benar-benar memegang hak milik legal dan menanggung risiko ekonomi atas barang tersebut di antara saat pembelian dan penjualan.<br>2. <strong>Tanpa Transformasi Substansial (*No Substantial Transformation*)</strong>:<br>   Barang tidak mengalami proses manufaktur atau fabrikasi yang mengubah klasifikasi kode HS barang. Tindakan yang diperbolehkan hanyalah penyimpanan, inspeksi, sortasi mutu, atau *packaging* kecil.<br>3. <strong>Tanpa Lintasan Wilayah Pabean Fisik (*No Physical Entry into Domestic Territory*)</strong>:<br>   Barang bergerak langsung dari negara pemasok asal ke negara pembeli akhir, atau singgah di pelabuhan/gudang transit negara ketiga tanpa pernah melintasi pabean negara pedagang.</p>
+<p>### 2. Standar Pencatatan Akuntansi Neraca Perdagangan</p>
+<p>Dalam pedoman manual terdahulu (BPM5), selisih nilai jual dan beli dicatat sebagai 'ekspor jasa perantara perdagangan'. Namun, dalam SNA 2008 dan BPM6 dilakukan reformasi fundamental [slide 5]:<br>1. <strong>Transaksi Perolehan (Pembelian)</strong>:<br>   Dicatat sebagai <strong>ekspor barang bernilai negatif</strong> (*negative exports of goods under merchanting*) di negara residen pedagang pada periode pembelian terjadi.<br>   - Alasan: Mencegah distorsi pada angka impor barang domestik (karena barang tersebut tidak pernah dinikmati atau dikonsumsi oleh masyarakat domestik).<br>2. <strong>Transaksi Penjualan</strong>:<br>   Dicatat sebagai <strong>ekspor barang bernilai positif</strong> (*goods sold under merchanting*) di negara residen pedagang pada periode penjualan terealisasi.<br>3. <strong>Penyajian Neto</strong>:<br>   Pada tabel ringkasan neraca transaksi berjalan, disajikan pos tunggal:<br>   $$\text{Ekspor Neto Barang di Bawah Merchanting} = \text{Nilai Penjualan} - \text{Nilai Perolehan}$$</p>
+<p>### 3. Matriks Perbedaan Transaksi Perdagangan Khusus</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Jenis Transaksi</th><th>Alih Kepemilikan Barang?</th><th>Melintasi Fisik Pabean Domestik?</th><th>Ada Transformasi Fisik?</th><th>Pencatatan Neraca (SNA 2008)</th></tr></thead><tbody><tr><td><strong>Perdagangan Reguler</strong></td><td>Ya</td><td>Ya</td><td>Tidak / Ya</td><td>Ekspor FOB / Impor CIF Barang Umum</td></tr><tr><td><strong>Merchanting Goods</strong></td><td>Ya</td><td><strong>Tidak</strong></td><td>Tidak</td><td>Ekspor Neto pada Neraca Barang</td></tr><tr><td><strong>Jasa Maklon (Outward Processing)</strong></td><td>Tidak</td><td>Ya</td><td><strong>Ya</strong></td><td>Impor/Ekspor Jasa Manufaktur</td></tr><tr><td><strong>Komisi Perantara (Brokerage)</strong></td><td><strong>Tidak</strong></td><td>Tidak</td><td>Tidak</td><td>Neraca Jasa (Fee Keagenan)</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Manakah pernyataan yang BENAR mengenai perlakuan pencatatan transaksi merchanting dalam neraca pembayaran menurut manual BPM6 dan SNA 2008?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Selisih antara harga jual dan beli barang dicatat sebagai ekspor jasa perdagangan.</button>
+<button class="ex-opt" data-i="1">B. Pembelian barang oleh pedagang residen dicatat sebagai impor barang biasa.</button>
+<button class="ex-opt" data-i="2">C. Perolehan barang dicatat sebagai ekspor negatif dan penjualannya dicatat sebagai ekspor positif dalam neraca barang.</button>
+<button class="ex-opt" data-i="3">D. Transaksi tidak dicatat sama sekali karena barang tidak melewati kawasan pabean fisik nasional.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai standar BPM6 dan SNA 2008 [slide 5], transaksi merchanting dicatat sepenuhnya dalam Neraca Barang (Goods Account). Saat merchant residen membeli barang dari luar negeri, dicatat sebagai ekspor barang bernilai negatif (-). Ketika barang tersebut dijual kembali ke non-residen di negara lain, dicatat sebagai ekspor barang bernilai positif (+). Jumlah neto dari kedua aliran ini menghasilkan 'ekspor neto barang di bawah merchanting'.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah entitas dagang berstatus residen Indonesia membeli komoditas nikel dari Filipina seharga USD 200.000, lalu menjualnya ke pabrik baterai di Jepang seharga USD 260.000 tanpa membawa nikel tersebut ke wilayah Indonesia. Di samping itu, ekspor barang reguler fisik Indonesia adalah USD 1.500.000 dan impor barang reguler fisik FOB adalah USD 1.080.000.<br>Hitunglah:<br>1. Nilai perolehan barang merchanting (ekspor negatif).<br>2. Nilai penjualan barang merchanting (ekspor positif).<br>3. Ekspor neto barang di bawah merchanting.<br>4. Total ekspor barang SNA 2008 dan saldo neraca barang FOB-FOB.<br>Tuliskan jawaban format: <code>Acq=..., Sales=..., NetMerchanting=..., TotalX_SNA=..., GoodsBalance_SNA=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 9, 10]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>Nilai Perolehan (Ekspor Negatif)</strong>: $$\text{Acq} = -\text{USD } 200.000$$<br>2. <strong>Nilai Penjualan (Ekspor Positif)</strong>: $$\text{Sales} = +\text{USD } 260.000$$<br>3. <strong>Ekspor Neto Merchanting</strong>:<br>   $$\text{NetMerchanting} = 260.000 + (-200.000) = +\text{USD } 60.000$$<br>4. <strong>Total Ekspor Barang SNA 2008</strong>:<br>   $$\text{TotalX\_SNA} = 1.500.000 + 60.000 = \text{USD } 1.560.000$$<br>   - Saldo Neraca Barang (FOB - FOB):<br>   $$\text{GoodsBalance\_SNA} = 1.560.000 - 1.080.000 = +\text{USD } 480.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>acq_usd = -200000.0<br>sales_usd = 260000.0<br>net_merchanting = sales_usd + acq_usd<br>x_regular_fob = 1500000.0<br>total_x_sna = x_regular_fob + net_merchanting<br>m_regular_fob = 1080000.0<br>goods_balance_sna = total_x_sna - m_regular_fob<br>print(f'Acq={acq_usd:.0f}, Sales={sales_usd:.0f}, NetMerchanting={net_merchanting:.0f}, TotalX_SNA={total_x_sna:.0f}, GoodsBalance_SNA={goods_balance_sna:.0f}')<br># Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menganggap Merchanting sebagai Jasa</strong>: Sejak SNA 2008 dan BPM6, merchanting resmi masuk ke Neraca Barang (Goods), bukan Neraca Jasa.</li><li><strong>Mengabaikan Alih Kepemilikan</strong>: Jika pedagang hanya menerima komisi 2% sebagai agen pencari pembeli tanpa pernah membeli dan memiliki barang, transaksi tersebut adalah jasa broker murni, bukan merchanting.</li><li><strong>Jika Barang Mengalami Pengolahan Pabrik</strong>: Bila barang diubah bentuk secara fisik di negara ketiga, transaksi beralih menjadi 'goods for processing' / jasa manufaktur.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Merchanting: Barang Tidak Datang, Tapi Uang Datang; Dicatat di Neraca Barang Bukan Jasa.</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.1, 13.1.3</div>
+<button class="donebtn" data-id="13.1.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

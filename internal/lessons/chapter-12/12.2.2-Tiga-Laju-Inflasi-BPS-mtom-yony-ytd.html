@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>12.2 Indeks Harga Konsumen dan Inflasi · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>12.2 Indeks Harga Konsumen dan Inflasi</h2><a href="#p-12.2.2">12.2.2 Tiga Laju Inflasi BPS mtom yony ytd ⭐</a></nav>
+<main>
+<h1>12.2 Indeks Harga Konsumen dan Inflasi<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 12: Perdagangan dan Indikator Harga ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 1 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-12.2.2">
+<h2>12.2.2 Tiga Laju Inflasi BPS mtom yony ytd ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 21-26]</div>
+<div class="box info">📌 <div class="rich"><p>Formula tiga laju inflasi BPS, penentuan penyebut rujukan periode dasar, sifat ekuivalensi bulan Januari dan Desember, serta interpretasi ekonomi makro.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Inflasi bulanan (month to month) dihitung dengan dasar IHK bulan sebelumnya. Inflasi tahunan (year on year): metode point to point dengan dasar bulan pada tahun sebelumnya. Inflasi tahun kalender (year to date): metode point to point dengan dasar bulan Desember pada tahun sebelumnya [slide 19]. Pada bulan Desember, tingkat inflasi y-to-d selalu sama dengan y-on-y [slide 21].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seorang analis ekonomi membaca berita utama koran bahwa 'Inflasi Indonesia 3%', angka apakah itu? Apakah harga naik 3% dalam sebulan terakhir, sejak awal tahun, atau dalam setahun penuh? Mengetahui horizon waktu inflasi sangat krusial. Kenaikan 3% sebulan berarti ancaman hiperinflasi, tetapi 3% setahun (y-on-y) adalah tingkat inflasi yang sangat sehat dan terkendali. BPS merilis ketiga dimensi waktu ini secara simultan.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Matematis Tiga Dimensi Waktu Inflasi</p>
+<p>Misalkan $IHK_{t, m}$ menyatakan Indeks Harga Konsumen pada tahun $t$ dan bulan ke-$m$ ($m \in \{1, 2, \dots, 12\}$):</p>
+<p>1. <strong>Inflasi Bulanan (*Month-to-Month* / m-to-m)</strong>:<br>Mengukur perubahan harga satu bulan terhadap bulan langsung sebelumnya:<br>$$\pi_{t, m}^{\text{mtom}} = \frac{IHK_{t, m} - IHK_{t, m-1}}{IHK_{t, m-1}} \times 100\%$$<br>Khusus untuk bulan Januari ($m=1$), bulan sebelumnya adalah Desember tahun lalu ($IHK_{t-1, 12}$).</p>
+<p>2. <strong>Inflasi Tahun Kalender (*Year-to-Date* / y-to-d)</strong>:<br>Mengukur akumulasi perubahan harga sepanjang tahun kalender berjalan, dihitung dari akhir tahun sebelumnya:<br>$$\pi_{t, m}^{\text{ytd}} = \frac{IHK_{t, m} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\%$$</p>
+<p>3. <strong>Inflasi Tahunan (*Year-on-Year* / y-on-y)</strong>:<br>Mengukur perubahan harga terhadap bulan yang sama pada satu tahun sebelumnya:<br>$$\pi_{t, m}^{\text{yony}} = \frac{IHK_{t, m} - IHK_{t-1, m}}{IHK_{t-1, m}} \times 100\%$$</p>
+<p>### 2. Sifat Batas Matematis Kalender Inflasi (Boundary Theorems)</p>
+<p>- <strong>Teorema Ekuivalensi Januari</strong>:<br>Pada bulan Januari ($m=1$), secara definisi:<br>$$\pi_{t, 1}^{\text{mtom}} = \frac{IHK_{t, 1} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\% = \pi_{t, 1}^{\text{ytd}}$$<br>Inflasi m-to-m bulan Januari selalu bernilai tepat sama dengan inflasi y-to-d bulan Januari.</p>
+<p>- <strong>Teorema Ekuivalensi Desember</strong>:<br>Pada bulan Desember ($m=12$), secara definisi:<br>$$\pi_{t, 12}^{\text{ytd}} = \frac{IHK_{t, 12} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\% = \pi_{t, 12}^{\text{yony}}$$<br>Inflasi y-to-d bulan Desember selalu bernilai tepat sama dengan inflasi y-on-y bulan Desember [terkonfirmasi pada Slide 21: Des 2021 = 1,87%, Des 2022 = 5,51%, Des 2023 = 2,61%].</p>
+<p>### 3. Matriks Perbandingan Ketiga Laju Inflasi BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Karakteristik</th><th>Month-to-Month (m-to-m)</th><th>Year-to-Date (y-to-d)</th><th>Year-on-Year (y-on-y)</th></tr></thead><tbody><tr><td><strong>Periode Pembanding</strong></td><td>1 bulan sebelumnya ($t, m-1$)</td><td>Desember tahun lalu ($t-1, 12$)</td><td>Bulan sama tahun lalu ($t-1, m$)</td></tr><tr><td><strong>Sensitivitas Musiman</strong></td><td>Sangat tinggi (terpengaruh siklus bulanan)</td><td>Akumulatif dalam tahun berjalan</td><td>Meniadakan faktor musiman tahunan</td></tr><tr><td><strong>Fokus Pengguna</strong></td><td>Evaluasi pasokan pangan jangka pendek</td><td>Penyerapan anggaran &amp; target fiskal APBN</td><td>Sasaran resmi kebijakan moneter Bank Indonesia</td></tr><tr><td><strong>Pola Pergerakan</strong></td><td>Fluktuatif, sering bernilai negatif (deflasi)</td><td>Cenderung meningkat seiring bertambahnya bulan</td><td>Relatif lebih mulus mengikuti tren makro</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan data BPS, IHK bulan Desember 2022 adalah 113,59 dan IHK bulan Desember 2023 adalah 116,56. Berdasarkan informasi ini, manakah pernyataan yang paling tepat mengenai laju inflasi pada bulan Desember 2023?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 20, 21]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Inflasi m-to-m sama dengan inflasi y-to-d sebesar 2,61%.</button>
+<button class="ex-opt" data-i="1">B. Inflasi y-to-d sama dengan inflasi y-on-y sebesar 2,61%.</button>
+<button class="ex-opt" data-i="2">C. Inflasi y-on-y lebih tinggi daripada inflasi y-to-d karena diakumulasikan sepanjang 12 bulan.</button>
+<button class="ex-opt" data-i="3">D. Inflasi y-to-d bernilai 0% karena tahun anggaran telah ditutup.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Pada bulan Desember, periode dasar pembanding untuk inflasi tahun kalender (y-to-d) adalah bulan Desember tahun sebelumnya (Desember 2022). Periode dasar pembanding untuk inflasi tahunan (y-on-y) pada bulan Desember juga adalah bulan Desember tahun sebelumnya (Desember 2022). Oleh karena itu, perhitungannya identik:<br>$$\text{Inflasi} = \frac{116,56 - 113,59}{113,59} \times 100\% = \frac{2,97}{113,59} \times 100\% = 2,6146\% \approx 2,61\%$$<br>Sehingga inflasi y-to-d dan y-on-y bulan Desember 2023 keduanya bernilai tepat 2,61%.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Basis Des 2021 vs Des 2022</strong>: Saat menghitung inflasi ytd tahun 2023, pembagi wajib IHK Desember 2022, bukan Desember 2021.</li><li><strong>Deflasi</strong>: Jangan panik jika hasil perhitungan menghasilkan tanda negatif (misal -0,02%). Tanda negatif adalah fenomena deflasi yang wajar terjadi pasca panen raya atau penurunan tarif angkutan setelah liburan.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>m-to-m ke Bulan Lalu; y-to-d ke Desember Lalu; y-on-y ke Bulan yang Sama Tahun Lalu; Di Bulan Desember ytd = yoy!</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.2.1, 12.2.3</div>
+<button class="donebtn" data-id="12.2.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulasi UAS Official Statistics Lanjutan (2022/2023)</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #eff6ff;
+    --primary-border: #bfdbfe;
+    --success: #166534;
+    --success-bg: #f0fdf4;
+    --success-border: #bbf7d0;
+    --danger: #991b1b;
+    --danger-bg: #fef2f2;
+    --danger-border: #fecaca;
+    --slate-800: #1e293b;
+    --slate-600: #475569;
+    --slate-200: #e2e8f0;
+    --slate-50: #f8fafc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+    padding-bottom: 60px;
+  }
+  header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--slate-200);
+    padding: 18px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .header-wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .title-area h1 { font-size: 19px; font-weight: 700; color: var(--primary); }
+  .title-area p { font-size: 13px; color: var(--slate-600); }
+  .nav-tabs {
+    display: flex;
+    gap: 6px;
+    background: var(--slate-50);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--slate-200);
+  }
+  .tab-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--slate-600);
+    cursor: pointer;
+  }
+  .tab-btn.active {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  .container { max-width: 1040px; margin: 24px auto; padding: 0 16px; }
+  .score-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .score-stats { display: flex; gap: 18px; align-items: center; font-size: 13px; }
+  .stat-pill { display: flex; flex-direction: column; }
+  .stat-pill .val { font-size: 17px; font-weight: 700; color: var(--slate-800); }
+  .stat-pill .lbl { font-size: 11px; color: var(--slate-600); text-transform: uppercase; }
+  .grid-wrap {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .grid-header { font-size: 13px; font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; color: var(--slate-600); }
+  .nav-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .q-num-btn {
+    width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; border: 1px solid var(--slate-200);
+    background: #ffffff; font-size: 12px; font-weight: 600;
+    color: var(--slate-600); cursor: pointer;
+  }
+  .q-num-btn.active { border-color: var(--primary); background: var(--primary-light); color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
+  .q-num-btn.correct { background: var(--success); border-color: var(--success); color: #ffffff; }
+  .q-num-btn.wrong { background: var(--danger); border-color: var(--danger); color: #ffffff; }
+  .q-card {
+    background: #ffffff;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+  .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 3px 9px;
+    border-radius: 6px; background: var(--slate-50);
+    border: 1px solid var(--slate-200); color: var(--slate-600);
+  }
+  .badge.primary { background: var(--primary-light); border-color: var(--primary-border); color: var(--primary); }
+  .q-stem { font-size: 16px; font-weight: 600; color: #0f172a; line-height: 1.7; margin-bottom: 20px; }
+  .options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .opt-item {
+    padding: 12px 16px; border: 1.5px solid var(--slate-200);
+    border-radius: 10px; background: #ffffff; cursor: pointer;
+    font-size: 14px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5;
+  }
+  .opt-item:hover { border-color: var(--primary); background: var(--primary-light); }
+  .opt-char { font-weight: 700; min-width: 24px; color: var(--slate-600); }
+  .opt-item.is-correct { border-color: var(--success); background: var(--success-bg); color: #14532d; font-weight: 600; }
+  .opt-item.is-wrong { border-color: var(--danger); background: var(--danger-bg); color: #7f1d1d; }
+  .opt-item.disabled { cursor: default; }
+  .expl-box {
+    margin-top: 18px; border-radius: 12px; padding: 16px 18px;
+    border: 1px solid var(--slate-200); background: var(--slate-50);
+  }
+  .expl-box.show-ok { border-color: var(--success-border); background: var(--success-bg); }
+  .expl-box.show-bad { border-color: var(--danger-border); background: var(--danger-bg); }
+  .expl-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .expl-content { font-size: 14px; line-height: 1.8; color: #334155; }
+  .citation-tag {
+    display: inline-block; margin-top: 8px; font-size: 11px;
+    color: var(--primary); font-weight: 600; background: var(--primary-light);
+    padding: 2px 7px; border-radius: 4px; border: 1px solid var(--primary-border);
+  }
+  .action-bar { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }
+  .btn {
+    padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: var(--primary); color: #ffffff; }
+  .btn-secondary { background: #ffffff; border: 1px solid var(--slate-200); color: var(--slate-600); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .essay-card {
+    background: #ffffff; border: 1px solid var(--slate-200);
+    border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  }
+  .essay-problem { font-size: 15px; line-height: 1.8; white-space: pre-wrap; margin-bottom: 20px; }
+  .rubric-table {
+    width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px;
+  }
+  .rubric-table th, .rubric-table td {
+    border: 1px solid var(--slate-200); padding: 8px 12px; text-align: left;
+  }
+  .rubric-table th { background: var(--slate-50); font-weight: 600; }
+  .sol-box {
+    background: #ffffff; border: 1.5px solid var(--primary-border);
+    border-radius: 12px; padding: 18px 20px; margin-top: 14px;
+  }
+  .sol-box pre {
+    background: var(--slate-50); padding: 12px; border-radius: 8px;
+    font-size: 12px; overflow-x: auto; margin: 10px 0; border: 1px solid var(--slate-200);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="title-area">
+      <h1>Naskah Asli UAS Official Statistics Lanjutan (2022/2023)</h1>
+      <p>40 Pilihan Ganda &middot; 2 Studi Kasus Essay (Skor 60) &middot; Dr. Tiodora Hadumaon Siagian</p>
+    </div>
+    <div class="nav-tabs">
+      <button class="tab-btn active" id="tabPG" onclick="switchTab('pg')">Pilihan Ganda (40 Soal)</button>
+      <button class="tab-btn" id="tabEssay" onclick="switchTab('essay')">Soal Essay & Hitungan (2 Soal)</button>
+      <button class="tab-btn" id="tabAllPG" onclick="switchTab('all_pg')">Tinjau Kunci 40 PG</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="score-card">
+    <div class="score-stats">
+      <div class="stat-pill">
+        <span class="val" id="statAns">0 / 40</span>
+        <span class="lbl">PG Terjawab</span>
+      </div>
+      <div class="stat-pill">
+        <span class="val" id="statCor" style="color:var(--success);">0</span>
+        <span class="lbl">Benar</span>
+      </div>
+      <div class="stat-pill">
+        <span class="val" id="statWrg" style="color:var(--danger);">0</span>
+        <span class="lbl">Salah</span>
+      </div>
+      <div class="stat-pill">
+        <span class="val" id="statAcc">0%</span>
+        <span class="lbl">Akurasi PG</span>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-secondary" onclick="resetPG()">Ulangi Latihan</button>
+    </div>
+  </div>
+
+  <!-- VIEW 1: PG Single Interactive -->
+  <div id="viewPG">
+    <div class="grid-wrap">
+      <div class="grid-header">
+        <span>Navigasi Butir Soal PG</span>
+        <span id="gridProg">Soal 1 dari 40</span>
+      </div>
+      <div class="nav-grid" id="navGrid"></div>
+    </div>
+    <div id="pgCardArea"></div>
+  </div>
+
+  <!-- VIEW 2: Essay Problems -->
+  <div id="viewEssay" style="display:none;">
+    <div id="essayArea"></div>
+  </div>
+
+  <!-- VIEW 3: Full Review PG -->
+  <div id="viewAllPG" style="display:none;">
+    <div id="allPGArea"></div>
+  </div>
+</div>
+
+<script>
+const DATA = {"title": "Naskah Asli Ujian Akhir Semester (UAS) OSL 2022/2023", "description": "40 Soal Pilihan Ganda + 2 Soal Essay Analisis & Hitungan Sektoral BPS", "questions_pg": [{"id": 1, "stem": "Tujuan Pengukuran kemiskinan adalah:", "options": {"A": "Membantu kelompok masyarakat yang kurang beruntung", "B": "Monitor perbandingan harga dari waktu ke waktu", "C": "Membantu wilayah-wilayah yang berada di pedalaman", "D": "Mengidentifikasi program pemberian bantuan oleh masyarakat"}, "correct": "A", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 4]", "explanation": "Berdasarkan materi Slide 4 Pertemuan 8, dua tujuan utama pengukuran kemiskinan adalah: (1) Identify disadvantaged sub-populations / Social assistance to disadvantaged groups (Membantu kelompok masyarakat yang kurang beruntung), dan (2) Monitor progress: requires comparability over time."}, {"id": 2, "stem": "Kemiskinan menurut Bank Dunia adalah berikut ini, kecuali:", "options": {"A": "Pendapatan rendah", "B": "Rendahnya tingkat kesehatan", "C": "Kekurangan akses air bersih", "D": "Jaminan keamanan yang tidak memadai"}, "correct": "D", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 6]", "explanation": "Definisi kemiskinan menurut Bank Dunia (Slide 6) mencakup pendapatan rendah, rendahnya tingkat kesehatan dan pendidikan, kekurangan akses terhadap air bersih dan sanitasi, serta 'jaminan fisik yang tidak memadai' (physical security). Istilah 'jaminan keamanan yang tidak memadai' tidak sesuai dengan formulasi resmi BPS/Bank Dunia."}, {"id": 3, "stem": "Kemiskinan ekstrim mengindikasikan:", "options": {"A": "Tingginya persentase penduduk miskin di suatu wilayah", "B": "Tidak adanya sumber daya (uang) untuk menjamin kebutuhan pokok utk hidup", "C": "% penduduk dg pendapatan kurang dari suatu proporsi yg tlh ditentukan thd median pendapatan", "D": "Menggambarkan kondisi kurangnya akses thd air bersih dan sanitasi"}, "correct": "B", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 7]", "explanation": "Slide 7 mendefinisikan secara verbatim: 'Kemiskinan absolut: sinonim utk kemiskinan ekstrim (extreme poverty), mengindikasikan tidak adanya sumber daya (uang) untuk menjamin kebutuhan pokok utk hidup.' Opsi C adalah definisi kemiskinan relatif."}, {"id": 4, "stem": "Pilihlah kalimat di bawah yang tidak sesuai:", "options": {"A": "Kemiskinan relatif diukur sbg % penduduk dg pendapatan kurang dari suatu proporsi yg tlh ditentukan thd median pendapatan", "B": "Ukuran ketimpangan pendapatan.", "C": "Penduduk dengan pengeluaran bulanan di bawah GK dikategorikan miskin", "D": "Kebutuhan dasar bukan makanan mencakup sekitar 200 komoditas bukan makanan"}, "correct": "D", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 16]", "explanation": "Slide 16 menyatakan bahwa paket kebutuhan dasar bukan makanan (GKNM) mencakup sekitar 51 komoditas di perkotaan dan 47 komoditas di perdesaan (total sekitar 25-27 kelompok esensial), BUKAN 200 komoditas bukan makanan. Maka pernyataan D adalah yang tidak sesuai."}, {"id": 5, "stem": "Garis kemiskinan makanan adalah...", "options": {"A": "Standar minimum untuk konsumsi makanan", "B": "Standar hidup layak sesuai rekomendasi WNPG", "C": "Garis kecukupan makanan", "D": "Mencakup sekitar lebih dari 50 jenis makanan yg dikonsumsi oleh penduduk miskin"}, "correct": "A", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 15]", "explanation": "Slide 15 menyatakan: 'GK Makanan: standar minimum untuk konsumsi makanan yang secara cukup diperlukan oleh setiap orang untuk hidup yang layak, ditentukan mengikuti rekomendasi WNPG (2.100 kkal).' Pilihan D salah karena komoditas makanan dikonsumsi oleh penduduk referensi (bukan penduduk miskin)."}, {"id": 6, "stem": "Line of Perfect inequality adalah:", "options": {"A": "Distribusi pendapatan yang merata secara sempurna", "B": "N% dari total penduduk akan menikmati N% dari total pendapatan penduduk.", "C": "y = 0% untuk semua x < 100%", "D": "y = 0% untuk semua x = 100%"}, "correct": "C", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 35-36]", "explanation": "Slide 35-36: 'Line of perfect inequality (distribusi pendapatan yang tidak merata secara sempurna): bila satu orang memiliki semua pendapatan dan yang lainnya tidak memiliki sama sekali. Kurva menunjukkan y = 0% untuk semua x < 100%, dan y = 100% di mana x = 100%.'"}, {"id": 7, "stem": "Berikut ini adalah pernyataan tentang indikator ketimpangan distribusi pendapatan di Indonesia, kecuali...", "options": {"A": "Umumnya diukur dengan menggunakan data pengeluaran konsumsi rumahtangga", "B": "Data pendapatan survei rumah tangga sering tidak lengkap (under-reporting)", "C": "Jika 'kelompok terbawah 40%' memperoleh lebih dari 17% dari total pendapatan, maka ketimpangan tinggi", "D": "Jika kelompok terbawah 40% memperoleh kurang dari 12% dari total pendapatan, maka ketimpangan tinggi"}, "correct": "C", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 37]", "explanation": "Kriteria Bank Dunia menyatakan: jika kelompok 40% terbawah memperoleh > 17% dari total pendapatan/pengeluaran, maka tingkat ketimpangan tergolong RENDAH (bukan tinggi). Jika < 12% = ketimpangan tinggi; 12% - 17% = ketimpangan sedang."}, {"id": 8, "stem": "Berdasarkan grafik tren Koefisien Gini Indonesia (1964-2020), pernyataan yang benar adalah...", "options": {"A": "Pada tahun 2003 koefisien Gini di perkotaan tergolong rendah", "B": "Ketimpangan cenderung turun di perkotaan", "C": "Pada tahun 1969 ketimpangan di perdesaan lebih tinggi daripada di perkotaan", "D": "Pilihan a, b, dan c tidak ada yang benar"}, "correct": "D", "category": "Kemiskinan & Ketimpangan", "citation": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 41]", "explanation": "Berdasarkan Slide 41: Pada tahun 2003 Gini perkotaan = 0,35 (tergolong SEDANG, bukan rendah). Tren 4 dekade menunjukkan Gini menurun di perdesaan sementara di perkotaan cenderung stagnan/meningkat. Ketimpangan di perkotaan selalu lebih tinggi daripada perdesaan. Maka opsi A, B, dan C semuanya salah; jawaban yang benar adalah D."}, {"id": 9, "stem": "Pernyataan yang terkait dengan permasalahan gizi kurang adalah...", "options": {"A": "Adanya permasalahan gizi yang menahun", "B": "Ditandai dengan tinggi badan yang tidak sesuai dengan umurnya", "C": "Menggambarkan permasalahan gizi saat penimbangan", "D": "Menggambarkan situasi gizi dari waktu ke waktu"}, "correct": "C", "category": "Kesehatan, Sanitasi & Perumahan", "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 48-52]", "explanation": "Gizi kurang dan gizi buruk didasarkan pada indeks Berat Badan menurut Umur (BB/U). Indeks ini memberikan gambaran keadaan gizi saat pengukuran/penimbangan dilakukan (keadaan kini) akibat perubahan mendadak, berbeda dengan TB/U yang menggambarkan kondisi gizi kronis/menahun."}, {"id": 10, "stem": "Permasalahan gizi yang banyak terjadi di negara berkembang adalah...", "options": {"A": "Stunting", "B": "Wasting", "C": "Gizi Buruk", "D": "Obesitas"}, "correct": "A", "category": "Kesehatan, Sanitasi & Perumahan", "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 59-60]", "explanation": "Stunting (kondisi balita pendek akibat kekurangan gizi kronis menahun) adalah masalah kesehatan dan gizi masyarakat paling menonjol dan menjadi prioritas utama penanganan di negara berkembang dan target SDGs."}, {"id": 11, "stem": "Penduduk usia kerja (15 tahun ke atas) yang bekerja atau punya pekerjaan namun sementara tidak bekerja termasuk:", "options": {"A": "Angkatan kerja", "B": "Tenaga kerja", "C": "Tingkat partisipasi angkatan kerja", "D": "Penduduk bekerja"}, "correct": "D", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 12-13]", "explanation": "Konsep BPS mendefinisikan 'Penduduk Bekerja' adalah semua orang yang bekerja minimal 1 jam seminggu yang lalu ATAU mereka yang punya pekerjaan/usaha namun sementara tidak bekerja (karena cuti, sakit, menunggu musim, dsb.)."}, {"id": 12, "stem": "Penduduk yang bekerja di bawah jam kerja normal (kurang dari 35 jam seminggu), tetapi tidak mencari pekerjaan lagi disebut:", "options": {"A": "Pengangguran", "B": "Setengah pengangguran", "C": "Pekerja paruh waktu", "D": "Pengangguran terbuka"}, "correct": "C", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 18]", "explanation": "Bekerja di bawah 35 jam per minggu dan tidak mencari/tidak bersedia menerima pekerjaan tambahan disebut Pekerja Paruh Waktu (Part-time Worker)."}, {"id": 13, "stem": "Yang termasuk kategori bekerja adalah...", "options": {"A": "Mencari pekerjaan", "B": "Mempersiapkan Usaha", "C": "Sementara tidak Bekerja", "D": "Sudah diterima tapi belum mulai bekerja"}, "correct": "C", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 12-16]", "explanation": "Mencari kerja, mempersiapkan usaha, dan sudah diterima tapi belum bekerja adalah 3 subkategori Pengangguran Terbuka. Sementara tidak bekerja masuk dalam kategori Bekerja."}, {"id": 14, "stem": "Pekerja Sektor Informal adalah ...", "options": {"A": "Pekerja keluarga", "B": "Mengurus rumah tangga", "C": "Pensiunan", "D": "Pekerja paruh waktu"}, "correct": "A", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 22]", "explanation": "Berdasarkan matriks status pekerjaan BPS, pekerja keluarga/tidak dibayar secara otomatis dikategorikan ke dalam pekerja sektor informal."}, {"id": 15, "stem": "Yang bukan termasuk Setengah Pengangguran adalah...", "options": {"A": "Mereka yang bekerja di bawah jam kerja normal", "B": "Pekerja Paruh waktu", "C": "Bekerja di bawah jam kerja normal tapi tidak mencari pekerjaan lagi", "D": "Mereka yang mempersiapkan pekerjaan baru"}, "correct": "B", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 18]", "explanation": "Pekerja paruh waktu adalah mereka yang bekerja < 35 jam tetapi tidak mencari pekerjaan tambahan, sehingga terpisah dari konsep Setengah Pengangguran (yang mencari/bersedia menambah jam kerja)."}, {"id": 16, "stem": "Berikut ini beberapa hal mengenai konsep melek huruf yang digunakan oleh BPS, kecuali...", "options": {"A": "Orang buta yang dapat membaca dan menulis huruf braille digolongkan dapat membaca dan menulis", "B": "Orang cacat yang sebelumnya dapat membaca dan menulis, kemudian karena cacatnya tidak dapat lagi, digolongkan tidak dapat membaca dan menulis", "C": "Orang yang hanya dapat membaca saja tetapi tidak dapat menulis atau sebaliknya, dianggap dapat membaca dan menulis", "D": "Orang buta yang dapat membaca dan menulis huruf braille digolongkan tidak dapat membaca dan menulis"}, "correct": "D", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 36]", "explanation": "Sesuai pedoman Susenas/Sakernas BPS, orang tuna netra yang mampu membaca dan menulis huruf braille digolongkan sebagai 'DAPAT membaca dan menulis'. Pernyataan D salah."}, {"id": 17, "stem": "Proporsi dari semua anak yang masih sekolah pada suatu kelompok umur tertentu terhadap jumlah anak kelompok umur tersebut:", "options": {"A": "Angka partisipasi kasar", "B": "Angka partisipasi sekolah", "C": "Angka partisipasi murni", "D": "Angka melek huruf"}, "correct": "B", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 35]", "explanation": "Angka Partisipasi Sekolah (APS) mengukur persentase anak yang masih bersekolah pada kelompok usia tertentu (misal usia 7-12 tahun) tanpa memandang jenjang sekolah yang ditempuh."}, {"id": 18, "stem": "Pilihlah kalimat yang menurut Anda paling tepat:", "options": {"A": "Angkatan Kerja adalah penduduk usia 15 tahun ke atas yang aktif secara ekonomi seperti bekerja dan mencari pekerjaan", "B": "Pekerja setengah pengangguran adalah mereka yang bekerja di bawah jam kerja normal, yaitu kurang dari 40 jam seminggu", "C": "Angka Partisipasi Sekolah (APS) hanya memperhitungkan anak yang masih sekolah formal", "D": "Anak-anak berumur 10 tahun yang membantu bekerja disebut angkatan kerja"}, "correct": "A", "category": "Ketenagakerjaan & Pendidikan", "citation": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 10-18]", "explanation": "Pernyataan A benar. B salah karena jam normal adalah 35 jam. C salah karena APS mencakup nonformal. D salah karena batasan usia kerja adalah 15 tahun ke atas."}, {"id": 19, "stem": "Indikator yang menunjukkan kualitas rumah kurang baik adalah....", "options": {"A": "Bahan bangunan lantai terluas adalah kayu", "B": "Dinding terbuat dari papan", "C": "Atap Rumbia", "D": "Lampu penerangan listrik"}, "correct": "C", "category": "Kesehatan, Sanitasi & Perumahan", "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 31]", "explanation": "Atap rumbia/ijuk/jerami dikategorikan sebagai jenis atap tidak layak (kualitas rumah kurang baik / tidak tahan cuaca)."}, {"id": 20, "stem": "Kriteria rumah kumuh ditentukan oleh dimensi berikut ini, kecuali....", "options": {"A": "Akses terhadap air minum layak", "B": "Akses terhadap sanitasi layak", "C": "Luas hunian per kapita <= 7,2 m2", "D": "Status kepemilikan rumah"}, "correct": "D", "category": "Kesehatan, Sanitasi & Perumahan", "citation": "[Pertemuan_10_Indikator_Kesehatan.md, slide 31-32]", "explanation": "Status kepemilikan (milik sendiri, kontrak, sewa) bukan kriteria fisik rumah kumuh. Dimensi kumuh ditentukan oleh kualitas bangunan, luas per kapita (<= 7,2 m2), akses sanitasi, dan akses air minum layak."}, {"id": 21, "stem": "Indikator ekonomi pada dasarnya merupakan suatu statistik tentang suatu aktivitas ekonomi. Yang BUKAN indikator ekonomi makro adalah:", "options": {"A": "Produk Domestik Bruto", "B": "Neraca Pembayaran", "C": "Neraca Perusahaan Keluarga", "D": "Indeks Harga"}, "correct": "C", "category": "Produksi, Pertanian, Industri & Energi", "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 4]", "explanation": "Neraca perusahaan keluarga adalah pencatatan keuangan mikro internal privat, bukan indikator statistik ekonomi resmi makro."}, {"id": 22, "stem": "Suatu sistem yang digunakan untuk mencatat secara sistematis tentang transaksi ekonomi antara penduduk suatu negara dengan negara lain dalam periode tertentu:", "options": {"A": "Neraca Ekspor-Impor", "B": "Neraca Pembayaran Internasional", "C": "Neraca Transfer", "D": "Semua benar"}, "correct": "B", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 4-7]", "explanation": "Neraca Pembayaran Internasional (Balance of Payments / BoP) adalah sistem pencatatan sistematis transaksi ekonomi antara residen suatu perekonomian dengan non-residen."}, {"id": 23, "stem": "Andaikan beberapa komponen transaksi berjalan suatu negara diketahui: impor barang = 15 juta USD, ekspor barang = 35 juta USD, impor jasa = 5 juta USD, ekspor jasa = 3 juta USD, dan transfer neto = 5 juta USD. Keseimbangan perdagangan (trade balance) negara tersebut adalah:", "options": {"A": "23", "B": "20", "C": "-20", "D": "-2"}, "correct": "B", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 7]", "explanation": "Keseimbangan Perdagangan Barang (Trade Balance) = Ekspor Barang - Impor Barang = 35 - 15 = 20 juta USD. (Jika ditanyakan Current Account = (35-15) + (3-5) + 5 = 23 juta USD)."}, {"id": 24, "stem": "Nilai ekspor Indonesia untuk komoditas karet bulan April 2023 mencapai 350 juta USD, impornya sebesar 164 juta USD. Nilai ISP (Indeks Spesialisasi Perdagangan) komoditas karet adalah:", "options": {"A": "0,36", "B": "2,76", "C": "-0,36", "D": "-2,76"}, "correct": "A", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 11]", "explanation": "ISP = (X - M) / (X + M) = (350 - 164) / (350 + 164) = 186 / 514 = +0,3618 ≈ 0,36."}, {"id": 25, "stem": "Jika nilai ISP suatu komoditas adalah sebesar -0,36 maka dari sisi perkembangan produk berada pada:", "options": {"A": "Tahap pengenalan", "B": "Tahap subsstitusi impor", "C": "Tahap perluasan ekspor", "D": "Tahap pematangan"}, "correct": "B", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 10]", "explanation": "Tahap Substitusi Impor memiliki rentang ISP antara -0,50 sampai 0,00. Nilai -0,36 masuk dalam rentang ini."}, {"id": 26, "stem": "Jika diketahui indeks harga ekspor pada suatu tahun adalah sebesar 105 sementara indeks harga impornya adalah sebesar 100 maka ToT (term of trade) pada tahun tersebut adalah:", "options": {"A": "100", "B": "5", "C": "105", "D": "Semua salah"}, "correct": "C", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 14]", "explanation": "ToT = (Px / Pm) * 100 = (105 / 100) * 100 = 105."}, {"id": 27, "stem": "Dalam penghitungan IHK (indeks harga konsumen), perbandingan harga suatu komoditas dengan harga periode sebelumnya disebut:", "options": {"A": "Rata-rata harga", "B": "Relatif harga", "C": "Indeks harga", "D": "Inflasi"}, "correct": "B", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36]", "explanation": "Rasio harga periode t terhadap periode t-1 (Pt / Pt-1) disebut Relatif Harga (Price Relative)."}, {"id": 28, "stem": "Jika diketahui nilai konsumsi suatu komoditas bulan Maret sebesar C(Maret) dan relatif harga bulan April sebesar RH(April), maka nilai komoditas bulan April adalah:", "options": {"A": "C(April) = RH(April) x C(Maret)", "B": "C(April) = RH(April) x C(Maret) / 100", "C": "C(April) = RH(April) x C(April)", "D": "C(April) = RH(April) x C(April) / 100"}, "correct": "A", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36]", "explanation": "Rumus modifikasi Laspeyres BPS memperbarui nilai konsumsi dengan: C(t) = RH(t) * C(t-1), di mana RH adalah rasio Pt / Pt-1."}, {"id": 29, "stem": "Price leader yang mempengaruhi harga pada level lainnya adalah harga pada level:", "options": {"A": "Konsumen", "B": "Pedagang eceran", "C": "Pedagang besar", "D": "Produsen"}, "correct": "D", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 4]", "explanation": "Harga produsen merupakan penentu awal (price leader) yang mentransmisikan perubahan biaya produksi ke pedagang besar, eceran, hingga konsumen."}, {"id": 30, "stem": "Ukuran yang digunakan sebagai proxy terhadap tingkat kesulitan geografis suatu daerah adalah:", "options": {"A": "Indeks Harga Perdagangan Besar", "B": "Indeks Harga Konsumen", "C": "Indeks Kemahalan Konstruksi", "D": "Nilai Tukar Petani"}, "correct": "C", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 39]", "explanation": "Indeks Kemahalan Konstruksi (IKK) digunakan oleh Kementerian Keuangan dan BPS sebagai proxy resmi tingkat kesulitan geografis dalam penghitungan DAU."}, {"id": 31, "stem": "Perbedaan yang paling mendasar antara SBH 2012 dan SBH 2018 serta antara IHK 2012 dan IHK 2018 adalah:", "options": {"A": "Pada SBH 2012 menggunakan Rata-Rata Geometrik sementara dalam SBH 2018 menggunakan Rata-Rata Aritmatik", "B": "Pada SBH 2012 menggunakan Rata-Rata Aritmetik sementara dalam SBH 2018 menggunakan Rata-Rata Geometrik", "C": "Jumlah Kelompok Pengeluaran IHK Tahun Dasar 2012 sebanyak 8 Kelompok, sementara IHK Tahun dasar 2018 sebanyak 11 Kelompok.", "D": "Dalam penghitungan inflasi, SBH 2012 tidak dipakai untuk menentukan pola konsumsi masyarakat, tetapi menggunakan data hasil Susenas, sedangkan SBH 2018 dipakai untuk menentukan pola konsumsi masyarakat."}, "correct": "C", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 34]", "explanation": "IHK Tahun Dasar 2018 menggunakan COICOP 2018 dengan 11 kelompok pengeluaran, sedangkan IHK Tahun Dasar 2012 menggunakan 7 kelompok pengeluaran."}, {"id": 32, "stem": "Manfaat inflasi antara lain:", "options": {"A": "Pada tataran korporat inflasi dapat dipakai untuk menentukan level ongkos produksi barang", "B": "Pada tingkatan makro inflasi dipakai sebagai satu-satunya faktor untuk menentukan besaran suku bunga", "C": "Pada tingkatan mikro, sebagai dasar penyesuaian pengeluaran kebutuhan sehari-hari dengan pendapatan", "D": "Pernyataan a, b, dan c tidak ada yang benar."}, "correct": "C", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 35]", "explanation": "Pada level mikro, angka inflasi dipakai oleh rumah tangga dan individu sebagai tolok ukur penyesuaian daya beli dan pengeluaran kebutuhan hidup terhadap pendapatan."}, {"id": 33, "stem": "Kalimat di bawah ini yang paling tepat dalam kaitannya dengan inflasi adalah:", "options": {"A": "BPS merilis inflasi secara periodik dalam bentuk triwulanan", "B": "BPS melakukan penghitungan inflasi di setiap Kabupaten/Kota di Pulau Jawa dan Sumatera", "C": "Dalam hal kabupaten/kota tidak dihitung inflasinya oleh BPS, Bank Indonesia akan melakukan penghitungan", "D": "Inflasi yang dirilis BPS melalui Berita Resmi Statistik (BRS) adalah Inflasi bulanan, Inflasi tahun kalender, dan Inflasi tahunan"}, "correct": "D", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 35]", "explanation": "BRS inflasi BPS dirilis bulanan dan menyajikan 3 angka laju inflasi: m-o-m, y-t-d, dan y-o-y."}, {"id": 34, "stem": "Pilihlah kalimat di bawah yang menurut Saudara adalah yang paling benar:", "options": {"A": "Indeks Kemahalan Kontruksi (IKK) merupakan salah satu komponen yang digunakan untuk menghitung kapasitas fiskal sebagai salah satu rincian celah fiskal pada penghitungan DAK", "B": "IKK digunakan sebagai proxy untuk mengukur tingkat kesulitan geografis suatu daerah.", "C": "Karena sulitnya mendapatkan data, dalam penghitungan IKK tidak menggunakan bobot/penimbang lazimnya dalam penghitungan indeks-indeks harga yang lain.", "D": "Seperti halnya Indeks Harga Perdagangan Besar (IHPB), IKK juga dirilis oleh BPS setiap bulan."}, "correct": "B", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 39]", "explanation": "IKK dirilis secara tahunan (bukan bulanan), menggunakan diagram timbang, dan tujuan utamanya adalah sebagai proxy tingkat kesulitan geografis suatu daerah."}, {"id": 35, "stem": "Cakupan Komoditas dalam penghitungan Nilai Tukar Petani (NTP) antara lain adalah :", "options": {"A": "Subsektor Tanaman Bahan Makanan, Subsektor Kehutanan", "B": "Sesektotor Peternakan, Subsektor Jasa Pertanian", "C": "Subsektor Tanaman Bahan Makanan, Subsektor Hortikultura", "D": "Subsektor Perikanan, Subsektor Tanaman Semusim"}, "correct": "C", "category": "Perdagangan Domestik & Harga", "citation": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 9]", "explanation": "5 subsektor NTP adalah Tanaman Pangan (Bahan Makanan), Hortikultura, Perkebunan Rakyat, Peternakan, dan Perikanan."}, {"id": 36, "stem": "Apa keuntungan atau kerugiannya menggunakan Kerangka Sampel Area (KSA) dalam penghitungan luas panen:", "options": {"A": "Salah satu keuntungannya dapat meningkatkan akurasi penghitungan luas panen", "B": "Keuntungan yang lain adalah meningkatkan ketepatan penghitungan produktivitas lahan", "C": "Kerugian penggunaan KSA adalah data yang didapat dari hasil pemotretan akan lambat karena tergantung dari infrastruktur teknologi informasi", "D": "Kerugian lain adalah penggunaan KSA menyulitkan petugas pengumpul data di daerah"}, "correct": "A", "category": "Produksi, Pertanian, Industri & Energi", "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 8]", "explanation": "KSA berbasis teknologi citra satelit dan foto bergeotag menggantikan sistem pelaporan subjektif terdahulu, sehingga meningkatkan akurasi estimasi luas panen secara objektif."}, {"id": 37, "stem": "Beberapa indikator Statistik Industri yang dihasilkan BPS antara lain:", "options": {"A": "Pola Distribusi Barang, Pola Konsumsi Barang dan Jasa", "B": "Efisiensi, Rasio Konsentrasi, Indeks Produksi", "C": "Penggunaan Produk Dalam Negeri, Struktur modal", "D": "Persaingan usaha, Pola investasi"}, "correct": "B", "category": "Produksi, Pertanian, Industri & Energi", "citation": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 14, 26]", "explanation": "Indikator utama Statistik Industri BPS mencakup: Efisiensi (Input/Output), Rasio Konsentrasi (CR4), dan Indeks Produksi Industri (IPI)."}, {"id": 38, "stem": "Tujuan penyusunan Indeks Pembangunan Teknologi Informasi dan Komunikasi (IP-TIK) antara lain adalah:", "options": {"A": "Untuk mengetahui tingkat kecanggihan teknologi yang dipunyai dan digunakan dalam suatu wilayah", "B": "Mengukur tingkat pembangunan TIK di suatu negara/wilayah yang dapat diperbandingkan antarwaktu dan antarwilayah", "C": "Mengetahui tingkat \"technology literacy\" suatu wilayah atau negara", "D": "Pilihan a, b, dan c tidak ada yang benar"}, "correct": "B", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 31]", "explanation": "IP-TIK disusun untuk mengukur perkembangan pembangunan TIK secara terstandar sehingga dapat diperbandingkan antarwilayah dan antarwaktu mengikuti metodologi ITU."}, {"id": 39, "stem": "Yang dimaksud dengan Wisatawan Mancanegara (Wisman) antara lain adalah orang yang", "options": {"A": "Bekerja dengan penduduk setempat", "B": "Tinggal di tempat tujuan selama lebih dari dua belas bulan", "C": "Menghadiri Seminar, konferensi, atau kongres selama sepekan", "D": "Transit di bandara selama tiga jam dan melihat pameran di salah satu ruangan di bandara"}, "correct": "C", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 33]", "explanation": "Wisman adalah pengunjung yang berkunjung ke luar tempat tinggalnya selama < 12 bulan dan tidak mencari nafkah di tempat tujuan. Menghadiri seminar/konferensi selama sepekan adalah wisman yang sah."}, {"id": 40, "stem": "Sebutkan indikator di bawah ini yang BUKAN merupakan indikator dari Statistik Perhotelan:", "options": {"A": "Tingkat Penghunian Kamar (TPK) Hotel", "B": "Rata-rata Lama Menginap Tamu", "C": "Tingkat Pemakaian Tempat Tidur (TPTT)", "D": "Rata-rata Harga Sewa Per Kamar"}, "correct": "D", "category": "Ekspor-Impor, Pariwisata & TIK", "citation": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 36-37]", "explanation": "Indikator resmi Statistik Perhotelan BPS mencakup TPK, RLMT, dan TPTT. Rata-rata harga sewa per kamar adalah indikator internal komersial industri, bukan indikator resmi publikasi BPS."}], "questions_essay": [{"id": "E1", "title": "Soal Essay 1: Indikator Sosial (Ketenagakerjaan ICLS-13)", "score": 30, "problem": "Hasil pendataan penduduk Negara A tahun 2020 mencatat 18 juta penduduk (14 juta berusia 15+ tahun, 4 juta berusia < 15 tahun). Dari 14 juta usia 15+, 9 juta adalah angkatan kerja (6 juta bekerja > 35 jam/minggu, 1 juta bekerja < 35 jam/minggu, 1 juta terkena PHK & mencari kerja, 500 ribu sedang menyiapkan usaha, 500 ribu menunggu panggilan kerja). Dari bukan angkatan kerja (5 juta): 2 juta sekolah, 2 juta mengurus rumah tangga, 1 juta manula/lainnya.\\n\\nTugas:\\na) Buatlah bagan framework ketenagakerjaan ICLS-13!\\nb) Jelaskan penghitungan pekerja sektor formal vs informal menurut official statistics BPS!\\nc) Hitunglah PUK, Angkatan Kerja, Bukan Angkatan Kerja, TPAK, TPT, dan Setengah Penganggur!", "rubric": [{"label": "Bagan Framework ICLS-13", "points": 10, "desc": "Bagan hierarki PUK (15+) -> Angkatan Kerja & Bukan Angkatan Kerja -> Bekerja & Pengangguran."}, {"label": "Konsep Sektor Formal vs Informal BPS", "points": 8, "desc": "Penjelasan matriks status pekerjaan BPS (6 status) dan kriteria formal/informal."}, {"label": "Perhitungan Numerik TPAK, TPT, Setengah Penganggur", "points": 12, "desc": "PUK=14 jt, AK=9 jt, BAK=5 jt, TPAK=64,29%, TPT=22,22%, Setengah Penganggur=1 jt."}], "solution": "#### 1. Bagan Framework Ketenagakerjaan (ICLS-13)\n```\nTotal Penduduk (18 Juta)\n├── Usia < 15 Tahun (4 Juta)\n└── Penduduk Usia Kerja (PUK >= 15 Tahun) (14 Juta)\n    ├── Angkatan Kerja (9 Juta)\n    │   ├── Bekerja (7 Juta)\n    │   │   ├── Bekerja Penuh (>= 35 jam/minggu) = 6 Juta\n    │   │   └── Jam Kerja Pendek / Setengah Penganggur (< 35 jam/minggu) = 1 Juta\n    │   └── Pengangguran Terbuka (2 Juta)\n    │       ├── Kena PHK & Sedang Mencari Kerja = 1 Juta\n    │       ├── Mempersiapkan Usaha Baru = 0,5 Juta\n    │       └── Diterima Lulus Tes Menunggu Panggilan Kerja = 0,5 Juta\n    └── Bukan Angkatan Kerja (5 Juta)\n        ├── Sekolah = 2 Juta\n        ├── Mengurus Rumah Tangga = 2 Juta\n        └── Lainnya (Manula / Tidak Mampu Bekerja) = 1 Juta\n```\n\n#### 2. Konsep Sektor Formal vs Informal Menurut BPS\nBPS membagi status pekerjaan utama menjadi:\n- **Sektor Formal**:\n  1. Berusaha dibantu buruh tetap / dibayar.\n  2. Buruh / Karyawan / Pegawai.\n- **Sektor Informal**:\n  1. Berusaha sendiri.\n  2. Berusaha dibantu buruh tidak tetap / pekerja keluarga.\n  3. Pekerja bebas di pertanian.\n  4. Pekerja bebas di non-pertanian.\n  5. Pekerja keluarga / tidak dibayar.\n\n#### 3. Perhitungan Numerik Terverifikasi\n- **Penduduk Usia Kerja (PUK)**: $14\\text{ Juta Orang}$\n- **Jumlah Angkatan Kerja (AK)**: $9\\text{ Juta Orang}$\n- **Jumlah Bukan Angkatan Kerja (BAK)**: $14 - 9 = 5\\text{ Juta Orang}$\n- **Tingkat Partisipasi Angkatan Kerja (TPAK)**:\n  $$\\text{TPAK} = \\left( \\frac{\\text{Angkatan Kerja}}{\\text{PUK}} \\right) \\times 100\\% = \\left( \\frac{9}{14} \\right) \\times 100\\% = \\mathbf{64{,}29\\%}$$\n- **Jumlah Pengangguran Terbuka**: $1 + 0{,}5 + 0{,}5 = 2\\text{ Juta Orang}$\n- **Tingkat Pengangguran Terbuka (TPT)**:\n  $$\\text{TPT} = \\left( \\frac{\\text{Pengangguran Terbuka}}{\\text{Angkatan Kerja}} \\right) \\times 100\\% = \\left( \\frac{2}{9} \\right) \\times 100\\% = \\mathbf{22{,}22\\%}$$\n- **Jumlah Setengah Pengangguran**: $1\\text{ Juta Orang}$ (mereka yang bekerja < 35 jam seminggu dan bersedia menambah pekerjaan)."}, {"id": "E2", "title": "Soal Essay 2: Indikator Ekonomi (Ubinan, IPI, Inflasi & NTP/NTUP, Pariwisata)", "score": 30, "problem": "a) Sektor Produksi:\\n1) Survei ubinan padi menggunakan plot 2,5m x 2,5m. Jika petak Pak Sakri menghasilkan 4,5 kg gabah, hitunglah produktivitas padi dalam kg/ha!\\n2) Jelaskan konsep, kegunaan, dan interpretasi Indeks Produksi Manufaktur!\\n\\nb) Indikator Harga:\\n1) Jelaskan proses penghitungan dan interpretasi Inflasi bulanan, tahun kalender, dan tahunan!\\n2) Jelaskan pentingnya Margin Perdagangan dan Pengangkutan (MPP) serta contoh perhitungannya!\\n3) Lengkapilah tabel NTP dan NTUP untuk bulan April & Mei 2023!\\n\\nc) Sebutkan 3 jenis wisatawan dan minimal 3 sumber data pariwisata di Indonesia!", "rubric": [{"label": "Hitungan Ubinan Padi", "points": 6, "desc": "Produktivitas = 4,5 kg * 1.600 = 7.200 kg/ha = 72 ku/ha."}, {"label": "Konsep Indeks Produksi Manufaktur", "points": 6, "desc": "Indeks kuantum volume keluaran industri terhadap tahun dasar."}, {"label": "Penghitungan Tabel NTP, NTUP & Inflasi Pedesaan", "points": 10, "desc": "NTP Apr=110,58; NTUP Apr=110,92; It Mei=128,61; NTP Mei=110,19; Inflasi=0,40%."}, {"label": "Sektor Pariwisata: Jenis Wisatawan & Sumber Data", "points": 8, "desc": "Wisman, Wisnas, Wisnus; VIOT, PES, E/D Card, Survei Hotel."}], "solution": "#### a1. Perhitungan Ubinan Padi Pak Sakri\n1. Luas plot ubinan $= 2{,}5\\text{ m} \\times 2{,}5\\text{ m} = 6{,}25\\text{ m}^2$.\n2. Luas 1 hektar $= 10.000\\text{ m}^2$.\n3. Faktor pengali konversi ke hektar $= \\frac{10.000}{6{,}25} = 1.600$.\n4. Produktivitas per hektar:\n   $$\\text{Produktivitas} = 4{,}5\\text{ kg} \\times 1.600 = \\mathbf{7.200\\text{ kg/ha}} = \\mathbf{72\\text{ ku/ha}}$$\n\n#### a2. Indeks Produksi Industri Manufaktur\n- **Konsep**: Indeks kuantum yang mengukur perubahan volume fisik keluaran industri pengolahan dari waktu ke waktu relatif terhadap tahun dasar.\n- **Kegunaan**: Mengukur denyut pertumbuhan riil sektor manufaktur tanpa terdistorsi perubahan harga; indikator dini pertumbuhan PDB industri.\n- **Interpretasi**: IPI bernilai 115 berarti volume produksi manufaktur naik 15% dibanding tahun dasar.\n\n#### b. Tabel Lengkap NTP & NTUP (April & Mei 2023)\n| Uraian Indikator | April 2023 | Mei 2023 | Rumus & Proses Perhitungan |\n|:---|:---:|:---:|:---|\n| **NTP** | **110,58** | **110,19** | $(I_t / I_b) \\times 100$ |\n| **NTUP** | **110,92** | 110,75 | $(I_t / \\text{BPPBM}) \\times 100$ |\n| **Indeks yang Diterima Petani ($I_t$)** | 128,64 | **128,61** | $\\text{Mei: } 110{,}75 \\times 116{,}13 / 100 = 128{,}61$ |\n| **Indeks yang Dibayar Petani ($I_b$)** | 116,33 | 116,71 | IKRT + BPPBM |\n| **Indeks Konsumsi Rumah Tangga (IKRT)** | 116,71 | 117,18 | Mengukur biaya hidup rumah tangga tani |\n| **Indeks BPPBM** | 115,98 | 116,13 | Biaya produksi & penambahan barang modal |\n| **Inflasi Perdesaan (IKRT)** | 0,14% | **0,40%** | $\\frac{117{,}18 - 116{,}71}{116{,}71} \\times 100\\% = 0{,}40\\%$ |\n\n#### c. Sektor Pariwisata\n1. **3 Jenis Wisatawan**:\n   - **Wisatawan Mancanegara (Wisman)** / *Inbound Tourist*: WNA/WNI yang berdomisili di luar negeri dan berkunjung ke Indonesia $< 12$ bulan bukan untuk bekerja.\n   - **Wisatawan Nasional (Wisnas)** / *Outbound Tourist*: Penduduk Indonesia yang bepergian ke luar negeri $< 12$ bulan bukan untuk bekerja.\n   - **Wisatawan Nusantara (Wisnus)** / *Domestic Tourist*: Penduduk Indonesia yang bepergian di dalam batas wilayah Indonesia di luar domisili hariannya.\n2. **3 Sumber Data Pariwisata**:\n   - Survei Inbound-Outbound Tourist (VIOT) oleh BPS.\n   - Passenger Exit Survey (PES) oleh Kemenparekraf & BPS.\n   - Kartu Embarkasi/Disembarkasi (E/D Card) dari Direktorat Jenderal Imigrasi."}]};
+const PG = DATA.questions_pg;
+const ESSAY = DATA.questions_essay;
+
+let state = {
+  tab: 'pg',
+  currentIdx: 0,
+  userAnswers: {},
+  answered: {}
+};
+
+function init() {
+  try {
+    const saved = localStorage.getItem('osl_uas_2022_answers');
+    if (saved) {
+      const p = JSON.parse(saved);
+      state.userAnswers = p.userAnswers || {};
+      state.answered = p.answered || {};
+    }
+  } catch(e) {}
+  render();
+}
+
+function save() {
+  try {
+    localStorage.setItem('osl_uas_2022_answers', JSON.stringify({
+      userAnswers: state.userAnswers,
+      answered: state.answered
+    }));
+  } catch(e) {}
+}
+
+function switchTab(t) {
+  state.tab = t;
+  document.getElementById('tabPG').classList.toggle('active', t === 'pg');
+  document.getElementById('tabEssay').classList.toggle('active', t === 'essay');
+  document.getElementById('tabAllPG').classList.toggle('active', t === 'all_pg');
+
+  document.getElementById('viewPG').style.display = t === 'pg' ? 'block' : 'none';
+  document.getElementById('viewEssay').style.display = t === 'essay' ? 'block' : 'none';
+  document.getElementById('viewAllPG').style.display = t === 'all_pg' ? 'block' : 'none';
+
+  render();
+}
+
+function updateStats() {
+  let ans = 0, cor = 0, wrg = 0;
+  PG.forEach(q => {
+    if (state.answered[q.id]) {
+      ans++;
+      if (state.userAnswers[q.id] === q.correct) cor++;
+      else wrg++;
+    }
+  });
+  document.getElementById('statAns').textContent = `${ans} / ${PG.length}`;
+  document.getElementById('statCor').textContent = cor;
+  document.getElementById('statWrg').textContent = wrg;
+  const pct = ans > 0 ? Math.round(cor / ans * 100) : 0;
+  document.getElementById('statAcc').textContent = `${pct}%`;
+}
+
+function render() {
+  updateStats();
+  if (state.tab === 'pg') renderPGView();
+  else if (state.tab === 'essay') renderEssayView();
+  else if (state.tab === 'all_pg') renderAllPGView();
+
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    try { window.MathJax.typesetPromise().catch(e => {}); } catch(e) {}
+  }
+}
+
+function renderPGView() {
+  const q = PG[state.currentIdx];
+  const isAns = state.answered[q.id];
+  const userPick = state.userAnswers[q.id];
+
+  // Grid
+  const gridHtml = PG.map((item, idx) => {
+    let cls = 'q-num-btn';
+    if (idx === state.currentIdx) cls += ' active';
+    if (state.answered[item.id]) {
+      cls += (state.userAnswers[item.id] === item.correct) ? ' correct' : ' wrong';
+    }
+    return `<button class="${cls}" onclick="gotoPG(${idx})">${item.id}</button>`;
+  }).join('');
+  document.getElementById('navGrid').innerHTML = gridHtml;
+  document.getElementById('gridProg').textContent = `Soal ${state.currentIdx + 1} dari ${PG.length}`;
+
+  // Options
+  let optsHtml = '';
+  ['A', 'B', 'C', 'D'].forEach(opt => {
+    let cls = 'opt-item';
+    if (isAns) {
+      cls += ' disabled';
+      if (opt === q.correct) cls += ' is-correct';
+      else if (opt === userPick) cls += ' is-wrong';
+    }
+    optsHtml += `
+      <div class="${cls}" onclick="pickPG(${q.id}, '${opt}')">
+        <span class="opt-char">${opt}.</span>
+        <span>${q.options[opt]}</span>
+      </div>
+    `;
+  });
+
+  let explHtml = '';
+  if (isAns) {
+    const isCor = userPick === q.correct;
+    explHtml = `
+      <div class="expl-box ${isCor ? 'show-ok' : 'show-bad'}">
+        <div class="expl-title">${isCor ? '✓ Jawaban Benar!' : '✗ Jawaban Salah'} (Kunci: <strong>${q.correct}</strong>)</div>
+        <div class="expl-content">${q.explanation}</div>
+        <div class="citation-tag">${q.citation}</div>
+      </div>
+    `;
+  }
+
+  document.getElementById('pgCardArea').innerHTML = `
+    <div class="q-card">
+      <div class="card-top">
+        <div class="badges">
+          <span class="badge primary">Soal #${q.id}</span>
+          <span class="badge">${q.category}</span>
+        </div>
+      </div>
+      <div class="q-stem">${q.stem}</div>
+      <div class="options-list">${optsHtml}</div>
+      ${explHtml}
+      <div class="action-bar">
+        <button class="btn btn-secondary" onclick="prevPG()" ${state.currentIdx === 0 ? 'disabled' : ''}>← Sebelumnya</button>
+        <button class="btn btn-primary" onclick="nextPG()" ${state.currentIdx === PG.length - 1 ? 'disabled' : ''}>Berikutnya →</button>
+      </div>
+    </div>
+  `;
+}
+
+function pickPG(id, opt) {
+  if (state.answered[id]) return;
+  state.userAnswers[id] = opt;
+  state.answered[id] = true;
+  save();
+  render();
+}
+
+function gotoPG(i) { state.currentIdx = i; render(); }
+function nextPG() { if (state.currentIdx < PG.length - 1) { state.currentIdx++; render(); } }
+function prevPG() { if (state.currentIdx > 0) { state.currentIdx--; render(); } }
+
+function resetPG() {
+  if (confirm('Ulangi latihan pilihan ganda?')) {
+    state.userAnswers = {};
+    state.answered = {};
+    save();
+    render();
+  }
+}
+
+function renderEssayView() {
+  const html = ESSAY.map(e => `
+    <div class="essay-card">
+      <div class="card-top">
+        <span class="badge primary" style="font-size:13px;">${e.title}</span>
+        <span class="badge" style="font-weight:700;">Bobot: ${e.score} Poin</span>
+      </div>
+      <div class="essay-problem">${e.problem}</div>
+      
+      <table class="rubric-table">
+        <tr><th>Kriteria Penilaian / Rubrik</th><th>Skor Maks</th><th>Deskripsi Kunci</th></tr>
+        ${e.rubric.map(r => `<tr><td><strong>${r.label}</strong></td><td>${r.points} Poin</td><td>${r.desc}</td></tr>`).join('')}
+      </table>
+
+      <details open>
+        <summary style="font-weight:700; cursor:pointer; color:var(--primary); margin-bottom:8px;">
+          📖 Klik untuk Membuka Solusi Lengkap & Penurunan Rumus
+        </summary>
+        <div class="sol-box">
+          <div style="font-size:14px; line-height:1.8; color:#1e293b;">
+            ${e.solution.replace(/\n/g, '<br>')}
+          </div>
+        </div>
+      </details>
+    </div>
+  `).join('');
+  document.getElementById('essayArea').innerHTML = html;
+}
+
+function renderAllPGView() {
+  const html = PG.map(q => `
+    <div class="q-card">
+      <div class="card-top">
+        <span class="badge primary">Soal #${q.id} &middot; ${q.category}</span>
+        <span class="badge" style="font-weight:700; color:var(--primary);">Kunci: ${q.correct}</span>
+      </div>
+      <div class="q-stem">${q.stem}</div>
+      <div class="options-list">
+        ${['A','B','C','D'].map(opt => `
+          <div class="opt-item disabled ${opt === q.correct ? 'is-correct' : ''}">
+            <span class="opt-char">${opt}.</span>
+            <span>${q.options[opt]}</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="expl-box show-ok" style="margin-top:8px;">
+        <div class="expl-title">Pembahasan Resmi:</div>
+        <div class="expl-content">${q.explanation}</div>
+        <div class="citation-tag">${q.citation}</div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('allPGArea').innerHTML = html;
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

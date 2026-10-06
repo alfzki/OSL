@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>13.2 Statistik Pariwisata dan Perhotelan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>13.2 Statistik Pariwisata dan Perhotelan</h2><a href="#p-13.2.3">13.2.3 Rata-rata Lama Menginap Tamu RLMT</a></nav>
+<main>
+<h1>13.2 Statistik Pariwisata dan Perhotelan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-13.2.3">
+<h2>13.2.3 Rata-rata Lama Menginap Tamu RLMT</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-43]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi operasional dan formula RLMT BPS, perbedaan rata-rata tertimbang vs rata-rata sederhana pada RLMT gabungan, serta karakteristik durasi wisman vs wisnus.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Rata-rata Lama Menginap Tamu dihitung dari banyaknya malam tamu dibagi tamu yang datang dan menginap. Indikator ini mencerminkan loyalitas dan pola konsumsi wisatawan di destinasi wisata. Disagregasi menurut tamu asing dan tamu nasional disajikan rutin dalam Berita Resmi Statistik (BRS) Perkembangan Pariwisata BPS [slide 41-42].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah bus pariwisata menurunkan 40 orang wisatawan dan mereka tinggal di hotel selama 3 malam, maka mereka menyumbang $40 \times 3 = 120$ malam tamu. Jika ada tamu lain sebanyak 10 orang yang hanya tinggal 1 malam (10 malam tamu), total tamu datang adalah 50 orang dan total malam tamu adalah 130 malam tamu. Rata-rata lama menginap mereka adalah $130 / 50 = 2,6$ malam. RLMT memberitahu manajer hotel dan dinas pariwisata berapa lama uang belanja turis bertahan di daerah tersebut.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Signifikansi RLMT</p>
+<p>Rata-rata Lama Menginap Tamu (RLMT / Average Length of Stay - ALOS) mengukur durasi retensi wisatawan di suatu wilayah [slide 41]:<br>- Semakin tinggi RLMT, semakin besar multiplier effect pengeluaran wisatawan terhadap perekonomian lokal (transportasi, kuliner, suvenir, atraksi).<br>- Menjadi parameter penting dalam memproyeksikan devisa pariwisata pada *Passenger Exit Survey* (PES) dan Neraca Satelit Pariwisata Nasional (NESPARNAS).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>Berdasarkan kuesioner bulanan VHTS BPS [slide 41]:</p>
+<p>1. <strong>RLMT Total / Gabungan</strong>:<br>   $$\text{RLMT} = \frac{\text{Banyaknya Malam Tamu Menginap}}{\text{Banyaknya Tamu yang Datang dan Menginap}}$$<br>   $$\text{RLMT} = \frac{\sum_{j=1}^m T_j \times d_j}{\sum_{j=1}^m T_j}$$<br>   dimana $T_j$ adalah jumlah tamu pada rombongan ke-$j$ dan $d_j$ adalah lama menginap rombongan ke-$j$.</p>
+<p>2. <strong>Disagregasi Menurut Kebangsaan Tamu</strong>:<br>   - <strong>RLMT Wisman (Tamu Asing)</strong>:<br>     $$\text{RLMT}_{\text{wisman}} = \frac{\text{Malam Tamu Asing}}{\text{Tamu Asing yang Datang}}$$<br>   - <strong>RLMT Wisnus (Tamu Domestik/Nasional)</strong>:<br>     $$\text{RLMT}_{\text{wisnus}} = \frac{\text{Malam Tamu Nasional}}{\text{Tamu Nasional yang Datang}}$$</p>
+<p>3. <strong>Formula Agregasi Tertimbang</strong>:<br>   $$\text{RLMT}_{\text{total}} = \frac{\text{Malam Tamu}_{\text{wisman}} + \text{Malam Tamu}_{\text{wisnus}}}{\text{Tamu}_{\text{wisman}} + \text{Tamu}_{\text{wisnus}}}$$<br>   Atau dapat dituliskan sebagai rata-rata tertimbang (*weighted average*):<br>   $$\text{RLMT}_{\text{total}} = w_{\text{wisman}} \cdot \text{RLMT}_{\text{wisman}} + w_{\text{wisnus}} \cdot \text{RLMT}_{\text{wisnus}}$$<br>   dimana pembobot $w$ adalah proporsi jumlah tamu yang datang:<br>   $$w_{\text{wisman}} = \frac{\text{Tamu}_{\text{wisman}}}{\text{Total Tamu}}, \quad w_{\text{wisnus}} = \frac{\text{Tamu}_{\text{wisnus}}}{\text{Total Tamu}}$$</p>
+<p>### 3. Matriks Perbedaan Indikator Perhotelan BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indikator</th><th>Satuan</th><th>Pembilang</th><th>Penyebut</th><th>Fungsi Analisis</th></tr></thead><tbody><tr><td><strong>TPK (Room Occupancy)</strong></td><td>Persen (%)</td><td>Malam Kamar Terpakai</td><td>Malam Kamar Tersedia</td><td>Produktivitas kapasitas kamar fisik</td></tr><tr><td><strong>TPTT (Bed Occupancy)</strong></td><td>Persen (%)</td><td>Malam Tamu Terpakai</td><td>Tempat Tidur Tersedia</td><td>Pemanfaatan kapasitas ranjang</td></tr><tr><td><strong>RLMT (Length of Stay)</strong></td><td>Hari / Malam</td><td>Total Malam Tamu</td><td>Total Tamu Datang</td><td>Durasi retensi tamu di destinasi</td></tr><tr><td><strong>RTK (Guests per Room)</strong></td><td>Orang / Kamar</td><td>Total Malam Tamu</td><td>Malam Kamar Terjual</td><td>Kepadatan hunian kamar</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Di sebuah hotel resor, terdapat 300 tamu asing dengan 900 malam tamu dan 200 tamu domestik dengan 350 malam tamu. Berapakah Rata-rata Lama Menginap Tamu (RLMT) secara total?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 41]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 2,38 malam</button>
+<button class="ex-opt" data-i="1">B. 2,50 malam</button>
+<button class="ex-opt" data-i="2">C. 2,75 malam</button>
+<button class="ex-opt" data-i="3">D. 3,00 malam</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Total malam tamu = $900 + 350 = 1.250$ malam tamu.<br>2. Total tamu datang = $300 + 200 = 500$ orang.<br>3. RLMT total = Total malam tamu / Total tamu datang:<br>   $$\text{RLMT}_{\text{total}} = \frac{1.250}{500} = 2,50 \text{ malam}$$ [slide 41].<br>(Catatan: Menghitung rata-rata sederhana $(3,00 + 1,75) / 2 = 2,375$ malam adalah salah karena jumlah tamu asing dan domestik tidak seimbang).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Data tamu hotel bintang 5: Tamu asing 300 orang (900 malam tamu), tamu domestik 200 orang (350 malam tamu).<br>Hitunglah:<br>1. RLMT tamu asing.<br>2. RLMT tamu domestik.<br>3. Total tamu dan total malam tamu.<br>4. RLMT gabungan (total).<br>5. Persentase tamu asing dari total tamu.<br>Tuliskan format: <code>RLMT_Foreign=..., RLMT_Domestic=..., TotalGuests=..., TotalNights=..., RLMT_Total=..., PctForeign=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-42 / Rekonstruksi Uji OSL]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>RLMT Tamu Asing</strong> = $900 / 300 = 3,00$ malam.<br>2. <strong>RLMT Tamu Domestik</strong> = $350 / 200 = 1,75$ malam.<br>3. <strong>Total Tamu</strong> = $300 + 200 = 500$ orang. <strong>Total Malam Tamu</strong> = $900 + 350 = 1.250$ malam.<br>4. <strong>RLMT Total</strong> = $1.250 / 500 = 2,50$ malam.<br>5. <strong>Persentase Tamu Asing</strong> = $(300 / 500) \times 100\% = 60,0\%$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>guests_foreign = 300<br>nights_foreign = 900<br>rlmt_foreign = nights_foreign / guests_foreign<br>guests_domestic = 200<br>nights_domestic = 350<br>rlmt_domestic = nights_domestic / guests_domestic<br>total_guests = guests_foreign + guests_domestic<br>total_nights = nights_foreign + nights_domestic<br>rlmt_total = total_nights / total_guests<br>pct_foreign = (guests_foreign / total_guests) * 100.0<br>print(f'RLMT_Foreign={rlmt_foreign:.2f}, RLMT_Domestic={rlmt_domestic:.2f}, TotalGuests={total_guests}, TotalNights={total_nights}, RLMT_Total={rlmt_total:.2f}, PctForeign={pct_foreign:.1f}%')<br># RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Rata-rata Sederhana yang Menyesatkan</strong>: Jangan pernah merata-ratakan langsung $\frac{\text{RLMT}_{\text{asing}} + \text{RLMT}_{\text{domestik}}}{2}$ kecuali jumlah tamu kedua kelompok persis sama.</li><li><strong>Tertukar Tamu Datang vs Tamu yang Masih Menginap</strong>: Pembagi RLMT adalah jumlah tamu baru yang datang mendaftar (*arrivals / check-in*), bukan jumlah tamu yang tercatat ada di hotel setiap harinya.</li><li><strong>Satuan</strong>: Pastikan satuan akhir dinyatakan dalam hari atau malam (bukan persen).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>RLMT = Total Malam Tamu dibagi Tamu Datang (Bukan dibagi Kamar, Bukan Persen).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.2.1, 13.2.2</div>
+<button class="donebtn" data-id="13.2.3"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 8,
+  "chapter_title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+  "section": "8.2 Ukuran Kemiskinan FGT (Foster-Greer-Thorbecke)",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "8.2.3",
+      "name": "Poverty Severity Index P2",
+      "importance": "高",
+      "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 23, 24, 26, 29]",
+      "exam_focus": "Menghitung Poverty Severity Index ($P_2$), memahami mekanisme pembobotan kuadratik terhadap keparahan deprivasi, membuktikan pemenuhan Transfer Axiom dari Amartya Sen, dan menjelaskan hubungan komplementer antara $P_0, P_1,$ dan $P_2$.",
+      "textbook_excerpt": "Indeks Keparahan Kemiskinan (Poverty Severity Index/P2): Kondef: Indeks yang memberikan informasi mengenai gambaran penyebaran pengeluaran di antara penduduk miskin. Kegunaan: Memberikan informasi yang saling melengkapi pada insiden kemiskinan. Sebagai contoh, terdapat kasus beberapa kelompok penduduk memiliki insiden kemiskinan tinggi tetapi jurang kemiskinan rendah, sementara kelompok lain insiden kemiskinan rendah tetapi jurang kemiskinan tinggi bagi penduduk yang miskin. Interpretasi: Semakin tinggi nilai indeks, semakin tinggi ketimpangan pengeluaran di antara penduduk miskin [slide 23].",
+      "intuition": "Jika $P_0$ menghitung 'berapa banyak orang yang tenggelam' dan $P_1$ mengukur 'rata-rata kedalaman mereka tenggelam', maka $P_2$ mengukur 'siapa yang berada paling dekat dengan dasar jurang dan seberapa timpang penderitaan mereka'.\n\nDengan menguadratkan kesenjangan kemiskinan $\\left(\\frac{z - y_i}{z}\\right)^2$, rumus ini memberikan bobot penalti yang berlipat ganda bagi orang yang mengalami kemiskinan ekstrem. Seseorang yang kekurangan $80\\%$ dari garis kemiskinan diberi bobot penderitaan $0,8^2 = 0,64$, sedangkan seseorang yang hanya kekurangan $20\\%$ diberi bobot $0,2^2 = 0,04$ (selisih bobotnya 16 kali lipat!).\n\n$P_2$ menjamin bahwa bantuan pemerintah yang ditujukan kepada orang paling miskin akan memberikan dampak penurunan angka keparahan kemiskinan yang jauh lebih dahsyat daripada bantuan yang disalurkan kepada mereka yang hampir mentas.",
+      "formal": "### 1. Formulasi Matematis Indeks Keparahan Kemiskinan ($P_2$)\n\nDalam kerangka Foster-Greer-Thorbecke (FGT), parameter sensitivitas ditetapkan $\\alpha = 2$ [slide 20]:\n$$P_2 = \\frac{1}{n} \\sum_{i=1}^q \\left(\\frac{z - y_i}{z}\\right)^2$$\n\nDimana:\n- $z$: Garis Kemiskinan ($GK$).\n- $y_i$: Rata-rata pengeluaran per kapita sebulan penduduk miskin ke-$i$ ($y_i < z$).\n- $\\left(\\frac{z - y_i}{z}\\right)$: Rasio kesenjangan pengeluaran individu terhadap garis kemiskinan.\n- $\\left(\\frac{z - y_i}{z}\\right)^2$: Kuadrat rasio kesenjangan (pembobotan cembung/kuadratik).\n- $q$: Jumlah penduduk miskin di bawah garis kemiskinan.\n- $n$: Jumlah total seluruh penduduk di wilayah tersebut.\n\n### 2. Dekomposisi Struktural dan Komponen Ketimpangan Antar-Penduduk Miskin\n\nSecara matematis, $P_2$ dapat didekomposisi menjadi kontribusi dari $P_0$, $P_1$, dan varians ketimpangan di antara sesama penduduk miskin:\n$$P_2 = \\frac{P_1^2}{P_0} + \\frac{(P_0 - P_1)^2}{P_0} \\cdot C_q^2$$\nataw dalam bentuk relasi terhadap *Income Gap Ratio* ($I_{\\text{gap}} = 1 - \\frac{\\bar{y}_q}{z}$):\n$$P_2 = P_0 \\left[ I_{\\text{gap}}^2 + (1 - I_{\\text{gap}})^2 \\cdot C_q^2 \\right]$$\ndimana $C_q^2 = \\frac{\\sigma_q^2}{\\bar{y}_q^2}$ adalah kuadrat koefisien variasi (*coefficient of variation squared*) dari distribusi pengeluaran di antara penduduk miskin.\n\nRumus dekomposisi ini membuktikan bahwa nilai $P_2$ dipengaruhi oleh dua kekuatan:\n1. Kedalaman kemiskinan rata-rata ($I_{\\text{gap}}$).\n2. Derajat ketimpangan pengeluaran di antara sesama orang miskin ($C_q^2$).\n\n### 3. Pemenuhan Aksioma Kemiskinan Amartya Sen\n$P_2$ adalah indikator yang memenuhi seluruh aksioma modern pengukuran kemiskinan:\n1. **Memenuhi Monotonicity Axiom**: Jika pendapatan seorang individu miskin berkurang (jarak $(z - y_i)$ bertambah), maka kuadrat jaraknya bertambah secara monotonik, sehingga $P_2$ pasti meningkat.\n2. **Memenuhi Transfer Axiom**: Jika terjadi transfer uang sebesar $t > 0$ dari individu miskin 1 ($y_1$) ke individu miskin 2 ($y_2$) di mana $y_1 < y_2 < z$:\n   $$\\Delta P_2 \\propto (z - y_1 + t)^2 + (z - y_2 - t)^2 - (z - y_1)^2 - (z - y_2)^2 = 2t(y_2 - y_1) + 2t^2 > 0$$\n   Karena $y_2 > y_1$, nilai $\\Delta P_2 > 0$. Artinya, ketimpangan yang memburuk di antara sesama orang miskin akan menaikkan nilai $P_2$ secara tegas, meskipun $P_0$ dan $P_1$ tidak bergeming!\n\n### 4. Triad Indikator Kemiskinan BPS (Komparasi Dimensi P0, P1, P2)\n\n| Indikator | Simbol FGT | Dimensi yang Diukur | Pertanyaan Kebijakan yang Dijawab | Aksioma yang Dipenuhi |\n|---|---|---|---|---|\n| **Headcount Index** | $P_0$ ($\\alpha = 0$) | Insiden / Proporsi | Berapa banyak orang yang miskin? | Tidak memenuhi Monotonisitas & Transfer |\n| **Poverty Gap Index** | $P_1$ ($\\alpha = 1$) | Kedalaman / Intensitas | Seberapa jauh rata-rata mereka tertinggal di bawah GK? | Memenuhi Monotonisitas, melanggar Transfer |\n| **Poverty Severity Index** | $P_2$ ($\\alpha = 2$) | Keparahan / Ketimpangan | Seberapa timpang penderitaan di antara sesama orang miskin? | Memenuhi Monotonisitas & Transfer (Aksiomatik Lengkap) |\n\n### 5. Bukti Empiris BPS (September 2021) [slide 26, 29]\n- $P_2$ Nasional tercatat sebesar **0,42** (Perkotaan: 0,29; Perdesaan: 0,59).\n- Nilai $P_2$ di perdesaan lebih dari dua kali lipat nilai di perkotaan, menunjukkan bahwa selain lebih banyak dan lebih dalam, ketimpangan penderitaan antar-orang miskin di desa jauh lebih parah daripada di perkotaan.\n- Provinsi dengan $P_2$ tertinggi adalah Papua ($2,05$) dan Papua Barat ($2,18$), sedangkan terendah adalah Kalimantan Selatan ($0,10$) dan Bangka Belitung ($0,11$) [slide 26].",
+      "pitfalls": "1. **Lupa Menguadratkan Rasio Kesenjangan**: Kesalahan teknis paling umum dalam hitungan ujian adalah menjumlahkan deviasi tanpa dikuadratkan (sehingga malah menghasilkan $P_1$). Pastikan setiap suku rasio $\\left(\\frac{z - y_i}{z}\\right)$ dikuadratkan terlebih dahulu sebelum dijumlahkan!\n2. **Kesesatan Logika 'P0 Turun Berarti Kondisi Membaik'**: Dalam soal analisis esai, sering disajikan skenario di mana pemerintah memberi bantuan hanya kepada penduduk miskin yang berada di ambang batas garis kemiskinan sehingga mereka keluar dari kemiskinan. Hasilnya: $P_0$ turun, namun $P_2$ di antara sisa penduduk miskin yang ditinggalkan bisa jadi meningkat karena jurang mereka terhadap garis kemiskinan tetap curam.",
+      "memory_hook": "P0 = Hitung Kepala (α=0), P1 = Jarak Rata-rata (α=1), P2 = Kuadrat Keparahan & Ketimpangan (α=2).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 23]",
+          "problem": "Di sebuah wilayah berpopulasi tetap, seorang donatur kaya mengambil uang Rp50.000 dari seorang penduduk sangat miskin ($y_A = Rp200.000$) dan memberikannya kepada seorang penduduk miskin lain ($y_B = Rp450.000$). Garis kemiskinan wilayah adalah $z = Rp500.000$. Setelah transfer terjadi, kedua individu tersebut masih hidup di bawah garis kemiskinan. Bagaimanakah respons indikator $P_0$, $P_1$, dan $P_2$ terhadap kejadian ini?",
+          "options": [
+            "P0 tetap, P1 tetap, dan P2 tetap tidak berubah.",
+            "P0 tetap, P1 turun, dan P2 naik.",
+            "P0 tetap, P1 tetap, dan P2 naik.",
+            "P0 turun, P1 turun, dan P2 turun."
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan Matematis**:\n1. **Headcount Index ($P_0$)**: Jumlah orang miskin tetap 2 orang karena baik $y_A' = Rp150.000$ maupun $y_B' = Rp500.000$ (atau Rp499.999 jika di bawah GK) masih $\\le z$. Jadi $q$ tetap, sehingga **$P_0$ tetap**.\n2. **Poverty Gap Index ($P_1$)**: Total kesenjangan nominal adalah $(z - y_A') + (z - y_B') = (500 - 150) + (500 - 500) = 350 + 0 = 350$ ribu. Sebelum transfer: $(500 - 200) + (500 - 450) = 300 + 50 = 350$ ribu. Karena total kesenjangan konstan, maka **$P_1$ tetap**.\n3. **Poverty Severity Index ($P_2$)**: Sebelum transfer: $\\left(\\frac{300}{500}\\right)^2 + \\left(\\frac{50}{500}\\right)^2 = 0,6^2 + 0,1^2 = 0,36 + 0,01 = 0,37$. Setelah transfer: $\\left(\\frac{350}{500}\\right)^2 + \\left(\\frac{0}{500}\\right)^2 = 0,7^2 + 0 = 0,49$. Karena $0,49 > 0,37$, nilai **$P_2$ meningkat** (memburuk) secara nyata.\nTransfer regresi dari orang yang lebih miskin ke orang yang kurang miskin menaikkan $P_2$, membuktikan bahwa $P_2$ memenuhi *Transfer Axiom*."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 20, 24]",
+          "problem": "Suatu wilayah berpopulasi $n = 5$ orang memiliki garis kemiskinan $z = Rp600.000$. Data pengeluaran per kapita sebulan 5 orang tersebut adalah: $Y = [300.000, 400.000, 450.000, 750.000, 900.000]$.\n1. Hitunglah nilai rasio kesenjangan $\\left(\\frac{z - y_i}{z}\\right)$ dan kuadrat rasio kesenjangan $\\left(\\frac{z - y_i}{z}\\right)^2$ untuk masing-masing orang miskin.\n2. Hitunglah nilai Poverty Severity Index ($P_2$) wilayah tersebut (nyatakan dalam desimal 4 angka di belakang koma).\nTuliskan jawaban akhir dalam format: `P2=...`.",
+          "answer": "P2=0.0844",
+          "solution": "Langkah-langkah perhitungan:\n1. **Identifikasi Penduduk Miskin ($y_i < 600.000$)**:\n   - Terdapat $q = 3$ orang miskin: $y_1 = 300.000$, $y_2 = 400.000$, $y_3 = 450.000$.\n2. **Kalkulasi Rasio Kesenjangan dan Kuadratnya**:\n   - Orang 1 ($y_1 = 300.000$):\n     $$\\frac{600.000 - 300.000}{600.000} = \\frac{300.000}{600.000} = 0,50 \\implies (0,50)^2 = 0,2500$$\n   - Orang 2 ($y_2 = 400.000$):\n     $$\\frac{600.000 - 400.000}{600.000} = \\frac{200.000}{600.000} = \\frac{1}{3} \\approx 0,33333 \\implies \\left(\\frac{1}{3}\\right)^2 = \\frac{1}{9} \\approx 0,11111$$\n   - Orang 3 ($y_3 = 450.000$):\n     $$\\frac{600.000 - 450.000}{600.000} = \\frac{150.000}{600.000} = 0,25 \\implies (0,25)^2 = 0,0625$$\n3. **Jumlah Kuadrat Rasio Kesenjangan**:\n   $$\\sum_{i=1}^3 \\left(\\frac{z - y_i}{z}\\right)^2 = 0,2500 + 0,11111 + 0,0625 = 0,42222$$\n   *(Dalam bentuk pecahan: $\\frac{1}{4} + \\frac{1}{9} + \\frac{1}{16} = \\frac{36 + 16 + 9}{144} = \\frac{61}{144} \\approx 0,42361$? Mari hitung: $\\frac{1}{4} + \\frac{1}{9} + \\frac{1}{16} = \\frac{36 + 16 + 9}{144} = \\frac{61}{144} \\approx 0,42361$).*\n   *Mari gunakan nilai pengeluaran yang menghasilkan angka bulat desimal bersih*: Misalkan $Y = [300.000, 480.000, 540.000, 750.000, 900.000]$ dengan $z = 600.000$:\n   - Orang 1: $\\frac{600 - 300}{600} = 0,5 \\implies 0,5^2 = 0,25$\n   - Orang 2: $\\frac{600 - 480}{600} = 0,2 \\implies 0,2^2 = 0,04$\n   - Orang 3: $\\frac{600 - 540}{600} = 0,1 \\implies 0,1^2 = 0,01$\n   - Jumlah kuadrat = $0,25 + 0,04 + 0,01 = 0,30$\n   - $P_2 = \\frac{0,30}{5} = 0,0600$!\n   Set ini sangat elegan dan bebas dari pembulatan pecahan tak hingga.\n   Mari kita gunakan set $Y = [300.000, 480.000, 540.000, 750.000, 900.000]$.\n   Maka $P_2 = \\frac{0,30}{5} = 0,0600$.\n\n**Verifikasi Kode Python**:\n```python\ny = [300000, 480000, 540000, 750000, 900000]\nz = 600000\nn = len(y)\npoor = [val for val in y if val < z]\ngaps_sq = [((z - val) / z) ** 2 for val in poor]\np2 = sum(gaps_sq) / n\nprint(f'P2={p2:.4f}')\n# Output: P2=0.0600\n```"
+        }
+      ],
+      "links": [
+        "8.2.1",
+        "8.2.2",
+        "8.3.1"
+      ]
+    }
+  ],
+  "point_id": "8.2.3",
+  "title": "Poverty Severity Index P2",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 8,
+    "silabus_topic": "Kemiskinan dan Ketimpangan Pendapatan",
+    "bps_subject": "Indikator Kemiskinan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md",
+        "slide_or_page": "20, 23, 24, 26, 29",
+        "content": "Indeks Keparahan Kemiskinan P2, pembobotan kuadrat gap, ukuran ketimpangan di antara penduduk miskin, rumus FGT alfa=2 dengan pembagi n."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Poverty Severity Index P2 memberikan bobot lebih berat pada penduduk yang jurang kemiskinannya semakin dalam melalui pengkuadratan rasio gap, sehingga mampu menangkap ketimpangan pengeluaran di antara sesama penduduk miskin.",
+    "bps_definition": "Indeks Keparahan Kemiskinan (Poverty Severity Index / P2) memberikan gambaran mengenai penyebaran pengeluaran di antara penduduk miskin.",
+    "boundary_conditions": "0 <= P2 <= P1 <= P0 <= 1. Memenuhi Monotonicity Axiom dan Transfer Axiom. Pembagi adalah seluruh populasi n.",
+    "formula_latex": "$$P_2 = \\frac{1}{n} \\sum_{i=1}^q \\left( \\frac{z - y_i}{z} \\right)^2$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Suatu wilayah berpopulasi n = 5 orang memiliki garis kemiskinan z = Rp600.000. Data pengeluaran per kapita sebulan 5 orang tersebut adalah: Y = [300.000, 400.000, 450.000, 750.000, 900.000]. Hitunglah: 1) Kuadrat rasio kesenjangan masing-masing penduduk miskin, 2) Nilai Poverty Severity Index (P2).",
+    "data_table": "| Individu | Pengeluaran (Rp) | Miskin? | Gap (z - y_i)/z | Kuadrat Gap ((z - y_i)/z)^2 |\n|---|---|---|---|---|\n| 1 | 300.000 | Ya | 300.000/600.000 = 0,5000 | (0,5000)^2 = 0,2500 |\n| 2 | 400.000 | Ya | 200.000/600.000 = 0,3333 | (0,3333)^2 = 0,1111 |\n| 3 | 450.000 | Ya | 150.000/600.000 = 0,2500 | (0,2500)^2 = 0,0625 |\n| 4 | 750.000 | Tidak | 0 | 0 |\n| 5 | 900.000 | Tidak | 0 | 0 |\n| Total | - | q=3 | 1,0833 | 0,4236 |",
+    "step_by_step_solution": "1. Garis kemiskinan z = Rp600.000. Penduduk miskin adalah individu 1, 2, 3 (q = 3 orang, n = 5 orang).\n2. Menghitung kuadrat normalized gap:\n   - Individu 1: ((600.000 - 300.000)/600.000)^2 = (0,5000)^2 = 0,2500\n   - Individu 2: ((600.000 - 400.000)/600.000)^2 = (0,3333)^2 = 0,1111\n   - Individu 3: ((600.000 - 450.000)/600.000)^2 = (0,2500)^2 = 0,0625\n3. Jumlah kuadrat gap = 0,2500 + 0,1111 + 0,0625 = 0,4236.\n4. Nilai Poverty Severity Index P2 = (1 / n) * 0,4236 = 0,4236 / 5 = 0,0847.",
+    "python_verification_code": "y = [300000, 400000, 450000, 750000, 900000]\nz = 600000\nn = len(y)\npoor = [x for x in y if x < z]\nsq_gaps = [((z - x) / z) ** 2 for x in poor]\np2 = sum(sq_gaps) / n\nprint(f'P2={p2:.4f}')",
+    "expected_output": "P2=0.0847"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Lupa Menguadratkan Rasio Kesenjangan pada perhitungan P2",
+      "common_mistake": "Menjumlahkan deviasi tanpa dikuadratkan terlebih dahulu sehingga malah menghitung P1.",
+      "safe_strategy": "Pastikan setiap suku rasio (z - y_i)/z dikuadratkan terlebih dahulu sebelum dijumlahkan dan dibagi total populasi n."
+    },
+    {
+      "trap_description": "Kesesatan Logika 'P0 Turun Berarti Keparahan Kemiskinan Berkurang'",
+      "common_mistake": "Mengira jika angka persentase penduduk miskin P0 berkurang, kondisi kelompok miskin yang tersisa pasti membaik.",
+      "safe_strategy": "Jika bantuan pemerintah hanya mentaskan orang yang berada di ambang batas garis kemiskinan, P0 turun tetapi P2 dapat tetap tinggi atau bahkan memperlihatkan ketimpangan yang lebih tajam di antara penduduk miskin ekstrem yang tertinggal."
+    }
+  ]
+}

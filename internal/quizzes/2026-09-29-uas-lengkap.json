@@ -1,0 +1,290 @@
+{
+  "title": "Kuis Interaktif Persiapan UAS Official Statistics Lanjutan (OSL)",
+  "questions": [
+    {
+      "point_id": "Pertemuan 8",
+      "point_name": "Indikator Kemiskinan dan Ketimpangan",
+      "score": 2,
+      "stem": "[OSL-P08-PG-001] Koefisien Gini (Gini Ratio) didefinisikan sebagai rasio luas area antara garis pemerataan sempurna (line of perfect equality) dengan Kurva Lorenz terhadap...",
+      "reference": "A",
+      "explanation": "Kunci: A. Berdasarkan materi Pertemuan 8 slide 38, Koefisien Gini adalah rasio wilayah antara line of perfect equality dan kurva Lorenz hasil observasi (A) ke wilayah total di bawah garis pemerataan sempurna (A + B). (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 38)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Total luas area di bawah garis pemerataan sempurna",
+        "B. Luas area di bawah kurva Lorenz",
+        "C. Total pengeluaran 40 persen penduduk berpendapatan terendah",
+        "D. Luas area di atas garis ketimpangan sempurna"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan dan Pendidikan",
+      "score": 2,
+      "stem": "[OSL-P09-PG-002] Berdasarkan kerangka ketenagakerjaan ICLS 13 yang diterapkan oleh BPS, manakah kelompok berikut yang TIDAK dikategorikan sebagai Bukan Angkatan Kerja?",
+      "reference": "B",
+      "explanation": "Kunci: B. Penduduk yang sementara tidak bekerja (temporarily absent from work) tetapi masih memiliki ikatan pekerjaan tetap diklasifikasikan sebagai Bekerja (bagian dari Angkatan Kerja), bukan sebagai Bukan Angkatan Kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Penduduk yang sedang bersekolah",
+        "B. Penduduk yang sementara tidak bekerja namun memiliki ikatan pekerjaan tetap",
+        "C. Penduduk yang mengurus rumah tangga",
+        "D. Penduduk lanjut usia atau penerima pensiun"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan",
+      "score": 2,
+      "stem": "[OSL-P10-PG-003] Dalam kerangka Sustainable Development Goals (SDGs) Tujuan 3 (Kehidupan Sehat dan Sejahtera), indikator utama yang digunakan untuk memantau kematian anak di bawah usia lima tahun adalah...",
+      "reference": "B",
+      "explanation": "Kunci: B. Berdasarkan materi Pertemuan 10 slide 15, indikator kematian balita dalam SDGs 3 diukur dengan Under-5 Mortality Rate (U5MR) yaitu probabilitas kematian anak sebelum mencapai usia 5 tahun per 1.000 kelahiran hidup. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 15)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Maternal Mortality Ratio (MMR)",
+        "B. Under-5 Mortality Rate (U5MR)",
+        "C. Neonatal Stunting Prevalence",
+        "D. Crude Death Rate (CDR)"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Indikator Ekonomi: Produksi",
+      "score": 5,
+      "stem": "[OSL-P11-HIT-004] Diketahui indeks harga yang diterima petani (It) subsektor tanaman pangan suatu provinsi sebesar 118,50 dan indeks harga yang dibayar petani (Ib) sebesar 112,00. Berapakah Nilai Tukar Petani (NTP) subsektor tersebut dan bagaimana interpretasinya?",
+      "reference": "105,80 (Petani mengalami surplus / daya tukar menguntungkan karena NTP > 100)",
+      "explanation": "Kunci: 105,80 (Petani mengalami surplus / daya tukar menguntungkan karena NTP > 100). NTP dihitung dengan formula: NTP = (It / Ib) * 100. Perhitungan programatik: (118.50 / 112.00) * 100 = 105.8035... dibulatkan menjadi 105,80. Karena NTP > 100, harga produksi petani naik lebih cepat dibanding harga barang konsumsi/biaya produksi, mengindikasikan peningkatan daya tukar. (Sumber: Pertemuan 11 OSL Indikator Ekonomi (1) Produksi.pdf, slide 16)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "105,80 (Petani mengalami surplus / daya tukar menguntungkan karena NTP > 100)"
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga",
+      "score": 2,
+      "stem": "[OSL-P12-PG-005] Data utama yang menjadi diagram timbang (bobot konsumsi tahun dasar) dalam penghitungan Indeks Harga Konsumen (IHK) metode Modified Laspeyres bersumber dari survei...",
+      "reference": "A",
+      "explanation": "Kunci: A. Dalam metodologi resmi IHK BPS, diagram timbang (nilai konsumsi tahun dasar) yang menjadi dasar penimbang Modified Laspeyres diperoleh secara komprehensif melalui Survei Biaya Hidup (SBH). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 12)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Survei Biaya Hidup (SBH)",
+        "B. Survei Pola Distribusi Perdagangan (Poldis)",
+        "C. Survei Harga Perdesaan (SHPed)",
+        "D. Survei Sosial Ekonomi Nasional (Susenas)"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Indikator Ekonomi: Ekspor-Impor dan Neraca Perdagangan",
+      "score": 2,
+      "stem": "[OSL-P13-PG-006] Menurut standar System of National Accounts (SNA 2008) dan BPM6, transaksi merchanting dicatat dalam neraca perdagangan sebagai ekspor neto barang di bawah merchanting apabila...",
+      "reference": "B",
+      "explanation": "Kunci: B. Berdasarkan materi Pertemuan 13 slide 14, merchanting didefinisikan sebagai pembelian barang oleh residen dari non-residen yang diikuti dengan penjualan kembali barang tersebut kepada non-residen lain, tanpa barang tersebut pernah masuk ke dalam wilayah ekonomi residen perantara. (Sumber: Pertemuan 13 OSL Indikator Ekonomi (3) X-M, KTI, Pariwisata.pdf, slide 14)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Barang secara fisik melewati perbatasan pabean negara pedagang (merchant)",
+        "B. Barang dibeli oleh penduduk dari bukan penduduk dan kemudian dijual kembali kepada bukan penduduk tanpa barang tersebut masuk ke wilayah ekonomi penduduk pedagang",
+        "C. Barang diproduksi langsung di dalam negeri kemudian dikirim ke luar negeri melalui pihak ketiga",
+        "D. Barang mengalami pengolahan substansial (manufacturing services) di wilayah ekonomi pedagang"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 8",
+      "point_name": "Indikator Kemiskinan dan Ketimpangan",
+      "score": 5,
+      "stem": "[OSL-P08-ESAI-007] Jelaskan perbedaan mendasar antara Indeks Kedalaman Kemiskinan (P1 / Poverty Gap Index) dan Indeks Keparahan Kemiskinan (P2 / Poverty Severity Index) dalam keluarga ukuran Foster-Greer-Thorbecke (FGT) beserta implikasi kebijakannya!",
+      "reference": "P1 mengukur rata-rata kesenjangan pengeluaran masing-masing penduduk miskin terhadap garis kemiskinan (mengukur seberapa jauh mereka berada di bawah garis kemiskinan). Sedangkan P2 mengukur ketimpangan pengeluaran di antara sesama penduduk miskin (memberikan bobot lebih besar bagi penduduk yang berada jauh di bawah garis kemiskinan karena squaring penalti). Implikasi kebijakan: Kebijakan yang hanya menargetkan penduduk miskin di dekat garis kemiskinan akan cepat menurunkan P0 dan P1, namun tidak akan memperbaiki P2 jika kelompok yang paling miskin (chronically poor) terabaikan.",
+      "explanation": "Kunci: P1 mengukur rata-rata kesenjangan pengeluaran masing-masing penduduk miskin terhadap garis kemiskinan (mengukur seberapa jauh mereka berada di bawah garis kemiskinan). Sedangkan P2 mengukur ketimpangan pengeluaran di antara sesama penduduk miskin (memberikan bobot lebih besar bagi penduduk yang berada jauh di bawah garis kemiskinan karena squaring penalti). Implikasi kebijakan: Kebijakan yang hanya menargetkan penduduk miskin di dekat garis kemiskinan akan cepat menurunkan P0 dan P1, namun tidak akan memperbaiki P2 jika kelompok yang paling miskin (chronically poor) terabaikan.. Berdasarkan materi Pertemuan 8 slide 24-28, formula FGT menggunakan parameter alpha=1 untuk P1 dan alpha=2 untuk P2. Kuadrat dari poverty gap ratio pada P2 merefleksikan distribusi dan derajat ketimpangan di kalangan orang miskin itu sendiri. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 24)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "P1 mengukur rata-rata kesenjangan pengeluaran masing-masing penduduk miskin terhadap garis kemiskinan (mengukur seberapa jauh mereka berada di bawah garis kemiskinan). Sedangkan P2 mengukur ketimpangan pengeluaran di antara sesama penduduk miskin (memberikan bobot lebih besar bagi penduduk yang berada jauh di bawah garis kemiskinan karena squaring penalti). Implikasi kebijakan: Kebijakan yang hanya menargetkan penduduk miskin di dekat garis kemiskinan akan cepat menurunkan P0 dan P1, namun tidak akan memperbaiki P2 jika kelompok yang paling miskin (chronically poor) terabaikan."
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Indikator Pariwisata",
+      "score": 5,
+      "stem": "[OSL-P13-HIT-008] Sebuah hotel bintang 4 di kawasan wisata memiliki 150 kamar yang siap digunakan setiap hari selama bulan Juni (30 hari). Selama bulan tersebut, tercatat akumulasi malam kamar yang terjual sebanyak 3.150 malam kamar. Hitunglah Tingkat Penghunian Kamar (TPK) hotel tersebut pada bulan Juni!",
+      "reference": "70,00%",
+      "explanation": "Kunci: 70,00%. Total malam kamar tersedia = 150 kamar * 30 hari = 4.500 malam kamar. Total malam kamar terpakai = 3.150 malam kamar. Formula: TPK = (Malam Kamar Terpakai / Malam Kamar Tersedia) * 100%. Perhitungan kode Python: (3150 / 4500) * 100 = 70.0%. (Sumber: Pertemuan 13 OSL Indikator Ekonomi (3) X-M, KTI, Pariwisata.pdf, slide 35)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "70,00%"
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Ekonomi: Perdagangan dan Harga",
+      "score": 5,
+      "stem": "[OSL-UAS22-ISN-009] Metode indeks harga yang digunakan BPS dalam penghitungan Indeks Harga Konsumen (IHK) di Indonesia adalah metode indeks Laspeyres yang dimodifikasi (Modified Laspeyres), di mana penimbang yang digunakan adalah nilai konsumsi pada tahun dasar yang bersumber dari survei...",
+      "reference": "Survei Biaya Hidup (SBH)",
+      "explanation": "Kunci: Survei Biaya Hidup (SBH). Berdasarkan naskah ujian resmi Soal UAS 2022-2023 hal. 4 dan materi Pertemuan 12 slide 12, diagram timbang IHK diperoleh dari Survei Biaya Hidup (SBH). (Sumber: Soal UAS 2022-2023.pdf, hal. 4, Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 12)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "Survei Biaya Hidup (SBH)"
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan dan Pendidikan",
+      "score": 2,
+      "stem": "[OSL-SUP-PG-010] [SUPLEMEN] Menurut standar International Labour Organization (ILO) dalam resolusi ICLS ke-19 (19th ICLS, 2013) yang melengkapi ICLS ke-13, konsep kerja (work) diperluas menjadi lima bentuk aktivitas kerja (forms of work). Aktivitas kerja menghasilkan barang/jasa untuk pemakaian sendiri oleh rumah tangga diklasifikasikan sebagai...",
+      "reference": "A",
+      "explanation": "Kunci: A. [SUPLEMEN] Dalam kerangka 19th ICLS (2013), kerja produksi untuk penggunaan sendiri (own-use production work) dibedakan dari employment (pekerjaan untuk upah/laba). Di Indonesia, BPS mengadopsi standar ini secara bertahap pada kuesioner Sakernas. (Sumber: [SUPLEMEN] ILO Resolution concerning statistics of work, employment and labour underutilization (19th ICLS 2013), hal. 3)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Own-use production work",
+        "B. Employment work for pay or profit",
+        "C. Unpaid trainee work",
+        "D. Volunteer work"
+      ],
+      "answer": 0
+    },
+    {
+      "point_id": "Pertemuan 8",
+      "point_name": "Indikator Kemiskinan dan Ketimpangan",
+      "score": 5,
+      "stem": "[OSL-P08-HIT-011] Suatu wilayah memiliki 10 orang penduduk dengan Garis Kemiskinan Z = Rp 500.000. Data pengeluaran 4 penduduk miskin berturut-turut adalah Rp 200.000, Rp 300.000, Rp 400.000, dan Rp 450.000, sedangkan 6 penduduk lainnya memiliki pengeluaran di atas Rp 500.000. Berapakah nilai Poverty Gap Index (P1) dan Poverty Severity Index (P2) wilayah tersebut?",
+      "reference": "P1 = 0,1300 dan P2 = 0,0570",
+      "explanation": "Kunci: P1 = 0,1300 dan P2 = 0,0570. Formula FGT: P_alpha = (1/n) * sum(((z - y_i)/z)^alpha). Dengan n=10 dan z=500.000: Rasio poverty gap per orang: (500k-200k)/500k = 0,6; (500k-300k)/500k = 0,4; (500k-400k)/500k = 0,2; (500k-450k)/500k = 0,1. Jumlah gap = 1,3, maka P1 = 1,3 / 10 = 0,1300. Kuadrat gap = 0,36 + 0,16 + 0,04 + 0,01 = 0,57, maka P2 = 0,57 / 10 = 0,0570. (Sumber: Pertemuan 8 OSL Indikator Sosial (1) Indikator Kemiskinan dan Ketimpangan _ new.pptx, slide 19)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "P1 = 0,1300 dan P2 = 0,0570"
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan dan Pendidikan",
+      "score": 5,
+      "stem": "[OSL-P09-ISN-012] Dalam konsep Sakernas BPS, seorang pekerja yang bekerja kurang dari 35 jam seminggu dan TIDAK mencari pekerjaan atau tidak bersedia menerima pekerjaan tambahan diklasifikasikan sebagai pekerja...",
+      "reference": "paruh waktu",
+      "explanation": "Kunci: paruh waktu. Berdasarkan materi Pertemuan 9 slide 26, pekerja yang bekerja di bawah 35 jam seminggu tetapi tidak mencari atau tidak bersedia menerima pekerjaan tambahan diklasifikasikan sebagai Pekerja Paruh Waktu (Part-time worker), berbeda dengan Setengah Penganggur yang masih mencari atau bersedia menambah jam kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 26)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "paruh waktu"
+    },
+    {
+      "point_id": "Pertemuan 9",
+      "point_name": "Indikator Ketenagakerjaan dan Pendidikan",
+      "score": 5,
+      "stem": "[OSL-P09-HIT-013] Data ketenagakerjaan suatu kecamatan mencatat: Penduduk Usia Kerja (15 tahun ke atas) sebanyak 20.000 jiwa. Dari jumlah tersebut, 12.000 orang bekerja, 1.000 orang pengangguran terbuka, 4.000 orang bersekolah, dan 3.000 orang mengurus rumah tangga. Berapakah Tingkat Partisipasi Angkatan Kerja (TPAK) dan Tingkat Pengangguran Terbuka (TPT)?",
+      "reference": "TPAK = 65,00% dan TPT = 7,69%",
+      "explanation": "Kunci: TPAK = 65,00% dan TPT = 7,69%. Angkatan Kerja = Bekerja + Pengangguran = 12.000 + 1.000 = 13.000 orang. TPAK = (Angkatan Kerja / Penduduk Usia Kerja) * 100% = (13.000 / 20.000) * 100% = 65,00%. TPT = (Pengangguran / Angkatan Kerja) * 100% = (1.000 / 13.000) * 100% = 7,69%. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 13)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "TPAK = 65,00% dan TPT = 7,69%"
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan",
+      "score": 5,
+      "stem": "[OSL-P10-HIT-014] Pada suatu provinsi tercatat 250.000 kelahiran hidup dalam satu tahun kalender. Selama periode yang sama, terjadi 75 kasus kematian ibu yang disebabkan oleh komplikasi kehamilan, persalinan, dan nifas. Berapakah nilai Angka Kematian Ibu (AKI / MMR) provinsi tersebut?",
+      "reference": "30,0 per 100.000 kelahiran hidup",
+      "explanation": "Kunci: 30,0 per 100.000 kelahiran hidup. Formula AKI = (Jumlah Kematian Ibu / Jumlah Kelahiran Hidup) * 100.000 KH. AKI = (75 / 250.000) * 100.000 = 30,0 per 100.000 kelahiran hidup. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 13)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "30,0 per 100.000 kelahiran hidup"
+    },
+    {
+      "point_id": "Pertemuan 10",
+      "point_name": "Indikator Kesehatan",
+      "score": 2,
+      "stem": "[OSL-P10-PG-015] Dalam statistik kesehatan Susenas BPS, Morbiditas (Angka Kesakitan) mengukur persentase penduduk yang mengalami keluhan kesehatan yang mengakibatkan terganggunya kegiatan sehari-hari dalam kurun waktu referensi...",
+      "reference": "B",
+      "explanation": "Kunci: B. Berdasarkan materi Pertemuan 10 slide 32, periode referensi pengumpulan data keluhan kesehatan dan morbiditas dalam Susenas BPS adalah 1 bulan terakhir. (Sumber: Pertemuan 10 Indikator Kesehatan.pptx, slide 32)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 1 minggu terakhir",
+        "B. 1 bulan terakhir",
+        "C. 3 bulan terakhir",
+        "D. 1 tahun terakhir"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Statistik Produksi",
+      "score": 2,
+      "stem": "[OSL-P11-PG-016] Metode Kerangka Sampel Area (KSA) yang dikembangkan BPS untuk estimasi luas panen padi menggunakan segmen berukuran 300 m x 300 m yang dibagi menjadi...",
+      "reference": "B",
+      "explanation": "Kunci: B. Berdasarkan materi Pertemuan 11 slide 14-18, setiap segmen KSA berukuran 300 m x 300 m dibagi menjadi 9 subsegmen titik amatan (masing-masing 100 m x 100 m) dan diamati menggunakan aplikasi berbasis Android pada 7 hari terakhir setiap bulan. (Sumber: Pertemuan 11 OSL Indikator Ekonomi (1) Produksi.pdf, hal. 14)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. 4 subsegmen dengan amatan pada awal bulan",
+        "B. 9 subsegmen dengan amatan pada 7 hari terakhir setiap bulan",
+        "C. 16 subsegmen dengan amatan harian",
+        "D. 25 subsegmen dengan amatan tengah bulan"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 11",
+      "point_name": "Statistik Produksi",
+      "score": 5,
+      "stem": "[OSL-P11-ISN-017] Dalam klasifikasi statistik industri pengolahan BPS, Industri Besar dan Sedang (IBS) didefinisikan sebagai usaha industri manufaktur yang memiliki tenaga kerja sebanyak minimal...",
+      "reference": "20 orang",
+      "explanation": "Kunci: 20 orang. Berdasarkan materi Pertemuan 11 hal. 37, batasan ketenagakerjaan BPS menetapkan Industri Besar dan Sedang (IBS) mempekerjakan 20 orang tenaga kerja atau lebih, sedangkan Industri Mikro dan Kecil (IMK) mempekerjakan 1-19 orang. (Sumber: Pertemuan 11 OSL Indikator Ekonomi (1) Produksi.pdf, hal. 37)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "20 orang"
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Harga dan Perdagangan",
+      "score": 5,
+      "stem": "[OSL-P12-HIT-018] Diketahui data Indeks Harga Konsumen (IHK) suatu kota: Desember 2024 = 105,0; Januari 2025 = 106,0; Februari 2024 = 103,5; dan Februari 2025 = 106,8. Hitunglah laju inflasi month-to-month (Februari 2025 terhadap Januari 2025) dan inflasi year-on-year (Februari 2025 terhadap Februari 2024)!",
+      "reference": "Inflasi m-to-m = 0,75% dan Inflasi y-on-y = 3,19%",
+      "explanation": "Kunci: Inflasi m-to-m = 0,75% dan Inflasi y-on-y = 3,19%. Inflasi m-to-m = ((106,8 - 106,0) / 106,0) * 100% = 0,75%. Inflasi y-on-y = ((106,8 - 103,5) / 103,5) * 100% = 3,19%. Inflasi y-t-d = ((106,8 - 105,0) / 105,0) * 100% = 1,71%. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, hal. 13)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "Inflasi m-to-m = 0,75% dan Inflasi y-on-y = 3,19%"
+    },
+    {
+      "point_id": "Pertemuan 12",
+      "point_name": "Indikator Harga dan Perdagangan",
+      "score": 2,
+      "stem": "[OSL-P12-PG-019] Komponen inflasi yang pergerakan harganya sangat dipengaruhi oleh faktor musiman seperti panen, cuaca, atau gangguan distribusi komoditas pangan pokok dikategorikan oleh BPS sebagai...",
+      "reference": "B",
+      "explanation": "Kunci: B. Berdasarkan materi Pertemuan 12 hal. 16, disagregasi inflasi BPS mengelompokkan barang-barang pangan yang harganya rentan terhadap kejutan musiman/cuaca (cabai, bawang, daging ayam) ke dalam komponen Volatile Foods (Komponen Bergejolak). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, hal. 16)",
+      "type": "single",
+      "qtype_label": "Pilihan Ganda",
+      "options": [
+        "A. Core Inflation (Inflasi Inti)",
+        "B. Volatile Foods (Inflasi Komponen Bergejolak)",
+        "C. Administered Prices (Inflasi Harga yang Diatur Pemerintah)",
+        "D. Imported Inflation (Inflasi Barang Impor)"
+      ],
+      "answer": 1
+    },
+    {
+      "point_id": "Pertemuan 13",
+      "point_name": "Pariwisata dan Ekspor Impor",
+      "score": 5,
+      "stem": "[OSL-P13-HIT-020] Diketahui indeks perdagangan internasional suatu negara pada tahun t adalah sebagai berikut: Indeks Harga Ekspor (Px) = 112,5; Indeks Harga Impor (Pm) = 105,0; Indeks Kuantitas Ekspor (Qx) = 120,0; dan Indeks Kuantitas Impor (Qm) = 108,0. Berapakah nilai Net Barter Terms of Trade (NBToT) dan Gross Barter Terms of Trade (GBToT)?",
+      "reference": "NBToT = 107,14 dan GBToT = 90,00",
+      "explanation": "Kunci: NBToT = 107,14 dan GBToT = 90,00. Net Barter Terms of Trade: NBToT = (Px / Pm) * 100 = (112,5 / 105,0) * 100 = 107,14. Gross Barter Terms of Trade: GBToT = (Qm / Qx) * 100 = (108,0 / 120,0) * 100 = 90,00. Nilai NBToT > 100 menunjukkan daya tukar perdagangan harga barang ekspor mengalami perbaikan terhadap impor. (Sumber: Pertemuan 13 OSL Indikator Ekonomi (3) X-M, KTI, Pariwisata.pdf, hal. 10)",
+      "type": "text",
+      "qtype_label": "Hitungan / Isian / Esai",
+      "options": [],
+      "answer": "NBToT = 107,14 dan GBToT = 90,00"
+    }
+  ]
+}

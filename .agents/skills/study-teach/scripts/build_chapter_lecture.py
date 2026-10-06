@@ -121,14 +121,14 @@ def render_chapter_markdown(sections):
         "",
         f"# {chapter_title}",
         "",
-        f"> 《{textbook}》 ｜ {len(sections)} 节 ｜ {total_points} 个知识点 ｜ 生成于 {today}",
+        f"> 《{textbook}》 ｜ {len(sections)} Bagian ｜ {total_points} Poin Konsep ｜ Dibuat: {today}",
         "",
     ]
 
-    MODE_LABEL = {"deep": "深入讲解", "speedrun": "考试速通"}
+    MODE_LABEL = {"deep": "Pembahasan Mendalam", "speedrun": "Ringkasan Kilat Ujian"}
     for data, _ in sections:
         mode = data["mode"]
-        mode_label = MODE_LABEL.get(mode, "深入讲解")
+        mode_label = MODE_LABEL.get(mode, "Pembahasan Mendalam")
         lines.append(f"## {data['section']} `[{mode_label}]`")
         lines.append("")
         for p in data["points"]:
@@ -144,20 +144,20 @@ def render_chapter_markdown(sections):
                 lines.append("")
             if mode == "deep":
                 if p.get("textbook_excerpt"):
-                    lines.append(_quote_block("**教材原文**\n" + p["textbook_excerpt"], "quote"))
+                    lines.append(_quote_block("**Teks Materi Kuliah**\n" + p["textbook_excerpt"], "quote"))
                     lines.append("")
                 if p.get("intuition"):
-                    lines.append(f"**直观理解**　{p['intuition']}")
+                    lines.append(f"**Intuisi Konsep**　{p['intuition']}")
                     lines.append("")
                 if p.get("formal"):
-                    lines.append(f"**严谨表述**　{p['formal']}")
+                    lines.append(f"**Definisi & Penjelasan Rigor**　{p['formal']}")
                     lines.append("")
             else:
                 if p.get("key_point"):
-                    lines.append(f"**核心结论**　{p['key_point']}")
+                    lines.append(f"**Kesimpulan Utama**　{p['key_point']}")
                     lines.append("")
                 if p.get("method"):
-                    lines.append(_quote_block("**解题思维**\n" + p["method"], "example"))
+                    lines.append(_quote_block("**Metode Pengerjaan Soal**\n" + p["method"], "example"))
                     lines.append("")
             # Figures
             figs = _fig_list(p)
@@ -174,12 +174,12 @@ def render_chapter_markdown(sections):
                     lines.append("")
             # Examples
             exs = _ex_list(p)
-            TYPE_LABEL = {"single": "单选", "multi": "多选", "judge": "判断", "text": ""}
+            TYPE_LABEL = {"single": "Pilihan Ganda", "multi": "Pilihan Jamak", "judge": "Benar/Salah", "text": "Isian/Esai"}
             for n, ex in enumerate(exs, 1):
-                base = f"例题{n}" if len(exs) > 1 else "例题"
+                base = f"Contoh Soal {n}" if len(exs) > 1 else "Contoh Soal"
                 etype = ex.get("type", "text")
                 tlabel = TYPE_LABEL.get(etype, "")
-                head = f"{base}（{tlabel}）" if tlabel else base
+                head = f"{base} ({tlabel})" if tlabel else base
                 lines.append(f"**{head}**　{ex['problem']}")
                 ex_src = _markdown_source_line(ex)
                 if ex_src:
@@ -191,26 +191,26 @@ def render_chapter_markdown(sections):
                         lines.append(f"- {chr(65 + i)}. {o}")
                     lines.append("")
                 if etype == "single":
-                    ans_line = f"**答案：{chr(65 + ex['answer'])}**\n"
+                    ans_line = f"**Jawaban: {chr(65 + ex['answer'])}**\n"
                 elif etype == "multi":
-                    ans_line = f"**答案：{'、'.join(chr(65 + i) for i in sorted(ex['answer']))}**\n"
+                    ans_line = f"**Jawaban: {', '.join(chr(65 + i) for i in sorted(ex['answer']))}**\n"
                 elif etype == "judge":
-                    ans_line = f"**答案：{'正确' if ex.get('answer') else '错误'}**\n"
+                    ans_line = f"**Jawaban: {'Benar' if ex.get('answer') else 'Salah'}**\n"
                 else:
                     ans_line = ""
                 sol_text = ans_line + ex["solution"].strip()
                 sol = "\n".join("> " + l for l in sol_text.splitlines())
-                lines.append(f"> [!success]- 参考解答（{base}，先自己做，再点开）")
+                lines.append(f"> [!success]- Kunci Jawaban & Solusi ({base}, kerjakan mandiri terlebih dahulu)")
                 lines.append(sol)
                 lines.append("")
             if p.get("pitfalls"):
-                lines.append(_quote_block("**易错辨析**　" + p["pitfalls"], "warning"))
+                lines.append(_quote_block("**Jebakan & Kesalahan Umum**　" + p["pitfalls"], "warning"))
                 lines.append("")
             if p.get("memory_hook"):
-                lines.append(_quote_block("**记忆抓手**　" + p["memory_hook"], "tip"))
+                lines.append(_quote_block("**Jembatan Keledai / Tips Mengingat**　" + p["memory_hook"], "tip"))
                 lines.append("")
             if p.get("links"):
-                lines.append(f"*关联知识点：{'、'.join(p['links'])}*")
+                lines.append(f"*Keterkaitan Konsep: {', '.join(p['links'])}*")
                 lines.append("")
     return "\n".join(lines)
 
@@ -240,15 +240,15 @@ def _ex_list(p):
 # Chapter-level Interactive HTML
 # ---------------------------------------------------------------------------
 CHAPTER_HTML_HEAD = """<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <title>{title}</title>
 <script>
-window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }} }};
+(function(){{try{{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();
+function applyTheme(t){{document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{{localStorage.setItem('esb-theme',t);}}catch(e){{}}}}
+function toggleTheme(){{var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}}
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-        onerror="document.getElementById('mjwarn').style.display='block'"></script>
 <style>
   :root {{ font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }}
   body {{ margin: 0; background: #f7f7f4; color: #1f2937; }}
@@ -271,7 +271,7 @@ window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']
   .meta {{ color: #6b7280; font-size: 13px; margin-bottom: 8px; }}
   .modetag {{ display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
              background:#eef2ff; color:#4338ca; margin-left:6px; }}
-  #mjwarn {{ display: none; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
+  #mjwarn {{ display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }}
   div.ch-sec {{ margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }}
   div.ch-sec:last-child {{ border-bottom: none; }}
   h2.sec-title {{ font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }}
@@ -344,11 +344,11 @@ window.MathJax = {{ tex: {{ inlineMath: [['$', '$']], displayMath: [['$$', '$$']
 </head>
 <body>
 <div id="layout">
-<nav id="toc"><h2>{chapter_title}</h2>{toc}</nav>
+<nav id="toc"><h2>{chapter_title} <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2>{toc}</nav>
 <main>
 <h1>{chapter_title}</h1>
-<div class="meta">《{textbook}》 ｜ {sec_count} 节 ｜ {total_points} 个知识点 ｜ 生成于 {date} ｜ {practice_note}</div>
-<div id="mjwarn">⚠️ 离线状态：公式渲染（MathJax）加载失败，以下公式显示为 LaTeX 源码，含义不受影响。</div>
+<div class="meta">《{textbook}》 ｜ {sec_count} Bagian ｜ {total_points} Poin Konsep ｜ Dibuat: {date} ｜ {practice_note}</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
 """
 
 CHAPTER_HTML_TAIL = """</main></div>
@@ -359,7 +359,7 @@ function refresh() {
   document.querySelectorAll(".donebtn").forEach(b => {
     const on = done.has(b.dataset.id);
     b.classList.toggle("on", on);
-    b.textContent = on ? "✓ 已学完" : "标记为已学";
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
     const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
     if (a) a.classList.toggle("done", on);
   });
@@ -396,8 +396,8 @@ document.querySelectorAll(".ex").forEach(ex => {
         const i = +o.dataset.i;
         o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
       });
-      const correctTxt = type === "judge" ? (ans === 0 ? "正确" : "错误") : L(ans);
-      verdict(ok, ok ? "✓ 回答正确" : "✗ 回答错误（正确答案：" + correctTxt + "）");
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
       reveal();
     }));
   } else if (type === "multi") {
@@ -417,7 +417,7 @@ document.querySelectorAll(".ex").forEach(ex => {
         o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
       });
       go.disabled = true;
-      verdict(allRight, allRight ? "✓ 全部正确" : "✗ 未全对（正确答案：" + [...want].sort((a, b) => a - b).map(L).join("、") + "）");
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
       reveal();
     });
   } else {  // text
@@ -428,10 +428,10 @@ document.querySelectorAll(".ex").forEach(ex => {
       if (list.length && user) {
         const hit = list.some(a => normAns(a) === user);
         verdict(hit, hit
-          ? "✓ 最终答案正确（参考：" + list[0] + "）。展开解答核对步骤。"
-          : "✗ 与参考最终答案不一致（参考：" + list[0] + "）。对照解答看看哪一步出了问题。");
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
       } else if (list.length && !user) {
-        verdict(false, "你还没作答。参考最终答案：" + list[0]);
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
       }
       go.disabled = true; inp.readOnly = true; reveal();
     });
@@ -456,15 +456,15 @@ def render_chapter_html(sections):
     total_examples = sum(example_count(data) for data, _ in sections)
     today = datetime.date.today().isoformat()
 
-    practice_note = (f"全章例题 {total_examples} 道 ｜ 先作答再展开解答"
-                     if total_examples else "本讲尚未配置例题，重点看讲解与易错辨析")
+    practice_note = (f"Total Contoh Soal {total_examples} Butir ｜ Kerjakan mandiri sebelum membuka pembahasan"
+                     if total_examples else "Belum ada contoh soal pada bab ini, fokus pada pemahaman konsep dan jebakan ujian")
 
     # Build multi-level TOC: section groups with nested point links
-    MODE_LABEL = {"deep": "深入讲解", "speedrun": "考试速通"}
+    MODE_LABEL = {"deep": "Pembahasan Mendalam", "speedrun": "Ringkasan Kilat Ujian"}
     toc_parts = []
     for data, _ in sections:
         mode = data["mode"]
-        mode_label = MODE_LABEL.get(mode, "深入讲解")
+        mode_label = MODE_LABEL.get(mode, "Pembahasan Mendalam")
         toc_parts.append(
             f'<div class="toc-sec">{esc(data["section"])}'
             f'<span class="modetag-mini">{mode_label}</span></div>')
@@ -476,7 +476,7 @@ def render_chapter_html(sections):
 
     # Chapter header
     out = [CHAPTER_HTML_HEAD.format(
-        title=f"{chapter_title} · 讲义",
+        title=f"{chapter_title} · Modul Kuliah",
         chapter_title=esc(chapter_title),
         textbook=esc(textbook),
         sec_count=len(sections),
@@ -488,7 +488,7 @@ def render_chapter_html(sections):
     # Each section as a div.ch-sec
     for data, _ in sections:
         mode = data["mode"]
-        mode_label = MODE_LABEL.get(mode, "深入讲解")
+        mode_label = MODE_LABEL.get(mode, "Pembahasan Mendalam")
         out.append(f'<div class="ch-sec" id="sec-{esc(sanitize(data["section"]))}">')
         out.append(f'<h2 class="sec-title">{esc(data["section"])}'
                    f'<span class="modetag">{mode_label}</span></h2>')

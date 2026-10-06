@@ -1,0 +1,91 @@
+{
+  "point_id": "13.1.2",
+  "title": "Barang Dagangan Tanpa Masuk Pabean Merchanting",
+  "importance": "中",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Statistik Ekspor-Impor dan Perdagangan Luar Negeri",
+    "bps_subject": "Statistik Perdagangan Luar Negeri dan Neraca Pembayaran"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "5, 10-15",
+        "content": "Definisi merchanting SNA 2008: pembelian barang oleh residen (merchant) dari nonresiden untuk dijual kembali pada nonresiden negara lain di mana barang tanpa/tidak berada di wilayah ekonomi residen merchant. Tiga karakteristik: alih kepemilikan, tanpa transformasi substansial, dan barang tidak masuk pabean."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Di era globalisasi rantai pasok, seorang pengusaha di Jakarta bisa membeli biji kopi dari petani di Vietnam lalu menjualnya langsung ke pemanggang kopi di Jerman tanpa kapal kargo pengangkut biji kopi tersebut pernah singgah di pelabuhan Tanjung Priok. Transaksi ini dinamakan merchanting. Karena pedagang Indonesia secara hukum memiliki barang tersebut dan memperoleh margin keuntungan dagang, transaksi ekonomi riil telah terjadi dan wajib dicatat dalam statistik resmi meskipun petugas Bea Cukai Indonesia tidak pernah melihat fisik barangnya.",
+    "bps_definition": "Merchanting menurut standar SNA 2008 dan Manual Neraca Pembayaran Edisi Ke-6 (BPM6) adalah kegiatan pembelian barang oleh penduduk (resident merchant) suatu perekonomian dari bukan penduduk (non-resident), untuk selanjutnya dijual kembali kepada bukan penduduk di negara lain, di mana barang tersebut tidak pernah memasuki wilayah ekonomi atau batas pabean residen merchant. Syarat merchanting: (1) terjadi alih kepemilikan ekonomi barang kepada residen merchant, (2) tidak ada transformasi substansial pada barang, dan (3) barang tidak melintasi perbatasan pabean negara residen merchant.",
+    "boundary_conditions": "Jika barang diubah bentuk atau diolah secara fisik (misal biji kopi disangrai dan dikemas menjadi produk kopi instan oleh pihak ketiga di luar negeri atas kendali merchant), maka transaksi masuk ke klasifikasi 'manufaktur atas kontrak / processing fees' bukan merchanting murni. Dalam pencatatan statistik, perolehan barang dicatat sebagai ekspor barang negatif (-USD) dan penjualan dicatat sebagai ekspor barang positif (+USD); selisihnya adalah Ekspor Neto Barang di bawah Merchanting.",
+    "formula_latex": "$$\\text{Ekspor Neto Merchanting} = X_{\\text{merchanting (penjualan)}} - M_{\\text{merchanting (perolehan)}} = X_{\\text{positif}} + X_{\\text{negatif}}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah perusahaan dagang berstatus residen di Indonesia melakukan serangkaian transaksi merchanting internasional pada bulan September 2026:\n1. Membeli komoditas biji kopi robusta dari eksportir di Vietnam seharga USD 200.000. Barang disimpan sementara di gudang berikat Singapura tanpa memasuki wilayah pabean Indonesia.\n2. Menjual seluruh biji kopi tersebut kepada importir di Hamburg, Jerman, seharga USD 260.000 tanpa dilakukan pengolahan fisik (hanya pemindahan kepemilikan dokumen bill of lading).\n3. Selain transaksi merchanting, selama bulan tersebut Indonesia mencatat ekspor barang reguler fisik (FOB) sebesar USD 1.500.000 dan impor barang reguler fisik (FOB) sebesar USD 1.080.000.\nHitunglah:\n1. Nilai pencatatan perolehan barang di bawah merchanting oleh Indonesia (ekspor negatif).\n2. Nilai pencatatan penjualan barang di bawah merchanting oleh Indonesia (ekspor positif/bruto).\n3. Nilai ekspor neto barang di bawah merchanting (*net exports of goods under merchanting*).\n4. Total ekspor barang Indonesia menurut konsep SNA 2008 dan saldo neraca perdagangan barang FOB-FOB.",
+    "data_table": "| Komponen Transaksi | Nilai Transaksi (USD) | Klasifikasi Statistik SNA 2008 |\n|---|---|---|\n| Pembelian dari Vietnam | 200.000 | Ekspor negatif barang di bawah merchanting (-200.000) |\n| Penjualan ke Jerman | 260.000 | Ekspor positif barang di bawah merchanting (+260.000) |\n| Selisih Margin Dagang | 60.000 | Ekspor neto barang di bawah merchanting (+60.000) |\n| Ekspor Barang Reguler (FOB) | 1.500.000 | Ekspor barang umum (*general merchandise*) |\n| Impor Barang Reguler (FOB) | 1.080.000 | Impor barang umum (*general merchandise*) |",
+    "step_by_step_solution": "1. Pencatatan Perolehan Barang di Bawah Merchanting:\n   $$X_{\\text{negatif}} = -\\text{USD } 200.000$$\n   Catatan: SNA 2008 mencatat pembelian ini sebagai 'ekspor negatif' pada pos barang agar tidak dicatat sebagai impor negara pedagang (karena barang tidak dikonsumsi di dalam negeri).\n2. Pencatatan Penjualan Barang di Bawah Merchanting:\n   $$X_{\\text{positif}} = +\\text{USD } 260.000$$\n3. Menghitung Ekspor Neto Barang di Bawah Merchanting:\n   $$\\text{Ekspor Neto} = X_{\\text{positif}} + X_{\\text{negatif}} = 260.000 - 200.000 = +\\text{USD } 60.000$$\n4. Menghitung Total Ekspor Barang SNA 2008 dan Saldo Neraca Barang:\n   - Total Ekspor Barang = Ekspor Reguler FOB + Ekspor Neto Merchanting = $$1.500.000 + 60.000 = \\text{USD } 1.560.000$$\n   - Saldo Neraca Perdagangan Barang (FOB - FOB) = $$1.560.000 - 1.080.000 = +\\text{USD } 480.000$$.",
+    "python_verification_code": "acq_usd = -200000.0\nsales_usd = 260000.0\nnet_merchanting = sales_usd + acq_usd\nx_regular_fob = 1500000.0\ntotal_x_sna = x_regular_fob + net_merchanting\nm_regular_fob = 1080000.0\ngoods_balance_sna = total_x_sna - m_regular_fob\nprint(f'Acq={acq_usd:.0f}, Sales={sales_usd:.0f}, NetMerchanting={net_merchanting:.0f}, TotalX_SNA={total_x_sna:.0f}, GoodsBalance_SNA={goods_balance_sna:.0f}')",
+    "expected_output": "Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengklasifikasikan margin keuntungan merchanting ke dalam neraca jasa perdagangan",
+      "common_mistake": "Menganggap selisih jual-beli merchanting sebagai pendapatan jasa perantara (komisi jasa) seperti pada sistem lama BPM5.",
+      "safe_strategy": "Di bawah SNA 2008 dan BPM6, transaksi merchanting secara tegas dikelompokkan ke dalam Neraca Barang (Goods), bukan Neraca Jasa (Services), dengan nama akun 'Net exports of goods under merchanting'."
+    },
+    {
+      "trap_description": "Mencatat pembelian barang luar negeri pada merchanting sebagai impor barang biasa",
+      "common_mistake": "Mencatat pembelian USD 200.000 sebagai impor Indonesia sehingga mendistorsi statistik impor domestik.",
+      "safe_strategy": "Ingat bahwa barang merchanting tidak pernah memasuki wilayah pabean Indonesia. Pembelian dicatat sebagai 'ekspor barang bernilai negatif' di neraca barang, bukan sebagai impor."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.1 Statistik Perdagangan Internasional",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.1.2",
+      "name": "Barang Dagangan Tanpa Masuk Pabean Merchanting",
+      "importance": "中",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10-15]",
+      "exam_focus": "Memahami konsep merchanting goods SNA 2008, 3 syarat utama transaksi merchanting, perlakuan 'ekspor negatif' dan 'ekspor positif', serta reklasifikasi pos dari neraca jasa (BPM5) ke neraca barang (BPM6/SNA 2008).",
+      "textbook_excerpt": "Merchanting adalah pembelian barang oleh residen (merchant) dari nonresiden, untuk selanjutnya dijual kembali pada nonresiden negara lain, dimana barang itu tanpa atau tidak berada di wilayah ekonomi residen merchant. Terjadi perubahan kepemilikan; tidak ada transformasi substansial pada barang; barang tidak memasuki wilayah residen merchant [slide 5].",
+      "intuition": "Pernahkah Anda mendengar model bisnis dropshipping atau perantara komoditas global? Pedagang di Indonesia membeli batubara dari Australia dan menjualnya langsung ke pabrik baja di India. Kapal batubara berlayar lurus dari Sydney ke Mumbai tanpa pernah lewat laut Indonesia. Pedagang Indonesia menanggung risiko harga dan memiliki hak milik legal atas batubara tersebut sebelum menjualnya dengan keuntungan. Inilah *merchanting*. Meskipun Bea Cukai Indonesia tidak mencatatnya di pelabuhan, rekening bank pedagang di Indonesia menerima devisa neto hasil perdagangan barang tersebut.",
+      "formal": "### 1. Definisi dan Karakteristik Utama Merchanting (SNA 2008 & BPM6)\n\nMenurut standar statistik internasional SNA 2008 paragraf 14.73 dan *Balance of Payments Manual 6th Edition* (BPM6) [slide 5]:\n*Merchanting* didefinisikan sebagai perolehan barang oleh penduduk dari bukan penduduk yang diikuti oleh penjualan kembali barang tersebut kepada bukan penduduk lain, tanpa barang tersebut pernah memasuki wilayah ekonomi penduduk pedagang (*resident merchant*).\n\nTiga syarat kumulatif yang wajib dipenuhi [slide 5]:\n1. **Alih Kepemilikan Ekonomi (*Change of Economic Ownership*)**:\n   Pedagang residen benar-benar memegang hak milik legal dan menanggung risiko ekonomi atas barang tersebut di antara saat pembelian dan penjualan.\n2. **Tanpa Transformasi Substansial (*No Substantial Transformation*)**:\n   Barang tidak mengalami proses manufaktur atau fabrikasi yang mengubah klasifikasi kode HS barang. Tindakan yang diperbolehkan hanyalah penyimpanan, inspeksi, sortasi mutu, atau *packaging* kecil.\n3. **Tanpa Lintasan Wilayah Pabean Fisik (*No Physical Entry into Domestic Territory*)**:\n   Barang bergerak langsung dari negara pemasok asal ke negara pembeli akhir, atau singgah di pelabuhan/gudang transit negara ketiga tanpa pernah melintasi pabean negara pedagang.\n\n### 2. Standar Pencatatan Akuntansi Neraca Perdagangan\n\nDalam pedoman manual terdahulu (BPM5), selisih nilai jual dan beli dicatat sebagai 'ekspor jasa perantara perdagangan'. Namun, dalam SNA 2008 dan BPM6 dilakukan reformasi fundamental [slide 5]:\n1. **Transaksi Perolehan (Pembelian)**:\n   Dicatat sebagai **ekspor barang bernilai negatif** (*negative exports of goods under merchanting*) di negara residen pedagang pada periode pembelian terjadi.\n   - Alasan: Mencegah distorsi pada angka impor barang domestik (karena barang tersebut tidak pernah dinikmati atau dikonsumsi oleh masyarakat domestik).\n2. **Transaksi Penjualan**:\n   Dicatat sebagai **ekspor barang bernilai positif** (*goods sold under merchanting*) di negara residen pedagang pada periode penjualan terealisasi.\n3. **Penyajian Neto**:\n   Pada tabel ringkasan neraca transaksi berjalan, disajikan pos tunggal:\n   $$\\text{Ekspor Neto Barang di Bawah Merchanting} = \\text{Nilai Penjualan} - \\text{Nilai Perolehan}$$\n\n### 3. Matriks Perbedaan Transaksi Perdagangan Khusus\n\n| Jenis Transaksi | Alih Kepemilikan Barang? | Melintasi Fisik Pabean Domestik? | Ada Transformasi Fisik? | Pencatatan Neraca (SNA 2008) |\n|---|---|---|---|---|\n| **Perdagangan Reguler** | Ya | Ya | Tidak / Ya | Ekspor FOB / Impor CIF Barang Umum |\n| **Merchanting Goods** | Ya | **Tidak** | Tidak | Ekspor Neto pada Neraca Barang |\n| **Jasa Maklon (Outward Processing)** | Tidak | Ya | **Ya** | Impor/Ekspor Jasa Manufaktur |\n| **Komisi Perantara (Brokerage)** | **Tidak** | Tidak | Tidak | Neraca Jasa (Fee Keagenan) |",
+      "pitfalls": "1. **Menganggap Merchanting sebagai Jasa**: Sejak SNA 2008 dan BPM6, merchanting resmi masuk ke Neraca Barang (Goods), bukan Neraca Jasa.\n2. **Mengabaikan Alih Kepemilikan**: Jika pedagang hanya menerima komisi 2% sebagai agen pencari pembeli tanpa pernah membeli dan memiliki barang, transaksi tersebut adalah jasa broker murni, bukan merchanting.\n3. **Jika Barang Mengalami Pengolahan Pabrik**: Bila barang diubah bentuk secara fisik di negara ketiga, transaksi beralih menjadi 'goods for processing' / jasa manufaktur.",
+      "memory_hook": "Merchanting: Barang Tidak Datang, Tapi Uang Datang; Dicatat di Neraca Barang Bukan Jasa.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10]",
+          "problem": "Manakah pernyataan yang BENAR mengenai perlakuan pencatatan transaksi merchanting dalam neraca pembayaran menurut manual BPM6 dan SNA 2008?",
+          "options": [
+            "Selisih antara harga jual dan beli barang dicatat sebagai ekspor jasa perdagangan.",
+            "Pembelian barang oleh pedagang residen dicatat sebagai impor barang biasa.",
+            "Perolehan barang dicatat sebagai ekspor negatif dan penjualannya dicatat sebagai ekspor positif dalam neraca barang.",
+            "Transaksi tidak dicatat sama sekali karena barang tidak melewati kawasan pabean fisik nasional."
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\nSesuai standar BPM6 dan SNA 2008 [slide 5], transaksi merchanting dicatat sepenuhnya dalam Neraca Barang (Goods Account). Saat merchant residen membeli barang dari luar negeri, dicatat sebagai ekspor barang bernilai negatif (-). Ketika barang tersebut dijual kembali ke non-residen di negara lain, dicatat sebagai ekspor barang bernilai positif (+). Jumlah neto dari kedua aliran ini menghasilkan 'ekspor neto barang di bawah merchanting'."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 9, 10]",
+          "problem": "Sebuah entitas dagang berstatus residen Indonesia membeli komoditas nikel dari Filipina seharga USD 200.000, lalu menjualnya ke pabrik baterai di Jepang seharga USD 260.000 tanpa membawa nikel tersebut ke wilayah Indonesia. Di samping itu, ekspor barang reguler fisik Indonesia adalah USD 1.500.000 dan impor barang reguler fisik FOB adalah USD 1.080.000.\nHitunglah:\n1. Nilai perolehan barang merchanting (ekspor negatif).\n2. Nilai penjualan barang merchanting (ekspor positif).\n3. Ekspor neto barang di bawah merchanting.\n4. Total ekspor barang SNA 2008 dan saldo neraca barang FOB-FOB.\nTuliskan jawaban format: `Acq=..., Sales=..., NetMerchanting=..., TotalX_SNA=..., GoodsBalance_SNA=...`.",
+          "answer": "Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000",
+          "solution": "Langkah Perhitungan:\n1. **Nilai Perolehan (Ekspor Negatif)**: $$\\text{Acq} = -\\text{USD } 200.000$$\n2. **Nilai Penjualan (Ekspor Positif)**: $$\\text{Sales} = +\\text{USD } 260.000$$\n3. **Ekspor Neto Merchanting**:\n   $$\\text{NetMerchanting} = 260.000 + (-200.000) = +\\text{USD } 60.000$$\n4. **Total Ekspor Barang SNA 2008**:\n   $$\\text{TotalX\\_SNA} = 1.500.000 + 60.000 = \\text{USD } 1.560.000$$\n   - Saldo Neraca Barang (FOB - FOB):\n   $$\\text{GoodsBalance\\_SNA} = 1.560.000 - 1.080.000 = +\\text{USD } 480.000$$\n\n**Verifikasi Kode Python**:\n```python\nacq_usd = -200000.0\nsales_usd = 260000.0\nnet_merchanting = sales_usd + acq_usd\nx_regular_fob = 1500000.0\ntotal_x_sna = x_regular_fob + net_merchanting\nm_regular_fob = 1080000.0\ngoods_balance_sna = total_x_sna - m_regular_fob\nprint(f'Acq={acq_usd:.0f}, Sales={sales_usd:.0f}, NetMerchanting={net_merchanting:.0f}, TotalX_SNA={total_x_sna:.0f}, GoodsBalance_SNA={goods_balance_sna:.0f}')\n# Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000\n```"
+        }
+      ],
+      "links": [
+        "13.1.1",
+        "13.1.3"
+      ]
+    }
+  ]
+}

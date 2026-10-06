@@ -1,0 +1,96 @@
+{
+  "point_id": "9.2.1",
+  "title": "Angka Partisipasi Murni APM dan Kasar APK",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Indikator Pendidikan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "66-71",
+        "content": "Definisi, formula, dan interpretasi Angka Partisipasi Kasar (APK) dan Angka Partisipasi Murni (APM) per jenjang sekolah (SD, SMP, SMA, PT), kondisi APM <= 100%, APM <= APK, dan kemungkinan APK > 100%."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "51-55",
+        "content": "Indikator pendidikan untuk SDGs 4 dalam Susenas (Target 4.1 APK pendidikan dasar & menengah, Target 4.2 APK PAUD, Target 4.5 Rasio gender APM/APK)."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "APM mengukur ketepatan usia siswa pada jenjang pendidikannya (apakah anak usia SD bersekolah tepat di SD). Sebaliknya, APK mengukur daya tampung atau kapasitas fisik sistem pendidikan pada jenjang tertentu tanpa memedulikan umur siswa (berapa total kursi siswa yang terisi di SD dibandingkan jumlah anak usia SD). Oleh karena itu, jika ada murid yang masuk sekolah lebih awal (usia dini) atau terlambat/mengulang kelas, pembilang APK akan membengkak sehingga nilai APK dapat melampaui 100%, sementara APM tidak pernah bisa melebihi 100%.",
+    "bps_definition": "Angka Partisipasi Murni (APM) adalah proporsi anak kelompok usia sekolah tertentu yang sedang bersekolah tepat di jenjang pendidikan yang seharusnya terhadap penduduk kelompok usia sekolah yang bersangkutan. Angka Partisipasi Kasar (APK) adalah rasio antara jumlah siswa yang bersekolah di suatu jenjang pendidikan tertentu (tanpa memandang usia) terhadap jumlah penduduk kelompok usia sekolah resmi pada jenjang yang sama. Sejak 2007, Susenas turut memperhitungkan Pendidikan Non-Formal (Paket A, Paket B, dan Paket C).",
+    "boundary_conditions": "1. Kondisi Batas Matematika Kritis:\n   - $\\text{APM} \\le \\text{APK}$ (selalu berlaku karena pembilang APM adalah bagian himpunan bagian dari pembilang APK).\n   - $\\text{APM} \\le 100\\%$ (mutlak secara teoritis).\n   - $\\text{APK}$ dapat $> 100\\%$ jika terdapat pendaftaran usia dini, terlambat masuk, atau pengulangan kelas.\n2. Kelompok umur resmi jenjang BPS: SD (7-12 tahun), SMP (13-15 tahun), SMA/SMK (16-18 tahun), Perguruan Tinggi (19-24 tahun).",
+    "formula_latex": "$$\\text{APM}_J = \\frac{S_{J, \\text{usia } J}}{P_{\\text{usia } J}} \\times 100\\%, \\quad \\text{APK}_J = \\frac{\\sum_{\\text{semua umur}} S_J}{P_{\\text{usia } J}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Verifikasi Batas Kritis BVA Pendidikan (test_bva_06): Di suatu distrik pendidikan, populasi anak usia resmi sekolah dasar (7-12 tahun) berjumlah 1.000 orang. Data dinas pendidikan mencatat total siswa yang terdaftar di jenjang SD adalah 1.060 anak, yang terdiri atas 40 anak berusia di bawah 7 tahun (masuk dini), 920 anak berusia 7-12 tahun (usia tepat jenjang), dan 100 anak berusia di atas 12 tahun (tinggal kelas/terlambat). Hitunglah nilai APM SD dan APK SD distrik tersebut, serta buktikan kondisi batas APM <= 100%, APM <= APK, dan APK > 100%!",
+    "data_table": "| Komponen Siswa / Penduduk | Jumlah Anak |\n|---|---|\n| Penduduk Usia Resmi SD (7-12 Tahun) | 1.000 |\n| Siswa SD Berusia Tepat (7-12 Tahun) | 920 |\n| Siswa SD Berusia Dini (< 7 Tahun) | 40 |\n| Siswa SD Berusia Lebih (> 12 Tahun) | 100 |\n| Total Seluruh Siswa Terdaftar di SD | 1.060 |",
+    "step_by_step_solution": "1. Menghitung Angka Partisipasi Murni (APM) SD:\n   $$\\text{APM}_{\\text{SD}} = \\frac{\\text{Siswa SD Usia 7-12}}{\\text{Penduduk Usia 7-12}} \\times 100\\% = \\frac{920}{1.000} \\times 100\\% = 92,00\\%$$\n2. Menghitung Angka Partisipasi Kasar (APK) SD:\n   $$\\text{APK}_{\\text{SD}} = \\frac{\\text{Total Siswa Terdaftar di SD}}{\\text{Penduduk Usia 7-12}} \\times 100\\% = \\frac{1.060}{1.000} \\times 100\\% = 106,00\\%$$\n3. Verifikasi Kondisi Batas Matematika BPS:\n   - $\\text{APM} = 92,00\\% \\le 100\\%$ (Terpenuhi)\n   - $\\text{APM} (92,00\\%) \\le \\text{APK} (106,00\\%)$ (Terpenuhi)\n   - $\\text{APK} = 106,00\\% > 100\\%$ (Menunjukkan kapasitas sistem menampung siswa di luar usia standar)",
+    "python_verification_code": "pop_7_12 = 1000\nsd_usia_tepat = 920\nsd_total = 1060\napm = (sd_usia_tepat / pop_7_12) * 100.0\napk = (sd_total / pop_7_12) * 100.0\ncond1 = (apm <= 100.0)\ncond2 = (apm <= apk)\ncond3 = (apk > 100.0)\nprint(f'APM={apm:.2f}%, APK={apk:.2f}%, APM<=APK={cond2}, APK>100={cond3}')",
+    "expected_output": "APM=92.00%, APK=106.00%, APM<=APK=True, APK>100=True"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengira Nilai APK di Atas 100% Merupakan Kesalahan Hitung",
+      "common_mistake": "Menganggap hasil hitungan APK sebesar 106% sebagai anomali atau data salah.",
+      "safe_strategy": "APK > 100% adalah fenomena lumrah dan sahih dalam statistik BPS karena pembilang mencakup murid di luar batas usia standar."
+    },
+    {
+      "trap_description": "Tertukar Pembilang APM dan APK",
+      "common_mistake": "Memasukkan total seluruh murid ke dalam rumus APM.",
+      "safe_strategy": "APM = Murni (hanya murid yang berumur sesuai jenjang). APK = Kasar (seluruh murid tanpa memandang umur)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.2 Indikator Pendidikan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.2.1",
+      "name": "Angka Partisipasi Murni APM dan Kasar APK",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66-71]",
+      "exam_focus": "Definisi perbedaan pembilang APM vs APK, rentang usia resmi 4 jenjang sekolah, pembuktian ketidaksamaan APM <= APK dan batas APK > 100%, serta aplikasi pada neraca pendidikan BPS.",
+      "textbook_excerpt": "APK SD = Jumlah murid SD / Jumlah penduduk usia 7-12 tahun * 100 [slide 66]. Kondef: Perbandingan antara jumlah penduduk yang masih bersekolah di jenjang pendidikan tertentu (tanpa memandang usia) dengan jumlah penduduk yang memenuhi syarat resmi usia sekolah di jenjang pendidikan yang sama [slide 67]. Nilai APK bisa lebih dari 100 persen karena populasi murid mencakup anak di luar batas usia sekolah. Penyebabnya adalah pendaftaran usia dini, terlambat sekolah, atau pengulangan kelas [slide 67]. APM SD = Jumlah murid SD umur 7-12 tahun / Jumlah penduduk usia 7-12 tahun * 100 [slide 69]. Nilai APM berkisar antara 0-100. Secara umum, APM akan selalu lebih rendah dari APK [slide 70].",
+      "intuition": "Jika sebuah bus sekolah berkapasitas 50 kursi diisi oleh 53 penumpang (termasuk beberapa balita dan orang dewasa yang ikut menumpang), rasio penumpangnya melebihi 100% kapasitas resmi (ini analogi APK). Namun jika kita hanya menghitung anak-anak pemegang tiket resmi di dalam bus tersebut, jumlahnya tidak akan pernah melebihi 100% (ini analogi APM).",
+      "formal": "### 1. Formulasi Matematis APM dan APK menurut Jenjang Sekolah\n\nBerdasarkan klasifikasi resmi Kemendikbudristek dan BPS [slide 62, 66, 69]:\n\n| Jenjang Pendidikan ($J$) | Rentang Usia Resmi | Formula APM (Murni) | Formula APK (Kasar) |\n|---|---|---|---|\n| **SD / MI / Paket A** | 7 - 12 Tahun | $\\text{APM}_{\\text{SD}} = \\frac{\\text{Murid SD Usia 7-12}}{P_{7-12}} \\times 100\\%$ [slide 69] | $\\text{APK}_{\\text{SD}} = \\frac{\\sum \\text{Murid SD}}{P_{7-12}} \\times 100\\%$ [slide 66] |\n| **SMP / MTs / Paket B** | 13 - 15 Tahun | $\\text{APM}_{\\text{SMP}} = \\frac{\\text{Murid SMP Usia 13-15}}{P_{13-15}} \\times 100\\%$ [slide 69] | $\\text{APK}_{\\text{SMP}} = \\frac{\\sum \\text{Murid SMP}}{P_{13-15}} \\times 100\\%$ [slide 66] |\n| **SMA / SMK / MA / Paket C** | 16 - 18 Tahun | $\\text{APM}_{\\text{SM}} = \\frac{\\text{Murid SMA Usia 16-18}}{P_{16-18}} \\times 100\\%$ [slide 69] | $\\text{APK}_{\\text{SM}} = \\frac{\\sum \\text{Murid SMA}}{P_{16-18}} \\times 100\\%$ [slide 66] |\n| **Perguruan Tinggi (PT)** | 19 - 24 Tahun | $\\text{APM}_{\\text{PT}} = \\frac{\\text{Mhs PT Usia 19-24}}{P_{19-24}} \\times 100\\%$ [slide 69] | $\\text{APK}_{\\text{PT}} = \\frac{\\sum \\text{Mahasiswa PT}}{P_{19-24}} \\times 100\\%$ [slide 66] |\n\n### 2. Teorema Hubungan APM dan APK\n\nMisalkan himpunan seluruh siswa yang bersekolah pada jenjang $J$ adalah $S_J$. Himpunan siswa usia tepat adalah $S_J^* = \\{s \\in S_J \\mid \\text{Usia}(s) \\in \\text{Rentang}(J)\\}$. Himpunan siswa di luar usia standar adalah $S_J^{\\text{luar}} = S_J \\setminus S_J^*$.\n\nKarena $|S_J| = |S_J^*| + |S_J^{\\text{luar}}|$ dan $|S_J^{\\text{luar}}| \\ge 0$, maka:\n$$|S_J^*| \\le |S_J|$$\nDengan membagi kedua sisi dengan jumlah penduduk kelompok usia resmi $P_{\\text{usia } J} > 0$ dan mengalikan 100%, diperoleh:\n$$\\text{APM}_J \\le \\text{APK}_J$$\n\nSelisih antara APK dan APM ($\\text{APK} - \\text{APM}$) mengukur besarnya proporsi penduduk yang bersekolah tidak tepat waktu (*overage and underage enrollment ratio*).",
+      "pitfalls": "Mengabaikan siswa pendidikan non-formal (Paket A, B, C). Sejak tahun 2007, BPS secara resmi memasukkan siswa program kesetaraan ke dalam perhitungan APM dan APK Susenas.",
+      "memory_hook": "APM = Murni (Usia Tepat, <= 100%). APK = Kasar (Semua Usia, Bisa > 100%). APM <= APK selalu.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 67, 70]",
+          "problem": "Jika di suatu provinsi nilai APK jenjang Sekolah Menengah Pertama (SMP) tercatat sebesar 104,5% dan nilai APM SMP tercatat sebesar 82,3%, maka kesimpulan yang paling tepat adalah:",
+          "options": [
+            "Terjadi kesalahan pendataan lapangan pada Susenas karena partisipasi tidak mungkin melebihi 100%.",
+            "Terdapat 22,2% anak usia 13-15 tahun yang tidak tertampung di fasilitas pendidikan SMP.",
+            "Kapasitas sekolah SMP mampu menampung siswa melebihi populasi usia 13-15 tahun karena adanya siswa usia dini atau siswa yang mengulang.",
+            "Seluruh anak usia 13-15 tahun di provinsi tersebut telah bersekolah tepat waktu di jenjang SMP."
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\nNilai APK > 100% mengindikasikan bahwa daya tampung sekolah jenjang tersebut mencakup siswa di luar usia 13-15 tahun (misalnya siswa usia < 13 tahun yang cerdas istimewa atau usia > 15 tahun yang terlambat tamat SD/mengulang kelas). Selisih $104,5\\% - 82,3\\% = 22,2\\%$ mencerminkan proporsi siswa di luar usia standar yang bersekolah di SMP."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66, 69]",
+          "problem": "Sebuah kota memiliki 50.000 penduduk usia 16-18 tahun. Dari hasil pendataan sekolah jenjang SMA/SMK, terdaftar 32.000 siswa berusia 16-18 tahun, 1.000 siswa berusia 15 tahun (akselerasi), dan 7.000 siswa berusia di atas 18 tahun. Hitunglah APM dan APK jenjang SMA/SMK kota tersebut. Tuliskan jawaban dalam format: `APM=X.X%, APK=Y.Y%`.",
+          "answer": "APM=64.0%, APK=80.0%",
+          "solution": "Langkah-langkah perhitungan:\n1. Menghitung APM SMA:\n   $$\\text{APM}_{\\text{SMA}} = \\frac{32.000}{50.000} \\times 100\\% = 64,0\\%$$\n2. Menghitung total murid SMA:\n   $$\\sum \\text{Murid SMA} = 32.000 + 1.000 + 7.000 = 40.000$$\n3. Menghitung APK SMA:\n   $$\\text{APK}_{\\text{SMA}} = \\frac{40.000}{50.000} \\times 100\\% = 80,0\\%$$\n\n**Verifikasi Kode Python**:\n```python\npop = 50000\nsiswa_tepat = 32000\nsiswa_total = 32000 + 1000 + 7000\napm = (siswa_tepat / pop) * 100\napk = (siswa_total / pop) * 100\nprint(f'APM={apm:.1f}%, APK={apk:.1f}%')\n# Output: APM=64.0%, APK=80.0%\n```"
+        }
+      ],
+      "links": [
+        "9.1.1",
+        "9.2.2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "point_id": "10.1.3",
+  "title": "Angka Kematian Neo-Natal NMR",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 10,
+    "silabus_topic": "Indikator Kesehatan dan SDGs 3",
+    "bps_subject": "Indikator Mortalitas Bayi Baru Lahir dan Post-Neonatal"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "24-35",
+        "content": "Definisi dan formula Angka Kematian Neo-Natal (usia 0-<1 bulan / 28 hari) slide 24, Angka Kematian Post Neo-Natal (usia 1 bulan-<1 tahun) slide 25, perbedaan fokus program intervensi kesehatan slide 27, data hasil SP2020 (kematian neonatal 9,3 per 1000 kelahiran) slide 28, target SDGs 3.2 (NMR setidaknya hingga 12 per 1000 KH) slide 9."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Kematian bayi pada tahun pertama kehidupan terbelah menjadi dua etape dengan penyebab yang secara struktural sangat berbeda: fase Neonatal (0-28 hari pertama) dan fase Post-Neonatal (29 hari hingga sebelum 1 tahun). Kematian neonatal merefleksikan faktor risiko endogen/biologis yang erat kaitannya dengan kesehatan ibu selama hamil dan kualitas penanganan persalinan (seperti asfiksia lahir, komplikasi prematuritas, BBLR, infeksi neonatal, dan tetanus neonatorum). Sebaliknya, kematian pasca-neonatal didorong oleh faktor eksogen lingkungan (infeksi pernapasan, diare, penyakit menular, malnutrisi). Karena penyebut kedua indikator ini identik (jumlah kelahiran hidup pada tahun yang sama), keduanya bersifat aditif langsung membentuk Angka Kematian Bayi (AKB / IMR).",
+    "bps_definition": "1. Angka Kematian Neo-Natal (Neonatal Mortality Rate / NMR) adalah banyaknya kematian bayi yang terjadi sebelum berumur satu bulan atau 28 hari per 1.000 kelahiran hidup pada satu tahun tertentu di daerah tertentu [Pertemuan_10_Indikator_Kesehatan.md, slide 24].\n2. Angka Kematian Post Neo-Natal (Post-Neonatal Mortality Rate / PNMR) adalah banyaknya kematian yang terjadi pada bayi berumur antara 1 bulan sampai dengan kurang dari 1 tahun per 1.000 kelahiran hidup pada satu tahun tertentu di daerah tertentu [slide 25].",
+    "boundary_conditions": "Batas umur kematian neonatal adalah 0 sampai kurang dari 1 bulan (didefinisikan secara baku sebagai 0-28 hari). Batas umur kematian post-neonatal adalah 1 bulan sampai kurang dari 1 tahun (29 s.d. 364 hari). Kedua indikator menggunakan penyebut yang sama persis: Kelahiran Hidup (B) pada tahun yang bersangkutan. Konstanta pengali standar adalah K = 1.000. Hubungan matematis bersifat aditif: IMR = NMR + PNMR. Target SDGs 3.2 menetapkan bahwa pada tahun 2030 seluruh negara berupaya menurunkan Angka Kematian Neonatal setidaknya hingga 12 per 1.000 kelahiran hidup [slide 9]. Hasil SP2020 Long Form mencatat NMR Indonesia sebesar 9,3 anak per 1.000 kelahiran hidup [slide 28].",
+    "formula_latex": "$$\\text{NMR} = \\frac{D_{0-<28\\text{ hari}}}{B} \\times 1.000, \\quad \\text{PNMR} = \\frac{D_{1\\text{ bln}-<1\\text{ th}}}{B} \\times 1.000, \\quad \\text{AKB} = \\text{NMR} + \\text{PNMR}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Suatu wilayah pada tahun 2023 mencatat 40.000 kelahiran hidup. Dari seluruh kelahiran tersebut, dilaporkan 320 bayi meninggal pada usia antara 0 hingga 28 hari, dan 240 bayi meninggal pada rentang usia 1 bulan hingga sebelum mencapai 1 tahun. Hitunglah:\n1. Angka Kematian Neonatal (NMR)\n2. Angka Kematian Post-Neonatal (PNMR)\n3. Angka Kematian Bayi (AKB / IMR) total dan buktikan secara matematis hubungan aditif antara NMR, PNMR, dan AKB.\n4. Evaluasi apakah pencapaian NMR di wilayah tersebut telah memenuhi target SDGs 3.2 (maksimal 12 per 1.000 KH).",
+    "data_table": "| Indikator Mortalitas Bayi | Simbol | Jumlah Kematian | Kelahiran Hidup ($B$) | Konstanta ($K$) | Nilai Rate (per 1.000 KH) |\n|---|---|---|---|---|---|\n| Kematian Neonatal (0-28 hari) | $D_{\\text{neo}}$ | 320 | 40.000 | 1.000 | 8,00 |\n| Kematian Post-Neonatal (1 bln - <1 th) | $D_{\\text{post}}$ | 240 | 40.000 | 1.000 | 6,00 |\n| Total Kematian Bayi (< 1 th) | $D_{\\text{infant}}$ | 560 | 40.000 | 1.000 | 14,00 |",
+    "step_by_step_solution": "1. Menghitung Angka Kematian Neonatal (NMR) [Pertemuan_10_Indikator_Kesehatan.md, slide 24]:\n   $$\\text{NMR} = \\frac{D_{0-<28\\text{ hari}}}{B} \\times 1.000 = \\frac{320}{40.000} \\times 1.000 = 8,00 \\text{ per 1.000 KH}$$\n2. Menghitung Angka Kematian Post-Neonatal (PNMR) [slide 25]:\n   $$\\text{PNMR} = \\frac{D_{1\\text{ bln}-<1\\text{ th}}}{B} \\times 1.000 = \\frac{240}{40.000} \\times 1.000 = 6,00 \\text{ per 1.000 KH}$$\n3. Menghitung Angka Kematian Bayi Total (AKB / IMR) [slide 26]:\n   $$\\text{AKB} = \\frac{D_{\\text{infant}}}{B} \\times 1.000 = \\frac{320 + 240}{40.000} \\times 1.000 = \\frac{560}{40.000} \\times 1.000 = 14,00 \\text{ per 1.000 KH}$$\n4. Pembuktian Hubungan Aditif:\n   $$\\text{NMR} + \\text{PNMR} = 8,00 + 6,00 = 14,00 = \\text{AKB}$$\n   Karena penyebutnya identik (Kelahiran Hidup B), penjumlahan pecahan dengan penyebut sama terbukti menghasilkan nilai AKB yang tepat.\n5. Evaluasi Target SDGs 3.2:\n   - Nilai NMR wilayah tersebut adalah 8,00 per 1.000 KH.\n   - Ambang target SDGs 3.2 tahun 2030 adalah maksimal 12 per 1.000 KH [slide 9].\n   - Karena 8,00 <= 12,00, wilayah tersebut telah berhasil memenuhi target SDGs 3.2.",
+    "python_verification_code": "births = 40000\nd_neo = 320\nd_post = 240\nnmr = (d_neo / births) * 1000\npnmr = (d_post / births) * 1000\nimr = ((d_neo + d_post) / births) * 1000\nprint(f'NMR={nmr:.2f}, PNMR={pnmr:.2f}, IMR={imr:.2f}, Additive_Check={nmr + pnmr == imr}')",
+    "expected_output": "NMR=8.00, PNMR=6.00, IMR=14.00, Additive_Check=True"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Generalisasi Sifat Aditif pada AKABA",
+      "common_mistake": "Menganggap bahwa seluruh indikator kematian anak bersifat aditif, seperti menduga AKABA = AKB + AK Anak.",
+      "safe_strategy": "Hanya NMR dan PNMR yang bersifat aditif menghasilkan AKB (karena sama-sama membagi Kelahiran Hidup). AKB dan AK Anak TIDAK BISA dijumlahkan langsung karena AK Anak membagi penduduk usia 1-4 tahun."
+    },
+    {
+      "trap_description": "Salah Alamat Program Intervensi Kesehatan",
+      "common_mistake": "Mengusulkan program imunisasi campak atau penyuluhan makanan pendamping ASI (MPASI) untuk menurunkan Angka Kematian Neonatal.",
+      "safe_strategy": "Kematian neonatal (0-28 hari) terjadi sebelum usia imunisasi campak (9 bulan). Intervensi neonatal harus berupa pemberian tablet besi (Fe) dan TT ibu hamil, pertolongan persalinan steril, serta perawatan BBLR [slide 27]."
+    },
+    {
+      "trap_description": "Kesalahan Pembagi pada NMR",
+      "common_mistake": "Membagi jumlah kematian neonatal dengan jumlah seluruh balita atau jumlah bayi yang bertahan hidup.",
+      "safe_strategy": "Penyebut resmi NMR adalah Kelahiran Hidup (Live Births) pada tahun yang bersangkutan."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 10,
+  "chapter_title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+  "section": "10.1 Indikator Mortalitas Ibu dan Anak",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "10.1.3",
+      "name": "Angka Kematian Neo-Natal NMR",
+      "importance": "高",
+      "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 24-35]",
+      "exam_focus": "Menguasai definisi dan batas umur neonatal (0-28 hari) vs post-neonatal (1 bln-<1 th), hubungan aditif aditif AKB = NMR + PNMR, perbedaan determinan program kesehatan, data SP2020, dan target SDGs 3.2.",
+      "textbook_excerpt": "Angka Kematian Neo-Natal adalah kematian yang terjadi sebelum bayi berumur satu bulan atau 28 hari per 1.000 kelahiran hidup pada satu tahun tertentu. Rumus: AK Neo-Natal = (D0-<1 bln / Sigma Lahir Hidup) x 1.000 [slide 24]. Angka Kematian Post Neo-natal adalah kematian bayi umur 1 bulan sampai kurang 1 tahun per 1.000 kelahiran hidup: AK Post Neo-Natal = (D1 bln-<1 th / Sigma Lahir Hidup) x 1.000 [slide 25]. Program penurunan neonatal terkait pelayanan kesehatan ibu hamil (misal pil besi, suntikan anti tetanus). Program post-neonatal berguna untuk mengembangkan imunisasi, penanggulangan penyakit menular, dan gizi [slide 27]. SP2020: Angka kematian neonatal Indonesia 9,3 per 1.000 kelahiran [slide 28]. Target SDGs 3.2: Angka Kematian Neonatal setidaknya turun hingga 12 per 1.000 KH [slide 9].",
+      "intuition": "Bayangkan garis waktu tahun pertama kehidupan bayi: hari 0 hingga hari ke-28 adalah masa adaptasi biologis dari rahim ke dunia luar (fase neonatal). Organ tubuh masih sangat rentan dan imunitas pasif dari plasenta belum sepenuhnya stabil. Jika bayi meninggal pada fase ini, penyebabnya hampir pasti berkaitan dengan kondisi medis ibu selama hamil atau komplikasi proses persalinan. Setelah hari ke-28 (fase post-neonatal), bayi mulai terpapar lingkungan luar: udara, air, makanan selain ASI, debu, dan droplet virus/bakteri. Maka penyebab kematian bergeser menjadi infeksi pneumonia, diare, dan malnutrisi. Mengetahui rasio kematian neonatal vs post-neonatal memberi tahu dokter dan perencana kebijakan sektor mana yang mendesak diperbaiki: ruang bersalin dan ANC (jika NMR tinggi), atau imunisasi dan sanitasi air (jika PNMR tinggi).",
+      "formal": "### 1. Definisi Operasional Mortalitas Neonatal & Post-Neonatal\n\nBerdasarkan materi resmi BPS dan standar WHO [Pertemuan_10_Indikator_Kesehatan.md, slide 24-27]:\n- **Kematian Neonatal (Neonatal Death)**: Kematian bayi yang terjadi pada kurun waktu antara saat lahir hingga sebelum mencapai usia tepat 28 hari (usia $0$ s.d. $27$ hari penuh, sering dinotasikan sebagai $0 - < 1$ bulan).\n- **Kematian Post-Neonatal (Post-Neonatal Death)**: Kematian bayi yang terjadi setelah melewati masa neonatal, yaitu dari usia tepat 28 hari (atau 1 bulan) sampai sebelum berusia tepat 1 tahun ($28$ hari s.d. $364$ hari).\n\n### 2. Formulasi Matematis BPS\n\n#### A. Angka Kematian Neonatal (Neonatal Mortality Rate / NMR)\n$$\\text{NMR} = \\frac{D_{0-<28\\text{ hari}}}{\\sum \\text{Lahir Hidup}} \\times 1.000$$\ndimana:\n- $D_{0-<28\\text{ hari}}$ = Jumlah kematian bayi berusia $0$ s.d. kurang dari $28$ hari pada tahun tertentu di daerah tertentu [slide 24].\n- $\\sum \\text{Lahir Hidup} = B$ = Banyaknya kelahiran hidup pada tahun tertentu di daerah tertentu.\n- $K = 1.000$ = Konstanta pengali.\n\n#### B. Angka Kematian Post-Neonatal (Post-Neonatal Mortality Rate / PNMR)\n$$\\text{PNMR} = \\frac{D_{1\\text{ bln}-<1\\text{ th}}}{\\sum \\text{Lahir Hidup}} \\times 1.000$$\ndimana:\n- $D_{1\\text{ bln}-<1\\text{ th}}$ = Jumlah kematian bayi berusia $1$ bulan sampai kurang dari $1$ tahun pada tahun tertentu di daerah tertentu [slide 25].\n- Penyebut dan pengali identik dengan NMR.\n\n### 3. Sifat Hubungan Aditif dengan Angka Kematian Bayi (AKB)\nKarena seluruh kematian bayi berumur kurang dari 1 tahun ($D_{0-<1\\text{ th}}$) dapat dipartisi secara mutually exclusive dan exhaustive menjadi kematian neonatal dan kematian post-neonatal:\n$$D_{0-<1\\text{ th}} = D_{0-<28\\text{ hari}} + D_{1\\text{ bln}-<1\\text{ th}}$$\nMaka pembagian kedua ruas dengan $\\sum \\text{Lahir Hidup}$ dan perkalian dengan $1.000$ menghasilkan:\n$$\\text{AKB} = \\text{NMR} + \\text{PNMR}$$\n\n### 4. Perbedaan Determinan Etiologis dan Sasaran Kebijakan\n| Dimensi | Kematian Neonatal (0-28 Hari) | Kematian Post-Neonatal (1 bln - <1 th) |\n|---|---|---|\n| **Etiologi Utama** | Faktor endogen/biologis maternal: asfiksia, BBLR, prematuritas, kelainan kongenital, tetanus neonatorum | Faktor eksogen/lingkungan: pneumonia, diare, malnutrisi, infeksi bakteri/virus |\n| **Fokus Intervensi** | Pelayanan antenatal care (ANC), tablet tambah darah (Fe) ibu, imunisasi Tetanus Toksoid (TT) ibu hamil, persalinan higienis di faskes [slide 27] | Program Imunisasi Dasar Lengkap (IDL), sanitasi air bersih, ASI eksklusif, gizi seimbang [slide 27] |\n| **Capaian SP2020** | 9,3 per 1.000 kelahiran hidup [slide 28] | Sekitar 10,5 per 1.000 kelahiran hidup |\n| **Target SDGs 3.2** | $\\le 12$ per 1.000 kelahiran hidup pada 2030 [slide 9] | Tercakup dalam target AKABA $\\le 25$ per 1.000 KH |",
+      "pitfalls": "1. **Menyamakan Usia Neonatal dengan Balita**: Usia neonatal adalah strictly 0-28 hari, bukan 1 tahun dan bukan 5 tahun.\n2. **Kesesuaian Program Kebijakan**: Menangani kematian neonatal dengan penyuluhan sanitasi jamban adalah salah sasaran; kematian neonatal harus ditangani dengan perbaikan gizi ibu hamil, ANC, dan fasilitas emergensi neonatal.\n3. **Sifat Aditif**: Hanya berlaku antara NMR dan PNMR terhadap AKB karena memiliki denominator yang identik.",
+      "memory_hook": "Neonatal = 0-28 hari (faktor ibu/kandungan); Post-neonatal = 1 bln-<1 th (faktor lingkungan); NMR + PNMR = IMR!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 9, 24, 27]",
+          "problem": "Program intervensi manakah yang paling tepat dan efektif untuk menurunkan Angka Kematian Neo-Natal (NMR) menurut materi resmi BPS?",
+          "options": [
+            "Pemberian imunisasi campak dan perbaikan sarana sanitasi jamban keluarga.",
+            "Pelayanan kesehatan ibu hamil, pemberian tablet besi (Fe), dan suntikan anti tetanus toksoid bagi ibu hamil.",
+            "Penyuluhan gizi seimbang dan makanan pendamping ASI untuk anak usia 1-4 tahun.",
+            "Penyediaan air minum perpipaan dan penataan perumahan kumuh perkotaan."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\n- Berdasarkan slide 27: 'Program untuk mengurangi angka kematian neo-natal adalah bersangkutan dengan program pelayanan kesehatan ibu hamil, misalnya program pemberian pil besi dan suntikan anti tetanus.'\n- Pilihan A, C, dan D ditujukan untuk mengurangi kematian pasca-neonatal (post-neonatal) dan kematian anak balita yang bersumber dari infeksi lingkungan dan gizi."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 24, 25, 26]",
+          "problem": "Di suatu daerah pada tahun 2023 tercatat 40.000 kelahiran hidup. Dilaporkan bahwa terjadi 320 kematian bayi berusia 0-28 hari dan 240 kematian bayi berusia 29 hari hingga sebelum 1 tahun. Hitunglah NMR, PNMR, dan AKB total per 1.000 kelahiran hidup. Tuliskan jawaban akhir dalam format: `NMR=..., PNMR=..., IMR=...`.",
+          "answer": "NMR=8.00, PNMR=6.00, IMR=14.00",
+          "solution": "Langkah-langkah perhitungan:\n1. $\\text{NMR} = \\frac{D_{0-<28\\text{ hari}}}{B} \\times 1.000 = \\frac{320}{40.000} \\times 1.000 = 8,00$ per 1.000 KH.\n2. $\\text{PNMR} = \\frac{D_{1\\text{ bln}-<1\\text{ th}}}{B} \\times 1.000 = \\frac{240}{40.000} \\times 1.000 = 6,00$ per 1.000 KH.\n3. $\\text{AKB (IMR)} = \\text{NMR} + \\text{PNMR} = 8,00 + 6,00 = 14,00$ per 1.000 KH.\n\n**Verifikasi Kode Python**:\n```python\nbirths = 40000\nd_neo = 320\nd_post = 240\nnmr = (d_neo / births) * 1000\npnmr = (d_post / births) * 1000\nimr = ((d_neo + d_post) / births) * 1000\nprint(f'NMR={nmr:.2f}, PNMR={pnmr:.2f}, IMR={imr:.2f}')\n# Output: NMR=8.00, PNMR=6.00, IMR=14.00\n```"
+        }
+      ],
+      "links": [
+        "10.1.1",
+        "10.1.2",
+        "10.2.1"
+      ]
+    }
+  ]
+}

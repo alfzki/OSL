@@ -1,0 +1,93 @@
+{
+  "point_id": "8.3.2",
+  "title": "Kriteria Ketimpangan Bank Dunia",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 8,
+    "silabus_topic": "Kemiskinan dan Ketimpangan Pendapatan",
+    "bps_subject": "Indikator Ketimpangan Pendapatan dan Pengeluaran"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md",
+        "slide_or_page": "41-44",
+        "content": "Kriteria ketimpangan Bank Dunia berdasarkan pangsa pengeluaran 40% penduduk terbawah: <12% tinggi, 12-17% sedang, >17% rendah."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Bank Dunia membagi penduduk menjadi tiga lapisan: 40% terbawah (kelompok pendapatan rendah), 40% menengah, dan 20% teratas (kelompok pendapatan tinggi). Ukuran ketimpangan difokuskan secara spesifik pada kue ekonomi yang dinikmati oleh 40% kelompok terbawah. Jika kelompok 40% terbawah hanya memperoleh bagian sangat kecil (<12%), ketimpangan dinilai tinggi.",
+    "bps_definition": "Kriteria Ketimpangan Bank Dunia mengklasifikasikan tingkat ketimpangan pengeluaran/pendapatan berdasarkan persentase total pengeluaran yang dinikmati oleh 40 persen penduduk berpendapatan terendah: (1) Ketimpangan Tinggi jika pangsa 40% terbawah < 12%; (2) Ketimpangan Sedang jika pangsa 40% terbawah antara 12% dan 17%; (3) Ketimpangan Rendah jika pangsa 40% terbawah > 17%.",
+    "boundary_conditions": "Ambang batas Bank Dunia dihitung dari kuintil 1 + kuintil 2 (Q1 + Q2) atau desil 1 s.d. 4 (D1 + D2 + D3 + D4). Nilai batas pemisah kritis adalah 12% dan 17%.",
+    "formula_latex": "$$\\text{Pangsa 40\\% Terbawah} = p_1 + p_2 = Y_2 \\times 100\\%, \\quad \\text{Tingkat} = \\begin{cases} \\text{Tinggi}, & < 12\\% \\\\ \\text{Sedang}, & 12\\% \\le \\text{Pangsa} \\le 17\\% \\\\ \\text{Rendah}, & > 17\\% \\end{cases}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Berdasarkan data kuintil konsumsi pada Slide 39 (Q1 = 50.000, Q2 = 70.000, Q3 = 100.000, Q4 = 125.000, Q5 = 350.000; total = 695.000), hitunglah persentase pengeluaran yang dinikmati oleh 40% penduduk terbawah, 40% penduduk menengah, dan 20% penduduk teratas, lalu klasifikasikan tingkat ketimpangan menurut kriteria Bank Dunia.",
+    "data_table": "| Kelompok Penduduk | Kuintil Termasuk | Total Konsumsi (Rp) | Persentase Konsumsi (%) | Kriteria Bank Dunia |\n|---|---|---|---|---|\n| 40% Terbawah | Q1 + Q2 | 120.000 | 17,27% | > 17% -> Rendah |\n| 40% Menengah | Q3 + Q4 | 225.000 | 32,37% | - |\n| 20% Teratas | Q5 | 350.000 | 50,36% | - |\n| Total | Q1 s.d. Q5 | 695.000 | 100,00% | - |",
+    "step_by_step_solution": "1. Total konsumsi populasi = 50.000 + 70.000 + 100.000 + 125.000 + 350.000 = 695.000.\n2. Konsumsi 40% penduduk terbawah (Q1 + Q2) = 50.000 + 70.000 = 120.000.\n3. Pangsa pengeluaran 40% terbawah = (120.000 / 695.000) * 100% = 17,266...% ≈ 17,27%.\n4. Evaluasi kriteria Bank Dunia:\n   - < 12% : Ketimpangan Tinggi\n   - 12% s.d. 17% : Ketimpangan Sedang\n   - > 17% : Ketimpangan Rendah\n5. Karena 17,27% > 17,0%, maka distribusi pengeluaran berada pada kategori Ketimpangan Rendah.",
+    "python_verification_code": "consumption = [50000.0, 70000.0, 100000.0, 125000.0, 350000.0]\ntotal = sum(consumption)\nbottom_40_val = consumption[0] + consumption[1]\nbottom_40_pct = (bottom_40_val / total) * 100.0\nif bottom_40_pct < 12.0:\n    category = 'Tinggi'\nelif bottom_40_pct <= 17.0:\n    category = 'Sedang'\nelse:\n    category = 'Rendah'\nprint(f'Bottom40_Pct={bottom_40_pct:.2f}%, Category={category}')",
+    "expected_output": "Bottom40_Pct=17.27%, Category=Rendah"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Terbalik menafsirkan arah persentase Bank Dunia",
+      "common_mistake": "Mengira jika pangsa 40% terbawah < 12%, maka ketimpangannya rendah karena angkanya kecil.",
+      "safe_strategy": "Ingat bahwa semakin KECIL pangsa yang dinikmati kelompok terbawah, semakin TINGGI ketimpangannya (< 12% adalah Ketimpangan Tinggi, sedangkan > 17% adalah Ketimpangan Rendah)."
+    },
+    {
+      "trap_description": "Tertukar cakupan kuintil pada kelompok 40-40-20",
+      "common_mistake": "Mengambil hanya Kuintil 1 untuk mewakili 40% terbawah.",
+      "safe_strategy": "Setiap kuintil mewakili 20% penduduk; 40% terbawah adalah penjumlahan Kuintil 1 dan Kuintil 2 (Q1 + Q2)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 8,
+  "chapter_title": "Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan",
+  "section": "8.3 Ukuran Ketimpangan Pendapatan dan Pengeluaran",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "8.3.2",
+      "name": "Kriteria Ketimpangan Bank Dunia",
+      "importance": "高",
+      "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 41-44]",
+      "exam_focus": "Menguasai pembagian distribusi 40-40-20 Bank Dunia, ambang batas 12% dan 17% untuk kelompok 40% terbawah, interpretasi tingkat ketimpangan, dan perbandingannya dengan Koefisien Gini.",
+      "textbook_excerpt": "Kriteria Bank Dunia mengklasifikasikan penduduk atas 3 kelompok menurut pendapatan: kelompok pendapatan terendah 40%, kelompok pendapatan menengah 40%, dan kelompok pendapatan tertinggi 20%. Ketimpangan diukur dengan menghitung persentase pendapatan yang diperoleh kelompok 40% terendah: jika < 12% ketimpangan tinggi; jika antara 12% dan 17% ketimpangan sedang; jika > 17% ketimpangan rendah [slide 37].",
+      "intuition": "Bayangkan sebuah jamuan makan malam untuk 10 orang dengan 10 piring makanan:\n- Empat orang berpendapatan terendah (40% terbawah) duduk di ujung meja.\n- Jika keempat orang ini bersama-sama hanya mendapatkan kurang dari 1,2 piring (<12% total makanan), ketimpangan jamuan tersebut sangat tinggi dan tidak manusiawi.\n- Jika mereka mendapatkan antara 1,2 sampai 1,7 piring (12-17%), ketimpangan dinilai sedang.\n- Jika mereka berhasil menikmati lebih dari 1,7 piring (>17%), ketimpangan dinilai rendah dan distribusi dinilai cukup merata.",
+      "formal": "### 1. Klasifikasi Distribusi Penduduk Menurut Bank Dunia\n\nBank Dunia membagi seluruh penduduk dalam perekonomian ke dalam 3 strata distribusi pendapatan/pengeluaran [slide 37]:\n1. **Kelompok 40% Terbawah** (*Low Income Group*): Penduduk pada persentil 0% s.d. 40% (mencakup Kuintil 1 dan Kuintil 2, atau Desil 1 s.d. 4).\n2. **Kelompok 40% Menengah** (*Middle Income Group*): Penduduk pada persentil 40% s.d. 80% (mencakup Kuintil 3 dan Kuintil 4, atau Desil 5 s.d. 8).\n3. **Kelompok 20% Teratas** (*High Income Group*): Penduduk pada persentil 80% s.d. 100% (mencakup Kuintil 5, atau Desil 9 dan 10).\n\n### 2. Formulasi Pengukuran Pangsa Pengeluaran 40% Terbawah\n\nMisalkan data dikelompokkan ke dalam 5 kuintil dengan pengeluaran masing-masing $C_1, C_2, C_3, C_4, C_5$ dan total konsumsi $C_{\\text{total}} = \\sum_{k=1}^5 C_k$.\nPangsa pengeluaran yang dinikmati oleh 40% penduduk terbawah ($S_{40}$) didefinisikan sebagai [slide 37, 39]:\n$$S_{40} = \\frac{C_1 + C_2}{C_{\\text{total}}} \\times 100\\% = (p_1 + p_2) \\times 100\\% = Y_2 \\times 100\\%$$\ndimana $Y_2$ adalah nilai kumulatif proporsi pengeluaran pada kuintil ke-2.\n\n### 3. Kriteria Batas Ketimpangan Bank Dunia\nBerdasarkan persentase $S_{40}$, Bank Dunia menetapkan tiga tingkatan ketimpangan distribusi [slide 37]:\n$$\\text{Kategori Ketimpangan} = \\begin{cases} \\text{Ketimpangan Tinggi}, & \\text{jika } S_{40} < 12\\% \\\\ \\text{Ketimpangan Sedang}, & \\text{jika } 12\\% \\le S_{40} \\le 17\\% \\\\ \\text{Ketimpangan Rendah}, & \\text{jika } S_{40} > 17\\% \\end{cases}$$\n\n### 4. Matriks Perbandingan: Kriteria Bank Dunia vs Koefisien Gini\n\n| Dimensi | Kriteria Bank Dunia (40% Terbawah) | Koefisien Gini (Gini Ratio) |\n|---|---|---|\n| **Fokus Pengukuran** | Spesifik pada kesejahteraan 40% lapisan penduduk termiskin | Agregat seluruh spektrum distribusi (menyeluruh dari 0 s.d. 100%) |\n| **Metrik Keluaran** | Persentase pangsa pengeluaran ($S_{40}$) dan 3 kategori verbal | Skalar kontinu indeks antara 0 s.d. 1 |\n| **Arah Interpretasi** | Semakin **besar** nilai $S_{40}$, ketimpangan semakin **rendah** | Semakin **besar** nilai Gini, ketimpangan semakin **tinggi** |\n| **Kelebihan** | Sangat intuitif dan relevan bagi kebijakan perlindungan sosial pro-poor | Memiliki landasan aksiomatis lengkap (*Pigou-Dalton transfer*) |\n| **Contoh Slide 39** | $S_{40} = 17,27\\% \\implies$ **Ketimpangan Rendah** | $G = 0,3770 \\implies$ **Ketimpangan Sedang** |\n\n### 5. Analisis Komparatif Slide 39\nPada contoh data kuintil Slide 39 [slide 39]:\n- $C_1 = 50.000$, $C_2 = 70.000$, Total = $695.000$.\n- $S_{40} = \\frac{50.000 + 70.000}{695.000} \\times 100\\% = \\frac{120.000}{695.000} \\times 100\\% = 17,27\\%$.\n- Karena $17,27\\% > 17,0\\%$, maka menurut kriteria Bank Dunia distribusi tersebut masuk ke dalam kategori **Ketimpangan Rendah**.\n- Terlihat adanya nuansa perbedaan kesimpulan: Koefisien Gini menunjukkan ketimpangan sedang ($0,3770$), sedangkan Bank Dunia menunjukkan ketimpangan rendah ($17,27\\%$). Hal ini wajar terjadi karena Bank Dunia hanya memotret kelompok 40% terbawah tanpa memperhitungkan ketimpangan yang terjadi di antara kuintil 4 dan kuintil 5 (kelompok kaya menguasai 50,36% konsumsi).",
+      "pitfalls": "1. **Tertukar Arah Kategori**: Menganggap bahwa pangsa < 12% adalah ketimpangan rendah. Ingat bahwa 40% terbawah adalah kelompok miskin; jika bagian mereka makin kecil (<12%), artinya ketimpangan makin TINGGI.\n2. **Hanya Mengambil Kuintil 1**: Lupa bahwa 40% penduduk terdiri dari DUA kuintil (Q1 + Q2) atau EMPAT desil (D1 s.d. D4).\n3. **Salah Menetapkan Batas Ambang**: Angka patokan adalah 12% dan 17% (bukan 20% atau 40%).",
+      "memory_hook": "Bank Dunia 40% Terbawah: < 12% Parah (Tinggi), 12-17% Sedang, > 17% Aman (Rendah).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 37]",
+          "problem": "Berdasarkan kriteria pengukuran ketimpangan Bank Dunia, suatu wilayah dikategorikan mengalami 'Ketimpangan Tinggi' apabila kelompok 40 persen penduduk berpendapatan terendah menikmati:",
+          "options": [
+            "Lebih dari 17 persen dari total pendapatan nasional.",
+            "Kurang dari 12 persen dari total pendapatan nasional.",
+            "Antara 12 persen sampai dengan 17 persen dari total pendapatan nasional.",
+            "Kurang dari 40 persen dari total pendapatan nasional."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\nMenurut kriteria Bank Dunia [slide 37]:\n- Jika 40% penduduk terbawah memperoleh < 12% total pendapatan -> Ketimpangan Tinggi.\n- Jika memperoleh antara 12% dan 17% -> Ketimpangan Sedang.\n- Jika memperoleh > 17% -> Ketimpangan Rendah."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 37, 39]",
+          "problem": "Suatu provinsi memiliki distribusi pengeluaran kuintil penduduk sbb: Kuintil 1 = 50.000, Kuintil 2 = 70.000, Kuintil 3 = 100.000, Kuintil 4 = 125.000, Kuintil 5 = 350.000 (total pengeluaran = 695.000).\n1. Hitunglah persentase pengeluaran yang dinikmati oleh kelompok 40% terbawah.\n2. Tentukan kategori ketimpangan provinsi tersebut menurut kriteria Bank Dunia.\nTuliskan jawaban akhir dalam format: `Pangsa 40% Terbawah=...%, Kategori=...`.",
+          "answer": "Pangsa 40% Terbawah=17,27%, Kategori=Ketimpangan Rendah",
+          "solution": "Langkah-langkah perhitungan:\n1. Kelompok 40% terbawah terdiri dari Kuintil 1 dan Kuintil 2:\n   $$\\text{Total Pengeluaran 40\\% Terbawah} = 50.000 + 70.000 = 120.000$$\n2. Persentase terhadap total pengeluaran ($695.000$):\n   $$S_{40} = \\frac{120.000}{695.000} \\times 100\\% = 17,266...\\% \\approx 17,27\\%$$\n3. Evaluasi Kriteria Bank Dunia:\n   - Karena $17,27\\% > 17\\%$, maka provinsi tersebut masuk dalam kategori **Ketimpangan Rendah**.\n\n**Verifikasi Kode Python**:\n```python\nconsumption = [50000.0, 70000.0, 100000.0, 125000.0, 350000.0]\ntotal = sum(consumption)\nbottom_40 = (consumption[0] + consumption[1]) / total * 100.0\ncategory = 'Tinggi' if bottom_40 < 12.0 else ('Sedang' if bottom_40 <= 17.0 else 'Rendah')\nprint(f'Pangsa 40% Terbawah={bottom_40:.2f}%, Kategori=Ketimpangan {category}')\n# Output: Pangsa 40% Terbawah=17.27%, Kategori=Ketimpangan Rendah\n```"
+        }
+      ],
+      "links": [
+        "8.3.1",
+        "8.2.1",
+        "8.2.2",
+        "8.2.3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "point_id": "11.1.2",
+  "title": "Metode Ubinan Produktivitas",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 11,
+    "silabus_topic": "Statistik Produksi Pertanian dan Industri",
+    "bps_subject": "Statistik Pertanian Tanaman Pangan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md",
+        "slide_or_page": "19-27",
+        "content": "Pelaksanaan survei ubinan di lapangan dengan alat ubinan berukuran 2,5 m x 2,5 m (luas plot 6,25 m2), penimbangan hasil panen Gabah Kering Panen (GKP), dan formula faktor pengali (multiplier) ke 1 hektar: 1.600 untuk kg/ha, 16 untuk ku/ha, dan 1,6 untuk ton/ha."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Bagaimana cara BPS mengetahui produktivitas panen padi tanpa harus menimbang seluruh hasil sawah berhektar-hektar? BPS menerapkan metode ubinan (crop-cutting survey). Petak cuplikan representatif berukuran bujur sangkar 2,5 m x 2,5 m (6,25 m2) dipasang secara acak di lahan sawah yang sedang dipanen. Seluruh rumpun padi di dalam petak dipotong, dirontokkan, dibersihkan dari hampa, lalu ditimbang dengan timbangan gantung terkalibrasi. Karena 1 hektar sama dengan 10.000 m2, maka 1 hektar memuat persis 10.000 / 6,25 = 1.600 petak ubinan, sehingga hasil timbangan dalam kilogram dapat langsung dikonversi menjadi produktivitas per hektar.",
+    "bps_definition": "Metode Ubinan adalah teknik pengukuran objektif (crop cutting survey) yang dilaksanakan BPS bersama petugas Dinas Pertanian pada saat panen raya petani untuk mengestimasi produktivitas tanaman pangan per hektar. Plot standar ubinan padi adalah bujur sangkar berukuran 2,5 m x 2,5 m (luas 6,25 m2) dengan hasil panen ditimbang dalam wujud Gabah Kering Panen (GKP).",
+    "boundary_conditions": "Plot ubinan padi berukuran baku 2,5 m x 2,5 m = 6,25 m2. Multiplier konversi: faktor pengali kg/ha adalah 1.600; faktor pengali kuintal/ha (ku/ha) adalah 16 (karena 1 ku = 100 kg); faktor pengali ton/ha adalah 1,6 (karena 1 ton = 1.000 kg). Rekonstruksi Soal UAS 2022/2023 Esai 2a Pak Sakri: timbangan 4,5 kg GKP menghasilkan produktivitas 72 ku/ha atau 7,2 ton/ha.",
+    "formula_latex": "$$\\text{Produktivitas (kg/ha)} = \\frac{b}{6,25} \\times 10.000 = b \\times 1.600, \\quad \\text{Produktivitas (ku/ha)} = b \\times 16, \\quad \\text{Produktivitas (ton/ha)} = b \\times 1,6$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Rekonstruksi Soal UAS OSL 2022/2023 Esai 2a: Pak Sakri adalah seorang petani padi di Kabupaten Sukoharjo yang memanen sawahnya seluas 2,5 hektar. Petugas BPS bersama petugas Dinas Pertanian setempat melakukan pengukuran produktivitas menggunakan alat ubinan berukuran 2,5 m x 2,5 m. Setelah seluruh tanaman padi dalam plot ubinan dipotong, dirontokkan, dan dibersihkan dari kotoran, jarum timbangan ubinan menunjukkan angka tepat 4,5 kg Gabah Kering Panen (GKP). Tentukan produktivitas sawah Pak Sakri dalam ku/ha dan ton/ha serta total estimasi produksi GKP dari seluruh sawah 2,5 hektar tersebut.",
+    "data_table": "| Parameter Pengukuran | Simbol | Nilai | Satuan |\n|---|---|---|---|\n| Ukuran Sisi Plot Ubinan | $s$ | 2,5 | meter |\n| Luas Plot Ubinan | $A_{\\text{plot}}$ | 6,25 | $\\text{m}^2$ |\n| Luas 1 Hektar | $A_{\\text{ha}}$ | 10.000 | $\\text{m}^2$ |\n| Berat Gabah Hasil Ubinan | $b$ | 4,5 | kg GKP |\n| Luas Lahan Panen Pak Sakri | $L$ | 2,5 | hektar |",
+    "step_by_step_solution": "1. Luas plot ubinan = 2,5 m * 2,5 m = 6,25 m2. Multiplier konversi ke hektar: kg/ha = 10.000 / 6,25 = 1.600; ku/ha = 1.600 / 100 = 16; ton/ha = 1.600 / 1.000 = 1,6.\n2. Produktivitas dalam kuintal per hektar: ku/ha = 4,5 * 16 = 72,0 ku/ha.\n3. Produktivitas dalam ton per hektar: ton/ha = 4,5 * 1,6 = 7,2 ton/ha (atau 7.200 kg/ha).\n4. Total estimasi produksi GKP sawah Pak Sakri seluas 2,5 ha: Total Produksi = 2,5 ha * 7,2 ton/ha = 18,0 ton GKP (atau 180 kuintal).",
+    "python_verification_code": "b = 4.5\nluas_plot = 2.5 * 2.5\nmult_kg = 10000.0 / luas_plot\nkg_ha = b * mult_kg\nku_ha = kg_ha / 100.0\nton_ha = kg_ha / 1000.0\ntotal_prod = ton_ha * 2.5\nprint(f'ku/ha={ku_ha:.1f}, ton/ha={ton_ha:.1f}, total={total_prod:.1f} ton')",
+    "expected_output": "ku/ha=72.0, ton/ha=7.2, total=18.0 ton"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Tertukar Satuan Kuintal/ha dan Ton/ha",
+      "common_mistake": "Mengalikan hasil timbangan dengan 16 tetapi menuliskan satuannya sebagai ton/ha (misal 4,5 x 16 = 72 ton/ha).",
+      "safe_strategy": "Perhatikan bahwa 1 kuintal = 100 kg sedangkan 1 ton = 1.000 kg. Multiplier untuk kuintal/ha adalah 16, sedangkan multiplier untuk ton/ha adalah 1,6 (hasilnya 7,2 ton/ha, bukan 72 ton/ha)."
+    },
+    {
+      "trap_description": "Asumsi Bentuk Gabah Hasil Ubinan",
+      "common_mistake": "Menganggap hasil timbangan ubinan langsung berupa Gabah Kering Giling (GKG) atau beras siap konsumsi.",
+      "safe_strategy": "Hasil timbangan ubinan riil di sawah selalu berbentuk Gabah Kering Panen (GKP) berkadar air tinggi yang masih harus dikonversi dengan angka SKGB."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 11,
+  "chapter_title": "Pertemuan 11: Statistik Produksi Pertanian dan Industri",
+  "section": "11.1 Estimasi Produksi Tanaman Pangan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "11.1.2",
+      "name": "Metode Ubinan Produktivitas",
+      "importance": "高",
+      "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 19-27]",
+      "exam_focus": "Teknik survei ubinan objektif BPS, dimensi plot bujur sangkar 2,5 m x 2,5 m (6,25 m2), penimbangan Gabah Kering Panen (GKP), turunan matematis multiplier 1.600 (kg/ha), 16 (ku/ha), dan 1,6 (ton/ha), serta rekonstruksi soal UAS 2022/2023 Esai 2a Pak Sakri.",
+      "textbook_excerpt": "Pengukuran dilakukan oleh Petugas BPS Kab/Kota (KSK) dan petugas Dinas Pertanian Kab/Kota (Mantri Tani/KCD/PPL). Frekuensi pengumpulan data: caturwulan/subround. Pengukuran produksi tanaman pangan menggunakan alat ubinan. Untuk satu plot berukuran 2,5 m x 2,5 m. Hasilnya untuk estimasi produksi per hektar [slide 10]. Pelaksanaan Survei Ubinan di lapangan: Alat Ubinan, Memasang Alat, Memanen Plot Ubinan 2,5m x 2,5m, Merontok, Membersihkan, Menimbang [slide 20]. Plot Ubinan: Luas Plot = 6,25 m2. Produktivitas kuintal per ha (GKP) = (3,1 / 100) : (6,25 / 10000) = (3,1 / 100) x (10000 / 6,25) = 3,1 x 16 = 49,60 ku/ha [slide 23].",
+      "intuition": "Bagaimana cara BPS mengetahui produktivitas panen padi tanpa harus menimbang seluruh hasil sawah berhektar-hektar? BPS menerapkan metode ubinan (crop-cutting survey). Petak cuplikan representatif berukuran bujur sangkar 2,5 m x 2,5 m (6,25 m2) dipasang secara acak di lahan sawah yang sedang dipanen. Seluruh rumpun padi di dalam petak dipotong, dirontokkan, dibersihkan dari hampa, lalu ditimbang dengan timbangan gantung terkalibrasi. Karena 1 hektar sama dengan 10.000 m2, maka 1 hektar memuat persis 10.000 / 6,25 = 1.600 petak ubinan, sehingga hasil timbangan dalam kilogram dapat langsung dikonversi menjadi produktivitas per hektar.",
+      "formal": "### 1. Metodologi Survei Ubinan BPS\n\nSurvei Ubinan Padi adalah survei berbasis rumah tangga dan petak sawah yang bertujuan untuk mengukur produktivitas per hektar tanaman pangan secara objektif pada saat panen raya [slide 10, 20].\n\n#### A. Unit Sampling dan Unit Observasi\n- **Kerangka Sampel**: Menggunakan subsegmen terpilih hasil amatan Kerangka Sampel Area (KSA) yang berada pada fase siap panen [slide 21].\n- **Unit Sampling**: Subsegmen KSA berukuran $100\\text{ m} \\times 100\\text{ m}$ [slide 21].\n- **Unit Observasi**: Plot ubinan yang dipasang di petak sawah petani terpilih [slide 21].\n\n#### B. Standar Operasional Prosedur (SOP) Ubinan\nPelaksanaan ubinan di lapangan mengikuti 6 tahapan baku [slide 20]:\n1. **Memasang Alat Ubinan**: Alat ubinan berbahan pipa besi/paralon berukuran bujur sangkar $2,5\\text{ m} \\times 2,5\\text{ m}$ dibentangkan di petak sawah. Sudut penempatan ditentukan secara acak menggunakan tabel angka acak (berdasarkan panjang pematang barat dan utara).\n2. **Memotong/Memanen**: Seluruh rumpun tanaman padi yang pangkal batangnya berada di dalam batas tali alat ubinan dipotong.\n3. **Merontok**: Gabah dirontokkan dari malainya menggunakan perontok manual atau mekanis (*thresher*).\n4. **Membersihkan**: Gabah diayak untuk memisahkan kotoran, daun, dan bulir hampa.\n5. **Menimbang**: Gabah bersih ditimbang dengan timbangan gantung berskala ketelitian 0,05 kg atau 0,1 kg dalam wujud **Gabah Kering Panen (GKP)**.\n\n### 2. Penurunan Matematis Faktor Pengali (Multiplier) Ubinan\n\nMisalkan:\n- Ukuran plot ubinan: sisi bujur sangkar $s = 2,5\\text{ meter}$.\n- Luas plot ubinan: $A_{\\text{plot}} = 2,5\\text{ m} \\times 2,5\\text{ m} = 6,25\\text{ m}^2$ [slide 23].\n- Luas standar satu hektar: $A_{\\text{ha}} = 10.000\\text{ m}^2$.\n- Hasil timbangan plot ubinan: $b\\text{ kg GKP}$.\n\n#### A. Konversi ke Satuan Kilogram per Hektar (kg/ha)\n$$\\text{Produktivitas (kg/ha)} = \\frac{b}{A_{\\text{plot}}} \\times A_{\\text{ha}} = \\frac{b}{6,25} \\times 10.000 = b \\times 1.600$$\nFaktor pengali ke kg/ha adalah **1.600** [slide 23].\n\n#### B. Konversi ke Satuan Kuintal per Hektar (ku/ha)\nKarena $1\\text{ kuintal (ku)} = 100\\text{ kg}$:\n$$\\text{Produktivitas (ku/ha)} = \\frac{b \\times 1.600}{100} = b \\times 16$$\nFaktor pengali ke ku/ha adalah **16** [slide 23].\n\n#### C. Konversi ke Satuan Ton per Hektar (ton/ha)\nKarena $1\\text{ ton} = 1.000\\text{ kg}$:\n$$\\text{Produktivitas (ton/ha)} = \\frac{b \\times 1.600}{1.000} = b \\times 1,6$$\nFaktor pengali ke ton/ha adalah **1,6** [slide 11, 23].\n\n| Satuan Target Produktivitas | Formulasi Lengkap | Faktor Pengali ($b = \\text{berat kg}$)| Nilai untuk $b = 4,5\\text{ kg}$ |\n|---|---|---|---|\n| **Kilogram per Hektar (kg/ha)** | $\\frac{b}{6,25} \\times 10.000$ | $b \\times 1.600$ | $7.200\\text{ kg/ha}$ |\n| **Kuintal per Hektar (ku/ha)** | $\\frac{b / 100}{6,25 / 10.000}$ | $b \\times 16$ | $72,0\\text{ ku/ha}$ |\n| **Ton per Hektar (ton/ha)** | $\\frac{b / 1.000}{6,25 / 10.000}$ | $b \\times 1,6$ | $7,2\\text{ ton/ha}$ |\n\n### 3. Estimasi Produksi Agregat Tingkat Wilayah\n\nProduksi gabah tingkat kabupaten/kota dihitung sebagai hasil kali estimasi luas panen KSA dengan produktivitas ubinan [slide 11, 12]:\n$$P_k = L_k \\times Y_k$$\ndi mana $L_k$ adalah luas panen kabupaten $k$ (ha) dan $Y_k$ adalah produktivitas kabupaten $k$ (ton/ha).\n\nUntuk tingkat provinsi dan nasional, angka produktivitas **bukan rata-rata sederhana**, melainkan rata-rata tertimbang (*weighted average*) [slide 11, 12]:\n$$Y_{\\text{prov}} = \\frac{\\sum_{k=1}^K P_k}{\\sum_{k=1}^K L_k} = \\frac{\\sum_{k=1}^K L_k \\cdot Y_k}{\\sum_{k=1}^K L_k}$$",
+      "pitfalls": "1. **Jebakan Satuan Kuintal vs Ton**: Sering terjadi kesalahan fatal di mana mahasiswa menghitung $b \\times 16 = 72$ kemudian memberi label 72 ton/ha. Ingat: 16 adalah pengali kuintal/ha (ku/ha), sedangkan pengali ton/ha adalah 1,6 (hasilnya 7,2 ton/ha).\n2. **Rata-rata Produktivitas Provinsi**: Menghitung produktivitas provinsi dengan menjumlahkan produktivitas kabupaten lalu membaginya dengan jumlah kabupaten. Hal ini salah; produktivitas provinsi wajib dihitung sebagai total produksi provinsi dibagi total luas panen provinsi.",
+      "memory_hook": "Plot ubinan 2,5 x 2,5 m (6,25 m2): kali 1.600 jadi kg/ha, kali 16 jadi ku/ha, kali 1,6 jadi ton/ha.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 23]",
+          "problem": "Dalam suatu survei ubinan komoditas padi dengan plot baku berukuran 2,5 m x 2,5 m, timbangan Gabah Kering Panen (GKP) menunjukkan angka 3,5 kg. Berapakah produktivitas lahan sawah tersebut dalam satuan kuintal per hektar (ku/ha) dan ton per hektar (ton/ha)?",
+          "options": [
+            "56,0 ku/ha dan 5,6 ton/ha",
+            "56,0 ku/ha dan 0,56 ton/ha",
+            "35,0 ku/ha dan 3,5 ton/ha",
+            "5.600 ku/ha dan 56 ton/ha"
+          ],
+          "answer": 0,
+          "solution": "Jawaban: **A**.\n\n**Pembahasan Bertahap**:\n1. Luas plot ubinan = $2,5\\text{ m} \\times 2,5\\text{ m} = 6,25\\text{ m}^2$.\n2. Multiplier ke 1 hektar ($10.000\\text{ m}^2$):\n   - Ke kg/ha: $10.000 / 6,25 = 1.600$.\n   - Ke ku/ha: $1.600 / 100 = 16$.\n   - Ke ton/ha: $1.600 / 1.000 = 1,6$.\n3. Produktivitas ku/ha = $3,5 \\times 16 = 56,0\\text{ ku/ha}$.\n4. Produktivitas ton/ha = $3,5 \\times 1,6 = 5,6\\text{ ton/ha}$."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 20-23]",
+          "problem": "Rekonstruksi UAS OSL 2022/2023 Esai 2a: Pak Sakri memanen sawahnya seluas 2,5 hektar di Sukoharjo. Petugas memasang alat ubinan 2,5 m x 2,5 m secara acak dan memperoleh berat timbangan gabah (GKP) sebesar 4,5 kg. Hitunglah produktivitas sawah dalam ku/ha, ton/ha, dan total produksi gabah (GKP) yang dipanen dari lahan seluas 2,5 ha tersebut. Tuliskan jawaban dalam format: `ku/ha=X, ton/ha=Y, total=Z ton`.",
+          "answer": "ku/ha=72.0, ton/ha=7.2, total=18.0 ton",
+          "solution": "Langkah-langkah perhitungan:\n1. Luas plot ubinan = $2,5 \\times 2,5 = 6,25\\text{ m}^2$.\n2. Faktor pengali (multiplier):\n   - Multiplier kg/ha = $10.000 / 6,25 = 1.600$.\n   - Multiplier ku/ha = $1.600 / 100 = 16$.\n   - Multiplier ton/ha = $1.600 / 1.000 = 1,6$.\n3. Produktivitas ku/ha = $4,5 \\times 16 = 72,0\\text{ ku/ha}$.\n4. Produktivitas ton/ha = $4,5 \\times 1,6 = 7,2\\text{ ton/ha}$.\n5. Total estimasi produksi gabah (GKP) untuk lahan seluas 2,5 ha:\n   $$\\text{Total Produksi} = 2,5\\text{ ha} \\times 7,2\\text{ ton/ha} = 18,0\\text{ ton}$$\n\n**Verifikasi Kode Python**:\n```python\nb = 4.5\nluas_plot = 2.5 * 2.5\nmult_kg = 10000.0 / luas_plot\nkg_ha = b * mult_kg\nku_ha = kg_ha / 100.0\nton_ha = kg_ha / 1000.0\ntotal_prod = ton_ha * 2.5\nprint(f'ku/ha={ku_ha:.1f}, ton/ha={ton_ha:.1f}, total={total_prod:.1f} ton')\n# Output: ku/ha=72.0, ton/ha=7.2, total=18.0 ton\n```"
+        }
+      ],
+      "links": [
+        "11.1.1",
+        "11.1.3"
+      ]
+    }
+  ]
+}

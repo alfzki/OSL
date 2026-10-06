@@ -1,0 +1,97 @@
+{
+  "point_id": "9.1.4",
+  "title": "Setengah Penganggur vs Pekerja Paruh Waktu",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Statistik Ketenagakerjaan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "17-20",
+        "content": "Definisi batas 35 jam seminggu, formula Tingkat Setengah Pengangguran (TSP = PBJK<35 / PB * 100), formula Tingkat Pekerja Paruh Waktu (TPPW = PBPW / PB * 100), pembagi penduduk bekerja (PB)."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "24-28",
+        "content": "EXT-1: Penentuan status pekerjaan formal vs informal BPS (Proxy 2) berdasarkan 7 status pekerjaan dan jenis/lapangan usaha (KBLI 2020)."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Mempunyai pekerjaan tidak serta-merta berarti terhindar dari pemborosan kapasitas tenaga kerja. BPS menetapkan standar jam kerja normal adalah 35 jam per minggu. Pekerja dengan jam kerja < 35 jam dipilah berdasarkan kesukarelaannya: mereka yang masih ingin bekerja lebih banyak jam adalah Setengah Penganggur (involuntary underemployment), sedangkan mereka yang memang puas dengan jam kerja pendek adalah Pekerja Paruh Waktu (voluntary part-time). Selain kuantitas jam, kualitas kerja diukur melalui sektor Formal vs Informal.",
+    "bps_definition": "Pekerja Setengah Pengangguran adalah mereka yang bekerja di bawah jam kerja normal (< 35 jam seminggu) dan masih mencari pekerjaan atau masih bersedia menerima pekerjaan tambahan. Pekerja Paruh Waktu adalah mereka yang bekerja < 35 jam seminggu tetapi tidak mencari atau tidak bersedia menerima pekerjaan lain. Sektor informal didefinisikan berdasarkan status pekerjaan berusaha sendiri, berusaha dibantu buruh tidak tetap, pekerja bebas, dan pekerja keluarga tak dibayar.",
+    "boundary_conditions": "1. Pembagi resmi TSP dan TPPW adalah Penduduk Bekerja (PB), BUKAN Angkatan Kerja (AK) dan BUKAN PUK.\n2. Cut-off jam kerja: persis < 35 jam seminggu. Bekerja tepat 35 jam seminggu tergolong jam kerja normal (bekerja penuh).\n3. Klasifikasi Formal BPS: Berusaha dibantu buruh tetap dan Buruh/Karyawan/Pegawai selalu formal; Pekerja bebas dan Pekerja keluarga selalu informal; Berusaha sendiri dipilah menurut keahlian jabatan.",
+    "formula_latex": "$$\\text{TSP} = \\frac{\\text{PB}_{<35, \\text{mencari}}}{\\text{PB}} \\times 100\\%, \\quad \\text{TPPW} = \\frac{\\text{PB}_{<35, \\text{sukarela}}}{\\text{PB}} \\times 100\\%, \\quad \\text{Proporsi INF} = \\frac{\\text{PB}_{\\text{INF}}}{\\text{PB}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Melanjutkan Soal UAS 2022/2023 Esai 1 dan integrasi EXT-1: Dari 7,0 juta penduduk yang bekerja, terdapat 5,0 juta orang bekerja penuh (>= 35 jam). Dari 2,0 juta orang yang bekerja < 35 jam seminggu, 1,0 juta orang masih aktif mencari pekerjaan tambahan (setengah penganggur), sedangkan 1,0 juta orang lainnya puas dengan jam kerjanya (pekerja paruh waktu sukarela). Di samping itu, berdasarkan audit status pekerjaan, terdapat 3,5 juta pekerja berstatus informal (pekerja bebas, pekerja keluarga, dan pedagang keliling mandiri) dan 3,5 juta pekerja formal. Hitunglah: (1) Tingkat Setengah Pengangguran (TSP), (2) Tingkat Pekerja Paruh Waktu (TPPW), dan (3) Proporsi Tenaga Kerja Informal.",
+    "data_table": "| Klasifikasi Pekerja | Jumlah (Juta Jiwa) | Pembagi Resmi BPS |\n|---|---|---|\n| Bekerja Penuh (>= 35 Jam) | 5,0 | Penduduk Bekerja (PB = 7,0) |\n| Setengah Penganggur (< 35 Jam, Masih Mencari) | 1,0 | Penduduk Bekerja (PB = 7,0) |\n| Pekerja Paruh Waktu (< 35 Jam, Sukarela) | 1,0 | Penduduk Bekerja (PB = 7,0) |\n| Pekerja Sektor Informal | 3,5 | Penduduk Bekerja (PB = 7,0) |\n| Total Penduduk Bekerja (PB) | 7,0 | - |",
+    "step_by_step_solution": "1. Menghitung Tingkat Setengah Pengangguran (TSP):\n   $$\\text{TSP} = \\frac{1,0}{7,0} \\times 100\\% = 14,2857\\% \\approx 14,29\\%$$\n2. Menghitung Tingkat Pekerja Paruh Waktu (TPPW):\n   $$\\text{TPPW} = \\frac{1,0}{7,0} \\times 100\\% = 14,2857\\% \\approx 14,29\\%$$\n3. Menghitung Proporsi Tenaga Kerja Informal:\n   $$\\text{Proporsi INF} = \\frac{3,5}{7,0} \\times 100\\% = 50,00\\%$$",
+    "python_verification_code": "pb = 7.0\nsetengah_penganggur = 1.0\nparuh_waktu = 1.0\ninformal = 3.5\ntsp = (setengah_penganggur / pb) * 100.0\ntppw = (paruh_waktu / pb) * 100.0\np_inf = (informal / pb) * 100.0\nprint(f'TSP={tsp:.2f}%, TPPW={tppw:.2f}%, Proporsi Informal={p_inf:.2f}%')",
+    "expected_output": "TSP=14.29%, TPPW=14.29%, Proporsi Informal=50.00%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Kesalahan Pembagi TSP/TPPW Menggunakan Angkatan Kerja",
+      "common_mistake": "Membagi jumlah setengah penganggur (1.0) dengan total angkatan kerja (9.0) sehingga memperoleh angka salah 11.11%.",
+      "safe_strategy": "Pembagi TSP dan TPPW adalah mutlak PENDUDUK BEKERJA (PB = 7.0 juta), bukan Angkatan Kerja (AK)."
+    },
+    {
+      "trap_description": "Menyamakan Setengah Penganggur dengan Pekerja Paruh Waktu",
+      "common_mistake": "Menganggap semua orang yang bekerja < 35 jam sebagai setengah penganggur.",
+      "safe_strategy": "Setengah penganggur mensyaratkan kondisi keterpaksaan (masih mencari kerja/tambahan), sedangkan pekerja paruh waktu bersifat sukarela."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.1.4",
+      "name": "Setengah Penganggur vs Pekerja Paruh Waktu",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17-20, 24-28]",
+      "exam_focus": "Batas 35 jam kerja normal, perbedaan esensial voluntary vs involuntary part-time, pembagi resmi PB, dan penentuan klasifikasi formal vs informal BPS (EXT-1).",
+      "textbook_excerpt": "Persentase Setengah Pengangguran: TSP = PBJK<35 / PB * 100, dimana PBJK<35 = Jumlah pekerja setengah penganggur, PB = Jumlah penduduk yang bekerja [slide 17]. Kondef: Pekerja setengah pengangguran adalah mereka yang bekerja di bawah jam kerja normal (< 35 jam seminggu) dan masih mencari pekerjaan atau masih bersedia menerima pekerjaan (dahulu disebut setengah pengangguran terpaksa) [slide 18]. Persentase Pekerja Paruh Waktu: TPPW = PBPW / PB * 100 [slide 19]. Kondef: Pekerja paruh waktu adalah mereka yang bekerja di bawah jam kerja normal (< 35 jam seminggu), tetapi tidak mencari pekerjaan atau tidak bersedia menerima pekerjaan lain (dahulu disebut setengah pengangguran sukarela) [slide 20]. Proporsi Lapangan Kerja Informal: Pr PB INF = PB INF / PB * 100 [slide 27].",
+      "intuition": "Seorang guru les privat yang mengajar 15 jam seminggu dan merasa waktu itu sudah cukup karena ingin fokus merawat keluarga adalah Pekerja Paruh Waktu. Namun seorang buruh pabrik garmen yang jam kerjanya dipangkas manajemen menjadi 20 jam seminggu dan terus melamar kerja sampingan ke sana ke mari adalah Setengah Penganggur. Keduanya bekerja < 35 jam, tetapi status ekonominya sangat bertolak belakang.",
+      "formal": "### 1. Perbandingan Karakteristik Jam Kerja Rendah\n\nBerdasarkan pedoman operasional BPS [slide 17-20]:\n\n| Dimensi | Setengah Penganggur (*Underemployed*) | Pekerja Paruh Waktu (*Part-Time*) |\n|---|---|---|\n| **Ambang Jam Kerja** | $< 35$ jam seminggu [slide 18] | $< 35$ jam seminggu [slide 20] |\n| **Sifat Keterlibatan** | Terpaksa (*Involuntary*) | Sukarela (*Voluntary*) |\n| **Pencarian Kerja Tambahan** | **Ya**, aktif mencari atau bersedia menerima pekerjaan tambahan | **Tidak**, tidak mencari dan tidak bersedia menerima pekerjaan lain |\n| **Formula Rasio Resmi** | $\\text{TSP} = \\frac{\\text{PBJK}_{<35}}{\\text{PB}} \\times 100\\%$ [slide 17] | $\\text{TPPW} = \\frac{\\text{PBPW}}{\\text{PB}} \\times 100\\%$ [slide 19] |\n| **Penyebut / Pembagi** | **Penduduk Bekerja (PB)** | **Penduduk Bekerja (PB)** |\n| **Implikasi Kebijakan** | Sinyal kegagalan utilisasi kapasitas tenaga kerja penuh | Kebutuhan fleksibilitas pasar kerja dan keseimbangan kerja-keluarga |\n\n### 2. Klasifikasi Tenaga Kerja Formal vs Informal (EXT-1)\n\nBPS membagi status pekerjaan utama ke dalam 7 kategori yang kemudian dipetakan menjadi Formal dan Informal melalui **Proxy 2** [slide 26, 28]:\n\n| No | Status Pekerjaan Utama BPS | Klasifikasi Formal / Informal |\n|---|---|---|\n| 1 | Berusaha sendiri | Dipilah: Formal jika profesional/manajerial; Informal jika penjualan/jasa kasar [slide 26] |\n| 2 | Berusaha dibantu buruh tidak tetap/buruh tidak dibayar | Dipilah: Formal jika non-pertanian teknis; Informal jika pertanian/buruh [slide 26] |\n| 3 | Berusaha dibantu buruh tetap/buruh dibayar | **Pasti Formal (F)** |\n| 4 | Buruh / Karyawan / Pegawai | **Pasti Formal (F)** |\n| 5 | Pekerja bebas di sektor pertanian | **Pasti Informal (INF)** |\n| 6 | Pekerja bebas di sektor non-pertanian | **Pasti Informal (INF)** |\n| 7 | Pekerja keluarga / tidak dibayar (*unpaid worker*) | **Pasti Informal (INF)** |\n\nFormula Proporsi Lapangan Kerja Informal [slide 27]:\n$$\\text{Proporsi INF} = \\frac{\\text{Jumlah Penduduk Bekerja Status Informal (PB}_{\\text{INF}})}{\\text{Total Penduduk Bekerja (PB)}} \\times 100\\%$$",
+      "pitfalls": "Menggunakan pembagi PUK atau Angkatan Kerja saat menghitung persentase pekerja informal. Seluruh indikator kualitas kerja (TSP, TPPW, Proporsi Informal) menggunakan pembagi PENDUDUK BEKERJA (PB).",
+      "memory_hook": "Pembeda 35 Jam: Masih cari kerja = Setengah Penganggur (TSP). Puas/sukarela = Paruh Waktu (TPPW). Pembagi selalu Penduduk Bekerja (PB).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17-20]",
+          "problem": "Dalam analisis pasar kerja BPS, perbedaan fundamental antara pekerja setengah penganggur dan pekerja paruh waktu terletak pada:",
+          "options": [
+            "Ambang batas jumlah jam kerja kumulatif selama seminggu terakhir.",
+            "Tingkat upah atau kompensasi finansial yang diterima per jam kerja.",
+            "Kesediaan atau upaya aktif untuk mencari pekerjaan tambahan di bawah jam kerja normal.",
+            "Klasifikasi kepemilikan izin usaha resmi tempat mereka bekerja."
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\nKedua kelompok sama-sama bekerja di bawah jam kerja normal (< 35 jam seminggu). Perbedaan penentu menurut BPS adalah kesediaan atau upaya mencari pekerjaan tambahan: Setengah penganggur bersedia/mencari kerja tambahan (*involuntary*), sedangkan pekerja paruh waktu tidak mencari pekerjaan tambahan (*voluntary*)."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17, 27]",
+          "problem": "Di sebuah kabupaten agraris, terdapat 80.000 penduduk bekerja. Dari jumlah tersebut, 20.000 orang bekerja < 35 jam seminggu dengan rincian 8.000 orang masih mencari kerja tambahan dan 12.000 orang tidak mencari kerja tambahan. Selain itu, terdapat 48.000 orang yang bekerja pada sektor informal. Hitunglah Tingkat Setengah Pengangguran (TSP) dan Proporsi Tenaga Kerja Informal. Tuliskan jawaban dalam format: `TSP=X.X%, Informal=Y.Y%`.",
+          "answer": "TSP=10.0%, Informal=60.0%",
+          "solution": "Langkah-langkah perhitungan:\n1. Tingkat Setengah Pengangguran (TSP):\n   $$\\text{TSP} = \\frac{8.000}{80.000} \\times 100\\% = 10,0\\%$$\n2. Proporsi Tenaga Kerja Informal:\n   $$\\text{Proporsi INF} = \\frac{48.000}{80.000} \\times 100\\% = 60,0\\%$$\n\n**Verifikasi Kode Python**:\n```python\npb = 80000\nsetengah_p = 8000\ninformal = 48000\ntsp = (setengah_p / pb) * 100\np_inf = (informal / pb) * 100\nprint(f'TSP={tsp:.1f}%, Informal={p_inf:.1f}%')\n# Output: TSP=10.0%, Informal=60.0%\n```"
+        }
+      ],
+      "links": [
+        "9.1.1",
+        "9.1.2",
+        "9.1.3"
+      ]
+    }
+  ]
+}

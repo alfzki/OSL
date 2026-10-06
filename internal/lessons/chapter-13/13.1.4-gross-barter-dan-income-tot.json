@@ -1,0 +1,96 @@
+{
+  "point_id": "13.1.4",
+  "title": "Gross Barter dan Income ToT",
+  "importance": "中",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Terms of Trade Agregat dan Kapasitas Impor",
+    "bps_subject": "Statistik Nilai Tukar Perdagangan Internasional BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "15, 25-28",
+        "content": "Pendekatan ukuran-ukuran agregat perdagangan luar negeri; Indeks Nilai Tukar (INT) = IIX / IIM; Kapasitas Impor (KM / Income Terms of Trade) = nilai ekspor ADHB dibagi indeks implisit impor (IIM)."
+      }
+    ],
+    "supplemental_sources": [
+      {
+        "source": "[SUPLEMEN]",
+        "citation": "Frank W. Taussig (1927), International Trade; Konsep Gross Barter Terms of Trade (GBToT) sebagai rasio indeks kuantum fisik impor terhadap kuantum fisik ekspor."
+      }
+    ],
+    "coverage_status": "SUPPLEMENTED"
+  },
+  "theory": {
+    "intuition": "NBToT hanya memberi tahu perbandingan harga satuan ekspor vs impor, tetapi mengabaikan berapa banyak barang yang sanggup kita jual. Bayangkan seorang pedagang yang menurunkan harga jual barangnya sebesar 5%, namun berhasil melipatgandakan volume penjualannya hingga 50%. Meskipun margin per unitnya menyusut (NBToT turun), uang kas yang dibawanya pulang melonjak drastis sehingga daya belinya untuk memborong barang impor meningkat. Konsep inilah yang ditangkap oleh Income Terms of Trade atau Kapasitas Impor (KM). Di sisi lain, Gross Barter Terms of Trade (GBToT) melihat pertukaran fisik murni: berapa kontainer impor yang masuk dibanding berapa kontainer ekspor yang keluar.",
+    "bps_definition": "Kapasitas Impor (KM / Capacity to Import / Income Terms of Trade) menurut metodologi statistik BPS adalah ukuran kemampuan devisa hasil ekspor untuk membiayai impor barang, yang dihitung dengan membagi nilai ekspor atas dasar harga berlaku (ADHB) dengan indeks harga/implisit impor (IIM), atau secara ekivalen: Income ToT = (NBToT * Qx) / 100, di mana Qx adalah indeks volume ekspor. [SUPLEMEN] Gross Barter Terms of Trade (GBToT) adalah rasio antara indeks volume fisik impor (Qm) terhadap indeks volume fisik ekspor (Qx) dikalikan 100 (GBToT = (Qm / Qx) * 100), yang mengukur jumlah fisik barang impor yang diterima per unit fisik barang ekspor dengan memperhitungkan pembayaran sepihak, transfer modal, dan pinjaman luar negeri.",
+    "boundary_conditions": "Income ToT dan GBToT bernilai positif (> 0). Jika pertumbuhan volume ekspor (Qx) melampaui laju penurunan harga relatif (NBToT), maka Income ToT akan meningkat meskipun NBToT memburuk. Pada kondisi neraca perdagangan seimbang tanpa aliran modal (X_nilai = M_nilai), nilai Gross Barter ToT akan bergerak sejalan dengan Net Barter ToT.",
+    "formula_latex": "$$\\text{Income ToT} = \\text{KM} = \\frac{\\text{NBToT} \\times Q_x}{100} = \\frac{X_{\\text{ADHB}}}{P_m} \\times 100, \\quad \\text{GBToT [SUPLEMEN]} = \\frac{Q_m}{Q_x} \\times 100$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Pada suatu perekonomian berkembang, diketahui dinamika perdagangan internasional antara tahun dasar (t=0) dan tahun berjalan (t=1) sebagai berikut:\n- Indeks harga ekspor (Px) turun menjadi 95,0 (terdepresiasi 5%).\n- Indeks harga impor (Pm) naik menjadi 105,0 (terinflasi 5%).\n- Untuk mengimbangi penurunan harga, negara tersebut meningkatkan volume ekspor secara agresif sehingga indeks volume ekspor (Qx) mencapai 125,0.\n- Indeks volume impor fisik yang berhasil didatangkan (Qm) tercatat sebesar 110,0.\nHitunglah:\n1. Net Barter Terms of Trade (NBToT) pada tahun t=1.\n2. [SUPLEMEN] Gross Barter Terms of Trade (GBToT) pada tahun t=1.\n3. Income Terms of Trade / Kapasitas Impor (KM) pada tahun t=1.\n4. Jelaskan paradoks ekonomi mengapa Kapasitas Impor dapat meningkat di saat Net Barter ToT mengalami penurunan.",
+    "data_table": "| Indikator | Tahun Dasar (t=0) | Tahun Berjalan (t=1) | Formula Perhitungan | Hasil t=1 |\n|---|---|---|---|---|\n| Indeks Harga Ekspor (Px) | 100,0 | 95,0 | - | - |\n| Indeks Harga Impor (Pm) | 100,0 | 105,0 | - | - |\n| Indeks Volume Ekspor (Qx) | 100,0 | 125,0 | - | - |\n| Indeks Volume Impor (Qm) | 100,0 | 110,0 | - | - |\n| Net Barter ToT (NBToT) | 100,0 | - | (Px / Pm) * 100 | 90,48 |\n| Gross Barter ToT [SUPLEMEN] | 100,0 | - | (Qm / Qx) * 100 | 88,00 |\n| Income ToT / Kapasitas Impor (KM) | 100,0 | - | (NBToT * Qx) / 100 | 113,10 |",
+    "step_by_step_solution": "1. Menghitung Net Barter Terms of Trade (NBToT):\n   $$\\text{NBToT} = \\frac{P_x}{P_m} \\times 100 = \\frac{95,0}{105,0} \\times 100 = 90,4762 \\approx 90,48$$\n   Artinya: Daya beli per unit komoditas ekspor turun sebesar 9,52% terhadap barang impor.\n2. Menghitung [SUPLEMEN] Gross Barter Terms of Trade (GBToT):\n   $$\\text{GBToT} = \\frac{Q_m}{Q_x} \\times 100 = \\frac{110,0}{125,0} \\times 100 = 88,00$$\n   Artinya: Volume impor fisik yang diperoleh per unit volume ekspor fisik berkurang menjadi 88% dari tahun dasar.\n3. Menghitung Income Terms of Trade / Kapasitas Impor (KM):\n   $$\\text{Income ToT} = \\frac{\\text{NBToT} \\times Q_x}{100} = \\frac{90,4762 \\times 125,0}{100} = 113,0952 \\approx 113,10$$\n   Atau melalui pendekatan Nilai Ekspor ADHB:\n   $$X_{\\text{ADHB}} = \\frac{P_x \\times Q_x}{100} = \\frac{95,0 \\times 125,0}{100} = 118,75$$\n   $$\\text{KM} = \\frac{X_{\\text{ADHB}}}{P_m} \\times 100 = \\frac{118,75}{105,0} \\times 100 = 113,10$$\n4. Penjelasan Paradoks Ekonomi:\n   Meskipun nilai tukar harga per unit (NBToT = 90,48) memburuk akibat jatuhnya harga komoditas ekspor, total daya beli ekspor untuk mengimpor barang (Income ToT = 113,10) justru melonjak naik sebesar 13,10%. Hal ini disebabkan efek ekspansi volume ekspor (+25%) jauh lebih kuat daripada efek kontraksi harga (-9,52%).",
+    "python_verification_code": "px = 95.0\npm = 105.0\nqx = 125.0\nqm = 110.0\nnbtot = (px / pm) * 100.0\ngbtot = (qm / qx) * 100.0\nincome_tot = (nbtot * qx) / 100.0\nexport_val_adhb = (px * qx) / 100.0\nkm = (export_val_adhb / pm) * 100.0\nprint(f'NBToT={nbtot:.2f}, GBToT={gbtot:.2f}, IncomeToT={income_tot:.2f}, KM={km:.2f}')",
+    "expected_output": "NBToT=90.48, GBToT=88.00, IncomeToT=113.10, KM=113.10"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Tertukar pembilang dan penyebut antara NBToT dan Gross Barter ToT",
+      "common_mistake": "Menulis rumus GBToT sebagai Qx / Qm (mengikuti urutan ekspor di pembilang seperti NBToT).",
+      "safe_strategy": "Ingat bahwa Gross Barter ToT mengukur apa yang kita 'terima secara fisik' (impor Qm) dibagi apa yang kita 'serahkan secara fisik' (ekspor Qx). Jadi GBToT = (Qm / Qx) * 100."
+    },
+    {
+      "trap_description": "Mengira penurunan NBToT selalu menurunkan kemampuan negara untuk membeli barang impor",
+      "common_mistake": "Menyimpulkan bahwa negara pasti mengalami krisis devisa impor hanya karena angka NBToT < 100.",
+      "safe_strategy": "Gunakan Income Terms of Trade / Kapasitas Impor (KM) untuk menilai kemampuan impor total. Jika volume ekspor meningkat cukup besar, penerimaan devisa riil tetap dapat meningkat meski harga komoditas per unit turun."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.1 Statistik Perdagangan Internasional",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.1.4",
+      "name": "Gross Barter dan Income ToT",
+      "importance": "中",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 13-16]",
+      "exam_focus": "Menguasai perbedaan analitis antara Net Barter ToT, Gross Barter ToT [SUPLEMEN], dan Income ToT / Kapasitas Impor (KM), serta interpretasi kondisi di mana NBToT turun namun Kapasitas Impor naik.",
+      "textbook_excerpt": "Ada dua parameter yang dibahas yaitu Indeks Nilai Tukar (INT) dan Kapasitas Impor (KM) yang masing-masing menjelaskan tentang daya beli dan kemampuan mengimpor berdasarkan nilai ekspor. Indeks nilai tukar diperoleh dengan cara membagi indeks implisit (harga) ekspor (IIX) dengan indeks implisit (harga) impor (IIM). Sedangkan KM diperoleh dengan cara membagi nilai ekspor atas dasar harga berlaku dengan indeks implisit impor (IIM) [slide 15].",
+      "intuition": "Jika harga satu kilogram kopi kita turun dari Rp 100 ribu menjadi Rp 90 ribu (harga relatif turun -> NBToT memburuk), apakah kita otomatis jatuh miskin? Belum tentu! Jika petani kita sebelumnya hanya mampu memanen 100 kg dan sekarang mampu memanen 200 kg kopi, penerimaan total melonjak dari Rp 10 juta menjadi Rp 18 juta. Dengan uang Rp 18 juta tersebut, jumlah karung gandum impor yang bisa dibeli justru meningkat drastis. Itulah intisari **Income Terms of Trade (Kapasitas Impor)**: daya beli riil devisa hasil ekspor menggabungkan efek harga DAN volume.",
+      "formal": "### 1. Taksonomi Tiga Konsep Terms of Trade Utama\n\nDalam literatur ekonomi perdagangan internasional dan statistik neraca nasional BPS [slide 15]:\n\n1. **Net Barter Terms of Trade (NBToT / Commodity ToT)**:\n   $$\\text{NBToT} = \\frac{P_x}{P_m} \\times 100$$\n   - Mengukur rasio harga pertukaran per unit komoditas ekspor terhadap impor.\n   - Bersifat statis harga, tidak memperhitungkan kuantitas barang yang diperdagangkan.\n\n2. **Gross Barter Terms of Trade (GBToT) [SUPLEMEN]**:\n   Diformulasikan oleh ekonom Frank W. Taussig (1927):\n   $$\\text{GBToT} = \\frac{Q_m}{Q_x} \\times 100$$\n   - Mengukur rasio volume fisik barang impor yang diperoleh ($Q_m$) per unit volume fisik barang ekspor yang dikirim ($Q_x$).\n   - Digunakan untuk melihat transfer riil sumber daya fisik, terutama bila negara menerima pinjaman luar negeri, bantuan hibah modal (*unilateral transfers*), atau pembayaran bunga utang.\n\n3. **Income Terms of Trade (Kapasitas Impor / KM)**:\n   Diformulasikan oleh G.S. Dorrance (1948) dan diadopsi dalam publikasi BPS [slide 15]:\n   $$\\text{Income ToT} = \\text{KM} = \\frac{\\text{NBToT} \\times Q_x}{100} = \\frac{P_x \\times Q_x}{P_m} = \\frac{X_{\\text{ADHB}}}{\\text{IIM}} \\times 100$$\n   - Mengukur daya beli riil total dari seluruh devisa ekspor terhadap barang impor.\n   - Menunjukkan kapasitas atau daya serap impor yang dapat dibiayai murni dari penerimaan ekspor tanpa menguras cadangan devisa atau menambah utang luar negeri.\n\n### 2. Matriks Perbandingan Ketiga Indikator Terms of Trade\n\n| Karakteristik | Net Barter ToT (NBToT) | Gross Barter ToT (GBToT) [SUPLEMEN] | Income ToT / Kapasitas Impor (KM) |\n|---|---|---|---|\n| **Variabel Utama** | Indeks Harga ($P_x, P_m$) | Indeks Volume Kuantum ($Q_m, Q_x$) | Indeks Nilai Riil ($P_x, P_m, Q_x$) |\n| **Formula Matematis** | $(P_x / P_m) \\times 100$ | $(Q_m / Q_x) \\times 100$ | $(\\text{NBToT} \\times Q_x) / 100$ |\n| **Dimensi Pengukuran** | Daya beli per unit barang ekspor | Rasio pertukaran fisik kuantum | Total kapasitas membeli barang impor |\n| **Status Publikasi BPS** | Diterbitkan resmi (Indeks Nilai Tukar) | Indikator riset akademis / suplemen | Diterbitkan resmi (Kapasitas Impor / KM) |\n| **Respon terhadap Kuantitas** | Tidak terpengaruh perubahan $Q_x$ | Berbanding terbalik dengan $Q_x$ | Meningkat seiring kenaikan $Q_x$ |\n\n### 3. Dinamika Hubungan NBToT dan Kapasitas Impor\n\nHubungan pertumbuhan antara Kapasitas Impor dan komponennya dapat diturunkan secara logaritmik:\n$$\\ln(\\text{KM}) = \\ln(\\text{NBToT}) + \\ln(Q_x) - \\ln(100)$$\n$$\\Delta \\% \\text{KM} \\approx \\Delta \\% \\text{NBToT} + \\Delta \\% Q_x$$\n- Jika $\\Delta \\% Q_x > |\\Delta \\% \\text{NBToT}|$, maka Kapasitas Impor akan tetap tumbuh positif meskipun Net Barter Terms of Trade mengalami penurunan (pemburukan harga relatif). Kondisi ini sangat umum terjadi pada negara berkembang pengekspor komoditas primer yang melakukan modernisasi dan hilirisasi kuantitas.",
+      "pitfalls": "1. **Tertukar Formulasi GBToT**: Pembilangnya adalah Impor ($Q_m$), penyebutnya adalah Ekspor ($Q_x$). Jangan menyamakan dengan NBToT yang pembilangnya adalah Ekspor ($P_x$).\n2. **Mengabaikan Efek Volume pada Kapasitas Impor**: Jangan hanya melihat penurunan NBToT saat menganalisis kemampuan impor suatu negara; selalu periksa apakah volume ekspor mengalami lonjakan.\n3. **Satuan Tahun Dasar**: Ingat bahwa pada tahun dasar, $\\text{NBToT} = 100$, $Q_x = 100$, dan $\\text{Income ToT} = 100$. Nilai perhitungan berikutnya diinterpretasikan terhadap basis 100.",
+      "memory_hook": "Net Barter itu Harga Per Unit; Gross Barter itu Volume Fisik; Income ToT itu Total Uang Kas Belanja Impor.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 15]",
+          "problem": "Jika indeks harga ekspor suatu negara turun 5% sementara indeks harga impor naik 5%, namun pada saat yang sama volume ekspor berhasil dinaikkan sebesar 25%, bagaimana arah pergerakan Net Barter Terms of Trade (NBToT) dan Kapasitas Impor (Income ToT)?",
+          "options": [
+            "NBToT naik dan Kapasitas Impor naik.",
+            "NBToT turun dan Kapasitas Impor turun.",
+            "NBToT turun namun Kapasitas Impor naik.",
+            "NBToT naik namun Kapasitas Impor turun."
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\n1. Hitung perubahan NBToT:\n   $$\\text{NBToT} = \\frac{95,0}{105,0} \\times 100 = 90,48 < 100 \\quad (\\text{turun / memburuk})$$\n2. Hitung Kapasitas Impor (Income ToT):\n   $$\\text{Income ToT} = \\frac{\\text{NBToT} \\times Q_x}{100} = \\frac{90,48 \\times 125,0}{100} = 113,10 > 100 \\quad (\\text{naik / membaik})$$\nKarena kenaikan volume ekspor (+25%) lebih besar daripada kontraksi rasio harga (-9,52%), maka daya beli devisa total (Kapasitas Impor) justru mengalami kenaikan."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 13-16]",
+          "problem": "Diberikan data indeks perdagangan tahun berjalan (tahun dasar t=0 = 100):\n- Indeks harga ekspor $P_x = 95,0$\n- Indeks harga impor $P_m = 105,0$\n- Indeks volume ekspor $Q_x = 125,0$\n- Indeks volume impor $Q_m = 110,0$\nHitunglah:\n1. Net Barter Terms of Trade (NBToT).\n2. Gross Barter Terms of Trade (GBToT) [SUPLEMEN].\n3. Income Terms of Trade / Kapasitas Impor (KM).\nTuliskan jawaban format: `NBToT=..., GBToT=..., IncomeToT=..., KM=...`.",
+          "answer": "NBToT=90.48, GBToT=88.00, IncomeToT=113.10, KM=113.10",
+          "solution": "Langkah Perhitungan:\n1. **NBToT**:\n   $$\\text{NBToT} = \\frac{95,0}{105,0} \\times 100 = 90,4762 \\approx 90,48$$\n2. **GBToT [SUPLEMEN]**:\n   $$\\text{GBToT} = \\frac{110,0}{125,0} \\times 100 = 88,00$$\n3. **Income ToT / KM**:\n   $$\\text{Income ToT} = \\frac{90,4762 \\times 125,0}{100} = 113,0952 \\approx 113,10$$\n   - Nilai KM ekivalen dengan Income ToT: $$\\text{KM} = 113,10$$\n\n**Verifikasi Kode Python**:\n```python\npx = 95.0\npm = 105.0\nqx = 125.0\nqm = 110.0\nnbtot = (px / pm) * 100.0\ngbtot = (qm / qx) * 100.0\nincome_tot = (nbtot * qx) / 100.0\nexport_val_adhb = (px * qx) / 100.0\nkm = (export_val_adhb / pm) * 100.0\nprint(f'NBToT={nbtot:.2f}, GBToT={gbtot:.2f}, IncomeToT={income_tot:.2f}, KM={km:.2f}')\n# NBToT=90.48, GBToT=88.00, IncomeToT=113.10, KM=113.10\n```"
+        }
+      ],
+      "links": [
+        "13.1.1",
+        "13.1.3"
+      ]
+    }
+  ]
+}

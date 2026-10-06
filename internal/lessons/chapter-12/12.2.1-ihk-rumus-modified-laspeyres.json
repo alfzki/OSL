@@ -1,0 +1,90 @@
+{
+  "point_id": "12.2.1",
+  "title": "IHK Rumus Modified Laspeyres",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Statistik Harga Konsumen"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "14-20",
+        "content": "Skema penghitungan IHK BPS, rumus Modified Laspeyres berantai relatif harga, Survei Biaya Hidup (SBH 2018/2022), 11 kelompok pengeluaran COICOP, dan rekonstruksi tabel UAS 2022/2023 Esai 2b.1."
+      },
+      {
+        "file": "indeks-harga-konsumen-38-provinsi-di-indonesia-2025--2022-100-.md",
+        "slide_or_page": "15-25",
+        "content": "Publikasi BPS IHK 38 Provinsi di Indonesia (2022=100), formulasi teknis Modified Laspeyres dengan nilai konsumsi P(n-1)Q0 dan P0Q0, serta pembaruan diagram timbang."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Indeks Laspeyres klasik membutuhkan data kuantitas barang tahun dasar (Q0) dan harga periode berjalan (Pt). Namun di lapangan, mengumpulkan data konsumsi fisik seluruh rumah tangga setiap bulan tidak mungkin dilakukan. Oleh karena itu, BPS menggunakan formula Modified Laspeyres: indeks dihitung berantai dengan mengalikan Relatif Harga bulan berjalan terhadap bulan sebelumnya (Pt / P_{t-1}) dengan Nilai Konsumsi bulan sebelumnya (P_{t-1} Q0). Cara ini sangat praktis, konsisten matematis, dan memungkinkan pemutakhiran harga bulanan secara cepat tanpa harus mengubah kuantitas dasar.",
+    "bps_definition": "Indeks harga yang mengukur perubahan rata-rata harga sekeranjang tetap barang dan jasa yang dikonsumsi oleh rumah tangga di wilayah perkotaan antarwaktu, dihitung menggunakan formula Laspeyres yang Dimodifikasi (Modified Laspeyres) dengan bobot diagram timbang dari Survei Biaya Hidup (SBH).",
+    "boundary_conditions": "Jika harga seluruh komoditas tetap sama persis (Pt = P_{t-1}), relatif harga RH = 1,0 untuk setiap komoditas, sehingga IHK_t = IHK_{t-1}. Pembaruan diagram timbang dilakukan secara periodik melalui SBH (SBH 2012 -> SBH 2018 mencakup 90 kota -> SBH 2022 mencakup 150 kabupaten/kota di 38 provinsi). Klasifikasi komoditas mengikuti COICOP 2018 dengan 11 kelompok pengeluaran.",
+    "formula_latex": "$$IHK_t = \\frac{\\sum_{i=1}^k \\left( \\frac{P_{ti}}{P_{(t-1)i}} \\times P_{(t-1)i} Q_{0i} \\right)}{\\sum_{i=1}^k P_{0i} Q_{0i}} \\times 100 = \\sum_{i=1}^k \\left( \\frac{P_{ti}}{P_{(t-1)i}} \\times W_{(t-1)i} \\right)$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Rekonstruksi Tabel Ujian Akhir Semester (UAS) OSL 2022/2023 Esai 2b.1:\nDiberikan data series IHK Gabungan Kota di Indonesia sebagai berikut:\n- IHK April 2022 = 109,98\n- IHK Mei 2022 = 110,42\n- IHK Desember 2022 = 113,59\n- IHK April 2023 = 114,74\n- Tingkat Inflasi m-to-m Mei 2023 = 0,09%\nBerdasarkan data tersebut, hitunglah:\n1. Nilai IHK Mei 2023 (Cell A)\n2. Tingkat Inflasi Year to Date (y-to-d) Mei 2023 (Cell B)\n3. Tingkat Inflasi Year on Year (y-on-y) Mei 2023 (Cell C)",
+    "data_table": "| Periode Data | Nilai IHK | Catatan Pembanding Inflasi |\n|---|---|---||\n| April 2022 | 109,98 | Distractor ujian |\n| Mei 2022 | 110,42 | Basis pembanding y-on-y Mei 2023 |\n| Desember 2022 | 113,59 | Basis pembanding y-to-d Mei 2023 |\n| April 2023 | 114,74 | Basis pembanding m-to-m Mei 2023 |\n| Mei 2023 | [Cell A] | Inflasi m-to-m diketahui = 0,09% |",
+    "step_by_step_solution": "1. Menghitung IHK Mei 2023 (Cell A):\n   IHK_Mei_2023 = IHK_Apr_2023 * (1 + Inflasi_mtom / 100)\n   IHK_Mei_2023 = 114,74 * (1 + 0,09 / 100) = 114,74 * 1,0009 = 114,843266 -> dibulatkan 114,84.\n2. Menghitung Inflasi Year to Date (y-to-d) Mei 2023 (Cell B):\n   Inflasi_ytd = ((IHK_Mei_2023 - IHK_Des_2022) / IHK_Des_2022) * 100%\n   Inflasi_ytd = ((114,843266 - 113,59) / 113,59) * 100% = (1,253266 / 113,59) * 100% = 1,103324% -> dibulatkan 1,10%.\n3. Menghitung Inflasi Year on Year (y-on-y) Mei 2023 (Cell C):\n   Inflasi_yoy = ((IHK_Mei_2023 - IHK_Mei_2022) / IHK_Mei_2022) * 100%\n   Inflasi_yoy = ((114,843266 - 110,42) / 110,42) * 100% = (4,423266 / 110,42) * 100% = 4,005856% -> dibulatkan 4,01%.\n   (Peringatan: jangan menggunakan IHK April 2022 sebagai pembagi yoy Mei 2023!).",
+    "python_verification_code": "ihk_apr_2022 = 109.98\nihk_mei_2022 = 110.42\nihk_des_2022 = 113.59\nihk_apr_2023 = 114.74\ninflasi_mtom_mei_2023 = 0.09\nihk_mei_2023 = ihk_apr_2023 * (1.0 + inflasi_mtom_mei_2023 / 100.0)\ninflasi_ytd = ((ihk_mei_2023 - ihk_des_2022) / ihk_des_2022) * 100.0\ninflasi_yoy = ((ihk_mei_2023 - ihk_mei_2022) / ihk_mei_2022) * 100.0\nprint(f'IHK_Mei_2023={ihk_mei_2023:.2f}, Inflasi_ytd={inflasi_ytd:.2f}%, Inflasi_yoy={inflasi_yoy:.2f}%')",
+    "expected_output": "IHK_Mei_2023=114.84, Inflasi_ytd=1.10%, Inflasi_yoy=4.01%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Salah memilih tahun dasar pembanding pada inflasi year-on-year",
+      "common_mistake": "Menggunakan IHK April 2022 (109,98) alih-alih IHK Mei 2022 (110,42) untuk menghitung inflasi tahunan Mei 2023.",
+      "safe_strategy": "Inflasi year-on-year (y-on-y) wajib membandingkan bulan yang persis sama pada tahun sebelumnya: Mei 2023 terhadap Mei 2022. Nilai IHK April 2022 hanyalah pengecoh (distractor)."
+    },
+    {
+      "trap_description": "Membagi inflasi year-to-date (y-to-d) terhadap IHK Januari tahun berjalan",
+      "common_mistake": "Menghitung inflasi tahun berjalan dengan membagi terhadap IHK Januari 2023.",
+      "safe_strategy": "Formula resmi BPS untuk inflasi year-to-date (tahun kalender) selalu membandingkan IHK bulan berjalan terhadap IHK bulan Desember tahun sebelumnya (t-1)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.2 Indeks Harga Konsumen dan Inflasi",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.2.1",
+      "name": "IHK Rumus Modified Laspeyres",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 14-20]",
+      "exam_focus": "Penurunan rumus Modified Laspeyres berantai BPS, pembaruan bobot diagram timbang dari SBH, 11 kelompok pengeluaran COICOP 2018, dan rekonstruksi tabel hitungan UAS 2022/2023 Esai 2b.1.",
+      "textbook_excerpt": "Penghitungan IHK dilakukan dengan mengalikan relatif harga bulan berjalan dengan nilai konsumsi bulan sebelumnya untuk memperoleh nilai konsumsi bulan berjalan. Kemudian hasilnya dibagi dengan nilai konsumsi tahun dasar dan dikalikan 100. Nilai konsumsi bulan sebelumnya P(n-1)Q0 adalah hasil perkalian harga bulan sebelumnya dan kuantitas dari suatu komoditas hasil SBH. Nilai konsumsi tahun dasar P0Q0 adalah nilai konsumsi hasil SBH [slide 14-17].",
+      "intuition": "Bagaimana cara BPS mengetahui biaya hidup rata-rata masyarakat naik atau turun setiap bulannya tanpa harus menanyai jutaan keluarga mengenai berapa kilogram beras dan liter minyak yang mereka beli bulan ini? BPS menggunakan pendekatan 'sekeranjang tetap' komoditas yang dikonsumsi masyarakat hasil Survei Biaya Hidup (SBH). Karena kuantitas fisik sekeranjang barang dianggap konstan dalam jangka menengah, BPS hanya memantau perubahan harga bulanan di pasar. Melalui formula Modified Laspeyres, perubahan harga bulan ini dibanding bulan lalu (relatif harga) dikalikan dengan nilai belanja barang tersebut pada bulan lalu, lalu diagregasikan.",
+      "formal": "### 1. Landasan Teori Indeks Laspeyres yang Dimodifikasi (Modified Laspeyres)\n\nFormula Indeks Laspeyres klasik didefinisikan sebagai:\n$$I_t = \\frac{\\sum_{i=1}^k P_{ti} Q_{0i}}{\\sum_{i=1}^k P_{0i} Q_{0i}} \\times 100$$\ndi mana $P_{ti}$ adalah harga komoditas $i$ pada periode $t$, $P_{0i}$ adalah harga komoditas $i$ pada tahun dasar, dan $Q_{0i}$ adalah kuantitas konsumsi pada tahun dasar.\n\nDalam praktik kompilasi statistik bulanan, BPS memodifikasi formula di atas menjadi bentuk perkalian berantai relatif harga (*chained price relative*) terhadap nilai konsumsi periode sebelumnya [slide 15]:\n$$IHK_t = \\frac{\\sum_{i=1}^k \\left( \\frac{P_{ti}}{P_{(t-1)i}} \\times P_{(t-1)i} Q_{0i} \\right)}{\\sum_{i=1}^k P_{0i} Q_{0i}} \\times 100$$\ndi mana:\n- $\\frac{P_{ti}}{P_{(t-1)i}}$: Relatif Harga (*Relative Price* / RH) komoditas $i$ pada bulan ke-$t$ terhadap bulan ke-$(t-1)$.\n- $P_{(t-1)i} Q_{0i}$: Nilai Konsumsi (*Consumption Value* / NK) terbaharui komoditas $i$ pada bulan ke-$(t-1)$.\n- $P_{0i} Q_{0i}$: Nilai Konsumsi tahun dasar hasil Survei Biaya Hidup (SBH).\n\nBila dinyatakan dalam bentuk pembobot diagram timbang periode sebelumnya ($W_{(t-1)i}$):\n$$W_{(t-1)i} = \\frac{P_{(t-1)i} Q_{0i}}{\\sum_{j=1}^k P_{0j} Q_{0j}} \\times 100$$\nmaka formula Modified Laspeyres ekuivalen dengan:\n$$IHK_t = \\sum_{i=1}^k \\left( \\frac{P_{ti}}{P_{(t-1)i}} \\times W_{(t-1)i} \\right)$$\n\n### 2. Matriks 11 Kelompok Pengeluaran IHK (Klasifikasi COICOP 2018)\n\nSejak tahun dasar 2018 (SBH 2018) dan diteruskan pada tahun dasar 2022 (SBH 2022), klasifikasi kelompok pengeluaran IHK mengikuti standar internasional *Classification of Individual Consumption According to Purpose* (COICOP 2018) yang terdiri dari 11 kelompok pengeluaran [slide 18]:\n\n| No | Kelompok Pengeluaran COICOP 2018 | Cakupan Komoditas Utama |\n|---|---|---|\n| 01 | **Makanan, Minuman, dan Tembakau** | Beras, daging ayam ras, telur ayam, cabai merah, rokok kretek filter |\n| 02 | **Pakaian dan Alas Kaki** | Pakaian pria/wanita/anak, seragam sekolah, alas kaki/sepatu |\n| 03 | **Perumahan, Air, Listrik, dan Bahan Bakar Rumah Tangga** | Sewa rumah, kontrak rumah, tarif listrik PLN, tarif air PAM, elpiji |\n| 04 | **Perlengkapan, Peralatan, dan Pemeliharaan Rutin RT** | Perabot rumah, sabun cuci, pembersih lantai, upah asisten RT |\n| 05 | **Kesehatan** | Jasa dokter umum/spesialis, obat-obatan resep/bebas, tarif rumah sakit |\n| 06 | **Transportasi** | Bensin (Pertalite/Pertamax), solar, tarif angkutan udara/kota/kereta api |\n| 07 | **Informasi, Komunikasi, dan Jasa Keuangan** | Pulsa ponsel, paket data internet, biaya transfer bank, telepon |\n| 08 | **Rekreasi, Olahraga, dan Budaya** | Bioskop, tempat wisata, perlengkapan olahraga, televisi/gadget |\n| 09 | **Pendidikan** | SPP SD/SMP/SMA, uang kuliah perguruan tinggi, bimbingan belajar |\n| 10 | **Penyediaan Makanan dan Minuman/Restoran** | Nasi campur/rames, mie bakso, kopi siap minum, makanan cepat saji |\n| 11 | **Perawatan Pribadi dan Jasa Lainnya** | Sabun mandi, pasta gigi, shampo, jasa pangkas rambut, emas perhiasan |\n\n### 3. Ekstensi: Indeks Kemahalan Konstruksi (IKK) dan Metode CPD [SUPLEMEN]\nDi samping indeks harga konsumen temporal, BPS menyusun **Indeks Kemahalan Konstruksi (IKK)** sebagai indeks harga spasial (antarwilayah pada titik waktu sama) [slide 22-29]:\n- **Kegunaan Fiskal**: IKK menjadi komponen utama penghitungan Kebutuhan Fiskal (KbF) dalam menentukan Celah Fiskal pada Dana Alokasi Umum (DAU) APBN [slide 24]. Semakin tinggi IKK, semakin besar kesulitan geografis dan semakin besar alokasi DAU yang diterima daerah.\n- **Metode Country Product Dummy (CPD)**: Digunakan untuk mengestimasi *Purchasing Power Parity* (PPP) bahan bangunan antar-kabupaten/kota dengan kota acuan (tahun 2023: Kota Makassar = 100) menggunakan model regresi log-linier terhadap variabel dummy komoditas dan dummy wilayah [slide 26].",
+      "pitfalls": "1. **Distractor pada Soal Tabel Ujian**: Soal UAS sering menyajikan baris IHK April tahun sebelumnya berdampingan dengan Mei tahun sebelumnya. Mahasiswa yang terburu-buru kerap membagi data Mei tahun berjalan dengan April tahun sebelumnya saat mencari inflasi tahunan (y-on-y). Selalu pasangkan Mei dengan Mei!\n2. **Kuantitas Tahun Dasar vs Berjalan**: Ingat bahwa Modified Laspeyres menggunakan kuantitas tahun dasar (Q0), bukan kuantitas berjalan (Qt). Jika kuantitas berjalan digunakan, rumusnya berubah menjadi Paasche.",
+      "memory_hook": "Modified Laspeyres Mengalikan Relatif Harga (Pt/Pt-1) dengan Nilai Konsumsi Lalu (Pt-1*Q0); Basisnya SBH dan 11 Kelompok COICOP.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 18, 20]",
+          "problem": "Diketahui data IHK Gabungan Kota: IHK April 2022 = 109,98; IHK Mei 2022 = 110,42; IHK Desember 2022 = 113,59; IHK April 2023 = 114,74. Jika laju inflasi m-to-m pada Mei 2023 tercatat sebesar 0,09%, berapakah laju inflasi year-to-date (y-to-d) dan year-on-year (y-on-y) pada Mei 2023?",
+          "options": [
+            "y-to-d = 1,10% dan y-on-y = 4,01%",
+            "y-to-d = 1,25% dan y-on-y = 4,42%",
+            "y-to-d = 1,10% dan y-on-y = 4,42%",
+            "y-to-d = 0,09% dan y-on-y = 4,01%"
+          ],
+          "answer": 0,
+          "solution": "Jawaban: **A**.\n\n**Langkah Perhitungan Lengkap**:\n1. Hitung IHK Mei 2023 terlebih dahulu:\n   $$\\text{IHK}_{\\text{Mei 2023}} = 114,74 \\times (1 + 0,0009) = 114,843266$$\n2. Hitung inflasi y-to-d Mei 2023 (dibandingkan terhadap Desember 2022):\n   $$\\text{Inflasi}_{\\text{ytd}} = \\frac{114,843266 - 113,59}{113,59} \\times 100\\% = \\frac{1,253266}{113,59} \\times 100\\% = 1,1033\\% \\approx 1,10\\%$$\n3. Hitung inflasi y-on-y Mei 2023 (dibandingkan terhadap Mei 2022):\n   $$\\text{Inflasi}_{\\text{yoy}} = \\frac{114,843266 - 110,42}{110,42} \\times 100\\% = \\frac{4,423266}{110,42} \\times 100\\% = 4,0058\\% \\approx 4,01\\%$$."
+        }
+      ],
+      "links": [
+        "12.1.1",
+        "12.2.2",
+        "12.2.3"
+      ]
+    }
+  ]
+}

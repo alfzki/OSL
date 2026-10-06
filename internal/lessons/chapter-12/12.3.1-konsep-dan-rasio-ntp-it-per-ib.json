@@ -1,0 +1,85 @@
+{
+  "point_id": "12.3.1",
+  "title": "Konsep dan Rasio NTP It per Ib",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Statistik Harga Pedesaan & NTP"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "33-36",
+        "content": "Konsep dasar Nilai Tukar Petani (NTP), formula perbandingan harga yang diterima terhadap dibayar petani It / Ib * 100, dekomposisi Ib ke IKRT dan BPPBM, serta rekonstruksi tabel UAS 2022/2023 Esai 2b.3."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Petani memproduksi komoditas pangan untuk dijual ke pasar, tetapi pada saat yang sama petani dan keluarganya juga merupakan konsumen yang harus membeli beras, minyak goreng, pakaian, serta membayar biaya pupuk dan sewa traktor. Apakah petani semakin sejahtera atau justru semakin tertekan? Jawaban atas pertanyaan ini tidak cukup dilihat dari harga gabah semata. Jika harga gabah naik 5% tetapi harga kebutuhan pokok dan pupuk naik 10%, petani sejatinya merugi. Nilai Tukar Petani (NTP) adalah pengukur daya tukar riil (terms of trade) antara apa yang dijual petani dan apa yang dibeli petani.",
+    "bps_definition": "Perbandingan antara Indeks Harga yang Diterima Petani (It) dengan Indeks Harga yang Dibayar Petani (Ib) yang dinyatakan dalam persentase. Indeks Ib terdiri dari dua kelompok besar: Indeks Konsumsi Rumah Tangga (IKRT) yang menjadi proksi inflasi perdesaan, serta Indeks Biaya Produksi dan Penambahan Barang Modal (BPPBM).",
+    "boundary_conditions": "1) NTP > 100: Petani mengalami surplus perdagangan (daya beli produk pertanian naik dibanding tahun dasar); 2) NTP = 100: Petani mengalami kondisi impas (daya beli tetap stabil); 3) NTP < 100: Petani mengalami defisit perdagangan (daya beli produk pertanian tergerus dibanding tahun dasar).",
+    "formula_latex": "$$NTP = \\frac{I_t}{I_b} \\times 100, \\quad I_b = w_{\\text{IKRT}} \\cdot IKRT + w_{\\text{BPPBM}} \\cdot BPPBM, \\quad \\text{Inflasi Perdesaan} = \\frac{IKRT_t - IKRT_{t-1}}{IKRT_{t-1}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Rekonstruksi Tabel Ujian Akhir Semester (UAS) OSL 2022/2023 Esai 2b.3:\nDiberikan data indikator harga perdesaan BPS bulan April dan Mei 2023 sebagai berikut:\n- Bulan April 2023: It = 128,64; Ib = 116,33; IKRT = 116,71; BPPBM = 115,98.\n- Bulan Mei 2023: NTUP = 110,75; Ib = 116,71; IKRT = 117,18; BPPBM = 116,13.\nBerdasarkan data di atas, hitunglah:\n1. Nilai NTP bulan April 2023 (Cell 1)\n2. Nilai NTUP bulan April 2023 (Cell 2)\n3. Nilai Indeks yang Diterima Petani (It) bulan Mei 2023 (Cell 3)\n4. Nilai NTP bulan Mei 2023 (Cell 4)\n5. Laju Inflasi Perdesaan bulan Mei 2023 (Cell 5)",
+    "data_table": "| Indikator Statistik | April 2023 | Mei 2023 | Keterangan Hubungan Antar-Variabel |\n|---|---|---|---|\n| **Indeks Diterima Petani ($I_t$)** | 128,64 | [Cell 3] | Dihitung dari NTUP Mei dan BPPBM Mei |\n| **Indeks Dibayar Petani ($I_b$)** | 116,33 | 116,71 | Pembagi untuk menghitung NTP |\n| - Indeks Konsumsi RT ($IKRT$) | 116,71 | 117,18 | Basis penghitungan inflasi perdesaan |\n| - Biaya Produksi ($BPPBM$) | 115,98 | 116,13 | Pembagi untuk menghitung NTUP |\n| **Nilai Tukar Petani ($NTP$)** | [Cell 1] | [Cell 4] | Rasio ($I_t / I_b \\times 100$) |\n| **Nilai Tukar Usaha ($NTUP$)** | [Cell 2] | 110,75 | Rasio ($I_t / BPPBM \\times 100$) |",
+    "step_by_step_solution": "1. Menghitung NTP April 2023 (Cell 1):\n   NTP_Apr = (It_Apr / Ib_Apr) * 100 = (128,64 / 116,33) * 100 = 110,5820% -> 110,58.\n2. Menghitung NTUP April 2023 (Cell 2):\n   NTUP_Apr = (It_Apr / BPPBM_Apr) * 100 = (128,64 / 115,98) * 100 = 110,9157% -> 110,92.\n3. Menghitung It Mei 2023 (Cell 3):\n   Karena NTUP_Mei = (It_Mei / BPPBM_Mei) * 100 = 110,75, maka:\n   It_Mei = (NTUP_Mei * BPPBM_Mei) / 100 = (110,75 * 116,13) / 100 = 128,613975 -> 128,61.\n4. Menghitung NTP Mei 2023 (Cell 4):\n   NTP_Mei = (It_Mei / Ib_Mei) * 100 = (128,613975 / 116,71) * 100 = 110,1996% -> 110,20.\n5. Menghitung Laju Inflasi Perdesaan Mei 2023 (Cell 5):\n   Inflasi dihitung khusus dari perubahan IKRT:\n   Inflasi_Desa = ((IKRT_Mei - IKRT_Apr) / IKRT_Apr) * 100%\n   Inflasi_Desa = ((117,18 - 116,71) / 116,71) * 100% = (0,47 / 116,71) * 100% = 0,402708% -> 0,40%.",
+    "python_verification_code": "it_apr, ib_apr, ikrt_apr, bppbm_apr = 128.64, 116.33, 116.71, 115.98\nntp_apr = (it_apr / ib_apr) * 100.0\nntup_apr = (it_apr / bppbm_apr) * 100.0\nntup_mei, ib_mei, ikrt_mei, bppbm_mei = 110.75, 116.71, 117.18, 116.13\nit_mei = (ntup_mei * bppbm_mei) / 100.0\nntp_mei = (it_mei / ib_mei) * 100.0\nrural_infl = ((ikrt_mei - ikrt_apr) / ikrt_apr) * 100.0\nprint(f'NTP_Apr={ntp_apr:.2f}, NTUP_Apr={ntup_apr:.2f}, It_Mei={it_mei:.2f}, NTP_Mei={ntp_mei:.2f}, Inflasi_Desa={rural_infl:.2f}%')",
+    "expected_output": "NTP_Apr=110.58, NTUP_Apr=110.92, It_Mei=128.61, NTP_Mei=110.20, Inflasi_Desa=0.40%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menghitung inflasi perdesaan menggunakan indeks Ib",
+      "common_mistake": "Menggunakan persentase perubahan indeks Ib total untuk menjawab inflasi perdesaan: ((116,71 - 116,33) / 116,33) * 100% = 0,33%.",
+      "safe_strategy": "Sesuai pedoman resmi BPS Slide 37-38, inflasi perdesaan secara khusus hanya diturunkan dari Indeks Konsumsi Rumah Tangga (IKRT), menghasilkan angka 0,40%."
+    },
+    {
+      "trap_description": "Terbalik menempatkan pembilang dan penyebut pada rasio NTP",
+      "common_mistake": "Membagi harga yang dibayar petani dengan harga yang diterima (Ib / It).",
+      "safe_strategy": "Ingat prinsip terms of trade: harga yang diterima di atas (pembilang), harga yang dibayar di bawah (penyebut). NTP = (It / Ib) * 100."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.3 Nilai Tukar Petani NTP",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.3.1",
+      "name": "Konsep dan Rasio NTP It per Ib",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 33-36]",
+      "exam_focus": "Konsep dasar dan formulasi rasio NTP, dekomposisi komponen pembayar petani (IKRT dan BPPBM), perhitungan inflasi perdesaan, dan rekonstruksi soal esai UAS 2022/2023 Esai 2b.3.",
+      "textbook_excerpt": "Nilai Tukar Petani (NTP) merupakan perbandingan harga yang diterima petani dengan harga yang dibayar petani. Mengukur kemampuan tukar (terms of trade) produk yang dijual petani dengan produk yang dibutuhkan petani dalam berproduksi dan konsumsi rumah tangga. Indeks harga yang dibayar petani (Ib) terdiri dari Konsumsi Rumah Tangga (KRT/IKRT) dan Biaya Produksi dan Penambahan Barang Modal (BPPBM) [slide 31, 36].",
+      "intuition": "Bayangkan seorang petani padi yang membawa sekarung gabah ke pasar. Dengan uang hasil penjualan gabah tersebut, petani ingin membeli beras, minyak goreng, seragam sekolah anak, pupuk urea, dan menyewa mesin perontok padi. Jika sekarung gabah kini dapat membeli lebih banyak barang kebutuhan dibanding tahun dasar, maka daya tukar produk petani menguat (NTP > 100). Namun jika harga pupuk dan sembako melonjak lebih cepat daripada harga gabah, petani harus menjual lebih banyak gabah hanya untuk memenuhi kebutuhan hidup yang sama (NTP < 100).",
+      "formal": "### 1. Definisi dan Formulasi Resmi BPS\n\nBerdasarkan metodologi statistik harga perdesaan BPS [slide 31-36]:\n- **Indeks Harga yang Diterima Petani ($I_t$)**: Mengukur rata-rata perubahan harga produsen atas komoditas pertanian yang dihasilkan dan dijual oleh petani.\n- **Indeks Harga yang Dibayar Petani ($I_b$)**: Mengukur rata-rata perubahan harga barang dan jasa yang dibeli dan dibayar oleh petani, baik untuk keperluan konsumsi rumah tangga maupun biaya produksi dan investasi barang modal.\n\nFormulasi matematis rasio NTP didefinisikan sebagai:\n$$NTP = \\frac{I_t}{I_b} \\times 100$$\n\n### 2. Dekomposisi Indeks yang Dibayar Petani ($I_b$)\n\nIndeks $I_b$ tersusun atas dua kelompok indeks utama [slide 36]:\n$$I_b = w_{\\text{IKRT}} \\cdot IKRT + w_{\\text{BPPBM}} \\cdot BPPBM$$\ndi mana $w_{\\text{IKRT}} + w_{\\text{BPPBM}} = 1,0$ (berdasarkan diagram timbang hasil Survei Penyempurnaan Diagram Timbang NTP / SPDT-NTP):\n1. **Indeks Konsumsi Rumah Tangga (IKRT)**: Mencakup pengeluaran konsumsi keluarga petani (makanan, minuman, tembakau, perumahan, sandang, kesehatan, pendidikan, transportasi, dan rekreasi). Perubahan persentase bulanan IKRT digunakan BPS sebagai **proksi resmi laju inflasi perdesaan** (*rural inflation*) [slide 37-38].\n2. **Biaya Produksi dan Penambahan Barang Modal (BPPBM)**: Mencakup biaya sarana produksi pertanian (bibit/benih, pupuk, pestisida/obat-obatan, pakan ternak), upah buruh tani, sewa lahan, ongkos angkut sarana produksi, dan pembelian barang modal (cangkul, pompa air, traktor tangan).\n\n### 3. Matriks Interpretasi Ambang Batas NTP\n\n| Kategori Nilai NTP | Status Ekonomi Petani | Makna Terms of Trade | Implikasi Kesejahteraan Riil |\n|---|---|---|---|\n| **$NTP > 100$** | Surplus | Harga jual hasil pertanian naik lebih cepat daripada harga barang yang dibeli | Daya beli petani meningkat; daya saing komoditas menguat |\n| **$NTP = 100$** | Impas (*Break-Even*) | Kenaikan harga jual hasil pertanian sebanding dengan kenaikan harga belanja | Daya beli petani relatif stabil tidak berubah dibanding tahun dasar |\n| **$NTP < 100$** | Defisit | Harga barang belanja petani naik lebih cepat daripada harga komoditas yang dijual | Daya beli petani merosot; potensi penurunan kesejahteraan perdesaan |\n\n### 4. Siklus Pengumpulan Data NTP\n- **SPDT-NTP**: Survei periodik untuk menyusun paket komoditas dan diagram timbang tingkat provinsi [slide 33-34].\n- **SHPed (Survei Harga Perdesaan)**: Pemantauan harga bulanan yang dilakukan di wilayah perdesaan terpilih untuk mencatat harga transaksi aktual produsen dan konsumen perdesaan.",
+      "pitfalls": "1. **Menghitung Inflasi Desa Menggunakan Ib**: Kesalahan fatal dalam ujian adalah menghitung inflasi perdesaan dari selisih Ib. Inflasi perdesaan murni dihitung dari IKRT.\n2. **Kaitan Antara NTUP dan It**: Sering kali soal ujian tidak memberikan nilai It langsung melainkan NTUP dan BPPBM. Ingat rumus invers: It = (NTUP * BPPBM) / 100.",
+      "memory_hook": "NTP = It / Ib * 100; Ib dipecah jadi IKRT (Inflasi Desa) dan BPPBM (Biaya Usahatani).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 36-38]",
+          "problem": "Pada bulan Mei 2023, data BPS mencatat bahwa Indeks Harga yang Dibayar Petani (Ib) naik dari 116,33 menjadi 116,71. Sementara itu, Indeks Konsumsi Rumah Tangga (IKRT) naik dari 116,71 menjadi 117,18. Berapakah laju inflasi perdesaan pada bulan Mei 2023?",
+          "options": [
+            "0,33%",
+            "0,40%",
+            "0,47%",
+            "0,85%"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\nLaju inflasi perdesaan secara resmi oleh BPS dihitung semata-mata dari perubahan persentase Indeks Konsumsi Rumah Tangga (IKRT), bukan dari indeks Ib gabungan:\n$$\\text{Inflasi Perdesaan} = \\frac{IKRT_{\\text{Mei}} - IKRT_{\\text{Apr}}}{IKRT_{\\text{Apr}}} \\times 100\\% = \\frac{117,18 - 116,71}{116,71} \\times 100\\% = \\frac{0,47}{116,71} \\times 100\\% = 0,4027\\% \\approx 0,40\\%$$."
+        }
+      ],
+      "links": [
+        "12.2.1",
+        "12.3.2",
+        "12.3.3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS</h2><a href="#p-9.1.3">9.1.3 Tingkat Pengangguran Terbuka TPT ⭐</a></nav>
+<main>
+<h1>9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 9: Ketenagakerjaan dan Pendidikan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-9.1.3">
+<h2>9.1.3 Tingkat Pengangguran Terbuka TPT ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21-23]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi 4 kategori penganggur BPS, rekonstruksi soal hitungan esai UAS, rumus TPT terhadap AK, dan analisis dampak ekonomi makro (Okun's law context).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Tingkat Pengangguran Terbuka (TPT) = PP / PAK * 100, dimana PP = Jumlah pengangguran, PAK = Jumlah angkatan kerja [slide 15]. Kondef: Tingkat pengangguran terbuka adalah persentase jumlah pengangguran terhadap jumlah angkatan kerja. Pengangguran yaitu: (1) penduduk yang aktif mencari pekerjaan, (2) penduduk yang sedang mempersiapkan usaha/pekerjaan baru, (3) penduduk yang tidak mencari pekerjaan karena merasa tidak mungkin mendapat pekerjaan (discouraged worker), (4) kelompok penduduk yang tidak aktif mencari pekerjaan dengan alasan sudah mempunyai pekerjaan tetapi belum mulai bekerja [slide 16].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika ada 100 orang yang terjun ke bursa tenaga kerja, berapa orang yang belum berhasil diserap oleh roda perekonomian? Indikator inilah yang dijawab oleh TPT. Semakin tinggi TPT, semakin besar kapasitas produksi nasional yang menganggur secara sia-sia (*economic waste*), mengurangi pendapatan keluarga, dan menurunkan penerimaan pajak.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Empat Kategori Pengangguran Terbuka BPS</p>
+<p>BPS mengklasifikasikan pengangguran terbuka ke dalam 4 kelompok operasional yang sangat sering diuji dalam soal esai ujian [slide 16]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Kategori Pengangguran BPS</th><th>Deskripsi dan Kriteria Operasional</th><th>Contoh Kasus Nyata</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><strong>Mencari Pekerjaan</strong></td><td>Mereka yang dalam 7 hari terakhir aktif mencari pekerjaan (mengirim surat lamaran, mendaftar bursa kerja, mengikuti wawancara).</td><td>Korban PHK yang melamar pekerjaan ke berbagai pabrik.</td></tr><tr><td><strong>2</strong></td><td><strong>Mempersiapkan Usaha</strong></td><td>Mereka yang melakukan tindakan nyata untuk mendirikan usaha baru (mencari modal, menyewa tempat, mengurus izin usaha).</td><td>Sarjana yang sedang menyewa ruko dan membeli peralatan kedai kopi.</td></tr><tr><td><strong>3</strong></td><td><strong>Merasa Tidak Mungkin Mendapat Pekerjaan (*Discouraged Worker*)</strong></td><td>Mereka yang tidak bekerja dan bersedia bekerja, tetapi tidak lagi mencari kerja karena putus asa merasa tidak ada lowongan yang sesuai.</td><td>Pekerja lansia/difabel yang berulang kali ditolak kerja sehingga berhenti melamar.</td></tr><tr><td><strong>4</strong></td><td><strong>Sudah Diterima Kerja Tetapi Belum Mulai Bekerja (*Future Starts*)</strong></td><td>Mereka yang telah lolos seleksi dan memiliki kepastian tanggal mulai bekerja, namun pada minggu pencacahan belum resmi bertugas.</td><td>Calon ASN yang telah menerima SK dan menunggu jadwal penempatan bulan depan.</td></tr></tbody></table></div>
+<p>### 2. Formula Matematis<br>$$\text{TPT} = \frac{\text{Jumlah Penganggur}}{\text{Jumlah Angkatan Kerja}} \times 100\% = \frac{\sum_{k=1}^4 \text{Penganggur}_k}{\text{PB} + \sum_{k=1}^4 \text{Penganggur}_k} \times 100\%$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="3">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan pedoman operasional BPS, manakah di antara individu berikut yang TIDAK digolongkan sebagai pengangguran terbuka?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 16]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Seseorang yang sedang mengumpulkan modal dan mencari lokasi sewa ruko untuk membuka minimarket.</button>
+<button class="ex-opt" data-i="1">B. Seseorang yang telah lulus wawancara kerja dan dijadwalkan mulai bertugas dua pekan mendatang.</button>
+<button class="ex-opt" data-i="2">C. Seseorang yang berhenti mencari kerja karena merasa di daerahnya tidak ada lowongan yang cocok bagi dirinya.</button>
+<button class="ex-opt" data-i="3">D. Seseorang yang mengundurkan diri dari pekerjaannya demi fokus mengasuh anak balita di rumah tanpa mencari kerja.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>D</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A: Masuk kategori (2) Sedang mempersiapkan usaha/pekerjaan baru.<br>- Pilihan B: Masuk kategori (4) Sudah mempunyai pekerjaan tetapi belum mulai bekerja.<br>- Pilihan C: Masuk kategori (3) Merasa tidak mungkin mendapat pekerjaan (*discouraged worker*).<br>- Pilihan D: Masuk ke dalam <strong>Bukan Angkatan Kerja (BAK)</strong> kategori Mengurus Rumah Tangga karena tidak berkeinginan mencari pekerjaan komersial.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Sebelum=5.00%, Sesudah=7.50%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu kota industri, terdapat 190.000 penduduk usia kerja yang bekerja dan 10.000 orang pengangguran terbuka. Karena krisis ekonomi global, 5.000 pekerja mengalami pemutusan hubungan kerja (PHK) dan langsung aktif mencari pekerjaan baru di bursa kerja. Asumsikan tidak ada perubahan pada komponen angkatan kerja lainnya. Hitunglah TPT kota tersebut sebelum dan sesudah krisis ekonomi. Tuliskan jawaban dalam format: <code>Sebelum=X.XX%, Sesudah=Y.YY%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Kondisi Sebelum Krisis:<br>   $$\text{PB} = 190.000, \quad \text{Penganggur} = 10.000$$<br>   $$\text{AK} = 190.000 + 10.000 = 200.000$$<br>   $$\text{TPT}_{\text{awal}} = \frac{10.000}{200.000} \times 100\% = 5,00\%$$<br>2. Kondisi Sesudah Krisis:<br>   - Pekerja berkurang 5.000 menjadi $190.000 - 5.000 = 185.000$.<br>   - Pengangguran bertambah 5.000 menjadi $10.000 + 5.000 = 15.000$.<br>   - Total Angkatan Kerja (AK) tetap sama: $185.000 + 15.000 = 200.000$.<br>   $$\text{TPT}_{\text{akhir}} = \frac{15.000}{200.000} \times 100\% = 7,50\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>ak = 200000<br>tpt_awal = (10000 / ak) * 100<br>tpt_akhir = (15000 / ak) * 100<br>print(f'Sebelum={tpt_awal:.2f}%, Sesudah={tpt_akhir:.2f}%')<br># Output: Sebelum=5.00%, Sesudah=7.50%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Salah menempatkan kategori 'mempersiapkan usaha' atau 'sudah diterima kerja' ke dalam kelompok Bekerja atau Bukan Angkatan Kerja. Di BPS, kedua kelompok ini SAH sebagai Pengangguran Terbuka.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>TPT = Penganggur / AK * 100. Penganggur BPS ada 4: Cari Kerja, Bikin Usaha, Putus Asa, Sudah Diterima Belum Kerja.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.1.2, 9.1.4</div>
+<button class="donebtn" data-id="9.1.3"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

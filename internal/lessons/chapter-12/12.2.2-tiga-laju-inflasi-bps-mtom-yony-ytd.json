@@ -1,0 +1,84 @@
+{
+  "point_id": "12.2.2",
+  "title": "Tiga Laju Inflasi BPS mtom yony ytd",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Indikator Inflasi BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "21-26",
+        "content": "Definisi tiga laju inflasi BPS: month to month (m-to-m), year to date (y-to-d), dan year on year (y-on-y), penentuan periode dasar pembanding, contoh data Maret 2022 dan Desember 2021-2023."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Tiga laju inflasi BPS memberikan lensa waktu berbeda untuk mendiagnosis dinamika kenaikan harga. Inflasi bulanan (m-to-m) memotret kejutan harga sesaat (misalnya lonjakan harga tiket pesawat saat libur Lebaran). Inflasi tahun kalender (y-to-d) merekam akumulasi kenaikan harga sejak awal tahun anggaran (Januari hingga bulan berjalan). Inflasi tahunan (y-on-y) membandingkan harga terhadap bulan yang sama di tahun sebelumnya, sehingga menyingkirkan faktor musiman tahunan dan digunakan sebagai sasaran resmi stabilitas moneter Bank Indonesia.",
+    "bps_definition": "Tiga ukuran perubahan persentase IHK yang dirilis resmi oleh BPS: 1) Inflasi m-to-m: perubahan IHK bulan berjalan terhadap bulan sebelumnya; 2) Inflasi y-to-d: perubahan IHK bulan berjalan terhadap bulan Desember tahun sebelumnya; 3) Inflasi y-on-y: perubahan IHK bulan berjalan terhadap bulan yang sama pada tahun sebelumnya.",
+    "boundary_conditions": "Sifat batas matematis unik pada kalender inflasi: 1) Pada bulan Januari: laju inflasi m-to-m selalu identik dengan inflasi y-to-d karena keduanya menggunakan dasar IHK Desember (t-1); 2) Pada bulan Desember: laju inflasi y-to-d selalu identik dengan inflasi y-on-y karena keduanya membandingkan IHK Desember tahun t terhadap IHK Desember tahun t-1 (terbukti pada Slide 21).",
+    "formula_latex": "$$\\pi_{m\\text{-to-}m} = \\frac{IHK_{t, m} - IHK_{t, m-1}}{IHK_{t, m-1}} \\times 100\\%, \\quad \\pi_{y\\text{-to-}d} = \\frac{IHK_{t, m} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \\times 100\\%, \\quad \\pi_{y\\text{-on-}y} = \\frac{IHK_{t, m} - IHK_{t-1, m}}{IHK_{t-1, m}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Berdasarkan Berita Resmi Statistik (BRS) BPS Gabungan 90 Kota (2018=100) pada Slide 20, tercatat data IHK sebagai berikut:\n- IHK Maret 2021 = 106,15\n- IHK Desember 2021 = 107,66\n- IHK Februari 2022 = 108,24\n- IHK Maret 2022 = 108,95\nHitunglah ketiga jenis laju inflasi untuk bulan Maret 2022:\n1. Tingkat Inflasi month-to-month (m-to-m)\n2. Tingkat Inflasi year-to-date (y-to-d)\n3. Tingkat Inflasi year-on-year (y-on-y)",
+    "data_table": "| Periode Rujukan | Nilai IHK | Kegunaan dalam Perhitungan Maret 2022 |\n|---|---|---|\n| Maret 2021 | 106,15 | Penyebut formula year-on-year (y-on-y) |\n| Desember 2021 | 107,66 | Penyebut formula year-to-date (y-to-d) |\n| Februari 2022 | 108,24 | Penyebut formula month-to-month (m-to-m) |\n| Maret 2022 | 108,95 | Pembilang IHK bulan berjalan ($IHK_t$) |",
+    "step_by_step_solution": "1. Menghitung Inflasi month-to-month (m-to-m) Maret 2022:\n   pi_mtom = ((108,95 - 108,24) / 108,24) * 100% = (0,71 / 108,24) * 100% = 0,655931% -> 0,66%.\n2. Menghitung Inflasi year-to-date (y-to-d) Maret 2022:\n   pi_ytd = ((108,95 - 107,66) / 107,66) * 100% = (1,29 / 107,66) * 100% = 1,198217% -> 1,20%.\n3. Menghitung Inflasi year-on-year (y-on-y) Maret 2022:\n   pi_yony = ((108,95 - 106,15) / 106,15) * 100% = (2,80 / 106,15) * 100% = 2,637777% -> 2,64%.",
+    "python_verification_code": "ihk_mar_21 = 106.15\nihk_des_21 = 107.66\nihk_feb_22 = 108.24\nihk_mar_22 = 108.95\nmtom = ((ihk_mar_22 - ihk_feb_22) / ihk_feb_22) * 100.0\nytd = ((ihk_mar_22 - ihk_des_21) / ihk_des_21) * 100.0\nyony = ((ihk_mar_22 - ihk_mar_21) / ihk_mar_21) * 100.0\nprint(f'm-to-m={mtom:.2f}%, y-to-d={ytd:.2f}%, y-on-y={yony:.2f}%')",
+    "expected_output": "m-to-m=0.66%, y-to-d=1.20%, y-on-y=2.64%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Mengabaikan kesamaan nilai ytd dan yoy pada bulan Desember",
+      "common_mistake": "Menganggap inflasi y-to-d dan y-on-y pada bulan Desember harus memiliki angka yang berbeda.",
+      "safe_strategy": "Ingat dalil BPS Slide 21: pada bulan Desember, kedua ukuran sama persis secara definisi dan matematis karena sama-sama membandingkan IHK Desember tahun berjalan terhadap IHK Desember tahun sebelumnya."
+    },
+    {
+      "trap_description": "Menjumlahkan inflasi bulanan m-to-m secara linier untuk mencari inflasi tahunan",
+      "common_mistake": "Menjumlahkan 12 angka inflasi m-to-m dalam setahun secara langsung untuk mengklaim angka inflasi tahunan.",
+      "safe_strategy": "Inflasi adalah angka indeks dengan pertumbuhan multiplikatif geometrik: (1 + r_t) = prod(1 + r_m). Menjumlahkan langsung mengabaikan efek pertumbuhan majemuk (compounding effect)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.2 Indeks Harga Konsumen dan Inflasi",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.2.2",
+      "name": "Tiga Laju Inflasi BPS mtom yony ytd",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 21-26]",
+      "exam_focus": "Formula tiga laju inflasi BPS, penentuan penyebut rujukan periode dasar, sifat ekuivalensi bulan Januari dan Desember, serta interpretasi ekonomi makro.",
+      "textbook_excerpt": "Inflasi bulanan (month to month) dihitung dengan dasar IHK bulan sebelumnya. Inflasi tahunan (year on year): metode point to point dengan dasar bulan pada tahun sebelumnya. Inflasi tahun kalender (year to date): metode point to point dengan dasar bulan Desember pada tahun sebelumnya [slide 19]. Pada bulan Desember, tingkat inflasi y-to-d selalu sama dengan y-on-y [slide 21].",
+      "intuition": "Jika seorang analis ekonomi membaca berita utama koran bahwa 'Inflasi Indonesia 3%', angka apakah itu? Apakah harga naik 3% dalam sebulan terakhir, sejak awal tahun, atau dalam setahun penuh? Mengetahui horizon waktu inflasi sangat krusial. Kenaikan 3% sebulan berarti ancaman hiperinflasi, tetapi 3% setahun (y-on-y) adalah tingkat inflasi yang sangat sehat dan terkendali. BPS merilis ketiga dimensi waktu ini secara simultan.",
+      "formal": "### 1. Definisi Matematis Tiga Dimensi Waktu Inflasi\n\nMisalkan $IHK_{t, m}$ menyatakan Indeks Harga Konsumen pada tahun $t$ dan bulan ke-$m$ ($m \\in \\{1, 2, \\dots, 12\\}$):\n\n1. **Inflasi Bulanan (*Month-to-Month* / m-to-m)**:\nMengukur perubahan harga satu bulan terhadap bulan langsung sebelumnya:\n$$\\pi_{t, m}^{\\text{mtom}} = \\frac{IHK_{t, m} - IHK_{t, m-1}}{IHK_{t, m-1}} \\times 100\\%$$\nKhusus untuk bulan Januari ($m=1$), bulan sebelumnya adalah Desember tahun lalu ($IHK_{t-1, 12}$).\n\n2. **Inflasi Tahun Kalender (*Year-to-Date* / y-to-d)**:\nMengukur akumulasi perubahan harga sepanjang tahun kalender berjalan, dihitung dari akhir tahun sebelumnya:\n$$\\pi_{t, m}^{\\text{ytd}} = \\frac{IHK_{t, m} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \\times 100\\%$$\n\n3. **Inflasi Tahunan (*Year-on-Year* / y-on-y)**:\nMengukur perubahan harga terhadap bulan yang sama pada satu tahun sebelumnya:\n$$\\pi_{t, m}^{\\text{yony}} = \\frac{IHK_{t, m} - IHK_{t-1, m}}{IHK_{t-1, m}} \\times 100\\%$$\n\n### 2. Sifat Batas Matematis Kalender Inflasi (Boundary Theorems)\n\n- **Teorema Ekuivalensi Januari**:\nPada bulan Januari ($m=1$), secara definisi:\n$$\\pi_{t, 1}^{\\text{mtom}} = \\frac{IHK_{t, 1} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \\times 100\\% = \\pi_{t, 1}^{\\text{ytd}}$$\nInflasi m-to-m bulan Januari selalu bernilai tepat sama dengan inflasi y-to-d bulan Januari.\n\n- **Teorema Ekuivalensi Desember**:\nPada bulan Desember ($m=12$), secara definisi:\n$$\\pi_{t, 12}^{\\text{ytd}} = \\frac{IHK_{t, 12} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \\times 100\\% = \\pi_{t, 12}^{\\text{yony}}$$\nInflasi y-to-d bulan Desember selalu bernilai tepat sama dengan inflasi y-on-y bulan Desember [terkonfirmasi pada Slide 21: Des 2021 = 1,87%, Des 2022 = 5,51%, Des 2023 = 2,61%].\n\n### 3. Matriks Perbandingan Ketiga Laju Inflasi BPS\n\n| Karakteristik | Month-to-Month (m-to-m) | Year-to-Date (y-to-d) | Year-on-Year (y-on-y) |\n|---|---|---|---|\n| **Periode Pembanding** | 1 bulan sebelumnya ($t, m-1$) | Desember tahun lalu ($t-1, 12$) | Bulan sama tahun lalu ($t-1, m$) |\n| **Sensitivitas Musiman** | Sangat tinggi (terpengaruh siklus bulanan) | Akumulatif dalam tahun berjalan | Meniadakan faktor musiman tahunan |\n| **Fokus Pengguna** | Evaluasi pasokan pangan jangka pendek | Penyerapan anggaran & target fiskal APBN | Sasaran resmi kebijakan moneter Bank Indonesia |\n| **Pola Pergerakan** | Fluktuatif, sering bernilai negatif (deflasi) | Cenderung meningkat seiring bertambahnya bulan | Relatif lebih mulus mengikuti tren makro |",
+      "pitfalls": "1. **Tertukar Basis Des 2021 vs Des 2022**: Saat menghitung inflasi ytd tahun 2023, pembagi wajib IHK Desember 2022, bukan Desember 2021.\n2. **Deflasi**: Jangan panik jika hasil perhitungan menghasilkan tanda negatif (misal -0,02%). Tanda negatif adalah fenomena deflasi yang wajar terjadi pasca panen raya atau penurunan tarif angkutan setelah liburan.",
+      "memory_hook": "m-to-m ke Bulan Lalu; y-to-d ke Desember Lalu; y-on-y ke Bulan yang Sama Tahun Lalu; Di Bulan Desember ytd = yoy!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 20, 21]",
+          "problem": "Berdasarkan data BPS, IHK bulan Desember 2022 adalah 113,59 dan IHK bulan Desember 2023 adalah 116,56. Berdasarkan informasi ini, manakah pernyataan yang paling tepat mengenai laju inflasi pada bulan Desember 2023?",
+          "options": [
+            "Inflasi m-to-m sama dengan inflasi y-to-d sebesar 2,61%.",
+            "Inflasi y-to-d sama dengan inflasi y-on-y sebesar 2,61%.",
+            "Inflasi y-on-y lebih tinggi daripada inflasi y-to-d karena diakumulasikan sepanjang 12 bulan.",
+            "Inflasi y-to-d bernilai 0% karena tahun anggaran telah ditutup."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\nPada bulan Desember, periode dasar pembanding untuk inflasi tahun kalender (y-to-d) adalah bulan Desember tahun sebelumnya (Desember 2022). Periode dasar pembanding untuk inflasi tahunan (y-on-y) pada bulan Desember juga adalah bulan Desember tahun sebelumnya (Desember 2022). Oleh karena itu, perhitungannya identik:\n$$\\text{Inflasi} = \\frac{116,56 - 113,59}{113,59} \\times 100\\% = \\frac{2,97}{113,59} \\times 100\\% = 2,6146\\% \\approx 2,61\\%$$\nSehingga inflasi y-to-d dan y-on-y bulan Desember 2023 keduanya bernilai tepat 2,61%."
+        }
+      ],
+      "links": [
+        "12.2.1",
+        "12.2.3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "point_id": "13.1.1",
+  "title": "Valuasi Ekspor Impor FOB vs CIF",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 13,
+    "silabus_topic": "Statistik Ekspor-Impor dan Perdagangan Luar Negeri",
+    "bps_subject": "Statistik Perdagangan Luar Negeri BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md",
+        "slide_or_page": "4-9",
+        "content": "Konsep ekspor-impor SNA 2008 alih kepemilikan ekonomi; penilaian ekspor FOB dan impor CIF pada IMTS vs FOB pada SNA; dokumen PEB dan PIB Bea Cukai; konversi valuta USD ke Rupiah menggunakan kurs beli untuk ekspor dan kurs jual untuk impor."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Perdagangan internasional barang melibatkan batas pabean dan pergerakan fisik melintasi samudera atau perbatasan darat. Valuasi perdagangan menentukan di titik mana kepemilikan dan tanggung jawab biaya berpindah: apakah tepat saat barang dinaikkan ke kapal di pelabuhan negara pengekspor (FOB) atau sampai barang berlabuh di pelabuhan negara pengimpor termasuk ongkos kirim dan asuransi (CIF). Tanpa standardisasi valuasi dan kurs konversi, neraca perdagangan dunia akan mengalami asimetri pencatatan.",
+    "bps_definition": "Ekspor dan impor menurut SNA 2008 didefinisikan sebagai transaksi alih kepemilikan ekonomi atas barang dan jasa antara penduduk (resident) suatu perekonomian dengan bukan penduduk (non-resident). Dalam statistik perdagangan barang internasional (IMTS) resmi BPS: Ekspor barang dinilai atas dasar Free on Board (FOB), yaitu nilai barang di atas kapal di pelabuhan muat eksportir; Impor barang dicatat atas dasar Cost, Insurance, and Freight (CIF), mencakup harga barang FOB ditambah biaya asuransi dan pengangkutan antarnegara hingga pelabuhan bongkar importir. Data dihimpun dari dokumen Pemberitahuan Ekspor Barang (PEB) dan Pemberitahuan Impor Barang (PIB) Ditjen Bea dan Cukai, lalu dikonversi ke Rupiah menggunakan kurs transaksi tertimbang nominal bulanan: kurs beli untuk ekspor dan kurs jual untuk impor.",
+    "boundary_conditions": "Nilai CIF selalu lebih besar atau sama dengan nilai FOB (CIF = FOB + Freight + Insurance). Jika pengangkutan dan asuransi bernilai nol (misal perbatasan darat langsung), maka CIF = FOB. Untuk kompilasi PDB dan Neraca Pembayaran (BOP/SNA), impor barang wajib disesuaikan kembali dari CIF menjadi FOB agar komponen asuransi dan freight dapat direklasifikasi ke neraca jasa.",
+    "formula_latex": "$$\\text{CIF} = \\text{FOB} + \\text{Freight} + \\text{Insurance}, \\quad X_{\\text{IDR}} = X_{\\text{USD}} \\times \\bar{K}_{\\text{beli}}, \\quad M_{\\text{IDR}} = M_{\\text{USD}} \\times \\bar{K}_{\\text{jual}}$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Pada bulan September 2026, sebuah perusahaan manufaktur di Surabaya mengekspor produk tekstil dengan nilai faktur FOB sebesar USD 120.000. Pada saat bersamaan, importir di Jakarta mengimpor bahan baku kapas dengan nilai faktur CIF sebesar USD 100.000 (terdiri dari harga barang FOB USD 90.000, biaya pengangkutan/freight USD 8.000, dan asuransi internasional USD 2.000). Rata-rata kurs beli dolar AS tertimbang transaksi pada bulan tersebut adalah Rp 15.500/USD, sedangkan rata-rata kurs jual dolar AS tertimbang adalah Rp 15.600/USD. Hitunglah:\n1. Nilai ekspor FOB dalam mata uang Rupiah.\n2. Nilai impor CIF dalam mata uang Rupiah (standar publikasi IMTS BPS).\n3. Saldo Neraca Perdagangan Barang IMTS dalam USD dan dalam Rupiah.\n4. Nilai impor barang yang dicatat dalam sistem Neraca Pembayaran / SNA 2008 (valuasi FOB) dan saldo neraca barang FOB-FOB dalam USD.",
+    "data_table": "| Parameter Transaksi | Valuasi Valas (USD) | Kurs Tertimbang BPS (Rp/USD) | Nilai Konversi (Rp) |\n|---|---|---|---|\n| Ekspor Tekstil (FOB) | 120.000 | 15.500 (Kurs Beli) | 1.860.000.000 |\n| Impor Bahan Baku (CIF) | 100.000 | 15.600 (Kurs Jual) | 1.560.000.000 |\n| - Komponen Barang Murni (FOB) | 90.000 | 15.600 | 1.404.000.000 |\n| - Komponen Angkut (Freight) | 8.000 | 15.600 | 124.800.000 |\n| - Komponen Asuransi (Insurance) | 2.000 | 15.600 | 31.200.000 |",
+    "step_by_step_solution": "1. Menghitung Nilai Ekspor FOB dalam Rupiah:\n   $$X_{\\text{IDR}} = X_{\\text{USD}} \\times \\bar{K}_{\\text{beli}} = 120.000 \\times 15.500 = \\text{Rp } 1.860.000.000$$\n2. Menghitung Nilai Impor CIF dalam Rupiah:\n   $$M_{\\text{IDR}} = M_{\\text{USD}} \\times \\bar{K}_{\\text{jual}} = 100.000 \\times 15.600 = \\text{Rp } 1.560.000.000$$\n3. Menghitung Saldo Neraca Perdagangan Barang IMTS BPS (Ekspor FOB - Impor CIF):\n   - Dalam USD: $$\\text{Surplus}_{\\text{USD}} = 120.000 - 100.000 = +\\text{USD } 20.000$$\n   - Dalam Rupiah: $$\\text{Surplus}_{\\text{IDR}} = 1.860.000.000 - 1.560.000.000 = +\\text{Rp } 300.000.000$$\n4. Penyesuaian ke Konsep Neraca Pembayaran / SNA 2008 (Valuasi FOB-FOB):\n   - Impor barang dinilai secara FOB: $$M_{\\text{FOB}} = \\text{USD } 90.000$$\n   - Biaya Freight (USD 8.000) dan Insurance (USD 2.000) dikeluarkan dari kelompok impor barang dan dimasukkan ke neraca jasa perdagangan luar negeri (jika penyedia jasa non-residen).\n   - Saldo Neraca Barang (FOB - FOB): $$120.000 - 90.000 = +\\text{USD } 30.000$$.",
+    "python_verification_code": "x_fob_usd = 120000.0\nkurs_beli = 15500.0\nx_fob_idr = x_fob_usd * kurs_beli\nm_cif_usd = 100000.0\nfreight_usd = 8000.0\nins_usd = 2000.0\nm_fob_usd = m_cif_usd - freight_usd - ins_usd\nkurs_jual = 15600.0\nm_cif_idr = m_cif_usd * kurs_jual\nm_fob_idr = m_fob_usd * kurs_jual\nsurplus_imts_usd = x_fob_usd - m_cif_usd\nsurplus_imts_idr = x_fob_idr - m_cif_idr\nsurplus_sna_usd = x_fob_usd - m_fob_usd\nprint(f'Ekspor_FOB_IDR={x_fob_idr:.0f}, Impor_CIF_IDR={m_cif_idr:.0f}, Surplus_IMTS_USD={surplus_imts_usd:.0f}, Surplus_SNA_USD={surplus_sna_usd:.0f}')",
+    "expected_output": "Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Tertukar antara penggunaan Kurs Beli dan Kurs Jual dalam konversi valuta ekspor-impor",
+      "common_mistake": "Menggunakan kurs jual untuk ekspor atau kurs tengah BI tanpa penimbang transaksi.",
+      "safe_strategy": "Ingat aturan perbankan/BPS: Eksportir menerima valuta asing dan menjualnya ke bank sehingga bank menggunakan kurs 'beli' (bank membeli USD eksportir). Importir membutuhkan valuta asing dan membelinya dari bank sehingga bank menggunakan kurs 'jual' (bank menjual USD ke importir)."
+    },
+    {
+      "trap_description": "Perbedaan valuasi impor antara IMTS BPS dan SNA 2008 / Neraca Pembayaran BI",
+      "common_mistake": "Mengira bahwa impor pada Neraca Pembayaran Bank Indonesia dinilai atas dasar CIF sama seperti publikasi bulanan BPS.",
+      "safe_strategy": "Publikasi IMTS BPS mencatat impor secara CIF, namun pada Neraca Pembayaran (BOP) dan Tabel Input-Output / SNA 2008, impor barang disesuaikan menjadi FOB, dan komponen ongkos angkut (freight) serta asuransi dialihkan ke neraca jasa."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 13,
+  "chapter_title": "Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata",
+  "section": "13.1 Statistik Perdagangan Internasional",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "13.1.1",
+      "name": "Valuasi Ekspor Impor FOB vs CIF",
+      "importance": "高",
+      "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 4-9]",
+      "exam_focus": "Menguasai prinsip alih kepemilikan ekonomi SNA 2008, perbedaan titik valuasi FOB dan CIF, peran dokumen PEB/PIB Bea Cukai, serta mekanisme konversi kurs beli vs kurs jual BPS.",
+      "textbook_excerpt": "Ekspor-impor didefinisikan sebagai transaksi alih kepemilikan ekonomi atas barang dan jasa antara residen suatu perekonomian dengan non-residen, termasuk re-ekspor dan merchanting. Ekspor dan impor barang dinilai menurut harga Free on Board (FOB). Pada International Merchandise Trade Statistics (IMTS), impor barang dicatat dalam nilai cost, insurance, and freight (CIF) sehingga biaya angkut barang dan asuransi harus dikeluarkan jika disesuaikan ke FOB. Data dikumpulkan dari PEB dan PIB Ditjen Bea Cukai. Ekspor dikonversi dengan kurs beli tertimbang, sedangkan impor dengan kurs jual tertimbang [slide 5-7].",
+      "intuition": "Bayangkan Anda memesan barang dari pabrik di luar negeri:\n- **FOB (Free on Board)**: Harga barang hanya sampai di atas dek kapal pelabuhan asal. Setelah tali kapal dilepas, semua risiko gelombang, badai, biaya bahan bakar kapal laut, dan asuransi perjalanan menjadi urusan Anda.\n- **CIF (Cost, Insurance, and Freight)**: Penjual mengurus segalanya sampai kapal bersandar di pelabuhan negara Anda. Harga yang Anda bayar sudah 'paket komplit' meliputi harga barang, premi asuransi, dan tarif kapal kargo.\n- Oleh karena itu, neraca perdagangan resmi BPS mencatat ekspor barang kita dengan FOB (karena pembeli asing menanggung ongkos kirim internasionalnya), sedangkan impor kita dicatat dengan CIF (karena devisa kita keluar untuk membayar barang sekaligus jasa angkut dan asuransinya).",
+      "formal": "### 1. Landasan Konseptual Ekspor-Impor (SNA 2008)\n\nBerdasarkan kerangka kerja *System of National Accounts* (SNA 2008) dan *BPM6* [slide 5]:\n- **Ekspor dan Impor**: Transaksi alih kepemilikan ekonomi (*change of economic ownership*) atas barang dan jasa antara penduduk (*resident*) suatu wilayah ekonomi dengan bukan penduduk (*non-resident*).\n- Mencakup barang dagangan reguler, barang kiriman pos/kurir, re-ekspor, barang *merchanting*, serta pembelian langsung (*direct purchase*) oleh penduduk Indonesia di luar negeri maupun warga asing di Indonesia [slide 5].\n\n### 2. Skema Valuasi Internasional: FOB vs CIF\n\nDalam statistik perdagangan luar negeri, terdapat dua titik penilaian harga utama [slide 6]:\n\n1. **Free on Board (FOB)**:\n   - Titik penilaian: Di atas kapal pengangkut di pelabuhan muat negara pengekspor.\n   - Eksportir menanggung biaya produksi, pengangkutan dari gudang ke pelabuhan domestik, biaya muat (*loading* / *stevedoring*), dan bea keluar/pajak ekspor.\n   - Importir menanggung biaya transportasi lintas samudra (*ocean/air freight*), premi asuransi perjalanan internasional, dan bea masuk di negara tujuan.\n   - **Standar Ekspor BPS**: Seluruh barang ekspor Indonesia dinilai menurut harga FOB [slide 6].\n\n2. **Cost, Insurance, and Freight (CIF)**:\n   - Titik penilaian: Di pelabuhan bongkar negara pengimpor sebelum bea masuk dibayarkan.\n   - Mencakup tiga komponen terpadu:\n     $$\\text{CIF} = \\text{FOB} + \\text{Freight} + \\text{Insurance}$$\n   - **Standar Impor IMTS BPS**: Impor barang dicatat dalam nilai CIF karena faktur perdagangan internasional yang diterima oleh Bea Cukai umumnya memuat total biaya sampai di pelabuhan Indonesia [slide 6].\n   - **Penyesuaian SNA/BOP**: Untuk penyusunan PDB penggunaan dan Neraca Pembayaran oleh Bank Indonesia, impor CIF harus dikurangi komponen *freight* dan *insurance* agar menjadi impor barang FOB murni, sedangkan biaya angkut dan asuransi asing dipindahkan ke pos Neraca Jasa [slide 6].\n\n### 3. Sumber Data dan Prosedur Konversi Valuta BPS\n\nAlur pengumpulan dan konversi data statistik perdagangan [slide 7]:\n1. **Dokumen Pabean Legal**:\n   - Ekspor: Pemberitahuan Ekspor Barang (PEB).\n   - Impor: Pemberitahuan Impor Barang (PIB).\n   - Dikelola oleh Direktorat Jenderal Bea dan Cukai (DJBC), lalu diserahkan secara elektronik ke BPS dan BI.\n2. **Konversi Mata Uang Asing ke Rupiah**:\n   - Data faktur perdagangan mayoritas dinyatakan dalam Dolar Amerika Serikat (USD).\n   - **Nilai Ekspor**: Dikonversi menggunakan **rata-rata kurs beli** dolar AS yang ditimbang dengan nilai nominal transaksi ekspor bulanan:\n     $$X_{\\text{IDR}} = X_{\\text{USD}} \\times \\bar{K}_{\\text{beli}}$$\n   - **Nilai Impor**: Dikonversi menggunakan **rata-rata kurs jual** dolar AS yang ditimbang dengan nilai nominal transaksi impor bulanan:\n     $$M_{\\text{IDR}} = M_{\\text{USD}} \\times \\bar{K}_{\\text{jual}}$$\n   - Dasar pertimbangan: Dari perspektif perbankan devisa, eksportir menukarkan USD hasil ekspor ke Rupiah (Bank membeli valas -> Kurs Beli), sedangkan importir membeli USD dari bank untuk membayar ke luar negeri (Bank menjual valas -> Kurs Jual).\n\n### 4. Ringkasan Perbandingan Valuasi IMTS vs SNA 2008\n\n| Dimensi | Publikasi IMTS BPS | Neraca Pembayaran (BI) / SNA 2008 |\n|---|---|---|\n| **Valuasi Ekspor Barang** | Free on Board (FOB) | Free on Board (FOB) |\n| **Valuasi Impor Barang** | Cost, Insurance, Freight (CIF) | Free on Board (FOB) |\n| **Pos Asuransi & Freight Impor** | Melekat di dalam Impor Barang | Dikeluarkan dari barang, dicatat di Neraca Jasa |\n| **Sumber Data Barang** | BPS (dokumen PEB/PIB Bea Cukai) | BPS disesuaikan Bank Indonesia |\n| **Sumber Data Jasa** | Bank Indonesia (ITRS & Survei) | Bank Indonesia |",
+      "pitfalls": "1. **Tertukar Kurs Konversi**: Eksportir memakai kurs beli bank, importir memakai kurs jual bank. Jangan gunakan kurs tengah atau membalik keduanya.\n2. **Menyamakan Valuasi Impor BPS dan Neraca Pembayaran**: BPS merilis impor CIF secara bulanan, tetapi BI dan PDB penggunaan menghitung impor secara FOB (CIF dikurangi ongkos angkut dan asuransi).\n3. **Menyertakan Pajak Impor dalam Nilai CIF**: Nilai CIF hanya mencakup harga barang + freight + insurance sampai pelabuhan bongkar, belum termasuk Bea Masuk, PPN Impor, atau PPh Pasal 22.",
+      "memory_hook": "Ekspor itu Pergi (FOB di Pelabuhan Kita, Kurs Beli Bank); Impor itu Datang (CIF sampai Pelabuhan Kita, Kurs Jual Bank).",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7]",
+          "problem": "Dalam statistik perdagangan luar negeri resmi BPS, mengapa data transaksi impor pada dokumen PIB yang dinyatakan dalam USD dikonversikan ke Rupiah menggunakan kurs 'jual' dolar AS?",
+          "options": [
+            "Karena nilai kurs jual selalu lebih rendah sehingga menekan angka defisit perdagangan.",
+            "Karena dari sudut pandang bank devisa, importir harus membeli valas dari bank untuk membayar kewajiban ke luar negeri.",
+            "Karena eksportir di luar negeri menjual barangnya dengan mata uang lokal.",
+            "Karena peraturan menteri keuangan mengharuskan penggunaan kurs tengah Bank Indonesia."
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan**:\nSesuai metodologi BPS [slide 7], konversi valuta transaksi perdagangan luar negeri didasarkan pada posisi perbankan devisa. Importir membutuhkan mata uang asing (USD) untuk melunasi pembayaran barang ke mitra dagang non-residen. Oleh karena itu, importir mendatangi bank devisa untuk membeli USD, sehingga bank mengenakan kurs 'jual' (kurs di mana bank menjual valas kepada nasabah). Sebaliknya, untuk ekspor digunakan kurs 'beli' karena eksportir menjual valas penerimaan ekspor kepada bank."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7, 9]",
+          "problem": "Sebuah perusahaan di Medan mengekspor CPO dengan nilai FOB USD 120.000 (kurs beli Rp 15.500/USD). Pada saat yang sama, perusahaan lain mengimpor mesin dengan nilai CIF USD 100.000 yang terdiri dari komponen FOB USD 90.000, freight USD 8.000, dan asuransi USD 2.000 (kurs jual Rp 15.600/USD).\nHitunglah:\n1. Nilai Ekspor FOB dalam Rupiah.\n2. Nilai Impor CIF dalam Rupiah.\n3. Saldo neraca perdagangan barang IMTS dalam USD.\n4. Saldo neraca perdagangan barang menurut SNA 2008 (valuasi FOB-FOB) dalam USD.\nTuliskan format: `Ekspor_FOB_IDR=..., Impor_CIF_IDR=..., Surplus_IMTS_USD=..., Surplus_SNA_USD=...`.",
+          "answer": "Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000",
+          "solution": "Langkah Perhitungan:\n1. **Ekspor FOB (IDR)**:\n   $$X_{\\text{IDR}} = 120.000 \\times 15.500 = \\text{Rp } 1.860.000.000$$\n2. **Impor CIF (IDR)**:\n   $$M_{\\text{IDR}} = 100.000 \\times 15.600 = \\text{Rp } 1.560.000.000$$\n3. **Surplus IMTS (USD)** (FOB - CIF):\n   $$\\text{Surplus}_{\\text{IMTS}} = 120.000 - 100.000 = +\\text{USD } 20.000$$\n4. **Surplus SNA (USD)** (FOB - FOB):\n   $$M_{\\text{FOB}} = 100.000 - 8.000 - 2.000 = \\text{USD } 90.000$$\n   $$\\text{Surplus}_{\\text{SNA}} = 120.000 - 90.000 = +\\text{USD } 30.000$$\n\n**Verifikasi Kode Python**:\n```python\nx_fob_usd = 120000.0\nkurs_beli = 15500.0\nx_fob_idr = x_fob_usd * kurs_beli\nm_cif_usd = 100000.0\nfreight_usd = 8000.0\nins_usd = 2000.0\nm_fob_usd = m_cif_usd - freight_usd - ins_usd\nkurs_jual = 15600.0\nm_cif_idr = m_cif_usd * kurs_jual\nm_fob_idr = m_fob_usd * kurs_jual\nsurplus_imts_usd = x_fob_usd - m_cif_usd\nsurplus_imts_idr = x_fob_idr - m_cif_idr\nsurplus_sna_usd = x_fob_usd - m_fob_usd\nprint(f'Ekspor_FOB_IDR={x_fob_idr:.0f}, Impor_CIF_IDR={m_cif_idr:.0f}, Surplus_IMTS_USD={surplus_imts_usd:.0f}, Surplus_SNA_USD={surplus_sna_usd:.0f}')\n# Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000\n```"
+        }
+      ],
+      "links": [
+        "13.1.2",
+        "13.1.3",
+        "13.1.4"
+      ]
+    }
+  ]
+}

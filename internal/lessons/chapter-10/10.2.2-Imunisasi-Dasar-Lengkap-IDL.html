@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>10.2 Morbiditas dan Pelayanan Kesehatan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>10.2 Morbiditas dan Pelayanan Kesehatan</h2><a href="#p-10.2.2">10.2.2 Imunisasi Dasar Lengkap IDL ⭐</a></nav>
+<main>
+<h1>10.2 Morbiditas dan Pelayanan Kesehatan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 10: Indikator Kesehatan dan SDGs 3 ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-10.2.2">
+<h2>10.2.2 Imunisasi Dasar Lengkap IDL ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 40-42, 62-91]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai konsep imunisasi paradigma sehat, jenis vaksin wajib bayi 0-11 bulan (IDL), indikator perumahan KFB dan KFR, indeks komposit RTLH 7 indikator BPS Sirusa, dan 4 dimensi rumah tangga kumuh SDGs 11 (EXT-4).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Imunisasi adalah paradigma sehat dalam upaya pencegahan yang paling efektif. Imunisasi adalah proses membuat seseorang kebal terhadap penyakit melalui pemberian vaksin [slide 40-41]. Jenis vaksin: BCG (tuberkulosa), DPT (difteri, pertusis, tetanus), TT, DT, Polio (OPV), Campak, Hepatitis B, DPT/HB [slide 42]. Indikator perumahan: Kualitas Fisik Bangunan (luas lantai/kapita &gt;= 7,2 m2, atap, lantai, dinding) dan Kelengkapan Fasilitas Rumah (air bersih, sanitasi/jamban, kamar mandi, listrik) [slide 76, 80]. Rumah Tidak Layak Huni: rumah tidak memenuhi persyaratan keselamatan bangunan dan kecukupan minimum luas lantai serta kesehatan penghuninya; jika terpenuhi sedikitnya 3 dari 7 kriteria termasuk kategori tidak layak huni [slide 81-82]. Rumah tangga kumuh bila nilai kategori gabungan 4 kriteria &gt; 35%: air tidak layak (15%), sanitasi tidak layak (15%), luas hunian &lt;= 7,2 m2 (35%), dan minimal 2 kriteria ketahanan bangunan rendah (35%) [slide 89].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Mengapa dalam bab indikator kesehatan terdapat materi perumahan (housing)? Karena rumah bukan sekadar bangunan fisik penahan hujan (shelter), melainkan lingkungan hidup primer di mana imunitas dan kesehatan anggota keluarga dibentuk. Bayi yang telah diimunisasi dasar lengkap (IDL) akan tetap rentan sakit berulang jika tinggal di rumah berlantai tanah (vektor telur cacing), air minum tercemar bakteri E. coli dari septic tank yang berjarak kurang dari 10 meter, dan tidur berdesakan dalam ruangan sempit (&lt; 7,2 m2 per kapita). Oleh karena itu, BPS mengintegrasikan survei kesehatan dengan karakteristik perumahan Susenas untuk mengevaluasi determinan lingkungan kesehatan masyarakat dan capaian SDGs 11 (Kota dan Permukiman Berkelanjutan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Imunisasi Dasar Lengkap (IDL) pada Bayi</p>
+<p>Berdasarkan Permenkes No. 12 Tahun 2017 dan standar BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 41-42 &amp; SUPLEMEN]:<br>Imunisasi Dasar Lengkap (IDL) merupakan pemberian kekebalan aktif buatan bagi bayi usia $0-11$ bulan dengan jadwal wajib:<br>1. <strong>Hepatitis B 0 (HB0)</strong>: Diberikan 1 kali pada usia $0-7$ hari (ideal $&lt; 24$ jam pascalahir) untuk mencegah penularan hepatitis B vertikal ibu ke anak.<br>2. <strong>BCG (*Bacillus Calmette-Guérin*)</strong>: Diberikan 1 kali pada usia $1$ bulan untuk kekebalan aktif terhadap tuberkulosis (TBC).<br>3. <strong>DPT-HB-Hib</strong>: Diberikan 3 kali pada usia $2, 3,$ dan $4$ bulan untuk kekebalan simultan terhadap difteri, pertusis, tetanus, hepatitis B, dan pneumonia/meningitis akibat *Haemophilus influenzae* tipe b.<br>4. <strong>Polio</strong>: Diberikan 4 kali (tetes OPV usia 1, 2, 3, 4 bulan) serta minimal 1 suntikan IPV untuk kekebalan terhadap poliomielitis.<br>5. <strong>Campak / MR</strong>: Diberikan 1 kali pada usia $9$ bulan untuk kekebalan terhadap campak dan rubella.<br>$$\text{Cakupan IDL} = \frac{\sum \text{Bayi Usia 12-23 Bulan yang Menerima Paket Lengkap IDL}}{\sum \text{Total Sasaran Bayi Usia 12-23 Bulan}} \times 100\%$$</p>
+<p>### 2. Indeks Komposit Rumah Tidak Layak Huni (RTLH 7 Indikator BPS Sirusa)<br>BPS menetapkan 7 indikator defisit kelayakan fisik dan fasilitas hunian [slide 80-82]:<br>1. *Insufficient Living Area*: Luas lantai per kapita $&lt; 7,2\text{ m}^2/\text{kapita}$.<br>2. Atap terluas berkualitas rendah: Jerami, ijuk, rumbia, daun-daunan, atau lainnya.<br>3. Dinding terluas berkualitas rendah: Bambu atau lainnya tanpa plester semen.<br>4. Lantai terluas berkualitas rendah: Tanah.<br>5. Sanitasi tidak layak: Tidak memiliki akses jamban sendiri/bersama dengan kloset leher angsa ke tangki septik/SPAL.<br>6. Air minum tidak layak: Tidak memiliki akses air terlindung atau jarak ke sumber kotoran tinja $&lt; 10\text{ meter}$.<br>7. Penerangan tidak layak: Sumber penerangan utama bukan listrik.</p>
+<p><strong>Klasifikasi Derajat Kelayakan Rumah (BPS Sirusa Indikator 798)</strong> [slide 82]:<br>- <strong>Rumah Layak Huni (RLH)</strong>: Memenuhi $\le 1$ kriteria defisit (0 atau 1).<br>- <strong>Rumah Hampir Tidak Layak Huni</strong>: Memenuhi tepat $2$ kriteria defisit.<br>- <strong>Rumah Tidak Layak Huni (RTLH)</strong>: Memenuhi $\ge 3$ kriteria defisit.</p>
+<p>### 3. Kriteria Rumah Tangga Kumuh SDGs 11 (EXT-4)<br>Berdasarkan standar BPS dan Kementerian PUPR [slide 88-89], penentuan rumah tangga kumuh menggunakan 4 dimensi dengan pembobotan:<br>$$\text{Skor Kumuh} = 0,15 D_{\text{air}} + 0,15 D_{\text{sanitasi}} + 0,35 D_{\text{luas}} + 0,35 D_{\text{durabilitas}}$$</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Dimensi Defisit</th><th>Bobot</th><th>Kriteria Defisit Terpenuhi (Nilai = 1)</th></tr></thead><tbody><tr><td>1</td><td>Akses Air Minum Tidak Layak ($D_{\text{air}}$)</td><td>15%</td><td>Air sumur/mata air tak terlindung, air sungai, air hujan tanpa filtrasi, atau jarak septic tank &lt; 10 m [slide 84, 89]</td></tr><tr><td>2</td><td>Akses Sanitasi Tidak Layak ($D_{\text{sanitasi}}$)</td><td>15%</td><td>Menggunakan kloset bukan leher angsa (cemplung/cubluk/plengsengan) atau dibuang ke lubang tanah/sungai/terbuka [slide 85, 89]</td></tr><tr><td>3</td><td>Kepadatan Hunian ($D_{\text{luas}}$)</td><td>35%</td><td>Luas lantai hunian $\le 7,2\text{ m}^2$ per kapita (*overcrowded*) [slide 80, 89]</td></tr><tr><td>4</td><td>Ketahanan Bangunan Rendah ($D_{\text{durabilitas}}$)</td><td>35%</td><td>Terpenuhi <strong>minimal 2 dari 3</strong> komponen fisik rendah: atap ijuk/rumbia, dinding bambu, dan lantai tanah [slide 89]</td></tr></tbody></table></div>
+<p><strong>Kaidah Keputusan Status Kumuh</strong>: Rumah tangga dikategorikan sebagai <strong>Rumah Tangga Kumuh</strong> bila total skor gabungan $&gt; 35\%$ [slide 89].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan materi resmi BPS mengenai indikator perumahan dan kriteria rumah kumuh (SDGs 11), berapakah standar luas lantai per kapita minimum agar hunian tidak tergolong padat/kurang luas (sufficient living area), dan berapakah batas nilai skor gabungan untuk menetapkan suatu rumah tangga sebagai rumah tangga kumuh?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 80, 82, 89]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Luas lantai &gt;= 10 m2/kapita dan skor kumuh &gt;= 50%</button>
+<button class="ex-opt" data-i="1">B. Luas lantai &gt;= 7,2 m2/kapita dan skor kumuh &gt; 35%</button>
+<button class="ex-opt" data-i="2">C. Luas lantai &gt;= 8,0 m2/kapita dan skor kumuh &gt;= 35%</button>
+<button class="ex-opt" data-i="3">D. Luas lantai &gt;= 7,2 m2/kapita dan skor kumuh &gt; 50%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 80 dan 89, kecukupan luas lantai hunian minimum (sufficient living area) adalah luas lantai per kapita &gt;= 7,2 m2/kapita. Jika &lt;= 7,2 m2, maka tergolong defisit luas hunian (bobot 35%).<br>- Berdasarkan slide 89: 'Jika seluruh kriteria 1-4 di atas digabung, nilai kategori &gt; 35%, maka rumah tangga tersebut dikategorikan sebagai rumah tangga kumuh'.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah rumah tangga beranggotakan 5 orang menempati rumah dengan luas lantai 30 m2 (luas per kapita = 6 m2), menggunakan air minum terlindung dan jamban leher angsa septik, namun memiliki atap rumbia dan lantai tanah. Hitunglah Skor Kumuh rumah tangga tersebut dan tentukan status kekumuhannya (&gt; 35%). Tentukan pula status kelayakan huniannya berdasarkan 7 indikator BPS Sirusa. Tuliskan jawaban akhir dalam format: <code>Skor=...%, StatusKumuh=..., StatusBPS=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 81, 82, 89]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Identifikasi defisit 4 dimensi kumuh:<br>   - Air: Layak -&gt; Defisit = 0%<br>   - Sanitasi: Layak -&gt; Defisit = 0%<br>   - Luas per kapita: 30 / 5 = 6,0 m2 &lt;= 7,2 m2 -&gt; Defisit = 35%<br>   - Ketahanan fisik: Atap rumbia dan lantai tanah (terpenuhi 2 kriteria rendah) -&gt; Defisit = 35%<br>2. Total Skor Kumuh = 0% + 0% + 35% + 35% = 70%.<br>3. Karena 70% &gt; 35%, rumah tangga tersebut berstatus <strong>Kumuh</strong>.<br>4. Evaluasi 7 kriteria BPS Sirusa:<br>   - Defisit 1: Luas hunian &lt; 7,2 m2/kapita<br>   - Defisit 2: Atap rumbia (kualitas rendah)<br>   - Defisit 3: Lantai tanah (kualitas rendah)<br>   - Karena memenuhi 3 kriteria defisit (&gt;= 3), rumah tangga tersebut diklasifikasikan sebagai <strong>Rumah Tidak Layak Huni (RTLH)</strong>.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>weights = {'air': 15, 'sanitasi': 15, 'luas': 35, 'durabilitas': 35}<br>defisits = {'air': 0, 'sanitasi': 0, 'luas': 1, 'durabilitas': 1}<br>score = sum(defisits[k] * weights[k] for k in weights)<br>is_kumuh = score &gt; 35<br>print(f'Skor={score}%, StatusKumuh={"Kumuh" if is_kumuh else "Tidak Kumuh"}, StatusBPS=Rumah Tidak Layak Huni')<br># Output: Skor=70%, StatusKumuh=Kumuh, StatusBPS=Rumah Tidak Layak Huni<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Ambang Skor Kumuh</strong>: Nilai gabungan harus strictly greater than 35% (&gt; 35%). Nilai tepat 35% (misal hanya defisit luas saja) TIDAK kumuh.</li><li><strong>Syarat Defisit Durabilitas Bangunan</strong>: Minimal 2 dari 3 bahan bangunan berkualitas rendah yang harus terpenuhi. Jika hanya 1 bahan rendah (misal hanya lantai tanah), skor durabilitas adalah 0%.</li><li><strong>Sanitasi Layak</strong>: Kloset plengsengan atau cubluk dikategorikan TIDAK LAYAK meskipun milik sendiri.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>IDL = HB0 + BCG + 3 DPT + 4 Polio + Campak; Kumuh = Air(15%) + Sanitasi(15%) + Luas(35%) + Ketahanan(35%) &gt; 35%!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.2, 10.1.3, 10.2.1</div>
+<button class="donebtn" data-id="10.2.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

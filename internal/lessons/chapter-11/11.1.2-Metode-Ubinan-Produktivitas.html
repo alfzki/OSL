@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>11.1 Estimasi Produksi Tanaman Pangan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>11.1 Estimasi Produksi Tanaman Pangan</h2><a href="#p-11.1.2">11.1.2 Metode Ubinan Produktivitas ⭐</a></nav>
+<main>
+<h1>11.1 Estimasi Produksi Tanaman Pangan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 11: Statistik Produksi Pertanian dan Industri ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-11.1.2">
+<h2>11.1.2 Metode Ubinan Produktivitas ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 19-27]</div>
+<div class="box info">📌 <div class="rich"><p>Teknik survei ubinan objektif BPS, dimensi plot bujur sangkar 2,5 m x 2,5 m (6,25 m2), penimbangan Gabah Kering Panen (GKP), turunan matematis multiplier 1.600 (kg/ha), 16 (ku/ha), dan 1,6 (ton/ha), serta rekonstruksi soal UAS 2022/2023 Esai 2a Pak Sakri.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Pengukuran dilakukan oleh Petugas BPS Kab/Kota (KSK) dan petugas Dinas Pertanian Kab/Kota (Mantri Tani/KCD/PPL). Frekuensi pengumpulan data: caturwulan/subround. Pengukuran produksi tanaman pangan menggunakan alat ubinan. Untuk satu plot berukuran 2,5 m x 2,5 m. Hasilnya untuk estimasi produksi per hektar [slide 10]. Pelaksanaan Survei Ubinan di lapangan: Alat Ubinan, Memasang Alat, Memanen Plot Ubinan 2,5m x 2,5m, Merontok, Membersihkan, Menimbang [slide 20]. Plot Ubinan: Luas Plot = 6,25 m2. Produktivitas kuintal per ha (GKP) = (3,1 / 100) : (6,25 / 10000) = (3,1 / 100) x (10000 / 6,25) = 3,1 x 16 = 49,60 ku/ha [slide 23].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bagaimana cara BPS mengetahui produktivitas panen padi tanpa harus menimbang seluruh hasil sawah berhektar-hektar? BPS menerapkan metode ubinan (crop-cutting survey). Petak cuplikan representatif berukuran bujur sangkar 2,5 m x 2,5 m (6,25 m2) dipasang secara acak di lahan sawah yang sedang dipanen. Seluruh rumpun padi di dalam petak dipotong, dirontokkan, dibersihkan dari hampa, lalu ditimbang dengan timbangan gantung terkalibrasi. Karena 1 hektar sama dengan 10.000 m2, maka 1 hektar memuat persis 10.000 / 6,25 = 1.600 petak ubinan, sehingga hasil timbangan dalam kilogram dapat langsung dikonversi menjadi produktivitas per hektar.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Metodologi Survei Ubinan BPS</p>
+<p>Survei Ubinan Padi adalah survei berbasis rumah tangga dan petak sawah yang bertujuan untuk mengukur produktivitas per hektar tanaman pangan secara objektif pada saat panen raya [slide 10, 20].</p>
+<p>#### A. Unit Sampling dan Unit Observasi<br>- <strong>Kerangka Sampel</strong>: Menggunakan subsegmen terpilih hasil amatan Kerangka Sampel Area (KSA) yang berada pada fase siap panen [slide 21].<br>- <strong>Unit Sampling</strong>: Subsegmen KSA berukuran $100\text{ m} \times 100\text{ m}$ [slide 21].<br>- <strong>Unit Observasi</strong>: Plot ubinan yang dipasang di petak sawah petani terpilih [slide 21].</p>
+<p>#### B. Standar Operasional Prosedur (SOP) Ubinan<br>Pelaksanaan ubinan di lapangan mengikuti 6 tahapan baku [slide 20]:<br>1. <strong>Memasang Alat Ubinan</strong>: Alat ubinan berbahan pipa besi/paralon berukuran bujur sangkar $2,5\text{ m} \times 2,5\text{ m}$ dibentangkan di petak sawah. Sudut penempatan ditentukan secara acak menggunakan tabel angka acak (berdasarkan panjang pematang barat dan utara).<br>2. <strong>Memotong/Memanen</strong>: Seluruh rumpun tanaman padi yang pangkal batangnya berada di dalam batas tali alat ubinan dipotong.<br>3. <strong>Merontok</strong>: Gabah dirontokkan dari malainya menggunakan perontok manual atau mekanis (*thresher*).<br>4. <strong>Membersihkan</strong>: Gabah diayak untuk memisahkan kotoran, daun, dan bulir hampa.<br>5. <strong>Menimbang</strong>: Gabah bersih ditimbang dengan timbangan gantung berskala ketelitian 0,05 kg atau 0,1 kg dalam wujud <strong>Gabah Kering Panen (GKP)</strong>.</p>
+<p>### 2. Penurunan Matematis Faktor Pengali (Multiplier) Ubinan</p>
+<p>Misalkan:<br>- Ukuran plot ubinan: sisi bujur sangkar $s = 2,5\text{ meter}$.<br>- Luas plot ubinan: $A_{\text{plot}} = 2,5\text{ m} \times 2,5\text{ m} = 6,25\text{ m}^2$ [slide 23].<br>- Luas standar satu hektar: $A_{\text{ha}} = 10.000\text{ m}^2$.<br>- Hasil timbangan plot ubinan: $b\text{ kg GKP}$.</p>
+<p>#### A. Konversi ke Satuan Kilogram per Hektar (kg/ha)<br>$$\text{Produktivitas (kg/ha)} = \frac{b}{A_{\text{plot}}} \times A_{\text{ha}} = \frac{b}{6,25} \times 10.000 = b \times 1.600$$<br>Faktor pengali ke kg/ha adalah <strong>1.600</strong> [slide 23].</p>
+<p>#### B. Konversi ke Satuan Kuintal per Hektar (ku/ha)<br>Karena $1\text{ kuintal (ku)} = 100\text{ kg}$:<br>$$\text{Produktivitas (ku/ha)} = \frac{b \times 1.600}{100} = b \times 16$$<br>Faktor pengali ke ku/ha adalah <strong>16</strong> [slide 23].</p>
+<p>#### C. Konversi ke Satuan Ton per Hektar (ton/ha)<br>Karena $1\text{ ton} = 1.000\text{ kg}$:<br>$$\text{Produktivitas (ton/ha)} = \frac{b \times 1.600}{1.000} = b \times 1,6$$<br>Faktor pengali ke ton/ha adalah <strong>1,6</strong> [slide 11, 23].</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Satuan Target Produktivitas</th><th>Formulasi Lengkap</th><th>Faktor Pengali ($b = \text{berat kg}$)</th><th>Nilai untuk $b = 4,5\text{ kg}$</th></tr></thead><tbody><tr><td><strong>Kilogram per Hektar (kg/ha)</strong></td><td>$\frac{b}{6,25} \times 10.000$</td><td>$b \times 1.600$</td><td>$7.200\text{ kg/ha}$</td></tr><tr><td><strong>Kuintal per Hektar (ku/ha)</strong></td><td>$\frac{b / 100}{6,25 / 10.000}$</td><td>$b \times 16$</td><td>$72,0\text{ ku/ha}$</td></tr><tr><td><strong>Ton per Hektar (ton/ha)</strong></td><td>$\frac{b / 1.000}{6,25 / 10.000}$</td><td>$b \times 1,6$</td><td>$7,2\text{ ton/ha}$</td></tr></tbody></table></div>
+<p>### 3. Estimasi Produksi Agregat Tingkat Wilayah</p>
+<p>Produksi gabah tingkat kabupaten/kota dihitung sebagai hasil kali estimasi luas panen KSA dengan produktivitas ubinan [slide 11, 12]:<br>$$P_k = L_k \times Y_k$$<br>di mana $L_k$ adalah luas panen kabupaten $k$ (ha) dan $Y_k$ adalah produktivitas kabupaten $k$ (ton/ha).</p>
+<p>Untuk tingkat provinsi dan nasional, angka produktivitas <strong>bukan rata-rata sederhana</strong>, melainkan rata-rata tertimbang (*weighted average*) [slide 11, 12]:<br>$$Y_{\text{prov}} = \frac{\sum_{k=1}^K P_k}{\sum_{k=1}^K L_k} = \frac{\sum_{k=1}^K L_k \cdot Y_k}{\sum_{k=1}^K L_k}$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam suatu survei ubinan komoditas padi dengan plot baku berukuran 2,5 m x 2,5 m, timbangan Gabah Kering Panen (GKP) menunjukkan angka 3,5 kg. Berapakah produktivitas lahan sawah tersebut dalam satuan kuintal per hektar (ku/ha) dan ton per hektar (ton/ha)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 23]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 56,0 ku/ha dan 5,6 ton/ha</button>
+<button class="ex-opt" data-i="1">B. 56,0 ku/ha dan 0,56 ton/ha</button>
+<button class="ex-opt" data-i="2">C. 35,0 ku/ha dan 3,5 ton/ha</button>
+<button class="ex-opt" data-i="3">D. 5.600 ku/ha dan 56 ton/ha</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Luas plot ubinan = $2,5\text{ m} \times 2,5\text{ m} = 6,25\text{ m}^2$.<br>2. Multiplier ke 1 hektar ($10.000\text{ m}^2$):<br>   - Ke kg/ha: $10.000 / 6,25 = 1.600$.<br>   - Ke ku/ha: $1.600 / 100 = 16$.<br>   - Ke ton/ha: $1.600 / 1.000 = 1,6$.<br>3. Produktivitas ku/ha = $3,5 \times 16 = 56,0\text{ ku/ha}$.<br>4. Produktivitas ton/ha = $3,5 \times 1,6 = 5,6\text{ ton/ha}$.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;ku/ha=72.0, ton/ha=7.2, total=18.0 ton&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Rekonstruksi UAS OSL 2022/2023 Esai 2a: Pak Sakri memanen sawahnya seluas 2,5 hektar di Sukoharjo. Petugas memasang alat ubinan 2,5 m x 2,5 m secara acak dan memperoleh berat timbangan gabah (GKP) sebesar 4,5 kg. Hitunglah produktivitas sawah dalam ku/ha, ton/ha, dan total produksi gabah (GKP) yang dipanen dari lahan seluas 2,5 ha tersebut. Tuliskan jawaban dalam format: <code>ku/ha=X, ton/ha=Y, total=Z ton</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 20-23]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Luas plot ubinan = $2,5 \times 2,5 = 6,25\text{ m}^2$.<br>2. Faktor pengali (multiplier):<br>   - Multiplier kg/ha = $10.000 / 6,25 = 1.600$.<br>   - Multiplier ku/ha = $1.600 / 100 = 16$.<br>   - Multiplier ton/ha = $1.600 / 1.000 = 1,6$.<br>3. Produktivitas ku/ha = $4,5 \times 16 = 72,0\text{ ku/ha}$.<br>4. Produktivitas ton/ha = $4,5 \times 1,6 = 7,2\text{ ton/ha}$.<br>5. Total estimasi produksi gabah (GKP) untuk lahan seluas 2,5 ha:<br>   $$\text{Total Produksi} = 2,5\text{ ha} \times 7,2\text{ ton/ha} = 18,0\text{ ton}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>b = 4.5<br>luas_plot = 2.5 * 2.5<br>mult_kg = 10000.0 / luas_plot<br>kg_ha = b * mult_kg<br>ku_ha = kg_ha / 100.0<br>ton_ha = kg_ha / 1000.0<br>total_prod = ton_ha * 2.5<br>print(f'ku/ha={ku_ha:.1f}, ton/ha={ton_ha:.1f}, total={total_prod:.1f} ton')<br># Output: ku/ha=72.0, ton/ha=7.2, total=18.0 ton<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Satuan Kuintal vs Ton</strong>: Sering terjadi kesalahan fatal di mana mahasiswa menghitung $b \times 16 = 72$ kemudian memberi label 72 ton/ha. Ingat: 16 adalah pengali kuintal/ha (ku/ha), sedangkan pengali ton/ha adalah 1,6 (hasilnya 7,2 ton/ha).</li><li><strong>Rata-rata Produktivitas Provinsi</strong>: Menghitung produktivitas provinsi dengan menjumlahkan produktivitas kabupaten lalu membaginya dengan jumlah kabupaten. Hal ini salah; produktivitas provinsi wajib dihitung sebagai total produksi provinsi dibagi total luas panen provinsi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Plot ubinan 2,5 x 2,5 m (6,25 m2): kali 1.600 jadi kg/ha, kali 16 jadi ku/ha, kali 1,6 jadi ton/ha.</p></div></div>
+<div class="links">Keterkaitan Konsep: 11.1.1, 11.1.3</div>
+<button class="donebtn" data-id="11.1.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 9: Ketenagakerjaan dan Pendidikan · Modul Kuliah</title>
+<script>
+(function(){try{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{localStorage.setItem('esb-theme',t);}catch(e){}}
+function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}
+</script>
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 14px; color: #374151; margin: 0 0 10px; }
+  #toc .toc-sec { display: flex; align-items: center; gap: 4px; padding: 8px 4px 4px;
+                  font-weight: 600; font-size: 12px; color: #4b5563; line-height: 1.5; }
+  #toc .toc-sec + .toc-sec { border-top: 1px solid #e5e7eb; margin-top: 6px; padding-top: 10px; }
+  #toc .modetag-mini { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 99px;
+                        background: #eef2ff; color: #4338ca; font-weight: 400; line-height: 1.6; }
+  #toc a { display: block; padding: 3px 8px; margin-left: 4px; color: #374151; text-decoration: none;
+            border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  div.ch-sec { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+  div.ch-sec:last-child { border-bottom: none; }
+  h2.sec-title { font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>Pertemuan 9: Ketenagakerjaan dan Pendidikan <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2><div class="toc-sec">9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-9.1.1">9.1.1 Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja ⭐</a>
+<a href="#p-9.1.2">9.1.2 Tingkat Partisipasi Angkatan Kerja TPAK ⭐</a>
+<a href="#p-9.1.3">9.1.3 Tingkat Pengangguran Terbuka TPT ⭐</a>
+<a href="#p-9.1.4">9.1.4 Setengah Penganggur vs Pekerja Paruh Waktu ⭐</a>
+<div class="toc-sec">9.2 Indikator Pendidikan<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-9.2.1">9.2.1 Angka Partisipasi Murni APM dan Kasar APK ⭐</a>
+<a href="#p-9.2.2">9.2.2 Angka Partisipasi Sekolah APS ⭐</a></nav>
+<main>
+<h1>Pertemuan 9: Ketenagakerjaan dan Pendidikan</h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》 ｜ 2 Bagian ｜ 6 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 12 Butir ｜ Kerjakan mandiri sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<div class="ch-sec" id="sec-9.1-Kerangka-Ketenagakerjaan-ICLS-13-dan-Konsep-BPS">
+<h2 class="sec-title">9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-9.1.1">
+<h2>9.1.1 Konsep Bekerja Minimal 1 Jam dan Angkatan Kerja ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 4-20]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai dekomposisi piramida ketenagakerjaan ICLS 13, definisi bekerja minimal 1 jam, pemilahan AK vs BAK, dan penerapan aturan prioritas ketenagakerjaan pada Sakernas BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Klasifikasi 2 kelompok penduduk dalam statistik tenaga kerja: Penduduk mencapai usia minimum bekerja (berumur &gt;= 15 tahun) =&gt; PUK juga disebut angkatan kerja potensi; Selebihnya (berumur &lt; 15 tahun) =&gt; bukan usia kerja (BUK). PUK yang aktif secara ekonomi terdiri dari: (1) bekerja, dan (2) mencari pekerjaan =&gt; unemployed. PUK 'tidak siap bekerja' karena sekolah, atau mengurus rumahtangga =&gt; bukan angkatan kerja [slide 6]. Batasan usia kerja di Indonesia &gt;= 15 tahun sesuai konvensi ILO [slide 8]. Bekerja adalah melakukan kegiatan ekonomi minimal 1 jam berturut-turut selama seminggu yang lalu [slide 7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Statistik ketenagakerjaan dirancang untuk mengukur dua hal: pasokan daya kerja (labor supply) dan tingkat penyerapan oleh sistem ekonomi (labor absorption). Batasan 1 jam seminggu tampak sangat longgar, namun ini adalah standar global ILO agar tidak ada satu pun kontribusi ekonomi riil yang terlewatkan (misalnya membantu panen keluarga, berdagang online sesaat, atau ojek sambilan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Kerangka Ketenagakerjaan ICLS 13</p>
+<p>Berdasarkan resolusi International Conference of Labour Statisticians ke-13 (ICLS 13 tahun 1982) yang diadopsi resmi oleh Badan Pusat Statistik (BPS):</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Tingkat Klasifikasi</th><th>Kategori</th><th>Batasan Operasional BPS</th></tr></thead><tbody><tr><td><strong>Tingkat 1: Batas Usia</strong></td><td>Penduduk Usia Kerja (PUK)</td><td>Penduduk berumur $\ge 15$ tahun pada saat pencacahan [slide 6, 8]</td></tr><tr><td></td><td>Bukan Usia Kerja (BUK)</td><td>Penduduk berumur $&lt; 15$ tahun [slide 6]</td></tr><tr><td><strong>Tingkat 2: Aktivitas Ekonomi</strong></td><td>Angkatan Kerja (AK)</td><td>Penduduk usia kerja yang aktif secara ekonomi (*economically active*): Bekerja atau Pengangguran [slide 6]</td></tr><tr><td></td><td>Bukan Angkatan Kerja (BAK)</td><td>Penduduk usia kerja yang tidak aktif secara ekonomi (*economically inactive*): Sekolah, Mengurus Rumah Tangga, atau Lainnya [slide 6, 21]</td></tr><tr><td><strong>Tingkat 3: Status Angkatan Kerja</strong></td><td>Bekerja (*Employed*)</td><td>Melakukan kegiatan ekonomi $\ge 1$ jam berturut-turut dalam seminggu terakhir demi upah/laba, atau sementara tidak bekerja [slide 5, 7]</td></tr><tr><td></td><td>Pengangguran (*Unemployed*)</td><td>Tidak bekerja, bersedia bekerja, dan aktif mencari kerja atau mempersiapkan usaha [slide 5, 16]</td></tr></tbody></table></div>
+<p>### 2. Aturan Prioritas Ketenagakerjaan (The Priority Rule)</p>
+<p>Dalam kuesioner Sakernas, seorang individu dapat melakukan beberapa aktivitas sekaligus dalam seminggu terakhir (misalnya kuliah sambil menjadi barista 4 jam seminggu, atau ibu rumah tangga yang menjual kue secara daring). BPS menerapkan <strong>Aturan Prioritas</strong> hierarkis sbb:</p>
+<p>$$\text{Bekerja} \succ \text{Mencari Kerja (Penganggur)} \succ \text{Bukan Angkatan Kerja (Sekolah/IRT/Lainnya)}$$</p>
+<ul><li>Jika seseorang bekerja $\ge 1$ jam, statusnya mutlak <strong>Bekerja</strong>, mengabaikan status sekolah atau mengurus rumah tangganya.</li><li>Jika seseorang tidak bekerja tetapi aktif mencari pekerjaan atau mempersiapkan usaha baru, statusnya mutlak <strong>Pengangguran</strong>, mengabaikan waktu luangnya yang dihabiskan di rumah.</li><li>Hanya jika seseorang tidak bekerja dan tidak mencari kerja, barulah diklasifikasikan ke dalam salah satu dari tiga sub-kelompok <strong>BAK</strong>:</li><ol><li><strong>Sekolah</strong>: Bersekolah formal atau nonformal.</li><li><strong>Mengurus Rumah Tangga</strong>: Mengurus keluarga tanpa upah/laba ekonomi komersial.</li><li><strong>Lainnya</strong>: Penerima pensiun, lansia tidak berdaya, orang dengan disabilitas berat yang tidak mampu bekerja.</li></ol></ul></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Seorang pemuda berusia 19 tahun merupakan mahasiswa aktif semester 3. Pada hari Sabtu minggu lalu, ia bekerja selama 3 jam sebagai barista di kedai kopi pamannya dan menerima upah harian. Berdasarkan konsep ketenagakerjaan BPS dan aturan prioritas ICLS, pemuda tersebut diklasifikasikan sebagai:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 6-8]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Bukan Angkatan Kerja karena kegiatan utamanya adalah mahasiswa aktif.</button>
+<button class="ex-opt" data-i="1">B. Angkatan Kerja dengan status Bekerja karena melakukan kegiatan ekonomi minimal 1 jam seminggu terakhir.</button>
+<button class="ex-opt" data-i="2">C. Pengangguran Terbuka karena belum tamat kuliah dan belum memiliki pekerjaan tetap.</button>
+<button class="ex-opt" data-i="3">D. Pekerja Paruh Waktu sukarela yang digolongkan ke dalam Bukan Usia Kerja.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan Bertahap</strong>:<br>1. Berdasarkan aturan prioritas ICLS 13 dan BPS, kegiatan ekonomi (bekerja $\ge 1$ jam) mendapat prioritas tertinggi di atas kegiatan non-ekonomi (bersekolah/kuliah).<br>2. Pemuda tersebut berusia 19 tahun (PUK $\ge 15$) dan bekerja selama 3 jam (memenuhi syarat $\ge 1$ jam berturut-turut untuk memperoleh upah).<br>3. Oleh karena itu, ia sah diklasifikasikan ke dalam <strong>Angkatan Kerja</strong> dengan status <strong>Bekerja</strong>.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AK=340000, Lainnya=10000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Berdasarkan data Sakernas suatu kabupaten, penduduk usia 15 tahun ke atas berjumlah 500.000 orang. Diketahui penduduk yang bekerja berjumlah 320.000 orang, pengangguran terbuka berjumlah 20.000 orang, penduduk yang bersekolah 60.000 orang, dan mengurus rumah tangga 90.000 orang. Tentukan:<br>1. Jumlah Angkatan Kerja (AK).<br>2. Jumlah Bukan Angkatan Kerja kategori 'Lainnya'.<br>Tuliskan jawaban akhir dalam format: <code>AK=X, Lainnya=Y</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 21]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Menghitung Angkatan Kerja (AK):<br>   $$\text{AK} = \text{Bekerja} + \text{Pengangguran} = 320.000 + 20.000 = 340.000$$<br>2. Menghitung total Bukan Angkatan Kerja (BAK):<br>   $$\text{BAK} = \text{PUK} - \text{AK} = 500.000 - 340.000 = 160.000$$<br>3. Menghitung BAK kategori 'Lainnya':<br>   $$\text{BAK} = \text{Sekolah} + \text{Mengurus RT} + \text{Lainnya}$$<br>   $$160.000 = 60.000 + 90.000 + \text{Lainnya}$$<br>   $$\text{Lainnya} = 160.000 - 150.000 = 10.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>puk = 500000<br>bekerja = 320000<br>penganggur = 20000<br>sekolah = 60000<br>irt = 90000<br>ak = bekerja + penganggur<br>bak = puk - ak<br>lainnya = bak - (sekolah + irt)<br>print(f'AK={ak}, Lainnya={lainnya}')<br># Output: AK=340000, Lainnya=10000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Mengabaikan Pekerja Keluarga Tak Dibayar</strong>: Dianggap BAK karena tidak menerima gaji uang. Padahal BPS menghitung pekerja keluarga tak dibayar minimal 1 jam sebagai Bekerja.</li><li><strong>Kekeliruan Ambang Batas 15 Jam Internasional</strong>: Beberapa literatur asing mencantumkan 15 jam untuk unpaid worker, namun BPS secara konsisten menetapkan batas 1 jam tanpa putus untuk seluruh kategori pekerja.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Piramida Tenaga Kerja: PUK (15+) = AK (Bekerja + Penganggur) + BAK (Sekolah + IRT + Lainnya). Prioritas: Bekerja &gt; Penganggur &gt; BAK.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.2, 9.1.3, 9.1.4</div>
+<button class="donebtn" data-id="9.1.1"></button>
+</section>
+<section class="point" id="p-9.1.2">
+<h2>9.1.2 Tingkat Partisipasi Angkatan Kerja TPAK ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13-14, 21-23]</div>
+<div class="box info">📌 <div class="rich"><p>Formula resmi TPAK, perhitungan bobot disagregasi wilayah/gender, analisis dinamika penawaran tenaga kerja (labor supply), dan interpretasi tren TPAK BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Tingkat Partisipasi Angkatan Kerja (TPAK) = a / b * 100, dimana a = Jumlah Angkatan Kerja, b = Jumlah penduduk 15 tahun ke atas [slide 13]. Kondef: Persentase penduduk usia 15 tahun ke atas yang merupakan angkatan kerja. Kegunaan: Mengindikasikan besarnya persentase penduduk usia kerja yang aktif secara ekonomi di suatu negara/wilayah. Interpretasi: Semakin tinggi TPAK menunjukkan semakin tinggi pasokan tenaga kerja (labour supply) yang tersedia untuk memproduksi barang dan jasa dalam suatu perekonomian [slide 14].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika ada 100 orang berumur 15 tahun ke atas di suatu desa, berapa orang yang siap bekerja atau sudah bekerja? Angka itulah TPAK. Bila TPAK bernilai 68%, artinya 68 orang aktif mencari nafkah atau menyediakan jasanya di pasar kerja, sedangkan 32 orang lainnya sedang fokus sekolah, mengurus rumah tangga, atau sudah pensiun.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Formulasi Matematis</p>
+<p>Berdasarkan pedoman resmi BPS:<br>$$\text{TPAK} = \frac{\text{AK}}{\text{PUK}} \times 100\% = \frac{\text{Bekerja} + \text{Pengangguran}}{P_{15+}} \times 100\%$$</p>
+<p>Secara demografis, TPAK dapat didekomposisi berdasarkan kelompok jenis kelamin atau wilayah:<br>$$\text{TPAK}_{\text{Total}} = w_L \cdot \text{TPAK}_L + w_P \cdot \text{TPAK}_P$$<br>di mana bobot $w_L = \frac{\text{PUK}_L}{\text{PUK}_{\text{Total}}}$ dan $w_P = \frac{\text{PUK}_P}{\text{PUK}_{\text{Total}}}$.</p>
+<p>### 2. Tren Empiris Sakernas BPS 2019-2021</p>
+<p>Berdasarkan data seri Sakernas BPS [slide 21]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Periode Survei</th><th>Penduduk 15+ (PUK)</th><th>Angkatan Kerja (AK)</th><th>Bekerja</th><th>Pengangguran</th><th>TPAK (%)</th></tr></thead><tbody><tr><td><strong>Februari 2019</strong></td><td>199.785.195</td><td>138.591.388</td><td>131.692.592</td><td>6.898.796</td><td><strong>69,37</strong></td></tr><tr><td><strong>Agustus 2019</strong></td><td>201.185.014</td><td>135.859.695</td><td>128.755.271</td><td>7.104.424</td><td><strong>67,53</strong></td></tr><tr><td><strong>Februari 2020</strong></td><td>202.597.063</td><td>140.218.352</td><td>133.292.866</td><td>6.925.486</td><td><strong>69,21</strong></td></tr><tr><td><strong>Agustus 2020</strong></td><td>203.972.460</td><td>138.221.938</td><td>128.454.184</td><td>9.767.754</td><td><strong>67,77</strong></td></tr><tr><td><strong>Februari 2021</strong></td><td>205.360.436</td><td>139.810.313</td><td>131.064.305</td><td>8.746.008</td><td><strong>68,08</strong></td></tr><tr><td><strong>Agustus 2021</strong></td><td>206.708.299</td><td>140.152.575</td><td>131.050.523</td><td>9.102.052</td><td><strong>67,80</strong></td></tr></tbody></table></div>
+<p>*Catatan Pola Musiman*: TPAK Februari selalu lebih tinggi dari TPAK Agustus karena siklus panen raya pertanian menyerap banyak tenaga kerja musiman.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Pernyataan manakah yang paling tepat mengenai karakteristik dan interpretasi indikator TPAK di Indonesia?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13-14]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Kenaikan TPAK selalu menjamin penurunan angka pengangguran di suatu daerah.</button>
+<button class="ex-opt" data-i="1">B. TPAK mengindikasikan besarnya penawaran tenaga kerja (labour supply) yang tersedia dalam perekonomian.</button>
+<button class="ex-opt" data-i="2">C. TPAK dihitung dengan membagi penduduk yang bekerja dengan total seluruh penduduk.</button>
+<button class="ex-opt" data-i="3">D. TPAK perkotaan di Indonesia umumnya selalu lebih tinggi daripada TPAK perdesaan.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A salah: Jika peningkatan penawaran tenaga kerja tidak disertai ekspansi lapangan kerja, pengangguran justru meningkat.<br>- Pilihan B benar: Sesuai slide 14, interpretasi resmi TPAK adalah mengindikasikan besarnya penawaran tenaga kerja (labour supply) yang tersedia untuk memproduksi barang dan jasa.<br>- Pilihan C salah: Pembaginya adalah PUK (15+), dan pembilangnya adalah AK (Bekerja + Penganggur).<br>- Pilihan D salah: TPAK perdesaan secara empiris lebih tinggi daripada perkotaan.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;TPAK=68.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Suatu wilayah memiliki 60.000 penduduk usia kerja laki-laki dan 40.000 penduduk usia kerja perempuan. Jika TPAK Laki-laki adalah 80% dan TPAK Perempuan adalah 50%, hitunglah TPAK Gabungan wilayah tersebut. Tuliskan jawaban dalam format: <code>TPAK=X%</code> (dengan 1 desimal).</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 13, 21]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Angkatan Kerja Laki-laki:<br>   $$\text{AK}_L = 80\% \times 60.000 = 48.000$$<br>2. Angkatan Kerja Perempuan:<br>   $$\text{AK}_P = 50\% \times 40.000 = 20.000$$<br>3. Total Angkatan Kerja:<br>   $$\text{AK}_{\text{Total}} = 48.000 + 20.000 = 68.000$$<br>4. Total PUK:<br>   $$\text{PUK}_{\text{Total}} = 60.000 + 40.000 = 100.000$$<br>5. TPAK Gabungan:<br>   $$\text{TPAK} = \frac{68.000}{100.000} \times 100\% = 68,0\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>puk_l = 60000<br>ak_l = 0.80 * puk_l<br>puk_p = 40000<br>ak_p = 0.50 * puk_p<br>tpak = (ak_l + ak_p) / (puk_l + puk_p) * 100<br>print(f'TPAK={tpak:.1f}%')<br># Output: TPAK=68.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Menghitung rata-rata sederhana TPAK Laki-laki dan Perempuan tanpa pembobotan populasi PUK. Jika jumlah laki-laki dan perempuan tidak sama, rata-rata sederhana akan bias.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>TPAK = AK / PUK * 100%. Mengukur labor supply. Pria ~83%, Wanita ~54%.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.1.3, 9.1.4</div>
+<button class="donebtn" data-id="9.1.2"></button>
+</section>
+<section class="point" id="p-9.1.3">
+<h2>9.1.3 Tingkat Pengangguran Terbuka TPT ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21-23]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi 4 kategori penganggur BPS, rekonstruksi soal hitungan esai UAS, rumus TPT terhadap AK, dan analisis dampak ekonomi makro (Okun's law context).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Tingkat Pengangguran Terbuka (TPT) = PP / PAK * 100, dimana PP = Jumlah pengangguran, PAK = Jumlah angkatan kerja [slide 15]. Kondef: Tingkat pengangguran terbuka adalah persentase jumlah pengangguran terhadap jumlah angkatan kerja. Pengangguran yaitu: (1) penduduk yang aktif mencari pekerjaan, (2) penduduk yang sedang mempersiapkan usaha/pekerjaan baru, (3) penduduk yang tidak mencari pekerjaan karena merasa tidak mungkin mendapat pekerjaan (discouraged worker), (4) kelompok penduduk yang tidak aktif mencari pekerjaan dengan alasan sudah mempunyai pekerjaan tetapi belum mulai bekerja [slide 16].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika ada 100 orang yang terjun ke bursa tenaga kerja, berapa orang yang belum berhasil diserap oleh roda perekonomian? Indikator inilah yang dijawab oleh TPT. Semakin tinggi TPT, semakin besar kapasitas produksi nasional yang menganggur secara sia-sia (*economic waste*), mengurangi pendapatan keluarga, dan menurunkan penerimaan pajak.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Empat Kategori Pengangguran Terbuka BPS</p>
+<p>BPS mengklasifikasikan pengangguran terbuka ke dalam 4 kelompok operasional yang sangat sering diuji dalam soal esai ujian [slide 16]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Kategori Pengangguran BPS</th><th>Deskripsi dan Kriteria Operasional</th><th>Contoh Kasus Nyata</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><strong>Mencari Pekerjaan</strong></td><td>Mereka yang dalam 7 hari terakhir aktif mencari pekerjaan (mengirim surat lamaran, mendaftar bursa kerja, mengikuti wawancara).</td><td>Korban PHK yang melamar pekerjaan ke berbagai pabrik.</td></tr><tr><td><strong>2</strong></td><td><strong>Mempersiapkan Usaha</strong></td><td>Mereka yang melakukan tindakan nyata untuk mendirikan usaha baru (mencari modal, menyewa tempat, mengurus izin usaha).</td><td>Sarjana yang sedang menyewa ruko dan membeli peralatan kedai kopi.</td></tr><tr><td><strong>3</strong></td><td><strong>Merasa Tidak Mungkin Mendapat Pekerjaan (*Discouraged Worker*)</strong></td><td>Mereka yang tidak bekerja dan bersedia bekerja, tetapi tidak lagi mencari kerja karena putus asa merasa tidak ada lowongan yang sesuai.</td><td>Pekerja lansia/difabel yang berulang kali ditolak kerja sehingga berhenti melamar.</td></tr><tr><td><strong>4</strong></td><td><strong>Sudah Diterima Kerja Tetapi Belum Mulai Bekerja (*Future Starts*)</strong></td><td>Mereka yang telah lolos seleksi dan memiliki kepastian tanggal mulai bekerja, namun pada minggu pencacahan belum resmi bertugas.</td><td>Calon ASN yang telah menerima SK dan menunggu jadwal penempatan bulan depan.</td></tr></tbody></table></div>
+<p>### 2. Formula Matematis<br>$$\text{TPT} = \frac{\text{Jumlah Penganggur}}{\text{Jumlah Angkatan Kerja}} \times 100\% = \frac{\sum_{k=1}^4 \text{Penganggur}_k}{\text{PB} + \sum_{k=1}^4 \text{Penganggur}_k} \times 100\%$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="3">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan pedoman operasional BPS, manakah di antara individu berikut yang TIDAK digolongkan sebagai pengangguran terbuka?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 16]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Seseorang yang sedang mengumpulkan modal dan mencari lokasi sewa ruko untuk membuka minimarket.</button>
+<button class="ex-opt" data-i="1">B. Seseorang yang telah lulus wawancara kerja dan dijadwalkan mulai bertugas dua pekan mendatang.</button>
+<button class="ex-opt" data-i="2">C. Seseorang yang berhenti mencari kerja karena merasa di daerahnya tidak ada lowongan yang cocok bagi dirinya.</button>
+<button class="ex-opt" data-i="3">D. Seseorang yang mengundurkan diri dari pekerjaannya demi fokus mengasuh anak balita di rumah tanpa mencari kerja.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>D</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A: Masuk kategori (2) Sedang mempersiapkan usaha/pekerjaan baru.<br>- Pilihan B: Masuk kategori (4) Sudah mempunyai pekerjaan tetapi belum mulai bekerja.<br>- Pilihan C: Masuk kategori (3) Merasa tidak mungkin mendapat pekerjaan (*discouraged worker*).<br>- Pilihan D: Masuk ke dalam <strong>Bukan Angkatan Kerja (BAK)</strong> kategori Mengurus Rumah Tangga karena tidak berkeinginan mencari pekerjaan komersial.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Sebelum=5.00%, Sesudah=7.50%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di suatu kota industri, terdapat 190.000 penduduk usia kerja yang bekerja dan 10.000 orang pengangguran terbuka. Karena krisis ekonomi global, 5.000 pekerja mengalami pemutusan hubungan kerja (PHK) dan langsung aktif mencari pekerjaan baru di bursa kerja. Asumsikan tidak ada perubahan pada komponen angkatan kerja lainnya. Hitunglah TPT kota tersebut sebelum dan sesudah krisis ekonomi. Tuliskan jawaban dalam format: <code>Sebelum=X.XX%, Sesudah=Y.YY%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Kondisi Sebelum Krisis:<br>   $$\text{PB} = 190.000, \quad \text{Penganggur} = 10.000$$<br>   $$\text{AK} = 190.000 + 10.000 = 200.000$$<br>   $$\text{TPT}_{\text{awal}} = \frac{10.000}{200.000} \times 100\% = 5,00\%$$<br>2. Kondisi Sesudah Krisis:<br>   - Pekerja berkurang 5.000 menjadi $190.000 - 5.000 = 185.000$.<br>   - Pengangguran bertambah 5.000 menjadi $10.000 + 5.000 = 15.000$.<br>   - Total Angkatan Kerja (AK) tetap sama: $185.000 + 15.000 = 200.000$.<br>   $$\text{TPT}_{\text{akhir}} = \frac{15.000}{200.000} \times 100\% = 7,50\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>ak = 200000<br>tpt_awal = (10000 / ak) * 100<br>tpt_akhir = (15000 / ak) * 100<br>print(f'Sebelum={tpt_awal:.2f}%, Sesudah={tpt_akhir:.2f}%')<br># Output: Sebelum=5.00%, Sesudah=7.50%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Salah menempatkan kategori 'mempersiapkan usaha' atau 'sudah diterima kerja' ke dalam kelompok Bekerja atau Bukan Angkatan Kerja. Di BPS, kedua kelompok ini SAH sebagai Pengangguran Terbuka.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>TPT = Penganggur / AK * 100. Penganggur BPS ada 4: Cari Kerja, Bikin Usaha, Putus Asa, Sudah Diterima Belum Kerja.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.1.2, 9.1.4</div>
+<button class="donebtn" data-id="9.1.3"></button>
+</section>
+<section class="point" id="p-9.1.4">
+<h2>9.1.4 Setengah Penganggur vs Pekerja Paruh Waktu ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17-20, 24-28]</div>
+<div class="box info">📌 <div class="rich"><p>Batas 35 jam kerja normal, perbedaan esensial voluntary vs involuntary part-time, pembagi resmi PB, dan penentuan klasifikasi formal vs informal BPS (EXT-1).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Persentase Setengah Pengangguran: TSP = PBJK&lt;35 / PB * 100, dimana PBJK&lt;35 = Jumlah pekerja setengah penganggur, PB = Jumlah penduduk yang bekerja [slide 17]. Kondef: Pekerja setengah pengangguran adalah mereka yang bekerja di bawah jam kerja normal (&lt; 35 jam seminggu) dan masih mencari pekerjaan atau masih bersedia menerima pekerjaan (dahulu disebut setengah pengangguran terpaksa) [slide 18]. Persentase Pekerja Paruh Waktu: TPPW = PBPW / PB * 100 [slide 19]. Kondef: Pekerja paruh waktu adalah mereka yang bekerja di bawah jam kerja normal (&lt; 35 jam seminggu), tetapi tidak mencari pekerjaan atau tidak bersedia menerima pekerjaan lain (dahulu disebut setengah pengangguran sukarela) [slide 20]. Proporsi Lapangan Kerja Informal: Pr PB INF = PB INF / PB * 100 [slide 27].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Seorang guru les privat yang mengajar 15 jam seminggu dan merasa waktu itu sudah cukup karena ingin fokus merawat keluarga adalah Pekerja Paruh Waktu. Namun seorang buruh pabrik garmen yang jam kerjanya dipangkas manajemen menjadi 20 jam seminggu dan terus melamar kerja sampingan ke sana ke mari adalah Setengah Penganggur. Keduanya bekerja &lt; 35 jam, tetapi status ekonominya sangat bertolak belakang.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Perbandingan Karakteristik Jam Kerja Rendah</p>
+<p>Berdasarkan pedoman operasional BPS [slide 17-20]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Setengah Penganggur (*Underemployed*)</th><th>Pekerja Paruh Waktu (*Part-Time*)</th></tr></thead><tbody><tr><td><strong>Ambang Jam Kerja</strong></td><td>$&lt; 35$ jam seminggu [slide 18]</td><td>$&lt; 35$ jam seminggu [slide 20]</td></tr><tr><td><strong>Sifat Keterlibatan</strong></td><td>Terpaksa (*Involuntary*)</td><td>Sukarela (*Voluntary*)</td></tr><tr><td><strong>Pencarian Kerja Tambahan</strong></td><td><strong>Ya</strong>, aktif mencari atau bersedia menerima pekerjaan tambahan</td><td><strong>Tidak</strong>, tidak mencari dan tidak bersedia menerima pekerjaan lain</td></tr><tr><td><strong>Formula Rasio Resmi</strong></td><td>$\text{TSP} = \frac{\text{PBJK}_{&lt;35}}{\text{PB}} \times 100\%$ [slide 17]</td><td>$\text{TPPW} = \frac{\text{PBPW}}{\text{PB}} \times 100\%$ [slide 19]</td></tr><tr><td><strong>Penyebut / Pembagi</strong></td><td><strong>Penduduk Bekerja (PB)</strong></td><td><strong>Penduduk Bekerja (PB)</strong></td></tr><tr><td><strong>Implikasi Kebijakan</strong></td><td>Sinyal kegagalan utilisasi kapasitas tenaga kerja penuh</td><td>Kebutuhan fleksibilitas pasar kerja dan keseimbangan kerja-keluarga</td></tr></tbody></table></div>
+<p>### 2. Klasifikasi Tenaga Kerja Formal vs Informal (EXT-1)</p>
+<p>BPS membagi status pekerjaan utama ke dalam 7 kategori yang kemudian dipetakan menjadi Formal dan Informal melalui <strong>Proxy 2</strong> [slide 26, 28]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Status Pekerjaan Utama BPS</th><th>Klasifikasi Formal / Informal</th></tr></thead><tbody><tr><td>1</td><td>Berusaha sendiri</td><td>Dipilah: Formal jika profesional/manajerial; Informal jika penjualan/jasa kasar [slide 26]</td></tr><tr><td>2</td><td>Berusaha dibantu buruh tidak tetap/buruh tidak dibayar</td><td>Dipilah: Formal jika non-pertanian teknis; Informal jika pertanian/buruh [slide 26]</td></tr><tr><td>3</td><td>Berusaha dibantu buruh tetap/buruh dibayar</td><td><strong>Pasti Formal (F)</strong></td></tr><tr><td>4</td><td>Buruh / Karyawan / Pegawai</td><td><strong>Pasti Formal (F)</strong></td></tr><tr><td>5</td><td>Pekerja bebas di sektor pertanian</td><td><strong>Pasti Informal (INF)</strong></td></tr><tr><td>6</td><td>Pekerja bebas di sektor non-pertanian</td><td><strong>Pasti Informal (INF)</strong></td></tr><tr><td>7</td><td>Pekerja keluarga / tidak dibayar (*unpaid worker*)</td><td><strong>Pasti Informal (INF)</strong></td></tr></tbody></table></div>
+<p>Formula Proporsi Lapangan Kerja Informal [slide 27]:<br>$$\text{Proporsi INF} = \frac{\text{Jumlah Penduduk Bekerja Status Informal (PB}_{\text{INF}})}{\text{Total Penduduk Bekerja (PB)}} \times 100\%$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam analisis pasar kerja BPS, perbedaan fundamental antara pekerja setengah penganggur dan pekerja paruh waktu terletak pada:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17-20]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Ambang batas jumlah jam kerja kumulatif selama seminggu terakhir.</button>
+<button class="ex-opt" data-i="1">B. Tingkat upah atau kompensasi finansial yang diterima per jam kerja.</button>
+<button class="ex-opt" data-i="2">C. Kesediaan atau upaya aktif untuk mencari pekerjaan tambahan di bawah jam kerja normal.</button>
+<button class="ex-opt" data-i="3">D. Klasifikasi kepemilikan izin usaha resmi tempat mereka bekerja.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Kedua kelompok sama-sama bekerja di bawah jam kerja normal (&lt; 35 jam seminggu). Perbedaan penentu menurut BPS adalah kesediaan atau upaya mencari pekerjaan tambahan: Setengah penganggur bersedia/mencari kerja tambahan (*involuntary*), sedangkan pekerja paruh waktu tidak mencari pekerjaan tambahan (*voluntary*).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;TSP=10.0%, Informal=60.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di sebuah kabupaten agraris, terdapat 80.000 penduduk bekerja. Dari jumlah tersebut, 20.000 orang bekerja &lt; 35 jam seminggu dengan rincian 8.000 orang masih mencari kerja tambahan dan 12.000 orang tidak mencari kerja tambahan. Selain itu, terdapat 48.000 orang yang bekerja pada sektor informal. Hitunglah Tingkat Setengah Pengangguran (TSP) dan Proporsi Tenaga Kerja Informal. Tuliskan jawaban dalam format: <code>TSP=X.X%, Informal=Y.Y%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 17, 27]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Tingkat Setengah Pengangguran (TSP):<br>   $$\text{TSP} = \frac{8.000}{80.000} \times 100\% = 10,0\%$$<br>2. Proporsi Tenaga Kerja Informal:<br>   $$\text{Proporsi INF} = \frac{48.000}{80.000} \times 100\% = 60,0\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>pb = 80000<br>setengah_p = 8000<br>informal = 48000<br>tsp = (setengah_p / pb) * 100<br>p_inf = (informal / pb) * 100<br>print(f'TSP={tsp:.1f}%, Informal={p_inf:.1f}%')<br># Output: TSP=10.0%, Informal=60.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Menggunakan pembagi PUK atau Angkatan Kerja saat menghitung persentase pekerja informal. Seluruh indikator kualitas kerja (TSP, TPPW, Proporsi Informal) menggunakan pembagi PENDUDUK BEKERJA (PB).</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Pembeda 35 Jam: Masih cari kerja = Setengah Penganggur (TSP). Puas/sukarela = Paruh Waktu (TPPW). Pembagi selalu Penduduk Bekerja (PB).</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.1.2, 9.1.3</div>
+<button class="donebtn" data-id="9.1.4"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-9.2-Indikator-Pendidikan">
+<h2 class="sec-title">9.2 Indikator Pendidikan<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-9.2.1">
+<h2>9.2.1 Angka Partisipasi Murni APM dan Kasar APK ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66-71]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi perbedaan pembilang APM vs APK, rentang usia resmi 4 jenjang sekolah, pembuktian ketidaksamaan APM &lt;= APK dan batas APK &gt; 100%, serta aplikasi pada neraca pendidikan BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>APK SD = Jumlah murid SD / Jumlah penduduk usia 7-12 tahun * 100 [slide 66]. Kondef: Perbandingan antara jumlah penduduk yang masih bersekolah di jenjang pendidikan tertentu (tanpa memandang usia) dengan jumlah penduduk yang memenuhi syarat resmi usia sekolah di jenjang pendidikan yang sama [slide 67]. Nilai APK bisa lebih dari 100 persen karena populasi murid mencakup anak di luar batas usia sekolah. Penyebabnya adalah pendaftaran usia dini, terlambat sekolah, atau pengulangan kelas [slide 67]. APM SD = Jumlah murid SD umur 7-12 tahun / Jumlah penduduk usia 7-12 tahun * 100 [slide 69]. Nilai APM berkisar antara 0-100. Secara umum, APM akan selalu lebih rendah dari APK [slide 70].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah bus sekolah berkapasitas 50 kursi diisi oleh 53 penumpang (termasuk beberapa balita dan orang dewasa yang ikut menumpang), rasio penumpangnya melebihi 100% kapasitas resmi (ini analogi APK). Namun jika kita hanya menghitung anak-anak pemegang tiket resmi di dalam bus tersebut, jumlahnya tidak akan pernah melebihi 100% (ini analogi APM).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Formulasi Matematis APM dan APK menurut Jenjang Sekolah</p>
+<p>Berdasarkan klasifikasi resmi Kemendikbudristek dan BPS [slide 62, 66, 69]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Jenjang Pendidikan ($J$)</th><th>Rentang Usia Resmi</th><th>Formula APM (Murni)</th><th>Formula APK (Kasar)</th></tr></thead><tbody><tr><td><strong>SD / MI / Paket A</strong></td><td>7 - 12 Tahun</td><td>$\text{APM}_{\text{SD}} = \frac{\text{Murid SD Usia 7-12}}{P_{7-12}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SD}} = \frac{\sum \text{Murid SD}}{P_{7-12}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>SMP / MTs / Paket B</strong></td><td>13 - 15 Tahun</td><td>$\text{APM}_{\text{SMP}} = \frac{\text{Murid SMP Usia 13-15}}{P_{13-15}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SMP}} = \frac{\sum \text{Murid SMP}}{P_{13-15}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>SMA / SMK / MA / Paket C</strong></td><td>16 - 18 Tahun</td><td>$\text{APM}_{\text{SM}} = \frac{\text{Murid SMA Usia 16-18}}{P_{16-18}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SM}} = \frac{\sum \text{Murid SMA}}{P_{16-18}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>Perguruan Tinggi (PT)</strong></td><td>19 - 24 Tahun</td><td>$\text{APM}_{\text{PT}} = \frac{\text{Mhs PT Usia 19-24}}{P_{19-24}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{PT}} = \frac{\sum \text{Mahasiswa PT}}{P_{19-24}} \times 100\%$ [slide 66]</td></tr></tbody></table></div>
+<p>### 2. Teorema Hubungan APM dan APK</p>
+<p>Misalkan himpunan seluruh siswa yang bersekolah pada jenjang $J$ adalah $S_J$. Himpunan siswa usia tepat adalah $S_J^* = \{s \in S_J \mid \text{Usia}(s) \in \text{Rentang}(J)\}$. Himpunan siswa di luar usia standar adalah $S_J^{\text{luar}} = S_J \setminus S_J^*$.</p>
+<p>Karena $|S_J| = |S_J^*| + |S_J^{\text{luar}}|$ dan $|S_J^{\text{luar}}| \ge 0$, maka:<br>$$|S_J^*| \le |S_J|$$<br>Dengan membagi kedua sisi dengan jumlah penduduk kelompok usia resmi $P_{\text{usia } J} &gt; 0$ dan mengalikan 100%, diperoleh:<br>$$\text{APM}_J \le \text{APK}_J$$</p>
+<p>Selisih antara APK dan APM ($\text{APK} - \text{APM}$) mengukur besarnya proporsi penduduk yang bersekolah tidak tepat waktu (*overage and underage enrollment ratio*).</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Jika di suatu provinsi nilai APK jenjang Sekolah Menengah Pertama (SMP) tercatat sebesar 104,5% dan nilai APM SMP tercatat sebesar 82,3%, maka kesimpulan yang paling tepat adalah:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 67, 70]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Terjadi kesalahan pendataan lapangan pada Susenas karena partisipasi tidak mungkin melebihi 100%.</button>
+<button class="ex-opt" data-i="1">B. Terdapat 22,2% anak usia 13-15 tahun yang tidak tertampung di fasilitas pendidikan SMP.</button>
+<button class="ex-opt" data-i="2">C. Kapasitas sekolah SMP mampu menampung siswa melebihi populasi usia 13-15 tahun karena adanya siswa usia dini atau siswa yang mengulang.</button>
+<button class="ex-opt" data-i="3">D. Seluruh anak usia 13-15 tahun di provinsi tersebut telah bersekolah tepat waktu di jenjang SMP.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Nilai APK &gt; 100% mengindikasikan bahwa daya tampung sekolah jenjang tersebut mencakup siswa di luar usia 13-15 tahun (misalnya siswa usia &lt; 13 tahun yang cerdas istimewa atau usia &gt; 15 tahun yang terlambat tamat SD/mengulang kelas). Selisih $104,5\% - 82,3\% = 22,2\%$ mencerminkan proporsi siswa di luar usia standar yang bersekolah di SMP.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;APM=64.0%, APK=80.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah kota memiliki 50.000 penduduk usia 16-18 tahun. Dari hasil pendataan sekolah jenjang SMA/SMK, terdaftar 32.000 siswa berusia 16-18 tahun, 1.000 siswa berusia 15 tahun (akselerasi), dan 7.000 siswa berusia di atas 18 tahun. Hitunglah APM dan APK jenjang SMA/SMK kota tersebut. Tuliskan jawaban dalam format: <code>APM=X.X%, APK=Y.Y%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66, 69]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Menghitung APM SMA:<br>   $$\text{APM}_{\text{SMA}} = \frac{32.000}{50.000} \times 100\% = 64,0\%$$<br>2. Menghitung total murid SMA:<br>   $$\sum \text{Murid SMA} = 32.000 + 1.000 + 7.000 = 40.000$$<br>3. Menghitung APK SMA:<br>   $$\text{APK}_{\text{SMA}} = \frac{40.000}{50.000} \times 100\% = 80,0\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>pop = 50000<br>siswa_tepat = 32000<br>siswa_total = 32000 + 1000 + 7000<br>apm = (siswa_tepat / pop) * 100<br>apk = (siswa_total / pop) * 100<br>print(f'APM={apm:.1f}%, APK={apk:.1f}%')<br># Output: APM=64.0%, APK=80.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Mengabaikan siswa pendidikan non-formal (Paket A, B, C). Sejak tahun 2007, BPS secara resmi memasukkan siswa program kesetaraan ke dalam perhitungan APM dan APK Susenas.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>APM = Murni (Usia Tepat, &lt;= 100%). APK = Kasar (Semua Usia, Bisa &gt; 100%). APM &lt;= APK selalu.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.2.2</div>
+<button class="donebtn" data-id="9.2.1"></button>
+</section>
+<section class="point" id="p-9.2.2">
+<h2>9.2.2 Angka Partisipasi Sekolah APS ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 61-65, 57-60, 72-74]</div>
+<div class="box info">📌 <div class="rich"><p>Formula 4 kelompok usia APS, komparasi analitis APM vs APK vs APS, integrasi indikator pendidikan IPM (AMH 15+ dan RLS/MYS) (EXT-2).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>ANGKA PARTISIPASI SEKOLAH (APS): APS 7-12 = Jumlah penduduk 7-12 tahun bersekolah / Jumlah penduduk usia 7-12 tahun * 100 [slide 63]. Kondef: Proporsi dari semua anak yang masih sekolah pada suatu kelompok umur tertentu terhadap penduduk dengan kelompok umur yang sesuai. Sejak 2009 Pendidikan Non Formal turut diperhitungkan [slide 64]. Angka Melek Huruf: AMH15+ = MH15+ / P15+ * 100 [slide 58]. Kondef: Proporsi penduduk berusia 15 tahun ke atas yang memiliki kemampuan membaca dan menulis kalimat sederhana dalam huruf latin/arab/lainnya [slide 59]. Rata-rata Lama Sekolah (MYS): Jumlah tahun belajar penduduk usia 15 tahun ke atas yang telah diselesaikan dalam pendidikan formal (tidak termasuk tahun yang mengulang) [slide 73].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika ada sensus di suatu RT, petugas hanya bertanya kepada anak usia 14 tahun: 'Adik masih sekolah atau sudah berhenti?'. Petugas tidak peduli apakah si adik masih kelas 6 SD atau sudah kelas 1 SMA. Selama dia masih aktif sekolah, dia dihitung dalam APS kelompok 13-15 tahun.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Formulasi Matematis Empat Kelompok Usia APS</p>
+<p>BPS membagi APS ke dalam 4 kelompok umur standar yang bersesuaian dengan jenjang wajar Dikdasmen dan Dikti [slide 63]:</p>
+<p>$$\text{APS}_{7-12} = \frac{\text{Penduduk usia 7-12 tahun masih bersekolah}}{\text{Jumlah penduduk usia 7-12 tahun}} \times 100\%$$<br>$$\text{APS}_{13-15} = \frac{\text{Penduduk usia 13-15 tahun masih bersekolah}}{\text{Jumlah penduduk usia 13-15 tahun}} \times 100\%$$<br>$$\text{APS}_{16-18} = \frac{\text{Penduduk usia 16-18 tahun masih bersekolah}}{\text{Jumlah penduduk usia 16-18 tahun}} \times 100\%$$<br>$$\text{APS}_{19-24} = \frac{\text{Penduduk usia 19-24 tahun masih bersekolah}}{\text{Jumlah penduduk usia 19-24 tahun}} \times 100\%$$</p>
+<p>### 2. Matriks Komparasi Segitiga Partisipasi Pendidikan: APM vs APK vs APS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Aspek Pembeda</th><th>Angka Partisipasi Murni (APM)</th><th>Angka Partisipasi Kasar (APK)</th><th>Angka Partisipasi Sekolah (APS)</th></tr></thead><tbody><tr><td><strong>Fokus Utama</strong></td><td>Ketepatan usia sekolah (*on-time schooling*) [slide 70]</td><td>Kapasitas/daya tampung sekolah (*capacity*) [slide 67]</td><td>Akses riil penduduk usia sekolah (*access*) [slide 64]</td></tr><tr><td><strong>Pembilang</strong></td><td>Siswa usia resmi pada jenjang yang sesuai</td><td>Seluruh siswa di jenjang tsb (semua umur)</td><td>Seluruh anak pada usia tsb yang sekolah (semua jenjang)</td></tr><tr><td><strong>Penyebut</strong></td><td>Penduduk kelompok umur jenjang tsb</td><td>Penduduk kelompok umur jenjang tsb</td><td>Penduduk kelompok umur tsb</td></tr><tr><td><strong>Rentang Nilai</strong></td><td>$0\% \le \text{APM} \le 100\%$</td><td>Bisa $&gt; 100\%$</td><td>$0\% \le \text{APS} \le 100\%$</td></tr><tr><td><strong>Sifat Relatif</strong></td><td>$\text{APM} \le \text{APK}$ dan $\text{APM} \le \text{APS}$</td><td>APK bisa paling tinggi di antara ketiganya</td><td>Selalu lebih besar atau sama dengan APM</td></tr></tbody></table></div>
+<p>### 3. Indikator Komposit Pendidikan IPM (EXT-2)</p>
+<p>Dalam mengukur dimensi pengetahuan pada Indeks Pembangunan Manusia (IPM) BPS [slide 58, 73]:<br>- <strong>Angka Melek Huruf (AMH 15+)</strong>: Mengukur stok keaksaraan dasar. Sejak metode baru IPM 2014, AMH digantikan oleh Harapan Lama Sekolah (HLS), namun AMH tetap menjadi indikator pemantauan SDGs Target 4.6 [slide 56, 58].<br>- <strong>Rata-rata Lama Sekolah (RLS / Mean Years of Schooling)</strong>: Mengukur akumulasi modal manusia (*human capital stock*). Dihitung dari kombinasi ijazah tertinggi dan kelas tertinggi yang pernah diselesaikan, dengan syarat <strong>tahun mengulang tidak dihitung</strong> [slide 73].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Manakah pernyataan yang paling akurat mengenai perbandingan antara APM, APK, dan APS untuk kelompok jenjang SMP (usia 13-15 tahun)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 62-64, 70]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Nilai APS 13-15 tahun selalu lebih kecil atau sama dengan APM SMP.</button>
+<button class="ex-opt" data-i="1">B. Nilai APM SMP selalu lebih kecil atau sama dengan APS 13-15 tahun.</button>
+<button class="ex-opt" data-i="2">C. Nilai APK SMP tidak mungkin lebih besar daripada APS 13-15 tahun.</button>
+<button class="ex-opt" data-i="3">D. Nilai APS 13-15 tahun dapat melebihi 100% jika banyak siswa mengulang kelas.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pembilang APM SMP hanya menghitung anak usia 13-15 tahun yang bersekolah di SMP.<br>- Pembilang APS 13-15 tahun menghitung seluruh anak usia 13-15 tahun yang bersekolah di jenjang apa pun (SD, SMP, maupun SMA).<br>- Karena pembilang APM adalah himpunan bagian dari pembilang APS, maka nilai $\text{APM} \le \text{APS}$ mutlak selalu berlaku.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;RLS=16 tahun&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Seseorang menempuh pendidikan SD selama 7 tahun (tinggal kelas 1 kali saat kelas 3), kemudian menyelesaikan SMP selama 3 tahun, SMA selama 3 tahun, dan kuliah D4/S1 selama 4 tahun hingga wisuda. Berdasarkan konsep BPS, berapakah Rata-rata Lama Sekolah (RLS) yang disumbangkan oleh individu tersebut? Tuliskan dalam format: <code>RLS=X tahun</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 58, 73]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Pendidikan yang diselesaikan:<br>   - SD: 6 tahun jenjang resmi (tahun ke-7 adalah tahun mengulang).<br>   - SMP: 3 tahun.<br>   - SMA: 3 tahun.<br>   - Perguruan Tinggi (S1): 4 tahun.<br>2. Sesuai konsep baku BPS [slide 73], tahun yang mengulang TIDAK dihitung sebagai lama sekolah.<br>3. Total tahun belajar yang diakui:<br>   $$\text{RLS} = 6 + 3 + 3 + 4 = 16 \text{ tahun}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>sd_resmi = 6<br>smp = 3<br>sma = 3<br>perti = 4<br>rls = sd_resmi + smp + sma + perti<br>print(f'RLS={rls} tahun')<br># Output: RLS=16 tahun<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Mengasumsikan APS bisa melebihi 100%. Berbeda dengan APK yang pembilangnya mencakup siswa lintas umur, pembilang APS adalah subset dari penyebutnya (hanya anak-anak pada kelompok umur tersebut yang bersekolah), sehingga APS secara matematis tidak pernah bisa melebihi 100%.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>APS = Hak Sekolah pada Kelompok Umur (Tidak peduli jenjang). RLS = Tahun sekolah formal selesai (tidak termasuk mengulang).</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.2.1</div>
+<button class="donebtn" data-id="9.2.2"></button>
+</section>
+</div>
+</main></div>
+<script>
+const KEY = "lecture-done-chapter-9-";
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

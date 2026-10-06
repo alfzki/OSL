@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kuis Fokus Tematik: 10 Soal IHK & 10 Soal Sakernas Persiapan UAS OSL</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }
+};
+</script>
+<!-- Offline-first: this quiz loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  body { margin: 0; background: #f5f5f2; color: #1f2937; }
+  #wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 60px; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  #meta { font-size: 12px; color: #6b7280; margin-bottom: 14px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #92400e; margin-bottom: 12px; }
+  #bar { height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden; margin-bottom: 6px; }
+  #fill { height: 100%; width: 0; background: #3b82f6; transition: width .3s; }
+  #stats { font-size: 12px; color: #4b5563; margin-bottom: 18px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .chips { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+  .chip { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .chip.point { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+  .stem { font-size: 15px; line-height: 1.9; white-space: pre-wrap; margin-bottom: 16px; }
+  .opt { display: block; width: 100%; text-align: left; margin: 8px 0; padding: 10px 14px; font-size: 14px; line-height: 1.6;
+         border: 1.5px solid #d1d5db; border-radius: 10px; background: #fff; cursor: pointer; }
+  .opt:hover { border-color: #3b82f6; background: #f8fafc; }
+  .opt:disabled { cursor: default; opacity: 1; color: #1f2937; }
+  .opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .opt.dim { opacity: .55; }
+  .judge-row { display: flex; gap: 12px; }
+  .judge-row .opt { width: auto; flex: 1; text-align: center; font-weight: 600; }
+  textarea { width: 100%; box-sizing: border-box; min-height: 130px; padding: 10px 12px; font: inherit; font-size: 14px;
+             border: 1.5px solid #d1d5db; border-radius: 10px; resize: vertical; outline: none; }
+  textarea:focus { border-color: #3b82f6; }
+  .btn { padding: 8px 18px; font-size: 14px; border: none; border-radius: 10px; background: #2563eb; color: #fff; cursor: pointer; margin-top: 12px; }
+  .btn:hover { background: #1d4ed8; }
+  .btn:disabled { background: #93c5fd; cursor: not-allowed; }
+  .btn.ghost { background: #fff; color: #374151; border: 1px solid #d1d5db; }
+  .btn.ghost:hover { background: #f3f4f6; }
+  .panel { margin-top: 16px; border-radius: 10px; padding: 14px 16px; font-size: 14px; line-height: 1.9; white-space: pre-wrap; }
+  .panel.ok { background: #f0fdf4; border: 1px solid #86efac; }
+  .panel.bad { background: #fef2f2; border: 1px solid #fca5a5; }
+  .panel.half { background: #fffbeb; border: 1px solid #fcd34d; }
+  .panel.ref { background: #fffbeb; border: 1px solid #fde68a; }
+  .panel b.tag { display: block; margin-bottom: 6px; }
+  #selfgrade { margin-top: 12px; }
+  #selfgrade button { margin: 4px 6px 0 0; padding: 6px 14px; font-size: 13px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  #selfgrade button:hover { border-color: #2563eb; color: #2563eb; }
+  #selfgrade button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  #nav { display: flex; justify-content: space-between; margin-top: 18px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 14px 0; }
+  th, td { border: 1px solid #e5e7eb; padding: 7px 10px; text-align: left; }
+  th { background: #f9fafb; }
+  tr.miss td { background: #fef2f2; }
+  #score { font-size: 26px; font-weight: 700; margin: 6px 0 2px; }
+  #export-area { width: 100%; box-sizing: border-box; min-height: 140px; margin-top: 10px; font: 12px/1.6 monospace; padding: 10px; border: 1px solid #d1d5db; border-radius: 10px; display: none; }
+  .hint { font-size: 12px; color: #6b7280; margin-top: 8px; }
+  /* Tipografi Formula Matematis Offline */
+  .math-inline { font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Georgia", serif; font-style: normal; font-weight: 500; padding: 0 2px; }
+  .math-disp { font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Georgia", serif; display: block; text-align: center; margin: 12px 0; padding: 10px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; overflow-x: auto; font-size: 1.05em; font-style: normal; }
+  .m-frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; padding: 0 4px; font-size: 0.9em; line-height: 1.15; font-style: normal; }
+  .m-num { border-bottom: 1.5px solid currentColor; padding-bottom: 2px; display: block; font-weight: 500; }
+  .m-den { padding-top: 2px; display: block; font-weight: 500; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <h1>Kuis Fokus Tematik: 10 Soal IHK & 10 Soal Sakernas Persiapan UAS OSL</h1>
+  <div id="meta">Dibuat pada 2026-09-29 · Total <span id="total"></span> Soal · Selesai satu butir langsung tampil pembahasan</div>
+  <div id="mjwarn">💡 Tip Formula: Kuis ini mandiri tanpa dependensi internet, rumus disajikan dalam rendering tipografi matematis yang bersih dan mudah dibaca.</div>
+  <div id="bar"><div id="fill"></div></div>
+  <div id="stats"></div>
+  <div id="main"></div>
+</div>
+
+<script>
+const DATA = {"title": "Kuis Fokus Tematik: 10 Soal IHK & 10 Soal Sakernas Persiapan UAS OSL", "questions": [{"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Sumber Diagram Timbang & Paket Komoditas)", "score": 2, "stem": "[OSL-IHK-01] Dalam metodologi penyusunan Indeks Harga Konsumen (IHK) oleh BPS, data pengeluaran konsumsi rumah tangga yang digunakan untuk menetapkan diagram timbang (bobot nilai konsumsi) dan paket komoditas diperoleh dari...", "reference": "A", "explanation": "Kunci: A. Sumber utama penetapan paket komoditas dan diagram timbang IHK adalah Survei Biaya Hidup (SBH) yang diselenggarakan BPS secara berkala. Susenas digunakan untuk menghitung garis kemiskinan dan konsumsi per kapita makro, bukan penimbang IHK; sedangkan SHK (Survei Harga Konsumen) adalah survei pencatatan harga berkala mingguan/bulanan. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 18; Publikasi IHK BPS 2025)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Survei Biaya Hidup (SBH)", "B. Survei Sosial Ekonomi Nasional (Susenas)", "C. Survei Harga Konsumen (SHK)", "D. Sensus Ekonomi (SE)"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Cakupan Geografis Tahun Dasar 2022=100)", "score": 2, "stem": "[OSL-IHK-02] Mulai Januari 2024, BPS menghitung IHK dan inflasi dengan tahun dasar $2022=100$ hasil SBH 2022. Cakupan wilayah pemantauan harga diperluas menjadi...", "reference": "A", "explanation": "Kunci: A. Cakupan wilayah IHK tahun dasar 2022 ($2022=100$) diperluas menjadi 150 kabupaten/kota (terdiri dari 90 kota lama pada SBH 2018 ditambah 60 kabupaten baru yang mewakili dinamika ekonomi daerah). BPS tidak menghitung IHK di seluruh 514 kabupaten/kota karena keterbatasan efisiensi operasional dan keterwakilan sampel. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 22; Publikasi IHK BPS 2025)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 150 kabupaten/kota (terdiri dari 90 kota lama dan 60 kabupaten baru)", "B. 90 kota di 34 provinsi", "C. 82 kota di 33 provinsi", "D. 514 seluruh kabupaten/kota se-Indonesia"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Klasifikasi COICOP 11 Kelompok)", "score": 2, "stem": "[OSL-IHK-03] Sejak IHK tahun dasar 2018 hingga tahun dasar 2022, BPS mengadopsi klasifikasi internasional COICOP (Classification of Individual Consumption According to Purpose) yang membagi pengeluaran konsumsi ke dalam...", "reference": "A", "explanation": "Kunci: A. Sejak SBH 2018 dan dilanjutkan pada SBH 2022, BPS mengadopsi klasifikasi COICOP yang membagi pengeluaran konsumsi menjadi 11 kelompok (menggantikan sistem lama 7 kelompok pengeluaran pada SBH 2012). 11 kelompok tersebut meliputi: (1) Makanan, Minuman, dan Tembakau, (2) Pakaian dan Alas Kaki, (3) Perumahan, Air, Listrik, dan Bahan Bakar, (4) Perlengkapan RT, (5) Kesehatan, (6) Transportasi, (7) Informasi, Komunikasi, dan Jasa Keuangan, (8) Rekreasi, (9) Pendidikan, (10) Penyediaan Makanan-Minuman/Restoran, (11) Perawatan Pribadi dan Jasa Lainnya. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 18)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 11 kelompok pengeluaran (menggantikan sistem lama 7 kelompok pengeluaran)", "B. 7 kelompok pengeluaran tradisional", "C. 9 kelompok sektor ekonomi lapangan usaha (KBLI)", "D. 17 sektor ekonomi PDRB"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Prinsip Formula Modifikasi Laspeyres)", "score": 3, "stem": "[OSL-IHK-04] Formula Modified Laspeyres yang diterapkan BPS dalam menghitung IHK bulanan memiliki keunggulan sistem perantaian (*chaining*). Manakah pernyataan yang paling tepat mengenai pembentukan indeks bulan berjalan ($I_t$)?", "reference": "A", "explanation": "Kunci: A. BPS menerapkan rumus: $I_t = \\sum_{i=1}^k \\left[ \\frac{P_{ti}}{P_{(t-1)i}} \\times w_{(t-1)i} \\right]$, di mana relatif harga bulan berjalan terhadap bulan sebelumnya ($P_t / P_{t-1}$) dikalikan dengan bobot nilai konsumsi bulan sebelumnya ($w_{t-1}$). Bobot nilai konsumsi dimutakhirkan setiap bulan dengan rasio harga bulan lalu terhadap tahun dasar, sementara kuantitas dasar tetap berasal dari SBH ($Q_0$). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 28; Publikasi IHK BPS 2025, hal. xxiv)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Dihitung dengan mengalikan Relatif Harga bulan berjalan terhadap bulan sebelumnya ($P_t / P_{t-1}$) dengan bobot nilai konsumsi bulan sebelumnya ($w_{t-1}$)", "B. Dihitung dengan membandingkan harga bulan berjalan langsung terhadap harga tahun dasar tanpa perantaian ($P_t / P_0$)", "C. Dihitung dengan memperbarui kuantitas fisik konsumsi setiap bulan melalui survei rumah tangga bulanan", "D. Dihitung dengan rata-rata ukur geometrik harga seluruh komoditas (Formula Jevons)"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Penghitungan Inflasi Bulanan m-to-m)", "score": 3, "stem": "[OSL-IHK-05] Jika IHK Kota Surabaya pada bulan April 2025 tercatat sebesar 108,00 dan pada bulan Mei 2025 meningkat menjadi 108,54, berapakah tingkat inflasi bulanan (*month to month* / m-to-m) Kota Surabaya pada bulan Mei 2025?", "reference": "A", "explanation": "Kunci: A. Formula inflasi bulanan m-to-m: $\\text{Inflasi}_{m-to-m} = \\frac{IHK_t - IHK_{t-1}}{IHK_{t-1}} \\times 100\\% = \\frac{108,54 - 108,00}{108,00} \\times 100\\% = \\frac{0,54}{108,00} \\times 100\\% = 0,50\\%$. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 20)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 0,50%", "B. 0,54%", "C. 8,54%", "D. 5,00%"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Perbedaan Inflasi y-on-y dan y-to-d)", "score": 2, "stem": "[OSL-IHK-06] Dalam rilis resmi inflasi BPS untuk bulan Agustus 2025, apakah perbedaan dasar antara inflasi *year to date* (y-to-d) dengan inflasi *year on year* (y-on-y)?", "reference": "A", "explanation": "Kunci: A. Inflasi tahun kalender (year to date / y-to-d) adalah persentase perubahan IHK bulan berjalan dibandingkan terhadap IHK bulan Desember tahun sebelumnya (misal Agustus 2025 terhadap Desember 2024). Sedangkan inflasi tahunan (year on year / y-on-y) adalah persentase perubahan IHK bulan berjalan dibandingkan terhadap IHK bulan yang sama pada tahun sebelumnya (Agustus 2025 terhadap Agustus 2024). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 19)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Inflasi y-to-d membandingkan IHK Agustus 2025 terhadap IHK Desember 2024, sedangkan inflasi y-on-y membandingkannya terhadap IHK Agustus 2024", "B. Inflasi y-to-d membandingkan IHK terhadap bulan Januari tahun berjalan, sedangkan y-on-y terhadap Desember tahun sebelumnya", "C. Keduanya menggunakan dasar yang sama yaitu IHK tahun dasar 2022", "D. Inflasi y-to-d mencakup seluruh 150 kota, sedangkan y-on-y hanya mencakup ibukota provinsi"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Disagregasi Inflasi Volatile Foods)", "score": 2, "stem": "[OSL-IHK-07] Lonjakan harga cabai rawit, bawang merah, dan daging ayam ras yang disebabkan oleh faktor cuaca ekstrem, musim panen, atau gangguan distribusi pasokan diklasifikasikan BPS ke dalam komponen inflasi...", "reference": "A", "explanation": "Kunci: A. Komponen Harga Bergejolak (Volatile Foods) adalah kelompok komoditas pangan yang perkembangan harganya sangat dipengaruhi oleh guncangan sisi penawaran (supply shocks) seperti iklim, bencana alam, musiman panen, dan jalur logistik (contoh: cabai, bawang merah, daging ayam, beras, telur). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 35)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Komponen Harga Bergejolak (Volatile Foods)", "B. Inflasi Inti (Core Inflation)", "C. Komponen Harga yang Diatur Pemerintah (Administered Prices)", "D. Inflasi Impor (Imported Inflation)"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Karakteristik Inflasi Inti / Core Inflation)", "score": 3, "stem": "[OSL-IHK-08] Inflasi Inti (Core Inflation) merupakan salah satu indikator penting bagi Bank Indonesia dalam penetapan kebijakan moneter suku bunga acuan. Manakah pernyataan yang BENAR mengenai karakteristik inflasi inti? (Pilih semua yang benar)", "reference": "A, B, C", "explanation": "Kunci: A, B, C. Inflasi inti mengukur komponen inflasi yang cenderung persisten/menetap dan dipengaruhi oleh faktor fundamental penawaran dan permintaan makro, ekspektasi inflasi, serta nilai tukar. Inflasi inti diperoleh dengan mengeluarkan komponen volatile foods dan administered prices dari inflasi umum (headline). Paket komoditasnya tetap dan tidak berganti tiap triwulan. (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 35)", "type": "multi", "qtype_label": "Pilihan Ganda Kompleks", "options": ["A. Menggambarkan tekanan harga yang bersifat persisten dan dipengaruhi faktor fundamental ekonomi (permintaan dan penawaran makro)", "B. Mengeluarkan komoditas yang harganya bergejolak (volatile foods) dan komoditas yang harganya diatur pemerintah (administered prices)", "C. Menjadi target acuan perumusan sasaran inflasi moneter (inflation targeting framework)", "D. Dihitung secara terpisah menggunakan paket komoditas yang berganti setiap triwulan"], "answer": [0, 1, 2], "partial": true}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Pengaruh Bobot Penimbang terhadap Andil Inflasi)", "score": 2, "stem": "[OSL-IHK-09] Suatu komoditas bensin mengalami kenaikan harga 5% dengan bobot nilai konsumsi (diagram timbang) 8%, sedangkan komoditas garam dapur mengalami kenaikan harga 20% dengan bobot nilai konsumsi 0,05%. Manakah pernyataan yang BENAR mengenai 'Andil Inflasi' kedua komoditas tersebut terhadap inflasi umum?", "reference": "A", "explanation": "Kunci: A. Andil inflasi (share/contribution to inflation) komoditas berbanding lurus dengan perkalian antara persentase perubahan harga dengan bobot penimbangnya ($w_i$). Walaupun persentase kenaikan harga bensin lebih kecil (5% vs 20%), bobot nilai konsumsinya sangat besar (8% vs 0,05%), sehingga andil inflasi bensin ($5\\% \\times 8\\% = 0,40\\%$ poin) jauh lebih besar daripada garam ($20\\% \\times 0,05\\% = 0,01\\%$ poin). (Sumber: Pertemuan 12 OSL Indikator Ekonomi (2) Perdagangan&Harga.pdf, slide 20)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Andil inflasi bensin jauh lebih besar daripada garam karena bobot diagram timbang bensin jauh lebih dominan dalam pengeluaran konsumsi", "B. Andil inflasi garam lebih besar daripada bensin karena persentase kenaikan harganya (20%) lebih tinggi", "C. Andil inflasi kedua komoditas bernilai sama karena keduanya sama-sama mengalami inflasi positif", "D. Andil inflasi tidak dipengaruhi oleh bobot konsumsi rumah tangga"], "answer": 0}, {"point_id": "Pertemuan 12", "point_name": "Indikator Ekonomi: IHK (Metode Agregasi IHK Nasional)", "score": 2, "stem": "[OSL-IHK-10] Dalam penghitungan IHK Nasional, angka IHK gabungan nasional dihitung dengan merata-ratakan angka IHK dari 150 kabupaten/kota secara sederhana (aritmetika tanpa bobot/bobot sama rata).", "reference": "false", "explanation": "Kunci: Salah. IHK gabungan nasional dihitung dengan rata-rata tertimbang (weighted average), di mana masing-masing kota/kabupaten memiliki bobot penimbang yang proporsional terhadap total nilai konsumsi rumah tangga di wilayah tersebut hasil SBH. Kota-kota metropolitan dengan populasi dan pengeluaran besar memiliki bobot yang jauh lebih dominan dalam menggerakkan inflasi nasional dibanding kabupaten kecil. (Sumber: Publikasi IHK BPS 2025, hal. xxv)", "type": "judge", "qtype_label": "Benar / Salah", "answer": false}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Periode Referensi Baku Ketenagakerjaan)", "score": 2, "stem": "[OSL-SAK-11] Dalam Kuesioner Survei Angkatan Kerja Nasional (Sakernas) BPS, seluruh pertanyaan mengenai kegiatan ekonomi dan jam kerja responden diajukan dengan periode referensi...", "reference": "A", "explanation": "Kunci: A. Sesuai standar ILO (ICLS 13) dan Kuesioner Sakernas BPS Blok VII (ATW), periode referensi baku kegiatan ketenagakerjaan adalah 'seminggu yang lalu', yaitu jangka waktu 7 hari berturut-turut yang berakhir sehari sebelum tanggal pencacahan. (Sumber: Kuesioner SAK.AGS25-AK.pdf, Rincian 7.1-7.3; Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Seminggu yang lalu (7 hari berturut-turut yang berakhir sehari sebelum tanggal pencacahan)", "B. 1 bulan (30 hari) terakhir sebelum pencacahan", "C. 1 tahun (12 bulan) terakhir sebelum pencacahan", "D. Hari kemarin saat petugas berkunjung"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Batasan Usia Kerja PUK 15+)", "score": 2, "stem": "[OSL-SAK-12] Berdasarkan konvensi ILO yang diadopsi secara resmi oleh BPS dalam Sakernas, batas usia minimum penduduk yang diklasifikasikan ke dalam Penduduk Usia Kerja (PUK) di Indonesia adalah...", "reference": "A", "explanation": "Kunci: A. Di Indonesia, Penduduk Usia Kerja (PUK) didefinisikan sebagai penduduk berusia 15 tahun ke atas tanpa batas maksimal. Rentang usia 15-64 tahun adalah konsep usia produktif untuk analisis rasio ketergantungan (dependency ratio), tetapi dalam statistik ketenagakerjaan resmi Sakernas, lansia (65+ tahun) yang bekerja tetap dihitung sebagai bagian dari PUK dan Angkatan Kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 8)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. 15 tahun ke atas (tanpa batas usia maksimal)", "B. 17 tahun ke atas (sesuai batas usia memiliki KTP)", "C. 18 tahun sampai dengan 60 tahun", "D. 15 tahun sampai dengan 64 tahun"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Kriteria Bekerja ICLS 13)", "score": 2, "stem": "[OSL-SAK-13] Manakah dari individu berikut yang secara resmi diklasifikasikan sebagai 'BEKERJA' dalam Sakernas BPS?", "reference": "A", "explanation": "Kunci: A. Konsep 'Bekerja' BPS (ICLS 13) adalah kegiatan ekonomi minimal 1 jam tanpa terputus dalam seminggu terakhir untuk memperoleh atau membantu memperoleh pendapatan/keuntungan. Termasuk pekerja keluarga tidak dibayar (unpaid family worker) yang membantu usaha keluarga (seperti Bu Siti). Doni berstatus penganggur terbuka (mencari kerja); Rian melakukan kegiatan hobi non-ekonomi; Nia mengurus rumah tangga/bukan angkatan kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12; Kuesioner Sakernas Rincian 7.3)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Bu Siti yang membantu menjahit pakaian di konveksi milik suaminya selama 2 jam seminggu yang lalu tanpa menerima bayaran uang", "B. Doni yang mencari lowongan pekerjaan di internet selama 40 jam seminggu tetapi belum diterima kerja", "C. Rian yang merawat kebun bunga miliknya sendiri semata-mata untuk hobi tanpa ada hasil yang dijual", "D. Nia yang sedang libur kuliah dan membantu mencuci piring di rumah keluarganya sendiri"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Pekerja Sementara Tidak Bekerja)", "score": 2, "stem": "[OSL-SAK-14] Pak Ridwan adalah seorang guru PNS tetap yang sedang mengambil cuti sakit selama 2 minggu dan pada seminggu terakhir sama sekali tidak mengajar di sekolah. Dalam Sakernas BPS, bagaimana status kegiatan Pak Ridwan seminggu yang lalu?", "reference": "A", "explanation": "Kunci: A. Penduduk yang memiliki pekerjaan/kegiatan usaha tetap namun pada periode seminggu yang lalu sedang tidak bekerja karena alasan cuti sakit, cuti bersalin, mogok kerja, menunggu panen, atau faktor cuaca buruk diklasifikasikan sebagai Bekerja (punya pekerjaan tetapi sementara tidak bekerja / temporarily absent from work), bagian dari Angkatan Kerja. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12; Kuesioner Sakernas Rincian 8.1)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Bekerja (kategori punya pekerjaan tetapi sementara tidak bekerja / temporarily absent)", "B. Bukan Angkatan Kerja karena tidak melakukan aktivitas ekonomi fisik", "C. Pengangguran Terbuka karena jam kerjanya 0 jam", "D. Setengah Penganggur"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Komposisi Bukan Angkatan Kerja)", "score": 3, "stem": "[OSL-SAK-15] Penduduk Usia Kerja yang tidak termasuk dalam Angkatan Kerja (tidak bekerja dan tidak mencari pekerjaan) diklasifikasikan oleh BPS ke dalam kelompok Bukan Angkatan Kerja. Manakah kegiatan yang termasuk dalam kelompok ini? (Pilih semua yang benar)", "reference": "A, B, C", "explanation": "Kunci: A, B, C. Bukan Angkatan Kerja BPS dibagi ke dalam 3 rincian kegiatan utama: (1) Bersekolah / kuliah, (2) Mengurus rumah tangga, (3) Lainnya (seperti lansia, penerima pensiun, dan penyandang disabilitas yang tidak mampu bekerja). Pencari kerja yang sedang menunggu panggilan wawancara (opsi D) berstatus Pengangguran Terbuka (masuk Angkatan Kerja). (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 12, 21)", "type": "multi", "qtype_label": "Pilihan Ganda Kompleks", "options": ["A. Bersekolah / kuliah", "B. Mengurus rumah tangga", "C. Penerima pensiun / lanjut usia yang tidak mampu bekerja lagi (kategori lainnya)", "D. Pencari kerja yang sedang menunggu panggilan wawancara"], "answer": [0, 1, 2], "partial": true}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Denominator Tingkat Setengah Pengangguran)", "score": 2, "stem": "[OSL-SAK-16] Berdasarkan pedoman resmi indikator ketenagakerjaan BPS, apakah penyebut (denominator) yang digunakan dalam menghitung Tingkat Setengah Pengangguran (TSP)?", "reference": "A", "explanation": "Kunci: A. Formula Tingkat Setengah Pengangguran (TSP) BPS: $\\text{TSP} = \\frac{\\text{Pekerja Jam Kerja < 35 Jam yang mencari/mau kerja}}{\\text{Jumlah Penduduk yang Bekerja (PB)}} \\times 100\\%$. Penyebut TSP adalah total penduduk yang Bekerja (PB), BUKAN total Angkatan Kerja (AK). Ini adalah jebakan ujian yang sering menguji ketelitian mahasiswa. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 17)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Jumlah Penduduk yang Bekerja (PB)", "B. Jumlah Angkatan Kerja (AK)", "C. Jumlah Penduduk Usia Kerja (PUK 15+)", "D. Jumlah Pengangguran Terbuka"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (7 Status Pekerjaan Utama BPS)", "score": 2, "stem": "[OSL-SAK-17] Dalam Kuesioner Sakernas, BPS mengidentifikasi status pekerjaan utama ke dalam 7 kategori baku. Manakah yang BUKAN merupakan salah satu dari 7 status pekerjaan utama tersebut?", "reference": "A", "explanation": "Kunci: A. 7 status pekerjaan utama BPS adalah: (1) Berusaha sendiri, (2) Berusaha dibantu buruh tidak tetap, (3) Berusaha dibantu buruh tetap, (4) Buruh/Karyawan/Pegawai, (5) Pekerja bebas pertanian, (6) Pekerja bebas non-pertanian, (7) Pekerja keluarga/tidak dibayar. 'Pekerja Paruh Waktu' adalah kategori durasi jam kerja (< 35 jam), bukan status pekerjaan! (Sumber: Kuesioner SAK.AGS25-AK.pdf; Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 24-26)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Pekerja Paruh Waktu", "B. Berusaha sendiri", "C. Berusaha dibantu buruh tetap / buruh dibayar", "D. Pekerja bebas di pertanian"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Tenaga Kerja Formal vs Informal)", "score": 2, "stem": "[OSL-SAK-18] Berdasarkan pendekatan status pekerjaan utama BPS, penduduk yang bekerja diklasifikasikan ke dalam Sektor Formal apabila berstatus sebagai...", "reference": "A", "explanation": "Kunci: A. Klasifikasi status formal-informal BPS mengelompokkan: (1) Tenaga Kerja Formal: Berusaha dibantu buruh tetap/dibayar dan Buruh/Karyawan/Pegawai; (2) Tenaga Kerja Informal: Berusaha sendiri, Berusaha dibantu buruh tidak tetap, Pekerja bebas pertanian, Pekerja bebas non-pertanian, dan Pekerja keluarga/tidak dibayar. (Sumber: Pertemuan 9 Indikator Ketenagakerjaan dan Pendidikan.pptx, slide 26-28)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Berusaha dibantu buruh tetap/dibayar dan Buruh/Karyawan/Pegawai", "B. Berusaha sendiri dan Berusaha dibantu buruh tidak tetap", "C. Pekerja bebas di pertanian dan pekerja bebas non-pertanian", "D. Pekerja keluarga/tidak dibayar"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Indikator Ketenagakerjaan Pemuda NEET)", "score": 2, "stem": "[OSL-SAK-19] Dalam statistik ketenagakerjaan modern BPS dan indikator SDGs 8.6.1, persentase penduduk usia muda (15-24 tahun) yang sedang tidak bekerja, tidak menempuh pendidikan, dan tidak mengikuti pelatihan diukur melalui indikator...", "reference": "A", "explanation": "Kunci: A. Indikator NEET (Youth Not in Employment, Education, or Training) mengukur proporsi generasi muda usia 15-24 tahun yang menganggur atau pasif secara ekonomi serta tidak sedang bersekolah atau mengikuti kursus/pelatihan kejuruan, sebagai sinyal potensi disrupsi transisi dari sekolah ke dunia kerja. (Sumber: Publikasi Ketenagakerjaan Sakernas BPS; Indikator SDGs BPS)", "type": "single", "qtype_label": "Pilihan Ganda", "options": ["A. Youth NEET Rate (Not in Employment, Education, or Training)", "B. Youth Underemployment Index", "C. Child Labor Prevalence Rate", "D. Youth Labor Turnover Ratio"], "answer": 0}, {"point_id": "Pertemuan 9", "point_name": "Indikator Sosial: Sakernas (Frekuensi Penyelenggaraan Sakernas)", "score": 2, "stem": "[OSL-SAK-20] BPS menyelenggarakan Survei Angkatan Kerja Nasional (Sakernas) dua kali dalam setahun, yaitu pada bulan Februari (dirancang untuk estimasi hingga tingkat provinsi) dan bulan Agustus (dirancang untuk estimasi hingga tingkat kabupaten/kota).", "reference": "true", "explanation": "Kunci: Benar. Sakernas dilaksanakan dua putaran per tahun: (1) Sakernas Februari memiliki ukuran sampel sekitar 75.000 rumah tangga yang dirancang menghasilkan angka estimasi ketenagakerjaan tingkat nasional dan provinsi; sedangkan (2) Sakernas Agustus memiliki ukuran sampel sekitar 300.000 rumah tangga yang dirancang untuk estimasi hingga tingkat kabupaten/kota. (Sumber: Buku Pedoman Teknis Sakernas BPS 2025; Pertemuan 9 slide 21)", "type": "judge", "qtype_label": "Benar / Salah", "answer": true}]};
+const QS = DATA.questions;
+document.getElementById("total").textContent = QS.length;
+
+/* Normalisasi pilihan */
+QS.forEach(q => {
+  if (q.type === "judge") { q._opts = ["Benar", "Salah"]; q._ans = (q.answer === true) ? 0 : 1; }
+  else if (q.type === "single") { q._opts = q.options; q._ans = q.answer; }
+  else if (q.type === "multi") { q._opts = q.options; q._ansArr = [...q.answer].sort((a, b) => a - b); }
+});
+
+const state = QS.map(q => ({
+  answered: false, correct: null, earned: 0,
+  userAnswer: q.type === "multi" ? [] : "", selfLabel: ""
+}));
+let idx = 0;
+
+const GRADES = [
+  ["Benar Sempurna", 1.0], ["Sebagian Besar Benar", 0.75], ["Benar Separuh", 0.5], ["Sebagian Kecil Benar", 0.25], ["Belum Menguasai", 0]
+];
+
+function esc(s) { const d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
+function L(i) { return String.fromCharCode(65 + i); }
+function letters(arr) { return arr.length ? arr.map(L).join(", ") : "—"; }
+function fullScore() { return QS.reduce((a, q) => a + (q.score || 0), 0); }
+function earned() { return state.reduce((a, s) => a + s.earned, 0); }
+function round1(x) { return Math.round(x * 10) / 10; }
+function isChoice(q) { return q.type === "single" || q.type === "judge"; }
+
+function cleanLatex(tex) {
+  let t = tex;
+  t = t.replace(/\\text\{([^}]+)\}/g, "$1");
+  let prev;
+  do {
+    prev = t;
+    t = t.replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, '<span class="m-frac"><span class="m-num">$1</span><span class="m-den">$2</span></span>');
+  } while (t !== prev && t.includes("\\frac{"));
+  t = t.replace(/\\times/g, "×")
+       .replace(/\\cdot/g, "·")
+       .replace(/\\le/g, "≤")
+       .replace(/\\ge/g, "≥")
+       .replace(/\\ne/g, "≠")
+       .replace(/\\approx/g, "≈")
+       .replace(/\\pm/g, "±")
+       .replace(/\\sum/g, "∑")
+       .replace(/\\alpha/g, "α")
+       .replace(/\\beta/g, "β")
+       .replace(/\\lambda/g, "λ")
+       .replace(/\\Delta/g, "Δ")
+       .replace(/\\left\[/g, "[")
+       .replace(/\\right\]/g, "]")
+       .replace(/\\left\(/g, "(")
+       .replace(/\\right\)/g, ")")
+       .replace(/\\%/g, "%")
+       .replace(/\\,/g, " ")
+       .replace(/\\quad/g, "   ");
+  t = t.replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>");
+  t = t.replace(/_([a-zA-Z0-9])/g, "<sub>$1</sub>");
+  t = t.replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>");
+  t = t.replace(/\^([a-zA-Z0-9])/g, "<sup>$1</sup>");
+  return t;
+}
+
+function formatMath(str) {
+  if (!str) return "";
+  let s = esc(str);
+  s = s.replace(/\$\$([\s\S]*?)\$\$/g, (m, c) => `<div class="math-disp">${cleanLatex(c)}</div>`);
+  s = s.replace(/\$([^\$\n]+?)\$/g, (m, c) => `<span class="math-inline">${cleanLatex(c)}</span>`);
+  return s;
+}
+
+function typesetMath() {
+  const warn = document.getElementById("mjwarn");
+  if (window.__MATHJAX_FAILED__ && warn) warn.style.display = "block";
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([document.getElementById("main")]).catch(() => {
+      if (warn) warn.style.display = "block";
+    });
+  }
+}
+
+function updateHeader() {
+  const done = state.filter(s => s.answered).length;
+  document.getElementById("fill").style.width = (done / QS.length * 100) + "%";
+  document.getElementById("stats").textContent =
+    `Selesai ${done} / ${QS.length} Soal ｜ Skor Saat Ini ${round1(earned())} / ${fullScore()} Poin`;
+}
+
+function render() {
+  updateHeader();
+  const main = document.getElementById("main");
+  if (idx >= QS.length) { renderSummary(main); return; }
+  const q = QS[idx], st = state[idx];
+  let html = `<div class="card">
+    <div class="chips">
+      <span class="chip">Soal ${idx + 1} / ${QS.length} · ${esc(q.qtype_label || q.type)}</span>
+      ${q.point_name ? `<span class="chip point">Materi: ${esc(q.point_name)}</span>` : ""}
+    </div>
+    <div class="stem">${formatMath(q.stem)}</div>`;
+
+  if (isChoice(q)) {
+    const isJudge = q.type === "judge";
+    html += (isJudge ? '<div class="judge-row">' : "") + q._opts.map((o, i) => {
+      let cls = "opt";
+      if (st.answered) {
+        if (i === q._ans) cls += " right";
+        else if (i === st.userAnswer) cls += " wrong";
+        else cls += " dim";
+      }
+      const text = esc(o).replace(/^[A-Z]\.\s*/, "");
+      const label = isJudge ? esc(o) : `${L(i)}. ${formatMath(text)}`;
+      return `<button class="${cls}" data-i="${i}" ${st.answered ? "disabled" : ""}>${label}</button>`;
+    }).join("") + (isJudge ? "</div>" : "");
+    if (st.answered) {
+      const ansLabel = isJudge ? q._opts[q._ans] : L(q._ans);
+      html += `<div class="panel ${st.correct ? "ok" : "bad"}"><b class="tag">${st.correct ? "✓ Benar" : "✗ Salah"} ｜ Kunci Jawaban: ${ansLabel} ｜ Skor: ${round1(st.earned)}/${q.score} Poin</b>${formatMath(q.explanation || "")}</div>`;
+    }
+  } else if (q.type === "multi") {
+    const sel = new Set(st.userAnswer);
+    html += q._opts.map((o, i) => {
+      let cls = "opt";
+      if (!st.answered) { if (sel.has(i)) cls += " picked"; }
+      else {
+        const isAns = q._ansArr.includes(i), isPick = sel.has(i);
+        if (isAns && isPick) cls += " right";
+        else if (!isAns && isPick) cls += " wrong";
+        else if (isAns && !isPick) cls += " missed";
+        else cls += " dim";
+      }
+      const text = esc(o).replace(/^[A-Z]\.\s*/, "");
+      return `<button class="${cls}" data-i="${i}" ${st.answered ? "disabled" : ""}>${L(i)}. ${formatMath(text)}</button>`;
+    }).join("");
+    if (!st.answered) {
+      html += `<div class="hint">Pilihan Ganda Kompleks: Pilih semua jawaban yang benar lalu klik konfirmasi${q.partial ? " (Jawaban sebagian tanpa pilihan keliru mendapat setengah poin)" : " (Salah memilih atau kurang memilih tidak mendapat poin)"}</div>`;
+      html += `<button class="btn" id="confirm" ${sel.size ? "" : "disabled"}>Konfirmasi Jawaban</button>`;
+    } else {
+      const cls = st.correct ? "ok" : (st.earned > 0 ? "half" : "bad");
+      const head = st.correct ? "✓ Benar Sempurna" : (st.earned > 0 ? "◐ Jawaban Sebagian (Dapat Setengah Poin)" : "✗ Salah");
+      html += `<div class="panel ${cls}"><b class="tag">${head} ｜ Kunci Jawaban: ${letters(q._ansArr)} ｜ Pilihan Anda: ${letters([...sel].sort((a, b) => a - b))} ｜ Skor: ${round1(st.earned)}/${q.score} Poin</b>${formatMath(q.explanation || "")}</div>`;
+    }
+  } else { /* text esai / isian */
+    html += `<textarea id="ta" placeholder="Tuliskan jawaban Anda di sini (untuk soal hitungan/analisis, sertakan langkah perhitungan kunci)" ${st.answered ? "disabled" : ""}>${esc(st.userAnswer)}</textarea>`;
+    if (!st.answered) html += `<button class="btn" id="submit">Kirim & Lihat Kunci Jawaban / Rubrik</button>`;
+    else {
+      html += `<div class="panel ref"><b class="tag">📖 Kunci Jawaban & Rubrik Penilaian (Maks ${q.score} Poin)</b>${formatMath(q.reference || "")}${q.explanation ? "\n\n【Peringatan Kesalahan Umum】" + formatMath(q.explanation) : ""}</div>`;
+      html += `<div id="selfgrade"><span class="hint">Evaluasi mandiri berdasarkan rubrik penilaian:</span><br>` +
+        GRADES.map(([label, f], gi) =>
+          `<button data-g="${gi}" class="${st.selfLabel === label ? "sel" : ""}">${label} (${round1(q.score * f)} Poin)</button>`).join("") + `</div>`;
+    }
+  }
+
+  html += `<div id="nav">
+    <button class="btn ghost" id="prev" ${idx === 0 ? "style='visibility:hidden'" : ""}>← Soal Sebelumnya</button>
+    ${navRight(q, st)}
+  </div></div>`;
+  main.innerHTML = html;
+  typesetMath();
+  bind(q, st);
+}
+
+function navRight(q, st) {
+  const canGo = st.answered && (q.type !== "text" || st.selfLabel);
+  if (!canGo) return `<span class="hint" style="align-self:center">${st.answered ? "Silakan beri nilai evaluasi mandiri terlebih dahulu" : "Jawab soal terlebih dahulu untuk melanjutkan"}</span>`;
+  return `<button class="btn" id="next">${idx === QS.length - 1 ? "Lihat Transkrip Nilai →" : "Soal Berikutnya →"}</button>`;
+}
+
+function bind(q, st) {
+  document.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    if (st.answered) return;
+    const i = +b.dataset.i;
+    if (isChoice(q)) {
+      st.userAnswer = i;
+      st.correct = i === q._ans;
+      st.earned = st.correct ? q.score : 0;
+      st.answered = true;
+    } else if (q.type === "multi") {
+      const sel = new Set(st.userAnswer);
+      sel.has(i) ? sel.delete(i) : sel.add(i);
+      st.userAnswer = [...sel].sort((a, b) => a - b);
+    }
+    render();
+  }));
+  const confirm = document.getElementById("confirm");
+  if (confirm) confirm.addEventListener("click", () => {
+    const picks = st.userAnswer, ans = q._ansArr;
+    const wrongPick = picks.some(i => !ans.includes(i));
+    const allRight = picks.length === ans.length && !wrongPick;
+    st.correct = allRight;
+    st.earned = allRight ? q.score : (!wrongPick && picks.length > 0 && q.partial ? q.score / 2 : 0);
+    st.answered = true;
+    render();
+  });
+  const ta = document.getElementById("ta");
+  if (ta) ta.addEventListener("input", () => st.userAnswer = ta.value);
+  const sub = document.getElementById("submit");
+  if (sub) sub.addEventListener("click", () => { st.answered = true; render(); });
+  document.querySelectorAll("#selfgrade button").forEach(b => b.addEventListener("click", () => {
+    const [label, f] = GRADES[+b.dataset.g];
+    st.selfLabel = label; st.earned = q.score * f;
+    render();
+  }));
+  const prev = document.getElementById("prev");
+  if (prev) prev.addEventListener("click", () => { idx--; render(); });
+  const next = document.getElementById("next");
+  if (next) next.addEventListener("click", () => { idx++; render(); });
+}
+
+function resultText(q, st) {
+  if (q.type === "text") return `Evaluasi Mandiri: ${st.selfLabel || "—"}`;
+  if (q.type === "multi") return st.correct ? "✓ Benar" : `${st.earned > 0 ? "◐ Jawaban Sebagian" : "✗ Salah"} (Pilihan: ${letters(st.userAnswer)})`;
+  const pick = st.userAnswer === "" ? "—" : (q.type === "judge" ? q._opts[st.userAnswer] : L(st.userAnswer));
+  return st.correct ? "✓ Benar" : `✗ Salah (Pilihan: ${pick})`;
+}
+
+function renderSummary(main) {
+  const total = fullScore(), got = round1(earned());
+  const pct = total ? Math.round(got / total * 100) : 0;
+  const rows = QS.map((q, i) => {
+    const st = state[i], miss = st.earned < q.score;
+    return `<tr class="${miss ? "miss" : ""}"><td>${i + 1}</td><td>${esc(q.qtype_label || q.type)}</td><td>${esc(q.point_name || "-")}</td><td>${round1(st.earned)}/${q.score}</td><td>${resultText(q, st)}</td></tr>`;
+  }).join("");
+  const missCount = QS.filter((q, i) => state[i].earned < q.score).length;
+  main.innerHTML = `<div class="card">
+    <div class="chips"><span class="chip">Transkrip Nilai</span></div>
+    <div id="score">${got} / ${total} Poin (${pct}%)</div>
+    <div class="hint">${missCount ? "Baris berwarna merah menandakan soal yang belum maksimal. Pelajari kembali pembahasannya untuk evaluasi berkala." : "Sempurna! Semua soal dijawab dengan benar."}</div>
+    <table><tr><th>#</th><th>Tipe Soal</th><th>Materi</th><th>Skor</th><th>Hasil</th></tr>${rows}</table>
+    <button class="btn" id="export">Salin Catatan Evaluasi Jawaban (untuk Asisten/Dosen)</button>
+    <button class="btn ghost" id="review">← Tinjau Ulang Soal</button>
+    <textarea id="export-area" readonly></textarea>
+    <div class="hint" id="copyhint"></div>
+  </div>`;
+  typesetMath();
+  document.getElementById("review").addEventListener("click", () => { idx = 0; render(); });
+  document.getElementById("export").addEventListener("click", () => {
+    const text = exportText();
+    const area = document.getElementById("export-area");
+    area.style.display = "block"; area.value = text;
+    area.select();
+    try { navigator.clipboard.writeText(text); document.getElementById("copyhint").textContent = "Berhasil disalin ke clipboard! Silakan tempelkan ke kolom pesan."; }
+    catch (e) { document.getElementById("copyhint").textContent = "Silakan pilih dan salin teks di atas secara manual, lalu tempelkan ke kolom pesan."; }
+  });
+}
+
+function exportText() {
+  const lines = [`【Riwayat Latihan UAS OSL】${DATA.title} ｜ ${new Date().toLocaleString("id-ID")}`,
+                 `Total Skor: ${round1(earned())} / ${fullScore()} Poin`];
+  QS.forEach((q, i) => {
+    const st = state[i];
+    lines.push(`---`);
+    lines.push(`Q${i + 1} ｜ ${q.qtype_label || q.type} ｜ Materi: ${q.point_id || ""} ${q.point_name || ""} ｜ Skor: ${round1(st.earned)}/${q.score} Poin`);
+    if (q.type === "multi") {
+      lines.push(`Pilihan Saya: ${letters(st.userAnswer)} (Kunci: ${letters(q._ansArr)}, ${st.correct ? "Benar" : st.earned > 0 ? "Jawaban Sebagian" : "Salah"})`);
+    } else if (isChoice(q)) {
+      const pick = st.userAnswer === "" ? "Belum dijawab" : (q.type === "judge" ? q._opts[st.userAnswer] : L(st.userAnswer));
+      const ans = q.type === "judge" ? q._opts[q._ans] : L(q._ans);
+      lines.push(`Pilihan Saya: ${pick} (Kunci: ${ans}, ${st.correct ? "Benar" : "Salah"})`);
+    } else {
+      lines.push(`Evaluasi Mandiri: ${st.selfLabel || "Belum dievaluasi"}`);
+      lines.push(`Jawaban Saya: ${(st.userAnswer || "（Belum dijawab）").trim()}`);
+    }
+  });
+  return lines.join("\n");
+}
+
+render();
+</script>
+</body>
+</html>

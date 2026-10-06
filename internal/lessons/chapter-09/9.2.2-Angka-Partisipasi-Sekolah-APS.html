@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>9.2 Indikator Pendidikan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>9.2 Indikator Pendidikan</h2><a href="#p-9.2.2">9.2.2 Angka Partisipasi Sekolah APS ⭐</a></nav>
+<main>
+<h1>9.2 Indikator Pendidikan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 9: Ketenagakerjaan dan Pendidikan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-9.2.2">
+<h2>9.2.2 Angka Partisipasi Sekolah APS ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 61-65, 57-60, 72-74]</div>
+<div class="box info">📌 <div class="rich"><p>Formula 4 kelompok usia APS, komparasi analitis APM vs APK vs APS, integrasi indikator pendidikan IPM (AMH 15+ dan RLS/MYS) (EXT-2).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>ANGKA PARTISIPASI SEKOLAH (APS): APS 7-12 = Jumlah penduduk 7-12 tahun bersekolah / Jumlah penduduk usia 7-12 tahun * 100 [slide 63]. Kondef: Proporsi dari semua anak yang masih sekolah pada suatu kelompok umur tertentu terhadap penduduk dengan kelompok umur yang sesuai. Sejak 2009 Pendidikan Non Formal turut diperhitungkan [slide 64]. Angka Melek Huruf: AMH15+ = MH15+ / P15+ * 100 [slide 58]. Kondef: Proporsi penduduk berusia 15 tahun ke atas yang memiliki kemampuan membaca dan menulis kalimat sederhana dalam huruf latin/arab/lainnya [slide 59]. Rata-rata Lama Sekolah (MYS): Jumlah tahun belajar penduduk usia 15 tahun ke atas yang telah diselesaikan dalam pendidikan formal (tidak termasuk tahun yang mengulang) [slide 73].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika ada sensus di suatu RT, petugas hanya bertanya kepada anak usia 14 tahun: 'Adik masih sekolah atau sudah berhenti?'. Petugas tidak peduli apakah si adik masih kelas 6 SD atau sudah kelas 1 SMA. Selama dia masih aktif sekolah, dia dihitung dalam APS kelompok 13-15 tahun.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Formulasi Matematis Empat Kelompok Usia APS</p>
+<p>BPS membagi APS ke dalam 4 kelompok umur standar yang bersesuaian dengan jenjang wajar Dikdasmen dan Dikti [slide 63]:</p>
+<p>$$\text{APS}_{7-12} = \frac{\text{Penduduk usia 7-12 tahun masih bersekolah}}{\text{Jumlah penduduk usia 7-12 tahun}} \times 100\%$$<br>$$\text{APS}_{13-15} = \frac{\text{Penduduk usia 13-15 tahun masih bersekolah}}{\text{Jumlah penduduk usia 13-15 tahun}} \times 100\%$$<br>$$\text{APS}_{16-18} = \frac{\text{Penduduk usia 16-18 tahun masih bersekolah}}{\text{Jumlah penduduk usia 16-18 tahun}} \times 100\%$$<br>$$\text{APS}_{19-24} = \frac{\text{Penduduk usia 19-24 tahun masih bersekolah}}{\text{Jumlah penduduk usia 19-24 tahun}} \times 100\%$$</p>
+<p>### 2. Matriks Komparasi Segitiga Partisipasi Pendidikan: APM vs APK vs APS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Aspek Pembeda</th><th>Angka Partisipasi Murni (APM)</th><th>Angka Partisipasi Kasar (APK)</th><th>Angka Partisipasi Sekolah (APS)</th></tr></thead><tbody><tr><td><strong>Fokus Utama</strong></td><td>Ketepatan usia sekolah (*on-time schooling*) [slide 70]</td><td>Kapasitas/daya tampung sekolah (*capacity*) [slide 67]</td><td>Akses riil penduduk usia sekolah (*access*) [slide 64]</td></tr><tr><td><strong>Pembilang</strong></td><td>Siswa usia resmi pada jenjang yang sesuai</td><td>Seluruh siswa di jenjang tsb (semua umur)</td><td>Seluruh anak pada usia tsb yang sekolah (semua jenjang)</td></tr><tr><td><strong>Penyebut</strong></td><td>Penduduk kelompok umur jenjang tsb</td><td>Penduduk kelompok umur jenjang tsb</td><td>Penduduk kelompok umur tsb</td></tr><tr><td><strong>Rentang Nilai</strong></td><td>$0\% \le \text{APM} \le 100\%$</td><td>Bisa $&gt; 100\%$</td><td>$0\% \le \text{APS} \le 100\%$</td></tr><tr><td><strong>Sifat Relatif</strong></td><td>$\text{APM} \le \text{APK}$ dan $\text{APM} \le \text{APS}$</td><td>APK bisa paling tinggi di antara ketiganya</td><td>Selalu lebih besar atau sama dengan APM</td></tr></tbody></table></div>
+<p>### 3. Indikator Komposit Pendidikan IPM (EXT-2)</p>
+<p>Dalam mengukur dimensi pengetahuan pada Indeks Pembangunan Manusia (IPM) BPS [slide 58, 73]:<br>- <strong>Angka Melek Huruf (AMH 15+)</strong>: Mengukur stok keaksaraan dasar. Sejak metode baru IPM 2014, AMH digantikan oleh Harapan Lama Sekolah (HLS), namun AMH tetap menjadi indikator pemantauan SDGs Target 4.6 [slide 56, 58].<br>- <strong>Rata-rata Lama Sekolah (RLS / Mean Years of Schooling)</strong>: Mengukur akumulasi modal manusia (*human capital stock*). Dihitung dari kombinasi ijazah tertinggi dan kelas tertinggi yang pernah diselesaikan, dengan syarat <strong>tahun mengulang tidak dihitung</strong> [slide 73].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Manakah pernyataan yang paling akurat mengenai perbandingan antara APM, APK, dan APS untuk kelompok jenjang SMP (usia 13-15 tahun)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 62-64, 70]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Nilai APS 13-15 tahun selalu lebih kecil atau sama dengan APM SMP.</button>
+<button class="ex-opt" data-i="1">B. Nilai APM SMP selalu lebih kecil atau sama dengan APS 13-15 tahun.</button>
+<button class="ex-opt" data-i="2">C. Nilai APK SMP tidak mungkin lebih besar daripada APS 13-15 tahun.</button>
+<button class="ex-opt" data-i="3">D. Nilai APS 13-15 tahun dapat melebihi 100% jika banyak siswa mengulang kelas.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pembilang APM SMP hanya menghitung anak usia 13-15 tahun yang bersekolah di SMP.<br>- Pembilang APS 13-15 tahun menghitung seluruh anak usia 13-15 tahun yang bersekolah di jenjang apa pun (SD, SMP, maupun SMA).<br>- Karena pembilang APM adalah himpunan bagian dari pembilang APS, maka nilai $\text{APM} \le \text{APS}$ mutlak selalu berlaku.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;RLS=16 tahun&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Seseorang menempuh pendidikan SD selama 7 tahun (tinggal kelas 1 kali saat kelas 3), kemudian menyelesaikan SMP selama 3 tahun, SMA selama 3 tahun, dan kuliah D4/S1 selama 4 tahun hingga wisuda. Berdasarkan konsep BPS, berapakah Rata-rata Lama Sekolah (RLS) yang disumbangkan oleh individu tersebut? Tuliskan dalam format: <code>RLS=X tahun</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 58, 73]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Pendidikan yang diselesaikan:<br>   - SD: 6 tahun jenjang resmi (tahun ke-7 adalah tahun mengulang).<br>   - SMP: 3 tahun.<br>   - SMA: 3 tahun.<br>   - Perguruan Tinggi (S1): 4 tahun.<br>2. Sesuai konsep baku BPS [slide 73], tahun yang mengulang TIDAK dihitung sebagai lama sekolah.<br>3. Total tahun belajar yang diakui:<br>   $$\text{RLS} = 6 + 3 + 3 + 4 = 16 \text{ tahun}$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>sd_resmi = 6<br>smp = 3<br>sma = 3<br>perti = 4<br>rls = sd_resmi + smp + sma + perti<br>print(f'RLS={rls} tahun')<br># Output: RLS=16 tahun<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Mengasumsikan APS bisa melebihi 100%. Berbeda dengan APK yang pembilangnya mencakup siswa lintas umur, pembilang APS adalah subset dari penyebutnya (hanya anak-anak pada kelompok umur tersebut yang bersekolah), sehingga APS secara matematis tidak pernah bisa melebihi 100%.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>APS = Hak Sekolah pada Kelompok Umur (Tidak peduli jenjang). RLS = Tahun sekolah formal selesai (tidak termasuk mengulang).</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.2.1</div>
+<button class="donebtn" data-id="9.2.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

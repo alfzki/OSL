@@ -91,7 +91,7 @@ def main():
 
     html = (TEMPLATE.read_text(encoding="utf-8")
             .replace("__TITLE__", data["title"])
-            .replace("__GENERATED__", "生成于 " + datetime.date.today().isoformat())
+            .replace("__GENERATED__", "Dibuat pada " + datetime.date.today().isoformat())
             .replace("__DATA__", json.dumps(data, ensure_ascii=False)))
     out = pathlib.Path(args.out) if args.out else src.with_suffix(".html")
     out.parent.mkdir(parents=True, exist_ok=True)

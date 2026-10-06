@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>12.1 Margin Perdagangan dan Distribusi · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>12.1 Margin Perdagangan dan Distribusi</h2><a href="#p-12.1.2">12.1.2 Survei Pola Distribusi Perdagangan Poldis ⭐</a></nav>
+<main>
+<h1>12.1 Margin Perdagangan dan Distribusi<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 12: Perdagangan dan Indikator Harga ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 1 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-12.1.2">
+<h2>12.1.2 Survei Pola Distribusi Perdagangan Poldis ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 10-13]</div>
+<div class="box info">📌 <div class="rich"><p>Tujuan dan metodologi Survei Poldis, pemetaan rantai saluran distribusi komoditas strategis, konsep marketed surplus produsen, dan analisis efisiensi perdagangan antarpelaku.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Survei Pola Distribusi Perdagangan melihat rantai distribusi suatu barang mulai dari produsen hingga konsumen. Konsep: untuk melihat pola distribusi perdagangan komoditi antar pelaku usaha perdagangan dan antar wilayah perdagangan. Rantai distribusi perdagangan yang pendek menunjukkan distribusi suatu komoditas dari wilayah tersebut baik, sedang jika rantai distribusinya panjang menyebabkan beban konsumen semakin tinggi [slide 7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah barang diproduksi di desa tetapi dikonsumsi di kota metropolitan, barang tersebut dapat berpindah melalui berbagai alternatif jalur distribusi. Jalur yang efisien (misalnya melalui koperasi tani atau sentra distribusi langsung) memungkinkan petani menikmati harga jual yang adil dan konsumen membayar harga yang terjangkau. Sebaliknya, bila barang harus melewati tengkulak lokal, pedagang pengumpul kecamatan, pedagang besar kabupaten, distributor provinsi, hingga pedagang pengecer pasar becek, biaya dan margin keuntungan akan bertumpuk berlipat ganda.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Tujuan dan Ruang Lingkup Survei Poldis BPS<br>Survei Pola Distribusi Perdagangan (Poldis) diselenggarakan oleh Direktorat Statistik Distribusi BPS dengan tujuan utama [slide 7-8]:<br>1. Mengidentifikasi pola utama rantai distribusi perdagangan untuk komoditas-komoditas kebutuhan pokok dan strategis (seperti beras, cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, dan minyak goreng).<br>2. Mengetahui simpul-simpul pedagang perantara yang terlibat, baik pedagang besar (grosir/distributor), agen, sub-agen, pedagang pengumpul, maupun pedagang eceran.<br>3. Menghitung besaran Margin Perdagangan dan Pengangkutan (MPP) pada setiap rantai transaksi perdagangan, dari tingkat produsen hingga ke konsumen akhir.<br>4. Mengetahui cakupan wilayah distribusi perdagangan (perdagangan dalam provinsi, antarkabupaten/kota, maupun antarpulau/antarprovinsi).</p>
+<p>### 2. Saluran Perdagangan dan Konsep Marketed Surplus<br>Berdasarkan bagan saluran perdagangan BPS [slide 10]:<br>- <strong>Produsen</strong>: Penghasil komoditas pertama (seperti petani tanaman pangan, peternak, atau pabrik pengolahan).<br>- <strong>Marketed Surplus Produsen</strong>: Sebagian dari total produksi fisik yang benar-benar dijual ke pasar komersial setelah dikurangi konsumsi sendiri oleh rumah tangga produsen, benih/bibit simpanan, dan penyusutan susut panen.<br>- <strong>Pedagang Besar I &amp; II (*Wholesaler/Distributor*)</strong>: Membeli dalam partai besar dari produsen atau sentra produksi antarpulau untuk disalurkan ke distributor sekunder atau pengecer.<br>- <strong>Pedagang Eceran (*Retailer*)</strong>: Menjual komoditas dalam satuan eceran langsung ke pemakai akhir.<br>- <strong>Konsumen Akhir</strong>: Terbagi menjadi Konsumen Rumah Tangga (*household*) dan Konsumen Non-Rumah Tangga (hotel, restoran, katering/horeka, industri makanan olahan).</p>
+<p>### 3. Matriks Perbandingan Karakteristik Rantai Distribusi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indikator</th><th>Rantai Distribusi Pendek</th><th>Rantai Distribusi Panjang</th></tr></thead><tbody><tr><td><strong>Jumlah Pelaku Perantara</strong></td><td>1 - 2 simpul (misal: Produsen -&gt; Pengecer -&gt; Konsumen)</td><td>$\ge 3$ simpul (Produsen -&gt; Tengkulak -&gt; Pedagang Besar -&gt; Pengecer -&gt; Konsumen)</td></tr><tr><td><strong>Tingkat Efisiensi</strong></td><td>Tinggi (biaya logistik minimal)</td><td>Rendah (banyak perpindahan dan biaya bongkar muat)</td></tr><tr><td><strong>Nilai MPP Total</strong></td><td>Rendah (umumnya $&lt; 30\%$)</td><td>Tinggi (dapat mencapai $&gt; 60\%$)</td></tr><tr><td><strong>Disparitas Harga</strong></td><td>Selisih harga produsen-konsumen sempit</td><td>Selisih harga produsen-konsumen sangat lebar</td></tr><tr><td><strong>Risiko Susut Fisik</strong></td><td>Rendah (barang cepat sampai ke konsumen)</td><td>Tinggi (risiko busuk/rusak tinggi pada hortikultura)</td></tr></tbody></table></div>
+<p>### 4. Manfaat Kebijakan Pengendalian Inflasi Pangan<br>Data Poldis digunakan oleh Tim Pengendalian Inflasi Daerah (TPID) dan Tim Pengendalian Inflasi Pusat (TPIP) untuk mendeteksi simpul distribusi mana yang mengalami hambatan (*bottleneck*). Bila disparitas harga terjadi karena kartel atau penimbunan pada tingkat pedagang besar, pemerintah dapat melakukan intervensi operasi pasar terarah di sentra grosir terkait.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan rilis hasil Survei Poldis BPS, komoditas bawang merah memiliki dua saluran perdagangan. Saluran 1 memiliki MPP Total 25% dengan melibatkan satu perantara, sedangkan Saluran 2 memiliki MPP Total 65% dengan melibatkan empat perantara. Dari sudut pandang stabilitas harga dan efisiensi pasar, kesimpulan yang paling valid adalah...</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 7, 10]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Saluran 2 lebih efisien karena melibatkan lebih banyak tenaga kerja pedagang perantara.</button>
+<button class="ex-opt" data-i="1">B. Saluran 1 lebih efisien karena memiliki rantai yang lebih pendek dan membebani konsumen dengan margin harga yang lebih rendah.</button>
+<button class="ex-opt" data-i="2">C. Saluran 2 memberikan jaminan keuntungan yang jauh lebih tinggi bagi petani produsen.</button>
+<button class="ex-opt" data-i="3">D. Kedua saluran memiliki efisiensi yang sama karena harga di tingkat produsen identik.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai konsep resmi BPS pada Slide 7, rantai distribusi perdagangan yang pendek menunjukkan distribusi yang efisien dan baik bagi perekonomian, karena meminimalkan biaya logistik perantara dan tidak membebani konsumen akhir dengan margin yang berlebihan (MPP 25% vs 65%). Pada Saluran 2, penambahan simpul perantara justru memperlebar disparitas harga tanpa memberikan tambahan pendapatan riil bagi petani produsen.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Mengecilkan Peran Konsumen Non-Rumah Tangga</strong>: Dalam survei Poldis komoditas beras atau minyak goreng, serapan oleh industri katering dan pabrik makanan sering kali mendominasi saluran perdagangan eceran.</li><li><strong>Menyederhanakan Rantai Tanpa Bukti Survei</strong>: Dalam soal analisis, jangan berasumsi setiap komoditas memiliki rantai yang seragam; rantai distribusi beras antarprovinsi sangat berbeda karakternya dengan rantai distribusi sayuran segar lokal.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Poldis Memetakan Jejak Distribusi: Rantai Pendek Efisien dan Menyejahterakan, Rantai Panjang Membebani Konsumen.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.1.1, 12.2.1</div>
+<button class="donebtn" data-id="12.1.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

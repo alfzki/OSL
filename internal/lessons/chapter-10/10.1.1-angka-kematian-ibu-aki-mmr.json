@@ -1,0 +1,102 @@
+{
+  "point_id": "10.1.1",
+  "title": "Angka Kematian Ibu AKI MMR",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 10,
+    "silabus_topic": "Indikator Kesehatan dan SDGs 3",
+    "bps_subject": "Indikator Mortalitas Ibu dan Kesehatan Reproduksi"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "4-20",
+        "content": "Definisi AKI MMR, formula per 100.000 KH slide 13, hasil SP2020 Long Form (MMR Indonesia 189) slide 14, perbandingan ASEAN slide 15-16, target SDGs 3.1 (< 70 per 100.000 KH pada 2030) slide 9."
+      },
+      {
+        "file": "Pertemuan_10_Indikator_Kesehatan.md",
+        "slide_or_page": "33-36",
+        "content": "Kesehatan reproduksi slide 34, lima komplikasi utama penyebab hampir 75% kematian ibu: severe bleeding, infections, high blood pressure/eklamsia, complications from delivery, unsafe abortion slide 35."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Angka Kematian Ibu (Maternal Mortality Ratio / MMR) mengukur risiko kematian seorang wanita yang berkaitan langsung dengan peristiwa kehamilan, persalinan, dan masa nifas (hingga 42 hari setelah terminasi kehamilan). Karena kematian maternal adalah kejadian yang relatif jarang (rare event) dibandingkan jutaan proses persalinan, indikator ini distandarisasi menggunakan pengali 100.000 kelahiran hidup. MMR mencerminkan kualitas sistem pelayanan kebidanan gawat darurat, asuhan antenatal, serta kondisi sosial ekonomi dan gender di suatu wilayah.",
+    "bps_definition": "Angka Kematian Ibu (Maternal Mortality Ratio / MMR) adalah banyaknya kematian perempuan yang disebabkan oleh komplikasi kehamilan, persalinan, atau nifas sampai dengan 42 hari setelah melahirkan atau terminasi kehamilan (bukan karena kecelakaan atau cedera insidental), per 100.000 kelahiran hidup pada tahun tertentu di daerah tertentu [Pertemuan_10_Indikator_Kesehatan.md, slide 13].",
+    "boundary_conditions": "Rentang waktu kematian maternal mencakup masa kehamilan, proses persalinan, hingga 42 hari pascasalin (masa nifas). Denominator (penyebut) adalah jumlah kelahiran hidup (Live Births), bukan seluruh kelahiran dan bukan jumlah wanita usia subur. Konstanta pengali wajib K = 100.000. Target SDGs 3.1 menargetkan penurunan MMR global hingga kurang dari 70 per 100.000 kelahiran hidup pada tahun 2030 [slide 9]. Berdasarkan Long Form SP2020, MMR Indonesia adalah 189 per 100.000 KH, dengan disparitas regional dari DKI Jakarta (48) hingga Papua (565) [slide 14].",
+    "formula_latex": "$$\\text{MMR} = \\frac{\\sum \\text{Kematian Ibu Maternal}}{\\sum \\text{Kelahiran Hidup}} \\times 100.000$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Sebuah provinsi pada tahun 2023 mencatat 120 kematian ibu yang disebabkan oleh komplikasi obstetrik (kehamilan, persalinan, dan nifas dalam kurun waktu 42 hari). Pada tahun yang sama, tercatat 62.500 bayi yang lahir hidup. Hitunglah Angka Kematian Ibu (MMR) provinsi tersebut, bandingkan dengan angka nasional hasil SP2020 Long Form (189 per 100.000 KH) dan target Tujuan Pembangunan Berkelanjutan (SDGs 3.1) tahun 2030 (< 70 per 100.000 KH).",
+    "data_table": "| Indikator | Simbol | Nilai | Satuan |\n|---|---|---|---|\n| Jumlah Kematian Ibu Maternal | $D_{\\text{mat}}$ | 120 | jiwa |\n| Jumlah Kelahiran Hidup | $B$ | 62.500 | kelahiran hidup |\n| Konstanta Standar BPS | $K$ | 100.000 | - |\n| Angka Nasional SP2020 LF | $\\text{MMR}_{\\text{nas}}$ | 189 | per 100.000 KH |\n| Target SDGs 3.1 (2030) | $\\text{MMR}_{\\text{SDG}}$ | < 70 | per 100.000 KH |",
+    "step_by_step_solution": "1. Identifikasi komponen data:\n   - Jumlah Kematian Ibu Maternal ($D_{\\text{mat}}$) = 120\n   - Jumlah Kelahiran Hidup ($B$) = 62.500\n   - Konstanta pengali ($K$) = 100.000\n2. Terapkan formula Maternal Mortality Ratio BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 13]:\n   $$\\text{MMR} = \\frac{D_{\\text{mat}}}{B} \\times 100.000$$\n3. Lakukan substitusi numerik:\n   $$\\text{MMR} = \\frac{120}{62.500} \\times 100.000 = 0,00192 \\times 100.000 = 192$$\n4. Interpretasi dan evaluasi komparatif:\n   - Nilai AKI provinsi tersebut adalah 192 per 100.000 kelahiran hidup.\n   - Angka ini sedikit lebih tinggi dibandingkan rata-rata nasional SP2020 Long Form (189 per 100.000 KH) dan masih sangat jauh di atas batas target SDGs 3.1 tahun 2030 yaitu kurang dari 70 per 100.000 kelahiran hidup [slide 9].",
+    "python_verification_code": "deaths = 120\nbirths = 62500\nk = 100000\nmmr = (deaths / births) * k\nprint(f'MMR={mmr:.2f}')",
+    "expected_output": "MMR=192.00"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Kesalahan Konstanta Pengali (Multiplier Misalignment)",
+      "common_mistake": "Menggunakan konstanta K = 1.000 (seperti pada AKB atau AKABA) sehingga menghasilkan angka 1,92.",
+      "safe_strategy": "Ingat bahwa kematian ibu adalah kejadian langka (rare event), sehingga BPS dan WHO secara ketat membakukan konstanta K = 100.000 kelahiran hidup."
+    },
+    {
+      "trap_description": "Penyebut Kelahiran Hidup vs Penduduk Wanita Usia Subur (WUS)",
+      "common_mistake": "Membagi jumlah kematian ibu dengan jumlah wanita usia subur (15-49 tahun) atau total kehamilan.",
+      "safe_strategy": "Maternal Mortality Ratio (MMR) wajib membagi dengan Kelahiran Hidup (Live Births). Pembagian dengan WUS menghasilkan Maternal Mortality Rate (MMRate)."
+    },
+    {
+      "trap_description": "Penyebab Kematian Non-Maternal (Kecelakaan atau Trauma)",
+      "common_mistake": "Menghitung seluruh perempuan yang meninggal saat hamil, termasuk korban kecelakaan lalu lintas atau pembunuhan.",
+      "safe_strategy": "Hanya masukkan kematian yang berkaitan dengan kehamilan, persalinan, atau nifas hingga 42 hari (penyebab obstetrik langsung maupun tidak langsung)."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 10,
+  "chapter_title": "Pertemuan 10: Indikator Kesehatan dan SDGs 3",
+  "section": "10.1 Indikator Mortalitas Ibu dan Anak",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "10.1.1",
+      "name": "Angka Kematian Ibu AKI MMR",
+      "importance": "高",
+      "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 4-20]",
+      "exam_focus": "Menguasai definisi operasional AKI/MMR, formula per 100.000 kelahiran hidup, penyebab maternal 42 hari pascasalin, hasil Long Form SP2020, disparitas regional, dan target SDGs 3.1.",
+      "textbook_excerpt": "Definisi Mortalitas WHO: menghilangnya semua tanda-tanda kehidupan secara permanen setelah kelahiran hidup. Rumus Angka Kematian Ibu (Maternal Mortality): AKI = (Jumlah Kematian Ibu / Jumlah Kelahiran Hidup) x K, dimana K = 100.000. Jumlah kematian ibu adalah banyaknya kematian ibu yang disebabkan karena kehamilan, persalinan sampai 42 hari setelah melahirkan pada tahun tertentu di daerah tertentu [slide 12-13]. Berdasarkan Long Form SP2020, MMR Indonesia adalah 189 per 100.000 kelahiran hidup [slide 14]. Target SDGs 3.1 adalah mengurangi rasio AKI hingga kurang dari 70 per 100.000 kelahiran hidup pada tahun 2030 [slide 9].",
+      "intuition": "Mengapa pengali kematian ibu 100.000 sedangkan kematian bayi 1.000? Kematian ibu adalah peristiwa yang frekuensinya jauh lebih rendah daripada kelahiran. Jika digunakan per 1.000 KH, angka kematian ibu Indonesia adalah 0,189 (sulit dikomunikasikan ke publik dan pembuat kebijakan). Dengan skala 100.000 KH, angka tersebut menjadi 189 kematian per 100.000 kelahiran hidup. Indikator ini merupakan sinyal paling tajam mengenai keterlambatan rujukan gawat darurat obstetri (tiga terlambat: terlambat mengambil keputusan, terlambat tiba di fasilitas kesehatan, dan terlambat mendapat penanganan medis).",
+      "formal": "### 1. Landasan Konsep & Definisi Operasional BPS\n\nBerdasarkan standar BPS dan WHO [Pertemuan_10_Indikator_Kesehatan.md, slide 12-13]:\n- **Kematian Maternal**: Kematian seorang wanita saat hamil atau dalam kurun waktu 42 hari sejak terminasi kehamilan, terlepas dari durasi dan tempat kehamilan, yang diakibatkan oleh sebab apa pun yang terkait dengan atau diperberat oleh kehamilan atau penanganannya, namun bukan karena sebab kecelakaan atau trauma insidental.\n- **Kelahiran Hidup**: Keluarnya secara lengkap produk konsepsi dari rahim ibunya yang menunjukkan tanda-tanda kehidupan (bernafas, denyut jantung, pulsasi tali pusat, gerakan otot volunter) tanpa memandang usia gestasi.\n\n### 2. Formulasi Matematis AKI (MMR)\n\n$$\\text{MMR} = \\frac{\\sum \\text{Kematian Ibu Maternal}}{\\sum \\text{Kelahiran Hidup}} \\times 100.000$$\n\nSecara notasi simbolik:\n$$\\text{MMR} = \\frac{D_{\\text{mat}}}{B} \\times 100.000$$\ndimana:\n- $D_{\\text{mat}}$ = Banyaknya kematian ibu karena kehamilan, persalinan, dan nifas (< 42 hari) pada satu tahun tertentu di daerah tertentu.\n- $B$ = Banyaknya bayi yang lahir hidup pada tahun tertentu di daerah tertentu.\n- $K = 100.000$ = Bilangan konstan standar internasional.\n\n### 3. Komplikasi Utama Penyebab Kematian Maternal\nHampir $75\\%$ kematian ibu disebabkan oleh 5 komplikasi klinis utama [Pertemuan_10_Indikator_Kesehatan.md, slide 35]:\n1. *Severe bleeding* (Perdarahan hebat pascapersalinan / HPP).\n2. *Infections* (Infeksi nifas / sepsis puerperalis pascamelahirkan).\n3. *High blood pressure* (Preeklampsia berat dan eklamsia selama kehamilan).\n4. *Complications from delivery* (Persalinan macet atau partus lama terlantar).\n5. *Unsafe abortion* (Aborsi yang tidak aman).\n\n### 4. Gambaran Empiris Long Form SP2020 dan SDGs\n| Wilayah | Nilai MMR (per 100.000 KH) | Keterangan Sumber |\n|---|---|---|\n| DKI Jakarta | 48 | Terendah nasional [slide 14] |\n| DI Yogyakarta | 58 | Terendah kedua [slide 14] |\n| Bali | 85 | Rendah [slide 14] |\n| **INDONESIA** | **189** | **Rata-rata Nasional SP2020 LF [slide 14]** |\n| Nusa Tenggara Timur | 316 | Tinggi [slide 14] |\n| Papua Barat | 343 | Sangat tinggi [slide 14] |\n| Papua | 565 | Tertinggi nasional [slide 14] |\n| **Target SDGs 3.1** | **< 70** | **Batas Target Global 2030 [slide 9]** |\n\nSebagai komparasi regional ASEAN tahun 2017 [slide 16]: Malaysia (29), Thailand (37), Vietnam (43), Filipina (121), dan Indonesia (177).",
+      "pitfalls": "1. **Tertukar dengan AKB/AKABA pada Pengali**: AKI wajib dikalikan 100.000, bukan 1.000.\n2. **Denominator Bukan WUS**: Maternal Mortality Ratio (MMR) membagi dengan Kelahiran Hidup; sedangkan Maternal Mortality Rate (MMRate) membagi dengan Wanita Usia Subur (15-49 tahun).\n3. **Periode 42 Hari Pascasalin**: Kematian setelah hari ke-43 tidak dihitung sebagai kematian maternal standar (dikelompokkan sebagai late maternal death).",
+      "memory_hook": "MMR = Kematian Maternal per 100 Ribu Kelahiran Hidup; Target SDGs 3.1 adalah Kurang dari 70!",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 9, 13]",
+          "problem": "Berapakah konstanta pengali standar yang digunakan oleh BPS dalam menghitung Angka Kematian Ibu (Maternal Mortality Ratio / MMR), dan berapakah target SDGs 3.1 yang harus dicapai pada tahun 2030?",
+          "options": [
+            "Pengali 1.000 kelahiran hidup; target SDGs 3.1 kurang dari 12 per 1.000 KH",
+            "Pengali 10.000 kelahiran hidup; target SDGs 3.1 kurang dari 50 per 10.000 KH",
+            "Pengali 100.000 kelahiran hidup; target SDGs 3.1 kurang dari 70 per 100.000 KH",
+            "Pengali 100.000 wanita usia subur; target SDGs 3.1 kurang dari 25 per 100.000 WUS"
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\n- Berdasarkan slide 13, formula resmi BPS adalah AKI = (Jumlah Kematian Ibu / Jumlah Kelahiran Hidup) x 100.000.\n- Berdasarkan slide 9, Target 3.1 SDGs menyatakan: 'Pada tahun 2030, mengurangi rasio angka kematian ibu hingga kurang dari 70 per 100.000 kelahiran hidup'."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_10_Indikator_Kesehatan.md, slide 13, 14]",
+          "problem": "Di suatu provinsi terdapat 62.500 kelahiran hidup pada tahun 2023. Pada tahun yang sama dilaporkan terdapat 120 kematian ibu akibat komplikasi kehamilan, persalinan, dan nifas (< 42 hari). Hitunglah nilai Maternal Mortality Ratio (MMR) provinsi tersebut. Tuliskan jawaban akhir dalam format: `MMR=...`.",
+          "answer": "MMR=192.00",
+          "solution": "Langkah-langkah perhitungan:\n1. Rumus MMR BPS: $\\text{MMR} = \\frac{D_{\\text{mat}}}{B} \\times 100.000$.\n2. Masukkan nilai: $\\text{MMR} = \\frac{120}{62.500} \\times 100.000 = 0,00192 \\times 100.000 = 192,00$.\n3. Nilai MMR provinsi tersebut adalah 192,00 per 100.000 kelahiran hidup.\n\n**Verifikasi Kode Python**:\n```python\ndeaths = 120\nbirths = 62500\nk = 100000\nmmr = (deaths / births) * k\nprint(f'MMR={mmr:.2f}')\n# Output: MMR=192.00\n```"
+        }
+      ],
+      "links": [
+        "10.1.2",
+        "10.1.3",
+        "10.2.1"
+      ]
+    }
+  ]
+}

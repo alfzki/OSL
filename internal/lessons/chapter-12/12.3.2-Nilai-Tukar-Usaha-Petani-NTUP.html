@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>12.3 Nilai Tukar Petani NTP · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>12.3 Nilai Tukar Petani NTP</h2><a href="#p-12.3.2">12.3.2 Nilai Tukar Usaha Petani NTUP ⭐</a></nav>
+<main>
+<h1>12.3 Nilai Tukar Petani NTP<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 12: Perdagangan dan Indikator Harga ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 1 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-12.3.2">
+<h2>12.3.2 Nilai Tukar Usaha Petani NTUP ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 37-38]</div>
+<div class="box info">📌 <div class="rich"><p>Perbedaan fundamental antara NTP dan NTUP, formula NTUP = It / BPPBM * 100, analisis divergensi akibat inflasi perdesaan IKRT, dan konsep upah riil buruh tani.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Nilai Tukar Usaha Rumah Tangga Pertanian (NTUP) mengeluarkan konsumsi dari komponen indeks harga yang dibayar petani (Ib), sehingga NTUP dapat lebih mencerminkan kemampuan produksi petani, karena yang dibandingkan hanya produksi dengan biaya produksinya. Upah riil buruh tani menggambarkan daya beli dari pendapatan/upah harian dibagi dengan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Petani memiliki dua peran sekaligus: produsen di sawah dan konsumen di rumah tangga. Bila seorang petani ingin mengetahui apakah modal bertaninya menghasilkan imbal balik yang sepadan terhadap harga pupuk dan bibit, petani melihat NTUP. Bila petani ingin mengetahui apakah uang hasil panennya cukup untuk membiayai makan keluarga dan uang saku anak sekolah, petani melihat NTP. NTUP adalah cermin efisiensi sawah/kebun, sedangkan NTP adalah cermin daya beli dompet keluarga.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual NTUP BPS</p>
+<p>Dalam publikasi statistik BPS [slide 37-38]:<br>- <strong>Kelemahan NTP sebagai Indikator Kinerja Usaha</strong>: Angka NTP dipengaruhi oleh harga sekeranjang barang konsumsi rumah tangga (IKRT). Ketika terjadi gejolak harga pangan eceran di desa (misalnya harga minyak goreng atau rokok naik), NTP akan merosot meskipun efisiensi usaha tani dan harga jual gabah di tingkat petani sedang sangat bagus.<br>- <strong>Tujuan Pembentukan NTUP</strong>: Menghilangkan pengaruh dinamika harga barang konsumsi rumah tangga dari indeks harga yang dibayar petani, sehingga indikator ini murni merefleksikan daya saing dan profitabilitas sektor produksi pertanian terhadap biaya input sarana produksi.</p>
+<p>### 2. Formulasi Matematis NTUP</p>
+<p>Formulasi matematis NTUP adalah rasio antara Indeks Harga yang Diterima Petani ($I_t$) terhadap Indeks Biaya Produksi dan Penambahan Barang Modal ($BPPBM$):<br>$$NTUP = \frac{I_t}{BPPBM} \times 100$$</p>
+<p>Komponen pembentuk BPPBM terdiri atas 6 kelompok pengeluaran sarana produksi [slide 36]:<br>1. <strong>Bibit / Benih</strong>: Pengeluaran pembelian bibit tanaman pangan, bibit buah/sayur, bibit tanaman perkebunan, dan anakan hewan ternak/benur ikan.<br>2. <strong>Pupuk dan Obat-obatan</strong>: Pupuk kimia (urea, NPK, ZA), pupuk organik, pestisida, herbisida, insektisida, dan vaksin ternak.<br>3. <strong>Pakan dan Obat Ternak/Ikan</strong>: Konsentrat, bekatul, jagung pakan, dan suplemen vitamin ternak.<br>4. <strong>Sewa Lahan dan Pengeluaran Lainnya</strong>: Pajak PBB lahan pertanian, retribusi irigasi desa, sewa lahan garapan, dan jasa asuransi usaha tani.<br>5. <strong>Transportasi</strong>: Biaya angkut sarana produksi dari toko pertanian ke lahan sawah/kebun.<br>6. <strong>Penambahan Barang Modal (Investasi Alat)</strong>: Pembelian dan perbaikan alat produksi tahan lama (cangkul, arit, tangki semprot, mesin pompa air, traktor tangan).<br>7. <strong>Upah Buruh Tani</strong>: Upah membajak/mengolah tanah, upah penanaman, upah penyiangan, dan upah panen yang dibayarkan kepada buruh upahan.</p>
+<p>### 3. Matriks Perbandingan Komparatif NTP vs NTUP</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi Analisis</th><th>Nilai Tukar Petani (NTP)</th><th>Nilai Tukar Usaha Petani (NTUP)</th></tr></thead><tbody><tr><td><strong>Pembilang ($Numerator$)</strong></td><td>Indeks Harga yang Diterima ($I_t$)</td><td>Indeks Harga yang Diterima ($I_t$)</td></tr><tr><td><strong>Penyebut ($Denominator$)</strong></td><td>Indeks Harga yang Dibayar ($I_b = IKRT + BPPBM$)</td><td>Hanya Biaya Produksi ($BPPBM$)</td></tr><tr><td><strong>Komponen Konsumsi RT</strong></td><td><strong>Termasuk</strong> (melalui sub-indeks IKRT)</td><td><strong>Dikeluarkan</strong> (tidak diperhitungkan)</td></tr><tr><td><strong>Fokus Pengukuran</strong></td><td>Tingkat kesejahteraan dan daya beli keluarga petani</td><td>Efisiensi, daya saing, dan profitabilitas usahatani</td></tr><tr><td><strong>Respons thd Inflasi Sembako</strong></td><td>Langsung merosot jika sembako di desa naik</td><td>Tidak terpengaruh fluktuasi sembako eceran</td></tr></tbody></table></div>
+<p>### 4. Konsep Upah Riil Buruh Tani<br>BPS juga merilis indikator daya beli pekerja sektor pertanian yang tidak memiliki lahan garapan (buruh tani). <strong>Upah Riil Buruh Tani</strong> dihitung dengan mengempiskan (*deflating*) upah nominal harian buruh menggunakan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38]:<br>$$\text{Upah Riil} = \frac{\text{Upah Nominal Harian}}{IKRT} \times 100$$<br>Bila upah nominal buruh tani naik 2% tetapi IKRT desa naik 3%, maka upah riil buruh tani mengalami penurunan daya beli sebesar 1%.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Dalam suatu periode pengamatan, tercatat indeks It = 125, IKRT = 120, dan BPPBM = 110. Jika bobot IKRT adalah 65% dan BPPBM adalah 35%, bagaimanakah posisi perbandingan antara nilai NTP dan NTUP?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 37-38]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. NTP lebih besar daripada NTUP karena mencakup pengeluaran konsumsi keluarga.</button>
+<button class="ex-opt" data-i="1">B. NTP lebih kecil daripada NTUP karena nilai IKRT lebih tinggi daripada nilai BPPBM.</button>
+<button class="ex-opt" data-i="2">C. NTP sama persis dengan NTUP karena pembilangnya sama-sama bernilai 125.</button>
+<button class="ex-opt" data-i="3">D. NTP dan NTUP tidak dapat diperbandingkan karena menggunakan tahun dasar yang berbeda.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Hitung Ib: $$I_b = (0,65 \times 120) + (0,35 \times 110) = 78 + 38,5 = 116,5$$<br>2. Hitung NTP: $$NTP = \frac{125}{116,5} \times 100 = 107,30$$<br>3. Hitung NTUP: $$NTUP = \frac{125}{110} \times 100 = 113,64$$<br>Karena $IKRT (120) &gt; BPPBM (110)$, indeks gabungan yang dibayar petani ($I_b = 116,5$) lebih besar daripada biaya produksi saja ($BPPBM = 110$). Akibatnya, nilai NTP (107,30) bergerak <strong>lebih rendah</strong> dibandingkan NTUP (113,64).</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menghitung NTUP dengan Membagi Ib</strong>: Mahasiswa sering tertukar dan membagi It dengan Ib saat ditanya NTUP. Ingat kata kunci: Usaha Pertanian -&gt; hanya bandingkan hasil produksi dengan biaya produksi (BPPBM).</li><li><strong>Divergensi Arah Tren</strong>: Jangan terkejut bila melihat grafik BPS di mana garis NTUP meningkat sementara garis NTP menurun; hal ini sah secara ekonomi ketika inflasi pedesaan melonjak tinggi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>NTUP = It / BPPBM * 100; NTUP Bicara Untung Rugi Usahatani di Sawah, NTP Bicara Dapur Keluarga di Rumah.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.3.1, 12.3.3</div>
+<button class="donebtn" data-id="12.3.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "point_id": "12.2.3",
+  "title": "Disagregasi Inflasi Inti Bergejolak Administered",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 12,
+    "silabus_topic": "Perdagangan dan Indikator Harga",
+    "bps_subject": "Disagregasi Komponen Inflasi BPS"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md",
+        "slide_or_page": "18-21",
+        "content": "Disagregasi inflasi menurut kelompok pengeluaran dan komponen pembentuk inflasi: inflasi umum (headline), komponen inti, harga diatur pemerintah, dan bergejolak."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Jika harga cabai rawit melonjak akibat curah hujan tinggi, apakah Bank Indonesia harus menaikkan suku bunga acuan? Tentu tidak! Kenaikan suku bunga tidak akan menghentikan hujan atau mempercepat panen cabai. Sebaliknya, jika seluruh harga barang industri dan jasa naik karena peredaran uang yang berlebihan dan ekspektasi inflasi masyarakat yang memburuk, barulah bank sentral perlu memperketat moneter. Untuk membedakan sumber pemicu kenaikan harga ini, BPS mendisagregasikan inflasi umum (headline) ke dalam tiga komponen: Inti, Bergejolak, dan Diatur Pemerintah.",
+    "bps_definition": "Disagregasi IHK BPS yang mengelompokkan komoditas ke dalam tiga komponen pembentuk inflasi berdasarkan karakteristik pemicu pergerakan harga: 1) Inflasi Inti (Core Inflation): komponen yang pergerakan harganya cenderung persisten dan dipengaruhi faktor fundamental makro; 2) Komponen Bergejolak (Volatile Foods): komponen yang pergerakan harganya dipengaruhi oleh guncangan pasokan jangka pendek seperti cuaca dan musim panen; 3) Komponen Harga Diatur Pemerintah (Administered Prices): komponen yang harganya ditentukan atau dikendalikan oleh kebijakan harga pemerintah.",
+    "boundary_conditions": "Penjumlahan andil dari ketiga komponen pembentuk inflasi sama persis dengan laju inflasi umum (headline): pi_headline = Andil_inti + Andil_bergejolak + Andil_administered, di mana Andil_k = (w_k / 100) * pi_k dan sum(w_k) = 100%.",
+    "formula_latex": "$$\\pi_{\\text{headline}} = \\sum_{k \\in \\{\\text{inti}, \\text{bergejolak}, \\text{diatur}\\}} \\left( \\frac{w_k}{100} \\times \\pi_k \\right), \\quad \\text{Andil}_k = \\frac{w_k}{100} \\times \\pi_k$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Dalam suatu rilis BRS IHK bulanan, diagram timbang dan tingkat inflasi bulanan (m-to-m) menurut komponen disagregasi tercatat sebagai berikut:\n- Komponen Inti: bobot w = 60,00%, laju inflasi m-to-m = 0,20%\n- Komponen Bergejolak (Volatile Foods): bobot w = 20,00%, laju inflasi m-to-m = 1,50%\n- Komponen Diatur Pemerintah (Administered Prices): bobot w = 20,00%, laju inflasi m-to-m = 0,50%\nHitunglah andil inflasi masing-masing komponen terhadap pembentukan inflasi umum, serta tentukan laju inflasi umum (headline inflation) bulan tersebut!",
+    "data_table": "| Komponen Pembentuk Inflasi | Bobot Diagram Timbang ($w_k$) | Laju Inflasi m-to-m ($\\pi_k$) | Pemicu Utama Pergerakan |\n|---|---|---|---|\n| **Komponen Inti (Core)** | 60,00% | 0,20% | Interaksi permintaan-penawaran uang |\n| **Komponen Bergejolak (Volatile)** | 20,00% | 1,50% | Gagal panen cabai dan cuaca ekstrem |\n| **Diatur Pemerintah (Administered)** | 20,00% | 0,50% | Penyesuaian tarif angkutan lokal |",
+    "step_by_step_solution": "1. Menghitung Andil Inflasi Komponen Inti:\n   Andil_Inti = (w_Inti / 100) * pi_Inti = (60,00 / 100) * 0,20% = 0,60 * 0,20% = 0,12%.\n2. Menghitung Andil Inflasi Komponen Bergejolak:\n   Andil_Berg = (w_Berg / 100) * pi_Berg = (20,00 / 100) * 1,50% = 0,20 * 1,50% = 0,30%.\n3. Menghitung Andil Inflasi Komponen Diatur Pemerintah:\n   Andil_Adm = (w_Adm / 100) * pi_Adm = (20,00 / 100) * 0,50% = 0,20 * 0,50% = 0,10%.\n4. Menghitung Laju Inflasi Umum (Headline Inflation):\n   pi_Headline = Andil_Inti + Andil_Berg + Andil_Adm = 0,12% + 0,30% + 0,10% = 0,52%.\n   Komponen bergejolak menjadi penyumbang terbesar andil inflasi (0,30% dari total 0,52%).",
+    "python_verification_code": "w_inti, pi_inti = 0.60, 0.20\nw_berg, pi_berg = 0.20, 1.50\nw_adm, pi_adm = 0.20, 0.50\nandil_inti = w_inti * pi_inti\nandil_berg = w_berg * pi_berg\nandil_adm = w_adm * pi_adm\npi_headline = andil_inti + andil_berg + andil_adm\nprint(f'Andil_Inti={andil_inti:.2f}%, Andil_Bergejolak={andil_berg:.2f}%, Andil_Administered={andil_adm:.2f}%, Headline={pi_headline:.2f}%')",
+    "expected_output": "Andil_Inti=0.12%, Andil_Bergejolak=0.30%, Andil_Administered=0.10%, Headline=0.52%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Menyamakan laju inflasi komponen dengan andil inflasi",
+      "common_mistake": "Menyimpulkan bahwa komponen bergejolak memiliki pengaruh paling dominan hanya karena laju inflasinya paling tinggi (1,50% vs 0,20%).",
+      "safe_strategy": "Pengaruh terhadap inflasi umum diukur oleh ANDIL inflasi (perkalian laju dengan bobot). Komponen inti dengan bobot 60% menyumbang andil stabil yang menjadi target utama moneter."
+    },
+    {
+      "trap_description": "Salah menempatkan komoditas rokok dan elpiji ke dalam komponen bergejolak",
+      "common_mistake": "Menggolongkan rokok kretek filter atau gas elpiji 3 kg ke dalam volatile foods karena sering dibeli sehari-hari.",
+      "safe_strategy": "Rokok (kenaikan cukai) dan elpiji subsidi merupakan komponen Administered Prices karena harga dan regulasinya ditetapkan pemerintah."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 12,
+  "chapter_title": "Pertemuan 12: Perdagangan dan Indikator Harga",
+  "section": "12.2 Indeks Harga Konsumen dan Inflasi",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "12.2.3",
+      "name": "Disagregasi Inflasi Inti Bergejolak Administered",
+      "importance": "高",
+      "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 18-21]",
+      "exam_focus": "Definisi tiga komponen disagregasi inflasi BPS, formula andil inflasi tertimbang, pembagian kewenangan pengendalian inflasi antara BI (Moneter) dan Pemerintah (Fiskal/Pangan/TPID).",
+      "textbook_excerpt": "Inflasi umum (headline) dapat didisagregasikan berdasarkan komponen pembentuknya menjadi inflasi inti, inflasi harga diatur pemerintah (administered prices), dan inflasi bergejolak (volatile foods). Pengelompokan ini penting untuk merumuskan kebijakan pengendalian inflasi yang tepat sasaran [slide 18-21].",
+      "intuition": "Jika dokter mendiagnosis pasien demam tinggi, dokter harus tahu apakah demam itu karena infeksi virus musiman yang akan reda sendiri, atau karena penyakit kronis menular yang butuh antibiotik keras. Dalam perekonomian, inflasi adalah demam harga. Inflasi volatile foods ibarat batuk pilek cuaca (perlu pasokan pangan lancar). Inflasi administered ibarat efek samping obat suntik dokter (akibat kebijakan harga energi pemerintah). Sedangkan inflasi inti adalah kondisi kesehatan pembuluh darah moneter yang dipantau terus-menerus oleh Bank Indonesia.",
+      "formal": "### 1. Definisi Tiga Komponen Disagregasi Inflasi BPS\n\nUntuk mendukung analisis kebijakan moneter dan stabilitas perekonomian makro, BPS mendisagregasikan IHK Umum (*Headline Inflation*) menjadi tiga komponen [slide 18-21]:\n\n1. **Inflasi Inti (*Core Inflation*)**:\n- Komponen yang pergerakan harganya mencerminkan kecenderungan persisten (*trend component*).\n- Dipengaruhi oleh faktor-faktor fundamental makroekonomi: interaksi permintaan agregat dan penawaran barang/jasa, stabilitas nilai tukar valuta asing, harga komoditas primer internasional, serta ekspektasi inflasi pedagang dan konsumen.\n- Menjadi sasaran utama (*policy anchor*) kerangka kebijakan moneter Bank Indonesia (*Inflation Targeting Framework*).\n\n2. **Inflasi Harga Bergejolak (*Volatile Foods*)**:\n- Komponen inflasi yang pergerakan harganya sangat fluktuatif (*volatile*) karena dipicu oleh kejutan temporer (*temporary supply shocks*).\n- Faktor pemicu: kondisi iklim/cuaca ekstrem (El Nino/La Nina), serangan hama pertanian, musim panen raya versus masa paceklik, serta kendala logistik dan rantai distribusi pangan.\n- Contoh komoditas: cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, beras, dan sayuran segar.\n\n3. **Inflasi Harga Diatur Pemerintah (*Administered Prices*)**:\n- Komponen inflasi yang harga barang dan jasanya ditetapkan atau dikendalikan secara administratif oleh keputusan kebijakan pemerintah (pusat maupun daerah).\n- Contoh komoditas: Bahan Bakar Minyak (BBM) bersubsidi (Pertalite, Solar), tarif listrik rumah tangga (PLN), gas elpiji tabung 3 kg, rokok kretek/putih (melalui penyesuaian tarif cukai tembakau), air minum PAM, serta tarif batas atas/bawah angkutan udara dan kereta api.\n\n### 2. Formulasi Andil Inflasi (*Inflation Contribution*)\n\nLaju inflasi umum gabungan merupakan rata-rata tertimbang linier dari laju inflasi masing-masing komponen:\n$$\\pi_{\\text{headline}} = \\sum_{k=1}^3 \\left( \\frac{w_k}{100} \\times \\pi_k \\right)$$\ndi mana $w_k$ adalah bobot diagram timbang komponen ke-$k$ ($w_{\\text{inti}} + w_{\\text{bergejolak}} + w_{\\text{administered}} = 100\\%$), dan $\\pi_k$ adalah laju inflasi komponen ke-$k$.\n\nAndil inflasi komponen ke-$k$ terhadap inflasi headline didefinisikan sebagai:\n$$\\text{Andil}_k = \\frac{w_k}{100} \\times \\pi_k$$\nSehingga:\n$$\\pi_{\\text{headline}} = \\text{Andil}_{\\text{inti}} + \\text{Andil}_{\\text{bergejolak}} + \\text{Andil}_{\\text{administered}}$$\n\n### 3. Matriks Perbandingan Karakteristik Komponen Disagregasi\n\n| Dimensi | Komponen Inti (*Core*) | Komponen Bergejolak (*Volatile*) | Diatur Pemerintah (*Administered*) |\n|---|---|---|---|\n| **Karakteristik Harga** | Persisten, bergerak bertahap, lambat berbalik | Sangat fluktuatif, fluktuasi tajam jangka pendek | Bergerak diskrit/kejutan sesaat saat kebijakan diumumkan |\n| **Pemicu Utama** | Permintaan agregat, nilai tukar, ekspektasi | Cuaca, gagal panen, hama, distribusi logistik | Keputusan regulasi tarif dan subsidi pemerintah |\n| **Bobot IHK Nasional** | Terbesar (sekitar 60% - 65%) | Menengah (sekitar 15% - 20%) | Menengah (sekitar 18% - 22%) |\n| **Otoritas Kebijakan** | Bank Indonesia (kebijakan suku bunga BI-Rate) | TPIP, TPID, Kementan, Bapanas, Bulog | Kementerian ESDM, Kemenhub, Kemenkeu, Pemda |\n| **Instrumen Penanganan** | Operasi moneter, pengendalian likuiditas | Operasi pasar pangan, fasilitasi ongkos angkut | Penyesuaian subsidi energi, penetapan tarif HET |",
+      "pitfalls": "1. **Tertukar Antara Laju Inflasi dan Andil**: Dalam ujian esai, jangan menjawab bahwa komponen bergejolak otomatis menyumbang inflasi terbesar hanya karena laju inflasinya 5% sementara inti hanya 1%. Selalu kalikan dengan bobotnya masing-masing terlebih dahulu.\n2. **Karakteristik Komoditas Ganda**: Beras adalah makanan pokok tetapi di Indonesia sering dipengaruhi intervensi harga eceran tertinggi (HET) dan operasi pasar Bulog, namun secara klasifikasi standar BPS tetap dimasukkan dalam kelompok volatile foods.",
+      "memory_hook": "Inti untuk Moneter BI; Bergejolak untuk Pangan dan Panen; Administered untuk BBM, Tarif Listrik, dan Kebijakan.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&Harga.md, slide 18-21]",
+          "problem": "Pemerintah memutuskan untuk menaikkan harga BBM bersubsidi dan tarif tenaga listrik secara serentak. Kenaikan harga kedua komoditas ini secara langsung akan tercermin pada peningkatan laju inflasi komponen...",
+          "options": [
+            "Inflasi Inti (Core Inflation)",
+            "Inflasi Komponen Bergejolak (Volatile Foods)",
+            "Inflasi Komponen Diatur Pemerintah (Administered Prices)",
+            "Inflasi Musiman (Seasonal Inflation)"
+          ],
+          "answer": 2,
+          "solution": "Jawaban: **C**.\n\n**Pembahasan**:\nTarif BBM bersubsidi dan tarif listrik adalah komoditas strategis yang harganya diatur dan ditetapkan secara langsung oleh keputusan pemerintah. Oleh karena itu, lonjakan harganya secara langsung dicatat sebagai inflasi komponen *Administered Prices*. Meskipun dalam jangka panjang biaya BBM dapat merembet ke biaya produksi barang lain (efek putaran kedua / *second-round effect* pada inflasi inti), efek putaran pertama secara langsung masuk ke administered prices."
+        }
+      ],
+      "links": [
+        "12.2.1",
+        "12.2.2",
+        "12.3.1"
+      ]
+    }
+  ]
+}

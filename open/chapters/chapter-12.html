@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 12: Perdagangan dan Indikator Harga · Modul Kuliah</title>
+<script>
+(function(){try{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{localStorage.setItem('esb-theme',t);}catch(e){}}
+function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}
+</script>
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 14px; color: #374151; margin: 0 0 10px; }
+  #toc .toc-sec { display: flex; align-items: center; gap: 4px; padding: 8px 4px 4px;
+                  font-weight: 600; font-size: 12px; color: #4b5563; line-height: 1.5; }
+  #toc .toc-sec + .toc-sec { border-top: 1px solid #e5e7eb; margin-top: 6px; padding-top: 10px; }
+  #toc .modetag-mini { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 99px;
+                        background: #eef2ff; color: #4338ca; font-weight: 400; line-height: 1.6; }
+  #toc a { display: block; padding: 3px 8px; margin-left: 4px; color: #374151; text-decoration: none;
+            border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  div.ch-sec { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+  div.ch-sec:last-child { border-bottom: none; }
+  h2.sec-title { font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>Pertemuan 12: Perdagangan dan Indikator Harga <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2><div class="toc-sec">12.1 Margin Perdagangan dan Distribusi<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-12.1.1">12.1.1 Margin Perdagangan dan Pengangkutan MPP ⭐</a>
+<a href="#p-12.1.2">12.1.2 Survei Pola Distribusi Perdagangan Poldis ⭐</a>
+<div class="toc-sec">12.2 Indeks Harga Konsumen dan Inflasi<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-12.2.1">12.2.1 IHK Rumus Modified Laspeyres ⭐</a>
+<a href="#p-12.2.2">12.2.2 Tiga Laju Inflasi BPS mtom yony ytd ⭐</a>
+<a href="#p-12.2.3">12.2.3 Disagregasi Inflasi Inti Bergejolak Administered ⭐</a>
+<div class="toc-sec">12.3 Nilai Tukar Petani NTP<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-12.3.1">12.3.1 Konsep dan Rasio NTP It per Ib ⭐</a>
+<a href="#p-12.3.2">12.3.2 Nilai Tukar Usaha Petani NTUP ⭐</a>
+<a href="#p-12.3.3">12.3.3 Lima Subsektor Penyusun NTP ⭐</a></nav>
+<main>
+<h1>Pertemuan 12: Perdagangan dan Indikator Harga</h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》 ｜ 3 Bagian ｜ 8 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 8 Butir ｜ Kerjakan mandiri sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<div class="ch-sec" id="sec-12.1-Margin-Perdagangan-dan-Distribusi">
+<h2 class="sec-title">12.1 Margin Perdagangan dan Distribusi<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-12.1.1">
+<h2>12.1.1 Margin Perdagangan dan Pengangkutan MPP ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 4-9]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi operasional MPP menurut SNA 15.28, perhitungan margin per simpul perantara, formula akumulasi multiplikatif MPP Total, dan interpretasi efisiensi distribusi barang strategis.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Marjin perdagangan didefinisikan sebagai perbedaan antara harga penjualan atas barang untuk dijual kembali dan harga yang harus dibayar oleh distributor untuk mengganti barang pada saat terjual. Margin perdagangan adalah nilai output dari distributor. Marjin perdagangan tidak diberlakukan untuk penjualan langsung oleh produsen. Margin Perdagangan dan Pengangkutan (MPP) adalah kompensasi pedagang sebagai penyalur barang yang merupakan selisih antara nilai penjualan dengan nilai pembelian yang mengikutsertakan biaya pengangkutan [slide 4-5].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan sebutir gabah yang dipanen petani. Dari sawah hingga menjadi nasi di piring konsumen perkotaan, beras berpindah tangan melalui distributor gudang, armada truk logistik, hingga warung kelontong. Setiap pihak perantara menaikkan harga jual di atas harga belinya guna menutup ongkos bensin, sewa toko, risiko susut, serta keuntungan usaha. Selisih harga akumulatif inilah yang diukur BPS sebagai Margin Perdagangan dan Pengangkutan (MPP). Jika MPP terlalu lebar, berarti ada simpul distribusi yang tidak efisien atau pedagang perantara mengambil margin berlebih.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konsep SNA dan Definisi BPS</p>
+<p>Berdasarkan *System of National Accounts* (SNA 2008 paragraf 15.28):<br>- <strong>Margin Perdagangan (*Trade Margin*)</strong>: Nilai selisih antara harga penjualan aktual atas barang yang dibeli untuk dijual kembali dan harga yang harus dibayar distributor untuk memperoleh barang tersebut pada saat terjual.<br>- <strong>Margin Pengangkutan (*Transport Margin*)</strong>: Biaya transportasi yang dibayar secara terpisah oleh pembeli untuk mengambil barang pesanan pada waktu dan tempat yang ditentukan. Apabila biaya transportasi tidak dibayar terpisah, biaya tersebut menjadi komponen harga dasar barang atau margin pedagang besar.<br>- <strong>Margin Perdagangan dan Pengangkutan (MPP)</strong>: Selisih antara nilai penjualan dan nilai pembelian yang mengikutsertakan biaya pengangkutan.</p>
+<p>### 2. Formulasi Matematis Perhitungan MPP</p>
+<p>Misalkan saluran distribusi utama terdiri dari $n$ pelaku perdagangan perantara yang terurut dari simpul 1 hingga simpul $n$:</p>
+<p>1. <strong>Margin Perdagangan dan Pengangkutan Pelaku ke-$i$ ($MPP_i$)</strong>:<br>$$MPP_i = \frac{P_{\text{jual}, i} - P_{\text{beli}, i}}{P_{\text{beli}, i}} \times 100\%$$<br>di mana $P_{\text{beli}, 1} = P_{\text{produsen}}$ dan $P_{\text{beli}, i} = P_{\text{jual}, i-1}$ untuk rantai tunggal tak terputus.</p>
+<p>2. <strong>Margin Perdagangan dan Pengangkutan Total ($MPP_{\text{total}}$)</strong>:<br>$$MPP_{\text{total}} = \frac{P_{\text{konsumen akhir}} - P_{\text{produsen}}}{P_{\text{produsen}}} \times 100\%$$<br>Secara aljabar, hubungan antara margin bertingkat dan margin total adalah multiplikatif:<br>$$\frac{P_{\text{konsumen akhir}}}{P_{\text{produsen}}} = \frac{P_{\text{jual}, 1}}{P_{\text{beli}, 1}} \times \frac{P_{\text{jual}, 2}}{P_{\text{beli}, 2}} \times \dots \times \frac{P_{\text{jual}, n}}{P_{\text{beli}, n}}$$<br>$$1 + \frac{MPP_{\text{total}}}{100} = \prod_{i=1}^n \left( 1 + \frac{MPP_i}{100} \right)$$</p>
+<p>### 3. Matriks Komponen Margin Saluran Distribusi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Simpul Distribusi</th><th>Komponen Harga Beli</th><th>Komponen Biaya Antara &amp; Pengangkutan</th><th>Komponen Nilai Tambah</th><th>Harga Jual Keluar</th></tr></thead><tbody><tr><td><strong>Produsen</strong></td><td>Biaya input benih/pupuk</td><td>Angkut dari lahan ke penggilingan</td><td>Keuntungan usaha tani</td><td>Harga Produsen ($P_0$)</td></tr><tr><td><strong>Distributor</strong></td><td>Harga produsen ($P_0$)</td><td>Biaya gudang + armada truk antar-kota</td><td>Keuntungan pedagang besar</td><td>Harga Grosir ($P_1$)</td></tr><tr><td><strong>Pedagang Eceran</strong></td><td>Harga grosir ($P_1$)</td><td>Biaya bongkar muat + sewa toko lokal</td><td>Keuntungan pengecer</td><td>Harga Eceran Konsumen ($P_2$)</td></tr></tbody></table></div>
+<p>### 4. Perubahan Kebijakan Diseminasi BPS Sejak 2017<br>Sebelum tahun 2017, BPS mendiseminasi angka MPP berupa rata-rata sederhana antara pedagang besar dan eceran. Sejak tahun 2017, atas kebutuhan pengguna data kementerian/lembaga untuk stabilisasi harga pangan, BPS menyajikan <strong>MPP Total akumulatif</strong> yang mengukur total kenaikan harga dari tingkat produsen pertama sampai ke konsumen akhir [slide 8].</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Dalam pola distribusi beras, gabah digiling produsen dan dijual ke distributor dengan harga Rp10.000,-/kg. Distributor menyalurkan ke pedagang eceran dengan harga Rp11.500,-/kg (MPP Distributor = 15%). Pedagang eceran menetapkan margin 20% saat menjual ke konsumen akhir. Berapakah harga yang dibayar konsumen akhir per kilogram dan berapa MPP Total saluran tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 6]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Rp13.500,- dan 35,00%</button>
+<button class="ex-opt" data-i="1">B. Rp13.800,- dan 38,00%</button>
+<button class="ex-opt" data-i="2">C. Rp13.800,- dan 35,00%</button>
+<button class="ex-opt" data-i="3">D. Rp14.000,- dan 40,00%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Langkah Perhitungan</strong>:<br>1. Harga jual pedagang eceran ke konsumen akhir:<br>   $$P_{\text{ecer}} = P_{\text{beli ecer}} \times (1 + \text{MPP}_{\text{ecer}}) = 11.500 \times (1 + 0,20) = 11.500 \times 1,20 = 13.800$$<br>2. MPP Total dihitung dari selisih harga konsumen akhir terhadap produsen:<br>   $$\text{MPP}_{\text{total}} = \frac{13.800 - 10.000}{10.000} \times 100\% = \frac{3.800}{10.000} \times 100\% = 38,00\%$$<br>3. Verifikasi rumus multiplikatif:<br>   $$1 + \text{MPP}_{\text{total}} = (1 + 0,15) \times (1 + 0,20) = 1,38 \implies \text{MPP}_{\text{total}} = 38\%$$.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Jebakan Penjumlahan Aditif</strong>: Sering kali mahasiswa menghitung total margin dengan menjumlahkan margin bertingkat (misal 15% + 20% = 35%). Perhitungan ini salah karena mengabaikan pembaruan dasar harga beli pada simpul hilir. Perhitungan yang benar menghasilkan 38%.</li><li><strong>Penjualan Langsung Produsen</strong>: Jika petani menjual langsung berasnya ke tetangga rumah tangga tanpa perantara, MPP = 0% karena tidak ada jasa perdagangan pihak ketiga.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>MPP adalah Selisih Jual-Beli plus Angkut; Mengalir Berantai dengan Pengali Multiplikatif, Bukan Tambah-Tambahan.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.1.2, 12.2.1</div>
+<button class="donebtn" data-id="12.1.1"></button>
+</section>
+<section class="point" id="p-12.1.2">
+<h2>12.1.2 Survei Pola Distribusi Perdagangan Poldis ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 10-13]</div>
+<div class="box info">📌 <div class="rich"><p>Tujuan dan metodologi Survei Poldis, pemetaan rantai saluran distribusi komoditas strategis, konsep marketed surplus produsen, dan analisis efisiensi perdagangan antarpelaku.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Survei Pola Distribusi Perdagangan melihat rantai distribusi suatu barang mulai dari produsen hingga konsumen. Konsep: untuk melihat pola distribusi perdagangan komoditi antar pelaku usaha perdagangan dan antar wilayah perdagangan. Rantai distribusi perdagangan yang pendek menunjukkan distribusi suatu komoditas dari wilayah tersebut baik, sedang jika rantai distribusinya panjang menyebabkan beban konsumen semakin tinggi [slide 7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah barang diproduksi di desa tetapi dikonsumsi di kota metropolitan, barang tersebut dapat berpindah melalui berbagai alternatif jalur distribusi. Jalur yang efisien (misalnya melalui koperasi tani atau sentra distribusi langsung) memungkinkan petani menikmati harga jual yang adil dan konsumen membayar harga yang terjangkau. Sebaliknya, bila barang harus melewati tengkulak lokal, pedagang pengumpul kecamatan, pedagang besar kabupaten, distributor provinsi, hingga pedagang pengecer pasar becek, biaya dan margin keuntungan akan bertumpuk berlipat ganda.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Tujuan dan Ruang Lingkup Survei Poldis BPS<br>Survei Pola Distribusi Perdagangan (Poldis) diselenggarakan oleh Direktorat Statistik Distribusi BPS dengan tujuan utama [slide 7-8]:<br>1. Mengidentifikasi pola utama rantai distribusi perdagangan untuk komoditas-komoditas kebutuhan pokok dan strategis (seperti beras, cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, dan minyak goreng).<br>2. Mengetahui simpul-simpul pedagang perantara yang terlibat, baik pedagang besar (grosir/distributor), agen, sub-agen, pedagang pengumpul, maupun pedagang eceran.<br>3. Menghitung besaran Margin Perdagangan dan Pengangkutan (MPP) pada setiap rantai transaksi perdagangan, dari tingkat produsen hingga ke konsumen akhir.<br>4. Mengetahui cakupan wilayah distribusi perdagangan (perdagangan dalam provinsi, antarkabupaten/kota, maupun antarpulau/antarprovinsi).</p>
+<p>### 2. Saluran Perdagangan dan Konsep Marketed Surplus<br>Berdasarkan bagan saluran perdagangan BPS [slide 10]:<br>- <strong>Produsen</strong>: Penghasil komoditas pertama (seperti petani tanaman pangan, peternak, atau pabrik pengolahan).<br>- <strong>Marketed Surplus Produsen</strong>: Sebagian dari total produksi fisik yang benar-benar dijual ke pasar komersial setelah dikurangi konsumsi sendiri oleh rumah tangga produsen, benih/bibit simpanan, dan penyusutan susut panen.<br>- <strong>Pedagang Besar I &amp; II (*Wholesaler/Distributor*)</strong>: Membeli dalam partai besar dari produsen atau sentra produksi antarpulau untuk disalurkan ke distributor sekunder atau pengecer.<br>- <strong>Pedagang Eceran (*Retailer*)</strong>: Menjual komoditas dalam satuan eceran langsung ke pemakai akhir.<br>- <strong>Konsumen Akhir</strong>: Terbagi menjadi Konsumen Rumah Tangga (*household*) dan Konsumen Non-Rumah Tangga (hotel, restoran, katering/horeka, industri makanan olahan).</p>
+<p>### 3. Matriks Perbandingan Karakteristik Rantai Distribusi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indikator</th><th>Rantai Distribusi Pendek</th><th>Rantai Distribusi Panjang</th></tr></thead><tbody><tr><td><strong>Jumlah Pelaku Perantara</strong></td><td>1 - 2 simpul (misal: Produsen -&gt; Pengecer -&gt; Konsumen)</td><td>$\ge 3$ simpul (Produsen -&gt; Tengkulak -&gt; Pedagang Besar -&gt; Pengecer -&gt; Konsumen)</td></tr><tr><td><strong>Tingkat Efisiensi</strong></td><td>Tinggi (biaya logistik minimal)</td><td>Rendah (banyak perpindahan dan biaya bongkar muat)</td></tr><tr><td><strong>Nilai MPP Total</strong></td><td>Rendah (umumnya $&lt; 30\%$)</td><td>Tinggi (dapat mencapai $&gt; 60\%$)</td></tr><tr><td><strong>Disparitas Harga</strong></td><td>Selisih harga produsen-konsumen sempit</td><td>Selisih harga produsen-konsumen sangat lebar</td></tr><tr><td><strong>Risiko Susut Fisik</strong></td><td>Rendah (barang cepat sampai ke konsumen)</td><td>Tinggi (risiko busuk/rusak tinggi pada hortikultura)</td></tr></tbody></table></div>
+<p>### 4. Manfaat Kebijakan Pengendalian Inflasi Pangan<br>Data Poldis digunakan oleh Tim Pengendalian Inflasi Daerah (TPID) dan Tim Pengendalian Inflasi Pusat (TPIP) untuk mendeteksi simpul distribusi mana yang mengalami hambatan (*bottleneck*). Bila disparitas harga terjadi karena kartel atau penimbunan pada tingkat pedagang besar, pemerintah dapat melakukan intervensi operasi pasar terarah di sentra grosir terkait.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan rilis hasil Survei Poldis BPS, komoditas bawang merah memiliki dua saluran perdagangan. Saluran 1 memiliki MPP Total 25% dengan melibatkan satu perantara, sedangkan Saluran 2 memiliki MPP Total 65% dengan melibatkan empat perantara. Dari sudut pandang stabilitas harga dan efisiensi pasar, kesimpulan yang paling valid adalah...</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 7, 10]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Saluran 2 lebih efisien karena melibatkan lebih banyak tenaga kerja pedagang perantara.</button>
+<button class="ex-opt" data-i="1">B. Saluran 1 lebih efisien karena memiliki rantai yang lebih pendek dan membebani konsumen dengan margin harga yang lebih rendah.</button>
+<button class="ex-opt" data-i="2">C. Saluran 2 memberikan jaminan keuntungan yang jauh lebih tinggi bagi petani produsen.</button>
+<button class="ex-opt" data-i="3">D. Kedua saluran memiliki efisiensi yang sama karena harga di tingkat produsen identik.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai konsep resmi BPS pada Slide 7, rantai distribusi perdagangan yang pendek menunjukkan distribusi yang efisien dan baik bagi perekonomian, karena meminimalkan biaya logistik perantara dan tidak membebani konsumen akhir dengan margin yang berlebihan (MPP 25% vs 65%). Pada Saluran 2, penambahan simpul perantara justru memperlebar disparitas harga tanpa memberikan tambahan pendapatan riil bagi petani produsen.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Mengecilkan Peran Konsumen Non-Rumah Tangga</strong>: Dalam survei Poldis komoditas beras atau minyak goreng, serapan oleh industri katering dan pabrik makanan sering kali mendominasi saluran perdagangan eceran.</li><li><strong>Menyederhanakan Rantai Tanpa Bukti Survei</strong>: Dalam soal analisis, jangan berasumsi setiap komoditas memiliki rantai yang seragam; rantai distribusi beras antarprovinsi sangat berbeda karakternya dengan rantai distribusi sayuran segar lokal.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Poldis Memetakan Jejak Distribusi: Rantai Pendek Efisien dan Menyejahterakan, Rantai Panjang Membebani Konsumen.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.1.1, 12.2.1</div>
+<button class="donebtn" data-id="12.1.2"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-12.2-Indeks-Harga-Konsumen-dan-Inflasi">
+<h2 class="sec-title">12.2 Indeks Harga Konsumen dan Inflasi<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-12.2.1">
+<h2>12.2.1 IHK Rumus Modified Laspeyres ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 14-20]</div>
+<div class="box info">📌 <div class="rich"><p>Penurunan rumus Modified Laspeyres berantai BPS, pembaruan bobot diagram timbang dari SBH, 11 kelompok pengeluaran COICOP 2018, dan rekonstruksi tabel hitungan UAS 2022/2023 Esai 2b.1.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Penghitungan IHK dilakukan dengan mengalikan relatif harga bulan berjalan dengan nilai konsumsi bulan sebelumnya untuk memperoleh nilai konsumsi bulan berjalan. Kemudian hasilnya dibagi dengan nilai konsumsi tahun dasar dan dikalikan 100. Nilai konsumsi bulan sebelumnya P(n-1)Q0 adalah hasil perkalian harga bulan sebelumnya dan kuantitas dari suatu komoditas hasil SBH. Nilai konsumsi tahun dasar P0Q0 adalah nilai konsumsi hasil SBH [slide 14-17].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bagaimana cara BPS mengetahui biaya hidup rata-rata masyarakat naik atau turun setiap bulannya tanpa harus menanyai jutaan keluarga mengenai berapa kilogram beras dan liter minyak yang mereka beli bulan ini? BPS menggunakan pendekatan 'sekeranjang tetap' komoditas yang dikonsumsi masyarakat hasil Survei Biaya Hidup (SBH). Karena kuantitas fisik sekeranjang barang dianggap konstan dalam jangka menengah, BPS hanya memantau perubahan harga bulanan di pasar. Melalui formula Modified Laspeyres, perubahan harga bulan ini dibanding bulan lalu (relatif harga) dikalikan dengan nilai belanja barang tersebut pada bulan lalu, lalu diagregasikan.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Teori Indeks Laspeyres yang Dimodifikasi (Modified Laspeyres)</p>
+<p>Formula Indeks Laspeyres klasik didefinisikan sebagai:<br>$$I_t = \frac{\sum_{i=1}^k P_{ti} Q_{0i}}{\sum_{i=1}^k P_{0i} Q_{0i}} \times 100$$<br>di mana $P_{ti}$ adalah harga komoditas $i$ pada periode $t$, $P_{0i}$ adalah harga komoditas $i$ pada tahun dasar, dan $Q_{0i}$ adalah kuantitas konsumsi pada tahun dasar.</p>
+<p>Dalam praktik kompilasi statistik bulanan, BPS memodifikasi formula di atas menjadi bentuk perkalian berantai relatif harga (*chained price relative*) terhadap nilai konsumsi periode sebelumnya [slide 15]:<br>$$IHK_t = \frac{\sum_{i=1}^k \left( \frac{P_{ti}}{P_{(t-1)i}} \times P_{(t-1)i} Q_{0i} \right)}{\sum_{i=1}^k P_{0i} Q_{0i}} \times 100$$<br>di mana:<br>- $\frac{P_{ti}}{P_{(t-1)i}}$: Relatif Harga (*Relative Price* / RH) komoditas $i$ pada bulan ke-$t$ terhadap bulan ke-$(t-1)$.<br>- $P_{(t-1)i} Q_{0i}$: Nilai Konsumsi (*Consumption Value* / NK) terbaharui komoditas $i$ pada bulan ke-$(t-1)$.<br>- $P_{0i} Q_{0i}$: Nilai Konsumsi tahun dasar hasil Survei Biaya Hidup (SBH).</p>
+<p>Bila dinyatakan dalam bentuk pembobot diagram timbang periode sebelumnya ($W_{(t-1)i}$):<br>$$W_{(t-1)i} = \frac{P_{(t-1)i} Q_{0i}}{\sum_{j=1}^k P_{0j} Q_{0j}} \times 100$$<br>maka formula Modified Laspeyres ekuivalen dengan:<br>$$IHK_t = \sum_{i=1}^k \left( \frac{P_{ti}}{P_{(t-1)i}} \times W_{(t-1)i} \right)$$</p>
+<p>### 2. Matriks 11 Kelompok Pengeluaran IHK (Klasifikasi COICOP 2018)</p>
+<p>Sejak tahun dasar 2018 (SBH 2018) dan diteruskan pada tahun dasar 2022 (SBH 2022), klasifikasi kelompok pengeluaran IHK mengikuti standar internasional *Classification of Individual Consumption According to Purpose* (COICOP 2018) yang terdiri dari 11 kelompok pengeluaran [slide 18]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>No</th><th>Kelompok Pengeluaran COICOP 2018</th><th>Cakupan Komoditas Utama</th></tr></thead><tbody><tr><td>01</td><td><strong>Makanan, Minuman, dan Tembakau</strong></td><td>Beras, daging ayam ras, telur ayam, cabai merah, rokok kretek filter</td></tr><tr><td>02</td><td><strong>Pakaian dan Alas Kaki</strong></td><td>Pakaian pria/wanita/anak, seragam sekolah, alas kaki/sepatu</td></tr><tr><td>03</td><td><strong>Perumahan, Air, Listrik, dan Bahan Bakar Rumah Tangga</strong></td><td>Sewa rumah, kontrak rumah, tarif listrik PLN, tarif air PAM, elpiji</td></tr><tr><td>04</td><td><strong>Perlengkapan, Peralatan, dan Pemeliharaan Rutin RT</strong></td><td>Perabot rumah, sabun cuci, pembersih lantai, upah asisten RT</td></tr><tr><td>05</td><td><strong>Kesehatan</strong></td><td>Jasa dokter umum/spesialis, obat-obatan resep/bebas, tarif rumah sakit</td></tr><tr><td>06</td><td><strong>Transportasi</strong></td><td>Bensin (Pertalite/Pertamax), solar, tarif angkutan udara/kota/kereta api</td></tr><tr><td>07</td><td><strong>Informasi, Komunikasi, dan Jasa Keuangan</strong></td><td>Pulsa ponsel, paket data internet, biaya transfer bank, telepon</td></tr><tr><td>08</td><td><strong>Rekreasi, Olahraga, dan Budaya</strong></td><td>Bioskop, tempat wisata, perlengkapan olahraga, televisi/gadget</td></tr><tr><td>09</td><td><strong>Pendidikan</strong></td><td>SPP SD/SMP/SMA, uang kuliah perguruan tinggi, bimbingan belajar</td></tr><tr><td>10</td><td><strong>Penyediaan Makanan dan Minuman/Restoran</strong></td><td>Nasi campur/rames, mie bakso, kopi siap minum, makanan cepat saji</td></tr><tr><td>11</td><td><strong>Perawatan Pribadi dan Jasa Lainnya</strong></td><td>Sabun mandi, pasta gigi, shampo, jasa pangkas rambut, emas perhiasan</td></tr></tbody></table></div>
+<p>### 3. Ekstensi: Indeks Kemahalan Konstruksi (IKK) dan Metode CPD [SUPLEMEN]<br>Di samping indeks harga konsumen temporal, BPS menyusun <strong>Indeks Kemahalan Konstruksi (IKK)</strong> sebagai indeks harga spasial (antarwilayah pada titik waktu sama) [slide 22-29]:<br>- <strong>Kegunaan Fiskal</strong>: IKK menjadi komponen utama penghitungan Kebutuhan Fiskal (KbF) dalam menentukan Celah Fiskal pada Dana Alokasi Umum (DAU) APBN [slide 24]. Semakin tinggi IKK, semakin besar kesulitan geografis dan semakin besar alokasi DAU yang diterima daerah.<br>- <strong>Metode Country Product Dummy (CPD)</strong>: Digunakan untuk mengestimasi *Purchasing Power Parity* (PPP) bahan bangunan antar-kabupaten/kota dengan kota acuan (tahun 2023: Kota Makassar = 100) menggunakan model regresi log-linier terhadap variabel dummy komoditas dan dummy wilayah [slide 26].</p></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Diketahui data IHK Gabungan Kota: IHK April 2022 = 109,98; IHK Mei 2022 = 110,42; IHK Desember 2022 = 113,59; IHK April 2023 = 114,74. Jika laju inflasi m-to-m pada Mei 2023 tercatat sebesar 0,09%, berapakah laju inflasi year-to-date (y-to-d) dan year-on-year (y-on-y) pada Mei 2023?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 18, 20]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. y-to-d = 1,10% dan y-on-y = 4,01%</button>
+<button class="ex-opt" data-i="1">B. y-to-d = 1,25% dan y-on-y = 4,42%</button>
+<button class="ex-opt" data-i="2">C. y-to-d = 1,10% dan y-on-y = 4,42%</button>
+<button class="ex-opt" data-i="3">D. y-to-d = 0,09% dan y-on-y = 4,01%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Langkah Perhitungan Lengkap</strong>:<br>1. Hitung IHK Mei 2023 terlebih dahulu:<br>   $$\text{IHK}_{\text{Mei 2023}} = 114,74 \times (1 + 0,0009) = 114,843266$$<br>2. Hitung inflasi y-to-d Mei 2023 (dibandingkan terhadap Desember 2022):<br>   $$\text{Inflasi}_{\text{ytd}} = \frac{114,843266 - 113,59}{113,59} \times 100\% = \frac{1,253266}{113,59} \times 100\% = 1,1033\% \approx 1,10\%$$<br>3. Hitung inflasi y-on-y Mei 2023 (dibandingkan terhadap Mei 2022):<br>   $$\text{Inflasi}_{\text{yoy}} = \frac{114,843266 - 110,42}{110,42} \times 100\% = \frac{4,423266}{110,42} \times 100\% = 4,0058\% \approx 4,01\%$$.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Distractor pada Soal Tabel Ujian</strong>: Soal UAS sering menyajikan baris IHK April tahun sebelumnya berdampingan dengan Mei tahun sebelumnya. Mahasiswa yang terburu-buru kerap membagi data Mei tahun berjalan dengan April tahun sebelumnya saat mencari inflasi tahunan (y-on-y). Selalu pasangkan Mei dengan Mei!</li><li><strong>Kuantitas Tahun Dasar vs Berjalan</strong>: Ingat bahwa Modified Laspeyres menggunakan kuantitas tahun dasar (Q0), bukan kuantitas berjalan (Qt). Jika kuantitas berjalan digunakan, rumusnya berubah menjadi Paasche.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Modified Laspeyres Mengalikan Relatif Harga (Pt/Pt-1) dengan Nilai Konsumsi Lalu (Pt-1*Q0); Basisnya SBH dan 11 Kelompok COICOP.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.1.1, 12.2.2, 12.2.3</div>
+<button class="donebtn" data-id="12.2.1"></button>
+</section>
+<section class="point" id="p-12.2.2">
+<h2>12.2.2 Tiga Laju Inflasi BPS mtom yony ytd ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 21-26]</div>
+<div class="box info">📌 <div class="rich"><p>Formula tiga laju inflasi BPS, penentuan penyebut rujukan periode dasar, sifat ekuivalensi bulan Januari dan Desember, serta interpretasi ekonomi makro.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Inflasi bulanan (month to month) dihitung dengan dasar IHK bulan sebelumnya. Inflasi tahunan (year on year): metode point to point dengan dasar bulan pada tahun sebelumnya. Inflasi tahun kalender (year to date): metode point to point dengan dasar bulan Desember pada tahun sebelumnya [slide 19]. Pada bulan Desember, tingkat inflasi y-to-d selalu sama dengan y-on-y [slide 21].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seorang analis ekonomi membaca berita utama koran bahwa 'Inflasi Indonesia 3%', angka apakah itu? Apakah harga naik 3% dalam sebulan terakhir, sejak awal tahun, atau dalam setahun penuh? Mengetahui horizon waktu inflasi sangat krusial. Kenaikan 3% sebulan berarti ancaman hiperinflasi, tetapi 3% setahun (y-on-y) adalah tingkat inflasi yang sangat sehat dan terkendali. BPS merilis ketiga dimensi waktu ini secara simultan.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Matematis Tiga Dimensi Waktu Inflasi</p>
+<p>Misalkan $IHK_{t, m}$ menyatakan Indeks Harga Konsumen pada tahun $t$ dan bulan ke-$m$ ($m \in \{1, 2, \dots, 12\}$):</p>
+<p>1. <strong>Inflasi Bulanan (*Month-to-Month* / m-to-m)</strong>:<br>Mengukur perubahan harga satu bulan terhadap bulan langsung sebelumnya:<br>$$\pi_{t, m}^{\text{mtom}} = \frac{IHK_{t, m} - IHK_{t, m-1}}{IHK_{t, m-1}} \times 100\%$$<br>Khusus untuk bulan Januari ($m=1$), bulan sebelumnya adalah Desember tahun lalu ($IHK_{t-1, 12}$).</p>
+<p>2. <strong>Inflasi Tahun Kalender (*Year-to-Date* / y-to-d)</strong>:<br>Mengukur akumulasi perubahan harga sepanjang tahun kalender berjalan, dihitung dari akhir tahun sebelumnya:<br>$$\pi_{t, m}^{\text{ytd}} = \frac{IHK_{t, m} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\%$$</p>
+<p>3. <strong>Inflasi Tahunan (*Year-on-Year* / y-on-y)</strong>:<br>Mengukur perubahan harga terhadap bulan yang sama pada satu tahun sebelumnya:<br>$$\pi_{t, m}^{\text{yony}} = \frac{IHK_{t, m} - IHK_{t-1, m}}{IHK_{t-1, m}} \times 100\%$$</p>
+<p>### 2. Sifat Batas Matematis Kalender Inflasi (Boundary Theorems)</p>
+<p>- <strong>Teorema Ekuivalensi Januari</strong>:<br>Pada bulan Januari ($m=1$), secara definisi:<br>$$\pi_{t, 1}^{\text{mtom}} = \frac{IHK_{t, 1} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\% = \pi_{t, 1}^{\text{ytd}}$$<br>Inflasi m-to-m bulan Januari selalu bernilai tepat sama dengan inflasi y-to-d bulan Januari.</p>
+<p>- <strong>Teorema Ekuivalensi Desember</strong>:<br>Pada bulan Desember ($m=12$), secara definisi:<br>$$\pi_{t, 12}^{\text{ytd}} = \frac{IHK_{t, 12} - IHK_{t-1, 12}}{IHK_{t-1, 12}} \times 100\% = \pi_{t, 12}^{\text{yony}}$$<br>Inflasi y-to-d bulan Desember selalu bernilai tepat sama dengan inflasi y-on-y bulan Desember [terkonfirmasi pada Slide 21: Des 2021 = 1,87%, Des 2022 = 5,51%, Des 2023 = 2,61%].</p>
+<p>### 3. Matriks Perbandingan Ketiga Laju Inflasi BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Karakteristik</th><th>Month-to-Month (m-to-m)</th><th>Year-to-Date (y-to-d)</th><th>Year-on-Year (y-on-y)</th></tr></thead><tbody><tr><td><strong>Periode Pembanding</strong></td><td>1 bulan sebelumnya ($t, m-1$)</td><td>Desember tahun lalu ($t-1, 12$)</td><td>Bulan sama tahun lalu ($t-1, m$)</td></tr><tr><td><strong>Sensitivitas Musiman</strong></td><td>Sangat tinggi (terpengaruh siklus bulanan)</td><td>Akumulatif dalam tahun berjalan</td><td>Meniadakan faktor musiman tahunan</td></tr><tr><td><strong>Fokus Pengguna</strong></td><td>Evaluasi pasokan pangan jangka pendek</td><td>Penyerapan anggaran &amp; target fiskal APBN</td><td>Sasaran resmi kebijakan moneter Bank Indonesia</td></tr><tr><td><strong>Pola Pergerakan</strong></td><td>Fluktuatif, sering bernilai negatif (deflasi)</td><td>Cenderung meningkat seiring bertambahnya bulan</td><td>Relatif lebih mulus mengikuti tren makro</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan data BPS, IHK bulan Desember 2022 adalah 113,59 dan IHK bulan Desember 2023 adalah 116,56. Berdasarkan informasi ini, manakah pernyataan yang paling tepat mengenai laju inflasi pada bulan Desember 2023?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 20, 21]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Inflasi m-to-m sama dengan inflasi y-to-d sebesar 2,61%.</button>
+<button class="ex-opt" data-i="1">B. Inflasi y-to-d sama dengan inflasi y-on-y sebesar 2,61%.</button>
+<button class="ex-opt" data-i="2">C. Inflasi y-on-y lebih tinggi daripada inflasi y-to-d karena diakumulasikan sepanjang 12 bulan.</button>
+<button class="ex-opt" data-i="3">D. Inflasi y-to-d bernilai 0% karena tahun anggaran telah ditutup.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Pada bulan Desember, periode dasar pembanding untuk inflasi tahun kalender (y-to-d) adalah bulan Desember tahun sebelumnya (Desember 2022). Periode dasar pembanding untuk inflasi tahunan (y-on-y) pada bulan Desember juga adalah bulan Desember tahun sebelumnya (Desember 2022). Oleh karena itu, perhitungannya identik:<br>$$\text{Inflasi} = \frac{116,56 - 113,59}{113,59} \times 100\% = \frac{2,97}{113,59} \times 100\% = 2,6146\% \approx 2,61\%$$<br>Sehingga inflasi y-to-d dan y-on-y bulan Desember 2023 keduanya bernilai tepat 2,61%.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Basis Des 2021 vs Des 2022</strong>: Saat menghitung inflasi ytd tahun 2023, pembagi wajib IHK Desember 2022, bukan Desember 2021.</li><li><strong>Deflasi</strong>: Jangan panik jika hasil perhitungan menghasilkan tanda negatif (misal -0,02%). Tanda negatif adalah fenomena deflasi yang wajar terjadi pasca panen raya atau penurunan tarif angkutan setelah liburan.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>m-to-m ke Bulan Lalu; y-to-d ke Desember Lalu; y-on-y ke Bulan yang Sama Tahun Lalu; Di Bulan Desember ytd = yoy!</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.2.1, 12.2.3</div>
+<button class="donebtn" data-id="12.2.2"></button>
+</section>
+<section class="point" id="p-12.2.3">
+<h2>12.2.3 Disagregasi Inflasi Inti Bergejolak Administered ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 18-21]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi tiga komponen disagregasi inflasi BPS, formula andil inflasi tertimbang, pembagian kewenangan pengendalian inflasi antara BI (Moneter) dan Pemerintah (Fiskal/Pangan/TPID).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Inflasi umum (headline) dapat didisagregasikan berdasarkan komponen pembentuknya menjadi inflasi inti, inflasi harga diatur pemerintah (administered prices), dan inflasi bergejolak (volatile foods). Pengelompokan ini penting untuk merumuskan kebijakan pengendalian inflasi yang tepat sasaran [slide 18-21].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika dokter mendiagnosis pasien demam tinggi, dokter harus tahu apakah demam itu karena infeksi virus musiman yang akan reda sendiri, atau karena penyakit kronis menular yang butuh antibiotik keras. Dalam perekonomian, inflasi adalah demam harga. Inflasi volatile foods ibarat batuk pilek cuaca (perlu pasokan pangan lancar). Inflasi administered ibarat efek samping obat suntik dokter (akibat kebijakan harga energi pemerintah). Sedangkan inflasi inti adalah kondisi kesehatan pembuluh darah moneter yang dipantau terus-menerus oleh Bank Indonesia.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Tiga Komponen Disagregasi Inflasi BPS</p>
+<p>Untuk mendukung analisis kebijakan moneter dan stabilitas perekonomian makro, BPS mendisagregasikan IHK Umum (*Headline Inflation*) menjadi tiga komponen [slide 18-21]:</p>
+<ol><li><strong>Inflasi Inti (*Core Inflation*)</strong>:</li><li>Komponen yang pergerakan harganya mencerminkan kecenderungan persisten (*trend component*).</li><li>Dipengaruhi oleh faktor-faktor fundamental makroekonomi: interaksi permintaan agregat dan penawaran barang/jasa, stabilitas nilai tukar valuta asing, harga komoditas primer internasional, serta ekspektasi inflasi pedagang dan konsumen.</li><li>Menjadi sasaran utama (*policy anchor*) kerangka kebijakan moneter Bank Indonesia (*Inflation Targeting Framework*).</li></ol>
+<ol><li><strong>Inflasi Harga Bergejolak (*Volatile Foods*)</strong>:</li><li>Komponen inflasi yang pergerakan harganya sangat fluktuatif (*volatile*) karena dipicu oleh kejutan temporer (*temporary supply shocks*).</li><li>Faktor pemicu: kondisi iklim/cuaca ekstrem (El Nino/La Nina), serangan hama pertanian, musim panen raya versus masa paceklik, serta kendala logistik dan rantai distribusi pangan.</li><li>Contoh komoditas: cabai merah, cabai rawit, bawang merah, daging ayam ras, telur ayam ras, beras, dan sayuran segar.</li></ol>
+<ol><li><strong>Inflasi Harga Diatur Pemerintah (*Administered Prices*)</strong>:</li><li>Komponen inflasi yang harga barang dan jasanya ditetapkan atau dikendalikan secara administratif oleh keputusan kebijakan pemerintah (pusat maupun daerah).</li><li>Contoh komoditas: Bahan Bakar Minyak (BBM) bersubsidi (Pertalite, Solar), tarif listrik rumah tangga (PLN), gas elpiji tabung 3 kg, rokok kretek/putih (melalui penyesuaian tarif cukai tembakau), air minum PAM, serta tarif batas atas/bawah angkutan udara dan kereta api.</li></ol>
+<p>### 2. Formulasi Andil Inflasi (*Inflation Contribution*)</p>
+<p>Laju inflasi umum gabungan merupakan rata-rata tertimbang linier dari laju inflasi masing-masing komponen:<br>$$\pi_{\text{headline}} = \sum_{k=1}^3 \left( \frac{w_k}{100} \times \pi_k \right)$$<br>di mana $w_k$ adalah bobot diagram timbang komponen ke-$k$ ($w_{\text{inti}} + w_{\text{bergejolak}} + w_{\text{administered}} = 100\%$), dan $\pi_k$ adalah laju inflasi komponen ke-$k$.</p>
+<p>Andil inflasi komponen ke-$k$ terhadap inflasi headline didefinisikan sebagai:<br>$$\text{Andil}_k = \frac{w_k}{100} \times \pi_k$$<br>Sehingga:<br>$$\pi_{\text{headline}} = \text{Andil}_{\text{inti}} + \text{Andil}_{\text{bergejolak}} + \text{Andil}_{\text{administered}}$$</p>
+<p>### 3. Matriks Perbandingan Karakteristik Komponen Disagregasi</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Komponen Inti (*Core*)</th><th>Komponen Bergejolak (*Volatile*)</th><th>Diatur Pemerintah (*Administered*)</th></tr></thead><tbody><tr><td><strong>Karakteristik Harga</strong></td><td>Persisten, bergerak bertahap, lambat berbalik</td><td>Sangat fluktuatif, fluktuasi tajam jangka pendek</td><td>Bergerak diskrit/kejutan sesaat saat kebijakan diumumkan</td></tr><tr><td><strong>Pemicu Utama</strong></td><td>Permintaan agregat, nilai tukar, ekspektasi</td><td>Cuaca, gagal panen, hama, distribusi logistik</td><td>Keputusan regulasi tarif dan subsidi pemerintah</td></tr><tr><td><strong>Bobot IHK Nasional</strong></td><td>Terbesar (sekitar 60% - 65%)</td><td>Menengah (sekitar 15% - 20%)</td><td>Menengah (sekitar 18% - 22%)</td></tr><tr><td><strong>Otoritas Kebijakan</strong></td><td>Bank Indonesia (kebijakan suku bunga BI-Rate)</td><td>TPIP, TPID, Kementan, Bapanas, Bulog</td><td>Kementerian ESDM, Kemenhub, Kemenkeu, Pemda</td></tr><tr><td><strong>Instrumen Penanganan</strong></td><td>Operasi moneter, pengendalian likuiditas</td><td>Operasi pasar pangan, fasilitasi ongkos angkut</td><td>Penyesuaian subsidi energi, penetapan tarif HET</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Pemerintah memutuskan untuk menaikkan harga BBM bersubsidi dan tarif tenaga listrik secara serentak. Kenaikan harga kedua komoditas ini secara langsung akan tercermin pada peningkatan laju inflasi komponen...</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 18-21]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Inflasi Inti (Core Inflation)</button>
+<button class="ex-opt" data-i="1">B. Inflasi Komponen Bergejolak (Volatile Foods)</button>
+<button class="ex-opt" data-i="2">C. Inflasi Komponen Diatur Pemerintah (Administered Prices)</button>
+<button class="ex-opt" data-i="3">D. Inflasi Musiman (Seasonal Inflation)</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Tarif BBM bersubsidi dan tarif listrik adalah komoditas strategis yang harganya diatur dan ditetapkan secara langsung oleh keputusan pemerintah. Oleh karena itu, lonjakan harganya secara langsung dicatat sebagai inflasi komponen *Administered Prices*. Meskipun dalam jangka panjang biaya BBM dapat merembet ke biaya produksi barang lain (efek putaran kedua / *second-round effect* pada inflasi inti), efek putaran pertama secara langsung masuk ke administered prices.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Antara Laju Inflasi dan Andil</strong>: Dalam ujian esai, jangan menjawab bahwa komponen bergejolak otomatis menyumbang inflasi terbesar hanya karena laju inflasinya 5% sementara inti hanya 1%. Selalu kalikan dengan bobotnya masing-masing terlebih dahulu.</li><li><strong>Karakteristik Komoditas Ganda</strong>: Beras adalah makanan pokok tetapi di Indonesia sering dipengaruhi intervensi harga eceran tertinggi (HET) dan operasi pasar Bulog, namun secara klasifikasi standar BPS tetap dimasukkan dalam kelompok volatile foods.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Inti untuk Moneter BI; Bergejolak untuk Pangan dan Panen; Administered untuk BBM, Tarif Listrik, dan Kebijakan.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.2.1, 12.2.2, 12.3.1</div>
+<button class="donebtn" data-id="12.2.3"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-12.3-Nilai-Tukar-Petani-NTP">
+<h2 class="sec-title">12.3 Nilai Tukar Petani NTP<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-12.3.1">
+<h2>12.3.1 Konsep dan Rasio NTP It per Ib ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 33-36]</div>
+<div class="box info">📌 <div class="rich"><p>Konsep dasar dan formulasi rasio NTP, dekomposisi komponen pembayar petani (IKRT dan BPPBM), perhitungan inflasi perdesaan, dan rekonstruksi soal esai UAS 2022/2023 Esai 2b.3.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Nilai Tukar Petani (NTP) merupakan perbandingan harga yang diterima petani dengan harga yang dibayar petani. Mengukur kemampuan tukar (terms of trade) produk yang dijual petani dengan produk yang dibutuhkan petani dalam berproduksi dan konsumsi rumah tangga. Indeks harga yang dibayar petani (Ib) terdiri dari Konsumsi Rumah Tangga (KRT/IKRT) dan Biaya Produksi dan Penambahan Barang Modal (BPPBM) [slide 31, 36].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan seorang petani padi yang membawa sekarung gabah ke pasar. Dengan uang hasil penjualan gabah tersebut, petani ingin membeli beras, minyak goreng, seragam sekolah anak, pupuk urea, dan menyewa mesin perontok padi. Jika sekarung gabah kini dapat membeli lebih banyak barang kebutuhan dibanding tahun dasar, maka daya tukar produk petani menguat (NTP &gt; 100). Namun jika harga pupuk dan sembako melonjak lebih cepat daripada harga gabah, petani harus menjual lebih banyak gabah hanya untuk memenuhi kebutuhan hidup yang sama (NTP &lt; 100).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Formulasi Resmi BPS</p>
+<p>Berdasarkan metodologi statistik harga perdesaan BPS [slide 31-36]:<br>- <strong>Indeks Harga yang Diterima Petani ($I_t$)</strong>: Mengukur rata-rata perubahan harga produsen atas komoditas pertanian yang dihasilkan dan dijual oleh petani.<br>- <strong>Indeks Harga yang Dibayar Petani ($I_b$)</strong>: Mengukur rata-rata perubahan harga barang dan jasa yang dibeli dan dibayar oleh petani, baik untuk keperluan konsumsi rumah tangga maupun biaya produksi dan investasi barang modal.</p>
+<p>Formulasi matematis rasio NTP didefinisikan sebagai:<br>$$NTP = \frac{I_t}{I_b} \times 100$$</p>
+<p>### 2. Dekomposisi Indeks yang Dibayar Petani ($I_b$)</p>
+<p>Indeks $I_b$ tersusun atas dua kelompok indeks utama [slide 36]:<br>$$I_b = w_{\text{IKRT}} \cdot IKRT + w_{\text{BPPBM}} \cdot BPPBM$$<br>di mana $w_{\text{IKRT}} + w_{\text{BPPBM}} = 1,0$ (berdasarkan diagram timbang hasil Survei Penyempurnaan Diagram Timbang NTP / SPDT-NTP):<br>1. <strong>Indeks Konsumsi Rumah Tangga (IKRT)</strong>: Mencakup pengeluaran konsumsi keluarga petani (makanan, minuman, tembakau, perumahan, sandang, kesehatan, pendidikan, transportasi, dan rekreasi). Perubahan persentase bulanan IKRT digunakan BPS sebagai <strong>proksi resmi laju inflasi perdesaan</strong> (*rural inflation*) [slide 37-38].<br>2. <strong>Biaya Produksi dan Penambahan Barang Modal (BPPBM)</strong>: Mencakup biaya sarana produksi pertanian (bibit/benih, pupuk, pestisida/obat-obatan, pakan ternak), upah buruh tani, sewa lahan, ongkos angkut sarana produksi, dan pembelian barang modal (cangkul, pompa air, traktor tangan).</p>
+<p>### 3. Matriks Interpretasi Ambang Batas NTP</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Kategori Nilai NTP</th><th>Status Ekonomi Petani</th><th>Makna Terms of Trade</th><th>Implikasi Kesejahteraan Riil</th></tr></thead><tbody><tr><td><strong>$NTP &gt; 100$</strong></td><td>Surplus</td><td>Harga jual hasil pertanian naik lebih cepat daripada harga barang yang dibeli</td><td>Daya beli petani meningkat; daya saing komoditas menguat</td></tr><tr><td><strong>$NTP = 100$</strong></td><td>Impas (*Break-Even*)</td><td>Kenaikan harga jual hasil pertanian sebanding dengan kenaikan harga belanja</td><td>Daya beli petani relatif stabil tidak berubah dibanding tahun dasar</td></tr><tr><td><strong>$NTP &lt; 100$</strong></td><td>Defisit</td><td>Harga barang belanja petani naik lebih cepat daripada harga komoditas yang dijual</td><td>Daya beli petani merosot; potensi penurunan kesejahteraan perdesaan</td></tr></tbody></table></div>
+<p>### 4. Siklus Pengumpulan Data NTP<br>- <strong>SPDT-NTP</strong>: Survei periodik untuk menyusun paket komoditas dan diagram timbang tingkat provinsi [slide 33-34].<br>- <strong>SHPed (Survei Harga Perdesaan)</strong>: Pemantauan harga bulanan yang dilakukan di wilayah perdesaan terpilih untuk mencatat harga transaksi aktual produsen dan konsumen perdesaan.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Pada bulan Mei 2023, data BPS mencatat bahwa Indeks Harga yang Dibayar Petani (Ib) naik dari 116,33 menjadi 116,71. Sementara itu, Indeks Konsumsi Rumah Tangga (IKRT) naik dari 116,71 menjadi 117,18. Berapakah laju inflasi perdesaan pada bulan Mei 2023?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 36-38]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 0,33%</button>
+<button class="ex-opt" data-i="1">B. 0,40%</button>
+<button class="ex-opt" data-i="2">C. 0,47%</button>
+<button class="ex-opt" data-i="3">D. 0,85%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Laju inflasi perdesaan secara resmi oleh BPS dihitung semata-mata dari perubahan persentase Indeks Konsumsi Rumah Tangga (IKRT), bukan dari indeks Ib gabungan:<br>$$\text{Inflasi Perdesaan} = \frac{IKRT_{\text{Mei}} - IKRT_{\text{Apr}}}{IKRT_{\text{Apr}}} \times 100\% = \frac{117,18 - 116,71}{116,71} \times 100\% = \frac{0,47}{116,71} \times 100\% = 0,4027\% \approx 0,40\%$$.</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menghitung Inflasi Desa Menggunakan Ib</strong>: Kesalahan fatal dalam ujian adalah menghitung inflasi perdesaan dari selisih Ib. Inflasi perdesaan murni dihitung dari IKRT.</li><li><strong>Kaitan Antara NTUP dan It</strong>: Sering kali soal ujian tidak memberikan nilai It langsung melainkan NTUP dan BPPBM. Ingat rumus invers: It = (NTUP * BPPBM) / 100.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>NTP = It / Ib * 100; Ib dipecah jadi IKRT (Inflasi Desa) dan BPPBM (Biaya Usahatani).</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.2.1, 12.3.2, 12.3.3</div>
+<button class="donebtn" data-id="12.3.1"></button>
+</section>
+<section class="point" id="p-12.3.2">
+<h2>12.3.2 Nilai Tukar Usaha Petani NTUP ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 37-38]</div>
+<div class="box info">📌 <div class="rich"><p>Perbedaan fundamental antara NTP dan NTUP, formula NTUP = It / BPPBM * 100, analisis divergensi akibat inflasi perdesaan IKRT, dan konsep upah riil buruh tani.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Nilai Tukar Usaha Rumah Tangga Pertanian (NTUP) mengeluarkan konsumsi dari komponen indeks harga yang dibayar petani (Ib), sehingga NTUP dapat lebih mencerminkan kemampuan produksi petani, karena yang dibandingkan hanya produksi dengan biaya produksinya. Upah riil buruh tani menggambarkan daya beli dari pendapatan/upah harian dibagi dengan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Petani memiliki dua peran sekaligus: produsen di sawah dan konsumen di rumah tangga. Bila seorang petani ingin mengetahui apakah modal bertaninya menghasilkan imbal balik yang sepadan terhadap harga pupuk dan bibit, petani melihat NTUP. Bila petani ingin mengetahui apakah uang hasil panennya cukup untuk membiayai makan keluarga dan uang saku anak sekolah, petani melihat NTP. NTUP adalah cermin efisiensi sawah/kebun, sedangkan NTP adalah cermin daya beli dompet keluarga.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual NTUP BPS</p>
+<p>Dalam publikasi statistik BPS [slide 37-38]:<br>- <strong>Kelemahan NTP sebagai Indikator Kinerja Usaha</strong>: Angka NTP dipengaruhi oleh harga sekeranjang barang konsumsi rumah tangga (IKRT). Ketika terjadi gejolak harga pangan eceran di desa (misalnya harga minyak goreng atau rokok naik), NTP akan merosot meskipun efisiensi usaha tani dan harga jual gabah di tingkat petani sedang sangat bagus.<br>- <strong>Tujuan Pembentukan NTUP</strong>: Menghilangkan pengaruh dinamika harga barang konsumsi rumah tangga dari indeks harga yang dibayar petani, sehingga indikator ini murni merefleksikan daya saing dan profitabilitas sektor produksi pertanian terhadap biaya input sarana produksi.</p>
+<p>### 2. Formulasi Matematis NTUP</p>
+<p>Formulasi matematis NTUP adalah rasio antara Indeks Harga yang Diterima Petani ($I_t$) terhadap Indeks Biaya Produksi dan Penambahan Barang Modal ($BPPBM$):<br>$$NTUP = \frac{I_t}{BPPBM} \times 100$$</p>
+<p>Komponen pembentuk BPPBM terdiri atas 6 kelompok pengeluaran sarana produksi [slide 36]:<br>1. <strong>Bibit / Benih</strong>: Pengeluaran pembelian bibit tanaman pangan, bibit buah/sayur, bibit tanaman perkebunan, dan anakan hewan ternak/benur ikan.<br>2. <strong>Pupuk dan Obat-obatan</strong>: Pupuk kimia (urea, NPK, ZA), pupuk organik, pestisida, herbisida, insektisida, dan vaksin ternak.<br>3. <strong>Pakan dan Obat Ternak/Ikan</strong>: Konsentrat, bekatul, jagung pakan, dan suplemen vitamin ternak.<br>4. <strong>Sewa Lahan dan Pengeluaran Lainnya</strong>: Pajak PBB lahan pertanian, retribusi irigasi desa, sewa lahan garapan, dan jasa asuransi usaha tani.<br>5. <strong>Transportasi</strong>: Biaya angkut sarana produksi dari toko pertanian ke lahan sawah/kebun.<br>6. <strong>Penambahan Barang Modal (Investasi Alat)</strong>: Pembelian dan perbaikan alat produksi tahan lama (cangkul, arit, tangki semprot, mesin pompa air, traktor tangan).<br>7. <strong>Upah Buruh Tani</strong>: Upah membajak/mengolah tanah, upah penanaman, upah penyiangan, dan upah panen yang dibayarkan kepada buruh upahan.</p>
+<p>### 3. Matriks Perbandingan Komparatif NTP vs NTUP</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi Analisis</th><th>Nilai Tukar Petani (NTP)</th><th>Nilai Tukar Usaha Petani (NTUP)</th></tr></thead><tbody><tr><td><strong>Pembilang ($Numerator$)</strong></td><td>Indeks Harga yang Diterima ($I_t$)</td><td>Indeks Harga yang Diterima ($I_t$)</td></tr><tr><td><strong>Penyebut ($Denominator$)</strong></td><td>Indeks Harga yang Dibayar ($I_b = IKRT + BPPBM$)</td><td>Hanya Biaya Produksi ($BPPBM$)</td></tr><tr><td><strong>Komponen Konsumsi RT</strong></td><td><strong>Termasuk</strong> (melalui sub-indeks IKRT)</td><td><strong>Dikeluarkan</strong> (tidak diperhitungkan)</td></tr><tr><td><strong>Fokus Pengukuran</strong></td><td>Tingkat kesejahteraan dan daya beli keluarga petani</td><td>Efisiensi, daya saing, dan profitabilitas usahatani</td></tr><tr><td><strong>Respons thd Inflasi Sembako</strong></td><td>Langsung merosot jika sembako di desa naik</td><td>Tidak terpengaruh fluktuasi sembako eceran</td></tr></tbody></table></div>
+<p>### 4. Konsep Upah Riil Buruh Tani<br>BPS juga merilis indikator daya beli pekerja sektor pertanian yang tidak memiliki lahan garapan (buruh tani). <strong>Upah Riil Buruh Tani</strong> dihitung dengan mengempiskan (*deflating*) upah nominal harian buruh menggunakan Indeks Konsumsi Rumah Tangga (IKRT) [slide 38]:<br>$$\text{Upah Riil} = \frac{\text{Upah Nominal Harian}}{IKRT} \times 100$$<br>Bila upah nominal buruh tani naik 2% tetapi IKRT desa naik 3%, maka upah riil buruh tani mengalami penurunan daya beli sebesar 1%.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Dalam suatu periode pengamatan, tercatat indeks It = 125, IKRT = 120, dan BPPBM = 110. Jika bobot IKRT adalah 65% dan BPPBM adalah 35%, bagaimanakah posisi perbandingan antara nilai NTP dan NTUP?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 37-38]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. NTP lebih besar daripada NTUP karena mencakup pengeluaran konsumsi keluarga.</button>
+<button class="ex-opt" data-i="1">B. NTP lebih kecil daripada NTUP karena nilai IKRT lebih tinggi daripada nilai BPPBM.</button>
+<button class="ex-opt" data-i="2">C. NTP sama persis dengan NTUP karena pembilangnya sama-sama bernilai 125.</button>
+<button class="ex-opt" data-i="3">D. NTP dan NTUP tidak dapat diperbandingkan karena menggunakan tahun dasar yang berbeda.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Hitung Ib: $$I_b = (0,65 \times 120) + (0,35 \times 110) = 78 + 38,5 = 116,5$$<br>2. Hitung NTP: $$NTP = \frac{125}{116,5} \times 100 = 107,30$$<br>3. Hitung NTUP: $$NTUP = \frac{125}{110} \times 100 = 113,64$$<br>Karena $IKRT (120) &gt; BPPBM (110)$, indeks gabungan yang dibayar petani ($I_b = 116,5$) lebih besar daripada biaya produksi saja ($BPPBM = 110$). Akibatnya, nilai NTP (107,30) bergerak <strong>lebih rendah</strong> dibandingkan NTUP (113,64).</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menghitung NTUP dengan Membagi Ib</strong>: Mahasiswa sering tertukar dan membagi It dengan Ib saat ditanya NTUP. Ingat kata kunci: Usaha Pertanian -&gt; hanya bandingkan hasil produksi dengan biaya produksi (BPPBM).</li><li><strong>Divergensi Arah Tren</strong>: Jangan terkejut bila melihat grafik BPS di mana garis NTUP meningkat sementara garis NTP menurun; hal ini sah secara ekonomi ketika inflasi pedesaan melonjak tinggi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>NTUP = It / BPPBM * 100; NTUP Bicara Untung Rugi Usahatani di Sawah, NTP Bicara Dapur Keluarga di Rumah.</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.3.1, 12.3.3</div>
+<button class="donebtn" data-id="12.3.2"></button>
+</section>
+<section class="point" id="p-12.3.3">
+<h2>12.3.3 Lima Subsektor Penyusun NTP ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 36-40]</div>
+<div class="box info">📌 <div class="rich"><p>Klasifikasi komoditas 5 subsektor pertanian BPS, formula agregasi rata-rata tertimbang NTP gabungan, serta keterkaitan indeks spasial IKK dalam alokasi fiskal DAU.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Indeks Harga Yang Diterima Petani (It) terdiri dari: 1. Subsektor Tanaman Pangan (Padi dan Palawija); 2. Subsektor Tanaman Hortikultura (Sayur-sayuran, Buah-buahan, Obat-obatan); 3. Subsektor Tanaman Perkebunan Rakyat (TPR); 4. Subsektor Peternakan (Ternak Besar, Ternak Kecil, Unggas, Hasil Ternak); 5. Subsektor Perikanan (Penangkapan dan Budidaya) [slide 36].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Dunia pertanian bukan hanya hamparan sawah padi. Petani kakao di Sulawesi menghadapi gejolak bursa komoditas berjangka London dan New York; peternak sapi perah di Boyolali menghadapi harga pakan konsentrat dan persaingan impor susu; sementara nelayan di Bitung menghadapi lonjakan harga solar dan gelombang laut tinggi. Memisahkan pengukuran NTP ke dalam 5 subsektor memastikan setiap kementerian teknis (Kementerian Pertanian, Kementerian Kelautan dan Perikanan) memiliki instrumen evaluasi yang presisi.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Klasifikasi 5 Subsektor Pertanian Resmi BPS</p>
+<p>Berdasarkan klasifikasi teknis BPS [slide 36]:</p>
+<ol><li><strong>Subsektor Tanaman Pangan (NTPR)</strong>:</li><li>Kelompok Padi: padi sawah dan padi ladang.</li><li>Kelompok Palawija: jagung, kedelai, kacang tanah, kacang hijau, ubi kayu (singkong), dan ubi jalar.</li></ol>
+<ol><li><strong>Subsektor Hortikultura (NTPH)</strong>:</li><li>Sayur-sayuran: cabai merah, cabai rawit, bawang merah, tomat, kubis/kol, kentang, wortel, sawi/caisim, terung, buncis.</li><li>Buah-buahan: pisang, jeruk, mangga, pepaya, durian, nanas, salak.</li><li>Tanaman Biofarmaka/Obat-obatan: jahe, kunyit, temulawak, kencur, kapulaga.</li></ol>
+<ol><li><strong>Subsektor Tanaman Perkebunan Rakyat (NTPR/BUN)</strong>:</li><li>Khusus perkebunan yang diusahakan oleh rakyat (bukan perkebunan besar swasta/negara PTPN).</li><li>Komoditas utama: kelapa sawit, karet, kopi, kakao/cokelat, kelapa dalam, cengkih, tembakau, tebu, lada, pala.</li></ol>
+<ol><li><strong>Subsektor Peternakan (NTPT)</strong>:</li><li>Ternak Besar: sapi potong, sapi perah, kerbau, kuda.</li><li>Ternak Kecil: kambing, domba, babi.</li><li>Unggas: ayam ras pedaging (broiler), ayam ras petelur (layer), ayam buras/kampung, itik/bebek.</li><li>Hasil Ternak: telur ayam ras, telur ayam kampung, telur itik, susu sapi murni segar, sarang burung walet.</li></ol>
+<ol><li><strong>Subsektor Perikanan (NTNP)</strong>:</li><li><strong>Perikanan Tangkap (NTN)</strong>: penangkapan di laut (tuna, cakalang, tongkol, kembung, teri, udang laut) dan perairan umum darat (sungai, danau, rawa, waduk).</li><li><strong>Perikanan Budidaya (NTPi)</strong>: budidaya air tawar (ikan mas, nila, lele, gurami), budidaya air payau/tambak (udang vaname, bandeng), dan budidaya laut (kerapu, rumput laut).</li></ol>
+<p>### 2. Formulasi Agregasi NTP Gabungan</p>
+<p>NTP Gabungan tingkat provinsi atau nasional dihitung menggunakan formula rata-rata tertimbang (*weighted average*):<br>$$NTP_{\text{gabungan}} = \sum_{s=1}^5 \left( w_s \times NTP_s \right)$$<br>di mana $w_s$ adalah proporsi nilai tukar/produksi subsektor $s$ terhadap total sektor pertanian di wilayah bersangkutan, dengan syarat $\sum_{s=1}^5 w_s = 1,0$.</p>
+<p>### 3. Matriks Karakteristik 5 Subsektor NTP</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Subsektor</th><th>Singkatan</th><th>Karakteristik Siklus Panen</th><th>Sumber Risiko Utama</th><th>Sensitivitas Pasar</th></tr></thead><tbody><tr><td><strong>Tanaman Pangan</strong></td><td>NTPR</td><td>Musiman (3 - 4 bulan)</td><td>Banjir, kekeringan, serangan hama wereng</td><td>Intervensi HET dan impor Bulog</td></tr><tr><td><strong>Hortikultura</strong></td><td>NTPH</td><td>Cepat rusak (*perishable*)</td><td>Curah hujan tinggi, penyakit jamur</td><td>Fluktuasi harga harian ekstrem</td></tr><tr><td><strong>Perkebunan Rakyat</strong></td><td>TPR/BUN</td><td>Tahunan / tahunan berulang</td><td>Fluktuasi harga komoditas global</td><td>Sangat sensitif thd kurs valas dan pasar ekspor</td></tr><tr><td><strong>Peternakan</strong></td><td>NTPT</td><td>Siklus cepat unggas, panjang ruminansia</td><td>Wabah penyakit (PMK, flu burung)</td><td>Biaya pakan impor (jagung &amp; bungkil kedelai)</td></tr><tr><td><strong>Perikanan</strong></td><td>NTNP</td><td>Harian (tangkap), berkala (budidaya)</td><td>Cuaca ekstrem laut, kenaikan harga solar BBM</td><td>Biaya armada kapal dan cold chain</td></tr></tbody></table></div>
+<p>### 4. Ekstensi: Indeks Kemahalan Konstruksi (IKK) dan Alokasi Fiskal DAU [SUPLEMEN]<br>Sebagai pelengkap indikator harga perdesaan, BPS menyusun <strong>Indeks Kemahalan Konstruksi (IKK)</strong> [slide 22-29]:<br>- <strong>Formula DAU APBN</strong>: DAU dialokasikan melalui Alokasi Dasar (gaji PNS daerah) dan Celah Fiskal (Kebutuhan Fiskal minus Kapasitas Fiskal) [slide 24].<br>- <strong>IKK sebagai Pengali Kebutuhan Fiskal</strong>: Semakin tinggi indeks IKK di suatu kabupaten/kota (misalnya Kabupaten Puncak di Papua Pegunungan yang mencapai IKK 251,25 [slide 28]), semakin tinggi indeks kesulitan geografis daerah tersebut, sehingga porsi transfer DAU dari pemerintah pusat meningkat secara signifikan.</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan klasifikasi resmi BPS, kelompok komoditas manakah di bawah ini yang seluruhnya termasuk ke dalam Subsektor Hortikultura (NTPH)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_12_OSL_Indikator_Ekonomi_(2)_Perdagangan&amp;Harga.md, slide 36-39]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Padi sawah, jagung hibrida, dan ubi jalar</button>
+<button class="ex-opt" data-i="1">B. Cabai rawit, bawang merah, tomat, dan jahe</button>
+<button class="ex-opt" data-i="2">C. Kelapa sawit, karet alam, kopi robusta, dan kakao</button>
+<button class="ex-opt" data-i="3">D. Ayam ras pedaging, sapi potong, dan telur itik</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A adalah Subsektor Tanaman Pangan (padi dan palawija).<br>- Pilihan B (cabai rawit, bawang merah, tomat, jahe) adalah Subsektor Hortikultura (sayur-sayuran, buah-buahan, dan tanaman biofarmaka/obat).<br>- Pilihan C adalah Subsektor Tanaman Perkebunan Rakyat (TPR).<br>- Pilihan D adalah Subsektor Peternakan (ternak dan unggas).</p></div></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Mengabaikan Bobot Subsektor</strong>: Nilai NTP gabungan bukan rata-rata biasa. Jika subsektor hortikultura NTP-nya 150 tetapi bobotnya hanya 5%, dampaknya terhadap NTP gabungan sangat kecil dibanding perkebunan sawit yang berbobot 50%.</li><li><strong>Kategori Budidaya vs Tangkap</strong>: Dalam rilis BPS, jika terjadi paceklik laut karena badai, nelayan tangkap terpuruk (NTN anjlok), tetapi pembudidaya tambak udang (NTPi) mungkin tetap stabil.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>5 Subsektor NTP: Pangan, Hortikultura, Kebun Rakyat, Ternak, dan Ikan (Tangkap &amp; Budidaya); Diagregasi Pakai Rata-rata Tertimbang!</p></div></div>
+<div class="links">Keterkaitan Konsep: 12.3.1, 12.3.2</div>
+<button class="donebtn" data-id="12.3.3"></button>
+</section>
+</div>
+</main></div>
+<script>
+const KEY = "lecture-done-chapter-12-";
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

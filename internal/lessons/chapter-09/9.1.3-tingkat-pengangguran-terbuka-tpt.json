@@ -1,0 +1,97 @@
+{
+  "point_id": "9.1.3",
+  "title": "Tingkat Pengangguran Terbuka TPT",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 9,
+    "silabus_topic": "Ketenagakerjaan dan Pendidikan",
+    "bps_subject": "Statistik Ketenagakerjaan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "15-16",
+        "content": "Formula TPT = (PP / PAK) * 100, definisi pengangguran terbuka yang mencakup 4 kategori penganggur BPS."
+      },
+      {
+        "file": "Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md",
+        "slide_or_page": "21-23",
+        "content": "Data seri pengangguran terbuka nasional Sakernas 2019-2021 dan lonjakan TPT pada masa pandemi Covid-19."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "TPT mengukur sejauh mana pasokan tenaga kerja yang telah aktif di bursa kerja gagal diserap oleh aktivitas ekonomi. TPT bukan cerminan dari seluruh orang yang tidak bekerja, melainkan hanya mereka yang 'siap dan berupaya' bekerja tetapi belum memperoleh pekerjaan. Oleh sebab itu, pembagi TPT adalah Angkatan Kerja (AK), bukan total penduduk usia kerja.",
+    "bps_definition": "Tingkat Pengangguran Terbuka (TPT) adalah persentase jumlah pengangguran terhadap jumlah angkatan kerja. Pengangguran Terbuka BPS terdiri atas 4 kategori: (1) Penduduk yang aktif mencari pekerjaan, (2) Penduduk yang sedang mempersiapkan usaha/pekerjaan baru, (3) Penduduk yang tidak mencari kerja karena merasa tidak mungkin mendapat pekerjaan (discouraged workers / putus asa), dan (4) Penduduk yang sudah memiliki pekerjaan/diterima kerja tetapi belum mulai bekerja (future starts).",
+    "boundary_conditions": "1. Pembagi resmi: Angkatan Kerja (AK = Bekerja + Pengangguran). Bukan PUK, bukan total penduduk, dan bukan penduduk bekerja.\n2. Batasan kategori: Seseorang yang tidak bekerja tetapi tidak mencari pekerjaan karena sedang sekolah atau mengurus rumah tangga TIDAK boleh dimasukkan sebagai pengangguran terbuka (mereka adalah BAK).\n3. Kategori 'putus asa' dan 'mempersiapkan usaha' secara eksplisit dihitung sebagai pengangguran terbuka di Indonesia, berbeda dengan definisi ILO murni yang mensyaratkan pencarian kerja aktif.",
+    "formula_latex": "$$\\text{TPT} = \\frac{\\text{Penganggur}}{\\text{AK}} \\times 100\\% = \\frac{\\text{Penganggur}}{\\text{Bekerja} + \\text{Penganggur}} \\times 100\\%$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Rekonstruksi Soal UAS 2022/2023 Esai 1 Ketenagakerjaan: Suatu negara berpenduduk 18,0 juta jiwa dengan 4,0 juta jiwa di antaranya belum mencapai usia 15 tahun (BUK). Dari penduduk usia kerja (PUK), 5,0 juta jiwa tergolong bukan angkatan kerja (2,0 juta bersekolah, 2,0 juta mengurus rumah tangga, dan 1,0 juta lainnya). Penduduk yang bekerja berjumlah 7,0 juta orang (6,0 juta bekerja penuh dan 1,0 juta bekerja paruh waktu). Terdapat 1,0 juta orang yang terkena PHK dan sedang aktif mencari kerja, 0,5 juta orang sedang mempersiapkan usaha kedai kopi, serta 0,5 juta orang telah dinyatakan lulus seleksi kerja tetapi baru akan mulai bertugas bulan depan. Hitunglah nilai TPAK dan TPT negara tersebut!",
+    "data_table": "| Komponen Ketenagakerjaan | Jumlah Jiwa (Juta) |\n|---|---|\n| Total Populasi | 18,0 |\n| Bukan Usia Kerja (< 15 Tahun) | 4,0 |\n| Penduduk Usia Kerja (PUK >= 15 Tahun) | 14,0 |\n| Bukan Angkatan Kerja (Sekolah, IRT, Lainnya) | 5,0 |\n| Penduduk Bekerja Penuh (>= 35 jam) | 6,0 |\n| Penduduk Bekerja Kurang Jam Kerja (< 35 jam) | 1,0 |\n| Penganggur: Terkena PHK mencari kerja | 1,0 |\n| Penganggur: Sedang mempersiapkan usaha | 0,5 |\n| Penganggur: Sudah diterima kerja belum mulai | 0,5 |",
+    "step_by_step_solution": "1. Identifikasi PUK dan Angkatan Kerja (AK):\n   $$\\text{PUK} = 18,0 - 4,0 = 14,0 \\text{ juta jiwa}$$\n   $$\\text{Total Bekerja (PB)} = 6,0 + 1,0 = 7,0 \\text{ juta jiwa}$$\n   $$\\text{Total Penganggur} = 1,0 + 0,5 + 0,5 = 2,0 \\text{ juta jiwa}$$\n   $$\\text{Angkatan Kerja (AK)} = \\text{PB} + \\text{Penganggur} = 7,0 + 2,0 = 9,0 \\text{ juta jiwa}$$\n2. Perhitungan TPAK:\n   $$\\text{TPAK} = \\frac{\\text{AK}}{\\text{PUK}} \\times 100\\% = \\frac{9,0}{14,0} \\times 100\\% = 64,2857\\% \\approx 64,29\\%$$\n3. Perhitungan TPT:\n   $$\\text{TPT} = \\frac{\\text{Penganggur}}{\\text{AK}} \\times 100\\% = \\frac{2,0}{9,0} \\times 100\\% = 22,2222\\% \\approx 22,22\\%$$",
+    "python_verification_code": "pop_total = 18.0\nbuk = 4.0\npuk = pop_total - buk\npb_full = 6.0\npb_part = 1.0\npb_total = pb_full + pb_part\nunemployed_phk = 1.0\nunemployed_startup = 0.5\nunemployed_waiting = 0.5\nunemployed_total = unemployed_phk + unemployed_startup + unemployed_waiting\nak = pb_total + unemployed_total\ntpak = (ak / puk) * 100.0\ntpt = (unemployed_total / ak) * 100.0\nprint(f'TPAK={tpak:.2f}%, TPT={tpt:.2f}%')",
+    "expected_output": "TPAK=64.29%, TPT=22.22%"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Penyebut TPT Dibagi dengan PUK atau PB",
+      "common_mistake": "Menghitung TPT dengan pembagi PUK (misal 2.0 / 14.0 = 14.29%) atau membagi dengan PB (2.0 / 7.0 = 28.57%).",
+      "safe_strategy": "Pembagi TPT adalah mutlak Angkatan Kerja (AK = PB + Penganggur = 9.0). Nilai yang benar adalah 2.0 / 9.0 = 22.22%."
+    },
+    {
+      "trap_description": "Mengabaikan 3 Kategori Penganggur Non-Pencari Kerja Aktif",
+      "common_mistake": "Hanya menghitung orang yang aktif melamar pekerjaan (PHK = 1.0 juta) sehingga TPT dihitung 1.0 / 8.0 = 12.5%.",
+      "safe_strategy": "Di BPS, orang yang mempersiapkan usaha baru dan orang yang sudah diterima kerja tapi belum mulai bertugas WAJIB dimasukkan ke dalam kelompok pengangguran terbuka."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "section": "9.1 Kerangka Ketenagakerjaan ICLS 13 dan Konsep BPS",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "9.1.3",
+      "name": "Tingkat Pengangguran Terbuka TPT",
+      "importance": "高",
+      "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21-23]",
+      "exam_focus": "Definisi 4 kategori penganggur BPS, rekonstruksi soal hitungan esai UAS, rumus TPT terhadap AK, dan analisis dampak ekonomi makro (Okun's law context).",
+      "textbook_excerpt": "Tingkat Pengangguran Terbuka (TPT) = PP / PAK * 100, dimana PP = Jumlah pengangguran, PAK = Jumlah angkatan kerja [slide 15]. Kondef: Tingkat pengangguran terbuka adalah persentase jumlah pengangguran terhadap jumlah angkatan kerja. Pengangguran yaitu: (1) penduduk yang aktif mencari pekerjaan, (2) penduduk yang sedang mempersiapkan usaha/pekerjaan baru, (3) penduduk yang tidak mencari pekerjaan karena merasa tidak mungkin mendapat pekerjaan (discouraged worker), (4) kelompok penduduk yang tidak aktif mencari pekerjaan dengan alasan sudah mempunyai pekerjaan tetapi belum mulai bekerja [slide 16].",
+      "intuition": "Jika ada 100 orang yang terjun ke bursa tenaga kerja, berapa orang yang belum berhasil diserap oleh roda perekonomian? Indikator inilah yang dijawab oleh TPT. Semakin tinggi TPT, semakin besar kapasitas produksi nasional yang menganggur secara sia-sia (*economic waste*), mengurangi pendapatan keluarga, dan menurunkan penerimaan pajak.",
+      "formal": "### 1. Empat Kategori Pengangguran Terbuka BPS\n\nBPS mengklasifikasikan pengangguran terbuka ke dalam 4 kelompok operasional yang sangat sering diuji dalam soal esai ujian [slide 16]:\n\n| No | Kategori Pengangguran BPS | Deskripsi dan Kriteria Operasional | Contoh Kasus Nyata |\n|---|---|---|---|\n| **1** | **Mencari Pekerjaan** | Mereka yang dalam 7 hari terakhir aktif mencari pekerjaan (mengirim surat lamaran, mendaftar bursa kerja, mengikuti wawancara). | Korban PHK yang melamar pekerjaan ke berbagai pabrik. |\n| **2** | **Mempersiapkan Usaha** | Mereka yang melakukan tindakan nyata untuk mendirikan usaha baru (mencari modal, menyewa tempat, mengurus izin usaha). | Sarjana yang sedang menyewa ruko dan membeli peralatan kedai kopi. |\n| **3** | **Merasa Tidak Mungkin Mendapat Pekerjaan (*Discouraged Worker*)** | Mereka yang tidak bekerja dan bersedia bekerja, tetapi tidak lagi mencari kerja karena putus asa merasa tidak ada lowongan yang sesuai. | Pekerja lansia/difabel yang berulang kali ditolak kerja sehingga berhenti melamar. |\n| **4** | **Sudah Diterima Kerja Tetapi Belum Mulai Bekerja (*Future Starts*)** | Mereka yang telah lolos seleksi dan memiliki kepastian tanggal mulai bekerja, namun pada minggu pencacahan belum resmi bertugas. | Calon ASN yang telah menerima SK dan menunggu jadwal penempatan bulan depan. |\n\n### 2. Formula Matematis\n$$\\text{TPT} = \\frac{\\text{Jumlah Penganggur}}{\\text{Jumlah Angkatan Kerja}} \\times 100\\% = \\frac{\\sum_{k=1}^4 \\text{Penganggur}_k}{\\text{PB} + \\sum_{k=1}^4 \\text{Penganggur}_k} \\times 100\\%$$",
+      "pitfalls": "Salah menempatkan kategori 'mempersiapkan usaha' atau 'sudah diterima kerja' ke dalam kelompok Bekerja atau Bukan Angkatan Kerja. Di BPS, kedua kelompok ini SAH sebagai Pengangguran Terbuka.",
+      "memory_hook": "TPT = Penganggur / AK * 100. Penganggur BPS ada 4: Cari Kerja, Bikin Usaha, Putus Asa, Sudah Diterima Belum Kerja.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 16]",
+          "problem": "Berdasarkan pedoman operasional BPS, manakah di antara individu berikut yang TIDAK digolongkan sebagai pengangguran terbuka?",
+          "options": [
+            "Seseorang yang sedang mengumpulkan modal dan mencari lokasi sewa ruko untuk membuka minimarket.",
+            "Seseorang yang telah lulus wawancara kerja dan dijadwalkan mulai bertugas dua pekan mendatang.",
+            "Seseorang yang berhenti mencari kerja karena merasa di daerahnya tidak ada lowongan yang cocok bagi dirinya.",
+            "Seseorang yang mengundurkan diri dari pekerjaannya demi fokus mengasuh anak balita di rumah tanpa mencari kerja."
+          ],
+          "answer": 3,
+          "solution": "Jawaban: **D**.\n\n**Pembahasan**:\n- Pilihan A: Masuk kategori (2) Sedang mempersiapkan usaha/pekerjaan baru.\n- Pilihan B: Masuk kategori (4) Sudah mempunyai pekerjaan tetapi belum mulai bekerja.\n- Pilihan C: Masuk kategori (3) Merasa tidak mungkin mendapat pekerjaan (*discouraged worker*).\n- Pilihan D: Masuk ke dalam **Bukan Angkatan Kerja (BAK)** kategori Mengurus Rumah Tangga karena tidak berkeinginan mencari pekerjaan komersial."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 15-16, 21]",
+          "problem": "Di suatu kota industri, terdapat 190.000 penduduk usia kerja yang bekerja dan 10.000 orang pengangguran terbuka. Karena krisis ekonomi global, 5.000 pekerja mengalami pemutusan hubungan kerja (PHK) dan langsung aktif mencari pekerjaan baru di bursa kerja. Asumsikan tidak ada perubahan pada komponen angkatan kerja lainnya. Hitunglah TPT kota tersebut sebelum dan sesudah krisis ekonomi. Tuliskan jawaban dalam format: `Sebelum=X.XX%, Sesudah=Y.YY%`.",
+          "answer": "Sebelum=5.00%, Sesudah=7.50%",
+          "solution": "Langkah-langkah perhitungan:\n1. Kondisi Sebelum Krisis:\n   $$\\text{PB} = 190.000, \\quad \\text{Penganggur} = 10.000$$\n   $$\\text{AK} = 190.000 + 10.000 = 200.000$$\n   $$\\text{TPT}_{\\text{awal}} = \\frac{10.000}{200.000} \\times 100\\% = 5,00\\%$$\n2. Kondisi Sesudah Krisis:\n   - Pekerja berkurang 5.000 menjadi $190.000 - 5.000 = 185.000$.\n   - Pengangguran bertambah 5.000 menjadi $10.000 + 5.000 = 15.000$.\n   - Total Angkatan Kerja (AK) tetap sama: $185.000 + 15.000 = 200.000$.\n   $$\\text{TPT}_{\\text{akhir}} = \\frac{15.000}{200.000} \\times 100\\% = 7,50\\%$$\n\n**Verifikasi Kode Python**:\n```python\nak = 200000\ntpt_awal = (10000 / ak) * 100\ntpt_akhir = (15000 / ak) * 100\nprint(f'Sebelum={tpt_awal:.2f}%, Sesudah={tpt_akhir:.2f}%')\n# Output: Sebelum=5.00%, Sesudah=7.50%\n```"
+        }
+      ],
+      "links": [
+        "9.1.1",
+        "9.1.2",
+        "9.1.4"
+      ]
+    }
+  ]
+}

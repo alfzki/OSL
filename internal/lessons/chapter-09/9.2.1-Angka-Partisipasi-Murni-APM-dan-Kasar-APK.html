@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>9.2 Indikator Pendidikan · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>9.2 Indikator Pendidikan</h2><a href="#p-9.2.1">9.2.1 Angka Partisipasi Murni APM dan Kasar APK ⭐</a></nav>
+<main>
+<h1>9.2 Indikator Pendidikan<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 9: Ketenagakerjaan dan Pendidikan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-9.2.1">
+<h2>9.2.1 Angka Partisipasi Murni APM dan Kasar APK ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66-71]</div>
+<div class="box info">📌 <div class="rich"><p>Definisi perbedaan pembilang APM vs APK, rentang usia resmi 4 jenjang sekolah, pembuktian ketidaksamaan APM &lt;= APK dan batas APK &gt; 100%, serta aplikasi pada neraca pendidikan BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>APK SD = Jumlah murid SD / Jumlah penduduk usia 7-12 tahun * 100 [slide 66]. Kondef: Perbandingan antara jumlah penduduk yang masih bersekolah di jenjang pendidikan tertentu (tanpa memandang usia) dengan jumlah penduduk yang memenuhi syarat resmi usia sekolah di jenjang pendidikan yang sama [slide 67]. Nilai APK bisa lebih dari 100 persen karena populasi murid mencakup anak di luar batas usia sekolah. Penyebabnya adalah pendaftaran usia dini, terlambat sekolah, atau pengulangan kelas [slide 67]. APM SD = Jumlah murid SD umur 7-12 tahun / Jumlah penduduk usia 7-12 tahun * 100 [slide 69]. Nilai APM berkisar antara 0-100. Secara umum, APM akan selalu lebih rendah dari APK [slide 70].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah bus sekolah berkapasitas 50 kursi diisi oleh 53 penumpang (termasuk beberapa balita dan orang dewasa yang ikut menumpang), rasio penumpangnya melebihi 100% kapasitas resmi (ini analogi APK). Namun jika kita hanya menghitung anak-anak pemegang tiket resmi di dalam bus tersebut, jumlahnya tidak akan pernah melebihi 100% (ini analogi APM).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Formulasi Matematis APM dan APK menurut Jenjang Sekolah</p>
+<p>Berdasarkan klasifikasi resmi Kemendikbudristek dan BPS [slide 62, 66, 69]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Jenjang Pendidikan ($J$)</th><th>Rentang Usia Resmi</th><th>Formula APM (Murni)</th><th>Formula APK (Kasar)</th></tr></thead><tbody><tr><td><strong>SD / MI / Paket A</strong></td><td>7 - 12 Tahun</td><td>$\text{APM}_{\text{SD}} = \frac{\text{Murid SD Usia 7-12}}{P_{7-12}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SD}} = \frac{\sum \text{Murid SD}}{P_{7-12}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>SMP / MTs / Paket B</strong></td><td>13 - 15 Tahun</td><td>$\text{APM}_{\text{SMP}} = \frac{\text{Murid SMP Usia 13-15}}{P_{13-15}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SMP}} = \frac{\sum \text{Murid SMP}}{P_{13-15}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>SMA / SMK / MA / Paket C</strong></td><td>16 - 18 Tahun</td><td>$\text{APM}_{\text{SM}} = \frac{\text{Murid SMA Usia 16-18}}{P_{16-18}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{SM}} = \frac{\sum \text{Murid SMA}}{P_{16-18}} \times 100\%$ [slide 66]</td></tr><tr><td><strong>Perguruan Tinggi (PT)</strong></td><td>19 - 24 Tahun</td><td>$\text{APM}_{\text{PT}} = \frac{\text{Mhs PT Usia 19-24}}{P_{19-24}} \times 100\%$ [slide 69]</td><td>$\text{APK}_{\text{PT}} = \frac{\sum \text{Mahasiswa PT}}{P_{19-24}} \times 100\%$ [slide 66]</td></tr></tbody></table></div>
+<p>### 2. Teorema Hubungan APM dan APK</p>
+<p>Misalkan himpunan seluruh siswa yang bersekolah pada jenjang $J$ adalah $S_J$. Himpunan siswa usia tepat adalah $S_J^* = \{s \in S_J \mid \text{Usia}(s) \in \text{Rentang}(J)\}$. Himpunan siswa di luar usia standar adalah $S_J^{\text{luar}} = S_J \setminus S_J^*$.</p>
+<p>Karena $|S_J| = |S_J^*| + |S_J^{\text{luar}}|$ dan $|S_J^{\text{luar}}| \ge 0$, maka:<br>$$|S_J^*| \le |S_J|$$<br>Dengan membagi kedua sisi dengan jumlah penduduk kelompok usia resmi $P_{\text{usia } J} &gt; 0$ dan mengalikan 100%, diperoleh:<br>$$\text{APM}_J \le \text{APK}_J$$</p>
+<p>Selisih antara APK dan APM ($\text{APK} - \text{APM}$) mengukur besarnya proporsi penduduk yang bersekolah tidak tepat waktu (*overage and underage enrollment ratio*).</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Jika di suatu provinsi nilai APK jenjang Sekolah Menengah Pertama (SMP) tercatat sebesar 104,5% dan nilai APM SMP tercatat sebesar 82,3%, maka kesimpulan yang paling tepat adalah:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 67, 70]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Terjadi kesalahan pendataan lapangan pada Susenas karena partisipasi tidak mungkin melebihi 100%.</button>
+<button class="ex-opt" data-i="1">B. Terdapat 22,2% anak usia 13-15 tahun yang tidak tertampung di fasilitas pendidikan SMP.</button>
+<button class="ex-opt" data-i="2">C. Kapasitas sekolah SMP mampu menampung siswa melebihi populasi usia 13-15 tahun karena adanya siswa usia dini atau siswa yang mengulang.</button>
+<button class="ex-opt" data-i="3">D. Seluruh anak usia 13-15 tahun di provinsi tersebut telah bersekolah tepat waktu di jenjang SMP.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Nilai APK &gt; 100% mengindikasikan bahwa daya tampung sekolah jenjang tersebut mencakup siswa di luar usia 13-15 tahun (misalnya siswa usia &lt; 13 tahun yang cerdas istimewa atau usia &gt; 15 tahun yang terlambat tamat SD/mengulang kelas). Selisih $104,5\% - 82,3\% = 22,2\%$ mencerminkan proporsi siswa di luar usia standar yang bersekolah di SMP.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;APM=64.0%, APK=80.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah kota memiliki 50.000 penduduk usia 16-18 tahun. Dari hasil pendataan sekolah jenjang SMA/SMK, terdaftar 32.000 siswa berusia 16-18 tahun, 1.000 siswa berusia 15 tahun (akselerasi), dan 7.000 siswa berusia di atas 18 tahun. Hitunglah APM dan APK jenjang SMA/SMK kota tersebut. Tuliskan jawaban dalam format: <code>APM=X.X%, APK=Y.Y%</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_9_Indikator_Ketenagakerjaan_dan_Pendidikan.md, slide 66, 69]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Menghitung APM SMA:<br>   $$\text{APM}_{\text{SMA}} = \frac{32.000}{50.000} \times 100\% = 64,0\%$$<br>2. Menghitung total murid SMA:<br>   $$\sum \text{Murid SMA} = 32.000 + 1.000 + 7.000 = 40.000$$<br>3. Menghitung APK SMA:<br>   $$\text{APK}_{\text{SMA}} = \frac{40.000}{50.000} \times 100\% = 80,0\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>pop = 50000<br>siswa_tepat = 32000<br>siswa_total = 32000 + 1000 + 7000<br>apm = (siswa_tepat / pop) * 100<br>apk = (siswa_total / pop) * 100<br>print(f'APM={apm:.1f}%, APK={apk:.1f}%')<br># Output: APM=64.0%, APK=80.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><p>Mengabaikan siswa pendidikan non-formal (Paket A, B, C). Sejak tahun 2007, BPS secara resmi memasukkan siswa program kesetaraan ke dalam perhitungan APM dan APK Susenas.</p></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>APM = Murni (Usia Tepat, &lt;= 100%). APK = Kasar (Semua Usia, Bisa &gt; 100%). APM &lt;= APK selalu.</p></div></div>
+<div class="links">Keterkaitan Konsep: 9.1.1, 9.2.2</div>
+<button class="donebtn" data-id="9.2.1"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

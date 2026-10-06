@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>10.1 Indikator Mortalitas Ibu dan Anak · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>10.1 Indikator Mortalitas Ibu dan Anak</h2><a href="#p-10.1.2">10.1.2 Angka Kematian Bayi AKB dan Balita AKABA ⭐</a></nav>
+<main>
+<h1>10.1 Indikator Mortalitas Ibu dan Anak<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 10: Indikator Kesehatan dan SDGs 3 ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-10.1.2">
+<h2>10.1.2 Angka Kematian Bayi AKB dan Balita AKABA ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 18-35]</div>
+<div class="box info">📌 <div class="rich"><p>Membedakan konsep, definisi, dan formula AKB (IMR), AK Anak (CMR 1-4 th), dan AKABA (U5MR), memahami perbedaan penyebut kelahiran hidup vs penduduk pertengahan tahun, capaian SP2020, dan target SDGs 3.2.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Balita atau bawah lima tahun adalah semua anak termasuk bayi yang baru lahir, yang berusia 0 sampai menjelang tepat 5 tahun (notasi 0-4 tahun). Angka Kematian Balita adalah jumlah kematian anak berusia 0-4 tahun selama satu tahun tertentu per 1.000 anak umur yang sama pada pertengahan tahun itu [slide 18-19]. Angka Kematian Anak mencerminkan kematian anak usia 1-4 tahun per 1.000 penduduk 1-4 tahun pertengahan tahun, sangat dipengaruhi gizi buruk, sanitasi lingkungan buruk, dan penyakit menular [slide 20-21]. Angka Kematian Bayi (IMR): kematian antara saat lahir sampai sebelum berusia tepat satu tahun per 1.000 kelahiran hidup [slide 26]. Target SDGs 3.2: mengakhiri kematian balita yang dapat dicegah dengan menurunkan AKABA setidaknya hingga 25 per 1.000 KH [slide 9].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika seorang bayi meninggal dalam 1 tahun pertama kehidupannya, kematian tersebut dihitung dalam AKB (IMR). Jika anak tersebut berhasil melewati ulang tahun pertamanya namun meninggal sebelum ulang tahun kelimanya (antara usia 1 s.d. 4 tahun 11 bulan), kematiannya dihitung dalam AK Anak (CMR). AKABA (U5MR) adalah payung komprehensif yang merangkum seluruh kematian anak sebelum genap usia 5 tahun. Perbedaan determinan: kematian bayi lebih banyak dipengaruhi oleh faktor biologis/kehamilan ibu, sedangkan kematian anak 1-4 tahun sangat dipengaruhi faktor lingkungan eksternal (air minum, jamban, infeksi, asupan makanan).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi Operasional Tiga Ukuran Mortalitas Anak</p>
+<p>Berdasarkan materi resmi BPS [Pertemuan_10_Indikator_Kesehatan.md, slide 18-26]:<br>- <strong>Bayi (Infant)</strong>: Anak berusia $0$ sampai menjelang tepat $1$ tahun ($0$ s.d. $11$ bulan $29$ hari).<br>- <strong>Anak (Child)</strong>: Penduduk berusia $1$ tahun sampai menjelang $5$ tahun ($1$ s.d. $4$ tahun $11$ bulan $29$ hari, notasi $1-4$ tahun).<br>- <strong>Balita (Under-Five Children)</strong>: Semua anak termasuk bayi baru lahir yang berusia $0$ sampai menjelang tepat $5$ tahun (notasi $0-4$ tahun).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>#### A. Angka Kematian Bayi (Infant Mortality Rate / AKB / IMR)<br>$$\text{AKB} = \frac{D_{0-&lt;1\text{ th}}}{\sum \text{Lahir Hidup}} \times 1.000$$<br>dimana:<br>- $D_{0-&lt;1\text{ th}}$ = Jumlah kematian bayi berumur kurang dari 1 tahun pada satu tahun tertentu di daerah tertentu.<br>- $\sum \text{Lahir Hidup} = B$ = Jumlah kelahiran hidup pada satu tahun tertentu di daerah tertentu [slide 26].</p>
+<p>#### B. Angka Kematian Anak (Child Mortality Rate / AK Anak / CMR 1-4 Tahun)<br>$$\text{AK Anak} = \frac{D_{1-4\text{ th}}}{\sum P_{1-4\text{ th}}} \times 1.000$$<br>dimana:<br>- $D_{1-4\text{ th}}$ = Banyaknya kematian anak berusia 1-4 tahun pada satu tahun tertentu di daerah tertentu.<br>- $\sum P_{1-4\text{ th}}$ = Jumlah penduduk berusia 1-4 tahun pada pertengahan tahun tertentu di daerah tertentu [slide 21].</p>
+<p>#### C. Angka Kematian Balita (Under-Five Mortality Rate / AKABA / U5MR)<br>$$\text{AKABA} = \frac{D_{0-4\text{ th}}}{\sum P_{0-4\text{ th}}} \times 1.000$$<br>dimana:<br>- $D_{0-4\text{ th}} = D_{0-&lt;1\text{ th}} + D_{1-4\text{ th}}$ = Total kematian balita usia 0-4 tahun.<br>- $\sum P_{0-4\text{ th}}$ = Jumlah penduduk berusia 0-4 tahun pada pertengahan tahun tertentu [slide 19].</p>
+<p>### 3. Matriks Perbandingan Karakteristik Indikator Mortalitas Anak</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Parameter</th><th>Angka Kematian Bayi (AKB)</th><th>Angka Kematian Anak (AK Anak)</th><th>Angka Kematian Balita (AKABA)</th></tr></thead><tbody><tr><td><strong>Batasan Umur</strong></td><td>0 s.d. &lt; 1 tahun [slide 26]</td><td>1 s.d. &lt; 5 tahun [slide 20]</td><td>0 s.d. &lt; 5 tahun [slide 18]</td></tr><tr><td><strong>Pembilang ($D$)</strong></td><td>Kematian bayi ($D_{0-&lt;1}$)</td><td>Kematian anak 1-4 th ($D_{1-4}$)</td><td>Total kematian balita ($D_{0-4}$)</td></tr><tr><td><strong>Penyebut Basis</strong></td><td>Kelahiran Hidup ($B$)</td><td>Penduduk usia 1-4 th ($P_{1-4}$)</td><td>Penduduk usia 0-4 th ($P_{0-4}$)</td></tr><tr><td><strong>Konstanta ($K$)</strong></td><td>1.000 [slide 26]</td><td>1.000 [slide 21]</td><td>1.000 [slide 19]</td></tr><tr><td><strong>Determinan Kunci</strong></td><td>Kondisi maternal, asuhan antenatal, BBLR [slide 27]</td><td>Sanitasi, kebersihan, gizi buruk, diare [slide 20]</td><td>Komposit status kesehatan &amp; lingkungan anak</td></tr><tr><td><strong>Capaian SP2020</strong></td><td>Tercakup dalam balita</td><td>2,98 per 1.000 KH [slide 28]</td><td>19,83 per 1.000 KH [slide 28]</td></tr><tr><td><strong>Target SDGs 3.2</strong></td><td>Diturunkan signifikan</td><td>Diturunkan signifikan</td><td>$\le 25$ per 1.000 KH pada 2030 [slide 9]</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Pernyataan manakah yang paling tepat mengenai perbedaan metodologis antara Angka Kematian Bayi (AKB) dan Angka Kematian Anak (AK Anak) menurut BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 9, 21, 26]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. AKB menggunakan penyebut kelahiran hidup dan konstanta 1.000, sedangkan AK Anak menggunakan penyebut penduduk usia 1-4 tahun pertengahan tahun dan konstanta 1.000.</button>
+<button class="ex-opt" data-i="1">B. AKB menggunakan konstanta 100.000, sedangkan AK Anak menggunakan konstanta 1.000.</button>
+<button class="ex-opt" data-i="2">C. AKB dan AK Anak sama-sama menggunakan penyebut kelahiran hidup, sehingga AKABA merupakan hasil penjumlahan langsung AKB + AK Anak.</button>
+<button class="ex-opt" data-i="3">D. AKB mengukur kematian usia 0-4 tahun, sedangkan AK Anak mengukur kematian usia 1-4 tahun.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Berdasarkan slide 26, formula AKB membagi jumlah kematian bayi umur kurang dari 1 tahun dengan jumlah kelahiran hidup dikalikan 1.000.<br>- Berdasarkan slide 21, formula AK Anak membagi banyaknya kematian anak berusia 1-4 tahun dengan jumlah penduduk berusia 1-4 tahun pertengahan tahun dikalikan 1.000.<br>- Karena penyebutnya berbeda, AKABA tidak dapat diperoleh dari penjumlahan langsung AKB dan AK Anak.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AKB=12.00, AK_Anak=2.00, AKABA=4.08&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Di Kabupaten Sejahtera tercatat 25.000 kelahiran hidup sepanjang tahun 2023. Terdapat 300 kematian bayi (&lt; 1 tahun) pada tahun tersebut. Pada pertengahan tahun, jumlah penduduk usia 1-4 tahun tercatat 95.000 jiwa dengan 190 kematian anak. Jumlah seluruh penduduk balita (0-4 tahun) adalah 120.000 jiwa dengan total 490 kematian balita. Hitunglah nilai AKB, AK Anak, dan AKABA. Tuliskan jawaban akhir dalam format: <code>AKB=..., AK_Anak=..., AKABA=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_10_Indikator_Kesehatan.md, slide 19, 21, 26]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. $\text{AKB} = \frac{D_{0-&lt;1}}{B} \times 1.000 = \frac{300}{25.000} \times 1.000 = 12,00$ per 1.000 KH.<br>2. $\text{AK Anak} = \frac{D_{1-4}}{P_{1-4}} \times 1.000 = \frac{190}{95.000} \times 1.000 = 2,00$ per 1.000 anak 1-4 th.<br>3. $\text{AKABA} = \frac{D_{0-4}}{P_{0-4}} \times 1.000 = \frac{490}{120.000} \times 1.000 = 4,0833 \approx 4,08$ per 1.000 balita.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>d_infant = 300<br>live_births = 25000<br>imr = (d_infant / live_births) * 1000</p>
+<p>d_child = 190<br>p_child = 95000<br>cmr = (d_child / p_child) * 1000</p>
+<p>d_u5 = 490<br>p_u5 = 120000<br>akaba = (d_u5 / p_u5) * 1000</p>
+<p>print(f'AKB={imr:.2f}, AK_Anak={cmr:.2f}, AKABA={akaba:.2f}')<br># Output: AKB=12.00, AK_Anak=2.00, AKABA=4.08<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Penjumlahan Sembarangan</strong>: Mengira AKABA = AKB + AK Anak. Ini keliru fatal karena penyebut AKB adalah kelahiran hidup, sedangkan penyebut AK Anak adalah penduduk umur 1-4 tahun pertengahan tahun.</li><li><strong>Definisi Usia Balita</strong>: Balita adalah 0-4 tahun (kurang dari 5 tahun), bukan 1-4 tahun. Anak 1-4 tahun adalah subset dari balita.</li><li><strong>Pengali Pengukuran</strong>: Seluruh indikator mortalitas anak menggunakan K = 1.000, jangan gunakan 100.000 (khusus AKI).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>AKB = Bayi (&lt;1 th) / Kelahiran; AK Anak = Anak (1-4 th) / Penduduk 1-4; AKABA = Balita (0-4 th) / Penduduk 0-4; Semuanya kali 1.000!</p></div></div>
+<div class="links">Keterkaitan Konsep: 10.1.1, 10.1.3, 10.2.1</div>
+<button class="donebtn" data-id="10.1.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

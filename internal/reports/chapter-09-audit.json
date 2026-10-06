@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-29",
+  "chapter": 9,
+  "chapter_title": "Pertemuan 9: Ketenagakerjaan dan Pendidikan",
+  "source": "internal/textbook/chapter-09.md",
+  "expected_points": 6,
+  "lecture_json_files": 6,
+  "lecture_points": 6,
+  "figures": 0,
+  "tables": 6,
+  "examples": 12,
+  "source_markers": {
+    "visual": true,
+    "example": false,
+    "formula": true
+  },
+  "status": "pass",
+  "verdict": "pass",
+  "issues": []
+}

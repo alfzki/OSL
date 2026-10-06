@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata · Modul Kuliah</title>
+<script>
+(function(){try{var t=localStorage.getItem('esb-theme');if(!t)t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);var b=document.getElementById('themeBtn');if(b)b.textContent=t==='dark'?'☀ Light':'🌙 Dark';try{localStorage.setItem('esb-theme',t);}catch(e){}}
+function toggleTheme(){var c=document.documentElement.getAttribute('data-theme')||'light';applyTheme(c==='dark'?'light':'dark');}
+</script>
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 14px; color: #374151; margin: 0 0 10px; }
+  #toc .toc-sec { display: flex; align-items: center; gap: 4px; padding: 8px 4px 4px;
+                  font-weight: 600; font-size: 12px; color: #4b5563; line-height: 1.5; }
+  #toc .toc-sec + .toc-sec { border-top: 1px solid #e5e7eb; margin-top: 6px; padding-top: 10px; }
+  #toc .modetag-mini { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 99px;
+                        background: #eef2ff; color: #4338ca; font-weight: 400; line-height: 1.6; }
+  #toc a { display: block; padding: 3px 8px; margin-left: 4px; color: #374151; text-decoration: none;
+            border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  div.ch-sec { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 2px solid #e5e7eb; }
+  div.ch-sec:last-child { border-bottom: none; }
+  h2.sec-title { font-size: 18px; display: flex; align-items: center; gap: 8px; margin: 0 0 16px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata <button id="themeBtn" onclick="toggleTheme()" style="float:right;font-size:11px;padding:2px 6px;cursor:pointer;">🌙 Tema</button></h2><div class="toc-sec">13.1 Statistik Perdagangan Internasional<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-13.1.1">13.1.1 Valuasi Ekspor Impor FOB vs CIF ⭐</a>
+<a href="#p-13.1.2">13.1.2 Barang Dagangan Tanpa Masuk Pabean Merchanting</a>
+<a href="#p-13.1.3">13.1.3 Net Barter Terms of Trade NBToT ⭐</a>
+<a href="#p-13.1.4">13.1.4 Gross Barter dan Income ToT</a>
+<div class="toc-sec">13.2 Statistik Pariwisata dan Perhotelan<span class="modetag-mini">Pembahasan Mendalam</span></div>
+<a href="#p-13.2.1">13.2.1 Definisi Wisman dan Wisnus</a>
+<a href="#p-13.2.2">13.2.2 Tingkat Penghunian Kamar TPK Hotel ⭐</a>
+<a href="#p-13.2.3">13.2.3 Rata-rata Lama Menginap Tamu RLMT</a></nav>
+<main>
+<h1>Pertemuan 13: Ekspor-Impor, Terms of Trade, dan Pariwisata</h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》 ｜ 2 Bagian ｜ 7 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 14 Butir ｜ Kerjakan mandiri sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<div class="ch-sec" id="sec-13.1-Statistik-Perdagangan-Internasional">
+<h2 class="sec-title">13.1 Statistik Perdagangan Internasional<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-13.1.1">
+<h2>13.1.1 Valuasi Ekspor Impor FOB vs CIF ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 4-9]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai prinsip alih kepemilikan ekonomi SNA 2008, perbedaan titik valuasi FOB dan CIF, peran dokumen PEB/PIB Bea Cukai, serta mekanisme konversi kurs beli vs kurs jual BPS.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Ekspor-impor didefinisikan sebagai transaksi alih kepemilikan ekonomi atas barang dan jasa antara residen suatu perekonomian dengan non-residen, termasuk re-ekspor dan merchanting. Ekspor dan impor barang dinilai menurut harga Free on Board (FOB). Pada International Merchandise Trade Statistics (IMTS), impor barang dicatat dalam nilai cost, insurance, and freight (CIF) sehingga biaya angkut barang dan asuransi harus dikeluarkan jika disesuaikan ke FOB. Data dikumpulkan dari PEB dan PIB Ditjen Bea Cukai. Ekspor dikonversi dengan kurs beli tertimbang, sedangkan impor dengan kurs jual tertimbang [slide 5-7].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan Anda memesan barang dari pabrik di luar negeri:<br>- <strong>FOB (Free on Board)</strong>: Harga barang hanya sampai di atas dek kapal pelabuhan asal. Setelah tali kapal dilepas, semua risiko gelombang, badai, biaya bahan bakar kapal laut, dan asuransi perjalanan menjadi urusan Anda.<br>- <strong>CIF (Cost, Insurance, and Freight)</strong>: Penjual mengurus segalanya sampai kapal bersandar di pelabuhan negara Anda. Harga yang Anda bayar sudah 'paket komplit' meliputi harga barang, premi asuransi, dan tarif kapal kargo.<br>- Oleh karena itu, neraca perdagangan resmi BPS mencatat ekspor barang kita dengan FOB (karena pembeli asing menanggung ongkos kirim internasionalnya), sedangkan impor kita dicatat dengan CIF (karena devisa kita keluar untuk membayar barang sekaligus jasa angkut dan asuransinya).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Landasan Konseptual Ekspor-Impor (SNA 2008)</p>
+<p>Berdasarkan kerangka kerja *System of National Accounts* (SNA 2008) dan *BPM6* [slide 5]:<br>- <strong>Ekspor dan Impor</strong>: Transaksi alih kepemilikan ekonomi (*change of economic ownership*) atas barang dan jasa antara penduduk (*resident*) suatu wilayah ekonomi dengan bukan penduduk (*non-resident*).<br>- Mencakup barang dagangan reguler, barang kiriman pos/kurir, re-ekspor, barang *merchanting*, serta pembelian langsung (*direct purchase*) oleh penduduk Indonesia di luar negeri maupun warga asing di Indonesia [slide 5].</p>
+<p>### 2. Skema Valuasi Internasional: FOB vs CIF</p>
+<p>Dalam statistik perdagangan luar negeri, terdapat dua titik penilaian harga utama [slide 6]:</p>
+<ol><li><strong>Free on Board (FOB)</strong>:</li><ul><li>Titik penilaian: Di atas kapal pengangkut di pelabuhan muat negara pengekspor.</li><li>Eksportir menanggung biaya produksi, pengangkutan dari gudang ke pelabuhan domestik, biaya muat (*loading* / *stevedoring*), dan bea keluar/pajak ekspor.</li><li>Importir menanggung biaya transportasi lintas samudra (*ocean/air freight*), premi asuransi perjalanan internasional, dan bea masuk di negara tujuan.</li><li><strong>Standar Ekspor BPS</strong>: Seluruh barang ekspor Indonesia dinilai menurut harga FOB [slide 6].</li></ul></ol>
+<p>2. <strong>Cost, Insurance, and Freight (CIF)</strong>:<br>   - Titik penilaian: Di pelabuhan bongkar negara pengimpor sebelum bea masuk dibayarkan.<br>   - Mencakup tiga komponen terpadu:<br>     $$\text{CIF} = \text{FOB} + \text{Freight} + \text{Insurance}$$<br>   - <strong>Standar Impor IMTS BPS</strong>: Impor barang dicatat dalam nilai CIF karena faktur perdagangan internasional yang diterima oleh Bea Cukai umumnya memuat total biaya sampai di pelabuhan Indonesia [slide 6].<br>   - <strong>Penyesuaian SNA/BOP</strong>: Untuk penyusunan PDB penggunaan dan Neraca Pembayaran oleh Bank Indonesia, impor CIF harus dikurangi komponen *freight* dan *insurance* agar menjadi impor barang FOB murni, sedangkan biaya angkut dan asuransi asing dipindahkan ke pos Neraca Jasa [slide 6].</p>
+<p>### 3. Sumber Data dan Prosedur Konversi Valuta BPS</p>
+<p>Alur pengumpulan dan konversi data statistik perdagangan [slide 7]:<br>1. <strong>Dokumen Pabean Legal</strong>:<br>   - Ekspor: Pemberitahuan Ekspor Barang (PEB).<br>   - Impor: Pemberitahuan Impor Barang (PIB).<br>   - Dikelola oleh Direktorat Jenderal Bea dan Cukai (DJBC), lalu diserahkan secara elektronik ke BPS dan BI.<br>2. <strong>Konversi Mata Uang Asing ke Rupiah</strong>:<br>   - Data faktur perdagangan mayoritas dinyatakan dalam Dolar Amerika Serikat (USD).<br>   - <strong>Nilai Ekspor</strong>: Dikonversi menggunakan <strong>rata-rata kurs beli</strong> dolar AS yang ditimbang dengan nilai nominal transaksi ekspor bulanan:<br>     $$X_{\text{IDR}} = X_{\text{USD}} \times \bar{K}_{\text{beli}}$$<br>   - <strong>Nilai Impor</strong>: Dikonversi menggunakan <strong>rata-rata kurs jual</strong> dolar AS yang ditimbang dengan nilai nominal transaksi impor bulanan:<br>     $$M_{\text{IDR}} = M_{\text{USD}} \times \bar{K}_{\text{jual}}$$<br>   - Dasar pertimbangan: Dari perspektif perbankan devisa, eksportir menukarkan USD hasil ekspor ke Rupiah (Bank membeli valas -&gt; Kurs Beli), sedangkan importir membeli USD dari bank untuk membayar ke luar negeri (Bank menjual valas -&gt; Kurs Jual).</p>
+<p>### 4. Ringkasan Perbandingan Valuasi IMTS vs SNA 2008</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Publikasi IMTS BPS</th><th>Neraca Pembayaran (BI) / SNA 2008</th></tr></thead><tbody><tr><td><strong>Valuasi Ekspor Barang</strong></td><td>Free on Board (FOB)</td><td>Free on Board (FOB)</td></tr><tr><td><strong>Valuasi Impor Barang</strong></td><td>Cost, Insurance, Freight (CIF)</td><td>Free on Board (FOB)</td></tr><tr><td><strong>Pos Asuransi &amp; Freight Impor</strong></td><td>Melekat di dalam Impor Barang</td><td>Dikeluarkan dari barang, dicatat di Neraca Jasa</td></tr><tr><td><strong>Sumber Data Barang</strong></td><td>BPS (dokumen PEB/PIB Bea Cukai)</td><td>BPS disesuaikan Bank Indonesia</td></tr><tr><td><strong>Sumber Data Jasa</strong></td><td>Bank Indonesia (ITRS &amp; Survei)</td><td>Bank Indonesia</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Dalam statistik perdagangan luar negeri resmi BPS, mengapa data transaksi impor pada dokumen PIB yang dinyatakan dalam USD dikonversikan ke Rupiah menggunakan kurs 'jual' dolar AS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Karena nilai kurs jual selalu lebih rendah sehingga menekan angka defisit perdagangan.</button>
+<button class="ex-opt" data-i="1">B. Karena dari sudut pandang bank devisa, importir harus membeli valas dari bank untuk membayar kewajiban ke luar negeri.</button>
+<button class="ex-opt" data-i="2">C. Karena eksportir di luar negeri menjual barangnya dengan mata uang lokal.</button>
+<button class="ex-opt" data-i="3">D. Karena peraturan menteri keuangan mengharuskan penggunaan kurs tengah Bank Indonesia.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai metodologi BPS [slide 7], konversi valuta transaksi perdagangan luar negeri didasarkan pada posisi perbankan devisa. Importir membutuhkan mata uang asing (USD) untuk melunasi pembayaran barang ke mitra dagang non-residen. Oleh karena itu, importir mendatangi bank devisa untuk membeli USD, sehingga bank mengenakan kurs 'jual' (kurs di mana bank menjual valas kepada nasabah). Sebaliknya, untuk ekspor digunakan kurs 'beli' karena eksportir menjual valas penerimaan ekspor kepada bank.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah perusahaan di Medan mengekspor CPO dengan nilai FOB USD 120.000 (kurs beli Rp 15.500/USD). Pada saat yang sama, perusahaan lain mengimpor mesin dengan nilai CIF USD 100.000 yang terdiri dari komponen FOB USD 90.000, freight USD 8.000, dan asuransi USD 2.000 (kurs jual Rp 15.600/USD).<br>Hitunglah:<br>1. Nilai Ekspor FOB dalam Rupiah.<br>2. Nilai Impor CIF dalam Rupiah.<br>3. Saldo neraca perdagangan barang IMTS dalam USD.<br>4. Saldo neraca perdagangan barang menurut SNA 2008 (valuasi FOB-FOB) dalam USD.<br>Tuliskan format: <code>Ekspor_FOB_IDR=..., Impor_CIF_IDR=..., Surplus_IMTS_USD=..., Surplus_SNA_USD=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 6, 7, 9]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>Ekspor FOB (IDR)</strong>:<br>   $$X_{\text{IDR}} = 120.000 \times 15.500 = \text{Rp } 1.860.000.000$$<br>2. <strong>Impor CIF (IDR)</strong>:<br>   $$M_{\text{IDR}} = 100.000 \times 15.600 = \text{Rp } 1.560.000.000$$<br>3. <strong>Surplus IMTS (USD)</strong> (FOB - CIF):<br>   $$\text{Surplus}_{\text{IMTS}} = 120.000 - 100.000 = +\text{USD } 20.000$$<br>4. <strong>Surplus SNA (USD)</strong> (FOB - FOB):<br>   $$M_{\text{FOB}} = 100.000 - 8.000 - 2.000 = \text{USD } 90.000$$<br>   $$\text{Surplus}_{\text{SNA}} = 120.000 - 90.000 = +\text{USD } 30.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>x_fob_usd = 120000.0<br>kurs_beli = 15500.0<br>x_fob_idr = x_fob_usd * kurs_beli<br>m_cif_usd = 100000.0<br>freight_usd = 8000.0<br>ins_usd = 2000.0<br>m_fob_usd = m_cif_usd - freight_usd - ins_usd<br>kurs_jual = 15600.0<br>m_cif_idr = m_cif_usd * kurs_jual<br>m_fob_idr = m_fob_usd * kurs_jual<br>surplus_imts_usd = x_fob_usd - m_cif_usd<br>surplus_imts_idr = x_fob_idr - m_cif_idr<br>surplus_sna_usd = x_fob_usd - m_fob_usd<br>print(f'Ekspor_FOB_IDR={x_fob_idr:.0f}, Impor_CIF_IDR={m_cif_idr:.0f}, Surplus_IMTS_USD={surplus_imts_usd:.0f}, Surplus_SNA_USD={surplus_sna_usd:.0f}')<br># Ekspor_FOB_IDR=1860000000, Impor_CIF_IDR=1560000000, Surplus_IMTS_USD=20000, Surplus_SNA_USD=30000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Kurs Konversi</strong>: Eksportir memakai kurs beli bank, importir memakai kurs jual bank. Jangan gunakan kurs tengah atau membalik keduanya.</li><li><strong>Menyamakan Valuasi Impor BPS dan Neraca Pembayaran</strong>: BPS merilis impor CIF secara bulanan, tetapi BI dan PDB penggunaan menghitung impor secara FOB (CIF dikurangi ongkos angkut dan asuransi).</li><li><strong>Menyertakan Pajak Impor dalam Nilai CIF</strong>: Nilai CIF hanya mencakup harga barang + freight + insurance sampai pelabuhan bongkar, belum termasuk Bea Masuk, PPN Impor, atau PPh Pasal 22.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Ekspor itu Pergi (FOB di Pelabuhan Kita, Kurs Beli Bank); Impor itu Datang (CIF sampai Pelabuhan Kita, Kurs Jual Bank).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.2, 13.1.3, 13.1.4</div>
+<button class="donebtn" data-id="13.1.1"></button>
+</section>
+<section class="point" id="p-13.1.2">
+<h2>13.1.2 Barang Dagangan Tanpa Masuk Pabean Merchanting</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10-15]</div>
+<div class="box info">📌 <div class="rich"><p>Memahami konsep merchanting goods SNA 2008, 3 syarat utama transaksi merchanting, perlakuan 'ekspor negatif' dan 'ekspor positif', serta reklasifikasi pos dari neraca jasa (BPM5) ke neraca barang (BPM6/SNA 2008).</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Merchanting adalah pembelian barang oleh residen (merchant) dari nonresiden, untuk selanjutnya dijual kembali pada nonresiden negara lain, dimana barang itu tanpa atau tidak berada di wilayah ekonomi residen merchant. Terjadi perubahan kepemilikan; tidak ada transformasi substansial pada barang; barang tidak memasuki wilayah residen merchant [slide 5].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Pernahkah Anda mendengar model bisnis dropshipping atau perantara komoditas global? Pedagang di Indonesia membeli batubara dari Australia dan menjualnya langsung ke pabrik baja di India. Kapal batubara berlayar lurus dari Sydney ke Mumbai tanpa pernah lewat laut Indonesia. Pedagang Indonesia menanggung risiko harga dan memiliki hak milik legal atas batubara tersebut sebelum menjualnya dengan keuntungan. Inilah *merchanting*. Meskipun Bea Cukai Indonesia tidak mencatatnya di pelabuhan, rekening bank pedagang di Indonesia menerima devisa neto hasil perdagangan barang tersebut.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Karakteristik Utama Merchanting (SNA 2008 &amp; BPM6)</p>
+<p>Menurut standar statistik internasional SNA 2008 paragraf 14.73 dan *Balance of Payments Manual 6th Edition* (BPM6) [slide 5]:<br>*Merchanting* didefinisikan sebagai perolehan barang oleh penduduk dari bukan penduduk yang diikuti oleh penjualan kembali barang tersebut kepada bukan penduduk lain, tanpa barang tersebut pernah memasuki wilayah ekonomi penduduk pedagang (*resident merchant*).</p>
+<p>Tiga syarat kumulatif yang wajib dipenuhi [slide 5]:<br>1. <strong>Alih Kepemilikan Ekonomi (*Change of Economic Ownership*)</strong>:<br>   Pedagang residen benar-benar memegang hak milik legal dan menanggung risiko ekonomi atas barang tersebut di antara saat pembelian dan penjualan.<br>2. <strong>Tanpa Transformasi Substansial (*No Substantial Transformation*)</strong>:<br>   Barang tidak mengalami proses manufaktur atau fabrikasi yang mengubah klasifikasi kode HS barang. Tindakan yang diperbolehkan hanyalah penyimpanan, inspeksi, sortasi mutu, atau *packaging* kecil.<br>3. <strong>Tanpa Lintasan Wilayah Pabean Fisik (*No Physical Entry into Domestic Territory*)</strong>:<br>   Barang bergerak langsung dari negara pemasok asal ke negara pembeli akhir, atau singgah di pelabuhan/gudang transit negara ketiga tanpa pernah melintasi pabean negara pedagang.</p>
+<p>### 2. Standar Pencatatan Akuntansi Neraca Perdagangan</p>
+<p>Dalam pedoman manual terdahulu (BPM5), selisih nilai jual dan beli dicatat sebagai 'ekspor jasa perantara perdagangan'. Namun, dalam SNA 2008 dan BPM6 dilakukan reformasi fundamental [slide 5]:<br>1. <strong>Transaksi Perolehan (Pembelian)</strong>:<br>   Dicatat sebagai <strong>ekspor barang bernilai negatif</strong> (*negative exports of goods under merchanting*) di negara residen pedagang pada periode pembelian terjadi.<br>   - Alasan: Mencegah distorsi pada angka impor barang domestik (karena barang tersebut tidak pernah dinikmati atau dikonsumsi oleh masyarakat domestik).<br>2. <strong>Transaksi Penjualan</strong>:<br>   Dicatat sebagai <strong>ekspor barang bernilai positif</strong> (*goods sold under merchanting*) di negara residen pedagang pada periode penjualan terealisasi.<br>3. <strong>Penyajian Neto</strong>:<br>   Pada tabel ringkasan neraca transaksi berjalan, disajikan pos tunggal:<br>   $$\text{Ekspor Neto Barang di Bawah Merchanting} = \text{Nilai Penjualan} - \text{Nilai Perolehan}$$</p>
+<p>### 3. Matriks Perbedaan Transaksi Perdagangan Khusus</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Jenis Transaksi</th><th>Alih Kepemilikan Barang?</th><th>Melintasi Fisik Pabean Domestik?</th><th>Ada Transformasi Fisik?</th><th>Pencatatan Neraca (SNA 2008)</th></tr></thead><tbody><tr><td><strong>Perdagangan Reguler</strong></td><td>Ya</td><td>Ya</td><td>Tidak / Ya</td><td>Ekspor FOB / Impor CIF Barang Umum</td></tr><tr><td><strong>Merchanting Goods</strong></td><td>Ya</td><td><strong>Tidak</strong></td><td>Tidak</td><td>Ekspor Neto pada Neraca Barang</td></tr><tr><td><strong>Jasa Maklon (Outward Processing)</strong></td><td>Tidak</td><td>Ya</td><td><strong>Ya</strong></td><td>Impor/Ekspor Jasa Manufaktur</td></tr><tr><td><strong>Komisi Perantara (Brokerage)</strong></td><td><strong>Tidak</strong></td><td>Tidak</td><td>Tidak</td><td>Neraca Jasa (Fee Keagenan)</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Manakah pernyataan yang BENAR mengenai perlakuan pencatatan transaksi merchanting dalam neraca pembayaran menurut manual BPM6 dan SNA 2008?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 10]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Selisih antara harga jual dan beli barang dicatat sebagai ekspor jasa perdagangan.</button>
+<button class="ex-opt" data-i="1">B. Pembelian barang oleh pedagang residen dicatat sebagai impor barang biasa.</button>
+<button class="ex-opt" data-i="2">C. Perolehan barang dicatat sebagai ekspor negatif dan penjualannya dicatat sebagai ekspor positif dalam neraca barang.</button>
+<button class="ex-opt" data-i="3">D. Transaksi tidak dicatat sama sekali karena barang tidak melewati kawasan pabean fisik nasional.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Sesuai standar BPM6 dan SNA 2008 [slide 5], transaksi merchanting dicatat sepenuhnya dalam Neraca Barang (Goods Account). Saat merchant residen membeli barang dari luar negeri, dicatat sebagai ekspor barang bernilai negatif (-). Ketika barang tersebut dijual kembali ke non-residen di negara lain, dicatat sebagai ekspor barang bernilai positif (+). Jumlah neto dari kedua aliran ini menghasilkan 'ekspor neto barang di bawah merchanting'.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah entitas dagang berstatus residen Indonesia membeli komoditas nikel dari Filipina seharga USD 200.000, lalu menjualnya ke pabrik baterai di Jepang seharga USD 260.000 tanpa membawa nikel tersebut ke wilayah Indonesia. Di samping itu, ekspor barang reguler fisik Indonesia adalah USD 1.500.000 dan impor barang reguler fisik FOB adalah USD 1.080.000.<br>Hitunglah:<br>1. Nilai perolehan barang merchanting (ekspor negatif).<br>2. Nilai penjualan barang merchanting (ekspor positif).<br>3. Ekspor neto barang di bawah merchanting.<br>4. Total ekspor barang SNA 2008 dan saldo neraca barang FOB-FOB.<br>Tuliskan jawaban format: <code>Acq=..., Sales=..., NetMerchanting=..., TotalX_SNA=..., GoodsBalance_SNA=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 5, 9, 10]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>Nilai Perolehan (Ekspor Negatif)</strong>: $$\text{Acq} = -\text{USD } 200.000$$<br>2. <strong>Nilai Penjualan (Ekspor Positif)</strong>: $$\text{Sales} = +\text{USD } 260.000$$<br>3. <strong>Ekspor Neto Merchanting</strong>:<br>   $$\text{NetMerchanting} = 260.000 + (-200.000) = +\text{USD } 60.000$$<br>4. <strong>Total Ekspor Barang SNA 2008</strong>:<br>   $$\text{TotalX\_SNA} = 1.500.000 + 60.000 = \text{USD } 1.560.000$$<br>   - Saldo Neraca Barang (FOB - FOB):<br>   $$\text{GoodsBalance\_SNA} = 1.560.000 - 1.080.000 = +\text{USD } 480.000$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>acq_usd = -200000.0<br>sales_usd = 260000.0<br>net_merchanting = sales_usd + acq_usd<br>x_regular_fob = 1500000.0<br>total_x_sna = x_regular_fob + net_merchanting<br>m_regular_fob = 1080000.0<br>goods_balance_sna = total_x_sna - m_regular_fob<br>print(f'Acq={acq_usd:.0f}, Sales={sales_usd:.0f}, NetMerchanting={net_merchanting:.0f}, TotalX_SNA={total_x_sna:.0f}, GoodsBalance_SNA={goods_balance_sna:.0f}')<br># Acq=-200000, Sales=260000, NetMerchanting=60000, TotalX_SNA=1560000, GoodsBalance_SNA=480000<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Menganggap Merchanting sebagai Jasa</strong>: Sejak SNA 2008 dan BPM6, merchanting resmi masuk ke Neraca Barang (Goods), bukan Neraca Jasa.</li><li><strong>Mengabaikan Alih Kepemilikan</strong>: Jika pedagang hanya menerima komisi 2% sebagai agen pencari pembeli tanpa pernah membeli dan memiliki barang, transaksi tersebut adalah jasa broker murni, bukan merchanting.</li><li><strong>Jika Barang Mengalami Pengolahan Pabrik</strong>: Bila barang diubah bentuk secara fisik di negara ketiga, transaksi beralih menjadi 'goods for processing' / jasa manufaktur.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Merchanting: Barang Tidak Datang, Tapi Uang Datang; Dicatat di Neraca Barang Bukan Jasa.</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.1, 13.1.3</div>
+<button class="donebtn" data-id="13.1.2"></button>
+</section>
+<section class="point" id="p-13.1.3">
+<h2>13.1.3 Net Barter Terms of Trade NBToT ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 10-16]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai formulasi dan interpretasi Net Barter Terms of Trade (NBToT), formula dan 4 tahapan siklus produk Indeks Spesialisasi Perdagangan (ISP), serta formulasi Revealed Comparative Advantage (Balassa RCA) dan Openness Ratio.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Indeks Spesialisasi Perdagangan (ISP) digunakan untuk menganalisis posisi atau tahapan perkembangan suatu produk sesuai siklus produk: Pengenalan (-1 s.d. -0,5), Substitusi Impor (-0,5 s.d. 0), Perluasan Ekspor (0 s.d. 0,8), Pematangan (mendekati 1). Formula ISP = (Xi - Mi)/(Xi + Mi). Revealed Comparative Advantage (RCA) mengukur keunggulan komparatif komoditi dengan membandingkan pangsa ekspor komoditi terhadap total ekspor negara dibanding pangsa dunia. Term of Trade (ToT) suatu negara dihitung dengan membagi indeks harga barang ekspornya dengan indeks harga barang impornya [slide 10-14].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Dua pertanyaan paling krusial bagi kementerian perdagangan suatu negara adalah:<br>1. *Apakah harga barang yang kita jual ke dunia naik lebih cepat dibanding harga barang yang kita beli dari luar negeri?* Ini dijawab oleh <strong>Net Barter Terms of Trade (NBToT)</strong>. Bila harga 1 ton batubara ekspor dulunya hanya bisa membeli 5 ton beras impor, lalu kini bisa membeli 7 ton beras impor, maka nilai tukar perdagangan kita membaik.<br>2. *Apakah komoditas kita menjadi tuan rumah di negeri sendiri dan mampu merajai pasar dunia?* Ini dijawab oleh <strong>Indeks Spesialisasi Perdagangan (ISP)</strong> dan <strong>RCA Balassa</strong>. ISP melacak perjalanan suatu industri dari bayi (baru kenal impor, ISP -1) hingga menjadi raksasa dunia (tahap matang, ISP mendekati +1).</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Net Barter Terms of Trade (NBToT / Commodity Terms of Trade)</p>
+<p>Net Barter Terms of Trade mengukur rasio pertukaran riil harga barang ekspor terhadap harga barang impor suatu negara [slide 13-15]:<br>$$\text{NBToT} = \frac{P_x}{P_m} \times 100 = \frac{\text{IIX}}{\text{IIM}} \times 100$$<br>dimana:<br>- $P_x$ / $\text{IIX}$ = Indeks harga (implisit) ekspor.<br>- $P_m$ / $\text{IIM}$ = Indeks harga (implisit) impor.<br>- Tahun dasar ditetapkan bernilai 100.</p>
+<p><strong>Interpretasi Pergerakan Nilai ToT</strong> [slide 14-15]:<br>1. <strong>$\text{ToT} &gt; 100$ (Favourable)</strong>:<br>   - Harga ekspor meningkat relatif lebih cepat dibandingkan harga impor.<br>   - Memberikan *competitive effect* dan *wealth effect*: dengan volume ekspor yang sama, negara mampu membeli lebih banyak unit barang impor.<br>2. <strong>$\text{ToT} &lt; 100$ (Unfavourable)</strong>:<br>   - Daya beli per unit ekspor terhadap impor terdepresiasi.<br>3. <strong>Analisis Runtun Waktu (Slide 14 BPS)</strong>:<br>   - Tahun 1 (Tahun Dasar): $P_x = 100, P_m = 100 \implies \text{ToT} = 100,0$.<br>   - Tahun 2: $P_x = 102, P_m = 100 \implies \text{ToT} = 102,0$ (naik 2%).<br>   - Tahun 3: $P_x = 106, P_m = 104 \implies \text{ToT} = 101,92$ (turun dibanding tahun 2, namun tetap di atas tahun dasar).<br>   - Tahun 4: $P_x = 110, P_m = 110 \implies \text{ToT} = 100,0$ (kembali ke daya beli tahun 1).<br>   - Tahun 5: $P_x = 108, P_m = 106 \implies \text{ToT} = 101,89$ (kedua harga turun, namun $P_m$ turun lebih dalam).</p>
+<p>### 2. Indeks Spesialisasi Perdagangan (ISP / Trade Specialisation Ratio)</p>
+<p>ISP menggambarkan apakah suatu negara berposisi sebagai eksportir neto atau importir neto untuk suatu komoditas, serta melacak siklus hidup produk (*product life-cycle*) [slide 10-11]:<br>$$\text{ISP}_i = \frac{X_i - M_i}{X_i + M_i}$$<br>dimana:<br>- $X_i$ = Nilai ekspor komoditas $i$.<br>- $M_i$ = Nilai impor komoditas $i$.<br>- Kisaran rentang: $-1,0 \le \text{ISP}_i \le +1,0$.</p>
+<p><strong>Empat Tahapan Siklus Produk Berdasarkan Nilai ISP</strong> [slide 10, diuji pada UAS 2022/2023]:</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Rentang Nilai ISP</th><th>Tahapan Siklus Produk</th><th>Karakteristik Perdagangan</th></tr></thead><tbody><tr><td>$-1,00 \le \text{ISP} \le -0,50$</td><td><strong>Tahap Pengenalan (*Introduction*)</strong></td><td>Produksi domestik baru dimulai/belum ada; kebutuhan dalam negeri didominasi impor secara masif ($M \gg X$).</td></tr><tr><td>$-0,50 &lt; \text{ISP} \le 0,00$</td><td><strong>Tahap Substitusi Impor (*Import Substitution*)</strong></td><td>Industri domestik mulai tumbuh mengurangi ketergantungan impor ($M &gt; X$, namun defisit mengecil).</td></tr><tr><td>$0,00 &lt; \text{ISP} \le 0,80$</td><td><strong>Tahap Perluasan Ekspor (*Export Expansion*)</strong></td><td>Pasokan domestik melebihi kebutuhan lokal sehingga surplus mulai diekspor ke pasar dunia ($X &gt; M$).</td></tr><tr><td>$0,80 &lt; \text{ISP} \le 1,00$</td><td><strong>Tahap Pematangan (*Maturation*)</strong></td><td>Komoditas berdaya saing global sangat tinggi dan merajai pasar ekspor ($X \gg M$, impor mendekati nol).</td></tr></tbody></table></div>
+<p>### 3. Revealed Comparative Advantage (RCA Balassa)</p>
+<p>Dikembangkan oleh Bela Balassa (1965) untuk mengukur keunggulan komparatif relatif suatu komoditas negara tertentu terhadap rata-rata perdagangan dunia [slide 12]:<br>$$\text{RCA}_{ij} = \frac{X_{ij} / X_j}{X_{iw} / X_w}$$<br>dimana:<br>- $X_{ij}$ = Nilai ekspor komoditas $i$ oleh negara $j$.<br>- $X_j$ = Nilai total ekspor seluruh komoditas oleh negara $j$.<br>- $X_{iw}$ = Nilai ekspor komoditas $i$ oleh seluruh dunia.<br>- $X_w$ = Nilai total ekspor seluruh komoditas dunia.</p>
+<p><strong>Pedoman Interpretasi RCA</strong> [slide 12]:<br>- $\text{RCA}_{ij} \ge 1$ : Negara $j$ memiliki <strong>keunggulan komparatif kuat</strong> (di atas rata-rata dunia) pada komoditas $i$.<br>- $\text{RCA}_{ij} &lt; 1$ : Komoditas $i$ memiliki daya saing komparatif yang rendah/lemah di panggung internasional.</p>
+<p>### 4. Derajat Keterbukaan Ekonomi (Trade Openness Ratio)</p>
+<p>Mengukur seberapa besar integrasi perekonomian domestik terhadap pasar global [slide 9]:<br>$$\text{Trade Openness} = \frac{X_t + M_t}{\text{PDB}_t} \times 100\%$$</p></div></div>
+<div class="ex" data-extype="single" data-ans="0">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan data perdagangan komoditas suatu negara, jika nilai ekspor komoditas X adalah USD 350 juta dan nilai impornya adalah USD 164 juta, berapakah nilai Indeks Spesialisasi Perdagangan (ISP) dan berada pada tahapan apakah produk tersebut dalam siklus produk?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 10-11 / UAS 2022-2023 PG 24, 25]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. ISP = 0,36; Tahap Perluasan Ekspor</button>
+<button class="ex-opt" data-i="1">B. ISP = -0,36; Tahap Substitusi Impor</button>
+<button class="ex-opt" data-i="2">C. ISP = 0,53; Tahap Pematangan</button>
+<button class="ex-opt" data-i="3">D. ISP = 0,36; Tahap Substitusi Impor</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>A</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Hitung ISP:<br>   $$\text{ISP} = \frac{X - M}{X + M} = \frac{350 - 164}{350 + 164} = \frac{186}{514} \approx 0,3619 \rightarrow 0,36$$<br>2. Tentukan tahapan siklus produk:<br>   Karena ISP = 0,36 berada pada rentang $0,0 &lt; \text{ISP} \le 0,8$, maka komoditas tersebut berada pada <strong>Tahap Perluasan Ekspor</strong> (*Export Expansion*).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;ISP_Rubber=0.3619, Stage_Rubber=Perluasan Ekspor, Stage_Q25=Substitusi Impor, NBToT=105.0, RCA=2.80&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Diberikan serangkaian indikator perdagangan luar negeri (rekonstruksi UAS OSL 2022/2023):<br>1. Komoditas karet: Ekspor $X = 350$, Impor $M = 164$. Hitung ISP karet dan tentukan tahapannya.<br>2. Jika komoditas lain memiliki nilai $\text{ISP} = -0,36$, tentukan tahapannya.<br>3. Indeks harga ekspor $P_x = 105$ dan indeks harga impor $P_m = 100$. Hitung nilai NBToT.<br>4. Ekspor karet nasional adalah USD 350 juta dari total ekspor nasional USD 2.500 juta. Ekspor karet dunia adalah USD 2.000 juta dari total ekspor dunia USD 40.000 juta. Hitung indeks RCA Balassa.<br>Tuliskan jawaban format: <code>ISP_Rubber=..., Stage_Rubber=..., Stage_Q25=..., NBToT=..., RCA=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 10-14 / UAS 2022-2023 PG 24, 25, 26]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>ISP Karet</strong>: $$\text{ISP} = \frac{350 - 164}{350 + 164} = \frac{186}{514} \approx 0,3619$$.<br>   Karena $0,0 &lt; 0,3619 \le 0,8$, maka <strong>Perluasan Ekspor</strong>.<br>2. <strong>Tahap untuk ISP = -0,36</strong>:<br>   Karena $-0,5 &lt; -0,36 \le 0,0$, maka <strong>Substitusi Impor</strong>.<br>3. <strong>NBToT</strong>:<br>   $$\text{NBToT} = \frac{105}{100} \times 100 = 105,0$$<br>4. <strong>RCA Balassa</strong>:<br>   $$\text{RCA} = \frac{350 / 2500}{2000 / 40000} = \frac{0,1400}{0,0500} = 2,80$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>x_rubber = 350.0<br>m_rubber = 164.0<br>isp_rubber = (x_rubber - m_rubber) / (x_rubber + m_rubber)<br>def get_stage(isp):<br>    if -1.0 &lt;= isp &lt;= -0.5:<br>        return 'Pengenalan'<br>    elif -0.5 &lt; isp &lt;= 0.0:<br>        return 'Substitusi Impor'<br>    elif 0.0 &lt; isp &lt;= 0.8:<br>        return 'Perluasan Ekspor'<br>    elif 0.8 &lt; isp &lt;= 1.0:<br>        return 'Pematangan'<br>    return 'Invalid'<br>stage_rubber = get_stage(isp_rubber)<br>isp_q25 = -0.36<br>stage_q25 = get_stage(isp_q25)<br>px = 105.0<br>pm = 100.0<br>nbtot = (px / pm) * 100.0<br>x_ij = 350.0<br>x_j = 2500.0<br>x_iw = 2000.0<br>x_w = 40000.0<br>rca = (x_ij / x_j) / (x_iw / x_w)<br>print(f'ISP_Rubber={isp_rubber:.4f}, Stage_Rubber={stage_rubber}, Stage_Q25={stage_q25}, NBToT={nbtot:.1f}, RCA={rca:.2f}')<br># ISP_Rubber=0.3619, Stage_Rubber=Perluasan Ekspor, Stage_Q25=Substitusi Impor, NBToT=105.0, RCA=2.80<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Tahap Siklus Produk</strong>: Tahap Substitusi Impor bernilai negatif (-0,50 s.d. 0,00), bukan positif. Nilai positif (0,00 s.d. 0,80) adalah Perluasan Ekspor.</li><li><strong>Kekeliruan Ambang Batas RCA</strong>: Ambang batas keunggulan komparatif adalah 1,0 (bukan 0 atau 100). RCA = 1 berarti pangsa ekspor negara persis sama dengan rata-rata dunia.</li><li><strong>Menyamakan ToT dengan Neraca Perdagangan</strong>: ToT mengukur rasio harga indeks, sedangkan Neraca Perdagangan mengukur nilai total mata uang ($P \times Q$).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>ISP di bawah nol itu Masih Impor (Pengenalan &amp; Substitusi); ISP di atas nol itu Sudah Ekspor (Perluasan &amp; Pematangan).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.1, 13.1.2, 13.1.4</div>
+<button class="donebtn" data-id="13.1.3"></button>
+</section>
+<section class="point" id="p-13.1.4">
+<h2>13.1.4 Gross Barter dan Income ToT</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 13-16]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai perbedaan analitis antara Net Barter ToT, Gross Barter ToT [SUPLEMEN], dan Income ToT / Kapasitas Impor (KM), serta interpretasi kondisi di mana NBToT turun namun Kapasitas Impor naik.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Ada dua parameter yang dibahas yaitu Indeks Nilai Tukar (INT) dan Kapasitas Impor (KM) yang masing-masing menjelaskan tentang daya beli dan kemampuan mengimpor berdasarkan nilai ekspor. Indeks nilai tukar diperoleh dengan cara membagi indeks implisit (harga) ekspor (IIX) dengan indeks implisit (harga) impor (IIM). Sedangkan KM diperoleh dengan cara membagi nilai ekspor atas dasar harga berlaku dengan indeks implisit impor (IIM) [slide 15].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika harga satu kilogram kopi kita turun dari Rp 100 ribu menjadi Rp 90 ribu (harga relatif turun -&gt; NBToT memburuk), apakah kita otomatis jatuh miskin? Belum tentu! Jika petani kita sebelumnya hanya mampu memanen 100 kg dan sekarang mampu memanen 200 kg kopi, penerimaan total melonjak dari Rp 10 juta menjadi Rp 18 juta. Dengan uang Rp 18 juta tersebut, jumlah karung gandum impor yang bisa dibeli justru meningkat drastis. Itulah intisari <strong>Income Terms of Trade (Kapasitas Impor)</strong>: daya beli riil devisa hasil ekspor menggabungkan efek harga DAN volume.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Taksonomi Tiga Konsep Terms of Trade Utama</p>
+<p>Dalam literatur ekonomi perdagangan internasional dan statistik neraca nasional BPS [slide 15]:</p>
+<p>1. <strong>Net Barter Terms of Trade (NBToT / Commodity ToT)</strong>:<br>   $$\text{NBToT} = \frac{P_x}{P_m} \times 100$$<br>   - Mengukur rasio harga pertukaran per unit komoditas ekspor terhadap impor.<br>   - Bersifat statis harga, tidak memperhitungkan kuantitas barang yang diperdagangkan.</p>
+<p>2. <strong>Gross Barter Terms of Trade (GBToT) [SUPLEMEN]</strong>:<br>   Diformulasikan oleh ekonom Frank W. Taussig (1927):<br>   $$\text{GBToT} = \frac{Q_m}{Q_x} \times 100$$<br>   - Mengukur rasio volume fisik barang impor yang diperoleh ($Q_m$) per unit volume fisik barang ekspor yang dikirim ($Q_x$).<br>   - Digunakan untuk melihat transfer riil sumber daya fisik, terutama bila negara menerima pinjaman luar negeri, bantuan hibah modal (*unilateral transfers*), atau pembayaran bunga utang.</p>
+<p>3. <strong>Income Terms of Trade (Kapasitas Impor / KM)</strong>:<br>   Diformulasikan oleh G.S. Dorrance (1948) dan diadopsi dalam publikasi BPS [slide 15]:<br>   $$\text{Income ToT} = \text{KM} = \frac{\text{NBToT} \times Q_x}{100} = \frac{P_x \times Q_x}{P_m} = \frac{X_{\text{ADHB}}}{\text{IIM}} \times 100$$<br>   - Mengukur daya beli riil total dari seluruh devisa ekspor terhadap barang impor.<br>   - Menunjukkan kapasitas atau daya serap impor yang dapat dibiayai murni dari penerimaan ekspor tanpa menguras cadangan devisa atau menambah utang luar negeri.</p>
+<p>### 2. Matriks Perbandingan Ketiga Indikator Terms of Trade</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Karakteristik</th><th>Net Barter ToT (NBToT)</th><th>Gross Barter ToT (GBToT) [SUPLEMEN]</th><th>Income ToT / Kapasitas Impor (KM)</th></tr></thead><tbody><tr><td><strong>Variabel Utama</strong></td><td>Indeks Harga ($P_x, P_m$)</td><td>Indeks Volume Kuantum ($Q_m, Q_x$)</td><td>Indeks Nilai Riil ($P_x, P_m, Q_x$)</td></tr><tr><td><strong>Formula Matematis</strong></td><td>$(P_x / P_m) \times 100$</td><td>$(Q_m / Q_x) \times 100$</td><td>$(\text{NBToT} \times Q_x) / 100$</td></tr><tr><td><strong>Dimensi Pengukuran</strong></td><td>Daya beli per unit barang ekspor</td><td>Rasio pertukaran fisik kuantum</td><td>Total kapasitas membeli barang impor</td></tr><tr><td><strong>Status Publikasi BPS</strong></td><td>Diterbitkan resmi (Indeks Nilai Tukar)</td><td>Indikator riset akademis / suplemen</td><td>Diterbitkan resmi (Kapasitas Impor / KM)</td></tr><tr><td><strong>Respon terhadap Kuantitas</strong></td><td>Tidak terpengaruh perubahan $Q_x$</td><td>Berbanding terbalik dengan $Q_x$</td><td>Meningkat seiring kenaikan $Q_x$</td></tr></tbody></table></div>
+<p>### 3. Dinamika Hubungan NBToT dan Kapasitas Impor</p>
+<p>Hubungan pertumbuhan antara Kapasitas Impor dan komponennya dapat diturunkan secara logaritmik:<br>$$\ln(\text{KM}) = \ln(\text{NBToT}) + \ln(Q_x) - \ln(100)$$<br>$$\Delta \% \text{KM} \approx \Delta \% \text{NBToT} + \Delta \% Q_x$$<br>- Jika $\Delta \% Q_x &gt; |\Delta \% \text{NBToT}|$, maka Kapasitas Impor akan tetap tumbuh positif meskipun Net Barter Terms of Trade mengalami penurunan (pemburukan harga relatif). Kondisi ini sangat umum terjadi pada negara berkembang pengekspor komoditas primer yang melakukan modernisasi dan hilirisasi kuantitas.</p></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Jika indeks harga ekspor suatu negara turun 5% sementara indeks harga impor naik 5%, namun pada saat yang sama volume ekspor berhasil dinaikkan sebesar 25%, bagaimana arah pergerakan Net Barter Terms of Trade (NBToT) dan Kapasitas Impor (Income ToT)?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 15]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. NBToT naik dan Kapasitas Impor naik.</button>
+<button class="ex-opt" data-i="1">B. NBToT turun dan Kapasitas Impor turun.</button>
+<button class="ex-opt" data-i="2">C. NBToT turun namun Kapasitas Impor naik.</button>
+<button class="ex-opt" data-i="3">D. NBToT naik namun Kapasitas Impor turun.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Hitung perubahan NBToT:<br>   $$\text{NBToT} = \frac{95,0}{105,0} \times 100 = 90,48 &lt; 100 \quad (\text{turun / memburuk})$$<br>2. Hitung Kapasitas Impor (Income ToT):<br>   $$\text{Income ToT} = \frac{\text{NBToT} \times Q_x}{100} = \frac{90,48 \times 125,0}{100} = 113,10 &gt; 100 \quad (\text{naik / membaik})$$<br>Karena kenaikan volume ekspor (+25%) lebih besar daripada kontraksi rasio harga (-9,52%), maka daya beli devisa total (Kapasitas Impor) justru mengalami kenaikan.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;NBToT=90.48, GBToT=88.00, IncomeToT=113.10, KM=113.10&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Diberikan data indeks perdagangan tahun berjalan (tahun dasar t=0 = 100):<br>- Indeks harga ekspor $P_x = 95,0$<br>- Indeks harga impor $P_m = 105,0$<br>- Indeks volume ekspor $Q_x = 125,0$<br>- Indeks volume impor $Q_m = 110,0$<br>Hitunglah:<br>1. Net Barter Terms of Trade (NBToT).<br>2. Gross Barter Terms of Trade (GBToT) [SUPLEMEN].<br>3. Income Terms of Trade / Kapasitas Impor (KM).<br>Tuliskan jawaban format: <code>NBToT=..., GBToT=..., IncomeToT=..., KM=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 13-16]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>NBToT</strong>:<br>   $$\text{NBToT} = \frac{95,0}{105,0} \times 100 = 90,4762 \approx 90,48$$<br>2. <strong>GBToT [SUPLEMEN]</strong>:<br>   $$\text{GBToT} = \frac{110,0}{125,0} \times 100 = 88,00$$<br>3. <strong>Income ToT / KM</strong>:<br>   $$\text{Income ToT} = \frac{90,4762 \times 125,0}{100} = 113,0952 \approx 113,10$$<br>   - Nilai KM ekivalen dengan Income ToT: $$\text{KM} = 113,10$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>px = 95.0<br>pm = 105.0<br>qx = 125.0<br>qm = 110.0<br>nbtot = (px / pm) * 100.0<br>gbtot = (qm / qx) * 100.0<br>income_tot = (nbtot * qx) / 100.0<br>export_val_adhb = (px * qx) / 100.0<br>km = (export_val_adhb / pm) * 100.0<br>print(f'NBToT={nbtot:.2f}, GBToT={gbtot:.2f}, IncomeToT={income_tot:.2f}, KM={km:.2f}')<br># NBToT=90.48, GBToT=88.00, IncomeToT=113.10, KM=113.10<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Formulasi GBToT</strong>: Pembilangnya adalah Impor ($Q_m$), penyebutnya adalah Ekspor ($Q_x$). Jangan menyamakan dengan NBToT yang pembilangnya adalah Ekspor ($P_x$).</li><li><strong>Mengabaikan Efek Volume pada Kapasitas Impor</strong>: Jangan hanya melihat penurunan NBToT saat menganalisis kemampuan impor suatu negara; selalu periksa apakah volume ekspor mengalami lonjakan.</li><li><strong>Satuan Tahun Dasar</strong>: Ingat bahwa pada tahun dasar, $\text{NBToT} = 100$, $Q_x = 100$, dan $\text{Income ToT} = 100$. Nilai perhitungan berikutnya diinterpretasikan terhadap basis 100.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Net Barter itu Harga Per Unit; Gross Barter itu Volume Fisik; Income ToT itu Total Uang Kas Belanja Impor.</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.1.1, 13.1.3</div>
+<button class="donebtn" data-id="13.1.4"></button>
+</section>
+</div>
+<div class="ch-sec" id="sec-13.2-Statistik-Pariwisata-dan-Perhotelan">
+<h2 class="sec-title">13.2 Statistik Pariwisata dan Perhotelan<span class="modetag">Pembahasan Mendalam</span></h2>
+<section class="point" id="p-13.2.1">
+<h2>13.2.1 Definisi Wisman dan Wisnus</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 32-38]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi operasional wisman UNWTO, pembedaan wisman vs wisnas vs wisnus, kriteria durasi (&lt; 12 bulan) dan non-remunerasi, pembedaan tourist vs excursionist, serta pergeseran konsep wisnus pasca SP 2020.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Definisi wisatawan mancanegara (wisman) sesuai rekomendasi UNWTO: setiap orang yang melakukan perjalanan ke suatu negara di luar tempat tinggalnya (usual country of residence), kurang dari satu tahun, didorong oleh suatu tujuan utama (bisnis, berlibur, atau tujuan pribadi lainnya), selain untuk bekerja dengan penduduk negara yang dikunjungi. Wisatawan (tourist) tinggal paling sedikit 24 jam; pelancong (excursionist) tinggal kurang dari 24 jam. Wisnus pasca SP 2020: perjalanan &lt; 12 bulan bukan untuk bekerja/sekolah rutin [slide 33-36].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Statistik pariwisata adalah pengukur konsumsi devisa dan peredaran uang rekreasi. Jika seorang turis asal Australia berlibur 5 hari di Bali, dia membawa tabungan dari negaranya untuk dibelanjakan di restoran, hotel, dan toko kerajinan lokal. Ini adalah *inbound tourism* murni. Sebaliknya, jika ada insinyur Australia yang dikontrak setahun oleh pabrik semen di Gresik dan digaji rupiah dari kas pabrik tersebut, uangnya berasal dari dalam negeri, sehingga ia bukan wisatawan melainkan tenaga kerja.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Klasifikasi Pengunjung Menurut Rekomendasi UNWTO</p>
+<p>Dalam *International Recommendations for Tourism Statistics* (IRTS 2008) yang diadopsi BPS [slide 33]:<br>- <strong>Wisatawan Mancanegara (Wisman / Inbound Tourists)</strong>: Orang yang melakukan perjalanan ke suatu negara di luar lingkungan tempat tinggal biasanya (*usual country of residence*), berlangsung selama <strong>kurang dari 12 bulan</strong>, dengan tujuan apa pun selain dipekerjakan oleh entitas residen di negara yang dikunjungi.<br>- <strong>Wisatawan Nasional (Wisnas / Outbound Tourists)</strong>: Penduduk Indonesia yang melakukan perjalanan ke luar negeri bukan untuk bekerja tetap atau memperoleh penghasilan di luar negeri, berlangsung kurang dari 12 bulan [slide 35].<br>- <strong>Wisatawan Nusantara (Wisnus / Domestic Tourists)</strong>: Penduduk Indonesia yang melakukan perjalanan di dalam wilayah teritori Indonesia di luar *usual environment* [slide 36].</p>
+<p>### 2. Pembedaan Wisatawan (*Tourist*) vs Pelancong (*Excursionist*)</p>
+<p>Berdasarkan durasi menginap pada lokasi tujuan [slide 34]:<br>1. <strong>Wisatawan (*Tourist* / Pengunjung Menginap)</strong>:<br>   - Menginap paling sedikit 24 jam (minimal satu malam) di fasilitas akomodasi komersial maupun akomodasi pribadi di tempat yang dikunjungi.<br>   - Durasi: $24 \text{ jam} \le t &lt; 12 \text{ bulan}$.<br>2. <strong>Pelancong (*Excursionist* / Same-day Visitor / Day Tripper)</strong>:<br>   - Berada di wilayah tujuan kurang dari 24 jam (tidak bermalam di akomodasi setempat).<br>   - Termasuk penumpang kapal pesiar (*cruise passengers*) yang singgah di pelabuhan untuk berkeliling di darat pada siang hari namun kembali tidur di kabin kapal pesiar.</p>
+<p>### 3. Pengecualian dari Kategori Wisatawan Mancanegara (UNWTO)</p>
+<p>Kelompok yang <strong>tidak dicatat</strong> sebagai wisman saat memasuki perbatasan [slide 35]:<br>1. Pejabat diplomatik, korps konsuler, dan anggota angkatan bersenjata asing yang ditugaskan resmi beserta tanggungan keluarganya.<br>2. Warga Negara Asing (WNA) yang telah tinggal di Indonesia lebih dari 12 bulan (berstatus *resident* penduduk Indonesia).<br>3. Pekerja migran dan tenaga kerja asing yang datang dengan tujuan utama bekerja dan menerima remunerasi dari perusahaan residen Indonesia.<br>4. Pengungsi (*refugees*) dan nomad imigran yang mencari suaka.</p>
+<p>### 4. Pergeseran Konsep Wisatawan Nusantara (Wisnus) BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Konsep Sebelum Sensus Penduduk 2020</th><th>Konsep Setelah Sensus Penduduk 2020</th></tr></thead><tbody><tr><td><strong>Batas Waktu</strong></td><td>Kurang dari 6 bulan</td><td>Kurang dari 12 bulan (selaras UNWTO)</td></tr><tr><td><strong>Kriteria Perjalanan</strong></td><td>Menuju objek komersial berbayar, menginap di hotel, ATAU jarak $&gt; 100\text{ km}$ pp</td><td>Di luar *usual environment*, bukan perjalanan rutin bekerja/sekolah</td></tr><tr><td><strong>Definisi Lingkungan Keseharian</strong></td><td>Belum terdefinisi secara ketat berbasis geolokasi</td><td>Rumah tinggal, tempat bekerja, dan rumah kedua</td></tr><tr><td><strong>Pendekatan Sumber Data</strong></td><td>Survei Susenas &amp; Survei Wisnus konvensional</td><td>Integrasi Big Data <strong>Mobile Positioning Data (MPD)</strong> operator seluler + Penimbang Susenas Maret</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Manakah dari individu berikut yang SAH diklasifikasikan sebagai wisatawan mancanegara (inbound tourist) ke Indonesia menurut standar UNWTO dan BPS?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 33-35]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Seorang WNA yang bertugas sebagai sekretaris kedutaan besar asing di Jakarta selama 3 tahun.</button>
+<button class="ex-opt" data-i="1">B. Warga negara Jepang yang berlibur di Bali selama 7 hari dan menginap di hotel kawasan Nusa Dua.</button>
+<button class="ex-opt" data-i="2">C. Penumpang kapal pesiar yang turun berbelanja cenderamata di Pelabuhan Benoa selama 6 jam lalu kembali tidur di kapal.</button>
+<button class="ex-opt" data-i="3">D. Warga negara asing yang bekerja dan menerima gaji bulanan sebagai manajer pabrik tekstil di Karawang.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>- Pilihan A: Diplomat asing dikecualikan dari statistik pariwisata [slide 35].<br>- Pilihan B: WNA Jepang menginap $\ge 24$ jam (7 hari), $&lt; 12$ bulan, tujuan rekreasi, tidak digaji penduduk lokal -&gt; sah sebagai Wisatawan Mancanegara (Tourist) [slide 33-34].<br>- Pilihan C: Penumpang kapal pesiar $&lt; 24$ jam dan tidur di kapal diklasifikasikan sebagai Pelancong (Excursionist), bukan Tourist [slide 34].<br>- Pilihan D: Bekerja dan digaji oleh entitas lokal merupakan kriteria eksklusi (bukan wisatawan) [slide 33].</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Tourists=6500, Excursionists=1200, TotalVisitors=7700, NonVisitors=2300, PctTourists=84.42&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Dari 10.000 kedatangan WNA di pelabuhan laut internasional, terdapat: 6.500 wisatawan menginap di hotel, 1.200 penumpang cruise singgah 8 jam (tidur di kapal), 300 staf kedutaan asing, 1.500 TKA kontrak 2 tahun digaji lokal, dan 500 ekspatriat residen Indonesia pulang dari luar negeri.<br>Hitunglah:<br>1. Jumlah wisatawan mancanegara (tourists).<br>2. Jumlah pelancong mancanegara (excursionists).<br>3. Total pengunjung mancanegara (inbound visitors).<br>4. Total bukan pengunjung mancanegara (non-visitors).<br>5. Persentase wisatawan terhadap total pengunjung sah.<br>Tuliskan format: <code>Tourists=..., Excursionists=..., TotalVisitors=..., NonVisitors=..., PctTourists=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 33-35]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>Tourists</strong> = 6.500 orang (menginap $\ge 24$ jam, non-remunerasi).<br>2. <strong>Excursionists</strong> = 1.200 orang (kunjungan $&lt; 24$ jam kapal pesiar).<br>3. <strong>Total Visitors</strong> = $6.500 + 1.200 = 7.700$ orang.<br>4. <strong>Non-Visitors</strong> = $300 (\text{diplomat}) + 1.500 (\text{TKA}) + 500 (\text{residen}) = 2.300$ orang.<br>5. <strong>Persentase Wisatawan</strong>:<br>   $$\% \text{Tourists} = \frac{6.500}{7.700} \times 100\% \approx 84,42\%$$</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>total_arrivals = 10000<br>tourists = 6500<br>excursionists = 1200<br>diplomats = 300<br>contract_workers = 1500<br>residents_foreign = 500<br>total_inbound_visitors = tourists + excursionists<br>non_visitors = diplomats + contract_workers + residents_foreign<br>pct_tourists = (tourists / total_inbound_visitors) * 100.0<br>print(f'Tourists={tourists}, Excursionists={excursionists}, TotalVisitors={total_inbound_visitors}, NonVisitors={non_visitors}, PctTourists={pct_tourists:.2f}')<br># Tourists=6500, Excursionists=1200, TotalVisitors=7700, NonVisitors=2300, PctTourists=84.42<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Batas 24 Jam</strong>: Menginap minimal 24 jam adalah syarat menjadi Tourist (bukan Excursionist).</li><li><strong>Salah Memperlakukan WNA Residen</strong>: WNA yang sudah tinggal &gt; 1 tahun di Indonesia dianggap penduduk; saat pulang dari luar negeri dicatat sebagai 'penduduk yang kembali', bukan wisman.</li><li><strong>Penumpang Cruise</strong>: Penumpang kapal pesiar yang singgah 1-2 hari namun tidur di atas kapal dihitung sebagai Excursionist (bukan Tourist).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Tourist itu Tidur/Menginap (&gt;= 24 jam); Excursionist itu Ekskursi Singkat (&lt; 24 jam); Keduanya adalah Pengunjung (Visitor).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.2.2, 13.2.3</div>
+<button class="donebtn" data-id="13.2.1"></button>
+</section>
+<section class="point" id="p-13.2.2">
+<h2>13.2.2 Tingkat Penghunian Kamar TPK Hotel ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 36-41]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai formulasi TPK BPS, penghitungan malam kamar tersedia (kamar x hari), formula TPTT, RTK, dan RTH, serta pemahaman instrumen survei VHTS vs VHTL.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Tingkat Penghunian Kamar (TPK) hotel yaitu perbandingan antara banyaknya malam kamar yang terpakai dengan banyaknya malam kamar yang tersedia (dalam persen). Angka ini memberikan gambaran berapa persen kamar yang tersedia pada akomodasi terisi oleh tamu yang menginap dalam suatu waktu tertentu. Sumber data: Kuesioner VHTS (bulanan) secara sensus untuk hotel berbintang dan sampel untuk non-bintang; VHTL (tahunan) secara sensus [slide 39-41].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah hotel memiliki 100 kamar dan di suatu malam terisi 60 kamar, maka TPK malam itu adalah 60%. Bagaimana jika kita menghitung selama satu bulan penuh (30 hari)? Hotel tersebut memiliki 'stok jualan' sebanyak 100 kamar x 30 malam = 3.000 malam kamar. Jika selama sebulan itu total transaksi menginap mencapai 1.800 malam kamar, maka TPK bulanannya adalah 1.800 / 3.000 = 60%. Angka 60% ini mencerminkan produktivitas aset hotel.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Konseptualisasi TPK Hotel</p>
+<p>Tingkat Penghunian Kamar (TPK / Room Occupancy Rate) adalah indikator pokok kinerja industri akomodasi [slide 39]:<br>- Mengukur efisiensi pemanfaatan fasilitas akomodasi komersial.<br>- Menjadi indikator proksi sisi penawaran (*supply side*) dalam Neraca Satelit Pariwisata Nasional (NESPARNAS) menggunakan kerangka Tabel Input-Output (I-O).</p>
+<p>### 2. Formulasi Matematis Indikator Akomodasi Perhotelan BPS</p>
+<p>Berdasarkan pedoman Survei VHTS BPS [slide 41]:</p>
+<p>1. <strong>Tingkat Penghunian Kamar (TPK)</strong>:<br>   $$\text{TPK} = \frac{\text{Malam Kamar Terpakai}}{\text{Malam Kamar Tersedia}} \times 100\%$$<br>   $$\text{Malam Kamar Tersedia} = \text{Jumlah Kamar yang Siap Jual} \times \text{Jumlah Hari Operasi Hotel}$$</p>
+<p>2. <strong>Tingkat Pemakaian Tempat Tidur (TPTT / Bed Occupancy Rate)</strong>:<br>   $$\text{TPTT} = \frac{\text{Banyaknya Malam Tamu}}{\text{Tempat Tidur yang Tersedia}} \times 100\%$$<br>   $$\text{Tempat Tidur Tersedia} = \text{Jumlah Tempat Tidur Fisik} \times \text{Jumlah Hari Operasi Hotel}$$</p>
+<p>3. <strong>Rata-rata Tamu per Kamar (RTK / Guests per Room)</strong>:<br>   $$\text{RTK} = \frac{\text{Banyaknya Malam Tamu}}{\text{Malam Kamar yang Terjual}}$$<br>   - Menunjukkan rata-rata densitas hunian per kamar yang disewa (biasanya bernilai antara 1,2 s.d. 2,0 orang per kamar).</p>
+<p>4. <strong>Rata-rata Tamu per Hari (RTH)</strong>:<br>   $$\text{RTH} = \frac{\text{Banyaknya Tamu yang Menginap}}{\text{Jumlah Hari Kerja/Operasi Hotel}}$$</p>
+<p>### 3. Instrumen Pengumpulan Data Akomodasi BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Karakteristik</th><th>Survei VHTS (Bulanan)</th><th>Survei VHTL (Tahunan)</th></tr></thead><tbody><tr><td><strong>Frekuensi Pendataan</strong></td><td>Bulanan</td><td>Tahunan</td></tr><tr><td><strong>Cakupan Akomodasi</strong></td><td>Sensus untuk Hotel Berbintang; Sampel probabilitas untuk Hotel Non-Bintang</td><td>Sensus seluruh usaha akomodasi (berbintang dan non-bintang)</td></tr><tr><td><strong>Variabel Utama</strong></td><td>TPK, RLMT, jumlah tamu datang (wisman &amp; wisnus), malam kamar terjual</td><td>Direktori hotel, tenaga kerja, tarif kamar, fasilitas, pendapatan usaha, neraca rugi-laba</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="2">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Sebuah hotel memiliki 50 kamar dan buka selama 30 hari dalam sebulan. Jika selama bulan tersebut tercatat 900 malam kamar yang terhuni oleh tamu, berapakah Tingkat Penghunian Kamar (TPK) hotel tersebut?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 39-41]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 30,0%</button>
+<button class="ex-opt" data-i="1">B. 45,0%</button>
+<button class="ex-opt" data-i="2">C. 60,0%</button>
+<button class="ex-opt" data-i="3">D. 75,0%</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>C</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Malam kamar tersedia = 50 kamar x 30 hari = 1.500 malam kamar.<br>2. TPK = (Malam kamar terpakai / Malam kamar tersedia) x 100%:<br>   $$\text{TPK} = \frac{900}{1.500} \times 100\% = 60,0\%$$ [slide 41].</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Sebuah hotel berbintang memiliki 100 kamar dan 160 tempat tidur, beroperasi selama 30 hari di bulan September. Terjual 1.800 malam kamar, 1.200 tamu menginap, dengan total akumulasi 2.700 malam tamu.<br>Hitunglah:<br>1. Malam kamar tersedia.<br>2. TPK hotel (persen).<br>3. TPTT hotel (persen).<br>4. Rata-rata tamu per kamar (RTK).<br>5. Rata-rata tamu per hari (RTH).<br>Tuliskan jawaban format: <code>AvailableRoomNights=..., TPK=..., TPTT=..., RTK=..., RTH=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-41 / Rekonstruksi Uji OSL]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>AvailableRoomNights</strong> = $100 \times 30 = 3.000$.<br>2. <strong>TPK</strong> = $(1.800 / 3.000) \times 100\% = 60,00\%$.<br>3. <strong>TPTT</strong> = Bed tersedia = $160 \times 30 = 4.800$.<br>   $$\text{TPTT} = \frac{2.700}{4.800} \times 100\% = 56,25\%$$<br>4. <strong>RTK</strong> = $2.700 / 1.800 = 1,50$ orang/kamar.<br>5. <strong>RTH</strong> = $1.200 / 30 = 40,0$ tamu/hari.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>rooms = 100<br>days = 30<br>available_room_nights = rooms * days<br>sold_room_nights = 1800<br>tpk = (sold_room_nights / available_room_nights) * 100.0<br>beds = 160<br>available_bed_nights = beds * days<br>guest_nights = 2700<br>tptt = (guest_nights / available_bed_nights) * 100.0<br>rtk = guest_nights / sold_room_nights<br>total_guests = 1200<br>rth = total_guests / days<br>print(f'AvailableRoomNights={available_room_nights}, TPK={tpk:.2f}%, TPTT={tptt:.2f}%, RTK={rtk:.2f}, RTH={rth:.1f}')<br># AvailableRoomNights=3000, TPK=60.00%, TPTT=56.25%, RTK=1.50, RTH=40.0<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Lupa Faktor Hari</strong>: Menghitung malam kamar tersedia hanya dari jumlah kamar tanpa dikali jumlah hari dalam sebulan.</li><li><strong>Kamar Rusak / Renovasi</strong>: Kamar yang sedang rusak berat atau tidak dapat dihuni (*out of order*) dikeluarkan dari pembagi malam kamar tersedia.</li><li><strong>Komplementer Tamu</strong>: Tamu komplementer (gratis) yang menempati kamar tetap dihitung sebagai kamar terpakai jika kamar tersebut tercatat dihuni dalam sistem reservasi.</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>TPK = Kamar Terjual dibagi (Jumlah Kamar x Jumlah Hari Buka) x 100%.</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.2.1, 13.2.3</div>
+<button class="donebtn" data-id="13.2.2"></button>
+</section>
+<section class="point" id="p-13.2.3">
+<h2>13.2.3 Rata-rata Lama Menginap Tamu RLMT</h2>
+<div class="source-ref">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-43]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai definisi operasional dan formula RLMT BPS, perbedaan rata-rata tertimbang vs rata-rata sederhana pada RLMT gabungan, serta karakteristik durasi wisman vs wisnus.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Rata-rata Lama Menginap Tamu dihitung dari banyaknya malam tamu dibagi tamu yang datang dan menginap. Indikator ini mencerminkan loyalitas dan pola konsumsi wisatawan di destinasi wisata. Disagregasi menurut tamu asing dan tamu nasional disajikan rutin dalam Berita Resmi Statistik (BRS) Perkembangan Pariwisata BPS [slide 41-42].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Jika sebuah bus pariwisata menurunkan 40 orang wisatawan dan mereka tinggal di hotel selama 3 malam, maka mereka menyumbang $40 \times 3 = 120$ malam tamu. Jika ada tamu lain sebanyak 10 orang yang hanya tinggal 1 malam (10 malam tamu), total tamu datang adalah 50 orang dan total malam tamu adalah 130 malam tamu. Rata-rata lama menginap mereka adalah $130 / 50 = 2,6$ malam. RLMT memberitahu manajer hotel dan dinas pariwisata berapa lama uang belanja turis bertahan di daerah tersebut.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Definisi dan Signifikansi RLMT</p>
+<p>Rata-rata Lama Menginap Tamu (RLMT / Average Length of Stay - ALOS) mengukur durasi retensi wisatawan di suatu wilayah [slide 41]:<br>- Semakin tinggi RLMT, semakin besar multiplier effect pengeluaran wisatawan terhadap perekonomian lokal (transportasi, kuliner, suvenir, atraksi).<br>- Menjadi parameter penting dalam memproyeksikan devisa pariwisata pada *Passenger Exit Survey* (PES) dan Neraca Satelit Pariwisata Nasional (NESPARNAS).</p>
+<p>### 2. Formulasi Matematis BPS</p>
+<p>Berdasarkan kuesioner bulanan VHTS BPS [slide 41]:</p>
+<p>1. <strong>RLMT Total / Gabungan</strong>:<br>   $$\text{RLMT} = \frac{\text{Banyaknya Malam Tamu Menginap}}{\text{Banyaknya Tamu yang Datang dan Menginap}}$$<br>   $$\text{RLMT} = \frac{\sum_{j=1}^m T_j \times d_j}{\sum_{j=1}^m T_j}$$<br>   dimana $T_j$ adalah jumlah tamu pada rombongan ke-$j$ dan $d_j$ adalah lama menginap rombongan ke-$j$.</p>
+<p>2. <strong>Disagregasi Menurut Kebangsaan Tamu</strong>:<br>   - <strong>RLMT Wisman (Tamu Asing)</strong>:<br>     $$\text{RLMT}_{\text{wisman}} = \frac{\text{Malam Tamu Asing}}{\text{Tamu Asing yang Datang}}$$<br>   - <strong>RLMT Wisnus (Tamu Domestik/Nasional)</strong>:<br>     $$\text{RLMT}_{\text{wisnus}} = \frac{\text{Malam Tamu Nasional}}{\text{Tamu Nasional yang Datang}}$$</p>
+<p>3. <strong>Formula Agregasi Tertimbang</strong>:<br>   $$\text{RLMT}_{\text{total}} = \frac{\text{Malam Tamu}_{\text{wisman}} + \text{Malam Tamu}_{\text{wisnus}}}{\text{Tamu}_{\text{wisman}} + \text{Tamu}_{\text{wisnus}}}$$<br>   Atau dapat dituliskan sebagai rata-rata tertimbang (*weighted average*):<br>   $$\text{RLMT}_{\text{total}} = w_{\text{wisman}} \cdot \text{RLMT}_{\text{wisman}} + w_{\text{wisnus}} \cdot \text{RLMT}_{\text{wisnus}}$$<br>   dimana pembobot $w$ adalah proporsi jumlah tamu yang datang:<br>   $$w_{\text{wisman}} = \frac{\text{Tamu}_{\text{wisman}}}{\text{Total Tamu}}, \quad w_{\text{wisnus}} = \frac{\text{Tamu}_{\text{wisnus}}}{\text{Total Tamu}}$$</p>
+<p>### 3. Matriks Perbedaan Indikator Perhotelan BPS</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Indikator</th><th>Satuan</th><th>Pembilang</th><th>Penyebut</th><th>Fungsi Analisis</th></tr></thead><tbody><tr><td><strong>TPK (Room Occupancy)</strong></td><td>Persen (%)</td><td>Malam Kamar Terpakai</td><td>Malam Kamar Tersedia</td><td>Produktivitas kapasitas kamar fisik</td></tr><tr><td><strong>TPTT (Bed Occupancy)</strong></td><td>Persen (%)</td><td>Malam Tamu Terpakai</td><td>Tempat Tidur Tersedia</td><td>Pemanfaatan kapasitas ranjang</td></tr><tr><td><strong>RLMT (Length of Stay)</strong></td><td>Hari / Malam</td><td>Total Malam Tamu</td><td>Total Tamu Datang</td><td>Durasi retensi tamu di destinasi</td></tr><tr><td><strong>RTK (Guests per Room)</strong></td><td>Orang / Kamar</td><td>Total Malam Tamu</td><td>Malam Kamar Terjual</td><td>Kepadatan hunian kamar</td></tr></tbody></table></div></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Di sebuah hotel resor, terdapat 300 tamu asing dengan 900 malam tamu dan 200 tamu domestik dengan 350 malam tamu. Berapakah Rata-rata Lama Menginap Tamu (RLMT) secara total?</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 41]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. 2,38 malam</button>
+<button class="ex-opt" data-i="1">B. 2,50 malam</button>
+<button class="ex-opt" data-i="2">C. 2,75 malam</button>
+<button class="ex-opt" data-i="3">D. 3,00 malam</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>1. Total malam tamu = $900 + 350 = 1.250$ malam tamu.<br>2. Total tamu datang = $300 + 200 = 500$ orang.<br>3. RLMT total = Total malam tamu / Total tamu datang:<br>   $$\text{RLMT}_{\text{total}} = \frac{1.250}{500} = 2,50 \text{ malam}$$ [slide 41].<br>(Catatan: Menghitung rata-rata sederhana $(3,00 + 1,75) / 2 = 2,375$ malam adalah salah karena jumlah tamu asing dan domestik tidak seimbang).</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Data tamu hotel bintang 5: Tamu asing 300 orang (900 malam tamu), tamu domestik 200 orang (350 malam tamu).<br>Hitunglah:<br>1. RLMT tamu asing.<br>2. RLMT tamu domestik.<br>3. Total tamu dan total malam tamu.<br>4. RLMT gabungan (total).<br>5. Persentase tamu asing dari total tamu.<br>Tuliskan format: <code>RLMT_Foreign=..., RLMT_Domestic=..., TotalGuests=..., TotalNights=..., RLMT_Total=..., PctForeign=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_13_OSL_Indikator_Ekonomi_(3)_X-M,_KTI,_Pariwisata.md, slide 40-42 / Rekonstruksi Uji OSL]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah Perhitungan:<br>1. <strong>RLMT Tamu Asing</strong> = $900 / 300 = 3,00$ malam.<br>2. <strong>RLMT Tamu Domestik</strong> = $350 / 200 = 1,75$ malam.<br>3. <strong>Total Tamu</strong> = $300 + 200 = 500$ orang. <strong>Total Malam Tamu</strong> = $900 + 350 = 1.250$ malam.<br>4. <strong>RLMT Total</strong> = $1.250 / 500 = 2,50$ malam.<br>5. <strong>Persentase Tamu Asing</strong> = $(300 / 500) \times 100\% = 60,0\%$.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>guests_foreign = 300<br>nights_foreign = 900<br>rlmt_foreign = nights_foreign / guests_foreign<br>guests_domestic = 200<br>nights_domestic = 350<br>rlmt_domestic = nights_domestic / guests_domestic<br>total_guests = guests_foreign + guests_domestic<br>total_nights = nights_foreign + nights_domestic<br>rlmt_total = total_nights / total_guests<br>pct_foreign = (guests_foreign / total_guests) * 100.0<br>print(f'RLMT_Foreign={rlmt_foreign:.2f}, RLMT_Domestic={rlmt_domestic:.2f}, TotalGuests={total_guests}, TotalNights={total_nights}, RLMT_Total={rlmt_total:.2f}, PctForeign={pct_foreign:.1f}%')<br># RLMT_Foreign=3.00, RLMT_Domestic=1.75, TotalGuests=500, TotalNights=1250, RLMT_Total=2.50, PctForeign=60.0%<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Rata-rata Sederhana yang Menyesatkan</strong>: Jangan pernah merata-ratakan langsung $\frac{\text{RLMT}_{\text{asing}} + \text{RLMT}_{\text{domestik}}}{2}$ kecuali jumlah tamu kedua kelompok persis sama.</li><li><strong>Tertukar Tamu Datang vs Tamu yang Masih Menginap</strong>: Pembagi RLMT adalah jumlah tamu baru yang datang mendaftar (*arrivals / check-in*), bukan jumlah tamu yang tercatat ada di hotel setiap harinya.</li><li><strong>Satuan</strong>: Pastikan satuan akhir dinyatakan dalam hari atau malam (bukan persen).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>RLMT = Total Malam Tamu dibagi Tamu Datang (Bukan dibagi Kamar, Bukan Persen).</p></div></div>
+<div class="links">Keterkaitan Konsep: 13.2.1, 13.2.2</div>
+<button class="donebtn" data-id="13.2.3"></button>
+</section>
+</div>
+</main></div>
+<script>
+const KEY = "lecture-done-chapter-13-";
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>

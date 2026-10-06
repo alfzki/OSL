@@ -1,0 +1,91 @@
+{
+  "point_id": "11.1.1",
+  "title": "Kerangka Sampel Area KSA Padi",
+  "importance": "高",
+  "curriculum_alignment": {
+    "pertemuan": 11,
+    "silabus_topic": "Statistik Produksi Pertanian dan Industri",
+    "bps_subject": "Statistik Pertanian Tanaman Pangan"
+  },
+  "grounding": {
+    "primary_sources": [
+      {
+        "file": "Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md",
+        "slide_or_page": "4-18",
+        "content": "Penggantian metode eye-estimate konvensional dengan Kerangka Sampel Area (KSA), stratifikasi tutupan Lahan Baku Sawah (LBS), ukuran segmen 300m x 300m (9 ha), subsegmen 100m x 100m (1 ha), 9 titik amatan georeferenced koordinat GPS Android, klasifikasi fase vegetatif (V1, V2), generatif (G1, G2), panen, persiapan lahan, serta puso."
+      }
+    ],
+    "supplemental_sources": [],
+    "coverage_status": "COVERED"
+  },
+  "theory": {
+    "intuition": "Sebelum KSA diterapkan pada tahun 2018, BPS mengandalkan laporan eye-estimate (pandangan mata) dari ribuan Mantri Tani kecamatan yang rentan terhadap bias subjektif dan seringkali menghasilkan over-estimate luas panen hingga jutaan ton. KSA mengubah pendekatan menjadi pengukuran berbasis bukti spasial objektif. Setiap hamparan sawah dibagi menjadi petak-petak grid koordinat berukuran 300 m x 300 m (segmen). Pada minggu terakhir setiap bulan (tanggal 21-27), petugas memotret 9 titik tetap di dalam segmen menggunakan kamera ponsel Android berbasis GPS untuk mencatat fase tumbuh padi secara presisi dan diaudit secara digital oleh server pusat.",
+    "bps_definition": "Kerangka Sampel Area (KSA) adalah metode survei berbasis area sampling frame yang membagi seluruh wilayah daratan berpotensi sawah menjadi grid segmen berukuran 300 m x 300 m (9 hektar), di mana setiap segmen dibagi menjadi 9 subsegmen berukuran 100 m x 100 m (1 hektar) dengan 9 titik pengamatan tetap setiap bulan untuk mengidentifikasi fase tumbuh tanaman padi secara objektif.",
+    "boundary_conditions": "Pengamatan KSA dilakukan serentak pada minggu terakhir setiap bulan (tanggal 21 s.d. 27/28). Fase amatan mencakup: Vegetatif Awal (V1: 1-30 HST), Vegetatif Akhir (V2: 31-60 HST), Generatif Awal (G1: 61-90 HST), Generatif Akhir (G2: 91-105 HST), Panen (P), Persiapan Lahan (PL), Puso/Gagal Panen (PS), dan Bukan Sawah/Bukan Padi (BP/BS). Proyeksi panen dihitung berdasarkan masa tanam: V1 panen 3 bulan ke depan, V2/G1 panen 2 bulan ke depan, dan G2 panen 1 bulan ke depan.",
+    "formula_latex": "$$\\hat{A}_{\\text{panen}} = \\sum_{h=1}^H A_h \\cdot \\hat{p}_{h,\\text{panen}} = \\sum_{h=1}^H A_h \\left( \\frac{\\sum_{i=1}^{n_h} \\sum_{j=1}^{9} y_{hij}}{9 \\cdot n_h} \\right)$$"
+  },
+  "numerical_example": {
+    "problem_statement": "Suatu kabupaten memiliki luas Lahan Baku Sawah (LBS) sebesar 45.000 hektar. Terpilih 200 segmen sampel KSA (masing-masing 9 titik amatan, total 1.800 titik amatan). Pada putaran amatan akhir Mei, tercatat 270 titik berada pada fase Panen (P), 360 titik pada fase Generatif Akhir (G2), dan 450 titik pada fase Vegetatif Akhir/Generatif Awal (V2/G1). Tentukan estimasi luas panen bulan Mei serta proyeksi luas panen bulan Juni dan Juli.",
+    "data_table": "| Parameter Sampling KSA | Nilai Parameter |\n|---|---|\n| Luas Stratum Sawah Irigasi ($A_1$) | 45.000 ha |\n| Jumlah Segmen Sampel ($n_1$) | 200 segmen |\n| Jumlah Titik Amatan per Segmen | 9 titik |\n| Total Titik Pengamatan ($N_{\\text{titik}}$) | 1.800 titik |\n| Titik Fase Panen Mei | 270 titik |\n| Titik Fase G2 (Panen Juni) | 360 titik |\n| Titik Fase V2/G1 (Panen Juli) | 450 titik |",
+    "step_by_step_solution": "1. Total titik amatan = 200 segmen * 9 titik = 1.800 titik amatan.\n2. Luas Panen Bulan Mei: Proporsi titik panen = 270 / 1.800 = 0,15 (15%). Estimasi luas panen Mei = 0,15 * 45.000 ha = 6.750 ha.\n3. Proyeksi Luas Panen Bulan Juni (fase G2): Proporsi titik G2 = 360 / 1.800 = 0,20 (20%). Proyeksi luas panen Juni = 0,20 * 45.000 ha = 9.000 ha.\n4. Proyeksi Luas Panen Bulan Juli (fase V2/G1): Proporsi titik V2/G1 = 450 / 1.800 = 0,25 (25%). Proyeksi luas panen Juli = 0,25 * 45.000 ha = 11.250 ha.",
+    "python_verification_code": "A_1 = 45000\ntotal_pts = 200 * 9\np_mei = 270 / total_pts\nluas_mei = p_mei * A_1\np_jun = 360 / total_pts\nluas_jun = p_jun * A_1\np_jul = 450 / total_pts\nluas_jul = p_jul * A_1\nprint(f'Mei={luas_mei:.0f} ha, Juni={luas_jun:.0f} ha, Juli={luas_jul:.0f} ha')",
+    "expected_output": "Mei=6750 ha, Juni=9000 ha, Juli=11250 ha"
+  },
+  "exam_pitfalls": [
+    {
+      "trap_description": "Hierarki Dimensi Segmen vs Subsegmen KSA",
+      "common_mistake": "Mengira 1 segmen KSA berukuran 100m x 100m atau menganggap foto diambil hanya pada 1 titik per segmen.",
+      "safe_strategy": "Ingat bahwa 1 segmen berukuran 300m x 300m (9 ha), yang dibagi menjadi 9 subsegmen berukuran 100m x 100m (1 ha) dengan total 9 titik amatan GPS per segmen."
+    },
+    {
+      "trap_description": "Proyeksi Waktu Panen Berdasarkan Fase",
+      "common_mistake": "Menganggap fase vegetatif awal (V1) atau vegetatif akhir (V2) akan langsung dipanen pada bulan berikutnya (t+1).",
+      "safe_strategy": "Siklus tanam padi berlangsung 3,5 hingga 4 bulan: V1 panen 3 bulan ke depan, V2/G1 panen 2 bulan ke depan, dan hanya G2 yang diproyeksikan panen 1 bulan ke depan."
+    }
+  ],
+  "textbook": "Official Statistics Lanjutan (OSL)",
+  "chapter_id": 11,
+  "chapter_title": "Pertemuan 11: Statistik Produksi Pertanian dan Industri",
+  "section": "11.1 Estimasi Produksi Tanaman Pangan",
+  "mode": "deep",
+  "points": [
+    {
+      "id": "11.1.1",
+      "name": "Kerangka Sampel Area KSA Padi",
+      "importance": "高",
+      "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 4-18]",
+      "exam_focus": "Prinsip dasar Kerangka Sampel Area (KSA), stratifikasi Lahan Baku Sawah (LBS), struktur hierarki segmen (300m x 300m) dan subsegmen (100m x 100m), 9 titik amatan koordinat GPS, klasifikasi fase pertumbuhan padi, serta peramalan luas panen 1-3 bulan ke depan.",
+      "textbook_excerpt": "Metode Pengumpulan Data 'Eye Estimate' bersifat Subjective Measurement digantikan dengan Pengukuran Objective Measurement yaitu Kerangka Sampel Area (KSA). KSA merupakan kumpulan sampel area (segmen) dengan ukuran tertentu dalam suatu wilayah administrasi yang mewakili suatu populasi (area pertanian/sawah). Merupakan kombinasi sistem informasi geografis, penginderaan jauh, teknologi informasi, dan statistika menjadi satu kolaborasi harmonis [slide 10, 13]. Fase pertumbuhan padi hasil pengamatan KSA untuk kerangka sampel subsegmen mencakup Vegetatif awal (V1), Vegetatif akhir (V2), Generatif awal (G1), Generatif akhir (G2), dan Panen [slide 15].",
+      "intuition": "Sebelum KSA diterapkan pada tahun 2018, BPS mengandalkan laporan eye-estimate (pandangan mata) dari ribuan Mantri Tani di tingkat kecamatan. Metode ini rentan terhadap bias subjektif, kepentingan birokrasi, dan seringkali menghasilkan over-estimate luas panen beras nasional hingga jutaan ton. KSA mengubah pendekatan dari 'menilai menurut perkiraan manusia' menjadi 'pengukuran berbasis bukti spasial objektif'. Setiap hamparan sawah dibagi menjadi petak-petak grid koordinat berukuran 300 m x 300 m (segmen). Pada minggu terakhir setiap bulan (tanggal 21-27), petugas lapangan memotret 9 titik tetap di dalam segmen menggunakan smartphone berbasis GPS. Dari foto-foto ini, fase tumbuh padi (vegetatif, generatif, panen, persiapan lahan, atau puso) dicatat secara presisi dan diaudit secara digital oleh server pusat.",
+      "formal": "### 1. Landasan Metodologis dan Arsitektur Sampling KSA\n\nKerangka Sampel Area (KSA) dikembangkan melalui kerja sama BPS, BPPT (sekarang BRIN), Kementerian ATR/BPN, Badan Informasi Geospasial (BIG), dan LAPAN (BRIN) untuk memperbaiki estimasi luas panen padi nasional [slide 10, 13].\n\n#### A. Stratifikasi Populasi Lahan Baku Sawah (LBS)\nPopulasi sampling dibangun menggunakan peta spasial Lahan Baku Sawah (LBS) termutakhir hasil integrasi citra satelit resolusi tinggi. Populasi dikelompokkan ke dalam beberapa stratum berdasarkan intensitas pertanaman dan potensi sawah:\n- **Stratum Sawah Irigasi**: Intensitas tanam tinggi (IP 200–300).\n- **Stratum Sawah Non-Irigasi / Tadah Hujan**: Intensitas tanam sedang (IP 100–150).\n- **Stratum Lahan Bukan Sawah Berpotensi / Lahan Kering**.\n\n#### B. Hierarki Satuan Sampling\n1. **Segmen (Sampling Unit)**:\n   - Berukuran bujur sangkar $300\\text{ m} \\times 300\\text{ m}$ (luas $90.000\\text{ m}^2 = 9\\text{ hektar}$) [slide 14].\n   - Dipilih secara acak terstratifikasi (*Stratified Systematic Sampling*) dari grid LBS pada masing-masing kabupaten/kota.\n2. **Subsegmen (Observation Unit / Grid Amatan)**:\n   - Setiap segmen dibagi secara teratur menjadi 9 subsegmen berukuran $100\\text{ m} \\times 100\\text{ m}$ ($10.000\\text{ m}^2 = 1\\text{ hektar}$) [slide 15, 21].\n   - Diberi kode indeks posisi $A_1, A_2, A_3, B_1, B_2, B_3, C_1, C_2, C_3$.\n3. **Titik Pengamatan (Sample Point Coordinates)**:\n   - Di setiap subsegmen terdapat 1 titik koordinat pengamatan tetap (total 9 titik per segmen).\n   - Petugas mengambil foto lapangan dengan kamera ponsel Android ber-GPS pada sudut pandang tertentu dengan batas toleransi radius maksimum 10–15 meter dari titik koordinat nominal [slide 15].\n\n### 2. Klasifikasi Fase Pertumbuhan Padi dan Horison Proyeksi Panen\n\nSetiap titik amatan pada minggu terakhir tiap bulan diklasifikasikan ke dalam salah satu fase biologis [slide 15, 16]:\n\n| Kode Fase | Deskripsi Fase Biologis | Karakteristik Visual Lapangan | Horison Waktu Menuju Panen |\n|---|---|---|---|\n| **V1** | Vegetatif Awal (1–30 HST) | Semai, pindah tanam, daun muda, rumpun kecil, air sawah terlihat dominan | Panen 3 bulan berikutnya ($t+3$) |\n| **V2** | Vegetatif Akhir (31–60 HST) | Anakan maksimal, kanopi daun rimbun hijau pekat menutup permukaan air | Panen 2 bulan berikutnya ($t+2$) |\n| **G1** | Generatif Awal (61–90 HST) | Bunting, keluar malai (flowering), tanaman berwarna hijau kekuningan | Panen 2 bulan berikutnya ($t+2$) |\n| **G2** | Generatif Akhir (91–105 HST) | Pengisian bulir, malai merunduk, bulir menguning matang fisiologis | Panen 1 bulan berikutnya ($t+1$) |\n| **P** | Panen (Harvesting) | Sedang dilakukan pemotongan padi, tumpukan jerami, perontokan | **Panen bulan berjalan ($t$)** |\n| **PL** | Persiapan Lahan | Olah tanah, pembajakan, pelumpuran, sawah tergenang tanpa tanaman | Panen 4 bulan berikutnya ($t+4$) |\n| **PS** | Puso / Gagal Panen | Tanaman kering/rusak total akibat banjir, kekeringan, atau hama | Tidak menghasilkan panen |\n| **BP / BS** | Bukan Padi / Bukan Sawah | Lahan ditanami palawija/tebu atau beralih fungsi bangunan/kolam | Dikeluarkan dari estimasi padi |\n\n### 3. Formulasi Estimasi Luas Panen BPS\n\nMisalkan suatu wilayah administratif (kabupaten/provinsi) memiliki $H$ stratum tutupan lahan sawah. Untuk stratum ke-$h$:\n- $A_h$ : Total luas Lahan Baku Sawah (LBS) pada stratum $h$ (hektar).\n- $n_h$ : Jumlah segmen sampel terpilih pada stratum $h$.\n- $M_i = 9$ : Jumlah titik amatan pada segmen ke-$i$.\n- $y_{hij} \\in \\{0, 1\\}$ : Nilai biner indikator apakah titik amatan ke-$j$ pada segmen ke-$i$ stratum $h$ berada pada fase panen (1 jika panen, 0 jika lainnya).\n\nProporsi titik panen pada stratum $h$ dihitung sebagai:\n$$\\hat{p}_{h,\\text{panen}} = \\frac{\\sum_{i=1}^{n_h} \\sum_{j=1}^{9} y_{hij}}{9 \\cdot n_h}$$\n\nTotal estimasi luas panen pada periode bulan amatan berjalan ($t$) adalah:\n$$\\hat{A}_{\\text{panen}} = \\sum_{h=1}^H A_h \\cdot \\hat{p}_{h,\\text{panen}}$$\n\nUntuk peramalan potensi luas panen 1 bulan ke depan ($t+1$), proporsi dihitung dari titik-titik yang berada pada fase Generatif Akhir (G2):\n$$\\hat{A}_{\\text{panen}}^{(t+1)} = \\sum_{h=1}^H A_h \\cdot \\hat{p}_{h,G2}$$",
+      "pitfalls": "1. **Jebakan Hirarki Dimensi Segmen vs Subsegmen**: Sering tertukar antara luas segmen (9 ha / 300m x 300m) dan subsegmen (1 ha / 100m x 100m). Pengamatan fase padi dilakukan di tingkat subsegmen (9 titik amatan per segmen).\n2. **Jebakan Proyeksi Waktu Panen**: Menjawab bahwa fase vegetatif awal (V1) akan panen 1 bulan kemudian. Siklus hidup padi normal adalah 110–120 hari (~3,5 s.d. 4 bulan). V1 panen 3 bulan ke depan, V2/G1 panen 2 bulan ke depan, dan hanya G2 yang diproyeksikan panen pada bulan berikutnya ($t+1$).",
+      "memory_hook": "Segmen 300x300m (9 ha), Subsegmen 100x100m (1 ha), 9 titik foto GPS akhir bulan: V1 panen 3 bln, V2/G1 panen 2 bln, G2 panen 1 bln.",
+      "examples": [
+        {
+          "type": "single",
+          "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 13-16]",
+          "problem": "Dalam pelaksanaan Kerangka Sampel Area (KSA) oleh BPS, pengamatan fase pertumbuhan padi dilakukan pada akhir bulan berjalan. Jika pada akhir bulan Maret seorang pencacah KSA mencatat suatu titik amatan berada pada fase Generatif Akhir (G2: pengisian bulir dan malai menguning), pada bulan apakah titik tersebut diproyeksikan akan memasuki fase Panen (P)?",
+          "options": [
+            "Bulan Maret (bulan berjalan)",
+            "Bulan April (1 bulan berikutnya)",
+            "Bulan Mei (2 bulan berikutnya)",
+            "Bulan Juni (3 bulan berikutnya)"
+          ],
+          "answer": 1,
+          "solution": "Jawaban: **B**.\n\n**Pembahasan Bertahap**:\n1. Berdasarkan siklus biologis padi pada KSA BPS [Slide 15, 16], fase Generatif Akhir (G2) terjadi pada umur 91–105 hari setelah tanam, yaitu masa pematangan bulir gabah.\n2. Titik amatan yang berada pada fase G2 pada akhir bulan Maret diproyeksikan akan dipanen pada 1 bulan berikutnya, yaitu bulan **April**.\n3. Sebagai perbandingan:\n   - Fase V1 (Maret) diproyeksikan panen bulan Juni (3 bulan berikutnya).\n   - Fase V2/G1 (Maret) diproyeksikan panen bulan Mei (2 bulan berikutnya).\n   - Fase G2 (Maret) diproyeksikan panen bulan April (1 bulan berikutnya)."
+        },
+        {
+          "type": "text",
+          "source_ref": "[Pertemuan_11_OSL_Indikator_Ekonomi_(1)_Produksi.md, slide 10-16]",
+          "problem": "Suatu kabupaten memiliki luas Lahan Baku Sawah (LBS) sebesar 45.000 hektar. Terpilih 200 segmen sampel KSA (masing-masing 9 titik amatan, total 1.800 titik amatan). Pada putaran amatan akhir Mei, tercatat 270 titik berada pada fase Panen (P), 360 titik pada fase Generatif Akhir (G2), dan 450 titik pada fase Vegetatif Akhir/Generatif Awal (V2/G1). Tentukan estimasi luas panen bulan Mei serta proyeksi luas panen bulan Juni dan Juli dalam format: `Mei=X ha, Juni=Y ha, Juli=Z ha`.",
+          "answer": "Mei=6750 ha, Juni=9000 ha, Juli=11250 ha",
+          "solution": "Langkah-langkah perhitungan:\n1. Total titik amatan = $200 \\times 9 = 1.800\\text{ titik}$.\n2. **Luas Panen Bulan Mei**:\n   - Titik panen = 270 titik.\n   - Proporsi panen Mei = $270 / 1.800 = 0,15$ (15%).\n   - Luas Panen Mei = $0,15 \\times 45.000\\text{ ha} = 6.750\\text{ ha}$.\n3. **Proyeksi Luas Panen Bulan Juni (dari fase G2)**:\n   - Titik G2 = 360 titik.\n   - Proporsi panen Juni = $360 / 1.800 = 0,20$ (20%).\n   - Luas Panen Juni = $0,20 \\times 45.000\\text{ ha} = 9.000\\text{ ha}$.\n4. **Proyeksi Luas Panen Bulan Juli (dari fase V2/G1)**:\n   - Titik V2/G1 = 450 titik.\n   - Proporsi panen Juli = $450 / 1.800 = 0,25$ (25%).\n   - Luas Panen Juli = $0,25 \\times 45.000\\text{ ha} = 11.250\\text{ ha}$.\n\n**Verifikasi Kode Python**:\n```python\nA_1 = 45000\ntotal_pts = 200 * 9\np_mei = 270 / total_pts\nluas_mei = p_mei * A_1\np_jun = 360 / total_pts\nluas_jun = p_jun * A_1\np_jul = 450 / total_pts\nluas_jul = p_jul * A_1\nprint(f'Mei={luas_mei:.0f} ha, Juni={luas_jun:.0f} ha, Juli={luas_jul:.0f} ha')\n# Output: Mei=6750 ha, Juni=9000 ha, Juli=11250 ha\n```"
+        }
+      ],
+      "links": [
+        "11.1.2",
+        "11.1.3"
+      ]
+    }
+  ]
+}

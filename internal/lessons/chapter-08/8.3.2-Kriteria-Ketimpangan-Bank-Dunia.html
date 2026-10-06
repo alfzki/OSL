@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>8.3 Ukuran Ketimpangan Pendapatan dan Pengeluaran · Modul Kuliah</title>
+<!-- Offline-first: this artifact loads zero remote resources. MathJax is not
+     fetched, so formulas are presented as readable LaTeX source. Inject a local
+     MathJax build before this file if rendered formulas are required. -->
+<style>
+  :root { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  body { margin: 0; background: #f7f7f4; color: #1f2937; }
+  #layout { display: flex; max-width: 1100px; margin: 0 auto; }
+  #toc { width: 230px; flex-shrink: 0; position: sticky; top: 0; align-self: flex-start;
+         height: 100vh; overflow-y: auto; padding: 24px 10px 24px 18px; box-sizing: border-box;
+         border-right: 1px solid #e5e7eb; font-size: 13px; }
+  #toc h2 { font-size: 13px; color: #6b7280; margin: 0 0 8px; }
+  #toc a { display: block; padding: 5px 8px; color: #374151; text-decoration: none; border-radius: 6px; line-height: 1.5; }
+  #toc a:hover { background: #eef2ff; }
+  #toc a.done { color: #16a34a; }
+  main { flex: 1; padding: 28px 36px 80px; min-width: 0; }
+  h1 { font-size: 22px; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
+  .modetag { display:inline-block; font-size:12px; padding:2px 10px; border-radius:99px;
+             background:#eef2ff; color:#4338ca; margin-left:6px; }
+  #mjwarn { display: block; background: #fef3c7; border: 1px solid #fcd34d; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+  section.point { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px 24px; margin: 18px 0; }
+  section.point h2 { font-size: 17px; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .box { border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 14px; }
+  .box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .box.warn { background: #fffbeb; border: 1px solid #fde68a; }
+  .box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .box .rich { display:block; margin-top: 4px; }
+  .field { margin: 12px 0; }
+  .field .lead { color: #1d4ed8; font-weight: 600; display: block; margin-bottom: 4px; }
+  .excerpt { background: #faf5ff; border-left: 3px solid #a855f7; padding: 10px 14px; margin: 10px 0;
+             font-size: 14px; color: #4b5563; }
+  .excerpt .lead { color:#7e22ce; }
+  .method { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+  .method .lead { color:#0e7490; }
+  .rich { font-size: 14.5px; line-height: 2; }
+  .rich p { margin: 6px 0; }
+  .rich ul, .rich ol { margin: 6px 0; padding-left: 22px; line-height: 1.9; }
+  .rich li { margin: 3px 0; }
+  .rich code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .table-wrap { display: block; width: 100%; overflow-x: auto; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+  table.lec-table { border-collapse: collapse; border-spacing: 0; margin: 0; font-size: 14px; width: 100%; min-width: max-content; }
+  table.lec-table th, table.lec-table td { border: 1px solid #cbd5e1; padding: 7px 10px; text-align: left; vertical-align: top; background-clip: padding-box; }
+  table.lec-table th { background: #f1f5f9; font-weight: 700; }
+  table.lec-table tr:last-child td { border-bottom: 0; }
+  table.lec-table tr td:first-child, table.lec-table tr th:first-child { border-left: 0; }
+  table.lec-table tr td:last-child, table.lec-table tr th:last-child { border-right: 0; }
+  .figure { margin: 14px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; overflow: hidden; }
+  .figure img { display: block; width: 100%; max-height: 460px; object-fit: contain; background: #fff; }
+  .figure figcaption { padding: 8px 12px; font-size: 13px; color: #4b5563; border-top: 1px solid #e5e7eb; line-height: 1.6; }
+  .figure .source { display: block; color: #6b7280; margin-top: 2px; }
+  .source-ref, .ex-source { color: #6b7280; font-size: 12px; line-height: 1.6; }
+  .source-ref { margin: -2px 0 8px; }
+  .ex-source { margin: 4px 0 6px; }
+  details { border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; margin: 10px 0; background: #fafafa; }
+  details summary { cursor: pointer; font-weight: 600; font-size: 14px; color: #374151; }
+  details .rich { margin-top: 10px; }
+  .ex { border-top: 1px dashed #e5e7eb; margin-top: 14px; padding-top: 8px; }
+  .ex-in { width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; font: inherit; font-size: 14px;
+            border: 1.5px solid #d1d5db; border-radius: 8px; resize: vertical; }
+  .ex-in:focus { outline: none; border-color: #3b82f6; }
+  .ex-go { margin-top: 8px; padding: 6px 16px; font-size: 13px; border: none; border-radius: 8px; background: #2563eb; color: #fff; cursor: pointer; }
+  .ex-go:disabled { background: #93c5fd; cursor: default; }
+  .ex-opts { margin: 8px 0; }
+  .ex-opts.judge { display: flex; gap: 10px; }
+  .ex-opt { display: block; width: 100%; text-align: left; margin: 6px 0; padding: 8px 12px; font-size: 14px;
+             line-height: 1.6; border: 1.5px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; }
+  .ex-opts.judge .ex-opt { flex: 1; text-align: center; font-weight: 600; }
+  .ex-opt:hover:not(:disabled) { border-color: #3b82f6; background: #f8fafc; }
+  .ex-opt:disabled { cursor: default; }
+  .ex-opt.picked { border-color: #2563eb; background: #eff6ff; }
+  .ex-opt.right { border-color: #16a34a; background: #f0fdf4; }
+  .ex-opt.wrong { border-color: #ef4444; background: #fef2f2; }
+  .ex-opt.missed { border-color: #16a34a; border-style: dashed; background: #f0fdf4; }
+  .ex-opt.dim { opacity: .55; }
+  .ex-vd { display: none; margin-top: 10px; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+  .ex-vd.ok { background: #f0fdf4; border: 1px solid #86efac; color: #14532d; }
+  .ex-vd.miss { background: #fffbeb; border: 1px solid #fcd34d; color: #92400e; }
+  .ex-sol { display: none; margin-top: 10px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+  .ex-sol-h { font-weight: 600; font-size: 14px; color: #374151; margin-bottom: 6px; }
+  .ex-sg { display: none; margin-top: 10px; font-size: 13px; color: #6b7280; }
+  .ex-sg button { margin-left: 6px; padding: 4px 12px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; font-size: 13px; }
+  .ex-sg button.sel { background: #2563eb; color: #fff; border-color: #2563eb; }
+  .donebtn { margin-top: 10px; font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 1px solid #d1d5db; background: #fff; cursor: pointer; }
+  .donebtn.on { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+  .links { font-size: 13px; color: #6b7280; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="layout">
+<nav id="toc"><h2>8.3 Ukuran Ketimpangan Pendapatan dan Pengeluaran</h2><a href="#p-8.3.2">8.3.2 Kriteria Ketimpangan Bank Dunia ⭐</a></nav>
+<main>
+<h1>8.3 Ukuran Ketimpangan Pendapatan dan Pengeluaran<span class="modetag">Pembahasan Mendalam</span></h1>
+<div class="meta">《Official Statistics Lanjutan (OSL)》Pertemuan 8: Kemiskinan dan Ketimpangan Pendapatan ｜ 1 Poin Konsep ｜ Dibuat: 2026-09-29 ｜ Total Contoh Soal 2 Butir ｜ Kerjakan terlebih dahulu sebelum membuka pembahasan</div>
+<div id="mjwarn">⚠️ Mode Offline: Modul ini mandiri tanpa ketergantungan internet, formula matematika disajikan dalam format teks/LaTeX standar.</div>
+
+<section class="point" id="p-8.3.2">
+<h2>8.3.2 Kriteria Ketimpangan Bank Dunia ⭐</h2>
+<div class="source-ref">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 41-44]</div>
+<div class="box info">📌 <div class="rich"><p>Menguasai pembagian distribusi 40-40-20 Bank Dunia, ambang batas 12% dan 17% untuk kelompok 40% terbawah, interpretasi tingkat ketimpangan, dan perbandingannya dengan Koefisien Gini.</p></div></div>
+<div class="excerpt"><span class="lead">📖 Teks Materi Kuliah</span><div class="rich"><p>Kriteria Bank Dunia mengklasifikasikan penduduk atas 3 kelompok menurut pendapatan: kelompok pendapatan terendah 40%, kelompok pendapatan menengah 40%, dan kelompok pendapatan tertinggi 20%. Ketimpangan diukur dengan menghitung persentase pendapatan yang diperoleh kelompok 40% terendah: jika &lt; 12% ketimpangan tinggi; jika antara 12% dan 17% ketimpangan sedang; jika &gt; 17% ketimpangan rendah [slide 37].</p></div></div>
+<div class="field"><span class="lead">💡 Intuisi Konsep</span><div class="rich"><p>Bayangkan sebuah jamuan makan malam untuk 10 orang dengan 10 piring makanan:<br>- Empat orang berpendapatan terendah (40% terbawah) duduk di ujung meja.<br>- Jika keempat orang ini bersama-sama hanya mendapatkan kurang dari 1,2 piring (&lt;12% total makanan), ketimpangan jamuan tersebut sangat tinggi dan tidak manusiawi.<br>- Jika mereka mendapatkan antara 1,2 sampai 1,7 piring (12-17%), ketimpangan dinilai sedang.<br>- Jika mereka berhasil menikmati lebih dari 1,7 piring (&gt;17%), ketimpangan dinilai rendah dan distribusi dinilai cukup merata.</p></div></div>
+<div class="field"><span class="lead">📐 Definisi & Penjelasan Rigor</span><div class="rich"><p>### 1. Klasifikasi Distribusi Penduduk Menurut Bank Dunia</p>
+<p>Bank Dunia membagi seluruh penduduk dalam perekonomian ke dalam 3 strata distribusi pendapatan/pengeluaran [slide 37]:<br>1. <strong>Kelompok 40% Terbawah</strong> (*Low Income Group*): Penduduk pada persentil 0% s.d. 40% (mencakup Kuintil 1 dan Kuintil 2, atau Desil 1 s.d. 4).<br>2. <strong>Kelompok 40% Menengah</strong> (*Middle Income Group*): Penduduk pada persentil 40% s.d. 80% (mencakup Kuintil 3 dan Kuintil 4, atau Desil 5 s.d. 8).<br>3. <strong>Kelompok 20% Teratas</strong> (*High Income Group*): Penduduk pada persentil 80% s.d. 100% (mencakup Kuintil 5, atau Desil 9 dan 10).</p>
+<p>### 2. Formulasi Pengukuran Pangsa Pengeluaran 40% Terbawah</p>
+<p>Misalkan data dikelompokkan ke dalam 5 kuintil dengan pengeluaran masing-masing $C_1, C_2, C_3, C_4, C_5$ dan total konsumsi $C_{\text{total}} = \sum_{k=1}^5 C_k$.<br>Pangsa pengeluaran yang dinikmati oleh 40% penduduk terbawah ($S_{40}$) didefinisikan sebagai [slide 37, 39]:<br>$$S_{40} = \frac{C_1 + C_2}{C_{\text{total}}} \times 100\% = (p_1 + p_2) \times 100\% = Y_2 \times 100\%$$<br>dimana $Y_2$ adalah nilai kumulatif proporsi pengeluaran pada kuintil ke-2.</p>
+<p>### 3. Kriteria Batas Ketimpangan Bank Dunia<br>Berdasarkan persentase $S_{40}$, Bank Dunia menetapkan tiga tingkatan ketimpangan distribusi [slide 37]:<br>$$\text{Kategori Ketimpangan} = \begin{cases} \text{Ketimpangan Tinggi}, &amp; \text{jika } S_{40} &lt; 12\% \\ \text{Ketimpangan Sedang}, &amp; \text{jika } 12\% \le S_{40} \le 17\% \\ \text{Ketimpangan Rendah}, &amp; \text{jika } S_{40} &gt; 17\% \end{cases}$$</p>
+<p>### 4. Matriks Perbandingan: Kriteria Bank Dunia vs Koefisien Gini</p>
+<div class="table-wrap"><table class="lec-table"><thead><tr><th>Dimensi</th><th>Kriteria Bank Dunia (40% Terbawah)</th><th>Koefisien Gini (Gini Ratio)</th></tr></thead><tbody><tr><td><strong>Fokus Pengukuran</strong></td><td>Spesifik pada kesejahteraan 40% lapisan penduduk termiskin</td><td>Agregat seluruh spektrum distribusi (menyeluruh dari 0 s.d. 100%)</td></tr><tr><td><strong>Metrik Keluaran</strong></td><td>Persentase pangsa pengeluaran ($S_{40}$) dan 3 kategori verbal</td><td>Skalar kontinu indeks antara 0 s.d. 1</td></tr><tr><td><strong>Arah Interpretasi</strong></td><td>Semakin <strong>besar</strong> nilai $S_{40}$, ketimpangan semakin <strong>rendah</strong></td><td>Semakin <strong>besar</strong> nilai Gini, ketimpangan semakin <strong>tinggi</strong></td></tr><tr><td><strong>Kelebihan</strong></td><td>Sangat intuitif dan relevan bagi kebijakan perlindungan sosial pro-poor</td><td>Memiliki landasan aksiomatis lengkap (*Pigou-Dalton transfer*)</td></tr><tr><td><strong>Contoh Slide 39</strong></td><td>$S_{40} = 17,27\% \implies$ <strong>Ketimpangan Rendah</strong></td><td>$G = 0,3770 \implies$ <strong>Ketimpangan Sedang</strong></td></tr></tbody></table></div>
+<p>### 5. Analisis Komparatif Slide 39<br>Pada contoh data kuintil Slide 39 [slide 39]:<br>- $C_1 = 50.000$, $C_2 = 70.000$, Total = $695.000$.<br>- $S_{40} = \frac{50.000 + 70.000}{695.000} \times 100\% = \frac{120.000}{695.000} \times 100\% = 17,27\%$.<br>- Karena $17,27\% &gt; 17,0\%$, maka menurut kriteria Bank Dunia distribusi tersebut masuk ke dalam kategori <strong>Ketimpangan Rendah</strong>.<br>- Terlihat adanya nuansa perbedaan kesimpulan: Koefisien Gini menunjukkan ketimpangan sedang ($0,3770$), sedangkan Bank Dunia menunjukkan ketimpangan rendah ($17,27\%$). Hal ini wajar terjadi karena Bank Dunia hanya memotret kelompok 40% terbawah tanpa memperhitungkan ketimpangan yang terjadi di antara kuintil 4 dan kuintil 5 (kelompok kaya menguasai 50,36% konsumsi).</p></div></div>
+<div class="ex" data-extype="single" data-ans="1">
+<div class="field"><span class="lead">Contoh Soal 1 (Pilihan Ganda)</span><div class="rich"><p>Berdasarkan kriteria pengukuran ketimpangan Bank Dunia, suatu wilayah dikategorikan mengalami 'Ketimpangan Tinggi' apabila kelompok 40 persen penduduk berpendapatan terendah menikmati:</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 37]</div>
+<div class="ex-opts">
+<button class="ex-opt" data-i="0">A. Lebih dari 17 persen dari total pendapatan nasional.</button>
+<button class="ex-opt" data-i="1">B. Kurang dari 12 persen dari total pendapatan nasional.</button>
+<button class="ex-opt" data-i="2">C. Antara 12 persen sampai dengan 17 persen dari total pendapatan nasional.</button>
+<button class="ex-opt" data-i="3">D. Kurang dari 40 persen dari total pendapatan nasional.</button>
+</div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 1)</div><div class="rich"><p>Jawaban: <strong>B</strong>.</p>
+<p><strong>Pembahasan</strong>:<br>Menurut kriteria Bank Dunia [slide 37]:<br>- Jika 40% penduduk terbawah memperoleh &lt; 12% total pendapatan -&gt; Ketimpangan Tinggi.<br>- Jika memperoleh antara 12% dan 17% -&gt; Ketimpangan Sedang.<br>- Jika memperoleh &gt; 17% -&gt; Ketimpangan Rendah.</p></div></div>
+</div>
+<div class="ex" data-extype="text" data-ans="[&quot;Pangsa 40% Terbawah=17,27%, Kategori=Ketimpangan Rendah&quot;]">
+<div class="field"><span class="lead">Contoh Soal 2 (Isian/Esai)</span><div class="rich"><p>Suatu provinsi memiliki distribusi pengeluaran kuintil penduduk sbb: Kuintil 1 = 50.000, Kuintil 2 = 70.000, Kuintil 3 = 100.000, Kuintil 4 = 125.000, Kuintil 5 = 350.000 (total pengeluaran = 695.000).<br>1. Hitunglah persentase pengeluaran yang dinikmati oleh kelompok 40% terbawah.<br>2. Tentukan kategori ketimpangan provinsi tersebut menurut kriteria Bank Dunia.<br>Tuliskan jawaban akhir dalam format: <code>Pangsa 40% Terbawah=...%, Kategori=...</code>.</p></div></div>
+<div class="ex-source">Sumber: [Pertemuan_8_OSL_Indikator_Sosial_(1)_Indikator_Kemiskinan_dan_Ketimpangan___new.md, slide 37, 39]</div>
+<textarea class="ex-in" placeholder="Kerjakan mandiri terlebih dahulu, tuliskan langkah atau jawaban akhir…"></textarea>
+<div><button class="ex-go">Kirim & Lihat Pembahasan</button></div>
+<div class="ex-vd"></div>
+<div class="ex-sol"><div class="ex-sol-h">📖 Pembahasan & Solusi (Contoh Soal 2)</div><div class="rich"><p>Langkah-langkah perhitungan:<br>1. Kelompok 40% terbawah terdiri dari Kuintil 1 dan Kuintil 2:<br>   $$\text{Total Pengeluaran 40\% Terbawah} = 50.000 + 70.000 = 120.000$$<br>2. Persentase terhadap total pengeluaran ($695.000$):<br>   $$S_{40} = \frac{120.000}{695.000} \times 100\% = 17,266...\% \approx 17,27\%$$<br>3. Evaluasi Kriteria Bank Dunia:<br>   - Karena $17,27\% &gt; 17\%$, maka provinsi tersebut masuk dalam kategori <strong>Ketimpangan Rendah</strong>.</p>
+<p><strong>Verifikasi Kode Python</strong>:<br>```python<br>consumption = [50000.0, 70000.0, 100000.0, 125000.0, 350000.0]<br>total = sum(consumption)<br>bottom_40 = (consumption[0] + consumption[1]) / total * 100.0<br>category = 'Tinggi' if bottom_40 &lt; 12.0 else ('Sedang' if bottom_40 &lt;= 17.0 else 'Rendah')<br>print(f'Pangsa 40% Terbawah={bottom_40:.2f}%, Kategori=Ketimpangan {category}')<br># Output: Pangsa 40% Terbawah=17.27%, Kategori=Ketimpangan Rendah<br>```</p></div></div>
+<div class="ex-sg">Evaluasi mandiri berdasarkan pembahasan:<button data-g="right">Benar Penuh</button><button data-g="part">Benar Sebagian</button><button data-g="no">Belum Paham</button></div>
+</div>
+<div class="box warn">⚠️ <b>Jebakan & Kesalahan Umum</b> <div class="rich"><ol><li><strong>Tertukar Arah Kategori</strong>: Menganggap bahwa pangsa &lt; 12% adalah ketimpangan rendah. Ingat bahwa 40% terbawah adalah kelompok miskin; jika bagian mereka makin kecil (&lt;12%), artinya ketimpangan makin TINGGI.</li><li><strong>Hanya Mengambil Kuintil 1</strong>: Lupa bahwa 40% penduduk terdiri dari DUA kuintil (Q1 + Q2) atau EMPAT desil (D1 s.d. D4).</li><li><strong>Salah Menetapkan Batas Ambang</strong>: Angka patokan adalah 12% dan 17% (bukan 20% atau 40%).</li></ol></div></div>
+<div class="box tip">💡 <b>Jembatan Keledai / Tips Mengingat</b> <div class="rich"><p>Bank Dunia 40% Terbawah: &lt; 12% Parah (Tinggi), 12-17% Sedang, &gt; 17% Aman (Rendah).</p></div></div>
+<div class="links">Keterkaitan Konsep: 8.3.1, 8.2.1, 8.2.2, 8.2.3</div>
+<button class="donebtn" data-id="8.3.2"></button>
+</section>
+</main></div>
+<script>
+const KEY = "lecture-done-" + location.pathname;
+const done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]"));
+function refresh() {
+  document.querySelectorAll(".donebtn").forEach(b => {
+    const on = done.has(b.dataset.id);
+    b.classList.toggle("on", on);
+    b.textContent = on ? "✓ Sudah Dipelajari" : "Tandai Sudah Dipelajari";
+    const a = document.querySelector(`#toc a[href="#p-${CSS.escape(b.dataset.id)}"]`);
+    if (a) a.classList.toggle("done", on);
+  });
+}
+document.querySelectorAll(".donebtn").forEach(b => b.addEventListener("click", () => {
+  done.has(b.dataset.id) ? done.delete(b.dataset.id) : done.add(b.dataset.id);
+  localStorage.setItem(KEY, JSON.stringify([...done]));
+  refresh();
+}));
+refresh();
+
+// Interactive examples: attempt -> grade -> reveal solution. Types: single / multi / judge / text.
+function normAns(s) {
+  return (s || "").replace(/\s+/g, "")
+    .replace(/，/g, ",").replace(/；/g, ";").replace(/：/g, ":")
+    .replace(/[（]/g, "(").replace(/[）]/g, ")").replace(/＝/g, "=").toLowerCase();
+}
+const L = i => String.fromCharCode(65 + i);
+document.querySelectorAll(".ex").forEach(ex => {
+  const type = ex.dataset.extype || "text";
+  const vd = ex.querySelector(".ex-vd"), sol = ex.querySelector(".ex-sol"), sg = ex.querySelector(".ex-sg");
+  let ans = null;
+  try { ans = JSON.parse(ex.dataset.ans || "null"); } catch (e) {}
+  const verdict = (ok, msg) => { vd.style.display = "block"; vd.className = "ex-vd " + (ok ? "ok" : "miss"); vd.textContent = msg; };
+  const reveal = () => { sol.style.display = "block"; if (sg) sg.style.display = "block"; };
+
+  if (type === "single" || type === "judge") {
+    const opts = [...ex.querySelectorAll(".ex-opt")];
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (opts.some(o => o.disabled)) return;
+      const pick = +b.dataset.i, ok = pick === ans;
+      opts.forEach(o => {
+        o.disabled = true;
+        const i = +o.dataset.i;
+        o.classList.add(i === ans ? "right" : (i === pick ? "wrong" : "dim"));
+      });
+      const correctTxt = type === "judge" ? (ans === 0 ? "Benar" : "Salah") : L(ans);
+      verdict(ok, ok ? "✓ Jawaban Benar" : "✗ Jawaban Kurang Tepat (Kunci Jawaban: " + correctTxt + ")");
+      reveal();
+    }));
+  } else if (type === "multi") {
+    const opts = [...ex.querySelectorAll(".ex-opt")], go = ex.querySelector(".ex-go"), sel = new Set();
+    opts.forEach(b => b.addEventListener("click", () => {
+      if (go.disabled) return;
+      const i = +b.dataset.i;
+      if (sel.has(i)) { sel.delete(i); b.classList.remove("picked"); }
+      else { sel.add(i); b.classList.add("picked"); }
+    }));
+    go.addEventListener("click", () => {
+      const want = new Set(ans || []), picks = [...sel];
+      const wrong = picks.some(i => !want.has(i)), allRight = picks.length === want.size && !wrong;
+      opts.forEach(o => {
+        o.disabled = true; o.classList.remove("picked");
+        const i = +o.dataset.i, isAns = want.has(i), isPick = sel.has(i);
+        o.classList.add(isAns && isPick ? "right" : (!isAns && isPick ? "wrong" : (isAns ? "missed" : "dim")));
+      });
+      go.disabled = true;
+      verdict(allRight, allRight ? "✓ Benar Semua" : "✗ Belum Tepat Semua (Kunci Jawaban: " + [...want].sort((a, b) => a - b).map(L).join(", ") + ")");
+      reveal();
+    });
+  } else {  // text
+    const go = ex.querySelector(".ex-go"), inp = ex.querySelector(".ex-in");
+    const list = Array.isArray(ans) ? ans : (ans ? [ans] : []);
+    go.addEventListener("click", () => {
+      const user = normAns(inp.value);
+      if (list.length && user) {
+        const hit = list.some(a => normAns(a) === user);
+        verdict(hit, hit
+          ? "✓ Jawaban Akhir Tepat (Referensi: " + list[0] + "). Buka pembahasan untuk mencocokkan langkah pengerjaan."
+          : "✗ Belum Sesuai dengan Kunci Jawaban (Referensi: " + list[0] + "). Periksa pembahasan untuk melihat letak kekeliruan.");
+      } else if (list.length && !user) {
+        verdict(false, "Anda belum mengisi jawaban. Jawaban referensi: " + list[0]);
+      }
+      go.disabled = true; inp.readOnly = true; reveal();
+    });
+  }
+  if (sg) sg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    sg.querySelectorAll("button").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+  }));
+});
+</script>
+</body>
+</html>
